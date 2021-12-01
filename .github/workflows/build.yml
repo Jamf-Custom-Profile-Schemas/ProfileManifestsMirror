@@ -4,9 +4,9 @@ on:
   schedule:
     - cron: "0 */6 * * *"
   push:
-    branches: [dev]
+    branches: [main]
   pull_request:
-    branches: [dev]
+    branches: [main]
 
 jobs:
   build:
@@ -16,8 +16,8 @@ jobs:
       - name: Clone profilecreator-schemas repository
         uses: actions/checkout@v2
         with:
-          ref: dev
-          path: dev
+          ref: main
+          path: main
 
       - name: Clone ProfileManifests repository
         uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
           path: ProfileManifests
 
       - name: Regenerate schemas and commit changes
-        working-directory: dev
+        working-directory: main
         run: |
           PREV=$(cat last_build.json | jq -r .hash)
           # TODO: Why doesn't this work?
@@ -41,4 +41,4 @@ jobs:
           git config user.email github-actions@github.com
           git add -A
           git commit -am "Regenerate schemas" -m "Upstream diff: https://github.com/ProfileCreator/ProfileManifests/compare/$PREV..$HASH" || true
-          git push --set-upstream origin dev || true
+          git push --set-upstream origin main || true
