@@ -1,0 +1,3792 @@
+{
+    "title": "Microsoft Edge (com.microsoft.Edge)",
+    "description": "Microsoft Edge Managed Settings",
+    "properties": {
+        "DefaultCookiesSetting": {
+            "type": "integer",
+            "title": "Default cookies setting",
+            "description": "Allows you to set whether websites are allowed to set local data. Setting local data can be either allowed for all websites or denied for all websites.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultcookiessetting"
+                }
+            ],
+            "enum": [
+                1,
+                2,
+                4
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow all sites to set local data",
+                    "Do not allow any site to set local data",
+                    "Keep cookies for the duration of the session"
+                ]
+            },
+            "property_order": 5
+        },
+        "BlockThirdPartyCookies": {
+            "type": "boolean",
+            "title": "Block third party cookies",
+            "description": "Enabling this setting prevents cookies from being set by web page elements that are not from the domain that is in the browser's address bar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#blockthirdpartycookies"
+                }
+            ],
+            "property_order": 10
+        },
+        "CookiesAllowedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow cookies on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are allowed to set cookies.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#cookiesallowedforurls"
+                }
+            ],
+            "property_order": 15
+        },
+        "CookiesBlockedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Block cookies on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are not allowed to set cookies.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#cookiesblockedforurls"
+                }
+            ],
+            "property_order": 20
+        },
+        "CookiesSessionOnlyForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Limit cookies from matching URLs to the current session",
+            "description": "Cookies set by pages matching these URL patterns will be limited to the current session, i.e. they will be deleted when the browser exits.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#cookiessessiononlyforurls"
+                }
+            ],
+            "property_order": 25
+        },
+        "DefaultImagesSetting": {
+            "type": "integer",
+            "title": "Default images setting",
+            "description": "Allows you to set whether websites are allowed to display images. Displaying images can be either allowed for all websites or denied for all websites.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultimagessetting"
+                }
+            ],
+            "enum": [
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow all sites to show all images",
+                    "Do not allow any site to show images"
+                ]
+            },
+            "property_order": 30
+        },
+        "DefaultInsecureContentSetting": {
+            "type": "integer",
+            "title": "Default insecure content setting",
+            "description": "Control use of insecure content exceptions",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultinsecurecontentsetting"
+                }
+            ],
+            "enum": [
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Do not allow any site to load blockable mixed content",
+                    "Allow users to add exceptions to allow blockable mixed content"
+                ]
+            },
+            "property_order": 35
+        },
+        "InsecureContentAllowedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Allowed URLs"
+            },
+            "description": "List of URLs to allow insecure content",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#insecurecontentallowedforurls"
+                }
+            ],
+            "property_order": 40
+        },
+        "InsecureContentBlockedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Blocked URLs"
+            },
+            "description": "List of URLs to block insecure content",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#insecurecontentblockedforurls"
+                }
+            ],
+            "property_order": 45
+        },
+        "DefaultJavaScriptSetting": {
+            "type": "integer",
+            "title": "Default JavaScript setting",
+            "description": "Allows you to set whether websites are allowed to run JavaScript. Running JavaScript can be either allowed for all websites or denied for all websites.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultjavascriptsetting"
+                }
+            ],
+            "enum": [
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow all sites to run JavaScript",
+                    "Do not allow any site to run JavaScript"
+                ]
+            },
+            "property_order": 50
+        },
+        "DefaultPluginsSetting": {
+            "type": "integer",
+            "title": "Default Flash setting",
+            "description": "Allows you to set whether websites are allowed to automatically run the Flash plugin. Automatically running the Flash plugin can be either allowed for all websites or denied for all websites.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultpluginssetting"
+                }
+            ],
+            "enum": [
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow all sites to automatically run the Flash plugin",
+                    "Block the Flash plugin",
+                    "Click to play"
+                ]
+            },
+            "property_order": 55
+        },
+        "DefaultPopupsSetting": {
+            "type": "integer",
+            "title": "Default popups setting",
+            "description": "Allows you to set whether websites are allowed to show pop-ups. Showing popups can be either allowed for all websites or denied for all websites.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultpopupssetting"
+                }
+            ],
+            "enum": [
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow all sites to show pop-ups",
+                    "Do not allow any site to show popups"
+                ]
+            },
+            "property_order": 60
+        },
+        "DefaultWebBluetoothGuardSetting": {
+            "type": "integer",
+            "title": "Control use of the Web Bluetooth API",
+            "default": 3,
+            "description": "Allows you to set whether websites are allowed to get access to nearby Bluetooth devices. Access can be completely blocked, or the user can be asked every time a website wants to get access to nearby Bluetooth devices.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultwebbluetoothguardsetting"
+                }
+            ],
+            "enum": [
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Do not allow any site to request access to Bluetooth devices via the Web Bluetooth API",
+                    "Allow sites to ask the user to grant access to a nearby Bluetooth device"
+                ]
+            },
+            "property_order": 65
+        },
+        "DefaultWebUsbGuardSetting": {
+            "type": "integer",
+            "title": "Control use of the WebUSB API",
+            "default": 3,
+            "description": "Allows you to set whether websites are allowed to get access to connected USB devices. Access can be completely blocked, or the user can be asked every time a website wants to get access to connected USB devices.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultwebusbguardsetting"
+                }
+            ],
+            "enum": [
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Do not allow any site to request access to USB devices via the WebUSB API",
+                    "Allow sites to ask the user to grant access to a connected USB device"
+                ]
+            },
+            "property_order": 70
+        },
+        "ImagesAllowedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow images on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are allowed to display images.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#imagesallowedforurls"
+                }
+            ],
+            "property_order": 75
+        },
+        "ImagesBlockedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Block images on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are not allowed to display images.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#imagesblockedforurls"
+                }
+            ],
+            "property_order": 80
+        },
+        "JavaScriptAllowedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow JavaScript on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are allowed to run JavaScript.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#javascriptallowedforurls"
+                }
+            ],
+            "property_order": 85
+        },
+        "JavaScriptBlockedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Block JavaScript on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are not allowed to run JavaScript.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#javascriptblockedforurls"
+                }
+            ],
+            "property_order": 90
+        },
+        "LegacySameSiteCookieBehaviorEnabled": {
+            "type": "integer",
+            "title": "Legacy SameSite cookie behavior",
+            "description": "Enable default legacy SameSite cookie behavior setting",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#legacysamesitecookiebehaviorenabled"
+                }
+            ],
+            "enum": [
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Revert to legacy SameSite behavior for cookies on all sites",
+                    "Use SameSite-by-default behavior for cookies on all sites"
+                ]
+            },
+            "property_order": 95
+        },
+        "LegacySameSiteCookieBehaviorEnabledForDomainList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Allowed URLs"
+            },
+            "title": "Legacy SameSite cookie allowed list",
+            "description": "Revert to legacy SameSite behavior for cookies on specified sites",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#legacysamesitecookiebehaviorenabledfordomainlist"
+                }
+            ],
+            "property_order": 100
+        },
+        "PluginsAllowedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow the Flash plugin on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are allowed to run the Flash plugin.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#pluginsallowedforurls"
+                }
+            ],
+            "property_order": 105
+        },
+        "PluginsBlockedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Block the Flash plugin on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are not allowed to run the Flash plugin.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#pluginsblockedforurls"
+                }
+            ],
+            "property_order": 110
+        },
+        "PopupsAllowedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow popups on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are allowed to open popups.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#popupsallowedforurls"
+                }
+            ],
+            "property_order": 115
+        },
+        "PopupsBlockedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Block popups on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are not allowed to open popups.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#popupsblockedforurls"
+                }
+            ],
+            "property_order": 120
+        },
+        "AutoSelectCertificateForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Automatically select client certificates for these sites",
+            "description": "Allows you to specify a list of url patterns that specify sites for which Google Chrome should automatically select a client certificate, if the site requests a certificate.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autoselectcertificateforurls"
+                }
+            ],
+            "property_order": 125
+        },
+        "DefaultGeolocationSetting": {
+            "type": "integer",
+            "title": "Default geolocation setting",
+            "description": "Allows you to set whether websites are allowed to track the users' physical location. Tracking the users' physical location can be allowed by default, denied by default or the user can be asked every time a website requests the physical location.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultgeolocationsetting"
+                }
+            ],
+            "enum": [
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow sites to track the users' physical location",
+                    "Do not allow any site to track the users' physical location",
+                    "Ask whenever a site wants to track the users' physical location"
+                ]
+            },
+            "property_order": 130
+        },
+        "RegisteredProtocolHandlers": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "RegisteredProtocolDictionary",
+                "properties": {
+                    "default": {
+                        "type": "boolean",
+                        "default": true
+                    },
+                    "protocol": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                }
+            },
+            "title": "Register protocol handlers",
+            "description": "Allows you to register a list of protocol handlers. This can only be a recommended policy. The property |protocol| should be set to the scheme such as 'mailto' and the property |url| should be set to the URL pattern of the application that handles the scheme. The pattern can include a '%s', which if present will be replaced by the handled URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#registeredprotocolhandlers"
+                }
+            ],
+            "property_order": 135
+        },
+        "WebUsbAllowDevicesForUrls": {
+            "type": "dictionary",
+            "title": "Automatically grant permission to these sites to connect to USB devices with the given vendor and product IDs",
+            "description": "Allows you to set a list of urls that specify which sites will automatically be granted permission to access a USB device with the given vendor and product IDs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webusballowdevicesforurls"
+                }
+            ],
+            "properties": {
+                "urls": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL",
+                        "pattern": "https?://.*"
+                    },
+                    "title": "URLs"
+                },
+                "devices": {
+                    "type": "dictionary",
+                    "title": "Devices",
+                    "properties": {
+                        "product_id": {
+                            "type": "integer",
+                            "title": "Product ID"
+                        },
+                        "vendor_id": {
+                            "type": "integer",
+                            "title": "Vendor ID"
+                        }
+                    }
+                }
+            },
+            "property_order": 140
+        },
+        "AutoplayAllowed": {
+            "type": "boolean",
+            "title": "Allow media autoplay",
+            "description": "Allows you to control if videos can play automatically (without user consent) with audio content in Google Chrome.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autoplayallowed"
+                }
+            ],
+            "property_order": 145
+        },
+        "BackgroundModeEnabled": {
+            "type": "boolean",
+            "title": "Enable background mode",
+            "description": "Continue running background apps after Microsoft Edge closes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autoplayallowed"
+                }
+            ],
+            "property_order": 150
+        },
+        "BackgroundTemplateListUpdatesEnabled": {
+            "type": "boolean",
+            "title": "Enable background updates for templates",
+            "default": true,
+            "description": "If you enable this setting or the setting is unconfigured, the list of available templates will be downloaded in the background from a Microsoft service every 24 hours.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#backgroundtemplatelistupdatesenabled"
+                }
+            ],
+            "property_order": 155
+        },
+        "BingAdsSuppression": {
+            "type": "boolean",
+            "title": "Suppress Bing Ads",
+            "default": false,
+            "description": "Block all ads on Bing search results.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#bingadssuppression"
+                }
+            ],
+            "property_order": 160
+        },
+        "DefaultNotificationsSetting": {
+            "type": "integer",
+            "title": "Default notification setting",
+            "description": "Allows you to set whether websites are allowed to display desktop notifications. Displaying desktop notifications can be allowed by default, denied by default or the user can be asked every time a website wants to show desktop notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultnotificationssetting"
+                }
+            ],
+            "enum": [
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow sites to show desktop notifications",
+                    "Do not allow any site to show desktop notifications",
+                    "Ask every time a site wants to show desktop notifications"
+                ]
+            },
+            "property_order": 165
+        },
+        "NotificationsAllowedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow notifications on these sites",
+            "description": "Allows you to create a list of url patterns to specify sites that are allowed to display notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#notificationsallowedforurls"
+                }
+            ],
+            "property_order": 170
+        },
+        "NotificationsBlockedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Block notifications on these sites",
+            "description": "Allows you to create a list of url patterns to specify sites that are not allowed to display notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#notificationsblockedforurls"
+                }
+            ],
+            "property_order": 175
+        },
+        "DefaultSearchProviderEnabled": {
+            "type": "boolean",
+            "title": "Enable the default search provider",
+            "description": "Enables the use of a default search provider.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultsearchproviderenabled"
+                }
+            ],
+            "property_order": 180
+        },
+        "DefaultSearchProviderEncodings": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Default search provider encodings",
+            "description": "Specifies the character encodings supported by the search provider. Encodings are code page names like UTF-8, GB2312, and ISO-8859-1. They are tried in the order provided.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultsearchproviderencodings"
+                }
+            ],
+            "property_order": 185
+        },
+        "DefaultSearchProviderImageURL": {
+            "type": "string",
+            "title": "Parameter providing search-by-image feature for the default search provider",
+            "description": "Specifies the URL of the search engine used to provide image search. Search requests will be sent using the GET method. If the DefaultSearchProviderImageURLPostParams policy is set then image search requests will use the POST method instead.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultsearchproviderimageurl"
+                }
+            ],
+            "property_order": 190
+        },
+        "DefaultSearchProviderImageURLPostParams": {
+            "type": "string",
+            "title": "Parameters for image URL which uses POST",
+            "description": "Specifies the parameters used when doing image search with POST. It consists of comma-separated name/value pairs. If a value is a template parameter, like {imageThumbnail} in above example, it will be replaced with real image thumbnail data.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultsearchproviderimageurlpostparams"
+                }
+            ],
+            "property_order": 195
+        },
+        "DefaultSearchProviderKeyword": {
+            "type": "string",
+            "title": "Default search provider keyword",
+            "description": "Specifies the keyword, which is the shortcut used in the omnibox to trigger the search for this provider.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultsearchproviderkeyword"
+                }
+            ],
+            "property_order": 200
+        },
+        "DefaultSearchProviderName": {
+            "type": "string",
+            "title": "Default search provider name",
+            "description": "Specifies the name of the default search provider. If left empty or not set, the host name specified by the search URL will be used.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultsearchprovidername"
+                }
+            ],
+            "property_order": 205
+        },
+        "DefaultSearchProviderSearchURL": {
+            "type": "string",
+            "title": "Default search provider search URL",
+            "description": "Specifies the URL of the search engine used when doing a default search. The URL should contain the string '{searchTerms}', which will be replaced at query time by the terms the user is searching for.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultsearchprovidersearchurl"
+                }
+            ],
+            "property_order": 210
+        },
+        "DefaultSearchProviderSuggestURL": {
+            "type": "string",
+            "title": "Default search provider suggest URL",
+            "description": "Specifies the URL of the search engine used to provide search suggestions. The URL should contain the string '{searchTerms}', which will be replaced at query time by the text the user has entered so far.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultsearchprovidersuggesturl"
+                }
+            ],
+            "property_order": 215
+        },
+        "ExtensionAllowedTypes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "extension",
+                    "hosted_app",
+                    "legacy_packaged_app",
+                    "platform_app",
+                    "theme",
+                    "user_script"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Extension",
+                        "Hosted App",
+                        "Legacy Packaged App",
+                        "Platform App",
+                        "Theme",
+                        "User Script"
+                    ]
+                }
+            },
+            "title": "Types of extensions/apps that are allowed to be installed",
+            "description": "Controls which app/extension types are allowed to be installed and limits runtime access.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#extensionallowedtypes"
+                }
+            ],
+            "property_order": 220
+        },
+        "ExtensionInstallSources": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "URL patterns to allow extension, app, and user script installs from",
+            "description": "Allows you to specify which URLs are allowed to install extensions, apps, and themes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#extensioninstallsources"
+                }
+            ],
+            "property_order": 225
+        },
+        "ExtensionInstallBlocklist": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Extension IDs the user should be prevented from installing (or * for all)",
+            "description": "Allows you to specify which extensions the users can NOT install. Extensions already installed will be disabled if denied, without a way for the user to enable them. Once an extension is disabled due to the denylist being removed, it will automatically get re-enabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#extensioninstallblocklist"
+                }
+            ],
+            "property_order": 230
+        },
+        "ExtensionInstallAllowlist": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Extension ID Allowlist",
+            "description": "Allows you to specify which extensions are not subject to the denylist.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#extensioninstallallowlist"
+                }
+            ],
+            "property_order": 235
+        },
+        "ExtensionInstallForcelist": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Extension/App IDs and update URLs to be silently installed",
+            "description": "Specifies a list of apps and extensions that are installed silently, without user interaction, and which cannot be uninstalled nor disabled by the user. All permissions requested by the apps/extensions are granted implicitly, without user interaction, including any additional permissions requested by future versions of the app/extension. Furthermore, permissions are granted for the enterprise.deviceAttributes and enterprise.platformKeys extension APIs. (These two APIs are not available to apps/extensions that are not force-installed.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#extensioninstallforcelist"
+                }
+            ],
+            "property_order": 240
+        },
+        "ExtensionSettings": {
+            "type": "dictionary",
+            "title": "Extension management settings",
+            "description": "Configures extension management settings for Google Chrome. A default configuration can be set for the special ID \"*\"",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#extensionsettings"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Extension ID"
+                },
+                "{{value}}": {
+                    "type": "dictionary",
+                    "properties": {
+                        "installation_mode": {
+                            "type": "string",
+                            "description": "Maps to a string indicating the installation mode for the extension.",
+                            "enum": [
+                                "allowed",
+                                "blocked",
+                                "force_installed",
+                                "normal_installed"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Allowed",
+                                    "Blocked",
+                                    "Force Installed",
+                                    "Normal Installed"
+                                ]
+                            }
+                        },
+                        "update_url": {
+                            "type": "string",
+                            "description": "Maps to a string indicating where Chrome can download a force_installed or normal_installed extension."
+                        },
+                        "blocked_permissions": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://developer.chrome.com/extensions/declare_permissions"
+                                    }
+                                ],
+                                "enum": [
+                                    "activeTab",
+                                    "alarms",
+                                    "background",
+                                    "bookmarks",
+                                    "browsingData",
+                                    "certificateProvider",
+                                    "clipboardRead",
+                                    "clipboardWrite",
+                                    "contentSettings",
+                                    "contextMenus",
+                                    "cookies",
+                                    "debugger",
+                                    "declarativeContent",
+                                    "declarativeNetRequest",
+                                    "declarativeWebRequest",
+                                    "desktopCapture",
+                                    "displaySource",
+                                    "dns",
+                                    "documentScan",
+                                    "downloads",
+                                    "enterprise.deviceAttributes",
+                                    "enterprise.hardwarePlatform",
+                                    "enterprise.platformKeys",
+                                    "experimental",
+                                    "fileBrowserHandler",
+                                    "fileSystemProvider",
+                                    "fontSettings",
+                                    "gcm",
+                                    "geolocation",
+                                    "history",
+                                    "identity",
+                                    "idle",
+                                    "idltest",
+                                    "management",
+                                    "nativeMessaging",
+                                    "networking.config",
+                                    "notifications",
+                                    "pageCapture",
+                                    "platformKeys",
+                                    "power",
+                                    "printerProvider",
+                                    "privacy",
+                                    "processes",
+                                    "proxy",
+                                    "sessions",
+                                    "signedInDevices",
+                                    "storage",
+                                    "system.cpu",
+                                    "system.display",
+                                    "system.memory",
+                                    "system.storage",
+                                    "tabCapture",
+                                    "tabs",
+                                    "topSites",
+                                    "tts",
+                                    "ttsEngine",
+                                    "unlimitedStorage",
+                                    "vpnProvider",
+                                    "wallpaper",
+                                    "webNavigation",
+                                    "webRequest",
+                                    "webRequestBlocking"
+                                ]
+                            },
+                            "description": "Maps to a list of strings indicating the blocked API permissions for the extension."
+                        },
+                        "minimum_version_required": {
+                            "type": "string",
+                            "description": "Maps to a version string."
+                        },
+                        "install_sources": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Each item in this list is an extension-style match pattern."
+                        },
+                        "allowed_types": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "extension",
+                                    "theme",
+                                    "user_script",
+                                    "hosted_app",
+                                    "legacy_packaged_app",
+                                    "platform_app"
+                                ]
+                            },
+                            "description": "This setting sets the allowed types of extension/apps that can be installed in Google Chrome."
+                        },
+                        "blocked_install_message": {
+                            "type": "string",
+                            "description": "This maps to a string specifying the error message to display to users if they're blocked from installing an extension."
+                        },
+                        "runtime_blocked_hosts": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Maps to a list of strings representing hosts whose webpages the extension will be blocked from modifying."
+                        },
+                        "runtime_allowed_hosts": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Maps to a list of strings representing hosts that an extension can interact with regardless of whether they are listed in \"runtime_blocked_hosts\"."
+                        }
+                    }
+                }
+            },
+            "property_order": 245
+        },
+        "EnableMediaRouter": {
+            "type": "boolean",
+            "title": "Enable Google Cast",
+            "default": true,
+            "description": "If this policy is set to true or is not set, Google Cast will be enabled, and users will be able to launch it from the app menu, page context menus, media controls on Cast-enabled websites, and (if shown) the Cast toolbar icon.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#enablemediarouter"
+                }
+            ],
+            "property_order": 250
+        },
+        "ShowCastIconInToolbar": {
+            "type": "boolean",
+            "title": "Show the Google Cast toolbar icon",
+            "default": false,
+            "description": "If this policy is set to true, the Cast toolbar icon will always be shown on the toolbar or the overflow menu, and users will not be able to remove it.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#showcasticonintoolbar"
+                }
+            ],
+            "property_order": 255
+        },
+        "AllowCrossOriginAuthPrompt": {
+            "type": "boolean",
+            "title": "Cross-origin HTTP Basic Auth prompts",
+            "default": false,
+            "description": "Controls whether third-party sub-content on a page is allowed to pop-up an HTTP Basic Auth dialog box.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#allowcrossoriginauthprompt"
+                }
+            ],
+            "property_order": 260
+        },
+        "AuthNegotiateDelegateAllowlist": {
+            "type": "string",
+            "title": "Kerberos delegation server allowlist",
+            "description": "Servers that Microsoft Edge may delegate to.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#authnegotiatedelegateallowlist"
+                }
+            ],
+            "property_order": 265
+        },
+        "AuthSchemes": {
+            "type": "string",
+            "title": "Supported authentication schemes",
+            "description": "Specifies which HTTP authentication schemes are supported by Microsoft Edge. Possible values are 'basic', 'digest', 'ntlm' and 'negotiate'. Separate multiple values with commas.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#authschemes"
+                }
+            ],
+            "property_order": 270
+        },
+        "AuthServerAllowlist": {
+            "type": "string",
+            "title": "Authentication server allowlist",
+            "description": "Specifies which servers should be allowed for integrated authentication. Integrated authentication is only enabled when Microsoft Edge receives an authentication challenge from a proxy or from a server which is in this permitted list.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#authserverallowlist"
+                }
+            ],
+            "property_order": 275
+        },
+        "DisableAuthNegotiateCnameLookup": {
+            "type": "boolean",
+            "title": "Disable CNAME lookup when negotiating Kerberos authentication",
+            "default": false,
+            "description": "Specifies whether the generated Kerberos SPN is based on the canonical DNS name or the original name entered.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#disableauthnegotiatecnamelookup"
+                }
+            ],
+            "property_order": 280
+        },
+        "EnableAuthNegotiatePort": {
+            "type": "boolean",
+            "title": "Include non-standard port in Kerberos SPN",
+            "default": false,
+            "description": "Specifies whether the generated Kerberos SPN should include a non-standard port.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#enableauthnegotiateport"
+                }
+            ],
+            "property_order": 285
+        },
+        "NtlmV2Enabled": {
+            "type": "boolean",
+            "title": "Enable NTLMv2 authentication",
+            "default": true,
+            "description": "If you don't configure this policy, NTLMv2 is enabled by default.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#ntlmv2enabled"
+                }
+            ],
+            "property_order": 290
+        },
+        "AdsSettingForIntrusiveAdsSites": {
+            "type": "integer",
+            "title": "Ads setting for sites with intrusive ads",
+            "description": "Allows you to set whether ads should be blocked on sites with intrusive ads.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#adssettingforintrusiveadssites"
+                }
+            ],
+            "enum": [
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow ads on all sites",
+                    "Do not allow ads on sites with intrusive ads"
+                ]
+            },
+            "property_order": 295
+        },
+        "AllowDeletingBrowserHistory": {
+            "type": "boolean",
+            "title": "Enable deleting browser and download history",
+            "default": true,
+            "description": "Enables deleting browser history and download history in Microsoft Edge and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#allowdeletingbrowserhistory"
+                }
+            ],
+            "property_order": 300
+        },
+        "AllowFileSelectionDialogs": {
+            "type": "boolean",
+            "title": "Allow invocation of file selection dialogs",
+            "default": true,
+            "description": "Allows access to local files on the machine by allowing Microsoft Edge to display file selection dialogs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#allowfileselectiondialogs"
+                }
+            ],
+            "property_order": 305
+        },
+        "AllowPopupsDuringPageUnload": {
+            "type": "boolean",
+            "title": "Allow a page to show popups during its unloading",
+            "default": false,
+            "description": "This policy allows an admin to specify that a page may show popups during its unloading.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#allowpopupsduringpageunload"
+                }
+            ],
+            "property_order": 310
+        },
+        "AllowSurfGame": {
+            "type": "boolean",
+            "title": "Allow Surf Game",
+            "default": true,
+            "description": "Enables or disables the built-in surf game. Game accessible via edge://surf.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#allowsurfgame"
+                }
+            ],
+            "property_order": 315
+        },
+        "AllowSyncXHRInPageDismissal": {
+            "type": "boolean",
+            "title": "Allow pages to send synchronous XHR requests during page dismissal",
+            "default": false,
+            "description": "This policy lets you specify that a page can send synchronous XHR requests during page dismissal.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#allowsyncxhrinpagedismissal"
+                }
+            ],
+            "property_order": 320
+        },
+        "AllowTrackingForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Configure tracking prevention exceptions for specific sites",
+            "description": "Configure the list of URL patterns that are excluded from tracking prevention.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#allowtrackingforurls"
+                }
+            ],
+            "property_order": 325
+        },
+        "AlternateErrorPagesEnabled": {
+            "type": "boolean",
+            "title": "Enable alternate error pages",
+            "description": "Enables the use of alternate error pages that are built into Microsoft Edge (such as 'page not found') and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#alternateerrorpagesenabled"
+                }
+            ],
+            "property_order": 330
+        },
+        "AlwaysOpenPdfExternally": {
+            "type": "boolean",
+            "title": "Always Open PDF files externally",
+            "default": false,
+            "description": "Disables the internal PDF viewer in Microsoft Edge. Instead it treats it as download and allows the user to open PDF files with the default application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#alwaysopenpdfexternally"
+                }
+            ],
+            "property_order": 335
+        },
+        "AppCacheForceEnabled": {
+            "type": "boolean",
+            "title": "Force Enable AppCache",
+            "default": false,
+            "description": "Allows the AppCache feature to be re-enabled, even if it's turned off by default",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#appcacheforceenabled"
+                }
+            ],
+            "property_order": 340
+        },
+        "ApplicationLocaleValue": {
+            "type": "string",
+            "title": "Application locale value",
+            "default": "en",
+            "description": "Set application locale",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#alwaysopenpdfexternally"
+                }
+            ],
+            "property_order": 345
+        },
+        "AudioCaptureAllowed": {
+            "type": "boolean",
+            "title": "Allow or deny audio capture",
+            "default": true,
+            "description": "If enabled or not configured (default), the user will be prompted for audio capture access except for URLs configured in the AudioCaptureAllowedUrls list which will be granted access without prompting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#audiocaptureallowed"
+                }
+            ],
+            "property_order": 350
+        },
+        "AudioCaptureAllowedUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "URLs that will be granted access to audio capture devices without prompt",
+            "description": "Patterns in this list will be matched against the security\norigin of the requesting URL.  If a match is found, access to audio\ncapture devices will be granted without prompt.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#audiocaptureallowedurls"
+                }
+            ],
+            "property_order": 355
+        },
+        "AutoImportAtFirstRun": {
+            "type": "integer",
+            "title": "Automatically import browser data and settings at first run",
+            "description": "If you enable this policy, Microsoft Edge automatically imports all supported datatypes and settings from either the default browser or another specified browser. This also forces Microsoft Edge to skip the import section of the first-run experience.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autoimportatfirstrun"
+                }
+            ],
+            "enum": [
+                0,
+                2,
+                3,
+                4
+            ],
+            "options": {
+                "enum_titles": [
+                    "Import all supported datatypes and settings from the default browser",
+                    "Import all supported datatypes and settings from Google Chrome",
+                    "Import all supported datatypes and settings from Safari",
+                    "Disable automatic import & skip import section of the first-run experience"
+                ]
+            },
+            "property_order": 360
+        },
+        "AutoOpenAllowedForURLs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "URLs"
+            },
+            "title": "Allowed URLs for Auto Open",
+            "description": "URLs where AutoOpenFileTypes can apply. If you set URLs in this policy, files will only automatically open by policy if the URL is part of this set and the file type is listed in AutoOpenFileTypes. If either condition is false, the download won't automatically open by policy.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autoopenallowedforurls"
+                }
+            ],
+            "property_order": 365
+        },
+        "AutoOpenFileTypes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "File Types"
+            },
+            "title": "Auto Open File Types",
+            "description": "List of file types that should be automatically opened on download. Note: The leading separator should not be included when listing the file type, so list \"txt\" instead of \".txt\".",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autoopenfiletypes"
+                }
+            ],
+            "property_order": 370
+        },
+        "AutofillAddressEnabled": {
+            "type": "boolean",
+            "title": "Enable AutoFill for addresses",
+            "default": true,
+            "description": "Enables Microsoft Edge's AutoFill feature and allows users to auto complete address information in web forms using previously stored information.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autofilladdressenabled"
+                }
+            ],
+            "property_order": 375
+        },
+        "AutofillCreditCardEnabled": {
+            "type": "boolean",
+            "title": "Enable AutoFill for credit cards",
+            "default": true,
+            "description": "Enables Microsoft Edge's AutoFill feature and allows users to auto complete credit card information in web forms using previously stored information.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autofillcreditcardenabled"
+                }
+            ],
+            "property_order": 380
+        },
+        "FavoritesBarEnabled": {
+            "type": "boolean",
+            "title": "Enable Bookmark Bar",
+            "description": "If you enable this setting, Microsoft Edge will show a bookmark bar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#favoritesbarenabled"
+                }
+            ],
+            "property_order": 385
+        },
+        "BrowserAddProfileEnabled": {
+            "type": "boolean",
+            "title": "Enable add person in user manager",
+            "default": true,
+            "description": "Enable profile creation from the Identity flyout menu or the Settings page",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#browseraddprofileenabled"
+                }
+            ],
+            "property_order": 390
+        },
+        "BrowserGuestModeEnabled": {
+            "type": "boolean",
+            "title": "Enable guest mode in browser",
+            "default": true,
+            "description": "Enable the option to allow the use of guest profiles in Microsoft Edge. In a guest profile, the browser doesn't import browsing data from existing profiles, and it deletes browsing data when all guest profiles are closed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#browserguestmodeenabled"
+                }
+            ],
+            "property_order": 395
+        },
+        "BrowserNetworkTimeQueriesEnabled": {
+            "type": "boolean",
+            "title": "Allow queries to a network time service",
+            "default": true,
+            "description": "If set to false, prevents Microsoft Edge from occasionally sending queries to a browser network time service to retrieve an accurate timestamp.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#browsernetworktimequeriesenabled"
+                }
+            ],
+            "property_order": 400
+        },
+        "BrowserSignin": {
+            "type": "integer",
+            "title": "Browser Signin",
+            "description": "Specify whether a user can sign into Microsoft Edge with their account and use account-related services like sync and single sign on.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#browsersignin"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disable browser sign-in",
+                    "Enable browser sign-in",
+                    "Force users to sign-in to use the browser"
+                ]
+            },
+            "property_order": 405
+        },
+        "BuiltinCertificateVerifierEnabled": {
+            "type": "boolean",
+            "title": "Use built-in certificate verifier",
+            "description": "Determines whether the built-in certificate verifier will be used to verify server certificates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#builtincertificateverifierenabled"
+                }
+            ],
+            "property_order": 410
+        },
+        "BuiltInDnsClientEnabled": {
+            "type": "boolean",
+            "title": "Use built-in DNS client",
+            "description": "Controls whether to use the built-in DNS client.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#builtindnsclientenabled"
+                }
+            ],
+            "property_order": 415
+        },
+        "CertificateTransparencyEnforcementDisabledForCas": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Disable Certificate Transparency enforcement for a list of subjectPublicKeyInfo hashes",
+            "description": "Disables enforcing Certificate Transparency requirements for a list of subjectPublicKeyInfo hashes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#certificatetransparencyenforcementdisabledforcas"
+                }
+            ],
+            "property_order": 420
+        },
+        "CertificateTransparencyEnforcementDisabledForLegacyCas": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Disable Certificate Transparency enforcement for a list of Legacy Certificate Authorities",
+            "description": "Disables enforcing Certificate Transparency requirements for a list of Legacy Certificate Authorities.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#certificatetransparencyenforcementdisabledforlegacycas"
+                }
+            ],
+            "property_order": 425
+        },
+        "CertificateTransparencyEnforcementDisabledForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Disable Certificate Transparency enforcement for a list of URLs",
+            "description": "Disables enforcing Certificate Transparency requirements to the listed URLs. Form your URL pattern according to https://go.microsoft.com/fwlink/?linkid=2095322",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#certificatetransparencyenforcementdisabledforurls"
+                }
+            ],
+            "property_order": 430
+        },
+        "ClearBrowsingDataOnExit": {
+            "type": "boolean",
+            "title": "Clear browsing data when Microsoft Edge closes",
+            "default": false,
+            "description": "If you enable this policy, all browsing data is deleted each time Microsoft Edge closes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#clearbrowsingdataonexit"
+                }
+            ],
+            "property_order": 435
+        },
+        "ClearCachedImagesAndFilesOnExit": {
+            "type": "boolean",
+            "title": "Clear cached images and files when Edge quits",
+            "description": "Clear cached images and files when Microsoft Edge closes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#clearcachedimagesandfilesonexit"
+                }
+            ],
+            "property_order": 440
+        },
+        "CollectionsServicesAndExportsBlockList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Blocklist Item"
+            },
+            "title": "Services and Export Collection Blocklist",
+            "description": "Block user access to a specified list of services and export targets in Collections. This includes displaying additional data from Bing and exporting collections to Microsoft products or external partners.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#collectionsservicesandexportsblocklist"
+                }
+            ],
+            "property_order": 445
+        },
+        "CommandLineFlagSecurityWarningsEnabled": {
+            "type": "boolean",
+            "title": "Command Line Flag Security Warnings Enabled",
+            "default": true,
+            "description": "If disabled, prevents security warnings from appearing when Edge is launched with some potentially dangerous command-line flags.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#commandlineflagsecuritywarningsenabled"
+                }
+            ],
+            "property_order": 450
+        },
+        "ComponentUpdatesEnabled": {
+            "type": "boolean",
+            "title": "Edge component updates",
+            "default": true,
+            "description": "Enables component updates for all components in Microsoft Edge when not set or set to True.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#componentupdatesenabled"
+                }
+            ],
+            "property_order": 455
+        },
+        "ConfigureDoNotTrack": {
+            "type": "boolean",
+            "title": "Configure Do Not Track",
+            "description": "Specify whether to send Do Not Track requests to websites that ask for tracking info.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#configuredonottrack"
+                }
+            ],
+            "property_order": 460
+        },
+        "ConfigureOnlineTextToSpeech": {
+            "type": "boolean",
+            "title": "Configure Online Text To Speech",
+            "default": true,
+            "description": "If you enable or don't configure this policy, web-based applications that use the SpeechSynthesis API can use Online Text to Speech voice fonts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#configureonlinetexttospeech"
+                }
+            ],
+            "property_order": 465
+        },
+        "CustomHelpLink": {
+            "type": "string",
+            "title": "Specify custom help link",
+            "description": "Specify a link for the Help menu or the F1 key.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#customhelplink"
+                }
+            ],
+            "property_order": 470
+        },
+        "DNSInterceptionChecksEnabled": {
+            "type": "boolean",
+            "title": "DNS interception checks enabled",
+            "default": true,
+            "description": "This policy configures a local switch that can be used to disable DNS interception checks. These checks attempt to discover whether the browser is behind a proxy that redirects unknown host names.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#dnsinterceptionchecksenabled"
+                }
+            ],
+            "property_order": 475
+        },
+        "DefaultBrowserSettingEnabled": {
+            "type": "boolean",
+            "title": "Set Microsoft Edge as Default Browser",
+            "description": "Configures the default browser checks in Microsoft Edge and prevents users from changing them. If set to true, Edge will always checks on startup whether it is the default browser and automatically registers itself, if possible.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultbrowsersettingenabled"
+                }
+            ],
+            "property_order": 480
+        },
+        "DefaultSearchProviderContextMenuAccessAllowed": {
+            "type": "boolean",
+            "title": "Allow Default Search Provider on Context Menu",
+            "default": true,
+            "description": "Allow default search provider context menu search access",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultsearchprovidercontextmenuaccessallowed"
+                }
+            ],
+            "property_order": 485
+        },
+        "DeveloperToolsAvailability": {
+            "type": "integer",
+            "title": "Control where Developer Tools can be used",
+            "description": "Allows you to control where Developer Tools can be used.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#developertoolsavailability"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disallow usage of the Developer Tools on extensions installed by enterprise policy, allow usage of the Developer Tools in other contexts",
+                    "Allow usage of the Developer Tools",
+                    "Disallow usage of the Developer Tools"
+                ]
+            },
+            "property_order": 490
+        },
+        "DiagnosticData": {
+            "type": "integer",
+            "title": "Send Edge Browser Diagnostic Data",
+            "description": "Send required and optional diagnostic data about browser usage. 'RequiredData' sends required diagnostic data but turns off optional diagnostic data collection. Microsoft Edge will send required diagnostic data to keep Microsoft Edge secure, up to date and performing as expected. 'OptionalData' sends optional diagnostic data includes data about browser usage, websites that are visited, crash reports sent to Microsoft for product and service improvement.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#diagnosticdata"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Off (not recommended)",
+                    "Required data",
+                    "Optional data"
+                ]
+            },
+            "property_order": 495
+        },
+        "Disable3DAPIs": {
+            "type": "boolean",
+            "title": "Disable support for 3D graphics APIs",
+            "default": false,
+            "description": "Enabling this setting prevents web pages from accessing the graphics processing unit (GPU). Specifically, web pages can not access the WebGL API and plugins can not use the Pepper 3D API.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#disable3dapis"
+                }
+            ],
+            "property_order": 500
+        },
+        "DisableScreenshots": {
+            "type": "boolean",
+            "title": "Disable taking screenshots",
+            "default": false,
+            "description": "If enabled, screenshots cannot be taken using keyboard shortcuts or extension APIs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#disablescreenshots"
+                }
+            ],
+            "property_order": 505
+        },
+        "DiskCacheDir": {
+            "type": "string",
+            "title": "Set disk cache directory",
+            "description": "Configures the directory that Microsoft Edge will use for storing cached files on the disk. See https://www.chromium.org/administrators/policy-list-3/user-data-directory-variables for a list of variables that can be used. To avoid data loss or other unexpected errors this policy should not be set to a volume's root directory or to a directory used for other purposes, because Edge manages its contents",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#diskcachedir"
+                }
+            ],
+            "property_order": 510
+        },
+        "DiskCacheSize": {
+            "type": "integer",
+            "title": "Set disk cache size",
+            "description": "Configures the cache size that Microsoft Edge will use for storing cached files on the disk. The value specified in this policy is not a hard boundary but rather a suggestion to the caching system, any value below a few megabytes is too small and will be rounded up to a sane minimum. If the value of this policy is 0, the default cache size will be used but the user will not be able to change it.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#diskcachesize"
+                }
+            ],
+            "property_order": 515
+        },
+        "DownloadDirectory": {
+            "type": "string",
+            "title": "Set download directory",
+            "description": "Configures the directory that Microsoft Edge will use for downloading files. If you set this policy, Edge will use the provided directory regardless whether the user has specified one or enabled the flag to be prompted for download location every time. If this policy is left not set the default download directory will be used and the user will be able to change it.\n\nSee https://go.microsoft.com/fwlink/?linkid=2095041 for a list of variables that can be used.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#downloaddirectory"
+                }
+            ],
+            "property_order": 520
+        },
+        "DownloadRestrictions": {
+            "type": "integer",
+            "title": "Download restrictions",
+            "description": "Configures the type of downloads that Microsoft Edge will completely block, without letting users override the security decision.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#downloadrestrictions"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "No special restrictions",
+                    "Block dangerous downloads",
+                    "Block potentially dangerous downloads",
+                    "Block all downloads"
+                ]
+            },
+            "property_order": 525
+        },
+        "EdgeCollectionsEnabled": {
+            "type": "boolean",
+            "title": "Enable the Collections feature",
+            "default": true,
+            "description": "Lets you allow users to access the Collections feature, where they can collect, organize, share, and export content more efficiently and with Office integration.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#edgecollectionsenabled"
+                }
+            ],
+            "property_order": 530
+        },
+        "EditFavoritesEnabled": {
+            "type": "boolean",
+            "title": "Enable or disable favorites editing",
+            "default": true,
+            "description": "If you enable this setting, favorites can be added, removed or modified. This is the default also when this policy is not set.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#editfavoritesenabled"
+                }
+            ],
+            "property_order": 535
+        },
+        "EnableDeprecatedWebPlatformFeatures": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Enable deprecated web platform features for a limited time",
+            "description": "ExampleDeprecatedFeature_EffectiveUntil20080902 - Enable ExampleDeprecatedFeature API through 2008/09/02\nSpecify a list of deprecated web platform features to re-enable temporarily.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#enabledeprecatedwebplatformfeatures"
+                }
+            ],
+            "property_order": 540
+        },
+        "EnableDomainActionsDownload": {
+            "type": "boolean",
+            "title": "Enable Domain Actions Download from Microsoft",
+            "description": "If you enable this policy, the list of Domain Actions will continue to be downloaded from the Experimentation and Configuration Service.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#enabledomainactionsdownload"
+                }
+            ],
+            "property_order": 545
+        },
+        "EnableOnlineRevocationChecks": {
+            "type": "boolean",
+            "title": "Whether online OCSP/CRL checks are performed",
+            "default": false,
+            "description": "In light of the fact that soft-fail, online revocation checks provide no effective security benefit, they are disabled by default in Google Chrome version 19 and later. By setting this policy to true, the previous behavior is restored and online OCSP/CRL checks will be performed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#enableonlinerevocationchecks"
+                }
+            ],
+            "property_order": 550
+        },
+        "EnableSha1ForLocalAnchors": {
+            "type": "boolean",
+            "title": "Enable SHA-1 for Local Anchors",
+            "default": false,
+            "description": "Allow certificates signed using SHA-1 when issued by local trust anchors (deprecated).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#enablesha1forlocalanchors"
+                }
+            ],
+            "property_order": 555
+        },
+        "EnterpriseHardwarePlatformAPIEnabled": {
+            "type": "boolean",
+            "title": "Enable Managed Extensions to use the Enterprise Hardware API",
+            "default": false,
+            "description": "When this policy is set to enabled, extensions installed by enterprise policy are allowed to use the Enterprise Hardware Platform API.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#enterprisehardwareplatformapienabled"
+                }
+            ],
+            "property_order": 560
+        },
+        "ExperimentationAndConfigurationServiceControl": {
+            "type": "integer",
+            "title": "Control Experimentation and Configuration Service",
+            "description": "Control communication with the Experimentation and Configuration Service",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#experimentationandconfigurationservicecontrol"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Retrieve configurations and experiments",
+                    "Retrieve configurations only",
+                    "Disable communication with the Experimentation and Configuration Service"
+                ]
+            },
+            "property_order": 565
+        },
+        "ExternalProtocolDialogShowAlwaysOpenCheckbox": {
+            "type": "boolean",
+            "title": "Show an \"Always open\" checkbox in external protocol dialog",
+            "default": false,
+            "description": "If you set to True, when an external protocol confirmation prompt is shown, the user can select \"Always open\". The user won\u2019t get any future confirmation prompts for this protocol.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#externalprotocoldialogshowalwaysopencheckbox"
+                }
+            ],
+            "property_order": 570
+        },
+        "ForceEphemeralProfiles": {
+            "type": "boolean",
+            "title": "Ephemeral profile",
+            "default": false,
+            "description": "If set to enabled this policy forces the profile to be switched to ephemeral mode. If this policy is specified as an OS policy (e.g. GPO on Windows) it will apply to every profile on the system; if the policy is set as a Cloud policy it will apply only to a profile signed in with a managed account.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#forceephemeralprofiles"
+                }
+            ],
+            "property_order": 575
+        },
+        "ForceBingSafeSearch": {
+            "type": "integer",
+            "title": "Force Bing SafeSearch",
+            "description": "Forces queries in Google Web Search to be done with SafeSearch set to active and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#forcebingsafesearch"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Don't configure search restrictions in Bing",
+                    "Configure moderate search restrictions in Bing",
+                    "Configure strict search restrictions in Bing"
+                ]
+            },
+            "property_order": 580
+        },
+        "ForceCertificatePromptsOnMultipleMatches": {
+            "type": "boolean",
+            "title": "Force Certificate Prompt on Multiple Matches",
+            "description": "Configure whether Microsoft Edge should automatically select a certificate when there are multiple certificate matches for a site configured with \"AutoSelectCertificateForUrls\" (https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autoselectcertificateforurls).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#tls13hardeningforlocalanchorsenabled"
+                }
+            ],
+            "property_order": 585
+        },
+        "ForceGoogleSafeSearch": {
+            "type": "boolean",
+            "title": "Force Google SafeSearch",
+            "default": false,
+            "description": "Forces queries in Google Web Search to be done with SafeSearch set to active and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#forcegooglesafesearch"
+                }
+            ],
+            "property_order": 590
+        },
+        "ForceLegacyDefaultReferrerPolicy": {
+            "type": "boolean",
+            "title": "Force Legacy Default Referrer Policy",
+            "default": false,
+            "description": "Use a default referrer policy of no-referrer-when-downgrade.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#forcelegacydefaultreferrerpolicy"
+                }
+            ],
+            "property_order": 595
+        },
+        "ForceYouTubeRestrict": {
+            "type": "integer",
+            "title": "Force minimum YouTube Restricted Mode",
+            "description": "Enforces a minimum Restricted Mode on YouTube and prevents users from picking a less restricted mode.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#forceyoutuberestrict"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Do not enforce Restricted Mode on YouTube",
+                    "Enforce at least Moderate Restricted Mode on YouTube",
+                    "Enforce Strict Restricted Mode for YouTube"
+                ]
+            },
+            "property_order": 600
+        },
+        "FullscreenAllowed": {
+            "type": "boolean",
+            "default": true,
+            "description": "Allow full screen mode",
+            "property_order": 605
+        },
+        "GoToIntranetSiteForSingleWordEntryInAddressBar": {
+            "type": "boolean",
+            "title": "Force direct intranet site navigation instead of searching on single word entries in the Address Bar",
+            "default": false,
+            "description": "If you enable this policy, the top auto-suggest result in the address bar suggestion list will navigate to intranet sites if the text entered in the address bar is a single word without punctuation.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#gotointranetsiteforsinglewordentryinaddressbar"
+                }
+            ],
+            "property_order": 610
+        },
+        "HSTSPolicyBypassList": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Configure the list of names that will bypass the HSTS policy check",
+            "description": "Hostnames specified in this list will be exempt from the HSTS policy check that could potentially upgrade requests from \"http://\" to \"https://\". Only single-label hostnames are allowed in this policy.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#hstspolicybypasslist"
+                }
+            ],
+            "property_order": 615
+        },
+        "HardwareAccelerationModeEnabled": {
+            "type": "boolean",
+            "title": "Use hardware acceleration when available",
+            "default": true,
+            "description": "If this policy is set to true or left unset, hardware acceleration will be enabled unless a certain GPU feature is on the denylist.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#hardwareaccelerationmodeenabled"
+                }
+            ],
+            "property_order": 620
+        },
+        "HideFirstRunExperience": {
+            "type": "boolean",
+            "title": "Hide the First-run experience and splash screen",
+            "default": false,
+            "description": "If you enable this policy, the First-run experience and the splash screen will not be shown to users when they run Microsoft Edge for the first time.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#disable3dapis"
+                }
+            ],
+            "property_order": 625
+        },
+        "ImportAutofillFormData": {
+            "type": "boolean",
+            "title": "Import autofill form data from default browser on first run",
+            "description": "This policy forces the autofill form data to be imported from the previous default browser if enabled. If enabled, this policy also affects the import dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importautofillformdata"
+                }
+            ],
+            "property_order": 630
+        },
+        "ImportBrowserSettings": {
+            "type": "boolean",
+            "title": "Allow importing of browser settings",
+            "description": "Allows users to import browser settings from another browser into Microsoft Edge.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importbrowsersettings"
+                }
+            ],
+            "property_order": 635
+        },
+        "ImportCookies": {
+            "type": "boolean",
+            "title": "Allow importing of cookies",
+            "description": "Allow importing of cookies.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importcookies"
+                }
+            ],
+            "property_order": 640
+        },
+        "ImportExtensions": {
+            "type": "boolean",
+            "title": "Allow importing of extensions",
+            "description": "Allow importing of extensions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importextensions"
+                }
+            ],
+            "property_order": 645
+        },
+        "ImportFavorites": {
+            "type": "boolean",
+            "title": "Import Favorites from default browser on first run",
+            "default": true,
+            "description": "This policy forces bookmarks to be imported from the current default browser if enabled. If enabled, this policy also affects the import dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importfavorites"
+                }
+            ],
+            "property_order": 650
+        },
+        "ImportHistory": {
+            "type": "boolean",
+            "title": "Import browsing history from default browser on first run",
+            "description": "This policy forces the browsing history to be imported from the current default browser if enabled. If enabled, this policy also affects the import dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importhistory"
+                }
+            ],
+            "property_order": 655
+        },
+        "ImportHomepage": {
+            "type": "boolean",
+            "title": "Import of homepage from default browser on first run",
+            "description": "This policy forces the home page to be imported from the current default browser if enabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importhomepage"
+                }
+            ],
+            "property_order": 660
+        },
+        "ImportOpenTabs": {
+            "type": "boolean",
+            "title": "Allow importing of open tabs",
+            "description": "Allows users to import open and pinned tabs from another browser into Microsoft Edge.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importopentabs"
+                }
+            ],
+            "property_order": 665
+        },
+        "ImportPaymentInfo": {
+            "type": "boolean",
+            "title": "Allow importing of payment info",
+            "description": "Allows users to import payment info from another browser into Microsoft Edge.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importpaymentinfo"
+                }
+            ],
+            "property_order": 670
+        },
+        "ImportSavedPasswords": {
+            "type": "boolean",
+            "title": "Import saved passwords from default browser on first run",
+            "description": "This policy forces the saved passwords to be imported from the previous default browser if enabled. If enabled, this policy also affects the import dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importsavedpasswords"
+                }
+            ],
+            "property_order": 675
+        },
+        "ImportSearchEngine": {
+            "type": "boolean",
+            "title": "Import search engines from default browser on first run",
+            "description": "This policy forces search engines to be imported from the current default browser if enabled. If enabled, this policy also affects the import dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importsearchengine"
+                }
+            ],
+            "property_order": 680
+        },
+        "ImportShortcuts": {
+            "type": "boolean",
+            "title": "Import shortcuts",
+            "description": "Allow importing of shortcuts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#importshortcuts"
+                }
+            ],
+            "property_order": 685
+        },
+        "InPrivateModeAvailability": {
+            "type": "integer",
+            "title": "Private mode availability",
+            "description": "Specifies whether the user may open pages in Private mode in Microsoft Edge.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#inprivatemodeavailability"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Private mode available",
+                    "Private mode disabled",
+                    "Private mode forced"
+                ]
+            },
+            "property_order": 690
+        },
+        "IsolateOrigins": {
+            "type": "string",
+            "title": "Enable Site Isolation for specified origins",
+            "description": "Specify origins to run in isolation, in their own process. This policy also isolates origins named by subdomains - for example, specifying https://contoso.com/ will cause https://foo.contoso.com/ to be isolated as part of the https://contoso.com/ site. If the policy is enabled, each of the named origins in a comma-separated list will run in its own process. If you disable this policy, then both the 'IsolateOrigins' and 'SitePerProcess' features are disabled. Users can still enable 'IsolateOrigins' policy manually, via command line flags. If you don't configure the policy, the user can change this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#isolateorigins"
+                }
+            ],
+            "property_order": 695
+        },
+        "ManagedFavorites": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Managed Favorites Folder Name",
+                "description": "The top-level managed favorites folder name.",
+                "properties": {
+                    "toplevel_name": {
+                        "type": "string",
+                        "title": "Top Level Name"
+                    }
+                }
+            },
+            "title": "Managed Favorites",
+            "description": "Configures a list of managed bookmarks.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#managedfavorites"
+                }
+            ],
+            "property_order": 700
+        },
+        "ManagedSearchEngines": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Search engine",
+                "properties": {
+                    "is_default": {
+                        "type": "boolean",
+                        "title": "Default?"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "keyword": {
+                        "type": "string"
+                    },
+                    "search_url": {
+                        "type": "string"
+                    },
+                    "suggest_url": {
+                        "type": "string"
+                    },
+                    "image_search_url": {
+                        "type": "string"
+                    },
+                    "encoding": {
+                        "type": "string"
+                    }
+                }
+            },
+            "title": "Managed search engines",
+            "description": "Manage Search Engines",
+            "property_order": 705
+        },
+        "NewTabPageSearchBox": {
+            "type": "string",
+            "title": "New Tab Page Search Box",
+            "description": "Configure the new tab page search box experience. You can configure the new tab page search box to use \"Search box (Recommended)\" or \"Address bar\" to search on new tabs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagesearchbox"
+                }
+            ],
+            "enum": [
+                "bing",
+                "redirect"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Search box",
+                    "Address bar"
+                ]
+            },
+            "property_order": 710
+        },
+        "MaxConnectionsPerProxy": {
+            "type": "integer",
+            "title": "Maximal number of concurrent connections to the proxy server",
+            "description": "Specifies the maximal number of simultaneous connections to the proxy server.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#maxconnectionsperproxy"
+                }
+            ],
+            "property_order": 715
+        },
+        "MediaRouterCastAllowAllIPs": {
+            "type": "boolean",
+            "title": "Allow Google Cast to connect to Cast devices on all IP addresses.",
+            "description": "If this policy is set to true, Google Cast will connect to Cast devices on all IP addresses, not just RFC1918/RFC4913 private addresses.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#mediaroutercastallowallips"
+                }
+            ],
+            "property_order": 720
+        },
+        "MetricsReportingEnabled": {
+            "type": "boolean",
+            "title": "Enable reporting of usage and crash-related data",
+            "description": "Enables anonymous reporting of usage and crash-related data about Microsoft Edge to Microsoft and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#metricsreportingenabled"
+                }
+            ],
+            "property_order": 725
+        },
+        "OmniboxMSBProviderEnabled": {
+            "type": "boolean",
+            "title": "Enable Microsoft Search for Business provider in omnibox",
+            "default": true,
+            "description": "Enables the display of relevant MSB suggestions in omnibox when user types a search string in the addressbar",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#omniboxmsbproviderenabled"
+                }
+            ],
+            "property_order": 730
+        },
+        "PaymentMethodQueryEnabled": {
+            "type": "boolean",
+            "title": "Allow websites to query for available payment methods",
+            "default": true,
+            "description": "Allows you to set whether websites can check if the user has payment methods saved.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#paymentmethodqueryenabled"
+                }
+            ],
+            "property_order": 735
+        },
+        "PersonalizationReportingEnabled": {
+            "type": "boolean",
+            "title": "Allow personalization of ads, search and news by sending browsing history to Microsoft",
+            "default": true,
+            "description": "This policy prevents Microsoft from collecting a user's Microsoft Edge browsing history to be used for personalizing advertising, search, news and other Microsoft services.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#personalizationreportingenabled"
+                }
+            ],
+            "property_order": 740
+        },
+        "ProactiveAuthEnabled": {
+            "type": "boolean",
+            "title": "Enable Proactive Authentication",
+            "default": true,
+            "description": "Lets you configure whether to turn on Proactive Authentication.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proactiveauthenabled"
+                }
+            ],
+            "property_order": 745
+        },
+        "NetworkPredictionOptions": {
+            "type": "integer",
+            "title": "Enable network prediction",
+            "description": "Enables network prediction and prevents users from changing this setting. This controls DNS prefetching, TCP and SSL preconnection, and prerendering of web pages.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#networkpredictionoptions"
+                }
+            ],
+            "enum": [
+                0,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Predict network actions on any network connection",
+                    "Do not predict network actions on any network connection"
+                ]
+            },
+            "property_order": 750
+        },
+        "OverrideSecurityRestrictionsOnInsecureOrigin": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Origins or hostname patterns to be treated as secure context",
+            "description": "The policy specifies a list of origins (URLs) or hostname patterns (such as \"*.example.com\") to be treated as secure contexts. The intent is to allow organizations to set up a staging server for internal web development, so that their developers can test out features requiring secure contexts without having to deploy TLS on the staging server.\n\nSetting a list of URLs in this policy has the same effect as setting the command-line flag '--unsafely-treat-insecure-origin-as-secure' to a comma-separated list of the same URLs. If the policy is set, it will override the command-line flag.\n\nFor more information on secure contexts, see https://www.w3.org/TR/secure-contexts/",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#overridesecurityrestrictionsoninsecureorigin"
+                }
+            ],
+            "property_order": 755
+        },
+        "PromotionalTabsEnabled": {
+            "type": "boolean",
+            "title": "Enable showing full-tab promotional content",
+            "default": true,
+            "description": "Allows you to control the presentation of full-tab promotional and/or educational content in Microsoft Edge.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#promotionaltabsenabled"
+                }
+            ],
+            "property_order": 760
+        },
+        "PromptForDownloadLocation": {
+            "type": "boolean",
+            "title": "Ask where to save each file before downloading",
+            "description": "If the policy is enabled, the user will be asked where to save each file before downloading.\nIf the policy is disabled, downloads will start immediately, and the user will not be asked where to save the file.\nIf the policy is not configured, the user will be able to change this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#promptfordownloadlocation"
+                }
+            ],
+            "property_order": 765
+        },
+        "ProxySettings": {
+            "type": "dictionary",
+            "title": "Proxy Settings",
+            "description": "Configures the proxy settings for Google Chrome. These proxy settings will be available for ARC-apps too.\n\nIf you enable this setting, Google Chrome and ARC-apps ignore all proxy-related options specified from the command line.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proxysettings"
+                }
+            ],
+            "properties": {
+                "ProxyMode": {
+                    "type": "string",
+                    "enum": [
+                        "direct",
+                        "system",
+                        "auto_detect",
+                        "fixed_server",
+                        "pac_script"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Never use proxy (ignores other fields)",
+                            "System (ignores other fields)",
+                            "Auto Detect (ignores other fields)",
+                            "Fixed (Uses ProxyServer & ProxyBypassList)",
+                            "Pac Script (Uses ProxyPacUrl & ProxyBypassList)"
+                        ]
+                    }
+                },
+                "ProxyPacUrl": {
+                    "type": "string",
+                    "pattern": "^https?://.*.pac$"
+                },
+                "ProxyServer": {
+                    "type": "string"
+                },
+                "ProxyBypassList": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^https?://.*"
+                    }
+                }
+            },
+            "property_order": 770
+        },
+        "QuicAllowed": {
+            "type": "boolean",
+            "title": "Allow QUIC protocol",
+            "default": true,
+            "description": "QUIC is a transport layer network protocol that can improve performance of web applications that currently use TCP.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#quicallowed"
+                }
+            ],
+            "property_order": 775
+        },
+        "RelaunchNotification": {
+            "type": "integer",
+            "title": "Notify a user that a browser relaunch is recommended or required",
+            "description": "Notify users that Microsoft Edge must be relaunched to apply a pending update.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#relaunchnotification"
+                }
+            ],
+            "enum": [
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show a recurring prompt to the user indicating that a relaunch is recommended",
+                    "Show a recurring prompt to the user indicating that a relaunch is required"
+                ]
+            },
+            "property_order": 780
+        },
+        "RelaunchNotificationPeriod": {
+            "type": "integer",
+            "title": "Update time period",
+            "description": "Allows you to set the time period, in milliseconds, over which users are notified that Microsoft Edge must be relaunched to apply a pending update.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#relaunchnotificationperiod"
+                }
+            ],
+            "property_order": 785
+        },
+        "ResolveNavigationErrorsUseWebService": {
+            "type": "boolean",
+            "title": "Enable resolution of navigation errors using a web service",
+            "description": "Allow Microsoft Edge to issue a dataless connection to a web service to probe networks for connectivity in cases like hotel and airport Wi-Fi.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#resolvenavigationerrorsusewebservice"
+                }
+            ],
+            "property_order": 790
+        },
+        "RestrictSigninToPattern": {
+            "type": "string",
+            "title": "Restrict which users are allowed to sign in to Google Chrome",
+            "description": "Determines which accounts can be set as browser primary accounts in Microsoft Edge (the account that is chosen during the Sync opt-in flow)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#restrictsignintopattern"
+                }
+            ],
+            "property_order": 795
+        },
+        "RunAllFlashInAllowMode": {
+            "type": "boolean",
+            "title": "Extend Flash content setting to all content",
+            "default": false,
+            "description": "If you enable this setting, all Flash content embedded on websites that have been set to allow Flash in content settings -- either by the user or by enterprise policy -- will be run, including content from other origins or small content.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#runallflashinallowmode"
+                }
+            ],
+            "property_order": 800
+        },
+        "SSLErrorOverrideAllowed": {
+            "type": "boolean",
+            "title": "Allow proceeding from the SSL warning page",
+            "default": true,
+            "description": "Edge shows a warning page when users navigate to sites that have SSL errors. By default or when this policy is set to true, users are allowed to click through these warning pages.\nSetting this policy to false disallows users to click through any warning page.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#sslerroroverrideallowed"
+                }
+            ],
+            "property_order": 805
+        },
+        "SSLVersionMin": {
+            "type": "string",
+            "title": "Minimum SSL version enabled",
+            "description": "If this policy is not configured then Microsoft Edge uses a default minimum version which is TLS 1.0.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#sslversionmin"
+                }
+            ],
+            "enum": [
+                "tls1",
+                "tls1.1",
+                "tls1.2"
+            ],
+            "options": {
+                "enum_titles": [
+                    "TLS 1.0",
+                    "TLS 1.1",
+                    "TLS 1.2"
+                ]
+            },
+            "property_order": 810
+        },
+        "SaveCookiesOnExit": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "URL"
+            },
+            "title": "Save Cookies on Exit",
+            "description": "Save cookies when Microsoft Edge closes. When this policy is enabled, the specified set of cookies is exempt from deletion when the browser closes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#savecookiesonexit"
+                }
+            ],
+            "property_order": 815
+        },
+        "SavingBrowserHistoryDisabled": {
+            "type": "boolean",
+            "title": "Disable saving browser history",
+            "default": false,
+            "description": "Disables saving browser history in Microsft Edge and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#savingbrowserhistorydisabled"
+                }
+            ],
+            "property_order": 820
+        },
+        "SearchSuggestEnabled": {
+            "type": "boolean",
+            "title": "Enable search suggestions",
+            "description": "Enables search suggestions in Microsoft Edge's omnibox and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#searchsuggestenabled"
+                }
+            ],
+            "property_order": 825
+        },
+        "SecurityKeyPermitAttestation": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "URLs/domains automatically permitted direct Security Key attestation",
+            "description": "Specifies URLs and domains for which no prompt will be shown when attestation certificates from Security Keys are requested. Additionally, a signal will be sent to the Security Key indicating that individual attestation may be used. Without this, users will be prompted in Chrome 65+ when sites request attestation of Security Keys.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#securitykeypermitattestation"
+                }
+            ],
+            "property_order": 830
+        },
+        "SendSiteInfoToImproveServices": {
+            "type": "boolean",
+            "title": "Send site information to improve Microsoft services",
+            "description": "This policy enables sending info about websites visited in Microsoft Edge to Microsoft to improve services like search.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#sendsiteinfotoimproveservices"
+                }
+            ],
+            "property_order": 835
+        },
+        "ShowOfficeShortcutInFavoritesBar": {
+            "type": "boolean",
+            "title": "Show Microsoft Office shortcut in favorites bar",
+            "default": true,
+            "description": "Specifies whether to include a shortcut to Office.com in the favorites bar. For users signed into Microsoft Edge the shortcut takes users to their Microsoft Office apps and docs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#showofficeshortcutinfavoritesbar"
+                }
+            ],
+            "property_order": 840
+        },
+        "SignedHTTPExchangeEnabled": {
+            "type": "boolean",
+            "title": "Enabled Signed HTTP Exchange (SXG) support",
+            "default": true,
+            "description": "Enable support for Signed HTTP Exchange (SXG).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#signedhttpexchangeenabled"
+                }
+            ],
+            "property_order": 845
+        },
+        "SitePerProcess": {
+            "type": "boolean",
+            "title": "Enable Site Isolation for every site",
+            "description": "You might want to look at the IsolateOrigins policy setting to get the best of both worlds, isolation and limited impact for users, by using IsolateOrigins with a list of the sites you want to isolate. This setting, SitePerProcess, isolates all sites. If the policy is enabled, each site will run in its own process. If the policy is disabled, no explicit Site Isolation will happen and field trials of IsolateOrigins and SitePerProcess will be disabled. Users will still be able to enable SitePerProcess manually. If the policy is not configured, the user will be able to change this setting. On Google Chrome OS, it is recommended to also set the DeviceLoginScreenSitePerProcess device policy to the same value. If the values specified by the two policies don't match, a delay may be incurred when entering a user session while the value specified by user policy is being applied.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#siteperprocess"
+                }
+            ],
+            "property_order": 850
+        },
+        "SpellcheckEnabled": {
+            "type": "boolean",
+            "title": "Enable spellcheck",
+            "description": "If this policy is not set or enabled, the user is allowed to use spellcheck.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#spellcheckenabled"
+                }
+            ],
+            "property_order": 855
+        },
+        "StricterMixedContentTreatmentEnabled": {
+            "type": "boolean",
+            "title": "Enable stricter mixed content treatment",
+            "description": "Enable stricter treatment for mixed content.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#strictermixedcontenttreatmentenabled"
+                }
+            ],
+            "property_order": 860
+        },
+        "SuppressUnsupportedOSWarning": {
+            "type": "boolean",
+            "title": "Suppress the unsupported OS warning",
+            "description": "Suppresses the warning that appears when Microsoft Edge is running on a computer or operating system that is no longer supported.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#suppressunsupportedoswarning"
+                }
+            ],
+            "property_order": 865
+        },
+        "SyncDisabled": {
+            "type": "boolean",
+            "title": "Disable synchronization of data with Google",
+            "description": "Disables data synchronization in Google Chrome using Google-hosted synchronization services and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#syncdisabled"
+                }
+            ],
+            "property_order": 870
+        },
+        "SyncTypesListDisabled": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Types",
+                "enum": [
+                    "addressesAndMore",
+                    "collections",
+                    "extensions",
+                    "favorites",
+                    "passwords",
+                    "settings"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Addresses and more",
+                        "Collections",
+                        "Extensions",
+                        "Favorites",
+                        "Passwords",
+                        "Settings"
+                    ]
+                }
+            },
+            "title": "Disable synchronization of selected data types",
+            "description": "Configure the list of types that are excluded from synchronization.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#synctypeslistdisabled"
+                }
+            ],
+            "property_order": 875
+        },
+        "TLS13HardeningForLocalAnchorsEnabled": {
+            "type": "boolean",
+            "title": "Enable TLS 1.3 Hardening",
+            "description": "Enable a TLS 1.3 security feature for local trust anchors",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#tls13hardeningforlocalanchorsenabled"
+                }
+            ],
+            "property_order": 880
+        },
+        "TLSCipherSuiteDenyList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "TLS Cipher Suites",
+                "enum": [
+                    "0x1303",
+                    "0xcca9",
+                    "0xcca8"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "TLS_CHACHA20_POLY1305_SHA256",
+                        "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+                        "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256"
+                    ]
+                }
+            },
+            "title": "TLS Cipher Suite Deny List",
+            "description": "Specify the TLS cipher suites to disable. If you don't configure this policy, the browser will choose which TLS cipher suites to use. This policy does not affect QUIC-based connections.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#tlsciphersuitedenylist"
+                }
+            ],
+            "property_order": 885
+        },
+        "TabFreezingEnabled": {
+            "type": "boolean",
+            "title": "Allow freezing of background tabs",
+            "default": true,
+            "description": "Controls whether Microsoft Edge can freeze tabs that are in the background for at least 5 minutes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#tabfreezingenabled"
+                }
+            ],
+            "property_order": 890
+        },
+        "TaskManagerEndProcessEnabled": {
+            "type": "boolean",
+            "title": "Enable ending processes in Task Manager",
+            "default": true,
+            "description": "If set to false, the 'End process' button is disabled in the Task Manager.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#taskmanagerendprocessenabled"
+                }
+            ],
+            "property_order": 895
+        },
+        "TotalMemoryLimitMb": {
+            "type": "integer",
+            "title": "Set limit on megabytes of memory a single Microsoft Edge instance can use.",
+            "description": "Configures the amount of memory that a single Microsoft Edge instance can use before tabs start getting discarded to save memory. The memory used by the tab will be freed and the tab will have to be reloaded when switched to.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#totalmemorylimitmb"
+                }
+            ],
+            "property_order": 900
+        },
+        "TrackingPrevention": {
+            "type": "integer",
+            "title": "Tracking Prevention",
+            "description": "Block tracking of users' web-browsing activity",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#trackingprevention"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Off (no tracking prevention)",
+                    "Basic (blocks harmful trackers, content and ads will be personalized)",
+                    "Balanced (blocks harmful trackers and trackers from sites user has not visited; content and ads will be less personalized)",
+                    "Strict (blocks harmful trackers and majority of trackers from all sites; content and ads will have minimal personalization. Some parts of sites might not work)"
+                ]
+            },
+            "property_order": 905
+        },
+        "TranslateEnabled": {
+            "type": "boolean",
+            "title": "Enable Translate",
+            "description": "Enables the integrated Microsoft translation service on Microsoft Edge.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#translateenabled"
+                }
+            ],
+            "property_order": 910
+        },
+        "URLBlocklist": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Block access to a list of URLs",
+            "description": "Define a list of sites, based on URL patterns, that are blocked (your users can't load them). Format the URL pattern according to https://go.microsoft.com/fwlink/?linkid=2095322.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#urlblocklist"
+                }
+            ],
+            "property_order": 915
+        },
+        "UserAgentClientHintsEnabled": {
+            "type": "boolean",
+            "title": "Enable User-Agent Client Hints",
+            "default": true,
+            "description": "Enable the User-Agent Client Hints feature.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#useragentclienthintsenabled"
+                }
+            ],
+            "property_order": 920
+        },
+        "URLAllowlist": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow access to a list of URLs",
+            "description": "Allow access to the listed URLs, as exceptions to the URL denylist. Format the URL pattern according to https://go.microsoft.com/fwlink/?linkid=2095322.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#urlallowlist"
+                }
+            ],
+            "property_order": 925
+        },
+        "UserFeedbackAllowed": {
+            "type": "boolean",
+            "title": "Allow user feedback",
+            "default": true,
+            "description": "Allow user feedback. If the policy is set to false, users can not send feedback to Microsoft.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#userfeedbackallowed"
+                }
+            ],
+            "property_order": 930
+        },
+        "UserDataDir": {
+            "type": "string",
+            "title": "Set user data directory",
+            "description": "Configures the directory that Microsoft Edge will use for storing user data. See https://go.microsoft.com/fwlink/?linkid=2095041 for a list of variables that can be used.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#userdatadir"
+                }
+            ],
+            "property_order": 935
+        },
+        "VideoCaptureAllowed": {
+            "type": "boolean",
+            "title": "Allow or deny video capture",
+            "default": true,
+            "description": "If enabled or not configured (default), the user will be prompted for\nvideo capture access except for URLs configured in the VideoCaptureAllowedUrls list which will be granted access without prompting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#videocaptureallowed"
+                }
+            ],
+            "property_order": 940
+        },
+        "VideoCaptureAllowedUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "URLs that will be granted access to video capture devices without prompt",
+            "description": "Patterns in this list will be matched against the security\norigin of the requesting URL.  If a match is found, access to audio\ncapture devices will be granted without prompt.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#videocaptureallowedurls"
+                }
+            ],
+            "property_order": 945
+        },
+        "WPADQuickCheckEnabled": {
+            "type": "boolean",
+            "title": "Enable WPAD optimization",
+            "default": true,
+            "description": "Allows you to turn off WPAD (Web Proxy Auto-Discovery) optimization in Microsoft Edge",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#wpadquickcheckenabled"
+                }
+            ],
+            "property_order": 950
+        },
+        "WebAppInstallForceList": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "pattern": "^https?://.*"
+                    },
+                    "create_desktop_shortcut": {
+                        "type": "boolean"
+                    },
+                    "default_launch_container": {
+                        "type": "string",
+                        "enum": [
+                            "window",
+                            "tab"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Window",
+                                "Tab"
+                            ]
+                        }
+                    }
+                }
+            },
+            "title": "WebApp Force Install List",
+            "description": "Specifies a list of websites that are installed silently, without user interaction, and which cannot be uninstalled nor disabled by the user.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webappinstallforcelist"
+                }
+            ],
+            "property_order": 955
+        },
+        "WebComponentsV0Enabled": {
+            "type": "boolean",
+            "default": false,
+            "description": "Re-enable Web Components v0 API until M84.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webcomponentsv0enabled"
+                }
+            ],
+            "property_order": 960
+        },
+        "WebDriverOverridesIncompatiblePolicies": {
+            "type": "boolean",
+            "title": "Allow WebDriver to Override Incompatible Policies",
+            "default": false,
+            "description": "This policy allows users of the WebDriver feature to override policies which can interfere with its operation. This policy is deprecated. It is currently supported but will become obsolete in a future release.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies"
+                }
+            ],
+            "property_order": 965
+        },
+        "WebRtcLocalIpsAllowedUrls": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "URLs"
+            },
+            "description": "Manage exposure of local IP addressess by WebRTC",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webrtclocalipsallowedurls"
+                }
+            ],
+            "property_order": 970
+        },
+        "WebRtcLocalhostIpHandling": {
+            "type": "string",
+            "description": "Manage exposure of local IP addressess by WebRTC",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webrtclocalhostiphandling"
+                }
+            ],
+            "enum": [
+                "default",
+                "default_public_and_private_interfaces",
+                "default_public_interface_only",
+                "disable_non_proxied_udp"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow all interfaces",
+                    "Allow public and private interfaces over http default route",
+                    "Allow public interface over http default route, but don't expose local IP",
+                    "Use TCP unless proxy server supports UDP and don't expose local IP"
+                ]
+            },
+            "property_order": 975
+        },
+        "WebRtcUdpPortRange": {
+            "type": "string",
+            "title": "Restrict the range of local UDP ports used by WebRTC",
+            "description": "If the policy is set, the UDP port range used by WebRTC is restricted to the specified port interval (endpoints included).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webrtcudpportrange"
+                }
+            ],
+            "property_order": 980
+        },
+        "NativeMessagingBlocklist": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Names of the forbidden native messaging hosts (or * for all)",
+            "description": "Allows you to specify which native messaging hosts that should not be loaded. A denylist value of '*' means all native messaging hosts are on the denylist unless they are explicitly listed in the allowlist.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#nativemessagingblocklist"
+                }
+            ],
+            "property_order": 985
+        },
+        "NativeMessagingUserLevelHosts": {
+            "type": "boolean",
+            "title": "Allow user-level Native Messaging hosts (installed without admin permissions)",
+            "description": "Enables user-level installation of Native Messaging hosts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#nativemessaginguserlevelhosts"
+                }
+            ],
+            "property_order": 990
+        },
+        "NativeMessagingAllowlist": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Native Messaging Host Denylist",
+            "description": "Allows you to specify which native messaging hosts are not subject to the denylist. A denylist value of * means all native messaging hosts are on the denylist and only native messaging hosts listed in the allowlist will be loaded.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#nativemessagingallowlist"
+                }
+            ],
+            "property_order": 995
+        },
+        "PasswordManagerEnabled": {
+            "type": "boolean",
+            "title": "Enable saving passwords to the password manager",
+            "description": "If this setting is enabled, users can have Microsoft Edge memorize passwords and provide them automatically the next time they log in to a site.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordmanagerenabled"
+                }
+            ],
+            "property_order": 1000
+        },
+        "PasswordMonitorAllowed": {
+            "type": "boolean",
+            "title": "Allow Password Monitor",
+            "description": "Allow Microsoft Edge to monitor user passwords.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordmonitorallowed"
+                }
+            ],
+            "property_order": 1005
+        },
+        "DefaultPrinterSelection": {
+            "type": "string",
+            "title": "Default printer selection rules",
+            "description": "Overrides Microsoft Edge default printer selection rules.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultprinterselection"
+                }
+            ],
+            "property_order": 1010
+        },
+        "PrintHeaderFooter": {
+            "type": "boolean",
+            "title": "Print Headers & Footers",
+            "description": "Force 'headers and footers' to be on or off in the printing dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#printheaderfooter"
+                }
+            ],
+            "property_order": 1015
+        },
+        "PrintingEnabled": {
+            "type": "boolean",
+            "title": "Enable printing",
+            "default": true,
+            "description": "Enables printing in Microsoft Edge and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#printingenabled"
+                }
+            ],
+            "property_order": 1020
+        },
+        "UseSystemPrintDialog": {
+            "type": "boolean",
+            "title": "Print using system print dialog",
+            "default": false,
+            "description": "If you enable this policy, Microsoft Edge opens the system print dialog instead of the built-in print preview when a user prints a page.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#usesystemprintdialog"
+                }
+            ],
+            "property_order": 1025
+        },
+        "PrintPreviewUseSystemDefaultPrinter": {
+            "type": "boolean",
+            "title": "Use System Default Printer as Default",
+            "default": false,
+            "description": "Causes Microsoft Edge to use the system default printer as the default choice in Print Preview instead of the most recently used printer.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#printpreviewusesystemdefaultprinter"
+                }
+            ],
+            "property_order": 1030
+        },
+        "ProxyBypassList": {
+            "type": "string",
+            "title": "Comma-separated list of proxy bypass rules",
+            "description": "Microsoft Edge will bypass any proxy for the list of hosts given here.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proxybypasslist"
+                }
+            ],
+            "property_order": 1035
+        },
+        "ProxyMode": {
+            "type": "string",
+            "title": "Choose how to specify proxy server settings",
+            "description": "Allows you to specify the proxy server used by Microsoft Edge and prevents users from changing proxy settings.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proxymode"
+                }
+            ],
+            "enum": [
+                "direct",
+                "auto_detect",
+                "pac_script",
+                "fixed_servers",
+                "system"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Never use a proxy",
+                    "Auto detect proxy settings",
+                    "Use a .pac proxy script",
+                    "Use fixed proxy servers",
+                    "Use system proxy settings"
+                ]
+            },
+            "property_order": 1040
+        },
+        "ProxyPacUrl": {
+            "type": "string",
+            "title": "URL to a proxy .pac file",
+            "description": "You can specify a URL to a proxy .pac file here.",
+            "pattern": "https?://.*.pac$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proxypacurl"
+                }
+            ],
+            "property_order": 1045
+        },
+        "ProxyServer": {
+            "type": "string",
+            "title": "Address or URL of proxy server",
+            "description": "You can specify the URL of the proxy server here.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proxyserver"
+                }
+            ],
+            "property_order": 1050
+        },
+        "ProxyServerMode": {
+            "type": "integer",
+            "title": "Proxy server settings",
+            "description": "Configures the proxy settings for Microsoft Edge.",
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Never use a proxy",
+                    "Auto detect proxy settings",
+                    "Manually specify proxy settings",
+                    "Use system proxy settings"
+                ]
+            },
+            "property_order": 1055
+        },
+        "SmartScreenEnabled": {
+            "type": "boolean",
+            "title": "SmartScreen Enabled",
+            "description": "Configure Microsoft Defender SmartScreen",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#smartscreenenabled"
+                }
+            ],
+            "property_order": 1060
+        },
+        "PreventSmartScreenPromptOverride": {
+            "type": "boolean",
+            "title": "Prevent SmartScreen prompt override",
+            "default": false,
+            "description": "Lets you decide whether users can override the Microsoft Defender SmartScreen warnings about potentially malicious websites.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#preventsmartscreenpromptoverride"
+                }
+            ],
+            "property_order": 1065
+        },
+        "PreventSmartScreenPromptOverrideForFiles": {
+            "type": "boolean",
+            "title": "Prevent SmartScreen prompt override for files",
+            "default": false,
+            "description": "Lets you determine whether users can override Microsoft Defender SmartScreen warnings about unverified downloads.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#preventsmartscreenpromptoverrideforfiles"
+                }
+            ],
+            "property_order": 1070
+        },
+        "SmartScreenAllowListDomains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Allowed Domains"
+            },
+            "title": "Prevent SmartScreen prompt override for files",
+            "description": "Configure the list of domains for which Microsoft Defender SmartScreen won't trigger warnings.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#smartscreenallowlistdomains"
+                }
+            ],
+            "property_order": 1075
+        },
+        "SmartScreenForTrustedDownloadsEnabled": {
+            "type": "boolean",
+            "title": "Enable SmartScreen Trusted Downloads",
+            "default": true,
+            "description": "Force Microsoft Defender SmartScreen checks on downloads from trusted sources",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#smartscreenfortrusteddownloadsenabled"
+                }
+            ],
+            "property_order": 1080
+        },
+        "SmartScreenPuaEnabled": {
+            "type": "boolean",
+            "title": "Enable SmartScreen potentially unwanted apps",
+            "description": "Configure Microsoft Defender SmartScreen to block potentially unwanted apps",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#smartscreenfortrusteddownloadsenabled"
+                }
+            ],
+            "property_order": 1085
+        },
+        "PasswordProtectionChangePasswordURL": {
+            "type": "string",
+            "title": "Change password URL",
+            "description": "Configure the change password URL (HTTP and HTTPS schemes only). Password protection service will send users to this URL to change their password after seeing a warning in the browser.",
+            "pattern": "^https?://.*",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordprotectionchangepasswordurl"
+                }
+            ],
+            "property_order": 1090
+        },
+        "PasswordProtectionLoginURLs": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Enterprise login URLs",
+            "description": "Configure the list of enterprise login URLs (HTTP and HTTPS schemes only) where Microsoft Edge should capture the salted hashes of passwords and use it for password reuse detection.",
+            "pattern": "^https?://.*",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordprotectionloginurls"
+                }
+            ],
+            "property_order": 1095
+        },
+        "PasswordProtectionWarningTrigger": {
+            "type": "integer",
+            "title": "Password protection warning trigger",
+            "description": "Allows you to control the triggering of passwore protection warning. Password protection alerts users when they reuse their protected password on potentially suspicious sites.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordprotectionwarningtrigger"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Password protection warning is off",
+                    "Password protection warning is triggered by password reuse",
+                    "Password protection warning is triggered by password reuse on phishing page"
+                ]
+            },
+            "property_order": 1100
+        },
+        "HomepageIsNewTabPage": {
+            "type": "boolean",
+            "title": "Use New Tab Page as homepage",
+            "description": "Configures the type of the default home page in Microsoft Edge and prevents users from changing home page preferences. The home page can either be set to a URL you specify or set to the New Tab Page.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#homepageisnewtabpage"
+                }
+            ],
+            "property_order": 1105
+        },
+        "HomepageLocation": {
+            "type": "string",
+            "title": "Home page URL",
+            "description": "Configures the default home page URL in Microsoft Edge and prevents users from changing it.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#homepagelocation"
+                }
+            ],
+            "property_order": 1110
+        },
+        "NewTabPageAllowedBackgroundTypes": {
+            "type": "integer",
+            "title": "New Tab Page Allowed Background Types",
+            "default": 0,
+            "description": "Configures the background types allowed for the new tab page layout.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpageallowedbackgroundtypes"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Enable all background images",
+                    "Disable daily background image",
+                    "Disable custom background image",
+                    "Disable all background images"
+                ]
+            },
+            "property_order": 1115
+        },
+        "NewTabPageCompanyLogo": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "NewTabPageCompanyLogoDictionary",
+                "properties": {
+                    "default_logo": {
+                        "type": "dictionary",
+                        "title": "Default Logo",
+                        "properties": {
+                            "hash": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string",
+                                "pattern": "^.*\\.[png|svg]"
+                            }
+                        }
+                    },
+                    "light_logo": {
+                        "type": "dictionary",
+                        "title": "Light Logo",
+                        "properties": {
+                            "hash": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string",
+                                "pattern": "^.*\\.[png|svg]"
+                            }
+                        }
+                    }
+                }
+            },
+            "title": "New Tab Page Company Logo",
+            "description": "Set new tab page company logo. The logo must be in PNG or SVG format, and its file size must not exceed 16 MB. For help with determining the SHA-256 hash, see https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagecompanylogo"
+                }
+            ],
+            "property_order": 1120
+        },
+        "NewTabPageHideDefaultTopSites": {
+            "type": "boolean",
+            "title": "Hide the default top sites from the new tab page",
+            "default": false,
+            "description": "Hides the default top sites from the new tab page in Microsoft Edge.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagehidedefaulttopsites"
+                }
+            ],
+            "property_order": 1125
+        },
+        "NewTabPageLocation": {
+            "type": "string",
+            "title": "New Tab page URL",
+            "description": "Configures the default New Tab page URL and prevents users from changing it.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagelocation"
+                }
+            ],
+            "property_order": 1130
+        },
+        "NewTabPageManagedQuickLinks": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Links",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "title": "URL"
+                    },
+                    "title": {
+                        "type": "string",
+                        "title": "Title"
+                    },
+                    "pinned": {
+                        "type": "boolean",
+                        "title": "Pinned"
+                    }
+                }
+            },
+            "title": "New Tab page managed quick links",
+            "description": "Set new tab page managed quick links",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagemanagedquicklinks"
+                }
+            ],
+            "property_order": 1135
+        },
+        "NewTabPageSetFeedType": {
+            "type": "integer",
+            "title": "New Tab Page Feed Type",
+            "description": "Configure the Microsoft Edge new tab page experience",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagesetfeedtype"
+                }
+            ],
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Microsoft News feed experience",
+                    "Office 365 feed experience"
+                ]
+            },
+            "property_order": 1140
+        },
+        "RestoreOnStartup": {
+            "type": "integer",
+            "title": "Action on startup",
+            "description": "Allows you to specify the behavior on startup.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#restoreonstartup"
+                }
+            ],
+            "enum": [
+                5,
+                1,
+                4
+            ],
+            "options": {
+                "enum_titles": [
+                    "Open New Tab Page",
+                    "Restore the last session",
+                    "Open a list of URLs"
+                ]
+            },
+            "property_order": 1145
+        },
+        "RestoreOnStartupURLs": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "URLs to open on startup",
+            "description": "If 'Open a list of URLs' is selected as the startup action, this allows you to specify the list of URLs that are opened. If left not set no URL will be opened on start up.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#restoreonstartupurls"
+                }
+            ],
+            "property_order": 1150
+        },
+        "ShowHomeButton": {
+            "type": "boolean",
+            "title": "Show Home button on toolbar",
+            "description": "Shows the Home button on Microsoft Edge's toolbar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#showhomebutton"
+                }
+            ],
+            "property_order": 1155
+        },
+        "WebUsbAskForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow WebUSB on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are allowed to ask the user to grant them access to a USB device.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webusbaskforurls"
+                }
+            ],
+            "property_order": 1160
+        },
+        "WebUsbBlockedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Block WebUSB on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are prevented from asking the user to grant them access to a USB device.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webusbblockedforurls"
+                }
+            ],
+            "property_order": 1165
+        }
+    }
+}

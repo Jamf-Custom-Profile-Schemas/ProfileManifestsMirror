@@ -1,0 +1,95 @@
+{
+    "title": "iTunes (com.apple.iTunes)",
+    "description": "iTunes settings",
+    "properties": {
+        "license-agreements": {
+            "type": "dictionary",
+            "title": "iTunes Software License Agreement",
+            "description": "Agrees to the license agreement prompt when first opening iTunes",
+            "properties": {
+                "EA1510": {
+                    "type": "boolean",
+                    "title": "Agree to iTunes Software Licence Agreement",
+                    "description": "Automatically accept the iTunes Software Licence Agreement on launch."
+                }
+            },
+            "property_order": 5
+        },
+        "disableShareLibraryInfo": {
+            "type": "boolean",
+            "title": "Disable Library Info Sharing",
+            "description": "Share details about your library with Apple.",
+            "property_order": 10
+        },
+        "DisableDeviceBackups": {
+            "type": "boolean",
+            "title": "Disable Device Backups",
+            "property_order": 15
+        },
+        "disableAppleMusic": {
+            "type": "boolean",
+            "title": "Disable Apple Music",
+            "property_order": 20
+        },
+        "disableMusicSocial": {
+            "type": "boolean",
+            "title": "Disable Music Profiles and Posts",
+            "property_order": 25
+        },
+        "disableCheckForUpdates": {
+            "type": "boolean",
+            "title": "Disable Checking for Updates",
+            "property_order": 30
+        },
+        "disableMusicStore": {
+            "type": "boolean",
+            "title": "Disable iTunes Store",
+            "property_order": 35
+        },
+        "disablePodcasts": {
+            "type": "boolean",
+            "title": "Disable Podcasts",
+            "property_order": 40
+        },
+        "disableRadio": {
+            "type": "boolean",
+            "title": "Disable Internet Radio",
+            "property_order": 45
+        },
+        "disableSharedMusic": {
+            "type": "boolean",
+            "title": "Disable Shared Libraries",
+            "property_order": 50
+        },
+        "dontAutomaticallySyncIPods": {
+            "type": "boolean",
+            "title": "Prevent iPods, iPhones and iPads from syncing automatically",
+            "property_order": 55
+        },
+        "restrictExplicit": {
+            "type": "boolean",
+            "title": "Restrict Music with explicit content",
+            "property_order": 60
+        },
+        "restrictExplicitBooks": {
+            "type": "boolean",
+            "title": "Restrict Books with explicit sexual content",
+            "property_order": 65
+        },
+        "restrictGames": {
+            "type": "boolean",
+            "title": "Restrict Games",
+            "property_order": 70
+        },
+        "restrictMovies": {
+            "type": "boolean",
+            "title": "Restrict Movies",
+            "property_order": 75
+        },
+        "restrictTVShows": {
+            "type": "boolean",
+            "title": "Restrict TV Shows",
+            "property_order": 80
+        }
+    }
+}

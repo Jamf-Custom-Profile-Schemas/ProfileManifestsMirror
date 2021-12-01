@@ -1,0 +1,443 @@
+{
+    "title": "Microsoft Office (com.microsoft.office)",
+    "description": "Microsoft Office settings",
+    "properties": {
+        "TermsAccepted1809": {
+            "type": "boolean",
+            "title": "Accept Office 2019 Use Terms",
+            "default": false,
+            "description": "If you don't want your users to see the Office 2019 Use Terms dialog, and instead accept the terms on their behalf, set this value to TRUE.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1536524701000100"
+                }
+            ],
+            "property_order": 5
+        },
+        "OfficeActivationEmailAddress": {
+            "type": "string",
+            "title": "Activation Account",
+            "description": "This value pre-fills the account authentication field for O365 users and sets the 'Belongs to' field in the About Box for both O365 and VL users.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1526327108000247"
+                }
+            ],
+            "property_order": 10
+        },
+        "OfficeAutoSignIn": {
+            "type": "boolean",
+            "title": "Auto Sign In",
+            "default": false,
+            "description": "Automatically configure Office 365 mailbox on first launch for Outlook. Will suppress first run dialogs for Word, Excel, PowerPoint and OneNote. For new installations from the Mac App Store, will bypass the first run dialogs that ask users if they wish to purchase a new Office 365 subscription.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/search/?search=OfficeAutoSignIn"
+                }
+            ],
+            "property_order": 15
+        },
+        "ConnectedOfficeExperiencesPreference": {
+            "type": "boolean",
+            "title": "Connected Experiences, Most",
+            "default": true,
+            "description": "You can use this preference to control whether most connected experiences are available to your users.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-most-connected-experiences"
+                }
+            ],
+            "property_order": 20
+        },
+        "OfficeExperiencesAnalyzingContentPreference": {
+            "type": "boolean",
+            "title": "Connected Experiences: Analyzing Content",
+            "default": true,
+            "description": "Connected experiences that analyze your content are experiences that use your Office content to provide you with design recommendations, editing suggestions, data insights, and similar features. For example, PowerPoint Designer or Researcher in Word.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-connected-experiences-that-analyze-your-content"
+                }
+            ],
+            "property_order": 25
+        },
+        "OfficeExperiencesDownloadingContentPreference": {
+            "type": "boolean",
+            "title": "Connected Experiences: Downloading Content",
+            "default": true,
+            "description": "Connected experiences that download online content are experiences that allow you to search and download online content including templates, images, 3D models, videos, and reference materials to enhance your documents. For example, Office templates or PowerPoint QuickStarter.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-connected-experiences-that-download-online-content"
+                }
+            ],
+            "property_order": 30
+        },
+        "OptionalConnectedExperiencesPreference": {
+            "type": "boolean",
+            "title": "Connected Experiences, Optional",
+            "default": true,
+            "description": "In addition to the connected experiences above, there are some optional connected experiences that you may choose to allow your users to access. For example, the LinkedIn features of the Resume Assistant in Word or the Weather Bar in Outlook, which uses MSN Weather.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-optional-connected-experiences"
+                }
+            ],
+            "property_order": 35
+        },
+        "DiagnosticDataTypePreference": {
+            "type": "string",
+            "title": "Diagnostic Data",
+            "default": "BasicDiagnosticData",
+            "description": "Diagnostic data is used to keep Office secure and up-to-date, detect, diagnose and remediate problems, and also make product improvements.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-diagnostic-data"
+                }
+            ],
+            "enum": [
+                "BasicDiagnosticData",
+                "FullDiagnosticData",
+                "ZeroDiagnosticData"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Required Data Only",
+                    "Required and Optional Data",
+                    "Zero Diagnostic Data"
+                ]
+            },
+            "property_order": 40
+        },
+        "SendAllTelemetryEnabled": {
+            "type": "boolean",
+            "title": "Send Telemetry Data",
+            "default": true,
+            "description": "Controls wether diagnostic data transmission is on or off.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
+                }
+            ],
+            "property_order": 45
+        },
+        "HasUserSeenEnterpriseFREDialog": {
+            "type": "boolean",
+            "title": "Has User Seen First Run Experience",
+            "default": false,
+            "description": "Setting this option to TRUE will suppress the 'Your privacy options' dialog for Volume License users only.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/?redir=%2Farchives%2FC07UZ1X7B%2Fp1565725927223700"
+                }
+            ],
+            "property_order": 50
+        },
+        "msoridEnableLogging": {
+            "type": "integer",
+            "title": "Enable logging for authentication requests",
+            "default": 0,
+            "description": "Increase logging levels for authentication requests. Enable Minimum Severity (msoridDefaultMinimumSeverity) option if this key is enabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1510921449000105"
+                }
+            ],
+            "property_order": 55
+        },
+        "msoridDefaultMinimumSeverity": {
+            "type": "integer",
+            "title": "Minimum severity for authentication requests logging",
+            "default": 200,
+            "description": "Set value to 200 if 'logging for authentication requests' (msoridEnableLogging) is enabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.google.com/spreadsheets/d/1ESX5td0y0OP3jdzZ-C2SItm-TUi-iA_bcHCBvaoCumw/"
+                }
+            ],
+            "property_order": 60
+        },
+        "DefaultsToLocalOpenSave": {
+            "type": "boolean",
+            "title": "'On My Mac' as default open and save location",
+            "default": false,
+            "description": "When set to true will force the open/save panel to \u2018On My Mac\u2019 instead of 'Online Locations'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://derflounder.wordpress.com/2017/04/17/office-2016-defaultstolocalopensave-setting-change-as-of-office-2016-15-33-x/"
+                }
+            ],
+            "property_order": 65
+        },
+        "ShowDocStageOnLaunch": {
+            "type": "boolean",
+            "title": "Show Document Selector",
+            "default": true,
+            "description": "Show or Hide the Document gallery selector when office applications are launched.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1506713968000569"
+                }
+            ],
+            "property_order": 70
+        },
+        "ShowWhatsNewOnLaunch": {
+            "type": "boolean",
+            "title": "Show 'What's New' dialogs",
+            "default": true,
+            "description": "A setting of FALSE supresses all \"What's new\" messages for all suite apps: Word, PowerPoint, Excel, Outlook and OneNote.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1492636076913449"
+                }
+            ],
+            "property_order": 75
+        },
+        "kCUIThemePreferencesThemeKeyPath": {
+            "type": "integer",
+            "title": "Theme",
+            "default": 0,
+            "description": "Set the theme used by Microsoft Office.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1528897732000348"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Colorful",
+                    "Classic",
+                    "Dark Mode"
+                ]
+            },
+            "property_order": 80
+        },
+        "InstallAutoUpdate": {
+            "type": "boolean",
+            "title": "Install AutoUpdate (MAU)",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing AutoUpdate. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
+                }
+            ],
+            "property_order": 85
+        },
+        "InstallExcel": {
+            "type": "boolean",
+            "title": "Install Excel",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing Excel. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
+                }
+            ],
+            "property_order": 90
+        },
+        "InstallOneDrive": {
+            "type": "boolean",
+            "title": "Install OneDrive",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing OneDrive. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
+                }
+            ],
+            "property_order": 95
+        },
+        "InstallOneNote": {
+            "type": "boolean",
+            "title": "Install OneNote",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing OneNote. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
+                }
+            ],
+            "property_order": 100
+        },
+        "InstallOutlook": {
+            "type": "boolean",
+            "title": "Install Outlook",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing Outlook. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
+                }
+            ],
+            "property_order": 105
+        },
+        "InstallPowerPoint": {
+            "type": "boolean",
+            "title": "Install PowerPoint",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing PowerPoint. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
+                }
+            ],
+            "property_order": 110
+        },
+        "InstallTeams": {
+            "type": "boolean",
+            "title": "Install Teams",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing Teams. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
+                }
+            ],
+            "property_order": 115
+        },
+        "InstallWord": {
+            "type": "boolean",
+            "title": "Install Word",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing Word. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
+                }
+            ],
+            "property_order": 120
+        },
+        "VisualBasicEntirelyDisabled": {
+            "type": "boolean",
+            "title": "VisualBasic Entirely Disabled",
+            "description": "If enabled, completely disables VBA.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/matrix/"
+                }
+            ],
+            "property_order": 125
+        },
+        "VisualBasicMacroExecutionState": {
+            "type": "string",
+            "title": "VisualBasic macro security level",
+            "default": "DisabledWithWarnings",
+            "description": "The VisualBasicMacroExecutionState1 setting controls whether macros are ever allowed to execute, and what the user experience is when opening\na file that contains a macro. By default, macros will only run after the user is presented with an alert when opening a file that contains a macro. The\nuser must make a choice whether to allow or deny macros for each individual file, each time that file is opened.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                }
+            ],
+            "enum": [
+                "DisabledWithoutWarnings",
+                "DisabledWithWarnings",
+                "EnabledWithoutWarnings"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disabled: Without Warnings",
+                    "Disabled: With Warnings",
+                    "Enabled: Without Warnings"
+                ]
+            },
+            "property_order": 130
+        },
+        "DisableVisualBasicExternalDylibs": {
+            "type": "boolean",
+            "title": "Disable Visual Basic External Dylibs",
+            "default": false,
+            "description": "Controls the ability for 3rd party vendors to use a DECLARE statement to bind a Visual Basic symbol name to an external procedure in the local OS.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                }
+            ],
+            "property_order": 135
+        },
+        "AllowVisualBasicToBindToSystem": {
+            "type": "boolean",
+            "title": "Allow Visual Basic to Bind to System",
+            "default": false,
+            "description": "Determines if macros are allowed to use a DECLARE to bind to the system() OS API. This API allows macros to execute arbitrary external processes and pass them arbitrary data on the command line.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                }
+            ],
+            "property_order": 140
+        },
+        "DisableVisualBasicToBindToPopen": {
+            "type": "boolean",
+            "title": "Disable Visual Basic to Bind to Popen",
+            "default": false,
+            "description": "Determines if macros are allowed to use a DECLARE to bind to the popen() OS API. This API allows macros to execute arbitrary external processes and pass them arbitrary data on the command line.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                }
+            ],
+            "property_order": 145
+        },
+        "DisableVisualBasicMacScript": {
+            "type": "boolean",
+            "title": "Disable macros from invoking the MacScript() Visual Basic API.",
+            "default": false,
+            "description": "The DisableVisualBasicMacScript setting determines if macros are allowed to invoke the MacScript() Visual Basic API. This API allows macros to execute arbitrary processes via AppleScript by including \u201cdo shell script ...\u201d in the AppleScript code.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                }
+            ],
+            "property_order": 150
+        },
+        "VBAObjectModelIsTrusted": {
+            "type": "boolean",
+            "title": "VBA Object Model is Trusted",
+            "default": false,
+            "description": "Controls the ability for Office to write to the VB project through the VBA object model.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                }
+            ],
+            "property_order": 155
+        }
+    }
+}

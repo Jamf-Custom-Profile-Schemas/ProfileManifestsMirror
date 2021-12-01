@@ -1,0 +1,140 @@
+{
+    "title": "Parental Controls: Time Limits (com.apple.familycontrols.timelimits.v2)",
+    "description": "Parental Controls: Time Limit settings",
+    "properties": {
+        "familyControlsEnabled": {
+            "type": "boolean",
+            "title": "Enable Time Limits",
+            "description": "Set to true to enable family control time limits",
+            "property_order": 5
+        },
+        "time-limits": {
+            "type": "dictionary",
+            "title": "Time Limits",
+            "properties": {
+                "weekday-allowance": {
+                    "type": "dictionary",
+                    "title": "Weekday Allowance",
+                    "description": "Weekday allowance settings",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "title": "Enable Weekday Allowance"
+                        },
+                        "secondsPerDay": {
+                            "type": "integer",
+                            "title": "Allowance Seconds per Day"
+                        },
+                        "rangeType": {
+                            "type": "integer",
+                            "title": "Range Type",
+                            "default": 0,
+                            "enum": [
+                                0
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Weekday"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "weekday-curfew": {
+                    "type": "dictionary",
+                    "title": "Weekday Curfew",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "title": "Enable Weekday Curfew"
+                        },
+                        "start": {
+                            "type": "string",
+                            "title": "Curfew Start Time",
+                            "description": "The start time for the curfew in 'hours:minutes:seconds' format."
+                        },
+                        "end": {
+                            "type": "string",
+                            "title": "Curfew End Time",
+                            "description": "The end time for the curfew in 'hours:minutes:seconds' format."
+                        },
+                        "rangeType": {
+                            "type": "integer",
+                            "title": "Range Type",
+                            "default": 0,
+                            "enum": [
+                                0
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Weekday"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "weekend-allowance": {
+                    "type": "dictionary",
+                    "title": "Weekend Allowance",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "title": "Enable Weekend Allowance"
+                        },
+                        "secondsPerDay": {
+                            "type": "integer",
+                            "title": "Allowance Seconds per Day"
+                        },
+                        "rangeType": {
+                            "type": "integer",
+                            "title": "Range Type",
+                            "default": 1,
+                            "enum": [
+                                1
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Weekend"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "weekend-curfew": {
+                    "type": "dictionary",
+                    "title": "Weekend Curfew",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "title": "Enable Weekend Curfew"
+                        },
+                        "start": {
+                            "type": "string",
+                            "title": "Curfew Start Time",
+                            "description": "The start time for the curfew in 'hours:minutes:seconds' format."
+                        },
+                        "end": {
+                            "type": "string",
+                            "title": "Curfew End Time",
+                            "description": "The end time for the curfew in 'hours:minutes:seconds' format."
+                        },
+                        "rangeType": {
+                            "type": "integer",
+                            "title": "Range Type",
+                            "default": 1,
+                            "enum": [
+                                1
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Weekend"
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "property_order": 10
+        }
+    }
+}

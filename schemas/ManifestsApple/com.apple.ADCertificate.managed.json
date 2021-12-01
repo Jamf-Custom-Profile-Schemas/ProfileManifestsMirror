@@ -1,0 +1,95 @@
+{
+    "title": "AD Certificate (com.apple.ADCertificate.managed)",
+    "description": "Active Directory Certificate settings",
+    "properties": {
+        "Description": {
+            "type": "string",
+            "title": "Description",
+            "description": "The description of the certificate request as shown in the certificate selector of other payloads such as VPN and Network",
+            "property_order": 5
+        },
+        "CertServer": {
+            "type": "string",
+            "title": "Certificate Server",
+            "description": "Fully qualified host name of the Active Directory issuing CA.",
+            "property_order": 10
+        },
+        "CertificateAuthority": {
+            "type": "string",
+            "title": "Certificate Authority",
+            "description": "Name of the CA. This value is determined from the Common Name (CN) of the Active Directory entry: CN=(your CA name), CN='Certification Authorities', CN='Public Key Services', CN='Services', or CN='Configuration', (your base Domain Name).",
+            "property_order": 15
+        },
+        "CertTemplate": {
+            "type": "string",
+            "title": "Certificate Template",
+            "default": "User",
+            "description": "The name of the certificate template as it appears in the General tab of the template\u2019s object in the Certificate Templates\u2019 Microsoft Management Console snap-in component. Usually Machine or User",
+            "property_order": 20
+        },
+        "CertificateAcquisitionMechanism": {
+            "type": "string",
+            "title": "Acquisition Mechanism",
+            "description": "Most commonly RPC. If using Web enrollment, HTTP.",
+            "enum": [
+                "RPC",
+                "HTTP"
+            ],
+            "property_order": 25
+        },
+        "CertificateRenewalTimeInterval": {
+            "type": "integer",
+            "title": "Certificate Expiration Notification Threshold",
+            "default": 14,
+            "description": "The number of days before the certificate expires at which to start showing the expiration notification",
+            "property_order": 30
+        },
+        "Keysize": {
+            "type": "integer",
+            "title": "RSA Key Size",
+            "default": 2048,
+            "description": "The RSA key size for the Certificate Signing Request (CSR).",
+            "property_order": 35
+        },
+        "PromptForCredentials": {
+            "type": "boolean",
+            "title": "Prompt for credentials",
+            "default": false,
+            "description": "Prompt the user for credentials.  This setting is not supported for pushed profiles",
+            "property_order": 40
+        },
+        "UserName": {
+            "type": "string",
+            "title": "User name",
+            "description": "The user name with which to authenticate to the certificate server",
+            "property_order": 45
+        },
+        "Password": {
+            "type": "string",
+            "title": "Password",
+            "description": "The password with which to authenticate to the certificate server",
+            "property_order": 50
+        },
+        "AllowAllAppsAccess": {
+            "type": "boolean",
+            "title": "Allow access to all apps",
+            "default": false,
+            "description": "Allow all apps to access the certificate in the keychain",
+            "property_order": 55
+        },
+        "KeyIsExtractable": {
+            "type": "boolean",
+            "title": "Allow export from keychain",
+            "default": false,
+            "description": "Allow admin to export private key from the keychain",
+            "property_order": 60
+        },
+        "EnableAutoRenewal": {
+            "type": "boolean",
+            "title": "Enable auto-renewal",
+            "default": false,
+            "description": "Allows the certificate to attempt an auto-renewal from the server.",
+            "property_order": 65
+        }
+    }
+}

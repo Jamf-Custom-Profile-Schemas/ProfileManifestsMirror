@@ -1,0 +1,227 @@
+{
+    "title": "Education (com.apple.education)",
+    "description": "Education Configuration settings",
+    "properties": {
+        "OrganizationName": {
+            "type": "string",
+            "title": "Organization Name",
+            "description": "The organization's display name.",
+            "property_order": 5
+        },
+        "OrganizationUUID": {
+            "type": "string",
+            "title": "Organization UUID",
+            "description": "All teacher and student devices that need to communicate with one another must have the same OrganizationUUID, particularly if they originated from different Device Enrollment Programs.",
+            "property_order": 10
+        },
+        "PayloadCertificateUUID": {
+            "type": "string",
+            "title": "Payload Certificate UUID",
+            "description": "Used to perform client authentication between devices.",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "property_order": 15
+        },
+        "Groups": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "GroupsDictionary",
+                "properties": {
+                    "BeaconID": {
+                        "type": "integer",
+                        "title": "Beacon ID"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "title": "Group Name"
+                    },
+                    "Description": {
+                        "type": "string",
+                        "title": "Group Description"
+                    },
+                    "ImageURL": {
+                        "type": "string",
+                        "title": "Group Image URL"
+                    },
+                    "ConfigurationSource": {
+                        "type": "string",
+                        "title": "Configuration Source"
+                    },
+                    "LeaderIdentifiers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Leader Identifier"
+                        },
+                        "title": "Leader Identifiers"
+                    },
+                    "MemberIdentifiers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Member Identifier"
+                        },
+                        "title": "Member Identifiers"
+                    },
+                    "DeviceGroupIdentifiers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Device Group Identifier"
+                        },
+                        "title": "Device Group Identifiers"
+                    }
+                }
+            },
+            "title": "Groups",
+            "description": "Shared: An array of dictionaries that define groups that the user can select in the login window.\nLeader: An array of dictionaries that define the groups that the user can control.\nMember: An array of dictionaries that define the groups of which the user is a member.",
+            "property_order": 20
+        },
+        "Users": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "UsersDictionary",
+                "properties": {
+                    "Identifier": {
+                        "type": "string",
+                        "title": "Identifier"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "GivenName": {
+                        "type": "string",
+                        "title": "Given Name"
+                    },
+                    "FamilyName": {
+                        "type": "string",
+                        "title": "Family Name"
+                    },
+                    "PhoneticGivenName": {
+                        "type": "string",
+                        "title": "Phonetic Given Name"
+                    },
+                    "PhoneticFamilyName": {
+                        "type": "string",
+                        "title": "Phonetic Family Name"
+                    },
+                    "ImageURL": {
+                        "type": "string",
+                        "title": "Image URL",
+                        "description": "URL pointing to a JPEG, PNG, or TIFF image of the user. Recommended either 256x256 or 512x512 resolution."
+                    },
+                    "FullScreenImageURL": {
+                        "type": "string",
+                        "title": "Fullscreen Image URL"
+                    },
+                    "AppleID": {
+                        "type": "string",
+                        "title": "Apple ID"
+                    },
+                    "PasscodeType": {
+                        "type": "string",
+                        "title": "Passcode Type",
+                        "description": "Complex, 4-digit, or 6-digit number."
+                    }
+                }
+            },
+            "title": "Users",
+            "description": "Shared: An array of dictionaries that define the users that are shown in the iOS login window.\nLeader: An array of dictionaries that define users that are members of the leader\u02bcs groups.\nMember: An array of a dictionaries that must contain the definition of the user specified in the UserIdentifier key.\nWith one-to-one member devices, this key should include only the device user and the leader but not other class members.",
+            "property_order": 25
+        },
+        "LeaderPayloadCertificateAnchorUUID": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "UUID"
+            },
+            "title": "Leader Payload Certificate Anchor UUIDs",
+            "description": "List of UUIDs referring to certificate payloads that will be used to authorize leader peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Leader certificates must have the common name prefix leader (case insensitive) and have a .cer type.",
+            "property_order": 30
+        },
+        "MemberPayloadCertificateAnchorUUID": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "UUID"
+            },
+            "title": "Member Payload Certificate Anchor UUIDs",
+            "description": "List of UUIDs referring to certificate payloads that will be used to authorize group member peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Member certificates must have the common name prefix member (case insensitive) and have a .cer type.",
+            "property_order": 35
+        },
+        "ResourcePayloadCertificateUUID": {
+            "type": "string",
+            "title": "Resource Payload Certificate UUID",
+            "description": "The UUID of an identity certificate payload that will be used to perform client authentication when fetching additional resources, such as, student images. If not specified the MDM client identity will be used.",
+            "property_order": 40
+        },
+        "UserIdentifier": {
+            "type": "string",
+            "title": "User Identifier",
+            "description": "A unique string that identifies the user of this device within the organization.",
+            "property_order": 45
+        },
+        "Departments": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "DepartmentsDictionary",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "title": "Department Name"
+                    },
+                    "GroupBeaconIDs": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Group Beacon ID"
+                        },
+                        "title": "Group Beacon IDs"
+                    }
+                }
+            },
+            "title": "Departments",
+            "description": "Shared: An array of dictionaries that define departments that are shown in the iOS login window.",
+            "property_order": 50
+        },
+        "DeviceGroups": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "DeviceGroupsDictionary",
+                "properties": {
+                    "Identifier": {
+                        "type": "string",
+                        "title": "Device Group Identifier"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "title": "Device Group Name"
+                    },
+                    "SerialNumbers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Device Serial Number"
+                        },
+                        "title": "Device Group Serial Numbers",
+                        "description": "The strings containing the serial numbers of the devices in the group."
+                    }
+                }
+            },
+            "title": "Device Groups",
+            "description": "Leader: An array of dictionaries that define the device groups to which the leader can assign devices. This key is not included in member payloads.",
+            "property_order": 55
+        },
+        "ScreenObservationPermissionModificationAllowed": {
+            "type": "boolean",
+            "title": "Allow students to modify screen observation permissions",
+            "default": false,
+            "description": "To allow students enrolled in managed classes to modify teacher permission for screen observation, set to 'true'.",
+            "property_order": 60
+        }
+    }
+}

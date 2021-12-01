@@ -1,0 +1,64 @@
+{
+    "title": "Crypt (com.grahamgilbert.crypt)",
+    "description": "Crypt settings",
+    "properties": {
+        "ServerURL": {
+            "type": "string",
+            "property_order": 5
+        },
+        "RemovePlist": {
+            "type": "boolean",
+            "title": "Leave recovery key plist on disk",
+            "default": true,
+            "description": "By default, the plist at /var/root/crypt_output.plist with the FileVault Key will be removed once it has been escrowed. If this is set to True the key will remain as root read only.",
+            "property_order": 10
+        },
+        "RotateUsedKey": {
+            "type": "boolean",
+            "title": "Rotate recovery key on each use. (Only HFS-formatted disks)",
+            "default": true,
+            "description": "If the recovery key plist is still present on the disk, rotates the recovery key after the key is used to unlock the disk.",
+            "property_order": 15
+        },
+        "ValidateKey": {
+            "type": "boolean",
+            "title": "Validate recovery key",
+            "default": true,
+            "description": "If the recovery key plist is still present on the disk, validates the recovery key. If the key fails validation, the plist is removed so it can be regenerated on next login.",
+            "property_order": 20
+        },
+        "OutputPath": {
+            "type": "string",
+            "title": "Recovery key plist path",
+            "default": "/var/root/crypt_output.plist",
+            "description": "Path where the recovery key plist is written to disk.",
+            "property_order": 25
+        },
+        "KeyEscrowInterval": {
+            "type": "integer",
+            "title": "Recovery key re-escrow interval",
+            "default": 1,
+            "description": "Time interval in Hours for how often Crypt tries to re-escrow the key to Crypt-Server after the first successful escrow.",
+            "property_order": 30
+        },
+        "SkipUsers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "Username that will not be forced to enable FileVault"
+            },
+            "title": "Users ignored",
+            "description": "Local users that will not be forced to enable FileVault.",
+            "property_order": 35
+        },
+        "PostRunCommand": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Recovery key error command",
+            "description": "Command that is run after Crypt has detected an error condition with a stored key that cannot be resolved silently - either it has failed validation or the server has instructed the client to rotate the key. These cannot be resolved silently on APFS volumes, so the user will need to log in again. If you have a tool that can enforce a logout or a reboot, you can run it here.",
+            "property_order": 40
+        }
+    }
+}

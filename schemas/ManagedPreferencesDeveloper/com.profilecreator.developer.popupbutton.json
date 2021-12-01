@@ -1,0 +1,28 @@
+{
+    "title": "Developer: PopUpButton (com.profilecreator.developer.PopUpButton)",
+    "description": "Developer: PopUpButton settings",
+    "properties": {
+        "PopUpButton01": {
+            "type": "string",
+            "title": "PopUpButton 01: Standard PopUpButton",
+            "description": "PopUpButton.",
+            "enum": [
+                "Item 1",
+                "Item 2",
+                "Item 3"
+            ],
+            "property_order": 5
+        },
+        "PopUpButton02": {
+            "type": "string",
+            "title": "PopUpButton 02: ComboBox",
+            "description": "Both TextField and PopUpButton.",
+            "enum": [
+                "Item 1",
+                "Item 2",
+                "Item 3"
+            ],
+            "property_order": 10
+        }
+    }
+}

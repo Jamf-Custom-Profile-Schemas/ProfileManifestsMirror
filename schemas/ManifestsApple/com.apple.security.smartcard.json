@@ -1,0 +1,66 @@
+{
+    "title": "SmartCard (com.apple.security.smartcard)",
+    "description": "SmartCard settings",
+    "properties": {
+        "allowSmartCard": {
+            "type": "boolean",
+            "title": "Allow SmartCard",
+            "default": true,
+            "description": "If false, disables the SmartCard for logins, authorizations, and screen saver unlocking. It is still allowed for other functions, such as signing emails and accessing the web.",
+            "property_order": 5
+        },
+        "UserPairing": {
+            "type": "boolean",
+            "title": "User Pairing",
+            "default": true,
+            "description": "If false, users don't get the pairing dialog, although existing pairings still work.",
+            "property_order": 10
+        },
+        "oneCardPerUser": {
+            "type": "boolean",
+            "title": "Restrict One Card Per User",
+            "default": false,
+            "description": "If true, a user can pair with only one SmartCard, although existing pairings are allowed if already set up.",
+            "property_order": 15
+        },
+        "checkCertificateTrust": {
+            "type": "integer",
+            "title": "Certificate Trust Validation",
+            "default": 0,
+            "description": "Require unexpired, system trusted certificates for smart cards to work.",
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Off",
+                    "On",
+                    "On & revocation check is set to the soft level",
+                    "On & revocation check is set to the hard level"
+                ]
+            },
+            "property_order": 20
+        },
+        "enforceSmartCard": {
+            "type": "boolean",
+            "title": "Require SmartCard",
+            "default": false,
+            "description": "If true, a user can only log in or authenticate with a SmartCard.",
+            "property_order": 25
+        },
+        "tokenRemovalAction": {
+            "type": "integer",
+            "title": "Enable Screen Saver on Removal",
+            "default": 1,
+            "description": "If enabled, enables the screen saver when the SmartCard is removed.",
+            "enum": [
+                0,
+                1
+            ],
+            "property_order": 30
+        }
+    }
+}

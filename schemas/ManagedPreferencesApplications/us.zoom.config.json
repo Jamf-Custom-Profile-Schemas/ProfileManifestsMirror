@@ -1,0 +1,347 @@
+{
+    "title": "Zoom (us.zoom.config)",
+    "description": "Zoom settings",
+    "properties": {
+        "ZAutoSSOLogin": {
+            "type": "boolean",
+            "title": "Login with SSO",
+            "default": false,
+            "description": "Default to login with SSO",
+            "property_order": 5
+        },
+        "ZSSOHost": {
+            "type": "string",
+            "title": "SSO URL",
+            "description": "Preconfigured SSO URL",
+            "property_order": 10
+        },
+        "forcessourl": {
+            "type": "string",
+            "title": "Lock SSO URL",
+            "description": "Configures and locks the SSO URL",
+            "property_order": 15
+        },
+        "nogoogle": {
+            "type": "boolean",
+            "title": "Disable Google Login",
+            "default": true,
+            "description": "Disable the Google login option",
+            "property_order": 20
+        },
+        "nofacebook": {
+            "type": "boolean",
+            "title": "Disable Facebook Login",
+            "default": true,
+            "description": "Disable the Facebook login option",
+            "property_order": 25
+        },
+        "disableloginwithemail": {
+            "type": "boolean",
+            "title": "Disable Email Login",
+            "default": true,
+            "property_order": 30
+        },
+        "login_domain": {
+            "type": "string",
+            "title": "Login Domain",
+            "description": "Set the email address domain that users can login with",
+            "property_order": 35
+        },
+        "AddFWException": {
+            "type": "boolean",
+            "title": "Disable UAC Prompt",
+            "default": true,
+            "description": "Disable UAC prompt when logging into Zoom",
+            "property_order": 40
+        },
+        "LastLoginType": {
+            "type": "boolean",
+            "title": "Remember Last Login",
+            "default": false,
+            "description": "Remember the last login type used",
+            "property_order": 45
+        },
+        "keepsignedin": {
+            "type": "boolean",
+            "title": "Stay Signed In",
+            "default": false,
+            "description": "Client automatically logs in to the last account used",
+            "property_order": 50
+        },
+        "ZAutoUpdate": {
+            "type": "boolean",
+            "title": "Enable Updates",
+            "default": false,
+            "description": "Allow updates through the client. If set to 'false', will not report updates are available, even if manually checked. The currently installed version will be listed as up-to-date.",
+            "property_order": 55
+        },
+        "EnableSilentAutoUpdate": {
+            "type": "boolean",
+            "title": "Enable Silent Auto Updates",
+            "default": false,
+            "description": "Allows the desktop client to silently check for updates. This option requires AutoUpdate option to be enabled, and will fail if not enabled",
+            "property_order": 60
+        },
+        "DefaultUsePortraitView": {
+            "type": "boolean",
+            "title": "Default to Portrait Mode",
+            "default": false,
+            "description": "Default to Portrait Mode upon opening Zoom",
+            "property_order": 65
+        },
+        "ZDisableVideo": {
+            "type": "boolean",
+            "title": "Disable Camera by Default",
+            "default": true,
+            "description": "Disable Camera by default",
+            "property_order": 70
+        },
+        "zdisablesendvideo": {
+            "type": "boolean",
+            "title": "Disable Sending Video",
+            "default": true,
+            "description": "Disable sending video from the Zoom Client",
+            "property_order": 75
+        },
+        "zdisablerecvvideo": {
+            "type": "boolean",
+            "title": "Disable Receiving Video",
+            "default": true,
+            "description": "Disable receiving video from the Zoom Client",
+            "property_order": 80
+        },
+        "disablecomputeraudio": {
+            "type": "boolean",
+            "title": "Disable Computer Audio",
+            "default": true,
+            "description": "Disable use of computer audio on the Zoom Client",
+            "property_order": 85
+        },
+        "enableoriginalsound": {
+            "type": "boolean",
+            "title": "Enable Original Sound",
+            "default": false,
+            "description": "Enable Orginal Sound for audio",
+            "property_order": 90
+        },
+        "ZAutoJoinVoip": {
+            "type": "boolean",
+            "title": "Automatically Join",
+            "default": false,
+            "description": "Automatically join VoIP ",
+            "property_order": 95
+        },
+        "audioautoadjust": {
+            "type": "boolean",
+            "title": "Auto Adjust Microphone",
+            "default": true,
+            "description": "Automatically adjust microphone levels",
+            "property_order": 100
+        },
+        "EnableEchoCancellation": {
+            "type": "boolean",
+            "title": "Enable Echo Cancellation",
+            "default": false,
+            "description": "Enables echo cancellation for the microphone audio ",
+            "property_order": 105
+        },
+        "setusesystemdefaultspeakerforvoip": {
+            "type": "boolean",
+            "title": "Use System Default for Computer Audio",
+            "default": true,
+            "description": "Uses the system default speaker when using computer audio",
+            "property_order": 110
+        },
+        "setusesystemdefaultmicforvoip": {
+            "type": "boolean",
+            "title": "Use System Default for Computer Microphone",
+            "default": true,
+            "description": "Uses the system default speaker when using microphone audio",
+            "property_order": 115
+        },
+        "ZDualMonitorOn": {
+            "type": "boolean",
+            "title": "Auto Enable Dual Monitor",
+            "default": false,
+            "description": "Automatically enable dual monitor",
+            "property_order": 120
+        },
+        "ZAutoFullScreenWhenViewShare": {
+            "type": "boolean",
+            "title": "Auto Full Screen When Viewing",
+            "default": true,
+            "description": "Automatically enter full screen when viewing shared content",
+            "property_order": 125
+        },
+        "ZAutoFitWhenViewShare": {
+            "type": "boolean",
+            "title": "Auto Fit to Window When Viewing",
+            "default": true,
+            "description": "Automatically fit to window when viewing shared content",
+            "property_order": 130
+        },
+        "FullScreenWhenJoin": {
+            "type": "boolean",
+            "title": "Enable Full Screen on Meeting Join",
+            "default": false,
+            "description": "Full Screen when starting or joining a meeting",
+            "property_order": 135
+        },
+        "AutoHideToolbar": {
+            "type": "boolean",
+            "title": "Auto Hide Meeting Controls",
+            "default": false,
+            "description": "Always show meeting controls (Disable auto-hide toolbar)",
+            "property_order": 140
+        },
+        "ZUse720PByDefault": {
+            "type": "boolean",
+            "title": "Default to HD Video",
+            "default": false,
+            "description": "Enable HD Video by default",
+            "property_order": 145
+        },
+        "ZRemoteControllAllApp": {
+            "type": "boolean",
+            "title": "Enable Full Remote Control",
+            "default": true,
+            "description": "Remote control all applications",
+            "property_order": 150
+        },
+        "ZHideNoVideoUser": {
+            "type": "boolean",
+            "title": "Hide Non-Video Participants",
+            "default": false,
+            "description": "Hide non-video participants by default",
+            "property_order": 155
+        },
+        "MuteVoipWhenJoin": {
+            "type": "boolean",
+            "title": "Disable Microphone on Meeting Join",
+            "default": false,
+            "description": "Always mute microphone when joining a meeting",
+            "property_order": 160
+        },
+        "ShowConnectedTime": {
+            "type": "boolean",
+            "title": "Show Meeting Attendance Length",
+            "default": false,
+            "description": "Show the length of time that the user has been in a meeting",
+            "property_order": 165
+        },
+        "ConfirmWhenLeave": {
+            "type": "boolean",
+            "title": "Prompt User When Leaving Meeting",
+            "default": true,
+            "description": "Confirm before leaving a meeting",
+            "property_order": 170
+        },
+        "DisableScreenShare": {
+            "type": "boolean",
+            "title": "Auto Disable Screen Sharing",
+            "default": false,
+            "description": "Disable Screen Share when starting or joining a meeting",
+            "property_order": 175
+        },
+        "disableremotecontrol": {
+            "type": "boolean",
+            "title": "Disable Remote Control During Screen Sharing",
+            "default": false,
+            "description": "Disables Remote Control when screen sharing",
+            "property_order": 180
+        },
+        "disableremotesupport": {
+            "type": "boolean",
+            "title": "Disable 1:1 Remote Support During Screen Sharing",
+            "default": false,
+            "description": "Disables 1:1 remote support when screen sharing",
+            "property_order": 185
+        },
+        "EnableMirrorEffect": {
+            "type": "boolean",
+            "title": "Enable Video Mirroring",
+            "default": false,
+            "description": "Enable mirroring of shared video",
+            "property_order": 190
+        },
+        "zdisablelocalrecord": {
+            "type": "boolean",
+            "title": "Disable Local Recording",
+            "default": false,
+            "description": "Disables Local Recording from the Zoom Client",
+            "property_order": 195
+        },
+        "zdisablecmr": {
+            "type": "boolean",
+            "title": "Disable Cloud Recording",
+            "default": false,
+            "description": "Disables Cloud Recording from the Zoom Client",
+            "property_order": 200
+        },
+        "disablevirtualbkgnd": {
+            "type": "boolean",
+            "title": "Disable Virtual Background",
+            "default": false,
+            "description": "Disables use of the Virtual Background feature",
+            "property_order": 205
+        },
+        "EnableIndependentDataPort": {
+            "type": "boolean",
+            "title": "Enable Split Port Traffic",
+            "default": false,
+            "description": "Split traffic across different ports for easier identification",
+            "property_order": 210
+        },
+        "EnableSSLVerification": {
+            "type": "boolean",
+            "title": "SSL Verification",
+            "default": false,
+            "description": "The Zoom Client will verify the server certificate",
+            "property_order": 215
+        },
+        "bandwidthlimitup": {
+            "type": "string",
+            "title": "Maximum Bandwidth",
+            "description": "Limit the Maximum amount of bandwidth by the Mac client",
+            "property_order": 220
+        },
+        "bandwidthlimitdown": {
+            "type": "string",
+            "title": "Minimum Bandwidth",
+            "description": "Limit the Minimum amount of bandwidth used by the Mac client",
+            "property_order": 225
+        },
+        "recordpath": {
+            "type": "string",
+            "title": "Local Recording Path",
+            "default": "/Users/User Name/Documents/Zoom",
+            "description": "Set path for local meeting recording files",
+            "property_order": 230
+        },
+        "proxybypass": {
+            "type": "string",
+            "title": "Proxy Bypass Rule",
+            "description": "Set proxy bypass rule for the Zoom Client",
+            "property_order": 235
+        },
+        "proxy": {
+            "type": "string",
+            "title": "Proxy",
+            "description": "Set the proxy server for the Zoom Client",
+            "property_order": 240
+        },
+        "proxypac": {
+            "type": "string",
+            "title": "Proxy PAC",
+            "description": "Set proxy server to client with PAC URL for the Zoom Client",
+            "property_order": 245
+        },
+        "DisableLinkPreviewInChat": {
+            "type": "boolean",
+            "title": "Disable Link Preview in Chat",
+            "default": false,
+            "description": "Disable Link Preview",
+            "property_order": 250
+        }
+    }
+}

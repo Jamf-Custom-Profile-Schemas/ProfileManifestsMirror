@@ -1,0 +1,13 @@
+{
+    "title": "Python (com.apple.python)",
+    "description": "Settings for macOS-bundled Python",
+    "properties": {
+        "DisablePythonAlert": {
+            "type": "boolean",
+            "title": "Disable Python Alert",
+            "default": true,
+            "description": "Controls whether warnings are shown to the user when an app or process calls the macOS-bundled Python2 interpreter. This interpreter has been deprecated and will be removed in a future version of macOS.",
+            "property_order": 5
+        }
+    }
+}

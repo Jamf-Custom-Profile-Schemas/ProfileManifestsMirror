@@ -1,0 +1,18 @@
+{
+    "title": "Font (com.apple.font)",
+    "description": "Use this section to define Font settings.",
+    "properties": {
+        "Name": {
+            "type": "string",
+            "title": "Font Name",
+            "description": "The user-visible name for the font. This field is replaced by the actual name of the font after installation.",
+            "property_order": 5
+        },
+        "Font": {
+            "type": "data",
+            "title": "Font",
+            "description": "Font file (.otf or .ttf) for inclusion on device",
+            "property_order": 10
+        }
+    }
+}

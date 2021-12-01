@@ -1,0 +1,81 @@
+{
+    "title": "Software Update (com.apple.SoftwareUpdate)",
+    "description": "Software Update settings",
+    "properties": {
+        "CatalogURL": {
+            "type": "string",
+            "title": "Catalog URL",
+            "description": "Specify a URL of the desired software update catalog in the form of http://server.example.com:8088/index.sucatalog",
+            "property_order": 5
+        },
+        "SUDisableEVCheck": {
+            "type": "boolean",
+            "title": "Disable Extended Validation check of TLS certificate.",
+            "description": "This option was needed during Mojave betas which required https.",
+            "property_order": 10
+        },
+        "AutomaticCheckEnabled": {
+            "type": "boolean",
+            "title": "Automatically check for updates",
+            "default": true,
+            "property_order": 15
+        },
+        "AutomaticDownload": {
+            "type": "boolean",
+            "title": "Download newly available updates in the background",
+            "default": true,
+            "property_order": 20
+        },
+        "AutomaticallyInstallMacOSUpdates": {
+            "type": "boolean",
+            "title": "Automatically install macOS updates",
+            "default": true,
+            "property_order": 25
+        },
+        "AutomaticallyInstallAppUpdates": {
+            "type": "boolean",
+            "title": "Automatically install App Store app updates",
+            "default": true,
+            "property_order": 30
+        },
+        "ConfigDataInstall": {
+            "type": "boolean",
+            "title": "Install XProtect, MRT, & Gatekeeper updates automatically",
+            "default": true,
+            "property_order": 35
+        },
+        "CriticalUpdateInstall": {
+            "type": "boolean",
+            "title": "Install security updates automatically",
+            "default": true,
+            "description": "These are not regular security updates. An example is the OS X NTP Security Update 1.0 update.",
+            "property_order": 40
+        },
+        "AllowPreReleaseInstallation": {
+            "type": "boolean",
+            "title": "Allow installation of macOS beta releases",
+            "default": true,
+            "property_order": 45
+        },
+        "forceDelayedSoftwareUpdates": {
+            "type": "boolean",
+            "title": "Force Update Delay",
+            "description": "Software updates will be delayed by the duration defined by ManagedDeferredInstallDelay.",
+            "property_order": 50
+        },
+        "restrict-software-update-require-admin-to-install": {
+            "type": "boolean",
+            "title": "Restrict app installations to admin users",
+            "default": false,
+            "description": "This key has the same function as the key restrict-store-require-admin-to-install in the com.apple.appstore payload.",
+            "property_order": 55
+        },
+        "ManagedDeferredInstallDelay": {
+            "type": "integer",
+            "title": "Update Delay",
+            "default": 30,
+            "description": "The duration that software updates will be delayed.",
+            "property_order": 60
+        }
+    }
+}

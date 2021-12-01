@@ -1,0 +1,171 @@
+{
+    "title": "Cellular (com.apple.cellular)",
+    "description": "Use this section to define custom APNs for cellular data access.",
+    "properties": {
+        "APNs": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "title": "Data APN name",
+                        "description": "The name of the data APN."
+                    },
+                    "AuthenticationType": {
+                        "type": "string",
+                        "title": "Data APN authentication type",
+                        "default": "PAP",
+                        "description": "Authentication type to use for the connection.",
+                        "enum": [
+                            "PAP",
+                            "CHAP"
+                        ]
+                    },
+                    "Username": {
+                        "type": "string",
+                        "title": "Data APN user name",
+                        "description": "The user name for the data APN account."
+                    },
+                    "Password": {
+                        "type": "string",
+                        "title": "Data APN password",
+                        "description": "The password for the data APN account."
+                    },
+                    "ProxyServer": {
+                        "type": "string",
+                        "title": "Data APN proxy server",
+                        "description": "The IP address or fully qualified domain name (FQDN) of the data APN proxy server."
+                    },
+                    "ProxyPort": {
+                        "type": "integer",
+                        "title": "Data APN proxy port",
+                        "description": "The port number of the data APN proxy server."
+                    },
+                    "DefaultProtocolMask": {
+                        "type": "integer",
+                        "title": "Data APN default IP versions",
+                        "description": "Default Internet Protocol versions for connections. Set to the same value as AllowedProtocolMask.",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "IPv4",
+                                "IPv6",
+                                "IPv4 and IPv6"
+                            ]
+                        }
+                    },
+                    "AllowedProtocolMask": {
+                        "type": "integer",
+                        "title": "Data APN supported IP versions",
+                        "description": "Supported Internet Protocol versions for connections",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "IPv4",
+                                "IPv6",
+                                "IPv4 and IPv6"
+                            ]
+                        }
+                    },
+                    "AllowedProtocolMaskInRoaming": {
+                        "type": "integer",
+                        "title": "Data APN supported roaming IP versions",
+                        "description": "Supported Internet Protocol versions while roaming.",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "IPv4",
+                                "IPv6",
+                                "IPv4 and IPv6"
+                            ]
+                        }
+                    },
+                    "AllowedProtocolMaskInDomesticRoaming": {
+                        "type": "integer",
+                        "title": "Data APN supported domestic roaming IP versions",
+                        "description": "Supported Internet Protocol versions while domestic roaming.",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "IPv4",
+                                "IPv6",
+                                "IPv4 and IPv6"
+                            ]
+                        }
+                    }
+                }
+            },
+            "title": "Data APN",
+            "description": "List of Data APNs to configure",
+            "property_order": 5
+        },
+        "AttachAPN": {
+            "type": "dictionary",
+            "title": "Default APN",
+            "default": {},
+            "description": "Default APN configuration",
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "title": "Default APN name",
+                    "description": "The name of the default APN."
+                },
+                "AuthenticationType": {
+                    "type": "string",
+                    "title": "Default APN authentication type",
+                    "default": "PAP",
+                    "description": "Authentication type to use for the connection.",
+                    "enum": [
+                        "PAP",
+                        "CHAP"
+                    ]
+                },
+                "Username": {
+                    "type": "string",
+                    "title": "Default APN user name",
+                    "description": "The user name for the default APN account."
+                },
+                "Password": {
+                    "type": "string",
+                    "title": "Default APN password",
+                    "description": "The password for the default APN account."
+                },
+                "AllowedProtocolMask": {
+                    "type": "integer",
+                    "title": "Default APN supported IP versions",
+                    "description": "Supported Internet Protocol versions for connections",
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "IPv4",
+                            "IPv6",
+                            "IPv4 and IPv6"
+                        ]
+                    }
+                }
+            },
+            "property_order": 10
+        }
+    }
+}

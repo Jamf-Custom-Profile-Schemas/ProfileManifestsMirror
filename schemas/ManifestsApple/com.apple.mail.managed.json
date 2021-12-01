@@ -1,0 +1,283 @@
+{
+    "title": "Mail (com.apple.mail.managed)",
+    "description": "Mail settings",
+    "properties": {
+        "EmailAccountType": {
+            "type": "string",
+            "title": "Account Type",
+            "default": "EmailTypeIMAP",
+            "description": "The protocol for accessing the account",
+            "enum": [
+                "EmailTypeIMAP",
+                "EmailTypePOP"
+            ],
+            "options": {
+                "enum_titles": [
+                    "IMAP",
+                    "POP"
+                ]
+            },
+            "property_order": 5
+        },
+        "EmailAccountDescription": {
+            "type": "string",
+            "title": "Account Description",
+            "description": "The display name of the account (e.g. \"Company Mail Account\")",
+            "property_order": 10
+        },
+        "IncomingMailServerIMAPPathPrefix": {
+            "type": "string",
+            "title": "Incoming Mail Server IMAP Path Prefix",
+            "default": true,
+            "description": "The path prefix for the IMAP mail server.",
+            "property_order": 15
+        },
+        "EmailAccountName": {
+            "type": "string",
+            "title": "User Display Name",
+            "description": "The display name of the user (e.g. \"John Appleseed\")",
+            "property_order": 20
+        },
+        "EmailAddress": {
+            "type": "string",
+            "title": "Email Address",
+            "description": "The address of the account (e.g. \"john@company.com\")",
+            "property_order": 25
+        },
+        "IdentificationUUID": {
+            "type": "string",
+            "title": "IdentificationUUID",
+            "description": "The UUID of the Identification Payload to use as the source for the user email and username values.",
+            "property_order": 30
+        },
+        "PreventMove": {
+            "type": "boolean",
+            "title": "Allow user to move messages from this account",
+            "default": false,
+            "description": "Messages can be moved out of this account into another.",
+            "property_order": 35
+        },
+        "disableMailRecentsSyncing": {
+            "type": "boolean",
+            "title": "Allow recent addresses to be synced",
+            "default": false,
+            "description": "Include this account in recent address syncing",
+            "property_order": 40
+        },
+        "allowMailDrop": {
+            "type": "boolean",
+            "title": "Allow Mail Drop",
+            "default": false,
+            "description": "Allow Mail Drop for this account",
+            "property_order": 45
+        },
+        "PreventAppSheet": {
+            "type": "boolean",
+            "title": "Use Only In Mail",
+            "default": false,
+            "description": "Send outgoing mail from this account only from Mail app",
+            "property_order": 50
+        },
+        "SMIMEEnabled": {
+            "type": "boolean",
+            "title": "S/MIME Enabled",
+            "default": false,
+            "description": "If set to true, this account will support S/MIME",
+            "property_order": 55
+        },
+        "SMIMESigningEnabled": {
+            "type": "boolean",
+            "title": "Enable S/MIME Signing",
+            "default": false,
+            "description": "Support S/MIME signing for this account",
+            "property_order": 60
+        },
+        "SMIMESigningCertificateUUID": {
+            "type": "string",
+            "title": "S/MIME Signing Certificate",
+            "description": "The PayloadUUID of the identity certificate used to sign messages sent from this account.",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "property_order": 65
+        },
+        "SMIMEEncryptionEnabled": {
+            "type": "boolean",
+            "title": "Enable S/MIME Encryption",
+            "default": false,
+            "description": "Support S/MIME encryption from this account",
+            "property_order": 70
+        },
+        "SMIMEEncryptionCertificateUUID": {
+            "type": "string",
+            "title": "S/MIME Encryption Certificate",
+            "description": "The PayloadUUID of the identity certificate used to decrypt messages coming into this account.",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "property_order": 75
+        },
+        "SMIMEEnablePerMessageSwitch": {
+            "type": "boolean",
+            "title": "Enable per-message encryption switch",
+            "default": false,
+            "description": "Allow the user to choose whether to encrypt each message",
+            "property_order": 80
+        },
+        "SMIMESigningUserOverrideable": {
+            "type": "boolean",
+            "title": "Enable S/MIME toggle",
+            "default": false,
+            "description": "Allow the user to toggle S/MIME signing on or off in Settings.",
+            "property_order": 85
+        },
+        "SMIMESigningCertificateUUIDUserOverrideable": {
+            "type": "boolean",
+            "title": "Enable user to select the signing identity",
+            "default": false,
+            "description": "Allow the user to select the signing identity.",
+            "property_order": 90
+        },
+        "SMIMEEncryptByDefault": {
+            "type": "boolean",
+            "title": "Enable S/MIME by default",
+            "default": false,
+            "description": "If SMIMEEnableEncryptionPerMessageSwitch is false, this default cannot be changed by the user.",
+            "property_order": 95
+        },
+        "SMIMEEncryptByDefaultUserOverrideable": {
+            "type": "boolean",
+            "title": "Enable user to toggle S/MIME by default",
+            "default": false,
+            "description": "Allow the user to toggle the encryption by default setting.",
+            "property_order": 100
+        },
+        "SMIMEEncryptionCertificateUUIDUserOverrideable": {
+            "type": "boolean",
+            "title": "Enable user to select the signing identity and encryption is enabled",
+            "default": false,
+            "description": "Allow the user to select the signing identity and encryption is enabled.",
+            "property_order": 105
+        },
+        "SMIMEEnableEncryptionPerMessageSwitch": {
+            "type": "boolean",
+            "title": "Enable per-message encryption switch",
+            "default": false,
+            "description": "Allow the user toggle encrytion in the compose view and encryption is enabled.",
+            "property_order": 110
+        },
+        "IncomingMailServerHostName": {
+            "type": "string",
+            "title": "Incoming Mail Server Hostname",
+            "description": "Hostname or IP Address for incoming mail",
+            "property_order": 115
+        },
+        "IncomingMailServerPortNumber": {
+            "type": "integer",
+            "title": "Incoming Mail Server Port",
+            "default": 993,
+            "description": "Port number for incoming mail",
+            "property_order": 120
+        },
+        "IncomingMailServerUsername": {
+            "type": "string",
+            "title": "Incoming Mail Server Username",
+            "description": "The username used to connect to the server for incoming mail",
+            "property_order": 125
+        },
+        "IncomingMailServerAuthentication": {
+            "type": "string",
+            "title": "Incoming Mail Server Authentification Type",
+            "default": "EmailAuthPassword",
+            "description": "The authentication method for the incoming mail server",
+            "enum": [
+                "EmailAuthNone",
+                "EmailAuthPassword",
+                "EmailAuthCRAMMD5",
+                "EmailAuthNTLM",
+                "EmailAuthHTTPMD5"
+            ],
+            "options": {
+                "enum_titles": [
+                    "None",
+                    "Password",
+                    "MD5 Challenge-Response",
+                    "NTLM",
+                    "HTTP MD5 Digest"
+                ]
+            },
+            "property_order": 130
+        },
+        "IncomingPassword": {
+            "type": "string",
+            "title": "Incoming Mail Server Password",
+            "description": "The password for the incoming mail server",
+            "property_order": 135
+        },
+        "IncomingMailServerUseSSL": {
+            "type": "boolean",
+            "title": "Incoming Mail Server Use SSL",
+            "default": false,
+            "description": "Retrieve incoming mail through Secure Socket Layer",
+            "property_order": 140
+        },
+        "OutgoingMailServerHostName": {
+            "type": "string",
+            "title": "Outgoing Mail Server Hostname",
+            "description": "Hostname or IP address for outgoing mail",
+            "property_order": 145
+        },
+        "OutgoingMailServerPortNumber": {
+            "type": "integer",
+            "title": "Outgoing Mail Server Port",
+            "default": 587,
+            "description": "The port number for outgoing mail",
+            "property_order": 150
+        },
+        "OutgoingMailServerUsername": {
+            "type": "string",
+            "title": "Outgoing Mail Server Username",
+            "description": "The username used to connect to the server for outgoing mail",
+            "property_order": 155
+        },
+        "OutgoingMailServerAuthentication": {
+            "type": "string",
+            "title": "Outgoing Mail Server Authentication Type",
+            "default": "EmailAuthPassword",
+            "description": "The authentication method for the outgoing mail server",
+            "enum": [
+                "EmailAuthNone",
+                "EmailAuthPassword",
+                "EmailAuthCRAMMD5",
+                "EmailAuthNTLM",
+                "EmailAuthHTTPMD5"
+            ],
+            "options": {
+                "enum_titles": [
+                    "None",
+                    "Password",
+                    "MD5 Challenge-Response",
+                    "NTLM",
+                    "HTTP MD5 Digest"
+                ]
+            },
+            "property_order": 160
+        },
+        "OutgoingPassword": {
+            "type": "string",
+            "title": "Outgoing Mail Server Password",
+            "description": "The password for the outgoing mail server",
+            "property_order": 165
+        },
+        "OutgoingPasswordSameAsIncomingPassword": {
+            "type": "boolean",
+            "title": "Outgoing Password Same As Incoming",
+            "default": false,
+            "description": "SMTP authentication uses the same password as POP/IMAP",
+            "property_order": 170
+        },
+        "OutgoingMailServerUseSSL": {
+            "type": "boolean",
+            "title": "Outgoing Mail Server Use SSL",
+            "default": false,
+            "description": "Send outgoing mail through Secure Socket Layer",
+            "property_order": 175
+        }
+    }
+}

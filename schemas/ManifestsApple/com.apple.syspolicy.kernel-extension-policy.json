@@ -1,0 +1,50 @@
+{
+    "title": "Kernel Extension Policy (com.apple.syspolicy.kernel-extension-policy)",
+    "description": "Kernel Extension Policy settings",
+    "properties": {
+        "AllowUserOverrides": {
+            "type": "boolean",
+            "title": "Allow users to approve kernel extensions",
+            "default": true,
+            "description": "Users can approve kernel extensions not explicitly allowed by configuration profiles.",
+            "property_order": 5
+        },
+        "AllowNonAdminUserApprovals": {
+            "type": "boolean",
+            "title": "Allow non-admin users to approve kernel extensions",
+            "default": false,
+            "description": "Non-admin users can approve kernel extensions not explicitly allowed by configuration profiles.",
+            "property_order": 10
+        },
+        "AllowedTeamIdentifiers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Team Identifier"
+            },
+            "title": "Allowed Team Identifiers",
+            "description": "List of team identifiers that define which validly signed kernel extensions will be allowed to load.",
+            "property_order": 15
+        },
+        "AllowedKernelExtensions": {
+            "type": "dictionary",
+            "title": "Allowed Kernel Extensions",
+            "description": "Bundle identifier and team identifier of kernel extensions that will be allowed. Use an empty team identifier for unsigned legacy kernel extensions.",
+            "properties": {
+                "{{value}}": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Bundle Identifier"
+                    },
+                    "title": "Bundle Identifier"
+                },
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Team Identifier"
+                }
+            },
+            "property_order": 20
+        }
+    }
+}

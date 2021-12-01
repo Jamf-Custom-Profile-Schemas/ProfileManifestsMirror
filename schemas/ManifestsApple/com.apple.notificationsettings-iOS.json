@@ -1,0 +1,136 @@
+{
+    "title": "Notifications (com.apple.notificationsettings)",
+    "description": "Configures Notification settings for iOS apps",
+    "properties": {
+        "NotificationSettings": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Notification Setting",
+                "description": "Notification settings for an app",
+                "properties": {
+                    "NotificationsEnabled": {
+                        "type": "boolean",
+                        "title": "Enable Notifications",
+                        "default": true,
+                        "description": "Whether notifications are allowed for this app."
+                    },
+                    "BundleIdentifier": {
+                        "type": "string",
+                        "title": "App Bundle Identifier",
+                        "description": "Bundle identifier of the target app"
+                    },
+                    "ShowInNotificationCenter": {
+                        "type": "boolean",
+                        "title": "Show in Notification Center",
+                        "default": true,
+                        "description": "Whether notifications can be shown in notification center."
+                    },
+                    "ShowInLockScreen": {
+                        "type": "boolean",
+                        "title": "Show on Lock Screen",
+                        "default": true,
+                        "description": "Whether notifications can be shown on the lock screen."
+                    },
+                    "ShowInCarPlay": {
+                        "type": "boolean",
+                        "title": "Show in Car Play",
+                        "default": true,
+                        "description": "Whether notifications can be shown on the lock screen.",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf"
+                            }
+                        ]
+                    },
+                    "SoundsEnabled": {
+                        "type": "boolean",
+                        "title": "Sounds Enabled",
+                        "default": true,
+                        "description": "Whether sounds are allowed for this app."
+                    },
+                    "BadgesEnabled": {
+                        "type": "boolean",
+                        "title": "Badges Enabled",
+                        "default": true,
+                        "description": "Whether badges are allowed for this app."
+                    },
+                    "AlertType": {
+                        "type": "integer",
+                        "title": "Alert Type",
+                        "default": 1,
+                        "description": "The type of alert for notifications for this app. None/Banner/Alert",
+                        "enum": [
+                            0,
+                            1,
+                            2
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "None",
+                                "Banners",
+                                "Alerts"
+                            ]
+                        }
+                    },
+                    "PreviewType": {
+                        "type": "integer",
+                        "title": "Preview Type",
+                        "description": "The type previews for notifications. Options:\nAlways - Previews will be shown when the device is locked and unlocked\nWhen Unlocked - Previews will only be shown when the device is unlocked\nNever - Previews will never be shown\n\nThis key overrides the value at Settings > Notifications > Show Previews.",
+                        "enum": [
+                            0,
+                            1,
+                            2
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Always",
+                                "When Unlocked",
+                                "Never"
+                            ]
+                        }
+                    },
+                    "GroupingType": {
+                        "type": "integer",
+                        "title": "Notification Grouping",
+                        "default": 0,
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf"
+                            }
+                        ],
+                        "enum": [
+                            0,
+                            1,
+                            2
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Automatic - Group notifications app-specific groups",
+                                "By App - Group notifications into one group",
+                                "Off - Do not group notifications"
+                            ]
+                        }
+                    },
+                    "CriticalAlertEnabled": {
+                        "type": "boolean",
+                        "title": "Enable Critical Alerts",
+                        "default": false,
+                        "description": "Whether an app can mark notifications as 'critical', bypassing Do Not Disturb and ringer settings.",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf"
+                            }
+                        ]
+                    }
+                }
+            },
+            "title": "Notification Settings",
+            "description": "Notification settings for iOS apps",
+            "property_order": 5
+        }
+    }
+}

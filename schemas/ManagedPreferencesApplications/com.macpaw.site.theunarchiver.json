@@ -1,0 +1,20 @@
+{
+    "title": "The Unarchiver (Standalone) (com.macpaw.site.theunarchiver)",
+    "description": "The Unarchiver (Standalone) settings",
+    "properties": {
+        "userAgreedToNewTOSAndPrivacy": {
+            "type": "boolean",
+            "title": "Suppress Terms of Services and Privacy Prompt",
+            "default": false,
+            "description": "Enable this option to automatically accept the Privacy Policy and Terms of Service for users.",
+            "property_order": 5
+        },
+        "SUEnableAutomaticChecks": {
+            "type": "boolean",
+            "title": "Enable Automatic Update Checks",
+            "default": false,
+            "description": "Automatically check for The Unarchiver (Standalone) updates",
+            "property_order": 10
+        }
+    }
+}

@@ -1,0 +1,151 @@
+{
+    "title": "SCEP (com.apple.security.scep)",
+    "description": "Use this section to define settings for configuration access to SCEP servers.",
+    "properties": {
+        "PayloadContent": {
+            "type": "dictionary",
+            "title": "Payload Content",
+            "description": "This dictionary contains the payload contents",
+            "properties": {
+                "URL": {
+                    "type": "string",
+                    "title": "URL",
+                    "description": "The base URL for the SCEP server"
+                },
+                "Name": {
+                    "type": "string",
+                    "title": "Name",
+                    "description": "Any string that is understood by the SCEP server. For example, it could be a domain name like example.org. If a certificate authority has multiple CA certificates this field can be used to distinguish which is required."
+                },
+                "Subject": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "OID",
+                                "description": "One item in the array representing a OID"
+                            },
+                            "title": "Subject Array Pair",
+                            "description": "An array representing an OID and value pair."
+                        },
+                        "title": "Array Inside SCEP Subject Array",
+                        "description": "This array holds another array which holds an OID value pair"
+                    },
+                    "title": "Subject",
+                    "description": "The representation of a X.500 name represented as an array of OID and value. OIDs can be represented as dotted numbers, with shortcuts for country (C), locality (L), state (ST), organization (O), organizational unit (OU), and common name (CN).",
+                    "pattern": "(,?[^=,]+=[^=,]+(,|$))"
+                },
+                "Challenge": {
+                    "type": "string",
+                    "title": "Challenge",
+                    "description": "Used as the pre-shared secret for automatic enrollment."
+                },
+                "Keysize": {
+                    "type": "integer",
+                    "title": "Key Size",
+                    "default": 1024,
+                    "description": "Key size in bits",
+                    "enum": [
+                        1024,
+                        2048
+                    ]
+                },
+                "CAFingerprint": {
+                    "type": "data",
+                    "title": "Fingerprint",
+                    "description": "The fingerprint (hex string) of the Certificate Authority certificate."
+                },
+                "Key Type": {
+                    "type": "string",
+                    "title": "Key Type",
+                    "default": "RSA",
+                    "description": "Currently always \"RSA\".",
+                    "enum": [
+                        "RSA"
+                    ]
+                },
+                "Key Usage": {
+                    "type": "integer",
+                    "title": "Key Usage",
+                    "default": 0,
+                    "description": "A bitmask indicating the use of the key.\\n\u2022 1 - signing\\n\u2022 4 - encryption\\n\u2022 5 - signing and encryption",
+                    "enum": [
+                        0,
+                        1,
+                        4,
+                        5
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "None",
+                            "Signing",
+                            "Encryption",
+                            "Both signing and encryption"
+                        ]
+                    }
+                },
+                "KeyIsExtractable": {
+                    "type": "boolean",
+                    "title": "Key is Extractable",
+                    "default": true,
+                    "description": "Allow / restrict exporting the private key from the keychain."
+                },
+                "SubjectAltName": {
+                    "type": "dictionary",
+                    "title": "Subject Alt Name",
+                    "description": "Specifies the Subject Alt Name for the certificate.",
+                    "properties": {
+                        "rfc822Name": {
+                            "type": "string",
+                            "title": "RFC 822 Name",
+                            "description": "RFC 822 (email address) string"
+                        },
+                        "dNSName": {
+                            "type": "string",
+                            "title": "DNS Name",
+                            "description": "DNS Name"
+                        },
+                        "uniformResourceIdentifier": {
+                            "type": "string",
+                            "title": "URI",
+                            "description": "Uniform Resource Indentifier"
+                        },
+                        "ntPrincipalName": {
+                            "type": "string",
+                            "title": "NT Principal Name",
+                            "description": "NT Principal Name"
+                        }
+                    }
+                },
+                "Retries": {
+                    "type": "integer",
+                    "title": "Retries",
+                    "default": 3,
+                    "description": "The number of times the device should retry if the server sends a PENDING response."
+                },
+                "RetryDelay": {
+                    "type": "integer",
+                    "title": "Retry Delay",
+                    "default": 10,
+                    "description": "The number of seconds to wait between subsequent retries. The first retry is attempted without this delay."
+                },
+                "CertificateRenewalTimeInterval": {
+                    "type": "integer",
+                    "title": "Certificate Expiration Notification",
+                    "default": 14,
+                    "description": "The number of days before the certificate expires at which to start showing the expiration notification"
+                },
+                "AllowAllAppsAccess": {
+                    "type": "boolean",
+                    "title": "Allow access to all apps",
+                    "default": false,
+                    "description": "Allow all apps to access the certificate in the keychain"
+                }
+            },
+            "property_order": 5
+        }
+    }
+}

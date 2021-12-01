@@ -1,0 +1,78 @@
+{
+    "title": "Developer: TextField Integer (com.profilecreator.developer.TextFieldInteger)",
+    "description": "Developer: TextField Integer settings",
+    "properties": {
+        "TextFieldInteger01": {
+            "type": "integer",
+            "title": "TextFieldInteger 01: Standard Integer",
+            "description": "TextField Integer.",
+            "property_order": 5
+        },
+        "TextFieldInteger02": {
+            "type": "integer",
+            "title": "TextFieldInteger 02: Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Title",
+            "description": "TextField Integer with a long title.",
+            "property_order": 10
+        },
+        "TextFieldInteger03": {
+            "type": "integer",
+            "title": "TextFieldInteger 03: Long Description",
+            "description": "TextFieldInteger with a long long long long long long long long long long long long long long long long long long long long long long long long long description.",
+            "property_order": 15
+        },
+        "TextFieldInteger04": {
+            "type": "integer",
+            "title": "TextFieldInteger 04: Placeholder Value",
+            "description": "TextFieldInteger with a placeholder value.",
+            "property_order": 20
+        },
+        "TextFieldInteger05": {
+            "type": "integer",
+            "title": "TextFieldInteger 05: Default Value",
+            "default": 99,
+            "description": "TextFieldInteger with a default value.",
+            "property_order": 25
+        },
+        "TextFieldInteger06": {
+            "type": "integer",
+            "description": "TextFieldInteger with no title.",
+            "property_order": 30
+        },
+        "TextFieldInteger07": {
+            "type": "integer",
+            "description": "TextFieldInteger with an empty title.",
+            "property_order": 35
+        },
+        "TextFieldInteger08": {
+            "type": "integer",
+            "title": "TextFieldInteger 08: No Description",
+            "property_order": 40
+        },
+        "TextFieldInteger09": {
+            "type": "integer",
+            "title": "TextFieldInteger 09: Empty Description",
+            "property_order": 45
+        },
+        "TextFieldInteger10": {
+            "type": "integer",
+            "title": "TextFieldInteger 10: Max Value",
+            "default": 98,
+            "description": "TextFieldInteger with a max value of: 99",
+            "property_order": 50
+        },
+        "TextFieldInteger11": {
+            "type": "integer",
+            "title": "TextFieldInteger 11: Min Value",
+            "default": 2,
+            "description": "TextFieldInteger with a min value of: 1",
+            "property_order": 55
+        },
+        "TextFieldInteger12": {
+            "type": "integer",
+            "title": "TextFieldInteger 12: Min and Max Value",
+            "default": 2,
+            "description": "TextFieldInteger with a min value of: 1 and max value of: 99",
+            "property_order": 60
+        }
+    }
+}

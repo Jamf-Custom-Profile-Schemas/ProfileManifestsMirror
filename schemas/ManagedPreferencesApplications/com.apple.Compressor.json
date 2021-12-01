@@ -1,0 +1,29 @@
+{
+    "title": "Compressor (com.apple.Compressor)",
+    "description": "Compressor settings",
+    "properties": {
+        "FFCheckedUpgrade": {
+            "type": "boolean",
+            "title": "Upgrade Checked",
+            "description": "Suppresses the popup to upgrade Compressor on first run.",
+            "property_order": 5
+        },
+        "LKWhatsNewDisplayedForAppVersion": {
+            "type": "dictionary",
+            "title": "Whats New displayed",
+            "description": "Suppress the Whats New screen on the selected versions of Compressor.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Compressor Version"
+                },
+                "{{value}}": {
+                    "type": "boolean",
+                    "title": "Suppressed",
+                    "default": true
+                }
+            },
+            "property_order": 10
+        }
+    }
+}

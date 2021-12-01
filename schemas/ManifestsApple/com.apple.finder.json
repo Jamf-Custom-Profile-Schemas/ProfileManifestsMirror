@@ -1,0 +1,80 @@
+{
+    "title": "Finder (com.apple.finder)",
+    "description": "Finder settings",
+    "properties": {
+        "InterfaceLevel": {
+            "type": "string",
+            "title": "Finder Interface Level",
+            "default": "Full",
+            "description": "Select if the standard (Full) or Simple Finder should be used",
+            "enum": [
+                "Full",
+                "Simple"
+            ],
+            "property_order": 5
+        },
+        "WarnOnEmptyTrash": {
+            "type": "boolean",
+            "title": "Show warning before emptying the Trash",
+            "default": true,
+            "description": "Warning message requiring user approval before emptying the Trash",
+            "property_order": 10
+        },
+        "ProhibitConnectTo": {
+            "type": "boolean",
+            "title": "Allow Connect to Server",
+            "default": false,
+            "description": "Opens a dialog box for finding servers on the network",
+            "property_order": 15
+        },
+        "ProhibitEject": {
+            "type": "boolean",
+            "title": "Allow Eject",
+            "default": false,
+            "description": "Ejects removable media and mountable volumes",
+            "property_order": 20
+        },
+        "ProhibitBurn": {
+            "type": "boolean",
+            "title": "Allow Burn Disc",
+            "default": false,
+            "description": "Writes permanent information to a CD or DVD. Disc burning restrictions require both Disc Burning and Finder payloads.",
+            "property_order": 25
+        },
+        "ProhibitGoToFolder": {
+            "type": "boolean",
+            "title": "Allow Go to Folder",
+            "default": false,
+            "description": "Allows user to open files or folders by typing a pathname",
+            "property_order": 30
+        },
+        "ShowHardDrivesOnDesktop": {
+            "type": "boolean",
+            "title": "Show Hard disks",
+            "default": false,
+            "description": "Show hard disks on the desktop",
+            "property_order": 35
+        },
+        "ShowExternalHardDrivesOnDesktop": {
+            "type": "boolean",
+            "title": "Show External disks",
+            "default": true,
+            "description": "Show external disks on the desktop",
+            "property_order": 40
+        },
+        "ShowRemovableMediaOnDesktop": {
+            "type": "boolean",
+            "title": "Show Removable media (CDs, DVDs, etc.)",
+            "default": true,
+            "description": "Show removable media on the desktop",
+            "property_order": 45
+        },
+        "ShowMountedServersOnDesktop": {
+            "type": "boolean",
+            "title": "Show Connected servers",
+            "default": false,
+            "description": "Show connected servers on the desktop",
+            "property_order": 50
+        }
+    }
+}

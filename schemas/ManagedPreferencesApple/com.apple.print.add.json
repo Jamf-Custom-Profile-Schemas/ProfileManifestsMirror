@@ -1,0 +1,99 @@
+{
+    "title": "Printing: Toolbar of Add Printer Window (com.apple.print.add)",
+    "description": "Use this section to configure the toolbar of the Add Printer window under Printers and Scanners in System Preferences. The primary use case for this manifest is for prepopulating the toolbar with the 'Advanced' button.",
+    "properties": {
+        "NSToolbar Configuration com.apple.print.add.toolbar": {
+            "type": "dictionary",
+            "title": "Add Printer Dictionary",
+            "properties": {
+                "TB Item Identifiers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Toolbar Item",
+                        "enum": [
+                            "com.apple.print.pbm.uber",
+                            "com.apple.print.pbm.ip",
+                            "com.apple.print.pbm.smb",
+                            "com.apple.print.pbm.advanced",
+                            "com.apple.print.add.search",
+                            "NSToolbarFlexibleSpaceItem",
+                            "NSToolbarSpaceItem"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Default",
+                                "IP",
+                                "Windows",
+                                "Advanced",
+                                "Search",
+                                "Flexible Space",
+                                "Space"
+                            ]
+                        }
+                    },
+                    "title": "Toolbar Items",
+                    "default": [
+                        "com.apple.print.pbm.uber",
+                        "com.apple.print.pbm.ip",
+                        "com.apple.print.pbm.smb",
+                        "NSToolbarFlexibleSpaceItem",
+                        "com.apple.print.add.search"
+                    ],
+                    "description": "The items to include in the toolbar and their order. The only items that can be added more than once are the Flexible Space and Space. Warning: configuring this property with no actual buttons (Default, IP, Windows, or Advanced) may lead to the display of no UI, and this condition may persist after removal of profile."
+                },
+                "TB Display Mode": {
+                    "type": "integer",
+                    "title": "Toolbar Display Mode",
+                    "default": 1,
+                    "description": "The toolbar display mode.",
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Icon and Text",
+                            "Icon Only",
+                            "Text Only"
+                        ]
+                    }
+                },
+                "TB Icon Size Mode": {
+                    "type": "integer",
+                    "title": "Toolbar Icon Size Mode",
+                    "default": 1,
+                    "description": "The icon size style.",
+                    "enum": [
+                        1,
+                        2
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Normal",
+                            "Small"
+                        ]
+                    }
+                },
+                "TB Is Shown": {
+                    "type": "integer",
+                    "title": "Show Toolbar",
+                    "default": 1,
+                    "description": "Show or hide the toolbar.",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Hide",
+                            "Show"
+                        ]
+                    }
+                }
+            },
+            "property_order": 5
+        }
+    }
+}

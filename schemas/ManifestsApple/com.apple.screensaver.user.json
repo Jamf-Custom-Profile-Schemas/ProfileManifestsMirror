@@ -1,0 +1,19 @@
+{
+    "title": "Screensaver User (com.apple.screensaver.user)",
+    "description": "Screensaver User settings",
+    "properties": {
+        "modulePath": {
+            "type": "string",
+            "title": "Screensaver path",
+            "description": "A full path to the screen saver module to be used.",
+            "property_order": 5
+        },
+        "idleTime": {
+            "type": "integer",
+            "title": "Screensaver idle time",
+            "default": 300,
+            "description": "Number of seconds of inactivity before screensaver activates. (0 = never activate).",
+            "property_order": 10
+        }
+    }
+}

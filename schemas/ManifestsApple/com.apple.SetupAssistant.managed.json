@@ -1,0 +1,140 @@
+{
+    "title": "Setup Assistant (com.apple.SetupAssistant.managed)",
+    "description": "Setup Assistant settings",
+    "properties": {
+        "SkipAppearance": {
+            "type": "boolean",
+            "title": "Skip Appearance window",
+            "default": false,
+            "description": "Skips the Choose Your Look window.",
+            "property_order": 5
+        },
+        "SkipCloudSetup": {
+            "type": "boolean",
+            "title": "Skip iCloud",
+            "default": false,
+            "description": "Skips the Apple ID setup window.",
+            "property_order": 10
+        },
+        "SkipiCloudStorageSetup": {
+            "type": "boolean",
+            "title": "Skip iCloud Storage window",
+            "default": false,
+            "description": "Skips the iCloud Storage window.",
+            "property_order": 15
+        },
+        "SkipPrivacySetup": {
+            "type": "boolean",
+            "title": "Skip Privacy consent window",
+            "default": false,
+            "description": "Skips the Privacy consent window.",
+            "property_order": 20
+        },
+        "SkipSiriSetup": {
+            "type": "boolean",
+            "title": "Skip Siri",
+            "default": false,
+            "description": "Skips the Siri setup window.",
+            "property_order": 25
+        },
+        "SkipTrueTone": {
+            "type": "boolean",
+            "title": "Skip True Tone Display window",
+            "default": false,
+            "description": "Skips the True Tone Display window.",
+            "property_order": 30
+        },
+        "SkipScreenTime": {
+            "type": "boolean",
+            "title": "Skip Screen Time window",
+            "default": false,
+            "description": "Skips the Screen Time window.",
+            "property_order": 35
+        },
+        "SkipTouchIDSetup": {
+            "type": "boolean",
+            "title": "Skip TouchID",
+            "default": false,
+            "description": "Skips the TouchID setup window.",
+            "property_order": 40
+        },
+        "SkipSetupItems": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Items to Skip",
+                "enum": [
+                    "Android",
+                    "Appearance",
+                    "AppleID",
+                    "Biometric",
+                    "DeviceToDeviceMigration",
+                    "Diagnostics",
+                    "DisplayTone",
+                    "HomeButtonSensitivity",
+                    "iCloudDiagnostics",
+                    "iMessageAndFaceTime",
+                    "Location",
+                    "MessagingActivationUsingPhoneNumber",
+                    "OnBoarding",
+                    "Passcode",
+                    "Payment",
+                    "Privacy",
+                    "Restore",
+                    "RestoreCompleted",
+                    "ScreenTime",
+                    "SIMSetup",
+                    "Siri",
+                    "SoftwareUpdate",
+                    "TapToSetup",
+                    "TOS",
+                    "UpdateCompleted",
+                    "WatchMigration",
+                    "Welcome",
+                    "Zoom"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Android",
+                        "Appearance",
+                        "Apple ID",
+                        "Biometric",
+                        "Device to Device Migration",
+                        "Diagnostics",
+                        "Display Tone",
+                        "Home Button Sensitivity",
+                        "iCloud Diagnostics",
+                        "iMessage and FaceTime",
+                        "Location",
+                        "Messaging Activation Using Phone Number",
+                        "OnBoarding",
+                        "Passcode",
+                        "Payment",
+                        "Privacy",
+                        "Restore",
+                        "Restore Completed",
+                        "ScreenTime",
+                        "SIM Setup",
+                        "Siri",
+                        "Software Update",
+                        "Tap To Setup",
+                        "Terms of Service",
+                        "Update Completed",
+                        "Watch Migration",
+                        "Welcome",
+                        "Zoom"
+                    ]
+                }
+            },
+            "title": "iOS Skip Items",
+            "description": "List of setup items to skip",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/skipkeys"
+                }
+            ],
+            "property_order": 45
+        }
+    }
+}

@@ -1,0 +1,211 @@
+{
+    "title": "802.1X Ethernet: First (com.apple.firstethernet.managed)",
+    "description": "Use this section to define First Ethernet settings",
+    "properties": {
+        "SetupModes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Setup Mode",
+                "enum": [
+                    "System",
+                    "Loginwindow"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "System",
+                        "Login Window"
+                    ]
+                }
+            },
+            "title": "EAP Setup Modes",
+            "description": "Select \"Login Window\" to authenticate the Mac to the network when the user logs in.",
+            "property_order": 5
+        },
+        "EAPClientConfiguration": {
+            "type": "dictionary",
+            "title": "EAP Client Configuration",
+            "description": "Specifies 802.1x EAP authentication parameters.",
+            "properties": {
+                "AcceptEAPTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "title": "EAP Type",
+                        "description": "An integer representing an EAP type, inside of the Accept EAP Types array.",
+                        "enum": [
+                            13,
+                            17,
+                            21,
+                            25,
+                            43,
+                            18,
+                            23
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "TLS",
+                                "LEAP",
+                                "TTLS",
+                                "PEAP",
+                                "EAP-FAST",
+                                "EAP-SIM",
+                                "EAP-AKA"
+                            ]
+                        }
+                    },
+                    "title": "Accept EAP Types",
+                    "description": "The EAP types accepted."
+                },
+                "UserName": {
+                    "type": "string",
+                    "title": "Username"
+                },
+                "UserPassword": {
+                    "type": "string",
+                    "title": "Password"
+                },
+                "OneTimePassword": {
+                    "type": "boolean",
+                    "title": "One Time Password",
+                    "default": false
+                },
+                "OneTimeUserPassword": {
+                    "type": "boolean",
+                    "title": "Per-Connection Password",
+                    "default": false,
+                    "description": "If set, the user will be prompted for a password each time they connect to the network."
+                },
+                "PayloadCertificateAnchorUUID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Individual Certificate Anchor UUID",
+                        "description": "A UUID for a trusted certificate",
+                        "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$"
+                    },
+                    "title": "Certificate Anchor UUID",
+                    "description": "Array of UUIDs corresponding to the trusted certificates for this authentication."
+                },
+                "TLSTrustedServerNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Individual Trusted TLS Server Name",
+                        "description": "An item in the TLS Trusted Server Names array representing a Common Name of a server certificate."
+                    },
+                    "title": "Trusted Server Certificate Names",
+                    "description": "Certificate Common Names expected from authentication server. The wildcard * can be used to match a range of strings."
+                },
+                "TLSAllowTrustExceptions": {
+                    "type": "boolean",
+                    "title": "Allow Trust Exceptions",
+                    "default": true,
+                    "description": "Allows a dynamic trust decision by the user. If false, the authentication fails if the certificate isn't already trusted."
+                },
+                "TLSCertificateIsRequired": {
+                    "type": "boolean",
+                    "title": "TLS Certificate is Required",
+                    "default": false
+                },
+                "TTLSInnerAuthentication": {
+                    "type": "string",
+                    "title": "Inner Authentication",
+                    "default": "MSCHAPv2",
+                    "description": "Specifies the inner authentication used by the TTLS module.",
+                    "enum": [
+                        "PAP",
+                        "EAP",
+                        "CHAP",
+                        "MSCHAP",
+                        "MSCHAPv2"
+                    ]
+                },
+                "OuterIdentity": {
+                    "type": "string",
+                    "title": "Outer Identity",
+                    "description": "Externally visible identification (for TTLS, PEAP, and EAP-FAST). This string is used instead of the user's identity outside the encrypted tunnel. This value can be used to mask the true identity of the person using the network."
+                },
+                "TLSMinimumVersion": {
+                    "type": "string",
+                    "title": "TLS Minimum Version",
+                    "default": "1.0",
+                    "enum": [
+                        "1.0",
+                        "1.1",
+                        "1.2"
+                    ]
+                },
+                "TLSMaximumVersion": {
+                    "type": "string",
+                    "title": "TLS Maximum Version",
+                    "default": "1.2",
+                    "enum": [
+                        "1.0",
+                        "1.1",
+                        "1.2"
+                    ]
+                },
+                "EAPFASTUsePAC": {
+                    "type": "boolean",
+                    "title": "Use PAC",
+                    "default": false
+                },
+                "EAPFASTProvisionPAC": {
+                    "type": "boolean",
+                    "title": "Provision PAC",
+                    "default": false,
+                    "description": "If set, allows PAC provisioning."
+                },
+                "EAPFASTProvisionPACAnonymously": {
+                    "type": "boolean",
+                    "title": "Provision PAC Anonymously",
+                    "default": false
+                },
+                "EAPSIMNumberOfRANDs": {
+                    "type": "integer",
+                    "title": "Number of RANDs",
+                    "default": 3,
+                    "description": "The minimum number of RAND values accepted from the server. 3 is the default, and 2 is allowed, but offers less security.",
+                    "enum": [
+                        2,
+                        3
+                    ]
+                },
+                "SystemModeCredentialsSource": {
+                    "type": "string",
+                    "title": "System Profile Credentials Source",
+                    "description": "Use an alternate set of credentials when in System mode (AKA not a loginwindow profile). This can be used to tell EAPOLClient to use the computer password in a bound active directory scenario for authentication.",
+                    "enum": [
+                        "ActiveDirectory"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Active Directory"
+                        ]
+                    }
+                },
+                "SystemModeUseOpenDirectoryCredentials": {
+                    "type": "string",
+                    "title": "Use OpenDirectory System Profile Credentials",
+                    "description": "This indicates if the connection should try to use the OpenDirectory machine credentials."
+                }
+            },
+            "property_order": 10
+        },
+        "Interface": {
+            "type": "string",
+            "title": "Interface",
+            "description": "The wired interface to use",
+            "enum": [
+                "FirstEthernet"
+            ],
+            "options": {
+                "enum_titles": [
+                    "First Ethernet"
+                ]
+            },
+            "property_order": 15
+        }
+    }
+}

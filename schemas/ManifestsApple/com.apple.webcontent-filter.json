@@ -1,0 +1,215 @@
+{
+    "title": "Web Content Filter (com.apple.webcontent-filter)",
+    "description": "Web Content Filter settings",
+    "properties": {
+        "FilterType": {
+            "type": "string",
+            "title": "Filter Type",
+            "default": "BuiltIn",
+            "enum": [
+                "BuiltIn",
+                "Plugin"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Built-In (iOS only)",
+                    "Plug-In"
+                ]
+            },
+            "property_order": 5
+        },
+        "FilterGrade": {
+            "type": "string",
+            "title": "Filter Grade",
+            "default": "firewall",
+            "enum": [
+                "firewall",
+                "inspector"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Firewall",
+                    "Inspector"
+                ]
+            },
+            "property_order": 10
+        },
+        "AutoFilterEnabled": {
+            "type": "boolean",
+            "title": "Limit adult content automatically",
+            "default": false,
+            "description": "Optional. If true, automatic filtering is enabled. This function evaluates each web page as it is loaded and attempts to identify and block content not suitable for children.\n\nThe search algorithm is complex and may vary from release to release, but it is basically looking for adult language, i.e. swearing and sexually explicit language. The default value is false.",
+            "property_order": 15
+        },
+        "PermittedURLs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Permitted URL",
+                "pattern": "^https?://.*$"
+            },
+            "title": "Permitted URLs",
+            "property_order": 20
+        },
+        "FilterBrowsers": {
+            "type": "boolean",
+            "title": "Filter WebKit Traffic",
+            "default": true,
+            "property_order": 25
+        },
+        "AllowListBookmarks": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Allow List Bookmarks Dictionary",
+                "properties": {
+                    "URL": {
+                        "type": "string",
+                        "title": "URL",
+                        "description": "URL of the allow list bookmark.",
+                        "pattern": "^https?:\\/\\/.*$"
+                    },
+                    "Title": {
+                        "type": "string",
+                        "title": "Title",
+                        "description": "The title of the bookmark."
+                    }
+                }
+            },
+            "title": "Allow List Bookmarks",
+            "description": "If present, these URLs are added to the browser\u2019s bookmarks, and the user is not allowed to visit any sites other than these. The number of these URLs should be limited to about 500.",
+            "property_order": 30
+        },
+        "WhitelistedBookmarks": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Allowlisted Bookmarks Dictionary",
+                "properties": {
+                    "URL": {
+                        "type": "string",
+                        "title": "URL",
+                        "description": "URL of the allowlisted bookmark.",
+                        "pattern": "^https?:\\/\\/.*$"
+                    },
+                    "Title": {
+                        "type": "string",
+                        "title": "Title",
+                        "description": "The title of the bookmark."
+                    }
+                }
+            },
+            "title": "Allowlisted Bookmarks",
+            "description": "If present, these URLs are added to the browser\u2019s bookmarks, and the user is not allowed to visit any sites other than these. The number of these URLs should be limited to about 500.",
+            "property_order": 35
+        },
+        "DenyListURLs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Deny List URL"
+            },
+            "title": "Deny List URLs",
+            "default": true,
+            "property_order": 40
+        },
+        "BlacklistedURLs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Denylisted URL"
+            },
+            "title": "Denylisted URLs",
+            "default": true,
+            "property_order": 45
+        },
+        "UserDefinedName": {
+            "type": "string",
+            "title": "Filter Configuration Display Name",
+            "description": "A string which will be displayed for this filtering configuration.",
+            "property_order": 50
+        },
+        "PluginBundleID": {
+            "type": "string",
+            "title": "Plug-In Bundle ID",
+            "property_order": 55
+        },
+        "ServerAddress": {
+            "type": "string",
+            "title": "Server Address",
+            "property_order": 60
+        },
+        "UserName": {
+            "type": "string",
+            "title": "Username",
+            "property_order": 65
+        },
+        "Password": {
+            "type": "string",
+            "property_order": 70
+        },
+        "PayloadCertificateUUID": {
+            "type": "string",
+            "title": "Certificate UUID",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "property_order": 75
+        },
+        "Organization": {
+            "type": "string",
+            "description": "An Organization string that will be passed to the 3rd party plugin.",
+            "property_order": 80
+        },
+        "FilterSockets": {
+            "type": "boolean",
+            "title": "Enable Socket Filtering",
+            "default": true,
+            "property_order": 85
+        },
+        "FilterDataProviderBundleIdentifier": {
+            "type": "string",
+            "title": "Filter Data Provider System Extension Bundle ID",
+            "description": "The bundle identifier string of the Filter Data Provider System Extension. This string identifies the Filter Data Provider when the filter starts running.",
+            "property_order": 90
+        },
+        "FilterDataProviderDesignatedRequirement": {
+            "type": "string",
+            "title": "Filter Data Provider Designated Requirement",
+            "description": "The designated requirement string that is embedded in the code signature of the Filter Data Provider System Extension. This string identifies the Filter Data Provider when the filter starts running.",
+            "property_order": 95
+        },
+        "FilterPackets": {
+            "type": "boolean",
+            "title": "Enable Packet Filtering",
+            "default": true,
+            "property_order": 100
+        },
+        "FilterPacketProviderBundleIdentifier": {
+            "type": "string",
+            "title": "Filter Packet Provider Bundle ID",
+            "description": "The bundle identifier string of the Filter Packet Provider System Extension. This string identifies the Filter Packet Provider when the filter starts running.",
+            "property_order": 105
+        },
+        "FilterPacketProviderDesignatedRequirement": {
+            "type": "string",
+            "title": "Filter Packet Provider Designated Requirement",
+            "description": "The designated requirement string that is embedded in the code signature of the Filter Packet Provider System Extension. This string identifies the Filter Packet Provider when the filter starts running.",
+            "property_order": 110
+        },
+        "VendorConfig": {
+            "type": "dictionary",
+            "title": "Vendor Configuration",
+            "description": "Custom key/value pairs for the filtering service plugin",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Vendor Custom Key Name"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Vendor Custom Key Value"
+                }
+            },
+            "property_order": 115
+        }
+    }
+}

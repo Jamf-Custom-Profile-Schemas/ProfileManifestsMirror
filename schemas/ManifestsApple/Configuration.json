@@ -1,0 +1,61 @@
+{
+    "title": "General (Configuration)",
+    "description": "Use this section to define general settings",
+    "properties": {
+        "PayloadRemovalDisallowed": {
+            "type": "boolean",
+            "title": "Prevent users from removing this profile",
+            "default": false,
+            "description": "Prevent manual removal of profiles installed through an MDM. Profiles installed manually can be removed manually, but only by using administrative authority.",
+            "property_order": 5
+        },
+        "RemovalDate": {
+            "type": "date",
+            "title": "Removal Date",
+            "description": "The date on which the profile will be automatically removed.",
+            "property_order": 10
+        },
+        "DurationUntilRemoval": {
+            "type": "real",
+            "title": "Duration Until Removal",
+            "description": "Number of seconds until the profile is automatically removed. If RemovalDate key is present, its value is used instead.",
+            "property_order": 15
+        },
+        "ConsentText": {
+            "type": "dictionary",
+            "title": "Consent Text",
+            "description": "Dictionary specifying localized consent text that will be displayed as a warning during profile installation.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Language ID",
+                    "description": "The IETF BCP 47 identifier for that language (for example, en or jp)."
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Localized License Agreement",
+                    "description": "The agreement localized to that language."
+                },
+                "default": {
+                    "type": "string",
+                    "title": "Default License Agreement",
+                    "description": "The system chooses a localized version in the order of preference specified by the user (macOS) or based on the user\u2019s current language setting (iOS). If no exact match is found, the default localization is used. If there is no default localization, the en localization is used. If there is no en localization, then the first available localization is used."
+                }
+            },
+            "property_order": 20
+        },
+        "HasRemovalPasscode": {
+            "type": "boolean",
+            "title": "Has removal passcode",
+            "default": false,
+            "description": "Specifes if there is a removal passcode for the profile.",
+            "property_order": 25
+        },
+        "PayloadExpirationDate": {
+            "type": "date",
+            "title": "Expiration Date",
+            "description": "If provided, will show an OTA-delivered profile as \"expired\" on a specific date. Users will be offered an \"Update\" button when the profile has expired.",
+            "property_order": 30
+        }
+    }
+}

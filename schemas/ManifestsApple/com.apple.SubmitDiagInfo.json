@@ -1,0 +1,12 @@
+{
+    "title": "Submit Diagnostic Information (com.apple.SubmitDiagInfo)",
+    "description": "Use this section to define settings for Submit Diagnostic Information",
+    "properties": {
+        "AutoSubmit": {
+            "type": "boolean",
+            "title": "Automatically Submit Diagnostic Information",
+            "description": "Configures the automatic submission of diagnostic information to Apple.",
+            "property_order": 5
+        }
+    }
+}

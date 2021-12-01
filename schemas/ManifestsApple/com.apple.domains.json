@@ -1,0 +1,36 @@
+{
+    "title": "Domains (com.apple.domains)",
+    "description": "Use this section to define Domains settings.",
+    "properties": {
+        "EmailDomains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain"
+            },
+            "title": "Unmarked Email Domains",
+            "description": "Mail messages that are addressed to domains not in the approved list are marked in red.",
+            "property_order": 5
+        },
+        "WebDomains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain"
+            },
+            "title": "Managed Safari Web Domains",
+            "description": "Downloads from Safari will be considered managed documents if they originate from a managed domain.",
+            "property_order": 10
+        },
+        "SafariPasswordAutoFillDomains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain"
+            },
+            "title": "Safari Password Domains",
+            "description": "User names and passwords entered in websites with Safari can be saved if the domain is listed.",
+            "property_order": 15
+        }
+    }
+}

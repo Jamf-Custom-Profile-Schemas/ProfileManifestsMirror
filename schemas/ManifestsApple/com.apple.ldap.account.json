@@ -1,0 +1,85 @@
+{
+    "title": "LDAP (com.apple.ldap.account)",
+    "description": "LDAP settings",
+    "properties": {
+        "LDAPAccountDescription": {
+            "type": "string",
+            "title": "Account Description",
+            "description": "The display name of the account (e.g. 'Company LDAP Account')",
+            "property_order": 5
+        },
+        "LDAPAccountUserName": {
+            "type": "string",
+            "title": "Account Username",
+            "description": "The username for this LDAP account",
+            "property_order": 10
+        },
+        "LDAPAccountPassword": {
+            "type": "string",
+            "title": "Account Password",
+            "description": "The password for this LDAP account",
+            "property_order": 15
+        },
+        "LDAPAccountHostName": {
+            "type": "string",
+            "title": "Account Hostname",
+            "description": "The LDAP Hostname or IP address",
+            "property_order": 20
+        },
+        "LDAPAccountUseSSL": {
+            "type": "boolean",
+            "title": "Use SSL",
+            "default": true,
+            "description": "Enable Secure Socket Layer for this connection",
+            "property_order": 25
+        },
+        "LDAPSearchSettings": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "An LDAP Search Setting",
+                "default": {
+                    "LDAPSearchSettingDescription": "My Search",
+                    "LDAPSearchSettingScope": "LDAPSearchSettingScopeSubtree",
+                    "LDAPSearchSettingSearchBase": "o=My Company ou=MyDepartment"
+                },
+                "description": "An item within the Search Settings array",
+                "properties": {
+                    "LDAPSearchSettingDescription": {
+                        "type": "string",
+                        "title": "Description",
+                        "default": "My Search",
+                        "description": "Description for this setting"
+                    },
+                    "LDAPSearchSettingScope": {
+                        "type": "string",
+                        "title": "Scope",
+                        "default": "LDAPSearchSettingScopeSubtree",
+                        "description": "Defines what recursion to use in the search",
+                        "enum": [
+                            "LDAPSearchSettingScopeBase",
+                            "LDAPSearchSettingScopeOneLevel",
+                            "LDAPSearchSettingScopeSubtree"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Base",
+                                "One Level",
+                                "Subtree"
+                            ]
+                        }
+                    },
+                    "LDAPSearchSettingSearchBase": {
+                        "type": "string",
+                        "title": "Search Base",
+                        "default": "o=My Company,ou=My Department",
+                        "description": "Conceptually, the path to the the node to start a search at"
+                    }
+                }
+            },
+            "title": "Search Settings",
+            "description": "Scope and search base for this LDAP server.",
+            "property_order": 30
+        }
+    }
+}

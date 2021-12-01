@@ -1,0 +1,28 @@
+{
+    "title": "Assistant (Siri) (com.apple.assistant.support)",
+    "description": "Assistant (Siri) settings",
+    "properties": {
+        "Assistant Enabled": {
+            "type": "boolean",
+            "title": "Enable Siri",
+            "property_order": 5
+        },
+        "Siri Data Sharing Opt-In Status": {
+            "type": "integer",
+            "title": "Improve Siri & Dictation",
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Unseen",
+                    "Enabled",
+                    "Disabled"
+                ]
+            },
+            "property_order": 10
+        }
+    }
+}

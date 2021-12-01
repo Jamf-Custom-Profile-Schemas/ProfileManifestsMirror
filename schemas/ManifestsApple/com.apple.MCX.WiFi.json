@@ -1,0 +1,27 @@
+{
+    "title": "Wi-Fi Managed Settings (com.apple.MCX.WiFi)",
+    "description": "Wi-Fi Managed Settings",
+    "properties": {
+        "RequireAdminToTurnAirPortOnOff": {
+            "type": "boolean",
+            "title": "Require Admin Credentials for Wi-Fi Power",
+            "default": false,
+            "description": "If true, requires administrator authorization to turn Wi-Fi on or off.",
+            "property_order": 5
+        },
+        "RequireAdminForAirPortNetworkChange": {
+            "type": "boolean",
+            "title": "Require Admin Credentials for Wi-Fi Network Change",
+            "default": false,
+            "description": "If true, requires administrator authorization for network changes.",
+            "property_order": 10
+        },
+        "RequireAdminForIBSS": {
+            "type": "boolean",
+            "title": "Require Admin Credentials for IBSS",
+            "default": false,
+            "description": "If true, requires administrator authorization to enable IBSS.",
+            "property_order": 15
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "title": "System Preferences: Security (com.apple.preference.security)",
+    "description": "System Preferences: Security settings",
+    "properties": {
+        "dontAllowPasswordResetUI": {
+            "type": "boolean",
+            "title": "Allow user to change password",
+            "default": false,
+            "property_order": 5
+        },
+        "dontAllowLockMessageUI": {
+            "type": "boolean",
+            "title": "Allow user to set lock message",
+            "default": false,
+            "property_order": 10
+        }
+    }
+}

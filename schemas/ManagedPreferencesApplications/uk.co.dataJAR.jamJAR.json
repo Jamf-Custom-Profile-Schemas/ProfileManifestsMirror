@@ -1,0 +1,181 @@
+{
+    "title": "jamJAR (uk.co.dataJAR.jamJAR)",
+    "description": "jamJAR Preferences",
+    "properties": {
+        "log_file_dir": {
+            "type": "string",
+            "title": "Log File",
+            "default": "/var/log/",
+            "description": "jamJAR log file storage location. Prior to jamJAR 2.0: The log rotates at midnight & appends the date to the old file. As of jamJAR 2.0+: The log rotates every 10MB, not archiving older versions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#log_file_dir"
+                }
+            ],
+            "property_order": 5
+        },
+        "log_file_name": {
+            "type": "string",
+            "title": "Log File Name",
+            "default": "jamJAR",
+            "description": "jamJAR log file name.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#log_file_name"
+                }
+            ],
+            "property_order": 10
+        },
+        "notifier_msg_title": {
+            "type": "string",
+            "title": "Notification Message Title",
+            "default": "jamJAR",
+            "property_order": 15
+        },
+        "notifier_msg_installed": {
+            "type": "string",
+            "title": "Install Notification Message",
+            "default": "%s %s has been installed",
+            "description": "Notification message content when software is installed. Requires 2 string placeholders (%s), the first being the munki item name and the second being the version.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#notifier_msg_installed"
+                }
+            ],
+            "property_order": 20
+        },
+        "notifier_msg_nopending": {
+            "type": "string",
+            "title": "No Pending Installs Notification Message",
+            "default": "No updates pending",
+            "description": "Notification message content when no software is pending.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#notifier_msg_nopending"
+                }
+            ],
+            "property_order": 25
+        },
+        "notifier_msg_pending": {
+            "type": "string",
+            "title": "Pending Installs Exist Notification Message",
+            "default": "Logout to complete pending updates",
+            "description": "Notification message content when software is pending.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#notifier_msg_pending"
+                }
+            ],
+            "property_order": 30
+        },
+        "notifier_msg_uptodate": {
+            "type": "string",
+            "title": "Software Up-to-Date Notification Message",
+            "default": "Latest version of %s is installed",
+            "description": "Notification message content when software is up-to-date. Requires 1 string placeholder (%s), which defaults to the munki item name.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#notifier_msg_uptodate"
+                }
+            ],
+            "property_order": 35
+        },
+        "notifier_msg_osupdatespending": {
+            "type": "string",
+            "title": "OS Updates Pending Notification Message",
+            "default": "macOS Updates available. Click here for more details",
+            "description": "The notification text to display when macOS updates are pending. This leverages Manual Apple Updates in Munki 5",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#notifier_msg_osupdatespending"
+                }
+            ],
+            "property_order": 40
+        },
+        "notifier_path": {
+            "type": "string",
+            "title": "Notifying Application Path",
+            "default": "/Library/Application Support/JAMF/bin/Management Action.app/Contents/MacOS/Management Action",
+            "description": "The path of the application sending jamJAR notifications. Only terminal-notifier & Jamf Pro's Management Action have been tested.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#notifier_path"
+                }
+            ],
+            "property_order": 45
+        },
+        "notifier_sender_id": {
+            "type": "string",
+            "title": "Notifying Application Bundle ID",
+            "default": "com.jamfsoftware.selfservice",
+            "description": "The bundle ID of the application that sent the notification, if using only terminal-notifier or Notifier, this should be /Applications/Managed Software Center.app (or whatever the path to MSC is, if using MSC).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#notifier_sender_id"
+                }
+            ],
+            "property_order": 50
+        },
+        "datajar_notifier": {
+            "type": "boolean",
+            "title": "dataJAR Notifier",
+            "default": false,
+            "description": "Determines if jamJAR should use the dataJAR notifier for notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#datajar_notifier"
+                }
+            ],
+            "property_order": 55
+        },
+        "datajar_notifier_logout_button": {
+            "type": "string",
+            "title": "dataJAR Notifier Logout Button Title",
+            "default": "Logout",
+            "description": "Sets the title for the logout button shown in the Alert notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#datajar_notifier_logout_button"
+                }
+            ],
+            "property_order": 60
+        },
+        "no_msg_category": {
+            "type": "string",
+            "title": "No Message Category",
+            "default": "secret category",
+            "description": "Category name which when defined will not post a notification.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#no_msg_category"
+                }
+            ],
+            "property_order": 65
+        },
+        "delete_secure_auth": {
+            "type": "boolean",
+            "title": "Delete Munki Secure Auth",
+            "default": false,
+            "description": "If set to True, deletes the AdditionalHttpHeaders key in /private/var/root/Library/Preferences/ManagedInstalls.plist",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/dataJAR/jamJAR/wiki/jamJAR-Preferences#delete_secure_auth"
+                }
+            ],
+            "property_order": 70
+        }
+    }
+}

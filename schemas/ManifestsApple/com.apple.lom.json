@@ -1,0 +1,37 @@
+{
+    "title": "Lights Out Management (LOM) (com.apple.lom)",
+    "description": "Use this section to define settings for Lights Out Management (LOM).",
+    "properties": {
+        "ControllerCACertificateUUIDs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "UUID"
+            },
+            "title": "Controller CA Certificate UUIDs",
+            "description": "An array of UUIDs of payloads in this profile that contain certificates that will be used for controller certificate trustworthiness evaluation.",
+            "property_order": 5
+        },
+        "ControllerCertificateUUID": {
+            "type": "string",
+            "title": "Controller Certificate UUID",
+            "description": "UUID of a payload in this profile that contains the certificate of the LOM controller. Configures the device to accept LOMDeviceRequestCommand.",
+            "property_order": 10
+        },
+        "DeviceCACertificateUUIDs": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Device CA Certificate UUIDs",
+            "description": "An array of UUIDs of payloads in this profile that contain certificates that will be used for device certificate trustworthiness evaluation.",
+            "property_order": 15
+        },
+        "DeviceCertificateUUID": {
+            "type": "string",
+            "title": "Device Certificate UUID",
+            "description": "UUID of a payload in this profile that contains the certificate of the LOM device. Configures the device to accept PowerON, PowerOFF, and Reset requests.",
+            "property_order": 20
+        }
+    }
+}

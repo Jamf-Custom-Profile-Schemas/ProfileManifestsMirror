@@ -1,0 +1,71 @@
+{
+    "title": "Developer: TextField (com.profilecreator.developer.textfield)",
+    "description": "Developer: TextField settings",
+    "properties": {
+        "TextField01": {
+            "type": "string",
+            "title": "TextField 01: Standard",
+            "description": "Standard TextField.",
+            "property_order": 5
+        },
+        "TextField02": {
+            "type": "string",
+            "title": "TextField 02: Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Title",
+            "description": "TextField with a long title.",
+            "property_order": 10
+        },
+        "TextField03": {
+            "type": "string",
+            "title": "TextField 03: Long Description",
+            "description": "TextField with a long long long long long long long long long long long long long long long long long long long long long long long long long description.",
+            "property_order": 15
+        },
+        "TextField04": {
+            "type": "string",
+            "title": "TextField 04: Placeholder Value",
+            "description": "TextField with a placeholder value.",
+            "property_order": 20
+        },
+        "TextField05": {
+            "type": "string",
+            "title": "TextField 05: Default Value",
+            "default": "This is a default string",
+            "description": "TextField with a default value.",
+            "property_order": 25
+        },
+        "TextField06": {
+            "type": "string",
+            "description": "TextField with no title.",
+            "property_order": 30
+        },
+        "TextField07": {
+            "type": "string",
+            "description": "TextField with an empty title.",
+            "property_order": 35
+        },
+        "TextField08": {
+            "type": "string",
+            "title": "TextField 08: No Description",
+            "property_order": 40
+        },
+        "TextField09": {
+            "type": "string",
+            "title": "TextField 09: Empty Description",
+            "property_order": 45
+        },
+        "TextField10": {
+            "type": "string",
+            "title": "TextField 10: Format",
+            "default": "AA:BB:CC:DD:11:22deletethis",
+            "description": "TextField with a required format of a MAC address: ^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$",
+            "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$",
+            "property_order": 50
+        },
+        "TextField11": {
+            "type": "string",
+            "title": "TextField 11: Unit Definition",
+            "description": "TextField with a unit",
+            "property_order": 55
+        }
+    }
+}

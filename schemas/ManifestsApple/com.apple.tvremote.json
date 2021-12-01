@@ -1,0 +1,44 @@
+{
+    "title": "TV Remote (com.apple.tvremote)",
+    "description": "TV Remote app settings",
+    "properties": {
+        "AllowedRemotes": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Allowed Remotes Content Item",
+                "description": "An item in the allowed remotes",
+                "properties": {
+                    "RemoteDeviceID": {
+                        "type": "string",
+                        "title": "Remote Device ID",
+                        "description": "The iOS remote's MAC address",
+                        "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
+                    }
+                }
+            },
+            "title": "Allowed Remotes",
+            "description": "List of permitted iOS remote devices restricted on this device.",
+            "property_order": 5
+        },
+        "AllowedTVs": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Allowed TVs Content Item",
+                "description": "An item in the allowed TVs",
+                "properties": {
+                    "TVDeviceID": {
+                        "type": "string",
+                        "title": "TV Device ID",
+                        "description": "The tvOS destination MAC address",
+                        "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
+                    }
+                }
+            },
+            "title": "Allowed TVs",
+            "description": "List of permitted tvOS remote devices restricted on this device.",
+            "property_order": 10
+        }
+    }
+}

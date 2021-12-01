@@ -1,0 +1,13 @@
+{
+    "title": "System Policy: Managed (com.apple.systempolicy.managed)",
+    "description": "System Policy: Managed settings",
+    "properties": {
+        "DisableOverride": {
+            "type": "boolean",
+            "title": "Disable contextual menu override of Gatekeeper",
+            "default": false,
+            "description": "If YES, the Finder's contextual menu item will be disabled.",
+            "property_order": 5
+        }
+    }
+}

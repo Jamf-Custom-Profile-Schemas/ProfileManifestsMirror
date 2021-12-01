@@ -1,0 +1,48 @@
+{
+    "title": "FxFactory (com.fxfactory.FxFactory)",
+    "description": "FxFactory settings",
+    "properties": {
+        "allowAutomaticUpdates": {
+            "type": "boolean",
+            "title": "Enable automatic updates",
+            "default": false,
+            "description": "Setting this to true, automatic updates will be enabled",
+            "property_order": 5
+        },
+        "checkForUpdates": {
+            "type": "boolean",
+            "title": "Check for new versions of installed plugins",
+            "default": false,
+            "description": "Setting this to true, FxFactory will check for the latest versions of installed plugins",
+            "property_order": 10
+        },
+        "warnAboutUpdates": {
+            "type": "boolean",
+            "title": "Notify when a new version of FxFactory is available",
+            "default": false,
+            "description": "Setting this to true, FxFactory will send a notification when a new version is available, while using any application that loads FxFactory",
+            "property_order": 15
+        },
+        "warnAboutUpdatesToOtherSoftware": {
+            "type": "boolean",
+            "title": "Notify when critical updates to other software are available",
+            "default": false,
+            "description": "Setting this to true, FxFactory will send a notification when it finds outdated software on your system that may interfere with the operation of its products",
+            "property_order": 20
+        },
+        "warnAboutMissingComponents": {
+            "type": "boolean",
+            "title": "Notify when required components are missing",
+            "default": false,
+            "description": "Setting this to true, FxFactory will send a notification when any components required for normal operation are missing from the system",
+            "property_order": 25
+        },
+        "warnAboutUnsupportedHost": {
+            "type": "boolean",
+            "title": "Notify when products cannot be loaded by current application",
+            "default": false,
+            "description": "Setting this to true, FxFactory will send a notification if any products cannot be loaded by the current application due to a compatibility issue",
+            "property_order": 30
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "title": "Developer: Note (com.profilecreator.developer.note)",
+    "description": "Developer: Note settings",
+    "properties": {
+        "Note01": {
+            "type": "string",
+            "title": "Note 01: TextField",
+            "description": "TextField Note.",
+            "property_order": 5
+        }
+    }
+}

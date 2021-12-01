@@ -1,0 +1,88 @@
+{
+    "title": "ShareKit (com.apple.ShareKitHelper)",
+    "description": "Configures available Share menu options",
+    "properties": {
+        "SHKAllowedShareServices": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Allowed Services",
+                "enum": [
+                    "com.apple.share.AirDrop",
+                    "com.apple.share.Facebook",
+                    "com.apple.share.LinkedIn.post",
+                    "com.apple.share.Twitter",
+                    "com.apple.share.Mail",
+                    "com.apple.share.Messages",
+                    "com.apple.Notes.SharingExtension",
+                    "com.apple.reminders.RemindersShareExtension",
+                    "com.apple.share.Video",
+                    "com.apple.share.addtoiphoto",
+                    "com.apple.share.addtoaperture",
+                    "com.apple.share.readlater",
+                    "com.apple.share.SinaWeibo"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "AirDrop",
+                        "Facebook",
+                        "LinkedIn",
+                        "Twitter",
+                        "Mail",
+                        "Messages",
+                        "Notes",
+                        "Reminders",
+                        "Video Services - Flickr, Vimeo, Tuduo, and Youku",
+                        "Add to iPhoto",
+                        "Add to Aperture",
+                        "Add to Reading List",
+                        "Sina Weibo"
+                    ]
+                }
+            },
+            "title": "Allowed Share Services",
+            "property_order": 5
+        },
+        "SHKDeniedShareServices": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Denied Services",
+                "enum": [
+                    "com.apple.share.AirDrop",
+                    "com.apple.share.Facebook",
+                    "com.apple.share.LinkedIn.post",
+                    "com.apple.share.Twitter",
+                    "com.apple.share.Mail",
+                    "com.apple.share.Messages",
+                    "com.apple.Notes.SharingExtension",
+                    "com.apple.reminders.RemindersShareExtension",
+                    "com.apple.share.Video",
+                    "com.apple.share.addtoiphoto",
+                    "com.apple.share.addtoaperture",
+                    "com.apple.share.readlater",
+                    "com.apple.share.SinaWeibo"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "AirDrop",
+                        "Facebook",
+                        "LinkedIn",
+                        "Twitter",
+                        "Mail",
+                        "Messages",
+                        "Notes",
+                        "Reminders",
+                        "Video Services - Flickr, Vimeo, Tuduo, and Youku",
+                        "Add to iPhoto",
+                        "Add to Aperture",
+                        "Add to Reading List",
+                        "Sina Weibo"
+                    ]
+                }
+            },
+            "title": "Denied Share Services",
+            "property_order": 10
+        }
+    }
+}

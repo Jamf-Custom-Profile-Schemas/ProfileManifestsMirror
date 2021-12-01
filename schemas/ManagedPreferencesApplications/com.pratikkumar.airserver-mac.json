@@ -1,0 +1,215 @@
+{
+    "title": "AirServer (com.pratikkumar.airserver-mac)",
+    "description": "AirServer settings",
+    "properties": {
+        "SUFeedURL": {
+            "type": "string",
+            "title": "Sparkle Feed URL",
+            "description": "Setting this to a non-existent URL will disable the ability for users to manually check for updates. Useful when you intend to use your own software distribution mechanism to deploy updates.",
+            "pattern": "^https://.*$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 5
+        },
+        "SUEnableAutomaticChecks": {
+            "type": "boolean",
+            "title": "Enable Automatic Update Checks",
+            "default": true,
+            "description": "Controls automatic update checks.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 10
+        },
+        "SUScheduledCheckInterval": {
+            "type": "integer",
+            "title": "Automatic Update Check Interval",
+            "default": 86400,
+            "description": "Controls the automatic update check interval. The default is 1 day (86400 seconds). Setting to 0 disables updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 15
+        },
+        "SUAllowsAutomaticUpdates": {
+            "type": "boolean",
+            "title": "Automatic Update Install Prompt",
+            "default": true,
+            "description": "Controls the automatic update install prompt. When enabled, presents users with the option to allow automatic download and install of available updates. If disabled, disallows automatic updates and requires manual installation every time.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 20
+        },
+        "SUAutomaticallyUpdate": {
+            "type": "boolean",
+            "title": "Enable Automatic Silent Updates",
+            "default": false,
+            "description": "Controls automatic silent updates. If enabled, users will not be informed about updates and updates will be silently installed when the app quits.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 25
+        },
+        "SUSendProfileInfo": {
+            "type": "boolean",
+            "description": "When running software update checks, submit anonymous computer profile data to AirServer.",
+            "property_order": 30
+        },
+        "UseLionStyleFullscreen": {
+            "type": "boolean",
+            "description": "Enable this setting if you want to use the native macOS fullscreen mode - slower.",
+            "property_order": 35
+        },
+        "UserDeviceName": {
+            "type": "string",
+            "description": "Use this field to override the name of the computer that appears on the AirPlay network.",
+            "property_order": 40
+        },
+        "UserLosslessAudioReceiverName": {
+            "type": "string",
+            "description": "Only enable this preference when you wish to set a custom name for the device running AirServer in the AirPlay device list.",
+            "property_order": 45
+        },
+        "autoLaunch": {
+            "type": "boolean",
+            "default": true,
+            "description": "Have AirServer launch on system startup.",
+            "property_order": 50
+        },
+        "com.airserverapp.audioBufferSize2": {
+            "type": "real",
+            "default": 0.5,
+            "description": "Use this setting to tweak multi-room audio sync when streaming music from iTunes.",
+            "enum": [
+                0.0,
+                0.05,
+                0.1,
+                0.15000000000000002,
+                0.2,
+                0.25,
+                0.30000000000000004,
+                0.35000000000000003,
+                0.4,
+                0.45,
+                0.5,
+                0.55,
+                0.6000000000000001,
+                0.65,
+                0.7000000000000001,
+                0.75,
+                0.8,
+                0.8500000000000001,
+                0.9,
+                0.9500000000000001,
+                1.0
+            ],
+            "options": {
+                "enum_titles": [
+                    "-500 ms",
+                    "-450 ms",
+                    "-400 ms",
+                    "-350 ms",
+                    "-300 ms",
+                    "-250 ms",
+                    "-200 ms",
+                    "-150 ms",
+                    "-100 ms",
+                    "-50 ms",
+                    "0 ms",
+                    "50 ms",
+                    "100 ms",
+                    "150 ms",
+                    "200 ms",
+                    "250 ms",
+                    "300 ms",
+                    "350 ms",
+                    "400 ms",
+                    "450 ms",
+                    "500 ms"
+                ]
+            },
+            "property_order": 55
+        },
+        "com.airserverapp.PasswordType": {
+            "type": "string",
+            "description": "Choose authentication method when connecting to AirServer. While a Fixed Password is an available setting, it's not possible to define this password via profile.",
+            "enum": [
+                "Fixed Password",
+                "Onscreen Code",
+                "Ask me"
+            ],
+            "property_order": 60
+        },
+        "com.airserverapp.alwaysOnTop": {
+            "type": "boolean",
+            "description": "Enable this setting if you want AirServer windows to be on top of all other windows.",
+            "property_order": 65
+        },
+        "com.airserverapp.dualAirplay": {
+            "type": "boolean",
+            "title": "Enable Dual-Airplay Device",
+            "description": "This option creates a second AirPort Expresss-like audio receiver suffixed with an Ex. Streaming music to this endpoint will force the iOS device to stream your music in lossless quality. Enabling this setting can also allow you to watch a video on your iOS device and send only the audiostream to the AirServer.",
+            "property_order": 70
+        },
+        "com.airserverapp.linkMasterVolume": {
+            "type": "boolean",
+            "default": true,
+            "description": "If enabled, changing the volume on your iOS device will change the volume of your preferred output sound device; otherwise AirServer will lower the streaming music volume.",
+            "property_order": 75
+        },
+        "com.airserverapp.mirroringOptimizedFor2": {
+            "type": "string",
+            "default": "1080p",
+            "description": "Here you can set the mirroring resolution AirServer provides to your iOS device. 'Retina' is recommended for all users, but if you are having connection problems, try the 1080p option. Do not enable this preference if you wish use the default 'Retina - High Quality' resolution setting.",
+            "enum": [
+                "1080p",
+                "720p",
+                "iPad Retina",
+                "iPhone 6/6s Plus Retina",
+                "iPhone 6/6s Retina",
+                "iPhone 5/5s Retina",
+                "iPhone 4s Retina",
+                "iPad",
+                "iPhone 6/6s",
+                "iPhone 5/5s",
+                "iPhone 4s",
+                "Target Display",
+                "Projector 1024x768",
+                "Projector 1600x1200"
+            ],
+            "property_order": 80
+        },
+        "com.airserverapp.slowNetwork": {
+            "type": "boolean",
+            "description": "Enabling this setting will lower the mirroring quality by half but uses four times less bandwidth.",
+            "property_order": 85
+        },
+        "com.airserverapp.SoftwareDecoderOnly": {
+            "type": "boolean",
+            "description": "Enable this setting if your AirPlay device regularly freezes or if you notice green artifacts when using AirPlay mirroring. This is common on older Macs that do not properly support hardware-accelerated video encoding.",
+            "property_order": 90
+        },
+        "showInDock": {
+            "type": "boolean",
+            "description": "Use this setting to toggle between running AirServer in the Dock and in the menu bar.",
+            "property_order": 95
+        }
+    }
+}

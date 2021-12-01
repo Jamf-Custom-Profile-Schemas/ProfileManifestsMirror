@@ -1,0 +1,131 @@
+{
+    "title": "macOS LAPS (edu.psu.macoslaps)",
+    "description": "macOS LAPS settings",
+    "properties": {
+        "LocalAdminAccount": {
+            "type": "string",
+            "title": "Local Admin Account Username",
+            "default": "admin",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 5
+        },
+        "DaysTillExpiration": {
+            "type": "integer",
+            "title": "Days Till Password Expiration",
+            "default": 60,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 10
+        },
+        "PasswordLength": {
+            "type": "integer",
+            "title": "Password Length",
+            "default": 12,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 15
+        },
+        "RemoveKeyChain": {
+            "type": "boolean",
+            "title": "Remove Keychain",
+            "default": true,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 20
+        },
+        "RemovePassChars": {
+            "type": "string",
+            "title": "Password Characters to Exclude",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 25
+        },
+        "ExclusionSets": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Character Set",
+                "enum": [
+                    "letters",
+                    "numbers",
+                    "symbols"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Letters",
+                        "Numbers",
+                        "Symbols"
+                    ]
+                }
+            },
+            "title": "Exclusion Sets",
+            "description": "Exclude any character set you'd like from the randomly generated password.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 30
+        },
+        "Method": {
+            "type": "string",
+            "default": "AD",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "enum": [
+                "AD",
+                "Local"
+            ],
+            "property_order": 35
+        },
+        "PreferredDC": {
+            "type": "string",
+            "title": "Preferred Domain Controller",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 40
+        },
+        "FirstPass": {
+            "type": "string",
+            "title": "First Password",
+            "description": "Use this key if your LAPS Admin is a FileVault user. The script will read this key in if there isn't a keyhcain entry in System keychain for macOSLAPS. Once this has been completed, the keychain entry will then be used.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 45
+        }
+    }
+}

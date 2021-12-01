@@ -1,0 +1,68 @@
+{
+    "title": "Parental Controls: Web Content Filter (com.apple.familycontrols.contentfilter)",
+    "description": "Parental Controls: Web Content Filter settings",
+    "properties": {
+        "restrictWeb": {
+            "type": "boolean",
+            "title": "Limit access to websites",
+            "description": "Set to true to enable Web content filters.",
+            "property_order": 5
+        },
+        "whitelistEnabled": {
+            "type": "boolean",
+            "title": "Enable site allowlist",
+            "default": false,
+            "description": "Set to true to use the filterWhiteList and filterBlackList lists.",
+            "property_order": 10
+        },
+        "siteWhitelist": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Site Allowlist Item",
+                "properties": {
+                    "address": {
+                        "type": "string",
+                        "title": "Site address prefix",
+                        "description": "Site prefix, including http(s) scheme."
+                    },
+                    "pageTitle": {
+                        "type": "string",
+                        "title": "Page Title",
+                        "description": "Optional Page Title"
+                    }
+                }
+            },
+            "title": "Site Allowlist",
+            "description": "If specified, this key contains an array of dictionaries that define additional allowed sites besides those in the automated list of allowed and unallowed sites, including disallowed adult sites.",
+            "property_order": 15
+        },
+        "useContentFilter": {
+            "type": "boolean",
+            "title": "Use built in content filter",
+            "default": false,
+            "description": "Set to true to try to automatically filter content.",
+            "property_order": 20
+        },
+        "filterWhitelist": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Allowlist URL"
+            },
+            "title": "Content Filter Allowlist",
+            "description": "If specified and restrictWeb is true, an array of URLs designating the only allowed Websites.",
+            "property_order": 25
+        },
+        "filterBlacklist": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Blacklist URL"
+            },
+            "title": "Content Filter Backlist",
+            "description": "If specified and restrictWeb is true, an array of URLs of Websites never to be allowed.",
+            "property_order": 30
+        }
+    }
+}

@@ -1,0 +1,145 @@
+{
+    "title": "Microsoft PowerPoint (com.microsoft.Powerpoint)",
+    "description": "Microsoft PowerPoint settings",
+    "properties": {
+        "NSRequiresAquaSystemAppearance": {
+            "type": "boolean",
+            "title": "Disable Dark Mode",
+            "default": false,
+            "description": "Disable macOS Dark Mode settings for application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1544660345485200"
+                }
+            ],
+            "property_order": 5
+        },
+        "kSubUIAppCompletedFirstRunSetup1507": {
+            "type": "boolean",
+            "title": "First Run Setup Completed",
+            "default": false,
+            "description": "Controls the original \"What's New\" dialog and Office 365 activation prompt on first launch. Replaced by 'OfficeAutoSignIn' in the main Office profile starting in version 16.17 and should not be used for Office 2019.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://derflounder.wordpress.com/2016/01/17/suppressing-office-2016s-first-run-dialog-windows/"
+                }
+            ],
+            "property_order": 10
+        },
+        "SendASmileEnabled": {
+            "type": "boolean",
+            "title": "Send A Smile Enabled",
+            "default": true,
+            "description": "This key when set to false will deactivate the ability for users to use the \"Smile\" feature to send feedback to Microsoft.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.google.com/spreadsheets/d/1ESX5td0y0OP3jdzZ-C2SItm-TUi-iA_bcHCBvaoCumw/"
+                }
+            ],
+            "property_order": 15
+        },
+        "SendAllTelemetryEnabled": {
+            "type": "boolean",
+            "title": "Send Telemetry Data",
+            "default": true,
+            "description": "Set to FALSE to send minimal heartbeat data, no application usage, and no environment details.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/deploy-office-365-proplus-in-gcc-high-dod#turn-off-sending-telemetry-data-to-microsoft-from-office-for-mac"
+                }
+            ],
+            "property_order": 20
+        },
+        "SendCrashReportsEvenWithTelemetryDisabled": {
+            "type": "boolean",
+            "title": "Send Crash Reports even with Telemetry Disabled",
+            "description": "Sends crash reports even if telemetry is disabled. Will only be evaluated if 'Send Telemetry Data' is FALSE.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1536706447000100"
+                }
+            ],
+            "property_order": 25
+        },
+        "SignInOptions": {
+            "type": "integer",
+            "title": "Sign In Options",
+            "description": "Prevent users from signing in to any O365 service. This has the added effect of making sure users store no data online via microsoft servers.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.google.com/spreadsheets/d/1ESX5td0y0OP3jdzZ-C2SItm-TUi-iA_bcHCBvaoCumw/"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2,
+                4
+            ],
+            "options": {
+                "enum_titles": [
+                    "All accounts allowed",
+                    "Only personal accounts (MSA)",
+                    "Only institution accounts",
+                    "No accounts allowed"
+                ]
+            },
+            "property_order": 30
+        },
+        "kFRETelemetryConsentKey": {
+            "type": "boolean",
+            "title": "Suppress 'Connected Services' dialog",
+            "description": "Disable the \"Connected Services\" dialog for MSA-based (personal) accounts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1527191452000462"
+                }
+            ],
+            "property_order": 35
+        },
+        "kFREEnterpriseTelemetryInfoKey": {
+            "type": "boolean",
+            "title": "Suppress Privacy and Services dialog",
+            "default": false,
+            "description": "Suppresses a temporary Privacy and Services Update dialog in 16.27 ONLY. (Was previously used for a similar purpose in 16.13.1 but the key was recycled.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
+                }
+            ],
+            "property_order": 40
+        },
+        "kFREIntelligenceServicesConsentV2Key": {
+            "type": "boolean",
+            "title": "Suppress 'Use Intelligent Services' dialog (1/2)",
+            "description": "Suppress the \"Use Intelligent Services?\" pop-up dialog and auto-accept the terms in 16.17 through 16.27.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
+                }
+            ],
+            "property_order": 45
+        },
+        "PII_And_Intelligent_Services_Preference": {
+            "type": "boolean",
+            "title": "Suppress 'Use Intelligent Services' dialog (2/2)",
+            "description": "Suppress the \"Use Intelligent Services?\" pop-up dialog and auto-accept the terms in 16.17 through 16.27.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
+                }
+            ],
+            "property_order": 50
+        }
+    }
+}

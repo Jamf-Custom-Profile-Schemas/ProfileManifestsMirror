@@ -1,0 +1,118 @@
+{
+    "title": "Jamf Connect Shares (com.jamf.connect.shares)",
+    "description": "Jamf Connect Shares settings",
+    "properties": {
+        "Version": {
+            "type": "string",
+            "title": "Jamf Connect Shares PLIST Version",
+            "description": "Required.",
+            "enum": [
+                "1"
+            ],
+            "property_order": 5
+        },
+        "HomeMount": {
+            "type": "dictionary",
+            "title": "Home Mount",
+            "description": "This is a dictionary of attributes for scenarios where the user\u2019s home profile should be mounted.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jamf.com/jamf-connect/1.6.1/administrator-guide/Configuring_File_Shares_with_Jamf_Connect_Sync.html"
+                }
+            ],
+            "properties": {
+                "Mount": {
+                    "type": "boolean",
+                    "title": "Auto Mount Home",
+                    "description": "Mount the user's home automatically or not.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.jamf.com/jamf-connect/1.6.1/administrator-guide/Configuring_File_Shares_with_Jamf_Connect_Sync.html"
+                        }
+                    ]
+                },
+                "Groups": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Name of group in AD."
+                    },
+                    "description": "Specifies which active directory group members should have their home profile mounted.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.jamf.com/jamf-connect/1.6.1/administrator-guide/Configuring_File_Shares_with_Jamf_Connect_Sync.html"
+                        }
+                    ]
+                },
+                "Options": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Array of optional mount options. See the Options table in the documentation linked below for more information.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.jamf.com/jamf-connect/1.6.1/administrator-guide/Configuring_File_Shares_with_Jamf_Connect_Sync.html"
+                        }
+                    ]
+                }
+            },
+            "property_order": 10
+        },
+        "Shares": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "description": "Dictionary of shares and their settings.",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "description": "Name as it will appear in the Jamf Connect menu item."
+                    },
+                    "URL": {
+                        "type": "string",
+                        "description": "The actual URL of the mount point in the form of \"smb://dc1.example.com/Homes\".\n\nFor the URLs, you can use variable substitution to allow for custom mounts without having to create even more XML. Jamf Connect understands <<domain>>, <<fullname>>, <<serial>>, <<shortname>>, <<upn>> and <<email>>"
+                    },
+                    "Groups": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "An array of AD groups allowed to mount the share."
+                    },
+                    "LocalMount": {
+                        "type": "string",
+                        "description": "Optional local mount point."
+                    },
+                    "AutoMount": {
+                        "type": "boolean",
+                        "description": "If enabled, the share is automatically mounted."
+                    },
+                    "ConnectedOnly": {
+                        "type": "boolean",
+                        "description": "If enabled, the share is only mounted when the computer is connected to the active directory domain."
+                    },
+                    "Options": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Array of optional mount options. See the Options table in the documentation linked below for more information."
+                    }
+                }
+            },
+            "description": "Array of dictionaries of each share and their settings.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jamf.com/jamf-connect/1.6.1/administrator-guide/Configuring_File_Shares_with_Jamf_Connect_Sync.html"
+                }
+            ],
+            "property_order": 15
+        }
+    }
+}

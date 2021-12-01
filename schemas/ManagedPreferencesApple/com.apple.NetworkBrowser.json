@@ -1,0 +1,12 @@
+{
+    "title": "AirDrop (macOS) (com.apple.NetworkBrowser)",
+    "description": "macOS AirDrop Settings",
+    "properties": {
+        "DisableAirDrop": {
+            "type": "boolean",
+            "title": "Disable AirDrop",
+            "default": false,
+            "property_order": 5
+        }
+    }
+}

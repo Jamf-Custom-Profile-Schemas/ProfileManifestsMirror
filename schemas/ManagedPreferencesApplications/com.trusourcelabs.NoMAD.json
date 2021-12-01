@@ -1,0 +1,622 @@
+{
+    "title": "NoMAD (com.trusourcelabs.NoMAD)",
+    "description": "NoMAD settings",
+    "properties": {
+        "ADDomain": {
+            "type": "string",
+            "description": "Defines the AD domain you\u2019re working with.",
+            "property_order": 5
+        },
+        "LDAPType": {
+            "type": "string",
+            "title": "LDAP Type",
+            "default": "OD",
+            "enum": [
+                "OD"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Open Directory"
+                ]
+            },
+            "property_order": 10
+        },
+        "LDAPOverSSL": {
+            "type": "boolean",
+            "title": "LDAP Over SSL",
+            "property_order": 15
+        },
+        "LDAPAnonymous": {
+            "type": "boolean",
+            "title": "Anonymous LDAP",
+            "property_order": 20
+        },
+        "LDAPOnly": {
+            "type": "boolean",
+            "title": "LDAP Only",
+            "property_order": 25
+        },
+        "LDAPServerList": {
+            "type": "string",
+            "title": "LDAP Server List",
+            "property_order": 30
+        },
+        "CustomLDAPAttributes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "LDAP Attributes"
+            },
+            "title": "Custom LDAP Attributes",
+            "property_order": 35
+        },
+        "HomeAppendDomain": {
+            "type": "boolean",
+            "title": "Append Domain to User Home",
+            "property_order": 40
+        },
+        "RecursiveGroupLookup": {
+            "type": "boolean",
+            "title": "Recursive Group Lookup",
+            "property_order": 45
+        },
+        "KerberosRealm": {
+            "type": "string",
+            "title": "Kerberos Realm",
+            "property_order": 50
+        },
+        "RenewTickets": {
+            "type": "boolean",
+            "title": "Renew Kerberos Tickets",
+            "property_order": 55
+        },
+        "SecondsToRenew": {
+            "type": "integer",
+            "title": "Seconds To Renew Kerberos Tickets",
+            "default": 3600,
+            "property_order": 60
+        },
+        "UserSwitch": {
+            "type": "boolean",
+            "title": "Use Active User",
+            "property_order": 65
+        },
+        "DontMatchKerbPrefs": {
+            "type": "boolean",
+            "title": "Don't Match Kerberos Preferences",
+            "property_order": 70
+        },
+        "ConfigureChrome": {
+            "type": "boolean",
+            "title": "Configure Chrome",
+            "property_order": 75
+        },
+        "ConfigureChromeDomain": {
+            "type": "string",
+            "title": "Configure Chrome Domain",
+            "property_order": 80
+        },
+        "UseKeychain": {
+            "type": "boolean",
+            "title": "Use Keychain",
+            "property_order": 85
+        },
+        "LocalPasswordSync": {
+            "type": "boolean",
+            "title": "Local Password Sync",
+            "property_order": 90
+        },
+        "LocalPasswordSyncOnMatchOnly": {
+            "type": "boolean",
+            "title": "Only Sync Local Password on Match",
+            "property_order": 95
+        },
+        "LocalPasswordSyncDontSyncLocalUsers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Username"
+            },
+            "title": "Local Users to Not Sync Password",
+            "property_order": 100
+        },
+        "LocalPasswordSyncDontSyncNetworkUsers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Username"
+            },
+            "title": "Network Users to Not Sync Password",
+            "property_order": 105
+        },
+        "KeychainItems": {
+            "type": "dictionary",
+            "title": "Keychain Items",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Keychain Item"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Account"
+                }
+            },
+            "property_order": 110
+        },
+        "KeychainItemsDebug": {
+            "type": "boolean",
+            "title": "Enable Keychain Items Debugging",
+            "property_order": 115
+        },
+        "HicFix": {
+            "type": "boolean",
+            "title": "Enable High Sierra Fix",
+            "property_order": 120
+        },
+        "PasswordPolicy": {
+            "type": "dictionary",
+            "title": "Password Policy",
+            "description": "Complexity policy for changing the password via Kerberos.",
+            "properties": {
+                "minLength": {
+                    "type": "string",
+                    "title": "Minimum Password Length",
+                    "description": "Minimum password length",
+                    "pattern": "^[0-9]+$"
+                },
+                "minLowerCase": {
+                    "type": "string",
+                    "title": "Minimum Lowercase Letters",
+                    "description": "Minimum # of lowercase letters required in password",
+                    "pattern": "^[0-9]+$"
+                },
+                "minUpperCase": {
+                    "type": "string",
+                    "title": "Minimum Uppercase Letters",
+                    "description": "Minimum # of uppercase letters required in password",
+                    "pattern": "^[0-9]+$"
+                },
+                "minNumber": {
+                    "type": "string",
+                    "title": "Minimum Numbers",
+                    "description": "Minimum # of numbers required in password",
+                    "pattern": "^[0-9]+$"
+                },
+                "minSymbol": {
+                    "type": "string",
+                    "title": "Minimum Symbols",
+                    "description": "Minimum # of symbols required in password",
+                    "pattern": "^[0-9]+$"
+                },
+                "minMatches": {
+                    "type": "string",
+                    "title": "Minimum Password Policy Matches",
+                    "description": "Minimum # of password policies that must be met (not including length)",
+                    "pattern": "^[0-9]+$"
+                }
+            },
+            "property_order": 125
+        },
+        "ChangePasswordCommand": {
+            "type": "string",
+            "title": "Change Password Command",
+            "property_order": 130
+        },
+        "ChangePasswordType": {
+            "type": "string",
+            "title": "Change Password Type",
+            "description": "Type of the ChangePassword function.",
+            "enum": [
+                "Kerberos",
+                "Task",
+                "App",
+                "URL",
+                "None"
+            ],
+            "property_order": 135
+        },
+        "ChangePasswordOptions": {
+            "type": "string",
+            "title": "Change Password Options",
+            "description": "Task, URL or App path for ChangePasswordType. (<<serial>>, <<fullname>>, <<shortname>> and <<domain>> are currently supported as substitutions)",
+            "property_order": 140
+        },
+        "HideExpiration": {
+            "type": "boolean",
+            "title": "Hide Password Expiration",
+            "property_order": 145
+        },
+        "HideExpirationMessage": {
+            "type": "string",
+            "title": "Hide Password Expiration Message",
+            "description": "Message text to show in the menu bar when the password countdown has been suppressed.",
+            "property_order": 150
+        },
+        "PasswordExpireAlertTime": {
+            "type": "integer",
+            "title": "Password Expiration Alert Time",
+            "default": 1296000,
+            "description": "Number of seconds before a user's password expiration that an alert is shown. (Set to 0 to never be bothered. Defaults to 15 days or 1,296,000 seconds.)",
+            "property_order": 155
+        },
+        "PasswordExpireCustomAlert": {
+            "type": "string",
+            "title": "Password Expiration Custom Alert",
+            "property_order": 160
+        },
+        "PasswordExpireCustomWarnTime": {
+            "type": "integer",
+            "title": "Password Expiration Custom Warning Time",
+            "description": "Number of days remaining before the custom alert is shown, and in yellow.",
+            "property_order": 165
+        },
+        "PasswordExpireCustomAlertTime": {
+            "type": "integer",
+            "title": "Password Expiration Custom Alert Time",
+            "description": "Number of days remaining before the custom alert is shown, and in red.",
+            "property_order": 170
+        },
+        "UPCAlert": {
+            "type": "boolean",
+            "title": "Unannounced Password Changes Alert",
+            "description": "Alerts the user to Unannounced Password Changes, typically when the password was changed in AD and not from the user's system.",
+            "property_order": 175
+        },
+        "MessageUPCAlert": {
+            "type": "string",
+            "title": "Unannounced Password Changes Message",
+            "default": "Your password was changed elsewhere.",
+            "description": "Message to be shown in an UPCAlert notification.",
+            "property_order": 180
+        },
+        "UPCAlertAction": {
+            "type": "string",
+            "title": "Unannounced Password Changes Action",
+            "description": "Path to a script or other binary to execute when a UPC Alert occurs.",
+            "property_order": 185
+        },
+        "GetCertificateAutomatically": {
+            "type": "boolean",
+            "title": "Get Certificates Automatically",
+            "description": "Automatically request a certificate for a user when they don't have a valid certificate in the keychain.",
+            "property_order": 190
+        },
+        "AutoRenewCert": {
+            "type": "integer",
+            "title": "Automatic Certificate Renewal",
+            "description": "Number of days until the certificate expires before automatically renewing it.",
+            "property_order": 195
+        },
+        "ExportableKey": {
+            "type": "boolean",
+            "title": "Exportable Private Key",
+            "description": "Allows the private key from any NoMAD generated certificate to be exported.",
+            "property_order": 200
+        },
+        "CleanCerts": {
+            "type": "boolean",
+            "title": "Automatic Certificate Cleaning",
+            "description": "Automatically remove extra certificates from the user's keychain. This will leave the 2 newest and the 2 oldest certificates.",
+            "property_order": 205
+        },
+        "X509CA": {
+            "type": "string",
+            "title": "Windows Certificate Authority",
+            "description": "FQDN of the Windows web CA for NoMAD to use for certificates.",
+            "property_order": 210
+        },
+        "Template": {
+            "type": "string",
+            "title": "Windows Certificate Authority Template",
+            "description": "Certificate template to request when using the Windows CA.",
+            "property_order": 215
+        },
+        "WifiNetworks": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Wi-Fi Networks",
+            "description": "A list of wireless networks that the certificate created by NoMAD should be associated with.",
+            "property_order": 220
+        },
+        "LightsOutIKnowWhatImDoing": {
+            "type": "boolean",
+            "title": "Hide NoMAD Menubar Icon",
+            "description": "Removes the icon from the menu bar. Note that NoMAD still is in the menu bar, just with no icon and taking up less space.",
+            "property_order": 225
+        },
+        "MountSharesWithFinder": {
+            "type": "boolean",
+            "title": "Mount Shares with Finder",
+            "description": "Use the Finder instead of the API for automounted file shares.",
+            "property_order": 230
+        },
+        "GetHelpType": {
+            "type": "string",
+            "title": "Get Help Type",
+            "description": "Determines type of GetHelp function.",
+            "enum": [
+                "Bomgar",
+                "URL",
+                "App"
+            ],
+            "property_order": 235
+        },
+        "GetHelpOptions": {
+            "type": "string",
+            "title": "Get Help Options",
+            "description": "URL or Path for GetHelpType (<<serial>>, <<fullname>>, <<shortname>> and <<domain>> are currently supported as substitutions)",
+            "property_order": 240
+        },
+        "SelfServicePath": {
+            "type": "string",
+            "title": "Self Service Path",
+            "description": "File path for a Self Service application not found automatically.",
+            "property_order": 245
+        },
+        "HideAbout": {
+            "type": "boolean",
+            "title": "Hide 'About' Menu Item",
+            "description": "Hides the About menu item.",
+            "property_order": 250
+        },
+        "HideGetSoftware": {
+            "type": "boolean",
+            "title": "Hide 'Get Software' Menu Item",
+            "description": "Hides the Get Software menu item.",
+            "property_order": 255
+        },
+        "HideHelp": {
+            "type": "boolean",
+            "title": "Hide 'Help' Menu Item",
+            "description": "Hides the Get Help menu item.",
+            "property_order": 260
+        },
+        "ShowHome": {
+            "type": "boolean",
+            "title": "Show 'Home' Menu Item",
+            "description": "Shows the Home Directory share menu item.",
+            "property_order": 265
+        },
+        "HideLockScreen": {
+            "type": "boolean",
+            "title": "Hide 'Lock Screen' Menu Item",
+            "description": "Hides the Lock Screen menu item.",
+            "property_order": 270
+        },
+        "HidePrefs": {
+            "type": "boolean",
+            "title": "Hide 'Preferences' Menu Item",
+            "description": "Disables the Preferences menu item.",
+            "property_order": 275
+        },
+        "HideQuit": {
+            "type": "boolean",
+            "title": "Hide 'Quit' Menu Item",
+            "description": "Hides the Quit menu item.",
+            "property_order": 280
+        },
+        "HideRenew": {
+            "type": "boolean",
+            "title": "Hide 'Renew Tickets' Menu Item",
+            "description": "Hides the Renew Tickets menu item.",
+            "property_order": 285
+        },
+        "HideSignOut": {
+            "type": "boolean",
+            "title": "Hide 'Sign Out' Menu Item",
+            "description": "Hides the Sign Out menu item.",
+            "property_order": 290
+        },
+        "PersistExpiration": {
+            "type": "boolean",
+            "title": "Persist Password Expiration Countdown",
+            "description": "Shows the password expiration countdown even when the user is not logged into the domain.",
+            "property_order": 295
+        },
+        "MessageNotConnected": {
+            "type": "string",
+            "title": "Not Connected to Domain Message",
+            "description": "Message text to show in the menu bar when NoMAD is not connected to the AD domain.",
+            "property_order": 300
+        },
+        "MessagePasswordChangePolicy": {
+            "type": "string",
+            "title": "Password Change Policy Message",
+            "description": "Message text to display in the password change dialog to help the user understand how complex they need to be.",
+            "property_order": 305
+        },
+        "MessageLocalSync": {
+            "type": "string",
+            "title": "Local Password Sync Message",
+            "description": "Message text for when a user is asked for their local password to sync their network password to their local account.",
+            "property_order": 310
+        },
+        "MenuAbout": {
+            "type": "string",
+            "title": "'About' Menu Item Text",
+            "description": "Menu item text for the About item.",
+            "property_order": 315
+        },
+        "MenuChangePassword": {
+            "type": "string",
+            "title": "'Change Password' Menu Item Text",
+            "description": "Menu item text for the Change Password item.",
+            "property_order": 320
+        },
+        "MenuFileServers": {
+            "type": "string",
+            "title": "'File Servers' Menu Item Text",
+            "description": "Menu item text for the File Servers item.",
+            "property_order": 325
+        },
+        "MenuGetCertificate": {
+            "type": "string",
+            "title": "'Get Certificate' Menu Item Text",
+            "description": "Menu item text for the Get Certificate item.",
+            "property_order": 330
+        },
+        "MenuGetSoftware": {
+            "type": "string",
+            "title": "'Get Software' Menu Item Text",
+            "description": "Menu item text for the Get Software item.",
+            "property_order": 335
+        },
+        "MenuGetHelp": {
+            "type": "string",
+            "title": "'Get Help' Menu Item Text",
+            "description": "Menu item text for the Get Help item.",
+            "property_order": 340
+        },
+        "MenuHomeDirectory": {
+            "type": "string",
+            "title": "'Home Directory' Menu Item Text",
+            "description": "Menu item text for the Home Directory item.",
+            "property_order": 345
+        },
+        "MenuRenewTickets": {
+            "type": "string",
+            "title": "'Renew Tickets' Menu Item Text",
+            "description": "Menu item text for the Renew Tickets item.",
+            "property_order": 350
+        },
+        "MenuUserName": {
+            "type": "string",
+            "title": "Username Menu Item Text",
+            "description": "Menu item text for the user name item before a user logs in.",
+            "property_order": 355
+        },
+        "MenuPasswordExpires": {
+            "type": "string",
+            "title": "Password Expiration Menu Item Text",
+            "description": "Menu item text for the password expiration item before a user logs in.",
+            "property_order": 360
+        },
+        "CaribouTime": {
+            "type": "boolean",
+            "title": "Carrie the Caribou Icons",
+            "description": "Changes the icon set to Carrie the Caribou.",
+            "property_order": 365
+        },
+        "IconOn": {
+            "type": "string",
+            "title": "NoMAD Connected Icon",
+            "description": "Path to a 16x16 pixel image to use as the icon in the menu bar when NoMAD is connected.",
+            "property_order": 370
+        },
+        "IconOff": {
+            "type": "string",
+            "title": "NoMAD Disconnected Icon",
+            "description": "Path to a 16x16 pixel image to use as the icon in the menu bar when NoMAD is not connected.",
+            "property_order": 375
+        },
+        "IconOnDark": {
+            "type": "string",
+            "title": "NoMAD Connected Dark Icon",
+            "description": "Path to a 16x16 pixel image to use as the icon in the menu bar when NoMAD is connected in dark mode.",
+            "property_order": 380
+        },
+        "IconOffDark": {
+            "type": "string",
+            "title": "NoMAD Disconnected Dark Icon",
+            "description": "Path to a 16x16 pixel image to use as the icon in the menu bar when NoMAD is not connected in dark mode.",
+            "property_order": 385
+        },
+        "Verbose": {
+            "type": "boolean",
+            "title": "Verbose Logging",
+            "description": "Enables verbose logging.",
+            "property_order": 390
+        },
+        "LoginItem": {
+            "type": "boolean",
+            "title": "NoMAD Login Item",
+            "description": "Adds NoMAD to the user's start up items.",
+            "property_order": 395
+        },
+        "SignInCommand": {
+            "type": "string",
+            "title": "Post Sign In Command",
+            "description": "Path to a script or command to be run after a successful sign in.",
+            "property_order": 400
+        },
+        "SignOutCommand": {
+            "type": "string",
+            "title": "Post Sign Out Command",
+            "description": "Path to a script or other binary to be run on sign out.",
+            "property_order": 405
+        },
+        "StateChangeAction": {
+            "type": "string",
+            "title": "Network Change Action",
+            "description": "Path to a script that will be launched on network changes.",
+            "property_order": 410
+        },
+        "AutoConfigure": {
+            "type": "string",
+            "title": "Auto Configuration Scheme",
+            "description": "Keyword to determine what auto configuration scheme to use.",
+            "property_order": 415
+        },
+        "DontShowWelcome": {
+            "type": "boolean",
+            "title": "Don't Show NoMAD Welcome Window",
+            "description": "Hides the Welcome window on first launch.",
+            "property_order": 420
+        },
+        "DontShowWelcomeDefaultOn": {
+            "type": "boolean",
+            "title": "Don't Show Again Welcome Window Checkbox",
+            "description": "Shows the Welcome Screen, but checks the \"Don't show again\" box by default. Useful for when you want to show the Welcome screen only once.",
+            "property_order": 425
+        },
+        "MenuWelcome": {
+            "type": "string",
+            "title": "Custom Welcome Window Path",
+            "description": "Path to a folder containing an index.html file and associated resources for displaying as a Welcome window.",
+            "property_order": 430
+        },
+        "SignInWindowOnLaunch": {
+            "type": "boolean",
+            "title": "Show Sign In Window on Launch",
+            "description": "Shows the Sign In window on launch.",
+            "property_order": 435
+        },
+        "UseKeychainPrompt": {
+            "type": "boolean",
+            "title": "Sign In Window Keychain",
+            "description": "Shows the Sign In window on launch unless the user has a password in the keychain.",
+            "property_order": 440
+        },
+        "SignInWindowAlert": {
+            "type": "boolean",
+            "title": "Force Sign In Window on Top",
+            "description": "Makes the Sign In window the foremost window when a user is not signed in.",
+            "property_order": 445
+        },
+        "SignInWindowAlertTime": {
+            "type": "integer",
+            "title": "Force Sign In Window on Top Timer",
+            "default": 360,
+            "description": "Time in seconds between the SignInWindowAlert making the Sign In window the foremost window.",
+            "property_order": 450
+        },
+        "TitleSignIn": {
+            "type": "string",
+            "title": "Sign In Window Title",
+            "description": "Title of the Sign In window.",
+            "property_order": 455
+        },
+        "SignInWindowOnLaunchExclusions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Sign In Window User Exclusions",
+            "description": "Local users that will not be shown the Sign In window automatically.",
+            "property_order": 460
+        }
+    }
+}

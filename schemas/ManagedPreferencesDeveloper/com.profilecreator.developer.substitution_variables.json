@@ -1,0 +1,19 @@
+{
+    "title": "Developer: Substitution Variables (com.profilecreator.developer.substitution_variables)",
+    "description": "Developer: Substitution Variables settings",
+    "properties": {
+        "SubstitutionVariables01": {
+            "type": "string",
+            "title": "Substitution Variables 01: TextField",
+            "default": "Substitute this: <<serial>>",
+            "description": "TextField with substitution variables: <<serial>>",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "www.apple.com"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}

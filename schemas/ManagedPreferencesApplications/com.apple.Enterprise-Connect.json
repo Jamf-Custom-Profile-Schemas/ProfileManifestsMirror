@@ -1,0 +1,295 @@
+{
+    "title": "Enterprise Connect (com.apple.Enterprise-Connect)",
+    "description": "Enterprise Connect settings",
+    "properties": {
+        "adRealm": {
+            "type": "string",
+            "title": "Active Directory Realm",
+            "description": "The host name of your organization\u2019s Active Directory domain.",
+            "property_order": 5
+        },
+        "launchAtLogin": {
+            "type": "boolean",
+            "title": "Launch At Login",
+            "default": true,
+            "description": "Determines if Enterprise Connect should set itself as a login item.",
+            "property_order": 10
+        },
+        "runPeriodicStateCheck": {
+            "type": "boolean",
+            "title": "Run Periodic State Check",
+            "description": "Enable or Disable periodic state checking. Customers who expose their DNS to the public Internet will need to disable periodic state checking.",
+            "property_order": 15
+        },
+        "orgUsernameLabel": {
+            "type": "string",
+            "title": "Organization Username Label",
+            "description": "The name your organization gives usernames.",
+            "property_order": 20
+        },
+        "prepopulatedUsername": {
+            "type": "string",
+            "title": "Pre Populated Username",
+            "description": "Upon launch or sign out, Enterprise Connect will pre-populate the Username field with this username.",
+            "property_order": 25
+        },
+        "preferredDC": {
+            "type": "string",
+            "title": "Preferred Domain Controller",
+            "description": "Preferred domain controller when doing LDAP queries and getting a Kerberos TGT. If this domain controller is unavailable, Enterprise Connect will fall back to domain controllers it discovers from DNS.",
+            "property_order": 30
+        },
+        "setupReminderNagInterval": {
+            "type": "integer",
+            "title": "Reminder Nag Interval",
+            "default": 86400,
+            "description": "The interval, in seconds, between setup notifications.",
+            "property_order": 35
+        },
+        "getRenewableTGT": {
+            "type": "boolean",
+            "title": "Get Renewable TGT",
+            "description": "Acquire a renewable Kerberos TGT.",
+            "property_order": 40
+        },
+        "showMenuExtra": {
+            "type": "boolean",
+            "title": "Show Menu Extra",
+            "description": "Determines whether the Enterprise Connect menu extra is loaded.",
+            "property_order": 45
+        },
+        "checkShowLegacyCertificates": {
+            "type": "boolean",
+            "title": "Show Legacy Certificates",
+            "description": "Automatically check the \u201cShow Legacy Certificates\u201d option in the certificate chooser window.",
+            "property_order": 50
+        },
+        "showKeychainIdentities": {
+            "type": "boolean",
+            "title": "Show Keychain Identities",
+            "description": "Automatically check the \u201cShow Legacy Certificates\u201d option in the certificate chooser window.",
+            "property_order": 55
+        },
+        "disableQuitMenu": {
+            "type": "boolean",
+            "title": "Disable Quit Menu",
+            "description": "Disables the Quit menu item from Enterprise Connect.",
+            "property_order": 60
+        },
+        "orgLogoPath": {
+            "type": "string",
+            "title": "Organization Logo Path",
+            "description": "The path to a file containing your organization\u2019s logo, in PNG, JPG or GIF format.",
+            "property_order": 65
+        },
+        "debugMode": {
+            "type": "boolean",
+            "title": "Debug Mode",
+            "description": "Enables debugging mode.",
+            "property_order": 70
+        },
+        "syncLocalPassword": {
+            "type": "boolean",
+            "title": "Sync Local Password",
+            "description": "Enables Active Directory to local account password sync. This only works if the user is logged into their Mac with a local account.",
+            "property_order": 75
+        },
+        "pwReqComplexity": {
+            "type": "boolean",
+            "title": "Password Required Complexity",
+            "description": "Tells Enterprise Connect that passwords should meet Active Directory\u2019s definition of complexity. Used to enable and configure live password testing.",
+            "property_order": 80
+        },
+        "pwReqComplexityDisableUnicode": {
+            "type": "boolean",
+            "title": "Password Required Complexity Disable Unicode",
+            "description": "Disables the \"Has a Unicode character\" password test from live password testing.",
+            "property_order": 85
+        },
+        "pwReqLength": {
+            "type": "integer",
+            "title": "Password Required Length",
+            "description": "Require passwords to be at least as long as the specified value.",
+            "property_order": 90
+        },
+        "pwReqText": {
+            "type": "string",
+            "title": "Password Change Message Path",
+            "description": "Path to a RTF file to display for the user during password changes.",
+            "property_order": 95
+        },
+        "pwReqHistoryCount": {
+            "type": "integer",
+            "title": "Password History Count",
+            "description": "How many previous passwords cannot be re-used.",
+            "property_order": 100
+        },
+        "pwReqMinimumPasswordAge": {
+            "type": "integer",
+            "title": "Password Minimum Age",
+            "description": "The minimum age of passwords before they can be changed.",
+            "property_order": 105
+        },
+        "disablePasswordFunctions": {
+            "type": "boolean",
+            "title": "Disable Password Functions",
+            "description": "Disable Enterprise Connect\u2019s password management abilities, including expiration notices and the \u201cChange Password\u201d menu item. This is useful for customers who don\u2019t change their passwords in AD.",
+            "property_order": 110
+        },
+        "disablePasswordExpirationChecking": {
+            "type": "boolean",
+            "title": "Disable Password Expiration Checking",
+            "description": "Disable Enterprise Connect\u2019s password expiration checking, but still leave intact the ability for the user to change their password with Enterprise Connect.",
+            "property_order": 115
+        },
+        "runPasswordChangeScriptOnLocalPasswordSync": {
+            "type": "boolean",
+            "title": "Run Password Change Script On Local Password Sync",
+            "description": "Determines if Enterprise Connect should run the password change script upon a local password sync.",
+            "property_order": 120
+        },
+        "passwordChangeScriptPath": {
+            "type": "string",
+            "title": "Password Change Script Path",
+            "description": "Path to the password change script.",
+            "property_order": 125
+        },
+        "passwordChangeURL": {
+            "type": "string",
+            "title": "Password Change URL",
+            "description": "URL to open in the user\u2019s default web browser when they use Enterprise Connect to change their password. Standard password change functionality will no longer work.",
+            "property_order": 130
+        },
+        "passwordExpireOverride": {
+            "type": "integer",
+            "title": "Password Expire Override",
+            "default": 0,
+            "description": "Override domain password policy when calculating password expiration.",
+            "property_order": 135
+        },
+        "passwordNotificationDays": {
+            "type": "integer",
+            "title": "Password Expire Notification",
+            "default": 15,
+            "description": "Determines the amount of days before password expiration that the user receives expiration notifications.",
+            "property_order": 140
+        },
+        "checkForNetworkType": {
+            "type": "boolean",
+            "title": "Check For Network Server",
+            "description": "Check for a host in your organization's network.",
+            "property_order": 145
+        },
+        "checkForNetworkServer": {
+            "type": "string",
+            "title": "Network Server",
+            "description": "The host Enterprise Connect should check for when connecting.",
+            "property_order": 150
+        },
+        "connectDelay": {
+            "type": "integer",
+            "title": "Connect Delay",
+            "default": 0,
+            "description": "Delay starting the connection process when your organization\u2019s network is detected. This may be useful for customers who use Cisco NAC and need to delay connection while host checks are performed.",
+            "property_order": 155
+        },
+        "connectionCompletedScriptPath": {
+            "type": "string",
+            "title": "Connection Completed Script Path",
+            "description": "Path to the connection completed script.",
+            "property_order": 160
+        },
+        "connectReminderNagInterval": {
+            "type": "integer",
+            "title": "Connection Reminder Interval",
+            "default": 86400,
+            "description": "The interval, in seconds, between connection reminders.",
+            "property_order": 165
+        },
+        "dailyReconnectTime": {
+            "type": "integer",
+            "title": "Daily Reconnect Time",
+            "default": 86400,
+            "description": "The interval, in seconds, that Enterprise Connect should attempt its daily reconnect. Set this to 0 to disable the daily reconnect.",
+            "property_order": 170
+        },
+        "runAuditScript": {
+            "type": "boolean",
+            "title": "Run Audit Script",
+            "description": "Tells Enterprise Connect to execute an audit script.",
+            "property_order": 175
+        },
+        "runAuditScriptPath": {
+            "type": "string",
+            "title": "Audit Script Path",
+            "description": "Path to the audit script.",
+            "property_order": 180
+        },
+        "mountNetworkHomeDirectory": {
+            "type": "boolean",
+            "title": "Mount Network Home Directory",
+            "description": "Determines if Enterprise Connect mounts the user\u2019s network home directory.",
+            "property_order": 185
+        },
+        "shares": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Share",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "title": "Path"
+                    }
+                }
+            },
+            "title": "Shares",
+            "default": [
+                {}
+            ],
+            "description": "List of shares that Enterprise Connect should attempt to mount.",
+            "property_order": 190
+        },
+        "managedshares": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Share",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "title": "Path"
+                    }
+                }
+            },
+            "title": "Managed Shares",
+            "description": "List of shares that Enterprise Connect should attempt to mount. Users will still be able to add their own shares.",
+            "property_order": 195
+        },
+        "shareMountWaitSeconds": {
+            "type": "integer",
+            "title": "Share Mount Delay",
+            "default": 0,
+            "description": "Delay the mounting of network shares when your organization\u2019s network is detected. This may be useful for customers who use Cisco NAC and need to delay connection while host checks are performed.",
+            "property_order": 200
+        },
+        "smartCardMode": {
+            "type": "boolean",
+            "title": "Enable Smart Card Mode",
+            "description": "Determines whether smart card mode should be enabled.",
+            "property_order": 205
+        },
+        "showUsernameWithSmartcard": {
+            "type": "boolean",
+            "title": "Show Username in Smart Card Mode",
+            "description": "Determines if Enterprise Connect should display the username field if smart card mode is enabled.",
+            "property_order": 210
+        },
+        "destroyKerbTicketUponCardRemoval": {
+            "type": "boolean",
+            "title": "Destroy Kerberos Ticket on Smart Card Removal",
+            "default": true,
+            "property_order": 215
+        }
+    }
+}

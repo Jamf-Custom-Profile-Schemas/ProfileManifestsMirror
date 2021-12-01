@@ -1,0 +1,304 @@
+{
+    "title": "Developer: Slider (com.profilecreator.developer.slider)",
+    "description": "Developer: Slider settings",
+    "properties": {
+        "Slider01": {
+            "type": "float",
+            "title": "Slider 01: Range List 2 Items",
+            "description": "Slider with a range list of two items: [5.0, 10.0].",
+            "enum": [
+                5.0,
+                10.0
+            ],
+            "property_order": 5
+        },
+        "Slider02": {
+            "type": "float",
+            "title": "Slider 02: Range List 3 Items and Titles",
+            "description": "Slider with a range list of three items: [5.0, 10.0, 15.0] and titles.",
+            "enum": [
+                5.0,
+                10.0,
+                15.0
+            ],
+            "options": {
+                "enum_titles": [
+                    "Low",
+                    "Medium",
+                    "High"
+                ]
+            },
+            "property_order": 10
+        },
+        "Slider03": {
+            "type": "float",
+            "title": "Slider 03: Range List 4 Items",
+            "description": "Slider with a range list of four items: [5.0, 6.0, 17.0003212, 20.0].",
+            "enum": [
+                5.0,
+                6.0,
+                17.0003212,
+                20.0
+            ],
+            "property_order": 15
+        },
+        "Slider04": {
+            "type": "float",
+            "title": "Slider 04: Range List 5 Items and Mixed Titles",
+            "description": "Slider with a range list of five items: [0.01, 0.02, 0.13, 0.23, 0.92] and mixed titles.",
+            "enum": [
+                0.01,
+                0.02,
+                0.13,
+                0.23,
+                0.92
+            ],
+            "options": {
+                "enum_titles": [
+                    ".01",
+                    ".02",
+                    "",
+                    "Default",
+                    "Max"
+                ]
+            },
+            "property_order": 20
+        },
+        "Slider05": {
+            "type": "float",
+            "title": "Slider 05: Range List 20 Items",
+            "description": "Slider with a range list of twenty items: [1.0...1.19].",
+            "enum": [
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4,
+                1.5,
+                1.6,
+                1.7,
+                1.8,
+                1.9,
+                1.1,
+                1.11,
+                1.12,
+                1.13,
+                1.14,
+                1.15,
+                1.16,
+                1.17,
+                1.18,
+                1.19
+            ],
+            "property_order": 25
+        },
+        "Slider06": {
+            "type": "float",
+            "title": "Slider 06: Range List 20 Items and Short Titles",
+            "description": "Slider with a range list of twenty items: [1.0...1.19] with short titles.",
+            "enum": [
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4,
+                1.5,
+                1.6,
+                1.7,
+                1.8,
+                1.9,
+                1.1,
+                1.11,
+                1.12,
+                1.13,
+                1.14,
+                1.15,
+                1.16,
+                1.17,
+                1.18,
+                1.19
+            ],
+            "options": {
+                "enum_titles": [
+                    "One",
+                    "Two",
+                    "Three",
+                    "Four",
+                    "Five",
+                    "Six",
+                    "Seven",
+                    "Eight",
+                    "Nine",
+                    "Ten",
+                    "One",
+                    "Two",
+                    "Three",
+                    "Four",
+                    "Five",
+                    "Six",
+                    "Seven",
+                    "Eight",
+                    "Nine",
+                    "Ten"
+                ]
+            },
+            "property_order": 30
+        },
+        "Slider07": {
+            "type": "float",
+            "title": "Slider 07: Range List 20 Items and Medium Titles",
+            "description": "Slider with a range list of twenty items: [1.0...1.19] with medium titles.",
+            "enum": [
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4,
+                1.5,
+                1.6,
+                1.7,
+                1.8,
+                1.9,
+                1.1,
+                1.11,
+                1.12,
+                1.13,
+                1.14,
+                1.15,
+                1.16,
+                1.17,
+                1.18,
+                1.19
+            ],
+            "options": {
+                "enum_titles": [
+                    "OneZero",
+                    "OneOne",
+                    "OneTwo",
+                    "OneThree",
+                    "OneFour",
+                    "OneFive",
+                    "OneSix",
+                    "OneSeven",
+                    "OneEight",
+                    "OneNine",
+                    "OneTen",
+                    "OneOne",
+                    "OneTwo",
+                    "OneThree",
+                    "OneFour",
+                    "OneFive",
+                    "OneSix",
+                    "OneSeven",
+                    "OneEight",
+                    "OneNine"
+                ]
+            },
+            "property_order": 35
+        },
+        "Slider08": {
+            "type": "float",
+            "title": "Slider 08: Range List 20 Items and Long Titles",
+            "description": "Slider with a range list of twenty items: [1.0...1.19] with long titles.",
+            "enum": [
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4,
+                1.5,
+                1.6,
+                1.7,
+                1.8,
+                1.9,
+                1.1,
+                1.11,
+                1.12,
+                1.13,
+                1.14,
+                1.15,
+                1.16,
+                1.17,
+                1.18,
+                1.19
+            ],
+            "options": {
+                "enum_titles": [
+                    "OneDotZero",
+                    "OneDotOne",
+                    "OneDotTwo",
+                    "OneDotThree",
+                    "OneDotFour",
+                    "OneDotFive",
+                    "OneDotSix",
+                    "OneDotSeven",
+                    "OneDotEight",
+                    "OneDotNine",
+                    "OneDotTen",
+                    "OneDotEleven",
+                    "OneDotTwelve",
+                    "OneDotThirteen",
+                    "OneDotFourteen",
+                    "OneDotFifteen",
+                    "OneDotSixteen",
+                    "OneDotSeventeen",
+                    "OneDotEighteen",
+                    "OneDotNineteen"
+                ]
+            },
+            "property_order": 40
+        },
+        "Slider09": {
+            "type": "float",
+            "title": "Slider 09: Range List 20 Items and Too Long Titles",
+            "description": "Slider with a range list of twenty items: [1.0...1.19] with too long titles.",
+            "enum": [
+                1.0,
+                1.1,
+                1.2,
+                1.3,
+                1.4,
+                1.5,
+                1.6,
+                1.7,
+                1.8,
+                1.9,
+                1.1,
+                1.11,
+                1.12,
+                1.13,
+                1.14,
+                1.15,
+                1.16,
+                1.17,
+                1.18,
+                1.19
+            ],
+            "options": {
+                "enum_titles": [
+                    "OneOneOneOneOneOneOneOneOneOneOneOneOneOne",
+                    "OneDotOneOneDotOne",
+                    "OneDotTwoOneDotTwo",
+                    "OneDotThreeOneDotThree",
+                    "OneDotFourOneDotFour",
+                    "OneDotFiveOneDotFive",
+                    "OneDotSixOneDotSix",
+                    "OneDotSevenOneDotSeven",
+                    "OneDotEightOneDotEight",
+                    "OneDotNineOneDotNine",
+                    "OneDotTenOneDotTen",
+                    "OneDotElevenOneDotEleven",
+                    "OneDotTwelveOneDotTwelve",
+                    "OneDotThirteenOneDotThirteen",
+                    "OneDotFourteenOneDotFourteen",
+                    "OneDotFifteenOneDotFifteen",
+                    "OneDotSixteenOneDotSixteen",
+                    "OneDotSeventeenOneDotSeventeen",
+                    "OneDotEighteenOneDotEighteen",
+                    "TwoTwoTwoTwoTwoTwoTwoTwoTwoTwoTwoTwoTwoTwoTwo"
+                ]
+            },
+            "property_order": 45
+        }
+    }
+}

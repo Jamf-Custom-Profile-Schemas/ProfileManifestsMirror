@@ -1,0 +1,13 @@
+{
+    "title": "File Provider (com.apple.fileproviderd)",
+    "description": "File Provider settings",
+    "properties": {
+        "AllowManagedFileProvidersToRequestAttribution": {
+            "type": "boolean",
+            "title": "Allow Managed File Providers to Request Attribution",
+            "default": false,
+            "description": "If true, enables file providers access to the path of the requesting process.",
+            "property_order": 5
+        }
+    }
+}

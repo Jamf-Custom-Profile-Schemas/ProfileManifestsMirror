@@ -1,0 +1,277 @@
+{
+    "title": "Exchange (iOS) (com.apple.eas.account)",
+    "description": "Exchange Active Sync settings",
+    "properties": {
+        "UserName": {
+            "type": "string",
+            "title": "Account user name",
+            "description": "The user name with the optional domain (e.g \"user\" or \"domain\\user\").",
+            "property_order": 5
+        },
+        "EmailAddress": {
+            "type": "string",
+            "title": "Account email address",
+            "description": "The email address for the account (e.g. \"john@company.com).",
+            "property_order": 10
+        },
+        "Password": {
+            "type": "string",
+            "title": "CertificatePassword",
+            "description": "Password protecting the PKCS12 file.",
+            "property_order": 15
+        },
+        "OverridePreviousPassword": {
+            "type": "boolean",
+            "title": "Override previous password",
+            "default": false,
+            "description": "If true, a previously set EAS password is overriden with a new password in this payload.",
+            "property_order": 20
+        },
+        "Host": {
+            "type": "string",
+            "title": "Internal Exchange Host",
+            "description": "The IP address or fully qualified domain name (FQDN) of the internal Exchange host.",
+            "property_order": 25
+        },
+        "SSL": {
+            "type": "boolean",
+            "title": "Use SSL for Internal Exchange Host",
+            "default": false,
+            "description": "Send all communication through Secure Socket Layer.",
+            "property_order": 30
+        },
+        "OAuth": {
+            "type": "boolean",
+            "title": "Use OAuth",
+            "default": true,
+            "description": "Specifies whether the connection should use OAuth for authentication.",
+            "property_order": 35
+        },
+        "Certificate": {
+            "type": "data",
+            "title": "Identity Certificate",
+            "description": "X.509 certificate (.p12) for inclusion on device.",
+            "property_order": 40
+        },
+        "CertificateName": {
+            "type": "string",
+            "title": "Certificate Name",
+            "default": true,
+            "description": "Name or description of the certificate credential.",
+            "property_order": 45
+        },
+        "PreventMove": {
+            "type": "boolean",
+            "title": "Prevent Move",
+            "default": false,
+            "description": "If set to true, messages may not be moved out of this email account into another account. Also prevents forwarding or replying from a different account than the message was originated from.",
+            "property_order": 50
+        },
+        "PreventAppSheet": {
+            "type": "boolean",
+            "title": "Prevent App Sheet",
+            "default": false,
+            "description": "If set to true, this account will not be available for sending mail in any app other than the Apple Mail app.",
+            "property_order": 55
+        },
+        "PayloadCertificateUUID": {
+            "type": "string",
+            "title": "Identity Certificate UUID",
+            "description": "UUID of the certificate payload to use for the identity credential.",
+            "property_order": 60
+        },
+        "SMIMEEnabled": {
+            "type": "boolean",
+            "title": "Enable S/MIME",
+            "default": false,
+            "description": "If true, this account supports S/MIME.",
+            "property_order": 65
+        },
+        "SMIMESigningEnabled": {
+            "type": "boolean",
+            "title": "Enable S/MIME Signing",
+            "default": false,
+            "description": "If set to true, S/MIME signing is enabled for this account.",
+            "property_order": 70
+        },
+        "SMIMESigningCertificateUUID": {
+            "type": "string",
+            "title": "S/MIME Signing Certificate",
+            "description": "The PayloadUUID of the identity certificate used to sign messages sent from this account.",
+            "property_order": 75
+        },
+        "SMIMEEncryptionEnabled": {
+            "type": "boolean",
+            "title": "Enable S/MIME Encryption",
+            "default": false,
+            "description": "If set to true, S/MIME encryption is on by default for this account. As of iOS 12.0, this key is deprecated. It is recommended to use SMIMEEncryptByDefault instead.",
+            "property_order": 80
+        },
+        "SMIMEEncryptionCertificateUUID": {
+            "type": "string",
+            "title": "S/MIME Encryption Certificate",
+            "description": "The PayloadUUID of the identity certificate used to decrypt messages sent to this account.",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "property_order": 85
+        },
+        "SMIMEEnablePerMessageSwitch": {
+            "type": "boolean",
+            "title": "Enable S/MIME Per Message Switch",
+            "default": false,
+            "description": "If set to true, displays the per-message encryption switch in the Mail Compose UI. As of iOS 12.0, this key is deprecated. It is recommended to use SMIMEEnableEncryptionPerMessageSwitch instead.",
+            "property_order": 90
+        },
+        "SMIMESigningUserOverrideable": {
+            "type": "boolean",
+            "title": "Allow user to toggle S/MIME Signing",
+            "default": false,
+            "description": "If set to true, the user can toggle S/MIME signing on or off in Settings.",
+            "property_order": 95
+        },
+        "SMIMESigningCertificateUUIDUserOverrideable": {
+            "type": "boolean",
+            "title": "Allow user to select S/MIME Identity",
+            "default": false,
+            "description": "If set to true, the user can select the signing identity.",
+            "property_order": 100
+        },
+        "SMIMEEncryptByDefault": {
+            "type": "boolean",
+            "title": "Enable S/MIME Encryption",
+            "default": false,
+            "description": "If set to true, S/MIME encryption is enabled by default.",
+            "property_order": 105
+        },
+        "SMIMEEncryptByDefaultUserOverrideable": {
+            "type": "boolean",
+            "title": "Allow user to select S/MIME Encryption",
+            "default": false,
+            "description": "If set to true, the user can toggle the encryption by default setting.",
+            "property_order": 110
+        },
+        "SMIMEEncryptionCertificateUUIDUserOverrideable": {
+            "type": "boolean",
+            "title": "Allow user to select S/MIME Encryption Certificate",
+            "default": false,
+            "description": "If set to true, the user can select the S/MIME encryption identity and encryption is enabled.",
+            "property_order": 115
+        },
+        "SMIMEEnableEncryptionPerMessageSwitch": {
+            "type": "boolean",
+            "title": "Allow user to select S/MIME Encryption per message",
+            "default": false,
+            "description": "If set to true, displays the per-message encryption switch in the Mail Compose UI.",
+            "property_order": 120
+        },
+        "EnableCalendars": {
+            "type": "boolean",
+            "title": "Enabled Services - Calendars",
+            "default": true,
+            "description": "Enables/disables the Calendars service for this account.",
+            "property_order": 125
+        },
+        "EnableContacts": {
+            "type": "boolean",
+            "title": "Enabled Services - Contacts",
+            "default": true,
+            "description": "Enables/disables the Contacts service for this account.",
+            "property_order": 130
+        },
+        "EnableMail": {
+            "type": "boolean",
+            "title": "Enabled Services - Mail",
+            "default": true,
+            "description": "Enables/disables the Mail service for this account.",
+            "property_order": 135
+        },
+        "EnableNotes": {
+            "type": "boolean",
+            "title": "Enabled Services - Notes",
+            "default": true,
+            "description": "Enables/disables the Notes service for this account.",
+            "property_order": 140
+        },
+        "EnableReminders": {
+            "type": "boolean",
+            "title": "Enabled Services - Reminders",
+            "default": true,
+            "description": "Enables/disables the Reminders service for this account.",
+            "property_order": 145
+        },
+        "EnableCalendarsUserOverridable": {
+            "type": "boolean",
+            "title": "Account Modification - Calendars",
+            "default": true,
+            "description": "Enables/disables the users to modify the Calendars settings.",
+            "property_order": 150
+        },
+        "EnableContactsUserOverridable": {
+            "type": "boolean",
+            "title": "Account Modification - Contacts",
+            "default": true,
+            "description": "Enables/disables the users to modify the Contacts settings.",
+            "property_order": 155
+        },
+        "EnableMailUserOverridable": {
+            "type": "boolean",
+            "title": "Account Modification - Mail",
+            "default": true,
+            "description": "Enables/disables the users to modify the Mail settings.",
+            "property_order": 160
+        },
+        "EnableNotesUserOverridable": {
+            "type": "boolean",
+            "title": "Account Modification - Notes",
+            "default": true,
+            "description": "Enables/disables the users to modify the Notes settings.",
+            "property_order": 165
+        },
+        "EnableRemindersUserOverridable": {
+            "type": "boolean",
+            "title": "Account Modification - Reminders",
+            "default": true,
+            "description": "Enables/disables the users to modify the Reminders settings.",
+            "property_order": 170
+        },
+        "disableMailRecentsSyncing": {
+            "type": "boolean",
+            "title": "Exclude this account from address recents syncing",
+            "default": false,
+            "description": "If true, this account is excluded from address Recents syncing.",
+            "property_order": 175
+        },
+        "MailNumberOfPastDaysToSync": {
+            "type": "integer",
+            "title": "Number of days to sync",
+            "default": 7,
+            "description": "The number of days since synchronization.",
+            "enum": [
+                1,
+                3,
+                7,
+                14,
+                31
+            ],
+            "property_order": 180
+        },
+        "CommunicationServiceRules": {
+            "type": "dictionary",
+            "title": "Communication Service Rules",
+            "description": "The communication service handler rules for this account.",
+            "properties": {
+                "DefaultServiceHandlers": {
+                    "type": "dictionary",
+                    "title": "Default Service Handlers",
+                    "properties": {
+                        "AudioCall": {
+                            "type": "string",
+                            "title": "BundleIdentifier",
+                            "description": "Bundle identifier for the default application that handles audio calls made to contacts from this account"
+                        }
+                    }
+                }
+            },
+            "property_order": 185
+        }
+    }
+}

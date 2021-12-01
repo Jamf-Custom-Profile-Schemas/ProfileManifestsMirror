@@ -1,0 +1,190 @@
+{
+    "title": "Jamf Connect Login (Okta) (com.jamf.connect.login)",
+    "description": "Jamf Connect Login settings",
+    "properties": {
+        "AuthServer": {
+            "type": "string",
+            "property_order": 5
+        },
+        "LicenseFile": {
+            "type": "data",
+            "property_order": 10
+        },
+        "DenyLocal": {
+            "type": "boolean",
+            "description": "Determines if users can bypass network authentication and use the Local Auth button at the loginwindow.",
+            "property_order": 15
+        },
+        "DenyLocalExcluded": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Username"
+            },
+            "property_order": 20
+        },
+        "LocalFallback": {
+            "type": "boolean",
+            "property_order": 25
+        },
+        "Migrate": {
+            "type": "boolean",
+            "description": "Allows local accounts to be migrated to network accounts. This is typically used when the user account was already created on the system, but you want the accounts to have the same username and password as the user\u2019s Okta identity.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jamf.com/jamf-connect/1.2.3/administrator-guide/Configuring_with_Okta.html"
+                }
+            ],
+            "property_order": 30
+        },
+        "MigrateUsersHide": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Username"
+            },
+            "property_order": 35
+        },
+        "OIDCAccessClientID": {
+            "type": "string",
+            "property_order": 40
+        },
+        "OIDCAdminClientID": {
+            "type": "string",
+            "property_order": 45
+        },
+        "OIDCAuthServer": {
+            "type": "string",
+            "property_order": 50
+        },
+        "OIDCIgnoreCookies": {
+            "type": "boolean",
+            "property_order": 55
+        },
+        "OIDCSecondaryLoginClientID": {
+            "type": "string",
+            "property_order": 60
+        },
+        "OIDCRedirectURI": {
+            "type": "string",
+            "default": "nomadoauth://oauth-callback/okta",
+            "description": "The Redirect URI the user is sent to after successful authentication.",
+            "property_order": 65
+        },
+        "LoginLogo": {
+            "type": "string",
+            "property_order": 70
+        },
+        "BackgroundImage": {
+            "type": "string",
+            "property_order": 75
+        },
+        "LoginScreen": {
+            "type": "boolean",
+            "description": "Determines if Jamf Connect Login displays a macOS style login screen instead of a window.",
+            "property_order": 80
+        },
+        "MessageOTPEntry": {
+            "type": "string",
+            "description": "Text displayed when a user must enter a one time password (OTP).",
+            "property_order": 85
+        },
+        "HelpURL": {
+            "type": "string",
+            "property_order": 90
+        },
+        "HelpURLLogo": {
+            "type": "string",
+            "property_order": 95
+        },
+        "LocalHelpFile": {
+            "type": "string",
+            "description": "A path to a local file that users can access by clicking the \"Help\" button in the Jamf Connect Login window.",
+            "property_order": 100
+        },
+        "EULATitle": {
+            "type": "string",
+            "title": "EULA Title",
+            "default": "End User License Agreement",
+            "description": "Title of the end user license agreement",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
+                }
+            ],
+            "property_order": 105
+        },
+        "EULASubTitle": {
+            "type": "string",
+            "title": "EULA Subtitle",
+            "default": "Terms and Conditions",
+            "description": "Subtitle of the end user license agreement",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
+                }
+            ],
+            "property_order": 110
+        },
+        "EULAText": {
+            "type": "string",
+            "title": "EULA Text",
+            "description": "Text used for the end user license agreement (use three asterisks to create a line break in the text)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
+                }
+            ],
+            "property_order": 115
+        },
+        "EULAPath": {
+            "type": "string",
+            "title": "EULA Path",
+            "description": "The path to a file storing the end user license agreement record",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
+                }
+            ],
+            "property_order": 120
+        },
+        "CreateAdminUser": {
+            "type": "boolean",
+            "property_order": 125
+        },
+        "EnableFDE": {
+            "type": "boolean",
+            "property_order": 130
+        },
+        "EnableFDERecoveryKey": {
+            "type": "boolean",
+            "property_order": 135
+        },
+        "EnableFDERecoveryKeyPath": {
+            "type": "string",
+            "property_order": 140
+        },
+        "ScriptPath": {
+            "type": "string",
+            "property_order": 145
+        },
+        "ScriptArgs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Arguments"
+            },
+            "description": "The arguments used with a specified script run by the RunScript mechanism",
+            "property_order": 150
+        },
+        "DemobilizeUsers": {
+            "type": "boolean",
+            "property_order": 155
+        }
+    }
+}

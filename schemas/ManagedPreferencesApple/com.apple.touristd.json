@@ -1,0 +1,402 @@
+{
+    "title": "New to Mac / Tours (com.apple.touristd)",
+    "description": "\"New to Mac\" notification settings",
+    "properties": {
+        "seed-viewed-+trJt2VsTvK1yfPGwOySDw": {
+            "type": "date",
+            "title": "iMac 21a: 10.13 - 10.14",
+            "description": "https://help.apple.com/macOS/high-sierra/imac-21a",
+            "property_order": 5
+        },
+        "seed-viewed-/+vP78HsSh+Yeb4xJnUT9A": {
+            "type": "date",
+            "title": "MacBook Pro 15: 10.12 - 10.14",
+            "description": "https://help.apple.com/osx/mac/10.12/macbook-pro-15",
+            "property_order": 10
+        },
+        "seed-viewed-2+LvxAVyT6qnV1sDMZT0NA": {
+            "type": "date",
+            "title": "MacBook Pro 13d: 10.12 - 10.14",
+            "description": "https://help.apple.com/osx/mac/10.12/macbook-pro-13d",
+            "property_order": 15
+        },
+        "seed-viewed-40reAuuYTHOsx4oGcx4qrA": {
+            "type": "date",
+            "title": "iMac Pro: 10.14",
+            "description": "https://help.apple.com/macOS/mojave/imac-pro",
+            "property_order": 20
+        },
+        "seed-viewed-APhNaYV1RxSS41lC7ZJJ9Q": {
+            "type": "date",
+            "title": "iMac Pro: 10.13 - 10.14",
+            "description": "https://help.apple.com/macOS/high-sierra/imac-pro",
+            "property_order": 25
+        },
+        "seed-viewed-B70mVuHeT0WUgKh/VdUuZQ": {
+            "type": "date",
+            "title": "MacBook Pro 13c: 10.12 - 10.14",
+            "description": "https://help.apple.com/osx/mac/10.12/macbook-pro-13c",
+            "property_order": 30
+        },
+        "seed-viewed-EBFV2ZqnQiaqrZhvyifLeQ": {
+            "type": "date",
+            "title": "MacBook Pro 13 Mid 2019: 10.14",
+            "description": "https://help.apple.com/macos/mojave/mid-2019/macbook-pro-13/",
+            "property_order": 35
+        },
+        "seed-viewed-ETJeJ9/1QmmWUde7uK8fDg": {
+            "type": "date",
+            "title": "MacBook Pro 13: 10.13 - 10.14",
+            "description": "https://help.apple.com/macOS/high-sierra/macbook-pro-13",
+            "property_order": 40
+        },
+        "seed-viewed-EWfaSdJwR/6f1BYGiyLpcQ": {
+            "type": "date",
+            "title": "MacBook Pro 15d: 10.12 - 10.14",
+            "description": "https://help.apple.com/osx/mac/10.12/macbook-pro-15d",
+            "property_order": 45
+        },
+        "seed-viewed-EeEFv8cyS0CVe3ia2UEehA": {
+            "type": "date",
+            "title": "iMac 21a: 10.14",
+            "description": "https://help.apple.com/macOS/mojave/imac-21a",
+            "property_order": 50
+        },
+        "seed-viewed-FQrkbNP9ThKQQtpqx2saFg": {
+            "type": "date",
+            "title": "MacBook: 10.12 - 10.14",
+            "description": "https://help.apple.com/macOS/Sierra/macbook",
+            "property_order": 55
+        },
+        "seed-viewed-GZAJdmpdSqmfH2PkCr8ebw": {
+            "type": "date",
+            "title": "MacBook Pro 13d: 10.12 - 10.14",
+            "description": "https://help.apple.com/macOS/Sierra/macbook-pro-13d",
+            "property_order": 60
+        },
+        "seed-viewed-JTecrrXDSVut2tSfltty9Q": {
+            "type": "date",
+            "title": "MacBook Pro 13c: 10.12 - 10.14",
+            "description": "https://help.apple.com/macOS/Sierra/macbook-pro-13c",
+            "property_order": 65
+        },
+        "seed-viewed-KwUoo0fRRM2VPmIm0V67xg": {
+            "type": "date",
+            "title": "iMac: 10.13 - 10.14",
+            "description": "https://help.apple.com/macOS/high-sierra/imac",
+            "property_order": 70
+        },
+        "seed-viewed-LR2P9+rnQ2q9xSUy1ZgWOw": {
+            "type": "date",
+            "title": "New to Mac: 10.13",
+            "description": "https://help.apple.com/macOS/high-sierra/mac-basics",
+            "property_order": 75
+        },
+        "seed-viewed-MM3ne3nTR9eXFyVwZ5gN7Q": {
+            "type": "date",
+            "title": "MacBook Pro 15: 10.13 - 10.14",
+            "description": "https://help.apple.com/macOS/high-sierra/macbook-pro-15",
+            "property_order": 80
+        },
+        "seed-viewed-Pa88nesPSO6POlutVN4/Sg": {
+            "type": "date",
+            "title": "MacBook: 10.12 - 10.14",
+            "description": "https://help.apple.com/osx/mac/10.12/macbook",
+            "property_order": 85
+        },
+        "seed-viewed-SdV08ZZQRxOCWq6JBEXmfg": {
+            "type": "date",
+            "title": "MacBook: 10.11 - 10.14",
+            "description": "https://help.apple.com/osx-elcapitan/get-to-know-your-mac-book",
+            "property_order": 90
+        },
+        "seed-viewed-SkI/dLAkQu6k/qpzSOG6Iw": {
+            "type": "date",
+            "title": "MacBook Air Mid 2019: 10.14",
+            "description": "https://help.apple.com/macos/mojave/mid-2019/macbook-air",
+            "property_order": 95
+        },
+        "seed-viewed-Tu81gKhDTvmNkjyqcPBfKA": {
+            "type": "date",
+            "title": "MacBook Air: 10.14",
+            "description": "https://help.apple.com/macos/mojave/macbook-air/",
+            "property_order": 100
+        },
+        "seed-viewed-catalina_macbook-air": {
+            "type": "date",
+            "title": "MacBook Air: 10.15",
+            "description": "https://help.apple.com/macos/catalina/macbook-air",
+            "property_order": 105
+        },
+        "seed-viewed-catalina_early-2020_macbook-air": {
+            "type": "date",
+            "title": "MacBook Air Early 2020: 10.15",
+            "description": "https://help.apple.com/macos/catalina/early-2020/macbook-air",
+            "property_order": 110
+        },
+        "seed-viewed-bigsur_late-2020_macbook-air": {
+            "type": "date",
+            "title": "MacBook Air Late 2020: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/macbook-air",
+            "property_order": 115
+        },
+        "seed-viewed-UhiR1M79RWmXLIQr4M0AWw": {
+            "type": "date",
+            "title": "iMac 21r: 10.14",
+            "description": "https://help.apple.com/macOS/Sierra/mid-2017/imac-21r",
+            "property_order": 120
+        },
+        "seed-viewed-WEyaCPMVRB6HbnmRq9EnNQ": {
+            "type": "date",
+            "title": "iMac 21a: 10.12 - 10.14",
+            "description": "https://help.apple.com/macOS/Sierra/mid-2017/imac-21a",
+            "property_order": 125
+        },
+        "seed-viewed-We59wh+OTa6c1yas/yppwg": {
+            "type": "date",
+            "title": "MacBook: 10.14",
+            "description": "https://help.apple.com/macOS/mojave/macbook",
+            "property_order": 130
+        },
+        "seed-viewed-aytyxqEmTIOvEz3iS4IbkA": {
+            "type": "date",
+            "title": "iMac Early 2019: 10.14",
+            "description": "https://help.apple.com/macos/mojave/early-2019/imac",
+            "property_order": 135
+        },
+        "seed-viewed-b/dLke8ZTQaN9KKrxfwDQw": {
+            "type": "date",
+            "title": "MacBook: 10.13 - 10.14",
+            "description": "https://help.apple.com/macOS/high-sierra/macbook",
+            "property_order": 140
+        },
+        "seed-viewed-baXokbqsQ/2KLkzIZrR6ng": {
+            "type": "date",
+            "title": "Mac mini: 10.14",
+            "description": "https://help.apple.com/macos/mojave/mac-mini/",
+            "property_order": 145
+        },
+        "seed-viewed-bydF6fX5Sp6aBYdEXD0VwQ": {
+            "type": "date",
+            "title": "New to Mac: 10.14",
+            "description": "https://help.apple.com/macOS/mojave/mac-basics",
+            "property_order": 150
+        },
+        "seed-viewed-d+gfl8CNTNeauANKjf9WqA": {
+            "type": "date",
+            "title": "iMac 27: 10.12 - 10.14",
+            "description": "https://help.apple.com/macOS/Sierra/mid-2017/imac-27",
+            "property_order": 155
+        },
+        "seed-viewed-f/Pn3F4RScOh+GUBKO9sRA": {
+            "type": "date",
+            "title": "What's New: 10.13",
+            "description": "https://help.apple.com/macOS/high-sierra/whats-new",
+            "property_order": 160
+        },
+        "seed-viewed-fWRpNw7IR3S3qxX63nmvMw": {
+            "type": "date",
+            "title": "MacBook Pro 13: 10.14",
+            "description": "https://help.apple.com/macOS/mojave/macbook-pro-13",
+            "property_order": 165
+        },
+        "seed-viewed-hP2OZh+MTEKeFcjgec2gZw": {
+            "type": "date",
+            "title": "MacBook Late 2018: 10.14",
+            "description": "https://help.apple.com/macos/mojave/late-2018/macbook/",
+            "property_order": 170
+        },
+        "seed-viewed-krdWS8DSQIqJSqQFXW1/pw": {
+            "type": "date",
+            "title": "MacBook Pro Mid 2018: 10.13 - 10.14",
+            "description": "https://help.apple.com/macOS/high-sierra/mid-2018/macbook-pro",
+            "property_order": 175
+        },
+        "seed-viewed-kti4ZkMKQFyCL2kbgCY23A": {
+            "type": "date",
+            "title": "MacBook Pro 15d: 10.12 - 10.14",
+            "description": "https://help.apple.com/macOS/Sierra/macbook-pro-15d",
+            "property_order": 180
+        },
+        "seed-viewed-lEDfW5O+SZe8KTQ93HGOPA": {
+            "type": "date",
+            "title": "MacBook Pro: 10.13 - 10.14",
+            "description": "https://help.apple.com/macOS/high-sierra/macbook-pro",
+            "property_order": 185
+        },
+        "seed-viewed-lQlm1yrMS0GPVyAL44id+A": {
+            "type": "date",
+            "title": "What's New: 10.14",
+            "description": "https://help.apple.com/macOS/mojave/whats-new",
+            "property_order": 190
+        },
+        "seed-viewed-n87FVu1TSwGzble8vqBvsg": {
+            "type": "date",
+            "title": "MacBook Pro 15: 10.12 - 10.14",
+            "description": "https://help.apple.com/osx/mac/10.12/macbook-pro-15",
+            "property_order": 195
+        },
+        "seed-viewed-pDWyREoARJm5V1mJYr9GKg": {
+            "type": "date",
+            "title": "iMac: 10.14",
+            "description": "https://help.apple.com/macOS/mojave/imac",
+            "property_order": 200
+        },
+        "seed-viewed-catalina_imac": {
+            "type": "date",
+            "title": "iMac: 10.15",
+            "description": "https://help.apple.com/macos/catalina/imac",
+            "property_order": 205
+        },
+        "seed-viewed-catalina_imac-21a": {
+            "type": "date",
+            "title": "iMac 21a: 10.15",
+            "description": "https://help.apple.com/macos/catalina/imac-21a",
+            "property_order": 210
+        },
+        "seed-viewed-catalina_mid-2020_imac": {
+            "type": "date",
+            "title": "iMac Mid 2020: 10.15",
+            "description": "https://help.apple.com/macos/catalina/mid-2020/imac",
+            "property_order": 215
+        },
+        "seed-viewed-bigsur_imac": {
+            "type": "date",
+            "title": "iMac: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/imac",
+            "property_order": 220
+        },
+        "seed-viewed-bigsur_imac-21": {
+            "type": "date",
+            "title": "iMac 21: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/imac-21",
+            "property_order": 225
+        },
+        "seed-viewed-bigsur_early-2021_imac-24-2": {
+            "type": "date",
+            "title": "M1 iMac 24-2: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/early-2021/imac-24-2",
+            "property_order": 230
+        },
+        "seed-viewed-bigsur_early-2021_imac-24-4": {
+            "type": "date",
+            "title": "M1 iMac 24-4: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/early-2021/imac-24-4",
+            "property_order": 235
+        },
+        "seed-viewed-srluh6uOQiuWCzxguqhDNw": {
+            "type": "date",
+            "title": "MacBook Pro: 10.14",
+            "description": "https://help.apple.com/macOS/mojave/macbook-pro",
+            "property_order": 240
+        },
+        "seed-viewed-catalina_late-2019_macbook-pro": {
+            "type": "date",
+            "title": "MacBook Pro Late 2019: 10.15",
+            "description": "https://help.apple.com/macos/catalina/late-2019/macbook-pro",
+            "property_order": 245
+        },
+        "seed-viewed-catalina_macbook-pro": {
+            "type": "date",
+            "title": "MacBook Pro: 10.15",
+            "description": "https://help.apple.com/macos/catalina/macbook-pro",
+            "property_order": 250
+        },
+        "seed-viewed-catalina_macbook-pro-13": {
+            "type": "date",
+            "title": "MacBook Pro 13: 10.15",
+            "description": "https://help.apple.com/macos/catalina/macbook-pro-13",
+            "property_order": 255
+        },
+        "seed-viewed-catalina_early-2020_macbook-pro-13": {
+            "type": "date",
+            "title": "MacBook Pro 13 Early 2020: 10.15",
+            "description": "https://help.apple.com/macos/catalina/early-2020/macbook-pro-13",
+            "property_order": 260
+        },
+        "seed-viewed-bigsur_macbook-pro": {
+            "type": "date",
+            "title": "MacBook Pro: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/macbook-pro",
+            "property_order": 265
+        },
+        "seed-viewed-bigsur_macbook-pro-13": {
+            "type": "date",
+            "title": "MacBook Pro 13: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/macbook-pro-13",
+            "property_order": 270
+        },
+        "seed-viewed-bigsur_late-2020_macbook-pro-13": {
+            "type": "date",
+            "title": "MacBook Pro 13 Late 2020: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/late-2020/macbook-pro-13",
+            "property_order": 275
+        },
+        "seed-viewed-catalina_imac-pro": {
+            "type": "date",
+            "title": "iMac Pro: 10.15",
+            "description": "https://help.apple.com/macos/catalina/imac-pro",
+            "property_order": 280
+        },
+        "seed-viewed-bigsur_imac-pro": {
+            "type": "date",
+            "title": "iMac Pro: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/imac-pro",
+            "property_order": 285
+        },
+        "seed-viewed-catalina_mac-mini": {
+            "type": "date",
+            "title": "Mac mini: 10.15",
+            "description": "https://help.apple.com/macos/catalina/mac-mini",
+            "property_order": 290
+        },
+        "seed-viewed-bigsur_mac-mini": {
+            "type": "date",
+            "title": "Mac mini: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/mac-mini",
+            "property_order": 295
+        },
+        "seed-viewed-bigsur_late-2020_mac-mini": {
+            "type": "date",
+            "title": "Mac mini Late 2020: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/late-2020/mac-mini",
+            "property_order": 300
+        },
+        "seed-viewed-catalina_mac-pro": {
+            "type": "date",
+            "title": "Mac Pro: 10.15",
+            "description": "https://help.apple.com/macos/catalina/mac-pro",
+            "property_order": 305
+        },
+        "seed-viewed-bigsur_mac-pro": {
+            "type": "date",
+            "title": "Mac Pro: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/mac-pro",
+            "property_order": 310
+        },
+        "seed-viewed-catalina_mac_basics": {
+            "type": "date",
+            "title": "New to Mac: 10.15",
+            "description": "https://help.apple.com/macos/catalina/mac-basics",
+            "property_order": 315
+        },
+        "seed-viewed-catalina_whats_new": {
+            "type": "date",
+            "title": "What's New: 10.15",
+            "description": "https://help.apple.com/macos/catalina/whats-new",
+            "property_order": 320
+        },
+        "seed-viewed-bigsur_mac_basics": {
+            "type": "date",
+            "title": "Mac Basics: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/mac-basics",
+            "property_order": 325
+        },
+        "seed-viewed-bigsur_whats_new": {
+            "type": "date",
+            "title": "What's New: 11.0",
+            "description": "https://help.apple.com/macos/big-sur/whats-new",
+            "property_order": 330
+        }
+    }
+}

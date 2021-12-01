@@ -1,0 +1,145 @@
+{
+    "title": "ANTS Framework (com.github.ants-framework)",
+    "description": "ANTS Framework settings",
+    "properties": {
+        "main": {
+            "type": "dictionary",
+            "title": "General",
+            "description": "General",
+            "properties": {
+                "git_repository": {
+                    "type": "string",
+                    "title": "Git Repository",
+                    "default": "https://github.com/ANTS-Framework/playbook.git",
+                    "description": "URL of the repository that contains your Ansible playbooks."
+                },
+                "branch": {
+                    "type": "string",
+                    "title": "Branch",
+                    "default": "master",
+                    "description": "Git branch to check out from your Git repository."
+                },
+                "ssh_key": {
+                    "type": "string",
+                    "title": "SSH Key",
+                    "default": "/etc/ants/id_ants",
+                    "description": "Absolute path to a SSH key with permission to access your Git repository."
+                },
+                "destination": {
+                    "type": "string",
+                    "title": "Destination",
+                    "default": "~root/.ants_playbook",
+                    "description": "Absolute path on the local machine to check out your Git repository."
+                },
+                "inventory_script": {
+                    "type": "string",
+                    "title": "Inventory Script",
+                    "default": "inventory_default",
+                    "description": "Relative or absolute path to an ansible inventory script."
+                },
+                "wait_interval": {
+                    "type": "integer",
+                    "title": "Wait Interval",
+                    "default": 900,
+                    "description": "The number of seconds to wait in between ansible-pull runs."
+                },
+                "ansible_playbook": {
+                    "type": "string",
+                    "title": "Ansible Playbook",
+                    "default": "main.yml",
+                    "description": "File name of the primary Ansible playbook to run relative to your <Destination> directory."
+                },
+                "log_dir": {
+                    "type": "string",
+                    "title": "Log Directory",
+                    "default": "/var/log/ants",
+                    "description": "Absolute path of where to store log files from runs."
+                },
+                "ssh_stricthostkeychecking": {
+                    "type": "boolean",
+                    "title": "Strict Host Key Checking",
+                    "default": false,
+                    "description": "Whether or not to use strict host key checking when running Git commands."
+                },
+                "ansible_pull_exe": {
+                    "type": "string",
+                    "title": "Ansible Pull",
+                    "description": "Absolute path to a different ansible-pull binary installed on the local machine."
+                },
+                "tags": {
+                    "type": "string",
+                    "title": "Tags",
+                    "description": "Limit the Ansible playbook run to a comma separated list of tags."
+                },
+                "skip_tags": {
+                    "type": "string",
+                    "title": "Skip Tags",
+                    "description": "Run the Ansible playbook on all tags except the provided comma separated list."
+                }
+            },
+            "property_order": 5
+        },
+        "ad": {
+            "type": "dictionary",
+            "title": "Active Directory",
+            "description": "Active Directory",
+            "properties": {
+                "ldap_user": {
+                    "type": "string",
+                    "title": "LDAP User",
+                    "default": "ldap\\changeme",
+                    "description": "User name to use to connect to LDAP."
+                },
+                "ldap_pw": {
+                    "type": "string",
+                    "title": "LDAP Password",
+                    "default": "changeme",
+                    "description": "Password to use to connect to LDAP."
+                },
+                "ldap_host": {
+                    "type": "string",
+                    "title": "LDAP Host",
+                    "default": "LDAP.PRETENDCORP.COM",
+                    "description": "LDAP server to connect to for inventory purposes."
+                },
+                "ldap_ou_computers": {
+                    "type": "string",
+                    "title": "LDAP OU Computers",
+                    "default": "DC=ldap,DC=pretendcorp,DC=com",
+                    "description": "LDAP location of computer objects."
+                },
+                "ldap_ou_groups": {
+                    "type": "string",
+                    "title": "LDAP OU Groups",
+                    "default": "OU=ants,OU=Groups,DC=ldap,DC=pretendcorp,DC=com",
+                    "description": "LDAP location of group objects."
+                },
+                "cache_file": {
+                    "type": "string",
+                    "title": "Cache File",
+                    "default": "/etc/ants/inventory_cache.json",
+                    "description": "Absolute path to a cache file of Active Directory results."
+                },
+                "group_prefix": {
+                    "type": "string",
+                    "title": "Group Prefix",
+                    "default": "ants-",
+                    "description": "Group prefix used to filter groups from Active Directory."
+                },
+                "common_group": {
+                    "type": "string",
+                    "title": "Common Group",
+                    "default": "ants-common",
+                    "description": "A common group to put all computers in."
+                },
+                "common_ad_connected": {
+                    "type": "string",
+                    "title": "Common AD Connected",
+                    "default": "common_ad_connected",
+                    "description": "A common group that computers are put in when the inventory script actively connects to Active Directory."
+                }
+            },
+            "property_order": 10
+        }
+    }
+}

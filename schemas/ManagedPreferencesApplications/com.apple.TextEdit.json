@@ -1,0 +1,268 @@
+{
+    "title": "TextEdit (com.apple.TextEdit)",
+    "description": "TextEdit settings",
+    "properties": {
+        "AddExtensionToNewPlainTextFiles": {
+            "type": "boolean",
+            "default": true,
+            "description": "Set this preference to 'false' to forcibly disable adding the \".txt\" extension to plain text files.",
+            "property_order": 5
+        },
+        "HTMLEncoding": {
+            "type": "integer",
+            "enum": [
+                10,
+                4,
+                30,
+                12,
+                2147483649,
+                2147486209,
+                2147483650,
+                2147483651,
+                2147483673,
+                2147485234
+            ],
+            "options": {
+                "enum_titles": [
+                    "Unicode UTF-16",
+                    "Unicode UTF-8",
+                    "Western Mac OS Roman",
+                    "Western Windows Latin 1",
+                    "Japanese Mac OS",
+                    "Japanese Shift JIS",
+                    "Traditional Chinese Mac OS",
+                    "Korean Mac OS",
+                    "Simplified Chinese Mac OS",
+                    "Chinese GB 18030"
+                ]
+            },
+            "property_order": 10
+        },
+        "CheckGrammarWithSpelling": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to forcibly disable grammar checking with spelling.",
+            "property_order": 15
+        },
+        "CheckSpellingWhileTyping": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to forcibly disable spell checking while typing.",
+            "property_order": 20
+        },
+        "CorrectSpellingAutomatically": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to forcibly disable automatic spelling correction.",
+            "property_order": 25
+        },
+        "DataDetectors": {
+            "type": "boolean",
+            "description": "Set this preference to 'true' to forcibly enable data detectors. Data detectors can automatically detect date, time, and contact information, which can then be used to update a contact, create a new Calendar event, and more.",
+            "property_order": 30
+        },
+        "HeightInChars": {
+            "type": "integer",
+            "description": "By default, the Window Size height is 30 lines. Enable this setting to change this default window height.",
+            "property_order": 35
+        },
+        "IgnoreHTML": {
+            "type": "boolean",
+            "description": "Set this preference to 'true' to display .html files as HTML code instead of formatted text when opening a file.",
+            "property_order": 40
+        },
+        "IgnoreRichText": {
+            "type": "boolean",
+            "description": "Set this preference to 'true' to display .rtf files as RTF code instead of formatted text when opening a file.",
+            "property_order": 45
+        },
+        "NSDocumentSuppressTempVersionStoreWarning": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to suppress TextEdit messages when closing documents saved on storage volumes that don't support Apple's permanent version storage. This will not inform users about being unable to access these older versions via Time Machine.",
+            "property_order": 50
+        },
+        "NSFixedPitchFont": {
+            "type": "string",
+            "title": "Plain Text Font",
+            "description": "Enter the name of the desired plain text font.  This defaults to Menlo.\n\nString format: Find your desired font file in either /System/Library/Fonts or /Library/Fonts. Whatever the name of this font file is is exactly what needs to be entered for the font name. Additionally, if you desire to use a font typeset that is not the default - Plain, Regular, etc. - , you can specify this by adding the name of the typeset to end of the font name string with a hyphen inbetween.\n\nEx. AlBayan-Bold\nEx. AmericanTypewriter-Condensed\nEx. ArialMT",
+            "property_order": 55
+        },
+        "NSFixedPitchFontSize": {
+            "type": "integer",
+            "title": "Plain Text Font Size",
+            "description": "Enter the desired font size for plain text documents.",
+            "property_order": 60
+        },
+        "NSFont": {
+            "type": "string",
+            "title": "Rich Text Font",
+            "description": "Enter the name of the desired rich text font. This defaults to Helvetica.\n\nString format: Find your desired font file in either /System/Library/Fonts or /Library/Fonts. Whatever the name of this font file is is exactly what needs to be entered for the font name. Additionally, if you desire to use a font typeset that is not the default - Plain, Regular, etc. - , you can specify this by adding the name of the typeset to end of the font name string with a hyphen inbetween.\n\nEx. AlBayan-Bold\nEx. AmericanTypewriter-Condensed\nEx. ArialMT",
+            "property_order": 65
+        },
+        "NSFontSize": {
+            "type": "integer",
+            "title": "Rich Text Font Size",
+            "description": "Enter the desired font size for rich text documents.",
+            "property_order": 70
+        },
+        "PreserveDocumentWhitespace": {
+            "type": "boolean",
+            "default": true,
+            "description": "Set this preference to 'false' to not include code that preserves the white space in your document's formatted text.",
+            "property_order": 75
+        },
+        "ShowPageBreaks": {
+            "type": "boolean",
+            "description": "Set this preference to 'true' to forcibly make text wrap to document margins, rather than window boundaries.",
+            "property_order": 80
+        },
+        "ShowRuler": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to not show the ruler in rich text documents by default.",
+            "property_order": 85
+        },
+        "SmartCopyPaste": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to forcibly disable \"smart\" copy/paste.",
+            "property_order": 90
+        },
+        "SmartLinks": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to forcibly disable \"smart\" links.",
+            "property_order": 95
+        },
+        "SmartQuotes": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to forcibly disable \"smart\" quotes.",
+            "property_order": 100
+        },
+        "SmartSubstitutionsEnabledInRichTextOnly": {
+            "type": "boolean",
+            "description": "Set this preference to 'true' to enable \"smart\" substitutions for quotes and dashes in rich text documents.  Takes effect for newly opened documents and after \"Make Plain Text\".",
+            "property_order": 105
+        },
+        "TextReplacement": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to forcibly disable text replacement.",
+            "property_order": 110
+        },
+        "PlainTextEncoding": {
+            "type": "integer",
+            "description": "Set this preference to choose a specific encoding method for opening plain text files, rather than \"Automatic\".",
+            "enum": [
+                10,
+                4,
+                30,
+                12,
+                2147483649,
+                2147486209,
+                2147483650,
+                2147483651,
+                2147483673,
+                2147485234
+            ],
+            "options": {
+                "enum_titles": [
+                    "Unicode UTF-16",
+                    "Unicode UTF-8",
+                    "Western Mac OS Roman",
+                    "Western Windows Latin 1",
+                    "Japanese Mac OS",
+                    "Japanese Shift JIS",
+                    "Traditional Chinese Mac OS",
+                    "Korean Mac OS",
+                    "Simplified Chinese Mac OS",
+                    "Chinese GB 18030"
+                ]
+            },
+            "property_order": 115
+        },
+        "PlainTextEncodingForWrite": {
+            "type": "integer",
+            "description": "Set this preference to choose a specific encoding method for saving plain text files, rather than \"Automatic\".",
+            "enum": [
+                10,
+                4,
+                30,
+                12,
+                2147483649,
+                2147486209,
+                2147483650,
+                2147483651,
+                2147483673,
+                2147485234
+            ],
+            "options": {
+                "enum_titles": [
+                    "Unicode UTF-16",
+                    "Unicode UTF-8",
+                    "Western Mac OS Roman",
+                    "Western Windows Latin 1",
+                    "Japanese Mac OS",
+                    "Japanese Shift JIS",
+                    "Traditional Chinese Mac OS",
+                    "Korean Mac OS",
+                    "Simplified Chinese Mac OS",
+                    "Chinese GB 18030"
+                ]
+            },
+            "property_order": 120
+        },
+        "RichText": {
+            "type": "integer",
+            "title": "Text Default File Format",
+            "description": "Enable this preference to forcibly apply a default TextEdit file format. By default, TextEdit defaults to rich text - .rtf -, rather than plain text - .txt",
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Plain Text",
+                    "Rich Text"
+                ]
+            },
+            "property_order": 125
+        },
+        "UseEmbeddedCSS": {
+            "type": "boolean",
+            "description": "Enable this setting for HTML Embedded CSS styling.\n\nex. UseEmbeddedCSS = true == \"Embedded CSS\"\nex. UseEmbeddedCSS = true & UseInlineCSS = false == \"Embedded CSS\"\nex. UseEmbeddedCSS = false & UseInlineCSS = false == \"No CSS\"",
+            "property_order": 130
+        },
+        "UseInlineCSS": {
+            "type": "boolean",
+            "description": "Enable this setting for HTML Inline CSS styling.\n\nex. UseInlineCSS = true == \"Inline CSS\"\nex. UseInlineCSS = true & UseEmbeddedCSS = false == \"Inline CSS\"\nex. UseInlineCSS = false & UseEmbeddedCSS = false == \"No CSS\"",
+            "property_order": 135
+        },
+        "UseTransitionalDocType": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to use the \"Strict\" HTML or XHTML document type, rather than \"Transitional\".\n\nex. UseTransiontalDocType = false & UseXHTMLDocType = false == \"HTML Strict\"\nex. UseTransiontalDocType = false & UseXHTMLDocType = true == \"XHTML Strict\"\nex. UseTransiontalDocType = true & UseXHTMLDocType = false == \"HTML Transitional\"\nex. UseTransiontalDocType = true & UseXHTMLDocType = true == \"XHTML Transitional\"",
+            "property_order": 140
+        },
+        "UseXHTMLDocType": {
+            "type": "boolean",
+            "description": "Set this preference to 'false' to use the HTML, rather than the XHTML document type.\n\nex. UseTransiontalDocType = false & UseXHTMLDocType = false == \"HTML Strict\"\nex. UseTransiontalDocType = false & UseXHTMLDocType = true == \"XHTML Strict\"\nex. UseTransiontalDocType = true & UseXHTMLDocType = false == \"HTML Transitional\"\nex. UseTransiontalDocType = true & UseXHTMLDocType = true == \"XHTML Transitional\"",
+            "property_order": 145
+        },
+        "WidthInChars": {
+            "type": "integer",
+            "description": "By default, the Window Size width is 90 lines. Enable this setting to change this default window width.",
+            "property_order": 150
+        },
+        "author": {
+            "type": "string",
+            "title": "Default Document Author",
+            "description": "Enter a default author name for documents.",
+            "property_order": 155
+        },
+        "company": {
+            "type": "string",
+            "title": "Default Document Organization / Company",
+            "description": "Enter a default organization / company for documents.",
+            "property_order": 160
+        },
+        "copyright": {
+            "type": "string",
+            "title": "Default Document Copyright",
+            "description": "Enter a default copyright for documents.",
+            "property_order": 165
+        }
+    }
+}

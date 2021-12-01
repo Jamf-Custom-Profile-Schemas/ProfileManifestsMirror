@@ -1,0 +1,258 @@
+{
+    "title": "Google Software Updates (com.google.Keystone)",
+    "description": "Google Software Update Settings",
+    "properties": {
+        "updatePolicies": {
+            "type": "dictionary",
+            "properties": {
+                "global": {
+                    "type": "dictionary",
+                    "title": "Global Google Update settings",
+                    "description": "Configure Global Google update settings",
+                    "properties": {
+                        "UpdateDefault": {
+                            "type": "integer",
+                            "title": "Global Google Update",
+                            "default": 0,
+                            "description": "Enable auto-updates & installs = Turns on auto-updates. Updates are always applied when detected by Google Software Update.\nInstall updates at scheduled update checks = Manual update checks will not install updates.\nTurn off updates = Stops Google Software Update automatically updating all users to the latest stable version of Google apps. Updates are only applied when the user manually checks for updates.\nUpdates never applied = Never update Google apps",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://support.google.com/chrome/a/answer/7591084?hl=en#updatepolicysettings"
+                                }
+                            ],
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Enable auto-updates & installs",
+                                    "Install updates at scheduled update checks",
+                                    "Turn off updates",
+                                    "Updates never applied"
+                                ]
+                            }
+                        },
+                        "UpdatesSupressedStartHour": {
+                            "type": "integer",
+                            "title": "Global Google Update Schedule - Start Hour",
+                            "description": "The time in 24-hour clock format, that auto-updates start. Use a value between 0 - midnight - and 23.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://support.google.com/chrome/a/answer/7591084?hl=en#updatepolicysettings"
+                                }
+                            ]
+                        },
+                        "UpdatesSupressedStartMinute": {
+                            "type": "integer",
+                            "title": "Global Google Update Schedule - Start Minute",
+                            "description": "The minute, within the starting hour, that auto-updates start. Use a value between 0 and 59.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://support.google.com/chrome/a/answer/7591084?hl=en#updatepolicysettings"
+                                }
+                            ]
+                        },
+                        "UpdatesSupressedDurationMin": {
+                            "type": "integer",
+                            "title": "Global Google Update Schedule - Duration",
+                            "description": "The length of time, in minutes, that auto-updates can be made. If you set this value to 0, the system behaves as if no update window is specified.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://support.google.com/chrome/a/answer/7591084?hl=en#updatepolicysettings"
+                                }
+                            ]
+                        },
+                        "ComponentUpdatesEnabled": {
+                            "type": "boolean",
+                            "title": "Enable Global Component Updates",
+                            "description": "Even if you turn off automatic updates for Chrome Browser, browser components won't automatically stop updating, including Adobe Flash, Widevine DRM - for encrypted media -, and the Chrome updater recovery component.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://www.chromium.org/administrators/policy-list-3#ComponentUpdatesEnabled"
+                                }
+                            ]
+                        },
+                        "DownloadPreference": {
+                            "type": "string",
+                            "title": "Global Download Preference",
+                            "description": "This preference is referenced in an example property list in the documentation, but is not discussed. So it exists, but what it manages and the possible string values are not known.",
+                            "enum": [
+                                "cacheable"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Cacheable Downloads"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "com.google.Chrome": {
+                    "type": "dictionary",
+                    "title": "Chrome Update settings",
+                    "description": "Configure Chrome update settings",
+                    "properties": {
+                        "UpdateDefault": {
+                            "type": "integer",
+                            "title": "Chrome Update",
+                            "default": 0,
+                            "description": "Enable auto-updates & installs = Turns on auto-updates. Chrome updates are always applied when detected by Google Software Update.\nInstall updates at scheduled update checks = Manual update checks will not install updates.\nTurn off updates = Stops Google Software Update automatically updating all users to the latest stable version of Chrome. Updates are only applied when the user manually checks for updates.\nUpdates never applied = Never update Chrome",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://support.google.com/chrome/a/answer/7591084?hl=en#updatepolicysettings"
+                                }
+                            ],
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Enable auto-updates & installs",
+                                    "Install updates at scheduled update checks",
+                                    "Turn off updates",
+                                    "Updates never applied"
+                                ]
+                            }
+                        },
+                        "TargetVersionPrefix": {
+                            "type": "string",
+                            "title": "Chrome Update Version Pin",
+                            "description": "Pin an application to a single version. This stops your devices from updating to versions of the app beyond the number you specify. This should be done only temporarily, such as while testing a new version.",
+                            "pattern": "^[\\d]+\\.$"
+                        }
+                    }
+                },
+                "com.google.drivefs": {
+                    "type": "dictionary",
+                    "title": "Drive File Stream Update settings",
+                    "description": "Configure Drive File Stream update settings",
+                    "properties": {
+                        "UpdateDefault": {
+                            "type": "integer",
+                            "title": "Drive File Stream Update",
+                            "default": 0,
+                            "description": "Enable auto-updates & installs = Turns on auto-updates. FileStream updates are always applied when detected by Google Software Update.\nInstall updates at scheduled update checks = Manual update checks will not install updates.\nTurn off updates = Stops Google Software Update automatically updating all users to the latest stable version of FileStream. Updates are only applied when the user manually checks for updates.\nUpdates never applied = Never update FileStream",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://support.google.com/chrome/a/answer/7591084?hl=en#updatepolicysettings"
+                                }
+                            ],
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Enable auto-updates & installs",
+                                    "Install updates at scheduled update checks",
+                                    "Turn off updates",
+                                    "Updates never applied"
+                                ]
+                            }
+                        },
+                        "TargetVersionPrefix": {
+                            "type": "string",
+                            "title": "Drive File Stream Update Version Pin",
+                            "description": "Pin an application to a single version. This stops your devices from updating to versions of the app beyond the number you specify. This should be done only temporarily, such as while testing a new version.",
+                            "pattern": "^[\\d]+\\.$"
+                        }
+                    }
+                },
+                "com.google.chat": {
+                    "type": "dictionary",
+                    "title": "Chat Update settings",
+                    "description": "Configure Chat update settings",
+                    "properties": {
+                        "UpdateDefault": {
+                            "type": "integer",
+                            "title": "Chat Update",
+                            "default": 0,
+                            "description": "Enable auto-updates & installs = Turns on auto-updates. Chat updates are always applied when detected by Google Software Update.\nInstall updates at scheduled update checks = Manual update checks will not install updates.\nTurn off updates = Stops Google Software Update automatically updating all users to the latest stable version of Chat. Updates are only applied when the user manually checks for updates.\nUpdates never applied = Never update Chat",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://support.google.com/chrome/a/answer/7591084?hl=en#updatepolicysettings"
+                                }
+                            ],
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Enable auto-updates & installs",
+                                    "Install updates at scheduled update checks",
+                                    "Turn off updates",
+                                    "Updates never applied"
+                                ]
+                            }
+                        },
+                        "TargetVersionPrefix": {
+                            "type": "string",
+                            "title": "Chat Update Version Pin",
+                            "description": "Pin an application to a single version. This stops your devices from updating to versions of the app beyond the number you specify. This should be done only temporarily, such as while testing a new version.",
+                            "pattern": "^[\\d]+\\.$"
+                        }
+                    }
+                },
+                "com.google.GoogleDrive": {
+                    "type": "dictionary",
+                    "title": "Backup & Sync Update settings",
+                    "description": "Configure Backup & Sync update settings",
+                    "properties": {
+                        "UpdateDefault": {
+                            "type": "integer",
+                            "title": "Backup & Sync Update",
+                            "default": 0,
+                            "description": "Enable auto-updates & installs = Turns on auto-updates. Backup & Sync updates are always applied when detected by Google Software Update.\nInstall updates at scheduled update checks = Manual update checks will not install updates.\nTurn off updates = Stops Google Software Update automatically updating all users to the latest stable version of Backup & Sync. Updates are only applied when the user manually checks for updates.\nUpdates never applied = Never update Backup & Sync",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://support.google.com/chrome/a/answer/7591084?hl=en#updatepolicysettings"
+                                }
+                            ],
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Enable auto-updates & installs",
+                                    "Install updates at scheduled update checks",
+                                    "Turn off updates",
+                                    "Updates never applied"
+                                ]
+                            }
+                        },
+                        "TargetVersionPrefix": {
+                            "type": "string",
+                            "title": "Backup & Sync Update Version Pin",
+                            "description": "Pin an application to a single version. This stops your devices from updating to versions of the app beyond the number you specify. This should be done only temporarily, such as while testing a new version.",
+                            "pattern": "^[\\d]+\\.$"
+                        }
+                    }
+                }
+            },
+            "property_order": 5
+        }
+    }
+}

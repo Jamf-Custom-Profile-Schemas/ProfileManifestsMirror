@@ -1,0 +1,84 @@
+{
+    "title": "Parental Controls: Application Access (com.apple.applicationaccess.new)",
+    "description": "Configures Parental Controls: Application Access settings",
+    "properties": {
+        "familyControlsEnabled": {
+            "type": "boolean",
+            "title": "Enable application access restrictions",
+            "description": "Set to true to enable application access restrictions.",
+            "property_order": 5
+        },
+        "whiteList": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Allowlisted Item",
+                "description": "Allowlisted application dictionary",
+                "properties": {
+                    "bundleID": {
+                        "type": "string",
+                        "title": "Bundle Identifier",
+                        "description": "Bundle ID of application."
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "title": "Display Name",
+                        "description": "Display name of the application."
+                    },
+                    "appID": {
+                        "type": "data",
+                        "title": "Code Requirement",
+                        "description": "The designated requirement describing the code signature of this executable."
+                    },
+                    "subApps": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Bundle Identifier",
+                            "description": "Bundle ID of application."
+                        },
+                        "description": "For applications that include nested helper applications, describes the signatures of embedded applications."
+                    },
+                    "detachedSignature": {
+                        "type": "data",
+                        "description": "The required signature for an unsigned binary"
+                    },
+                    "appStore": {
+                        "type": "boolean",
+                        "title": "App Store"
+                    },
+                    "disabled": {
+                        "type": "boolean",
+                        "title": "Disabled",
+                        "description": "Specifies whether this application information is to be included in the allowlist or not."
+                    }
+                }
+            },
+            "title": "Allowlisted Applications by Code Signature",
+            "description": "List of code signatures for applications that are allowed to run.",
+            "property_order": 10
+        },
+        "pathWhiteList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Folder Path",
+                "description": "The absolute path to a folder to allowlist."
+            },
+            "title": "Allowlisted Application Folders",
+            "description": "The user can always launch applications in these folders.",
+            "property_order": 15
+        },
+        "pathBlackList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Folder Path",
+                "description": "The absolute path to a folder to denylist."
+            },
+            "title": "Denylisted Application Folders",
+            "description": "The user can never launch applications in these folders.",
+            "property_order": 20
+        }
+    }
+}

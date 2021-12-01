@@ -1,0 +1,71 @@
+{
+    "title": "Handbrake (fr.handbrake.HandBrake)",
+    "description": "Handbrake settings",
+    "properties": {
+        "SUFeedURL": {
+            "type": "string",
+            "title": "Sparkle Feed URL",
+            "description": "Setting this to a non-existent URL will disable the ability for users to manually check for updates. Useful when you intend to use your own software distribution mechanism to deploy updates.",
+            "pattern": "^https://.*$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 5
+        },
+        "SUEnableAutomaticChecks": {
+            "type": "boolean",
+            "title": "Enable Automatic Update Checks",
+            "default": true,
+            "description": "Controls automatic update checks.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 10
+        },
+        "SUScheduledCheckInterval": {
+            "type": "integer",
+            "title": "Automatic Update Check Interval",
+            "default": 86400,
+            "description": "Controls the automatic update check interval. The default is 1 day (86400 seconds). Setting to 0 disables updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 15
+        },
+        "SUAllowsAutomaticUpdates": {
+            "type": "boolean",
+            "title": "Automatic Update Install Prompt",
+            "default": true,
+            "description": "Controls the automatic update install prompt. When enabled, presents users with the option to allow automatic download and install of available updates. If disabled, disallows automatic updates and requires manual installation every time.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 20
+        },
+        "SUAutomaticallyUpdate": {
+            "type": "boolean",
+            "title": "Enable Automatic Silent Updates",
+            "default": false,
+            "description": "Controls automatic silent updates. If enabled, users will not be informed about updates and updates will be silently installed when the app quits.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 25
+        }
+    }
+}

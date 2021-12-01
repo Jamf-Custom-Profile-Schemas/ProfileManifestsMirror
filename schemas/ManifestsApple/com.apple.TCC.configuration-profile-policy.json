@@ -1,0 +1,1303 @@
+{
+    "title": "Privacy Preferences Policy Control (com.apple.TCC.configuration-profile-policy)",
+    "description": "Configures Privacy Preferences Policy Control settings",
+    "properties": {
+        "Services": {
+            "type": "dictionary",
+            "title": "Services",
+            "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+            "properties": {
+                "Accessibility": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "Accessibility"
+                },
+                "AppleEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "AEReceiverIdentifier": {
+                                "type": "string",
+                                "title": "AEReceiverIdentifier",
+                                "description": "The identifier of the process receiving an ApplEvent sent by the Identifier process."
+                            },
+                            "AEReceiverIdentifierType": {
+                                "type": "string",
+                                "title": "AEReceiverIdentifierType",
+                                "description": "The type of AEReceiverIdentifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "AEReceiverCodeRequirement": {
+                                "type": "string",
+                                "title": "AEReceiverCodeRequirement",
+                                "description": "Code requirement for the receiving binary."
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "AppleEvents"
+                },
+                "Calendar": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "Calendar"
+                },
+                "Camera": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "Camera"
+                },
+                "AddressBook": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "Contacts"
+                },
+                "FileProviderPresence": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "ListenEvent": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "MediaLibrary": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "Microphone": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "Microphone"
+                },
+                "Photos": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "Photos"
+                },
+                "PostEvent": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "PostEvent",
+                    "description": "Specifies the policies for the application to use CoreGraphics APIs to send CGEvents to the system event stream."
+                },
+                "Reminders": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "Reminders"
+                },
+                "SystemPolicyAllFiles": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "SystemPolicyAllFiles"
+                },
+                "ScreenCapture": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "SpeechRecognition": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "SystemPolicyDesktopFolder": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "SystemPolicyDocumentsFolder": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "SystemPolicyDownloadsFolder": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "SystemPolicyNetworkVolumes": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "SystemPolicyRemovableVolumes": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    }
+                },
+                "SystemPolicySysAdminFiles": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "SystemPolicySysAdminFiles"
+                }
+            },
+            "property_order": 5
+        }
+    }
+}

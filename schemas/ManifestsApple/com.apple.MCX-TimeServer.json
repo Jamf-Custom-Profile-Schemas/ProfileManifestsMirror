@@ -1,0 +1,18 @@
+{
+    "title": "Time Server (com.apple.MCX)",
+    "description": "Time Server settings",
+    "properties": {
+        "timeServer": {
+            "type": "string",
+            "title": "Time Server",
+            "description": "The NTP host to connect to. Separate multiple hosts with commas",
+            "property_order": 5
+        },
+        "timeZone": {
+            "type": "string",
+            "title": "Time Zone",
+            "description": "Time zone path location string in /usr/share/zoneinfo/. For example, \u201dAmerica/Denver\u201d or \u201dZulu\u201d",
+            "property_order": 10
+        }
+    }
+}

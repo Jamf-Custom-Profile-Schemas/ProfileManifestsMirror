@@ -1,0 +1,858 @@
+{
+    "title": "Allowed Media (com.apple.systemuiserver)",
+    "description": "Allowed Media settings",
+    "properties": {
+        "mount-controls": {
+            "type": "dictionary",
+            "title": "Volume Mount Controls",
+            "description": "Media type dictionary to control volume mounting.",
+            "properties": {
+                "harddisk-external": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "External Disk",
+                    "description": "This key is the default for media types that don\u02bct fall into other categories. Like internally installed SD-Cards and USB flash drives."
+                },
+                "harddisk-internal": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Internal Disk"
+                },
+                "networkdisk": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Network Disk"
+                },
+                "disk-image": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Disk Image"
+                },
+                "bd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Blu-ray"
+                },
+                "cd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "CD"
+                },
+                "dvd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "DVD"
+                },
+                "dvdram": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "DVD-RAM"
+                },
+                "blankbd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Recordable Blu-ray"
+                },
+                "blankcd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Recordable CD"
+                },
+                "blankdvd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Recordable DVD"
+                }
+            },
+            "property_order": 5
+        },
+        "unmount-controls": {
+            "type": "dictionary",
+            "title": "Volume Unmount Controls",
+            "description": "Media type dictionary to control volume unmounting.",
+            "properties": {
+                "harddisk-external": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "External Disk",
+                    "description": "This key is the default for media types that don\u02bct fall into other categories. Like internally installed SD-Cards and USB flash drives."
+                },
+                "harddisk-internal": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Internal Disk"
+                },
+                "networkdisk": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Network Disk"
+                },
+                "disk-image": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Disk Image"
+                },
+                "bd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Blu-ray"
+                },
+                "cd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "CD"
+                },
+                "dvd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "DVD"
+                },
+                "dvdram": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "DVD-RAM"
+                },
+                "blankbd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Recordable Blu-ray"
+                },
+                "blankcd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Recordable CD"
+                },
+                "blankdvd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Recordable DVD"
+                }
+            },
+            "property_order": 10
+        },
+        "logout-eject": {
+            "type": "dictionary",
+            "title": "Eject on logout",
+            "description": "Volumes to eject when the user logs out.",
+            "properties": {
+                "harddisk-external": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "External Disk",
+                    "description": "This key is the default for media types that don\u02bct fall into other categories. Like internally installed SD-Cards and USB flash drives."
+                },
+                "harddisk-internal": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Internal Disk"
+                },
+                "networkdisk": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Network Disk"
+                },
+                "disk-image": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Disk Image"
+                },
+                "bd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Blu-ray"
+                },
+                "cd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "CD"
+                },
+                "dvd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "DVD"
+                },
+                "dvdram": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "DVD-RAM"
+                },
+                "blankbd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Recordable Blu-ray"
+                },
+                "blankcd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Recordable CD"
+                },
+                "blankdvd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Action",
+                        "description": "Action",
+                        "enum": [
+                            "authenticate",
+                            "read-only",
+                            "deny",
+                            "eject",
+                            "alert"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Authenticate",
+                                "Read-Only",
+                                "Deny",
+                                "Eject",
+                                "Alert"
+                            ]
+                        }
+                    },
+                    "title": "Recordable DVD"
+                }
+            },
+            "property_order": 15
+        }
+    }
+}

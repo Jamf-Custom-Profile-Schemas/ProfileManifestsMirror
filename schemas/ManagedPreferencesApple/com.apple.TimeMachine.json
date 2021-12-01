@@ -1,0 +1,10 @@
+{
+    "title": "Time Machine (com.apple.TimeMachine)",
+    "description": "Time Machine settings",
+    "properties": {
+        "DoNotOfferNewDisksForBackup": {
+            "type": "boolean",
+            "property_order": 5
+        }
+    }
+}

@@ -1,0 +1,432 @@
+{
+    "title": "Munki (ManagedInstalls)",
+    "description": "Munki settings",
+    "properties": {
+        "SoftwareRepoURL": {
+            "type": "string",
+            "default": "http://munki/repo",
+            "description": "Base URL for Munki repository.",
+            "property_order": 5
+        },
+        "ClientIdentifier": {
+            "type": "string",
+            "title": "Client Identifier",
+            "description": "Identifier for Munki client. Usually is the same as a manifest name on the Munki server. If this is empty or undefined, Munki will attempt the following identifiers, in order: fully-qualified hostname, \"short\" hostname, serial number and finally, \"site_default\".",
+            "property_order": 10
+        },
+        "ManagedInstallDir": {
+            "type": "string",
+            "title": "Managed Install Directory",
+            "default": "/Library/Managed Installs",
+            "description": "Folder where Munki keeps its data on the client.",
+            "property_order": 15
+        },
+        "LocalOnlyManifest": {
+            "type": "string",
+            "title": "Local Only Manifest",
+            "description": "Defines the name of your LocalOnlyManifest. Setting this activates the feature. Unsetting it means Munki will remove the file on the next run.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#localonlymanifest"
+                }
+            ],
+            "property_order": 20
+        },
+        "SuppressAutoInstall": {
+            "type": "boolean",
+            "title": "Suppress Auto Install",
+            "default": false,
+            "description": "Munki will not automatically install or remove items.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#suppressautoinstall"
+                }
+            ],
+            "property_order": 25
+        },
+        "SuppressLoginwindowInstall": {
+            "type": "boolean",
+            "title": "Suppress Loginwindow Install",
+            "default": false,
+            "description": "Munki will not install items while idle at the loginwindow except for those marked for unattended_install or unattended_uninstall.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#suppressloginwindowinstall"
+                }
+            ],
+            "property_order": 30
+        },
+        "InstallAppleSoftwareUpdates": {
+            "type": "boolean",
+            "title": "Install Apple Software Updates",
+            "default": false,
+            "description": "Install updates from an Apple Software Update server, in addition to \"regular\" Munki updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#installapplesoftwareupdates"
+                }
+            ],
+            "property_order": 35
+        },
+        "AppleSoftwareUpdatesOnly": {
+            "type": "boolean",
+            "title": "Install Apple Software Updates Only",
+            "default": false,
+            "description": "Only install updates from an Apple Software Update server. No Munki repository is needed or used.",
+            "property_order": 40
+        },
+        "UnattendedAppleUpdates": {
+            "type": "boolean",
+            "title": "Unattended Apple Updates",
+            "default": false,
+            "description": "Updates that declare no \"must-close\" applications, or have one or more \"must-close\" applications, none of which is running, and do not require a logout or restart will be installed as part of a normal periodic background run without notifying the user.",
+            "property_order": 45
+        },
+        "PerformAuthRestarts": {
+            "type": "boolean",
+            "title": "Perform FileVault Authorized Restarts",
+            "default": false,
+            "description": "Munki will attempt to perform a filevault auth restart.",
+            "property_order": 50
+        },
+        "RecoveryKeyFile": {
+            "type": "string",
+            "title": "FileVault Credentials Path",
+            "description": "Absolute path to a plist file containing filevault credentials in key/value format. Used to perform auth restarts.",
+            "property_order": 55
+        },
+        "EmulateProfileSupport": {
+            "type": "boolean",
+            "title": "Emulate Profile Support (Big Sur)",
+            "description": "A bit of hack and not supported by Apple, it is disabled by default. To emulate profile installs, configuration profiles are read, and if they contain managed preferences, they are converted to MCX data that is added to a ComputerGroup in the local Open Directory store. Configuration profile payloads that are not managed preferences are ignored/skipped.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Configuration-Profile-Emulation"
+                }
+            ],
+            "property_order": 60
+        },
+        "SuppressUserNotification": {
+            "type": "boolean",
+            "title": "Suppress Update Notifications",
+            "default": false,
+            "description": "Managed Software Center will never notify the user of available updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#suppressusernotification"
+                }
+            ],
+            "property_order": 65
+        },
+        "SuppressStopButtonOnInstall": {
+            "type": "boolean",
+            "title": "Suppress Stop Button On Install",
+            "default": false,
+            "description": "Managed Software Center will hide the stop button while installing or removing software, preventing users from interrupting the install.",
+            "property_order": 70
+        },
+        "InstallRequiresLogout": {
+            "type": "boolean",
+            "title": "Require Logout for Installs & Uninstalls",
+            "default": false,
+            "description": "Managed Software Center will require a logout for all installs or removals.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#installrequireslogout"
+                }
+            ],
+            "property_order": 75
+        },
+        "ShowRemovalDetail": {
+            "type": "boolean",
+            "title": "Show Removal Detail",
+            "default": false,
+            "description": "Managed Software Center will display detail for scheduled removals.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#showremovaldetail"
+                }
+            ],
+            "property_order": 80
+        },
+        "ShowOptionalInstallsForHigherOSVersions": {
+            "type": "boolean",
+            "title": "Show Optional Installs For Higher OS Versions",
+            "default": false,
+            "description": "Managed Software Center.app will show optional installs and updates that apply to macOS versions higher than the currently installed version.",
+            "property_order": 85
+        },
+        "DaysBetweenNotifications": {
+            "type": "integer",
+            "title": "Days Between Notifications",
+            "default": 1,
+            "description": "Number of days between user notifications from Managed Software Center. Set to 0 to have Managed Software Center notify every time a background check runs if there are available updates.",
+            "property_order": 90
+        },
+        "UseNotificationCenterDays": {
+            "type": "integer",
+            "title": "Use Notification Center Days",
+            "default": 3,
+            "description": "Number of days Notification Center notifications should be used before switching to launching Managed Software Center.",
+            "property_order": 95
+        },
+        "PackageVerificationMode": {
+            "type": "string",
+            "title": "Package Verification Mode",
+            "description": "Controls how Munki verifies the integrity of downloaded packages. (none = No integrity check is performed, hash = Integrity check is performed if package info contains checksum information, hash_strict = Integrity check is performed, and fails if package info does not contain checksum information.)",
+            "enum": [
+                "none",
+                "hash",
+                "hash_strict"
+            ],
+            "property_order": 100
+        },
+        "FollowHTTPRedirects": {
+            "type": "string",
+            "title": "Follow HTTP Redirects",
+            "description": "Defines whether Munki will follow all, some or no redirects from the web server. (none = The default behaviour. No redirects are followed. https = Only redirects to URLs using HTTPS are followed. all = Redirects to both HTTP and HTTPS URLs are followed.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#followhttpredirects"
+                }
+            ],
+            "enum": [
+                "none",
+                "https",
+                "all"
+            ],
+            "property_order": 105
+        },
+        "AdditionalHttpHeaders": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "HTTPHeader"
+            },
+            "title": "Additional HTTP Headers",
+            "description": "This key provides the ability to specify custom HTTP headers to be sent with all curl() HTTP requests.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#additionalhttpheaders"
+                }
+            ],
+            "property_order": 110
+        },
+        "IgnoreSystemProxies": {
+            "type": "boolean",
+            "title": "Ignore System Proxies",
+            "default": false,
+            "description": "HTTP and/or HTTPS proxies set system-wide will be ignored, connections will be made directly.",
+            "property_order": 115
+        },
+        "PackageURL": {
+            "type": "string",
+            "title": "Base Package URL",
+            "description": "Base URL for Munki pkgs. Useful if your packages are served from a different server than your catalogs or manifests.",
+            "property_order": 120
+        },
+        "CatalogURL": {
+            "type": "string",
+            "title": "Base Catalog URL",
+            "description": "Base URL for Munki catalogs. Useful if your catalogs are served from a different server than your packages or manifests.",
+            "property_order": 125
+        },
+        "IconURL": {
+            "type": "string",
+            "title": "Base Icon URL",
+            "description": "Base URL for product icons. Useful if your icons are served from a different server or different directory than the default.",
+            "property_order": 130
+        },
+        "ClientResourceURL": {
+            "type": "string",
+            "title": "Base Client Resource URL",
+            "description": "Base URL for custom client resources for Managed Software Center. Useful if your resources are served from a different server or different directory than the default.",
+            "property_order": 135
+        },
+        "ClientResourcesFilename": {
+            "type": "string",
+            "title": "Client Resources Filename",
+            "description": "Specific filename to use when requesting custom client resources.",
+            "property_order": 140
+        },
+        "HelpURL": {
+            "type": "string",
+            "title": "Help URL",
+            "description": "URL to open/display when the user selects \"Managed Software Center Help\" from Managed Software Center's Help menu.",
+            "property_order": 145
+        },
+        "LicenseInfoURL": {
+            "type": "string",
+            "title": "License Info URL",
+            "description": "URL for Munki to query a webserver to determine if there are available seats for licensed software (or any software you wish to make available via optional_installs, yet control the number of deployed copies).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/License-Seat-Tracking"
+                }
+            ],
+            "property_order": 150
+        },
+        "SoftwareUpdateServerURL": {
+            "type": "string",
+            "title": "Software Update Server URL",
+            "description": "Catalog URL for Apple Software Updates. If undefined or empty, Munki will use the same catalog that the OS uses.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#softwareupdateserverurl"
+                }
+            ],
+            "property_order": 155
+        },
+        "UseClientCertificate": {
+            "type": "boolean",
+            "title": "Use Client Certificate",
+            "default": false,
+            "description": "Use an SSL client certificate when communicating with the Munki server. Requires an https:// URL for the Munki repo.",
+            "property_order": 160
+        },
+        "UseClientCertificateCNAsClientIdentifier": {
+            "type": "boolean",
+            "title": "Use Client Certificate CN As Client Identifier",
+            "default": false,
+            "description": "Use the CN of the client certificate as the Client Identifier. Used in combination with the UseClientCertificate key.",
+            "property_order": 165
+        },
+        "ClientCertificatePath": {
+            "type": "string",
+            "title": "Client Certificate Path",
+            "description": "Absolute path to a client certificate. There are 3 defaults for this key. Concatenated cert/key PEM file accepted.",
+            "property_order": 170
+        },
+        "ClientKeyPath": {
+            "type": "string",
+            "title": "Client Key Path",
+            "description": "Absolute path to a client private key.",
+            "property_order": 175
+        },
+        "SoftwareRepoCAPath": {
+            "type": "string",
+            "title": "Software Repo CA Path",
+            "description": "Path to the directory that stores your CA certificate(s).",
+            "property_order": 180
+        },
+        "SoftwareRepoCACertificate": {
+            "type": "string",
+            "title": "Software Repo CA Certificate",
+            "description": "Absolute path to your CA Certificate.",
+            "property_order": 185
+        },
+        "LogFile": {
+            "type": "string",
+            "title": "Log File",
+            "default": "/Library/Managed Installs/Logs/ManagedSoftwareUpdate.log",
+            "description": "Primary log is written to this file. Other logs are written into the same directory as this file.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#logfile"
+                }
+            ],
+            "property_order": 190
+        },
+        "LogToSyslog": {
+            "type": "boolean",
+            "title": "Log to Syslog",
+            "default": false,
+            "description": "Log to syslog in addition to ManagedSoftwareUpdate.log.",
+            "property_order": 195
+        },
+        "LoggingLevel": {
+            "type": "integer",
+            "title": "Logging Level",
+            "default": 1,
+            "description": "Higher values cause more detail to be written to the primary log.",
+            "property_order": 200
+        },
+        "MSULogEnabled": {
+            "type": "boolean",
+            "title": "Log Enabled",
+            "default": false,
+            "description": "Log user actions in the GUI.",
+            "property_order": 205
+        },
+        "MSUDebugLogEnabled": {
+            "type": "boolean",
+            "title": "Debug Log Enabled",
+            "default": false,
+            "description": "Debug logging for Managed Software Center.",
+            "property_order": 210
+        },
+        "AccessKey": {
+            "type": "string",
+            "title": "Access Key",
+            "description": "Munki has a feature which enables Mac administrators to use middleware to change munki's HTTP request. S3-Auth uses this feature to create the HTTP headers necessary to authenticate to S3.\n\nAccessKey for S3 bucket.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/waderobson/s3-auth"
+                }
+            ],
+            "property_order": 215
+        },
+        "Region": {
+            "type": "string",
+            "description": "Munki has a feature which enables Mac administrators to use middleware to change munki's HTTP request. S3-Auth uses this feature to create the HTTP headers necessary to authenticate to S3.\n\nRegion for S3 bucket.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/waderobson/s3-auth"
+                }
+            ],
+            "property_order": 220
+        },
+        "SecretKey": {
+            "type": "string",
+            "title": "Secret Key",
+            "description": "Munki has a feature which enables Mac administrators to use middleware to change munki's HTTP request. S3-Auth uses this feature to create the HTTP headers necessary to authenticate to S3.\n\nSecretKey for S3 bucket.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/waderobson/s3-auth"
+                }
+            ],
+            "property_order": 225
+        },
+        "S3Endpoint": {
+            "type": "string",
+            "title": "S3 Endpoint",
+            "description": "Munki has a feature which enables Mac administrators to use middleware to change munki's HTTP request. S3-Auth uses this feature to create the HTTP headers necessary to authenticate to S3.\n\nS3 Endpoint for bucket.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/waderobson/s3-auth"
+                }
+            ],
+            "property_order": 230
+        },
+        "AggressiveUpdateNotificationDays": {
+            "type": "integer",
+            "title": "Aggressive Update Notification Days",
+            "default": 14,
+            "description": "This preference controls how many days after one or more pending updates are ignored that aggressive user notification begins. Setting this to 0 never triggers this aggressive behavior.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/aggressive-update-notifications-in-munki-5"
+                }
+            ],
+            "property_order": 235
+        }
+    }
+}

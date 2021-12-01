@@ -1,0 +1,18 @@
+{
+    "title": "Certificate PKCS1 (com.apple.security.pkcs1)",
+    "description": "Use this section to define settings for a pkcs1 certificate.",
+    "properties": {
+        "PayloadCertificateFileName": {
+            "type": "string",
+            "title": "Certificate Name",
+            "description": "Name or description of the certificate credential.",
+            "property_order": 5
+        },
+        "PayloadContent": {
+            "type": "data",
+            "title": "Certificate or Identity Data",
+            "description": "X.509 certificate (.cer, .crt, etc) for inclusion on device.",
+            "property_order": 10
+        }
+    }
+}

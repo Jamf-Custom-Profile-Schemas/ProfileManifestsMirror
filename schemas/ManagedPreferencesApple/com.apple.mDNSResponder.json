@@ -1,0 +1,11 @@
+{
+    "title": "Bonjour (com.apple.mDNSResponder)",
+    "description": "Bonjour Settings",
+    "properties": {
+        "NoMulticastAdvertisements": {
+            "type": "boolean",
+            "title": "Disable Bonjour",
+            "property_order": 5
+        }
+    }
+}

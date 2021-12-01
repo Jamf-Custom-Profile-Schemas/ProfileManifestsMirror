@@ -1,0 +1,18 @@
+{
+    "title": "Certificate Root (com.apple.security.root)",
+    "description": "Certificate Root settings",
+    "properties": {
+        "PayloadCertificateFileName": {
+            "type": "string",
+            "title": "Certificate Name",
+            "description": "Name or description of the certificate credential.",
+            "property_order": 5
+        },
+        "PayloadContent": {
+            "type": "data",
+            "title": "Root Certificate",
+            "description": "X.509 Root certificate (.cer, .crt, etc) for inclusion on device.",
+            "property_order": 10
+        }
+    }
+}
