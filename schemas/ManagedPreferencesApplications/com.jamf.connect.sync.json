@@ -1,0 +1,399 @@
+{
+    "title": "Jamf Connect Sync (com.jamf.connect.sync)",
+    "description": "Jamf Connect Sync Settings",
+    "properties": {
+        "AuthServer": {
+            "type": "string",
+            "default": "yourcompany.okta.com",
+            "description": "Specifies your Okta authentication domain.",
+            "property_order": 5
+        },
+        "LicenseFile": {
+            "type": "data",
+            "description": "The contents of a .jamfconnectlicense file encoded in Base64 data format.",
+            "property_order": 10
+        },
+        "PeriodicUpdateTime": {
+            "type": "integer",
+            "default": 15,
+            "description": "Specifies the interval, in minutes, between background updates.",
+            "property_order": 15
+        },
+        "SignInCommand": {
+            "type": "string",
+            "description": "Specifies a script or other binary to be run after a successful sign in.",
+            "property_order": 20
+        },
+        "DontShowWelcome": {
+            "type": "boolean",
+            "property_order": 25
+        },
+        "UseKeychain": {
+            "type": "boolean",
+            "property_order": 30
+        },
+        "LocalPasswordSync": {
+            "type": "boolean",
+            "property_order": 35
+        },
+        "LocalPasswordSyncOnMatchOnly": {
+            "type": "boolean",
+            "property_order": 40
+        },
+        "LocalPasswordSyncMessage": {
+            "type": "string",
+            "default": "Please enter your local user account password.",
+            "property_order": 45
+        },
+        "PasswordCheckUpdateTime": {
+            "type": "integer",
+            "default": 15,
+            "description": "Specifies the interval, in minutes, that Jamf Connect Sync checks the local password for synchronization. If unspecified, Jamf Connect Sync will check every 15 minutes by default.",
+            "property_order": 50
+        },
+        "KeychainItems": {
+            "type": "dictionary",
+            "description": "Determines which keychain items Jamf Connect Sync should synchronize with the local password.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Keychain Item"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Account"
+                }
+            },
+            "property_order": 55
+        },
+        "KeychainItemsInternet": {
+            "type": "dictionary",
+            "description": "Determines which internet accounts Jamf Connect Sync should synchronize with the local password.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Keychain Item"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Account"
+                }
+            },
+            "property_order": 60
+        },
+        "KeychainItemsDebug": {
+            "type": "boolean",
+            "default": true,
+            "property_order": 65
+        },
+        "ADExpirationShow": {
+            "type": "boolean",
+            "property_order": 70
+        },
+        "WarnOnPasswordExpiration": {
+            "type": "boolean",
+            "description": "Determines whether Jamf Connect Sync should warn the user on sign in if the password is about to expire.",
+            "property_order": 75
+        },
+        "ExpirationWarningDays": {
+            "type": "integer",
+            "default": 5,
+            "property_order": 80
+        },
+        "PasswordExpirationMenu": {
+            "type": "boolean",
+            "description": "Determines if the countdown before password expiration is displayed in the menu bar.",
+            "property_order": 85
+        },
+        "PasswordExpirationMenuDays": {
+            "type": "integer",
+            "default": 15,
+            "description": "An integer, in days remaining, before the password expiration countdown is displayed in the menu bar.",
+            "property_order": 90
+        },
+        "ChangePasswordTimer": {
+            "type": "integer",
+            "default": 3,
+            "description": "Specifies an interval, in minutes, until the user is prompted to sign in again after a password change.",
+            "property_order": 95
+        },
+        "ChangePasswordOrder": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "ChangePasswordItem",
+                "properties": {
+                    "{{key}}": {
+                        "type": "string"
+                    },
+                    "{{value}}": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Determines the order and setting for the password change menu. If unspecified, Okta is used by default for password changes. If Kerberos is enabled, Jamf Connect Sync will use Kerberos to authenticate to your Active Directory domain, and then authenticate to Okta.",
+            "property_order": 100
+        },
+        "PasswordChangeCommand": {
+            "type": "string",
+            "description": "Specifies a script or other binary to be run after the user changes a password.",
+            "property_order": 105
+        },
+        "PasswordPolicy": {
+            "type": "dictionary",
+            "properties": {
+                "minLength": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minLowerCase": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minNumber": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minSymbol": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minUpperCase": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minMatches": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                }
+            },
+            "property_order": 110
+        },
+        "MessagePasswordChangePolicy": {
+            "type": "string",
+            "default": "Please review the employee handbook.",
+            "property_order": 115
+        },
+        "KerberosRealm": {
+            "type": "string",
+            "property_order": 120
+        },
+        "TicketsOnSignIn": {
+            "type": "boolean",
+            "description": "Determines if Jamf Connect Sync retrieves Kerberos Tickets on sign in.",
+            "property_order": 125
+        },
+        "KerberosRenew": {
+            "type": "boolean",
+            "property_order": 130
+        },
+        "KerberosShortName": {
+            "type": "string",
+            "default": "joel",
+            "property_order": 135
+        },
+        "KerberosShortNameAsk": {
+            "type": "boolean",
+            "property_order": 140
+        },
+        "KerberosShortNameAskMessage": {
+            "type": "string",
+            "default": "Please enter your Active Directory user name.",
+            "property_order": 145
+        },
+        "IgnoreDomainReachability": {
+            "type": "boolean",
+            "property_order": 150
+        },
+        "LDAPServers": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies domain controllers to use for Active Directory lookups.",
+            "property_order": 155
+        },
+        "MenuIcon": {
+            "type": "string",
+            "description": "Path to the menu bar icon image.",
+            "property_order": 160
+        },
+        "HideAbout": {
+            "type": "boolean",
+            "property_order": 165
+        },
+        "HideActions": {
+            "type": "boolean",
+            "property_order": 170
+        },
+        "HideChangePassword": {
+            "type": "boolean",
+            "property_order": 175
+        },
+        "HideGetHelp": {
+            "type": "boolean",
+            "property_order": 180
+        },
+        "HideGetSoftware": {
+            "type": "boolean",
+            "property_order": 185
+        },
+        "HideLockScreen": {
+            "type": "boolean",
+            "description": "Hides the Lock Screen menu item.",
+            "property_order": 190
+        },
+        "HidePreferences": {
+            "type": "boolean",
+            "property_order": 195
+        },
+        "HideQuit": {
+            "type": "boolean",
+            "property_order": 200
+        },
+        "HideSignIn": {
+            "type": "boolean",
+            "property_order": 205
+        },
+        "MenuAbout": {
+            "type": "string",
+            "default": "This app",
+            "property_order": 210
+        },
+        "MenuActions": {
+            "type": "string",
+            "default": "Quick Actions",
+            "property_order": 215
+        },
+        "MenuChangePassword": {
+            "type": "string",
+            "default": "Change network password",
+            "property_order": 220
+        },
+        "MenuGetHelp": {
+            "type": "string",
+            "default": "File ticket",
+            "property_order": 225
+        },
+        "MenuGetSoftware": {
+            "type": "string",
+            "default": "Get Apps",
+            "property_order": 230
+        },
+        "MenuLockScreen": {
+            "type": "string",
+            "default": "Screen Lock",
+            "property_order": 235
+        },
+        "MenuPreferences": {
+            "type": "string",
+            "default": "Settings",
+            "property_order": 240
+        },
+        "MenuSignIn": {
+            "type": "string",
+            "default": "Login",
+            "property_order": 245
+        },
+        "ActionsUpdateTime": {
+            "type": "integer",
+            "default": 15,
+            "property_order": 250
+        },
+        "GetHelpType": {
+            "type": "string",
+            "description": "Determines which GetHelp type is used.",
+            "enum": [
+                "Bomgar",
+                "URL",
+                "App"
+            ],
+            "property_order": 255
+        },
+        "GetHelpOptions": {
+            "type": "string",
+            "description": "Specifies the URL or path for GetHelpType. <<serial>>, <<fullname>>, <<shortname>> and <<domain>> are supported as substitutions.",
+            "property_order": 260
+        },
+        "SelfServicePath": {
+            "type": "string",
+            "property_order": 265
+        },
+        "UseKeychainPrompt": {
+            "type": "boolean",
+            "description": "Displays the Sign In window on launch.",
+            "property_order": 270
+        },
+        "UseKeychainPromptExlusions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "property_order": 275
+        },
+        "CenterSignIn": {
+            "type": "boolean",
+            "property_order": 280
+        },
+        "SignInLogo": {
+            "type": "string",
+            "description": "Specifies the path to image file used as a logo.",
+            "property_order": 285
+        },
+        "LabelUsername": {
+            "type": "string",
+            "default": "Corporate e-mail",
+            "property_order": 290
+        },
+        "LabelPassword": {
+            "type": "string",
+            "default": "Corporate Password",
+            "property_order": 295
+        },
+        "TitleSignIn": {
+            "type": "string",
+            "default": "Sign in to Okta",
+            "property_order": 300
+        },
+        "AutoAuth": {
+            "type": "boolean",
+            "default": true,
+            "property_order": 305
+        },
+        "CheckSafariExtension": {
+            "type": "boolean",
+            "default": true,
+            "property_order": 310
+        },
+        "MessagePluginDisabled": {
+            "type": "string",
+            "default": "Please enable the plugin in Safari.",
+            "description": "Text displayed to users when the Safari plugin is not enabled.",
+            "property_order": 315
+        },
+        "GetCertificateAutomatically": {
+            "type": "boolean",
+            "property_order": 320
+        },
+        "X509CA": {
+            "type": "string",
+            "property_order": 325
+        },
+        "Template": {
+            "type": "string",
+            "default": "User Auth",
+            "property_order": 330
+        },
+        "ExportableKey": {
+            "type": "boolean",
+            "property_order": 335
+        },
+        "WifiNetworks": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "property_order": 340
+        }
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "title": "Global HTTP Proxy (com.apple.proxy.http.global)",
+    "description": "Global HTTP Proxy settings",
+    "properties": {
+        "ProxyType": {
+            "type": "string",
+            "title": "Proxy Type",
+            "default": "Manual",
+            "description": "Use Manual for proxies that require authentication.",
+            "enum": [
+                "Manual",
+                "Auto"
+            ],
+            "property_order": 5
+        },
+        "ProxyServer": {
+            "type": "string",
+            "title": "Proxy Server",
+            "description": "The IP address or fully qualified domain name (FQDN) of the proxy server.",
+            "property_order": 10
+        },
+        "ProxyServerPort": {
+            "type": "integer",
+            "title": "Proxy Server Port",
+            "description": "The port on which to connect to the proxy server.",
+            "property_order": 15
+        },
+        "ProxyUsername": {
+            "type": "string",
+            "title": "Proxy Username",
+            "description": "The user name for the proxy server.",
+            "property_order": 20
+        },
+        "ProxyPassword": {
+            "type": "string",
+            "title": "Proxy Password",
+            "description": "The authentication password for the proxy server.",
+            "property_order": 25
+        },
+        "ProxyPACURL": {
+            "type": "string",
+            "title": "Proxy PAC URL",
+            "description": "The URL of the PAC file that defines the proxy configuration.",
+            "pattern": "^https?://.*",
+            "property_order": 30
+        },
+        "ProxyPACFallbackAllowed": {
+            "type": "boolean",
+            "title": "Allow Proxy PAC Fallback",
+            "default": false,
+            "description": "Proxy PAC Fallback Allowed",
+            "property_order": 35
+        },
+        "ProxyCaptiveLoginAllowed": {
+            "type": "boolean",
+            "title": "Allow Proxy Bypass for Captive Portal Logins",
+            "default": false,
+            "description": "Allow the device to bypass the proxy server to display the login page for captive networks.",
+            "property_order": 40
+        }
+    }
+}

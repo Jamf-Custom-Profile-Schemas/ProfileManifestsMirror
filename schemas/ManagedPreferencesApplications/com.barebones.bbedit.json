@@ -1,0 +1,1160 @@
+{
+    "title": "BBEdit (com.barebones.bbedit)",
+    "description": "BBEdit settings",
+    "properties": {
+        "AlwaysUseSystemAppearanceForTitleBar": {
+            "type": "boolean",
+            "default": true,
+            "description": "BBEdit will use a light or dark (system-defined) appearance for the window title bar, appropriate to the color scheme. If you would prefer that BBEdit always use the system standard - light - appearance, set this preference to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#appearance"
+                }
+            ],
+            "property_order": 5
+        },
+        "BBEditRegisteredOwner:11.0": {
+            "type": "string",
+            "title": "BBEdit Registered Owner v11",
+            "description": "Organization registered to BBEdit 11 license.",
+            "property_order": 10
+        },
+        "BBEditSerialNumber:11.0": {
+            "type": "string",
+            "title": "BBEdit License v11",
+            "description": "BBEdit 11 license.",
+            "property_order": 15
+        },
+        "BBEditRegisteredOwner:12.0": {
+            "type": "string",
+            "title": "BBEdit Registered Owner v12",
+            "description": "Organization registered to BBEdit 12 license.",
+            "property_order": 20
+        },
+        "BBEditSerialNumber:12.0": {
+            "type": "string",
+            "title": "BBEdit License v12",
+            "description": "BBEdit 12 license.",
+            "property_order": 25
+        },
+        "BBEditRegisteredOwner:13.0": {
+            "type": "string",
+            "title": "BBEdit Registered Owner v13",
+            "description": "Organization registered to BBEdit 13 license.",
+            "property_order": 30
+        },
+        "BBEditSerialNumber:13.0": {
+            "type": "string",
+            "title": "BBEdit License v13",
+            "description": "BBEdit 13 license.",
+            "property_order": 35
+        },
+        "BBEditRegisteredOwner:14.0": {
+            "type": "string",
+            "title": "BBEdit Registered Owner v14",
+            "description": "Organization registered to BBEdit 14 license.",
+            "property_order": 40
+        },
+        "BBEditSerialNumber:14.0": {
+            "type": "string",
+            "title": "BBEdit License v14",
+            "description": "BBEdit 14 license.",
+            "property_order": 45
+        },
+        "ShowIconsInSidebarLists": {
+            "type": "boolean",
+            "title": "Show Icons in Sidebar Lists",
+            "default": true,
+            "description": "When displaying file names in the sidebars of disk browsers, projects, and multi-document editing windows, BBEdit will include the item's icon, as reported by the system. If you would prefer to suppress the icon, which allows a few more items to be displayed in the same amount of vertical space, set this preference to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/notes-13.0.html"
+                }
+            ],
+            "property_order": 50
+        },
+        "AllowShiftRightToIndentWhitespaceOnlyLines": {
+            "type": "boolean",
+            "title": "Allow Shift Right to Indent Whitespace Only Lines",
+            "default": false,
+            "description": "By default, the \"Shift Right\" command on the Text menu will not add indentation to lines that are empty or consist entirely of white space. If you would prefer to indent every line, regardless of its whitespace-only nature, set this preference to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 55
+        },
+        "BalanceIncludesDelimiters": {
+            "type": "boolean",
+            "title": "Balance Includes Delimiters",
+            "default": false,
+            "description": "By default, the \"Balance\" command (or double-clicking on a delimiter to balance) does not include the delimiters in the resulting selection. If you would like for it to do so, set this preference to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 60
+        },
+        "BRIEFStateTimeout": {
+            "type": "real",
+            "title": "Brief State Timeout",
+            "default": 10.0,
+            "description": "The progressive (BRIEF compatible) behavior of the Home and End keys operates within a specific time period; if you wait longer than that, the behavior state resets. The factory default timeout period is ten seconds.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 65
+        },
+        "CommentWholeLineWithInsertionPoint": {
+            "type": "boolean",
+            "title": "Comment Whole Line with Insertion Point",
+            "default": true,
+            "description": "When using the Un/Comment command, if nothing is selected, BBEdit will use the line comment delimiter to comment (or uncomment) the entire line. If you would prefer that BBEdit insert the line-comment delimiter at the insertion point instead, set this preference to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 70
+        },
+        "Editor_AutoWordCountSizeThreshold": {
+            "type": "integer",
+            "title": "Auto Word Count Size Threshold",
+            "default": "16777216",
+            "description": "Automatic word counting is disabled for documents over a set size threshold, in order to avoid needless delays when working on very large documents. The factory default is 16M characters - 16777216 -, but you may change this limit. Setting to 0 disables the limit check entirely.",
+            "property_order": 75
+        },
+        "Editor_SpellCheckLengthLimit": {
+            "type": "integer",
+            "title": "Spell Check Length Limit",
+            "description": "Since \"Find All Misspelled Words\" is pretty much pointless on files over a certain size, the maximum amount of text checked by this command is limited to 1M - 1024 squared - characters. This may be adjusted. Setting to 0 supresses the limit altogether.",
+            "property_order": 80
+        },
+        "Editor_ControlArrowCamelCase": {
+            "type": "boolean",
+            "title": "Control Arrow Camel Case",
+            "default": true,
+            "description": "BBEdit supports \"camel case\" navigation: press Control-left-arrow or Control-right-arrow to jump to the next (or previous) transition from lower-case to upper-case characters (or a word boundary, whichever comes first).\n\nNote that this use of Control-left-arrow and Control-right-arrow replaces the pre-8.5 behavior of using these key combinations to scroll horizontally. If you prefer the old behavior, set these this preference to 'false'.",
+            "property_order": 85
+        },
+        "Editor_ControlArrowHScroll": {
+            "type": "boolean",
+            "title": "Control Arrow Horizontal Scroll",
+            "default": false,
+            "description": "BBEdit supports \"camel case\" navigation: press Control-left-arrow or Control-right-arrow to jump to the next (or previous) transition from lower-case to upper-case characters (or a word boundary, whichever comes first).\n\nNote that this use of Control-left-arrow and Control-right-arrow replaces the pre-8.5 behavior of using these key combinations to scroll horizontally. If you prefer the old behavior, set these this preference to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 90
+        },
+        "Editor_DeleteIndentationWhitespaceToTabStop": {
+            "type": "boolean",
+            "title": "Delete Indentation Whitespace to Tab Stop",
+            "default": true,
+            "description": "When you backspace from the insertion point, BBEdit will delete a tab stop's worth of spaces if there are only spaces (and tabs) between the insertion point and the start of the line on which you're editing. This may be disabled by setting this preference to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 95
+        },
+        "FlashBalancePointsWhenNavigating": {
+            "type": "boolean",
+            "title": "Flash Balance Points When Navigating",
+            "default": true,
+            "description": "When you use the right-arrow key to navigate over a closing delimiter (right paren/brace/bracket/curly quote), the opening delimiter will be briefly highlighted. If you wish to turn this off, set this preference to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 100
+        },
+        "LegacyUndoSelectionBehavior": {
+            "type": "boolean",
+            "title": "Undo Selection (Legacy)",
+            "default": false,
+            "description": "When performing an Undo or Redo and the selection range changes, the Undo/Redo operation will select the affected text, rather than updating the Undo/Redo state to include the actual current selection range.\n\nSet this preference to 'true' if you prefer the classic behavior.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 105
+        },
+        "MaxDocumentLengthForCompletionTokenizer": {
+            "type": "integer",
+            "title": "Misspelled Word Character Limit",
+            "description": "Since \"Find All Misspelled Words\" is pretty much pointless on files over a certain size, the maximum amount of text checked by this command is limited to 1M - 1024 squared - characters. This may be adjusted. Setting to 0 supresses the limit altogether.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 110
+        },
+        "PrecomposeUnicodeWhenPasting": {
+            "type": "boolean",
+            "title": "Precompose Unicode When Pasting",
+            "default": false,
+            "description": "If you find that you frequently need to bring in text which contains combining Unicode characters (as are frequently found in PDFs generated on other platforms, for example), it can be desirable to preprocess the combining characters into one composed character where possible. This is not a general need, but if you run into it often enough, you can tell BBEdit to combine the characters for you by setting this preference to 'true'.\nDespite the name, the precomposition is done when BBEdit imports the Clipboard from other applications, not when the paste is actually done.\n\nNote that this requires an additional copy of the Clipboard when the application imports the text, and for very large pastes, there may be a noticeable delay while the text gets precomposed. Thus, you should only turn on this setting when you are frequently working with text that contains combining Unicode characters",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 115
+        },
+        "SUFeedURL": {
+            "type": "string",
+            "title": "Sparkle Feed URL",
+            "description": "Setting this to a non-existent URL will disable the ability for users to manually check for updates. Useful when you intend to use your own software distribution mechanism to deploy updates.",
+            "pattern": "^https://.*$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 120
+        },
+        "SUEnableAutomaticChecks": {
+            "type": "boolean",
+            "title": "Enable Automatic Update Checks",
+            "default": true,
+            "description": "Controls automatic update checks.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 125
+        },
+        "SUScheduledCheckInterval": {
+            "type": "integer",
+            "title": "Automatic Update Check Interval",
+            "default": 86400,
+            "description": "Controls the automatic update check interval. The default is 1 day (86400 seconds). Setting to 0 disables updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 130
+        },
+        "SUAllowsAutomaticUpdates": {
+            "type": "boolean",
+            "title": "Automatic Update Install Prompt",
+            "default": true,
+            "description": "Controls the automatic update install prompt. When enabled, presents users with the option to allow automatic download and install of available updates. If disabled, disallows automatic updates and requires manual installation every time.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 135
+        },
+        "SUAutomaticallyUpdate": {
+            "type": "boolean",
+            "title": "Enable Automatic Silent Updates",
+            "default": false,
+            "description": "Controls automatic silent updates. If enabled, users will not be informed about updates and updates will be silently installed when the app quits.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 140
+        },
+        "UseClippingsForCompletion": {
+            "type": "boolean",
+            "title": "Use Clippings for Completion",
+            "default": true,
+            "description": "If there is a partial word to the immediate left of the insertion point, the \"Insert Clipping...\" command will attempt to autocomplete that word based clipping names in the current and universal set (using a \"begins with\" style match.) If you wish to disable the autocompletion, set this preference to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 145
+        },
+        "UseSystemAppearanceWhenInDarkMode": {
+            "type": "boolean",
+            "title": "Use System Appearance When in Dark Mode",
+            "default": true,
+            "description": "If there is a partial word to the immediate left of the insertion point, the \"Insert Clipping...\" command will attempt to autocomplete that word based clipping names in the current and universal set using a \"begins with\" style match. If you wish to disable the autocompletion, set this preference to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#appearance"
+                }
+            ],
+            "property_order": 150
+        },
+        "UseTabKeyAsCompletionTrigger": {
+            "type": "boolean",
+            "title": "Use Tab Key as Completion Trigger",
+            "default": false,
+            "description": "To use the Tab key to trigger text completion, set this preference to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#clip"
+                }
+            ],
+            "property_order": 155
+        },
+        "DisablePassiveFTP": {
+            "type": "boolean",
+            "title": "Disable Passive FTP",
+            "default": false,
+            "description": "Settings are available for disabling passive FTP, in order to deal with hosts that misbehave when sent the PASV command.\n\nPassive FTP can be disabled per host, per domain, or globally.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#ftp"
+                }
+            ],
+            "property_order": 160
+        },
+        "FTPShowParentDir": {
+            "type": "boolean",
+            "title": "Show FTP Parent Directories",
+            "default": true,
+            "description": "On FTP servers, when using 'Show items starting with \".\",' the FTP server may return the `.` and `..` items as part of the listing. This is normal, but if you don't want to see these items, you can hide them.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#ftp"
+                }
+            ],
+            "property_order": 165
+        },
+        "EnableSSHCompression": {
+            "type": "boolean",
+            "title": "Enable SSH Compression",
+            "default": true,
+            "description": "Some servers don't work correctly when SSH compression is enabled. To work around this, SSH compression can be disabled per host, per domain, or globally.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#ftp"
+                }
+            ],
+            "property_order": 170
+        },
+        "SFTPConnectionTimeout": {
+            "type": "integer",
+            "title": "SFTP Connection Timeout",
+            "description": "Most of the time, the default timeout for connecting to an SFTP server will suffice; however, if the server is heavily loaded it may take longer to respond.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#ftp"
+                }
+            ],
+            "property_order": 175
+        },
+        "SSHServerKeepaliveInterval": {
+            "type": "integer",
+            "title": "SSH Server Keepalive Interval",
+            "default": 90,
+            "description": "If you have problems with your SSH server closing the connection after a period of non-use (which will subsequently cause errors in BBEdit), you can tell BBEdit to send a periodic \"keepalive\" message to while connected to the server.\n\nThis is configurable per host, per domain, or globally. Determining the appropriate value may require some experimentation, but 90 seconds is probably a good starting point.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#ftp"
+                }
+            ],
+            "property_order": 180
+        },
+        "Diff_IgnoreRCSKeywords": {
+            "type": "boolean",
+            "title": "Ignore RCS Keywords",
+            "default": true,
+            "description": "When comparing text files, BBEdit will canonicalize RCS keywords to their unexpanded state, so that the values of RCS keywords are not significant to the differences calculations. If you wish, you can disable this, so that any chance in the RCS keywords on a line will cause the line to appear in the differences.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#diff"
+                }
+            ],
+            "property_order": 185
+        },
+        "MarkupToolsMisc_SkipXMLFilesWhenScanningFolders": {
+            "type": "boolean",
+            "title": "Skip XML Files When Scanning Folders",
+            "default": true,
+            "description": "When doing Check Syntax, Check Links, Update, or Update Images on a folder (including a web site), BBEdit will skip XML files (that is, files determined to be XML either by mapping their file name extensions, or by inspection of their contents). If you prefer to include such files, set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#html"
+                }
+            ],
+            "property_order": 190
+        },
+        "UseXMLMarkupRulesForHTML5": {
+            "type": "boolean",
+            "title": "Use XML Markup Rules for HTML5",
+            "default": true,
+            "description": "Ordinarily, BBEdit will generate XHTML-style markup in HTML5 documents (those with a \"<!DOCTYPE HTML>\" declaration). If you wish, you can suppress this by setting this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#html"
+                }
+            ],
+            "property_order": 195
+        },
+        "HTMLImageMarkupUsesFileNameForAlt": {
+            "type": "boolean",
+            "title": "Undo Selection (Legacy)",
+            "default": true,
+            "description": "When generating image markup as a result of dropping an image file into an HTML document, BBEdit will generate an \"alt\" attribute for the image tag, whose value is the file's name. If you would prefer for the \"alt\" attribute to be omitted (which will result in an error when checking syntax), you can disable this by setting this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#html"
+                }
+            ],
+            "property_order": 200
+        },
+        "HTMLImageMarkupCreatesSizeAttributes": {
+            "type": "boolean",
+            "title": "HTML Image Markup with Image Tags",
+            "default": true,
+            "description": "When you drop an image file into an HTML document to generate an image tag, BBEdit will generate \"width\" and \"height\" tags based on information in the file itself. If you would prefer to omit these, set these to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#html"
+                }
+            ],
+            "property_order": 205
+        },
+        "HTMLImageMarkupUseInlineStyleForImageSize": {
+            "type": "boolean",
+            "title": "HTML Image Markup Inline Styles",
+            "default": false,
+            "description": "If HTMLImageMarkupCreatesSizeAttributes is turned on, you can instruct BBEdit to generate inline styles for image sizes, instead of height and width by setting this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#html"
+                }
+            ],
+            "property_order": 210
+        },
+        "MarkupPanelAutoPrefillRecommendedAttributeNames": {
+            "type": "boolean",
+            "title": "Prefill Recommended Attribute Names in Markup",
+            "default": true,
+            "description": "When you invoke the Markup Panel to create a new tag, it will automatically fill in attribute names for \"promoted\" attributes. If there are any attributes that you don't want to be present in the generated markup, just leave their values blank, and the panel will omit them (unless the attributes are required).\n\nIf you wish, you can suppress the auto fill by setting this to 'false'.\n\nTurning off the auto fill will cause the \"gear\" to appear in the markup panel, and clicking it will manually fill in the promoted attributes for you.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#html"
+                }
+            ],
+            "property_order": 215
+        },
+        "AskXcodeForOpenFileByName": {
+            "type": "boolean",
+            "title": "Ask XCode to Open File by Name",
+            "default": true,
+            "description": "If Xcode is running, Open Selection and Open File by Name will ask it for a path to the file name; if something useful comes back, BBEdit will open it. If for some reason you are using Xcode but don't want BBEdit to do this, you can turn it off by setting this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#inte"
+                }
+            ],
+            "property_order": 220
+        },
+        "ScriptEditorBundleID": {
+            "type": "string",
+            "title": "Preferred Script Editor BundleID",
+            "description": "By default, BBEdit will open AppleScript files using whatever application the OS claims is capable of doing so. If you wish to override this, change the \"ScriptEditorBundleID\" preference to the bundle ID of your preferred script editor.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#inte"
+                }
+            ],
+            "property_order": 225
+        },
+        "TerminalBundleID": {
+            "type": "string",
+            "title": "Preferred Terminal BundleID",
+            "description": "The \"Run in Terminal\" and \"Go Here in Terminal\" commands will use Apple's \"Terminal\" application by default. If you would like to use a different one, set this here.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#inte"
+                }
+            ],
+            "property_order": 230
+        },
+        "UseDashForReferenceLookups": {
+            "type": "boolean",
+            "title": "Use Dash for Reference Lookups",
+            "default": true,
+            "description": "If Dash is installed, BBEdit will use it for \"Find in Reference\", in preference to any predefined or custom reference lookup URLs.\n\nYou could, if you wanted, turn off Dash support by default and then enable it for specific languages.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#inte"
+                }
+            ],
+            "property_order": 235
+        },
+        "DefaultLanguageNameForNewDocuments": {
+            "type": "string",
+            "title": "Default Language for New Documents",
+            "description": "If you like, you can set the default language for new untitled documents.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#lang"
+                }
+            ],
+            "property_order": 240
+        },
+        "CounterpartSiblingSearchNames": {
+            "type": "string",
+            "description": "When the active document is either a source or a header file, the \"Open Counterpart\" command will now search the siblings of this file's parent for eligible counterparts. By default, BBEdit will only search in such folders if their names match one of the following patterns (including wildcards): `inc*`, `source`, `src`, or `*priv*`. If you wish to add additional qualifying names, you may do so by setting \"CounterpartSiblingSearchNames\" to contain a comma-delimited list of folder name patterns.\n\nAny whitespace surrounding the provided names will be stripped.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#lang"
+                }
+            ],
+            "property_order": 245
+        },
+        "ProjectsListCanAcquireKeyboardFocus": {
+            "type": "boolean",
+            "default": false,
+            "description": "In project windows, the file list does not accept keyboard focus by default, unless the editing view is hidden. You can modify this so that the file list gets the focus whenever you click on it, set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#proj"
+                }
+            ],
+            "property_order": 250
+        },
+        "ProjectsOpenItemsOnSingleClick": {
+            "type": "boolean",
+            "default": true,
+            "description": "Project windows will ordinarily open an item in the file list for editing when you click on it and the editing view is visible. To require a double-click, set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#proj"
+                }
+            ],
+            "property_order": 255
+        },
+        "AutoRevealSelectedDocumentInProjectList": {
+            "type": "boolean",
+            "default": false,
+            "description": "BBEdit will not automatically reveal documents in the project list when you select them;  View => Reveal in Project List works for this purpose. If you want automatic revealing, set to this to 'true'",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#proj"
+                }
+            ],
+            "property_order": 260
+        },
+        "QuickTimeImages": {
+            "type": "boolean",
+            "default": true,
+            "description": "BBEdit ordinarily recognizes image files as images, and will open them into image windows (or ignore them when filtering for text files). To have images possibly treated as text files, which can be potentially dangerous, set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 265
+        },
+        "OpenPDFsAsText": {
+            "type": "boolean",
+            "default": true,
+            "description": "By default, PDFs are considered text files and so may be opened and searched along with all other text files. To have PDFs treated as a special file type - (they will be ignored for any operation that requires a text file - set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 270
+        },
+        "WarnMalformedUTF8": {
+            "type": "boolean",
+            "default": false,
+            "description": "To control whether BBEdit warns you when opening a malformed UTF-8 file, set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 275
+        },
+        "AskForUnguessableFileEncoding": {
+            "type": "boolean",
+            "default": false,
+            "description": "Ordinarily, BBEdit will only ask you to choose a file's encoding when it can't otherwise figure out what the encoding is, and your \"if the file's encoding can't be guessed\" preference is a UTF-8 or UTF-16 variant. This should be fine for general use, but if for some reason you always want BBEdit to ask you when it can't guess a file's encoding, even if your preference would do the job, you can set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 280
+        },
+        "UseResourceForkForDocumentState": {
+            "type": "boolean",
+            "default": false,
+            "description": "Beginning with version 8.0, BBEdit stores document state (window position and various settings) in a central repository in your BBEdit preferences folder. If you wish, you can ask BBEdit to store document state in the resource fork of the document's file by setting this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 285
+        },
+        "SaveDocumentStateForTempFiles": {
+            "type": "boolean",
+            "default": false,
+            "description": "By default, BBEdit will not store document state for documents located in any of the canonical locations for temporary files. This also includes the \"svn-commit.tmp\" files used for Subversion commits. If you wish, you can change this by setting this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 290
+        },
+        "WriteExtendedAttributes": {
+            "type": "string",
+            "description": "By default, BBEdit will avoid writing extended attributes - HFS Type/Creator - to volumes which don't natively support them - i.e. to avoid creating the ._FILE - when it is safe to do so. We'll be able to re-open the document correctly later. If desired, you can fine-tune this behavior.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "enum": [
+                "always",
+                "never",
+                "smart"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always write the HFS file type and creator: the pre-8.6 behavior",
+                    "Never set the HFS file type and creator, even if the document's volume supports it",
+                    "Smart: Write HFS file type and creator only if the document's volume supports it"
+                ]
+            },
+            "property_order": 295
+        },
+        "EnableAutoSave_v2": {
+            "type": "boolean",
+            "title": "Enable AutoSave",
+            "default": true,
+            "description": "Document auto-save for crash recovery is on by default, to change this set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 300
+        },
+        "AutoSaveIntervalInMinutes_v2": {
+            "type": "integer",
+            "title": "AutoSave Interval",
+            "description": "If document auto-save for crash recovery is on, this preference will define the default save time interval.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 305
+        },
+        "SaveTitledDocumentsBeforeSleeping": {
+            "type": "boolean",
+            "title": "Save Titled Documents Before Sleeping",
+            "default": false,
+            "description": "The \"Sleep\" command does not save any documents in place, since it creates an auto-save file for any open documents with unsaved changes. However, if you want BBEdit to save any titled - i.e. opened from an existing file - documents to disk before sleeping, you can set this preference to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 310
+        },
+        "AllowVolumeMountDuringStateRestore": {
+            "type": "boolean",
+            "title": "Allow Volume Mount During State Restore",
+            "default": false,
+            "description": "BBEdit provides control over whether documents on remote servers - FTP/SFTP - or unmounted volumes are opened when automatically reopening documents at application startup. You can modify its behavior by setting this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 315
+        },
+        "ReopenRemoteDocuments": {
+            "type": "boolean",
+            "title": "Reopen Remote Documents",
+            "default": false,
+            "description": "If set to 'true', BBEdit will attempt to mount a volume containing a document it wants to reopen. Defaults to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 320
+        },
+        "PromptToReopenRemoteDocuments": {
+            "type": "boolean",
+            "title": "Prompt to Reopen Remote Documents",
+            "default": true,
+            "description": "If set to 'false', BBEdit will not attempt to open any documents that were opened from FTP/SFTP servers. Defaults to 'true'.  If set to 'false', BBEdit will open remote documents without asking, if ReopenRemoteDocuments is set to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#read"
+                }
+            ],
+            "property_order": 325
+        },
+        "SkipSCMAdminDirsWhenScanningFolders": {
+            "type": "boolean",
+            "title": "Skip SCM Admin Directories When Scanning Folders",
+            "default": true,
+            "description": "When scanning folders for various purposes - multi-file search, Find differences, and others -, SCM administrative directories are specifically ignored, even if \"Search Invisible Folders\" is turned on: CVS, .svn, .git, .hg, .bzr. This avoids potential disasters that can result from indiscriminate search and replace in such directories. If, however, you choose to live dangerously, you can allow BBEdit to see inside of these directories by setting this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#sour"
+                }
+            ],
+            "property_order": 330
+        },
+        "GitToolPathOverride": {
+            "type": "string",
+            "title": "Git Path Override",
+            "description": "BBEdit will ordinarily select the appropriate command-line tool for communicating with the SCM system, based on your $PATH environment variable. If you find that an undesired command-line tool is running within BBEdit but the desired tool is being invoked from a Terminal command line, examine your tool installation and $PATH setup for errors.\n\nHowever, for specific cases in which it is necessary to force BBEdit to use a particular tool, you may do by specifying the path.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#sour"
+                }
+            ],
+            "property_order": 335
+        },
+        "SubversionToolPathOverride": {
+            "type": "string",
+            "title": "Subversion Tool Path Override",
+            "description": "BBEdit will ordinarily select the appropriate command-line tool for communicating with the SCM system, based on your $PATH environment variable. If you find that an undesired command-line tool is running within BBEdit but the desired tool is being invoked from a Terminal command line, examine your tool installation and $PATH setup for errors.\n\nHowever, for specific cases in which it is necessary to force BBEdit to use a particular tool, you may do so by specifying the path.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#sour"
+                }
+            ],
+            "property_order": 340
+        },
+        "ShowSVNSwitchedItems": {
+            "type": "boolean",
+            "default": false,
+            "description": "\"Show Working Copy Status\" for svn does not include switched items. If this affects you and you would prefer to see switched items, you may make them visibile by setting this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#sour"
+                }
+            ],
+            "property_order": 345
+        },
+        "FixedWidthFontSmoothingThreshold": {
+            "type": "integer",
+            "title": "Fixed Width Font Smoothing Threshold",
+            "description": "Whether or not BBEdit uses text smoothing - antialiasing - may be adjusted separately for fixed-width and for proportional fonts. The factory default smoothing thresholds are 8pt for fixed width fonts, and 4pt for proportional fonts, respectively.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#textd"
+                }
+            ],
+            "property_order": 350
+        },
+        "FontSmoothingThreshold": {
+            "type": "integer",
+            "title": "Font Smoothing Threshold",
+            "description": "Whether or not BBEdit uses text smoothing - antialiasing - may be adjusted separately for fixed-width and for proportional fonts. Font sizes above the specified FixedWidthFontSmoothingThreshold are smoothed; font sizes below the threshold are not.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#textd"
+                }
+            ],
+            "property_order": 355
+        },
+        "FindDialog_UsesFindScrap": {
+            "type": "boolean",
+            "title": "Use Find Scrap",
+            "default": true,
+            "description": "Like many Mac OS X applications, BBEdit supports the \"Find Scrap\", a feature of the OS that enables sharing of the \"search for\" string between applications. Some applications put inappropriate content - such as Web search strings - on the Find Scrap, which can cause the \"search for\" string in BBEdit's Find dialog to be replaced when you didn't expect it.\n\nTo tell BBEdit not to import the Find Scrap into its Find window, nor to export the \"search for\" string to the Find Scrap, set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#texts"
+                }
+            ],
+            "property_order": 360
+        },
+        "Editor_AlwaysOpenQuickFind": {
+            "type": "boolean",
+            "title": "Always Open Quick Find",
+            "default": true,
+            "description": "The Live Search bar is not visible by default, but appears when you choose \"Live Search\" from the Search menu. If you would like the Live Search bar to be visible in each new document that you create or open, set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#texts"
+                }
+            ],
+            "property_order": 365
+        },
+        "ReportReplaceAllResults": {
+            "type": "boolean",
+            "title": "Replace All Confirmation",
+            "default": false,
+            "description": "When performing a single-file \"Replace All\" operation, BBEdit can show a confirmation sheet showing the number of replacements performed. If you would like to see this confirmation, set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#texts"
+                }
+            ],
+            "property_order": 370
+        },
+        "ReplaceAllResultsIncludeTiming": {
+            "type": "boolean",
+            "title": "Replace All w/ Timing",
+            "default": false,
+            "description": "If you want to amaze and impress your friends and family with just how fast BBEdit's \"Replace All\" is, set this to 'true'.\n\nWhen set to 'true', the sheet, or growl notification, will display the amount of time required for the \"Replace All\" operation.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#texts"
+                }
+            ],
+            "property_order": 375
+        },
+        "ShowFullPathsInSearchResults": {
+            "type": "boolean",
+            "title": "Show Full Paths in Search Results",
+            "default": false,
+            "description": "If you like BBEdit to show the full paths of files listed in search results windows, set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#texts"
+                }
+            ],
+            "property_order": 380
+        },
+        "FindAndReplaceHistorySize": {
+            "type": "integer",
+            "title": "Find & Replace History Size",
+            "default": 16,
+            "description": "By default, BBEdit will remember the 16 most recent search and replace strings/patterns for the popup menu in the Find and Multi-File Search windows. Setting the history to zero makes it infinite.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#texts"
+                }
+            ],
+            "property_order": 385
+        },
+        "SurfNextPreviousInDisplayOrder": {
+            "type": "boolean",
+            "title": "Navigate Documents by File List Order",
+            "default": false,
+            "description": "When using the \"Previous Document\" and \"Next Document\" commands on the View menu, or the navigation arrows in the navigation bar, the order in which BBEdit navigates documents is determined by the order in which they were opened. If you prefer, these commands can be made to navigate the documents in the order shown in the file list by setting this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 390
+        },
+        "ZoomWindowsInPlace": {
+            "type": "boolean",
+            "title": "Zoom Windows in Place",
+            "default": true,
+            "description": "BBEdit attempts to move windows as little as possible when you zoom them. To override this and let BBEdit place the window in the upper left-hand corner of the screen, set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 395
+        },
+        "FullScreenWindowsHogScreen": {
+            "type": "boolean",
+            "title": "Full Screen Windows Hog Screen",
+            "default": true,
+            "description": "By default, the application will allow windows to take up the entire screen when entering full screen mode. If desired, you may prevent this and instruct the application to figure out whether a window should be made the full width of the screen by setting this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 400
+        },
+        "FullScreenWidthThreshold": {
+            "type": "real",
+            "title": "Full Screen Width Threshold",
+            "description": "When entering full screen mode, the application figures out whether the window width should be increased to take up the full screen width, or not, based on the width of the window relative to the width of the screen that it's on. The threshold at which the window is made to take up the entire screen width can be set. This setting requires that FullScreenWindowsHogScreen be turned on\nNEED FLOAT NUMBER MIN & MAX",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 405
+        },
+        "NSRecentDocumentsLimit:Projects": {
+            "type": "integer",
+            "title": "Recent Projects Limit",
+            "description": "The \"Remember the \u2026 most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nIf you don't want to remember any recent documents of a particular type - they won't appear in the menu, either -, you can set its limit to 0",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 410
+        },
+        "NSRecentDocumentsLimit:Folders": {
+            "type": "integer",
+            "title": "Recent Folders # Limit",
+            "description": "The \"Remember the \u2026 most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nIf you don't want to remember any recent documents of a particular type - they won't appear in the menu, either -, you can set its limit to 0",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 415
+        },
+        "NSRecentDocumentsLimit:Images": {
+            "type": "integer",
+            "title": "Recent Images # Limit",
+            "description": "The \"Remember the \u2026 most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nIf you don't want to remember any recent documents of a particular type - they won't appear in the menu, either -, you can set its limit to 0",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 420
+        },
+        "MostRecentItemsGroupLimit": {
+            "type": "integer",
+            "title": "Most recent items group limit",
+            "description": "The \"Remember the \u2026 most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nYou can also control the number of items shown in the \"Most Recently Used\" group.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 425
+        },
+        "RecentItems_RememberTempFiles": {
+            "type": "boolean",
+            "title": "Remember Temp Files",
+            "default": false,
+            "description": "By default, BBEdit does not remember recent items opened from any of the canonical locations for temporary files. This also includes the \"svn-commit.tmp\" files used for Subversion commits. If desired, you can change this by setting this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 430
+        },
+        "CloseOFBNWindowAfterOpeningSelection": {
+            "type": "boolean",
+            "default": false,
+            "description": "By default, the \"Open File by Name\" window stays open when you click the \"Open\" button. However, if you would prefer for it to act more like a modal dialog, set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 435
+        },
+        "MoveModelessWindowsToActiveSpace_FindWindow": {
+            "type": "boolean",
+            "title": "Move Find Window to Active Space",
+            "default": false,
+            "description": "When using Spaces, you can control whether BBEdit's modeless dialog boxes - Find, Multi-File Search, and Open File by Name - get moved to the active space when switching spaces. By default, this is allowed for the Find, Multi-File Search, and Open File by Name windows. To control whether windows of these types are moved to the active space, set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 440
+        },
+        "MoveModelessWindowsToActiveSpace_MultiFileFindWindow": {
+            "type": "boolean",
+            "title": "Move Multi-File Find Window to Active Space",
+            "default": false,
+            "description": "When using Spaces, you can control whether BBEdit's modeless dialog boxes - Find, Multi-File Search, and Open File by Name - get moved to the active space when switching spaces. By default, this is allowed for the Find, Multi-File Search, and Open File by Name windows. To control whether windows of these types are moved to the active space, set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 445
+        },
+        "MoveModelessWindowsToActiveSpace_OpenFileByNameWindow": {
+            "type": "boolean",
+            "title": "Move Open File by Name Window to active space",
+            "default": false,
+            "description": "When using Spaces, you can control whether BBEdit's modeless dialog boxes - Find, Multi-File Search, and Open File by Name - get moved to the active space when switching spaces. By default, this is allowed for the Find, Multi-File Search, and Open File by Name windows. To control whether windows of these types are moved to the active space, set this to 'true'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 450
+        },
+        "MoveModelessWindowsToActiveSpace": {
+            "type": "boolean",
+            "title": "Move All Window types to active space",
+            "default": false,
+            "description": "When using Spaces, you can control whether BBEdit's modeless dialog boxes - Find, Multi-File Search, and Open File by Name - get moved to the active space when switching spaces. By default, this is allowed for the Find, Multi-File Search, and Open File by Name windows. To control whether windows of these types are moved to the active space, set this to 'true'.\n\nThis preference sets the default behavior for any of the defined window types for which a default is not explicitly specified.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#wind"
+                }
+            ],
+            "property_order": 455
+        },
+        "UseInlineStylesForCopiedHTML": {
+            "type": "boolean",
+            "title": "Use Inline Styles for Copied HTML",
+            "default": true,
+            "description": "The \"Copy as Styled HTML\" and \"Save as Styled HTML\" commands normally generate style information inline. If you want to use an embedded style sheet instead, set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#misc"
+                }
+            ],
+            "property_order": 460
+        },
+        "DisableCtagsScanOnRemoteVolumes": {
+            "type": "boolean",
+            "title": "Disable Ctags Scan on Remote Volumes",
+            "default": true,
+            "description": "When editing files that are on remote file servers - AFP, NFS, SMB, etc. -, BBEdit will not look for directory-relative ctags data files. This is a particular performance win when the file is located on a volume mounted via MacFUSE/SSH or similar, or if the file server is over a slow or high-latency link.\n\nTo enable scanning for tags files on remote volumes, set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#misc"
+                }
+            ],
+            "property_order": 465
+        },
+        "OpenByNameMaxWildcardMatches": {
+            "type": "integer",
+            "title": "Open by Name Max Wilcard Matches",
+            "default": 200,
+            "description": "When searching for matches, Open File by Name limits the number of matches to a reasonable maximum. The factory default is 200.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#misc"
+                }
+            ],
+            "property_order": 470
+        },
+        "UseSeparatorsInUnixScriptOutput": {
+            "type": "boolean",
+            "title": "Use Separators in Unix Script Output",
+            "default": true,
+            "description": "Ordinarily, the output from Unix scripts run within BBEdit is delimited with line separators - except when the script output is sent to a new untitled document. If you wish to suppress the separators, you can set this to 'false'.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#misc"
+                }
+            ],
+            "property_order": 475
+        },
+        "OpenPanelShowsFrontDocumentDirectory": {
+            "type": "boolean",
+            "title": "Open Panel Shows Active Document Directory",
+            "default": false,
+            "description": "By default, the Open panel implements the standard system behavior of displaying the same folder that was viewed the last time you used the Open command. If you wish, you may instead have the Open panel display the directory containing the active document by setting this to 'true'.\n\nIf the active document is untitled or was opened from an FTP/SFTP server, or if there are no documents open, the Open panel will show you the last-used directory.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.barebones.com/support/bbedit/ExpertPreferences.html#misc"
+                }
+            ],
+            "property_order": 480
+        }
+    }
+}

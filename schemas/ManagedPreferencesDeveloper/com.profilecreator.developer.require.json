@@ -1,0 +1,80 @@
+{
+    "title": "Developer: Require (com.profilecreator.developer.require)",
+    "description": "Developer: Require settings",
+    "properties": {
+        "Require00": {
+            "type": "string",
+            "title": "Require 00: Settings",
+            "description": "Require condition target.",
+            "enum": [
+                "Item01",
+                "Item02",
+                "Item03",
+                "Item04",
+                "Item05",
+                "Item06"
+            ],
+            "property_order": 5
+        },
+        "Require01": {
+            "type": "string",
+            "title": "Require 01: Always",
+            "description": "Require always.",
+            "property_order": 10
+        },
+        "Require02": {
+            "type": "string",
+            "title": "Require 02: Always If Item01 is selected",
+            "description": "Require always if Item01 is selected.",
+            "property_order": 15
+        },
+        "Require03": {
+            "type": "string",
+            "title": "Require 03: Always If Item02 or Item03 is selected",
+            "description": "Require always if Item02 or Item03 is selected.",
+            "property_order": 20
+        },
+        "Require04": {
+            "type": "string",
+            "title": "Require 04: Always If Item04 is NOT selected",
+            "description": "Require always if Item04 is NOT selected.",
+            "property_order": 25
+        },
+        "Require05": {
+            "type": "string",
+            "title": "Require 05: Always If Item05 or Item06 is NOT selected",
+            "description": "Require always if Item05 or Item06 is NOT selected.",
+            "property_order": 30
+        },
+        "Require06": {
+            "type": "string",
+            "title": "Require 06: Push",
+            "description": "Require push.",
+            "property_order": 35
+        },
+        "Require07": {
+            "type": "string",
+            "title": "Require 07: Push If Item01 is selected",
+            "description": "Require push if Item01 is selected.",
+            "property_order": 40
+        },
+        "Require08": {
+            "type": "string",
+            "title": "Require 08: Push If Item02 or Item03 is selected",
+            "description": "Require push if Item02 or Item03 is selected.",
+            "property_order": 45
+        },
+        "Require09": {
+            "type": "string",
+            "title": "Require 09: Push If Item04 is NOT selected",
+            "description": "Require push if Item04 is NOT selected.",
+            "property_order": 50
+        },
+        "Require10": {
+            "type": "string",
+            "title": "Require 10: Push If Item05 or Item06 is NOT selected",
+            "description": "Require push if Item05 or Item06 is NOT selected.",
+            "property_order": 55
+        }
+    }
+}

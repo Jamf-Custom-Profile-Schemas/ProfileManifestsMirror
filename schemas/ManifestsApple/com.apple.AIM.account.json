@@ -1,0 +1,59 @@
+{
+    "title": "Messages: AIM (com.apple.AIM.account)",
+    "description": "Messages: AIM settings",
+    "properties": {
+        "AIMAccountDescription": {
+            "type": "string",
+            "title": "Account description",
+            "description": "The display name for the account.",
+            "property_order": 5
+        },
+        "AIMUserName": {
+            "type": "string",
+            "title": "Account name",
+            "description": "The chat name of the user.",
+            "property_order": 10
+        },
+        "AIMPassword": {
+            "type": "string",
+            "title": "Password",
+            "description": "The password for the account.",
+            "property_order": 15
+        },
+        "AIMAuthentication": {
+            "type": "string",
+            "title": "Authentication Type",
+            "description": "The authentication method for the server.",
+            "enum": [
+                "AIMAuthPassword"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Password"
+                ]
+            },
+            "property_order": 20
+        },
+        "AIMHostName": {
+            "type": "string",
+            "title": "Hostname",
+            "default": "slogin.oscar.aol.com",
+            "description": "The IP address or fully qualified domain name (FQDN) of the server.",
+            "property_order": 25
+        },
+        "AIMPort": {
+            "type": "integer",
+            "title": "Port",
+            "default": 5190,
+            "description": "The port on which to connect to the server.",
+            "property_order": 30
+        },
+        "AIMUseSSL": {
+            "type": "boolean",
+            "title": "Use SSL",
+            "default": true,
+            "description": "Enable Secure Socket Layer for this connection.",
+            "property_order": 35
+        }
+    }
+}

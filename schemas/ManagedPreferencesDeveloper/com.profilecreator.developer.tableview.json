@@ -1,0 +1,110 @@
+{
+    "title": "Developer: TableView (com.profilecreator.developer.tableview)",
+    "description": "Developer: TableView settings",
+    "properties": {
+        "TableView01": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "TableView 01: Array of Strings",
+            "description": "TableView representing an array of strings.",
+            "property_order": 5
+        },
+        "TableView02": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Title"
+            },
+            "title": "TableView 02: Array of Strings with a title",
+            "description": "TableView representing an array of strings with a title.",
+            "property_order": 10
+        },
+        "TableView03": {
+            "type": "array",
+            "items": {
+                "type": "integer",
+                "title": "Title"
+            },
+            "title": "TableView 03: Array of Strings with a title",
+            "description": "TableView representing an array of integers with a title.",
+            "property_order": 15
+        },
+        "TableView04": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Title",
+                "enum": [
+                    "Option1",
+                    "Option2",
+                    "Option3"
+                ]
+            },
+            "title": "TableView 04: Array of Strings with a title",
+            "description": "TableView representing an array of strings as PopUp Buttons.",
+            "property_order": 20
+        },
+        "TableView05": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Title",
+                "enum": [
+                    "Option1",
+                    "Option2",
+                    "Option3"
+                ]
+            },
+            "title": "TableView 05: Array of Strings with a title",
+            "description": "TableView representing an array of strings as ComboBoxes.",
+            "property_order": 25
+        },
+        "TableView06": {
+            "type": "array",
+            "items": {
+                "type": "boolean",
+                "title": "Title"
+            },
+            "title": "TableView 06: Array of Booleans",
+            "description": "TableView representing an array of booleans.",
+            "property_order": 30
+        },
+        "TableView07": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "TableView07Dict",
+                "properties": {
+                    "Title": {
+                        "type": "string",
+                        "title": "Title"
+                    },
+                    "ArrayPopUp": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Title",
+                            "enum": [
+                                "Option1",
+                                "Option2",
+                                "Option3"
+                            ]
+                        }
+                    },
+                    "ArrayString": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Title2"
+                        }
+                    }
+                }
+            },
+            "title": "TableView 07: Array of Dictionaries with included array",
+            "description": "TableView representing an array of dictionaries which in turn has an array.",
+            "property_order": 35
+        }
+    }
+}

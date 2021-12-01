@@ -1,0 +1,244 @@
+{
+    "title": "Restrictions (tvOS) (com.apple.applicationaccess)",
+    "description": "tvOS Restrictions preferences",
+    "properties": {
+        "allowDeviceNameModification": {
+            "type": "boolean",
+            "title": "Allow modifying device name",
+            "default": true,
+            "description": "If set to false, prevents device name from being changed.",
+            "property_order": 5
+        },
+        "forceAutomaticDateAndTime": {
+            "type": "boolean",
+            "title": "Force automatic date and time",
+            "default": false,
+            "property_order": 10
+        },
+        "blacklistedAppBundleIDs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "iOS / tvOS Bundle ID"
+            },
+            "title": "Restrict App Usage - Denylist",
+            "description": "If enabled, cannot use the allowlist to restrict app usage.",
+            "property_order": 15
+        },
+        "whitelistedAppBundleIDs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "iOS / tvOS Bundle ID"
+            },
+            "title": "Restrict App Usage - Allowlist",
+            "description": "If enabled, cannot use the denylist to restrict app usage.",
+            "property_order": 20
+        },
+        "forceAssistantProfanityFilter": {
+            "type": "boolean",
+            "title": "Enable Siri profanity filter",
+            "default": true,
+            "description": "When true, forces the use of the profanity filter assistant.",
+            "property_order": 25
+        },
+        "allowInAppPurchases": {
+            "type": "boolean",
+            "title": "Allow in app purchases",
+            "default": true,
+            "description": "When false, prohibits in-app purchasing.",
+            "property_order": 30
+        },
+        "ratingRegion": {
+            "type": "string",
+            "title": "Ratings region",
+            "default": "us",
+            "description": "This 2-letter key is used by profile tools to display the proper ratings for given region. It is not recognized or reported by the client.",
+            "enum": [
+                "au",
+                "ca",
+                "fr",
+                "de",
+                "ie",
+                "jp",
+                "nz",
+                "gb",
+                "us"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Australia",
+                    "Canada",
+                    "France",
+                    "Germany",
+                    "Ireland",
+                    "Japan",
+                    "New Zealand",
+                    "United Kingdom",
+                    "United States"
+                ]
+            },
+            "property_order": 35
+        },
+        "ratingApps": {
+            "type": "integer",
+            "title": "Allowed content ratings - Apps",
+            "default": 1000,
+            "description": "This value defines the maximum level of app content that is allowed on the device. Not all integer values are used in each region. Apple's Configuration Profile documentation includes the values for the US, so you may need to do some sleuthing here.",
+            "enum": [
+                1000,
+                900,
+                800,
+                700,
+                600,
+                500,
+                400,
+                300,
+                200,
+                100,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "1000: Allow All Apps",
+                    "900",
+                    "800",
+                    "700",
+                    "600: 17+",
+                    "500",
+                    "400",
+                    "300: 12+",
+                    "200: 9+",
+                    "100: 4+",
+                    "Don't Allow Apps"
+                ]
+            },
+            "property_order": 40
+        },
+        "ratingMovies": {
+            "type": "integer",
+            "title": "Allowed content ratings - Movies",
+            "default": 1000,
+            "description": "This value defines the maximum level of movie content that is allowed on the device. Not all integer values are used in each region. Apple's Configuration Profile documentation includes the values for the US, so you may need to do some sleuthing here.",
+            "enum": [
+                1000,
+                900,
+                800,
+                700,
+                600,
+                500,
+                400,
+                300,
+                200,
+                100,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "1000: Allow All Movies",
+                    "900",
+                    "800",
+                    "700",
+                    "600",
+                    "500: NC-17",
+                    "400: R",
+                    "300: PG-13",
+                    "200: PG",
+                    "100: G",
+                    "0: Don't Allow Movies"
+                ]
+            },
+            "property_order": 45
+        },
+        "ratingTVShows": {
+            "type": "integer",
+            "title": "Allowed content ratings - TV Shows",
+            "default": 1000,
+            "description": "This value defines the maximum level of TV content that is allowed on the device. Not all integer values are used in each region. Apple's Configuration Profile documentation includes the values for the US, so you may need to do some sleuthing here.",
+            "enum": [
+                1000,
+                900,
+                800,
+                700,
+                600,
+                500,
+                400,
+                300,
+                200,
+                100,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "1000: Allow All TV Shows",
+                    "900",
+                    "800",
+                    "700",
+                    "600: TV-MA",
+                    "500: TV-14",
+                    "400: TV-PG",
+                    "300: TV-G",
+                    "200: TV-Y7",
+                    "100: TV-Y",
+                    "0: Don't Allow TV Shows"
+                ]
+            },
+            "property_order": 50
+        },
+        "allowExplicitContent": {
+            "type": "boolean",
+            "title": "Allow playback of explicit music, podcasts, and iTunes U",
+            "default": true,
+            "description": "When false, explicit music or video content purchased from the iTunes Store is hidden. Explicit content is marked as such by content providers, such as record labels, when sold through the iTunes Store. This key is deprecated on unsupervised devices.",
+            "property_order": 55
+        },
+        "allowBookstoreErotica": {
+            "type": "boolean",
+            "title": "Allow explicit sexual content in iBooks Store",
+            "default": true,
+            "description": "If set to false, the user will not be able to download media from Apple Books that has been tagged as erotica.",
+            "property_order": 60
+        },
+        "allowAirPlayIncomingRequests": {
+            "type": "boolean",
+            "title": "Allow AirPlay",
+            "default": true,
+            "property_order": 65
+        },
+        "forceAirPlayIncomingRequestsPairingPassword": {
+            "type": "boolean",
+            "title": "Require passcode on first AirPlay pairing",
+            "default": true,
+            "description": "It is recommended to use the AirPlay Security Payload.",
+            "property_order": 70
+        },
+        "allowRemoteAppPairing": {
+            "type": "boolean",
+            "title": "Allow pairing with Remote app",
+            "default": true,
+            "description": "If set to false, the Apple TV cannot be paired for use with the Remote app or Control Center widget.",
+            "property_order": 75
+        },
+        "allowPasswordProximityRequests": {
+            "type": "boolean",
+            "title": "Allow proximity based password sharing requests",
+            "default": true,
+            "description": "If set to false, a user's device will not request passwords from nearby devices.",
+            "property_order": 80
+        },
+        "forceDelayedSoftwareUpdates": {
+            "type": "boolean",
+            "title": "Defer Software Updates",
+            "default": false,
+            "description": "If set to true, delays user visibility of Software Updates.",
+            "property_order": 85
+        },
+        "enforcedSoftwareUpdateDelay": {
+            "type": "integer",
+            "title": "Deferred Software Updates Delay",
+            "default": 30,
+            "description": "Number of days the software updates will be hidden from the user.",
+            "property_order": 90
+        }
+    }
+}

@@ -1,0 +1,141 @@
+{
+    "title": "NoMAD Shares (menu.nomad.shares)",
+    "description": "NoMAD Shares settings",
+    "properties": {
+        "Version": {
+            "type": "string",
+            "title": "NoMAD Shares PLIST Version",
+            "description": "Required.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/nomad-shares-menu/"
+                }
+            ],
+            "enum": [
+                "1"
+            ],
+            "property_order": 5
+        },
+        "HomeMount": {
+            "type": "dictionary",
+            "description": "This is a dictionary of attributes for scenarios where the user\u2019s home profile should be mounted.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/nomad-shares-menu/"
+                }
+            ],
+            "properties": {
+                "Mount": {
+                    "type": "boolean",
+                    "title": "Auto Mount Home",
+                    "description": "Mount the user's home automatically or not.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://nomad.menu/help/nomad-shares-menu/"
+                        }
+                    ]
+                },
+                "Groups": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Name of group in AD."
+                    },
+                    "description": "Only mount the home for members of these AD groups. Enter 'All' to allow all users and groups to mount their home.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://nomad.menu/help/nomad-shares-menu/"
+                        }
+                    ]
+                },
+                "Options": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Array of optional mount options. Refer to documentation for more information."
+                    },
+                    "description": "Array of optional mount options. Refer to documentation for more information.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://nomad.menu/help/nomad-shares-menu/"
+                        }
+                    ]
+                }
+            },
+            "property_order": 10
+        },
+        "Shares": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "description": "Dictionary of shares and their settings.",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "description": "Name as it will appear in the NoMAD menu item."
+                    },
+                    "URL": {
+                        "type": "string",
+                        "description": "The actual URL of the mount point in the form of \"smb://dc1.nomad.test/Homes\".\n\nFor the URLs, you can use variable substitution to allow for custom mounts without having to create even more XML. NoMAD understands <<domain>>, <<fullname>>, <<serial>>, <<shortname>>, <<upn>> and <<email>>"
+                    },
+                    "Groups": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "An array of AD groups allowed to mount the share."
+                    },
+                    "LocalMount": {
+                        "type": "string",
+                        "description": "Optional local mount point."
+                    },
+                    "AutoMount": {
+                        "type": "boolean",
+                        "description": "If enabled, will auto mount share."
+                    },
+                    "ConnectedOnly": {
+                        "type": "boolean",
+                        "description": "If enabled, will only mount on domain."
+                    },
+                    "Options": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Array of optional mount options. Refer to documentation for more information."
+                    }
+                }
+            },
+            "description": "Array of dictionaries of each share and their settings.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/nomad-shares-menu/"
+                }
+            ],
+            "property_order": 15
+        },
+        "IgnoreShareNames": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Ignored Shares",
+                "description": "Name of share to ignore."
+            },
+            "title": "Ignored Shares",
+            "description": "Specify a list of shares you'd like to ignore. (Time Machine is now ignored by default.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C1Y2Y14QG/p1578078500046400"
+                }
+            ],
+            "property_order": 20
+        }
+    }
+}

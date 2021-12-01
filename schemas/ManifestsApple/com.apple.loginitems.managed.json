@@ -1,0 +1,47 @@
+{
+    "title": "Login Items (com.apple.loginitems.managed)",
+    "description": "Login Items settings",
+    "properties": {
+        "AutoLaunchedApplicationDictionary-managed": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Login Item",
+                "description": "Automatically Launched Login Item",
+                "properties": {
+                    "Hide": {
+                        "type": "boolean",
+                        "title": "Hide",
+                        "default": false,
+                        "description": "If true, hide this item in the Users & Groups login items list."
+                    },
+                    "Path": {
+                        "type": "string",
+                        "title": "Path",
+                        "description": "Path to the item's location."
+                    },
+                    "URL": {
+                        "type": "string",
+                        "title": "URL",
+                        "description": "URL to mount in the form scheme://mount.point/Share",
+                        "pattern": "^(afp|nfs|smb)\\:\\/\\/.*"
+                    },
+                    "AuthenticateAsLoginUserShortName": {
+                        "type": "boolean",
+                        "title": "Authenticate with short name",
+                        "description": "Authenticate to the URL with the current users short name. Required if URL is specified, but not for Path"
+                    }
+                }
+            },
+            "title": "Automatically launched items",
+            "description": "Automatically launch these items at login.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/ProfileCreator/ProfileCreator/wiki/Login-Items"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "title": "AirPrint (com.apple.airprint)",
+    "description": "AirPrint settings",
+    "properties": {
+        "AirPrint": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Printer",
+                "description": "A printer item in the printer list",
+                "properties": {
+                    "IPAddress": {
+                        "type": "string",
+                        "title": "IP Address or Hostname",
+                        "description": "The AirPrint printer's IP address or hostname"
+                    },
+                    "Port": {
+                        "type": "integer",
+                        "title": "Port",
+                        "description": "The AirPrint printer's listening port number"
+                    },
+                    "ResourcePath": {
+                        "type": "string",
+                        "title": "Resource Path",
+                        "description": "The AirPrint printer's resource path"
+                    },
+                    "ForceTLS": {
+                        "type": "boolean",
+                        "title": "Force TLS",
+                        "default": false,
+                        "description": "Enable and force TLS for AirPrint connections"
+                    }
+                }
+            },
+            "title": "Air print",
+            "description": "List of printers",
+            "property_order": 5
+        }
+    }
+}

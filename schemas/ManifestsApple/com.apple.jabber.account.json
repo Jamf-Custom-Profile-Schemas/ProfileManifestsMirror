@@ -1,0 +1,60 @@
+{
+    "title": "Messages: Jabber (com.apple.jabber.account)",
+    "description": "Messages: Jabber settings",
+    "properties": {
+        "JabberAccountDescription": {
+            "type": "string",
+            "title": "Account description",
+            "description": "The display name for the account.",
+            "property_order": 5
+        },
+        "JabberUserName": {
+            "type": "string",
+            "title": "Account name",
+            "description": "The chat name of the user.",
+            "property_order": 10
+        },
+        "JabberPassword": {
+            "type": "string",
+            "title": "Password",
+            "description": "The password for the account.",
+            "property_order": 15
+        },
+        "JabberAuthentication": {
+            "type": "string",
+            "title": "Authentication Type",
+            "description": "The authentication method for the server.",
+            "enum": [
+                "JabberAuthPassword",
+                "JabberAuthKerberos"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Password",
+                    "Kerberos v5"
+                ]
+            },
+            "property_order": 20
+        },
+        "JabberHostName": {
+            "type": "string",
+            "title": "Hostname",
+            "description": "The IP address or fully qualified domain name (FQDN) of the server.",
+            "property_order": 25
+        },
+        "JabberPort": {
+            "type": "integer",
+            "title": "Port",
+            "default": 5223,
+            "description": "The port on which to connect to the server.",
+            "property_order": 30
+        },
+        "JabberUseSSL": {
+            "type": "boolean",
+            "title": "Use SSL",
+            "default": true,
+            "description": "Enable Secure Socket Layer for this connection.",
+            "property_order": 35
+        }
+    }
+}

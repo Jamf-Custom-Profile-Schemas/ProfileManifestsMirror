@@ -1,0 +1,72 @@
+{
+    "title": "EndNote (com.ThomsonResearchSoft.EndNote)",
+    "description": "EndNote settings",
+    "properties": {
+        "AcceptedENX7.2EULA": {
+            "type": "string",
+            "title": "Accept EndNote X7.2 / X8 EULA",
+            "default": "0",
+            "description": "Set to 1 to accept EndNote X7.2 and X8 EULA and hide the dialog from users.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://derflounder.wordpress.com/2017/06/29/activating-endnote-x8-using-management-profiles/"
+                }
+            ],
+            "enum": [
+                "1",
+                "0"
+            ],
+            "options": {
+                "enum_titles": [
+                    "1: Accept and Suppress Dialog",
+                    "0: Show Dialog to Users"
+                ]
+            },
+            "property_order": 5
+        },
+        "AcceptedENX9EULA": {
+            "type": "string",
+            "title": "Accept EndNote X9 EULA",
+            "default": "0",
+            "description": "Set to 1 to accept EndNote X9 EULA and hide the dialog from users.",
+            "enum": [
+                "1",
+                "0"
+            ],
+            "options": {
+                "enum_titles": [
+                    "1: Accept and Suppress Dialog",
+                    "0: Show Dialog to Users"
+                ]
+            },
+            "property_order": 10
+        },
+        "ShowGettingStartedX9": {
+            "type": "string",
+            "title": "Show Getting Started",
+            "default": "1",
+            "description": "Set to 0 to disable EndNote Getting Started prompts.",
+            "enum": [
+                "0",
+                "1"
+            ],
+            "options": {
+                "enum_titles": [
+                    "0: Hide Getting Started",
+                    "1: Show Getting Started"
+                ]
+            },
+            "property_order": 15
+        },
+        "IgnoredVersions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Suppress \"Important Update\" Messages",
+            "description": "Suppress \"Important Update\" messaging at first run. Correct value is the whole version number, e.g. 2019.7.24.0. Mulitple versions can be specified.",
+            "property_order": 20
+        }
+    }
+}

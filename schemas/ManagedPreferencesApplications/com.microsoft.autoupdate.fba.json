@@ -1,0 +1,19 @@
+{
+    "title": "Microsoft AutoUpdate FBA (com.microsoft.autoupdate.fba)",
+    "description": "Microsoft AutoUpdate FBA settings",
+    "properties": {
+        "SendAllTelemetryEnabled": {
+            "type": "boolean",
+            "title": "Send Telemetry Data",
+            "default": true,
+            "description": "Controls wether diagnostic data transmission is on or off.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1565795925296800"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}

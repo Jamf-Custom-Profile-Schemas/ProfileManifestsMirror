@@ -1,0 +1,71 @@
+{
+    "title": "AirPlay (com.apple.airplay)",
+    "description": "AirPlay settings",
+    "properties": {
+        "AllowList": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Allow List Content Item",
+                "properties": {
+                    "DeviceID": {
+                        "type": "string",
+                        "title": "Device ID",
+                        "description": "The AirPlay destination's MAC address",
+                        "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
+                    }
+                }
+            },
+            "title": "Allow List",
+            "description": "List of MAC addresses of AirPlay destinations that the device is restricted to. If this list is empty, the device can connect to any device.",
+            "property_order": 5
+        },
+        "Whitelist": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Allowlist Content Item",
+                "properties": {
+                    "DeviceID": {
+                        "type": "string",
+                        "title": "Device ID",
+                        "description": "The AirPlay destination's MAC address",
+                        "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
+                    }
+                }
+            },
+            "title": "Allowlist",
+            "description": "List of MAC addresses of AirPlay destinations that the device is restricted to. If this list is empty, the device can connect to any device.",
+            "property_order": 10
+        },
+        "Passwords": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Password Content Item",
+                "description": "An item in the passwords",
+                "properties": {
+                    "DeviceName": {
+                        "type": "string",
+                        "title": "Device Name",
+                        "description": "The AirPlay destination's name"
+                    },
+                    "DeviceID": {
+                        "type": "string",
+                        "title": "Device ID",
+                        "description": "The AirPlay destination's MAC address",
+                        "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
+                    },
+                    "Password": {
+                        "type": "string",
+                        "title": "Password",
+                        "description": "The password for the AirPlay destination"
+                    }
+                }
+            },
+            "title": "Passwords",
+            "description": "Sets passwords for known AirPlay destinations",
+            "property_order": 15
+        }
+    }
+}

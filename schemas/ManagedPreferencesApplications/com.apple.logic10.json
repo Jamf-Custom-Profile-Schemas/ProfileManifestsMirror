@@ -1,0 +1,108 @@
+{
+    "title": "Logic Pro X (com.apple.logic10)",
+    "description": "Logic Pro X settings",
+    "properties": {
+        "DontShowAdditionalContentDowload": {
+            "type": "boolean",
+            "title": "Don't Show Additional Content Download",
+            "description": "Suppresses the popup to download additonal sound content on launch. Yes, in fact, 'Download' is spelled 'Dowload' in the preference key.",
+            "property_order": 5
+        },
+        "FeatureAvailable_ExpertAudio": {
+            "type": "boolean",
+            "title": "Enable Additional Option: Audio",
+            "description": "Enables destructive audio editing, and advanced configuration options for audio editing experts.",
+            "property_order": 10
+        },
+        "FeatureAvailable_ExpertCS": {
+            "type": "boolean",
+            "title": "Enable Additional Option: Control Surfaces",
+            "description": "Allows experts to create new, and edit any functional detail of existing control surface systems.",
+            "property_order": 15
+        },
+        "FeatureAvailable_ExpertEditing": {
+            "type": "boolean",
+            "title": "Enable Additional Option: Advanced Editing",
+            "description": "Enables advanced editing functionality, including: aliases, track reassignment, historic tuning scales, and the Tempo Interpreter.",
+            "property_order": 20
+        },
+        "FeatureAvailable_ExpertMIDI": {
+            "type": "boolean",
+            "title": "Enable Additional Option: MIDI",
+            "description": "Allows signal flow control and real-time processing of MIDI input and output streams in the Environment.",
+            "property_order": 25
+        },
+        "FeatureAvailable_ExpertScore": {
+            "type": "boolean",
+            "title": "Enable Additional Option: Score",
+            "description": "Enables the full feature set of the Score window for notation experts.",
+            "property_order": 30
+        },
+        "FeatureAvailable_Surround": {
+            "type": "boolean",
+            "title": "Enable Additional Option: Surround",
+            "description": "Enables all features for surround audio productions, and requires a surround speaker setup for monitoring.",
+            "property_order": 35
+        },
+        "userLevel": {
+            "type": "integer",
+            "title": "Enable Show Advanced Tools",
+            "description": "Configures whether Show Advanced Tools is enabled.",
+            "enum": [
+                0,
+                10
+            ],
+            "property_order": 40
+        },
+        "startupAction": {
+            "type": "integer",
+            "title": "Startup Action",
+            "description": "Configures Logic's startup behaviour.",
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "options": {
+                "enum_titles": [
+                    "Do Nothing",
+                    "Open Most Recent Project",
+                    "Open Existing Project",
+                    "Select a Template",
+                    "Create New Empty Project",
+                    "Create New Project Using Default Template",
+                    "Ask"
+                ]
+            },
+            "property_order": 45
+        },
+        "RecentWhatsNewPanelVersion": {
+            "type": "integer",
+            "title": "Suppress What's New Prompt",
+            "default": 99,
+            "description": "So long as the integer value of this preference is set equal or higher to the value produced in the user-level plist after launching the app and acknowledging the \"What's New\" prompt, this will prevent the \"What's New\" prompt from appearing.",
+            "property_order": 50
+        },
+        "QuickHelpMode": {
+            "type": "integer",
+            "title": "Quick Help Mode",
+            "default": "1",
+            "description": "Set to 0 to disable Quick Help Mode overlays.",
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "0: Quick Help Mode disabled",
+                    "1: Quick Help Mode enabled"
+                ]
+            },
+            "property_order": 55
+        }
+    }
+}

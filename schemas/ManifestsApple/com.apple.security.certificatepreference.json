@@ -1,0 +1,16 @@
+{
+    "title": "Certificate Preference (com.apple.security.certificatepreference)",
+    "description": "Certificate Preference settings",
+    "properties": {
+        "Name": {
+            "type": "string",
+            "property_order": 5
+        },
+        "PayloadCertificateUUID": {
+            "type": "string",
+            "title": "Payload Certificate UUID",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "property_order": 10
+        }
+    }
+}

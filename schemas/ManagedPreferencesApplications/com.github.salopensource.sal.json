@@ -1,0 +1,62 @@
+{
+    "title": "Sal (com.github.salopensource.sal)",
+    "description": "Sal settings",
+    "properties": {
+        "ServerURL": {
+            "type": "string",
+            "description": "URL of your Sal server.",
+            "property_order": 5
+        },
+        "BasicAuth": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to use basic authentication on your server.",
+            "property_order": 10
+        },
+        "key": {
+            "type": "string",
+            "description": "The machine group's key.",
+            "property_order": 15
+        },
+        "SyncScripts": {
+            "type": "boolean",
+            "default": true,
+            "description": "Download the scripts needed to run for your plugins from the server.",
+            "property_order": 20
+        },
+        "SkipFacts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "It is possible to not upload all the data produced by Facter. You may have facts that are duplicates of other information Sal collects, or you don't wish to upload them for security reasons.",
+            "property_order": 25
+        },
+        "GetGrains": {
+            "type": "boolean",
+            "description": "Collect Salt grains and upload them to Sal.",
+            "property_order": 30
+        },
+        "GetOhai": {
+            "type": "boolean",
+            "default": true,
+            "description": "Collect Ohai attributes and upload them to Sal.",
+            "property_order": 35
+        },
+        "CACert": {
+            "type": "string",
+            "description": "Path to your sal certificate. Curl on 10.13 requires this for self-signed certificates or uploading the report data will fail.",
+            "property_order": 40
+        },
+        "SSLClientKey": {
+            "type": "string",
+            "description": "Full path to your sal SSL client key file for mutual TLS",
+            "property_order": 45
+        },
+        "SSLClientCertificate": {
+            "type": "string",
+            "description": "Absolute path to the SSL client certificate to use with mutual TLS when connecting to the sal server in PEM format.",
+            "property_order": 50
+        }
+    }
+}

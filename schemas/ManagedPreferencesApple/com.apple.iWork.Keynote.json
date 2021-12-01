@@ -1,0 +1,18 @@
+{
+    "title": "Keynote (com.apple.iWork.Keynote)",
+    "description": "Keynote settings",
+    "properties": {
+        "TMAFirstLaunchVersion": {
+            "type": "integer",
+            "title": "Suppress Welcome Dialog",
+            "default": 99999,
+            "property_order": 5
+        },
+        "TSURemoteDefaultsNextUpdate": {
+            "type": "date",
+            "title": "Suppress iWork Update Messages",
+            "default": "2099-01-01 00:00:00",
+            "property_order": 10
+        }
+    }
+}

@@ -1,0 +1,657 @@
+{
+    "title": "NoMAD Login (menu.nomad.login.ad)",
+    "description": "NoMAD Login settings",
+    "properties": {
+        "ADDomain": {
+            "type": "string",
+            "title": "Active Directory Domain",
+            "description": "Defines the AD domain you're working with.",
+            "property_order": 5
+        },
+        "DenyLocal": {
+            "type": "boolean",
+            "title": "Deny Local Users",
+            "property_order": 10
+        },
+        "DenyLocalExcluded": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Username"
+            },
+            "title": "Deny Local User Exclusions",
+            "property_order": 15
+        },
+        "DenyLoginUnlessGroupMember": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Group Name"
+            },
+            "title": "Allowed Group Membership User Logins",
+            "property_order": 20
+        },
+        "RecursiveGroupLookup": {
+            "type": "boolean",
+            "title": "Recursive Group Lookup",
+            "description": "If set to yes, group membership lookups should be done recursively",
+            "property_order": 25
+        },
+        "Migrate": {
+            "type": "boolean",
+            "description": "If yes, migrate users",
+            "property_order": 30
+        },
+        "MigrateUsersHide": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "User Name"
+            },
+            "title": "Hidden Migration User",
+            "property_order": 35
+        },
+        "PasswordOverwriteSilent": {
+            "type": "boolean",
+            "title": "Password Overwrite Silent",
+            "property_order": 40
+        },
+        "PasswordOverwriteOptional": {
+            "type": "boolean",
+            "title": "Password Overwrite Optional",
+            "property_order": 45
+        },
+        "LocalFallback": {
+            "type": "boolean",
+            "title": "Local Fallback",
+            "property_order": 50
+        },
+        "LDAPServers": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of LDAP servers that you would like to use for AD authentication instead of using SRV record lookup.",
+            "property_order": 55
+        },
+        "LDAPOverSSL": {
+            "type": "boolean",
+            "title": "LDAP Over SSL",
+            "default": false,
+            "description": "Determines if NoMAD Login uses LDAP over SSL.",
+            "property_order": 60
+        },
+        "AdditionalADDomains": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Additional Active Directory Domains",
+            "description": "List of domains to append at the loginwindow. If not set, the standard Managed Domain policy will apply.",
+            "property_order": 65
+        },
+        "AdditionalADDomainList": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Domain Dropdown List",
+            "description": "List of LDAP servers to display in the pulldown menu in the Login Window. Users can select a domain from the menu and then only enter the shortname in the text field.",
+            "property_order": 70
+        },
+        "NTtoADDomainMappings": {
+            "type": "dictionary",
+            "description": "Maps NT to AD Domains. e.g. NOMAD: nomad.menu, would allow a user to sign in as \u201cNOMAD\\user\u201d and that would be converted to \u201cuser@nomad.menu\u201d before authenticating to AD.",
+            "properties": {
+                "TextFields": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "properties": {
+                            "ntname": {
+                                "type": "string",
+                                "title": "NT Name"
+                            },
+                            "addomain": {
+                                "type": "string",
+                                "title": "AD Domain"
+                            }
+                        }
+                    },
+                    "title": "NT to AD Domain Mappings"
+                }
+            },
+            "property_order": 75
+        },
+        "AliasNTName": {
+            "type": "boolean",
+            "title": "Alias NT Name",
+            "property_order": 80
+        },
+        "AliasUPN": {
+            "type": "boolean",
+            "title": "Alias User Principal Name",
+            "property_order": 85
+        },
+        "IgnoreSites": {
+            "type": "boolean",
+            "title": "Ignore Sites",
+            "property_order": 90
+        },
+        "EULATitle": {
+            "type": "string",
+            "title": "End User License Agreement Title",
+            "description": "Text for the large title in the EULA window.",
+            "property_order": 95
+        },
+        "EULASubTitle": {
+            "type": "string",
+            "title": "End User License Agreement Subtitle",
+            "description": "Text for a subtitle in the EULA window.",
+            "property_order": 100
+        },
+        "EULAText": {
+            "type": "string",
+            "title": "End User License Agreement Text",
+            "description": "Text to present in the EULA window.",
+            "property_order": 105
+        },
+        "EULAPath": {
+            "type": "string",
+            "title": "End User License Agreement Save Path",
+            "default": "/var/db/NoMADLogin/",
+            "description": "Path to save acceptance records to.",
+            "property_order": 110
+        },
+        "CreateAdminUser": {
+            "type": "boolean",
+            "title": "Create Admin Users",
+            "default": false,
+            "description": "Will place any local user created at login by NoMAD Login in the local admin group.",
+            "property_order": 115
+        },
+        "CreateAdminIfGroupMember": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Group Membership to Create Admin Users",
+            "description": "List of groups that should have its members created as local administrators.",
+            "property_order": 120
+        },
+        "UseCNForFullName": {
+            "type": "boolean",
+            "title": "Use User Common Name for Full Name",
+            "description": "Use the the user's CN from AD instead of attempting to create the user name from the first and last name attributes of the user's AD record.",
+            "property_order": 125
+        },
+        "UseCNForFullNameFallback": {
+            "type": "boolean",
+            "title": "Use User Common Name for Full Name Fallback",
+            "description": "Uses the CN as the fullname on the account when the givenName and sn fields are blank",
+            "property_order": 130
+        },
+        "UserProfileImage": {
+            "type": "string",
+            "title": "User Profile Image",
+            "description": "Path to an image to set as the user profile image.",
+            "property_order": 135
+        },
+        "DemobilizeUsers": {
+            "type": "boolean",
+            "title": "Demobilize Users",
+            "default": false,
+            "description": "Will convert a previously cached mobile account from AD into a regular local user account on login.",
+            "property_order": 140
+        },
+        "DemobilizeSaveAltSecurityIdentities": {
+            "type": "boolean",
+            "title": "Demobilize Preserve AllSecurityIdentities",
+            "default": false,
+            "description": "If true, the AltSecurityIdentities user record attribute should be preserved, useful when moving from mobile accounts with smart card mapping implemented.",
+            "property_order": 145
+        },
+        "DemobilizeForcePasswordCheck": {
+            "type": "boolean",
+            "title": "Demobilize Force Password Check",
+            "default": false,
+            "description": "If true, a password input at the NoMAD login window will be required to demobilize",
+            "property_order": 150
+        },
+        "UserInputOutputPath": {
+            "type": "string",
+            "title": "User Input / Output Path",
+            "description": "Path where the userinfo.plist will be written.",
+            "property_order": 155
+        },
+        "UserInputLogo": {
+            "type": "string",
+            "title": "User Input Logo",
+            "description": "Path to a logo file to use for the UserInput mechanism.",
+            "property_order": 160
+        },
+        "UserInputTitle": {
+            "type": "string",
+            "title": "User Input Title",
+            "description": "Title for the UserInput mechanism.",
+            "property_order": 165
+        },
+        "UserInputMainText": {
+            "type": "string",
+            "title": "User Input Text",
+            "description": "Text for the UserInput mechanism.",
+            "property_order": 170
+        },
+        "UserInputUI": {
+            "type": "dictionary",
+            "description": "UI elements shown during the UserInput mechanism.",
+            "properties": {
+                "TextFields": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "properties": {
+                            "title": {
+                                "type": "string",
+                                "title": "Title"
+                            },
+                            "placeholder": {
+                                "type": "string",
+                                "title": "Placeholder"
+                            }
+                        }
+                    },
+                    "title": "User Input Text Fields"
+                },
+                "PopUps": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "properties": {
+                            "title": {
+                                "type": "string",
+                                "title": "Title"
+                            },
+                            "items": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "title": "Items"
+                            }
+                        }
+                    },
+                    "title": "User Input Pop Ups"
+                },
+                "Button": {
+                    "type": "dictionary",
+                    "properties": {
+                        "title": {
+                            "type": "string",
+                            "title": "Button"
+                        },
+                        "enabled": {
+                            "type": "boolean",
+                            "title": "Button Enabled"
+                        }
+                    }
+                }
+            },
+            "property_order": 175
+        },
+        "EnableFDE": {
+            "type": "boolean",
+            "title": "Enable FileVault on APFS",
+            "default": false,
+            "description": "On systems using the APFS filesystem, this key will enable FileVault encryption as the user is signing in for the first time.",
+            "property_order": 180
+        },
+        "EnableFDERecoveryKey": {
+            "type": "boolean",
+            "title": "Enable FileVault Recovery Key",
+            "default": false,
+            "description": "Write the output of the fdesetup command to /var/db/.NoMADFDESetup",
+            "property_order": 185
+        },
+        "EnableFDERecoveryKeyPath": {
+            "type": "string",
+            "title": "FileVault Recovery Key Path",
+            "property_order": 190
+        },
+        "EnableFDERekey": {
+            "type": "boolean",
+            "title": "FileVault Personal Recovery Key Rotation",
+            "property_order": 195
+        },
+        "LoginScreen": {
+            "type": "boolean",
+            "title": "macOS Style Login Window",
+            "description": "If set to yes, a macOS-style loginscreen will be presented instead of the NoMAD Login loginwindow style.",
+            "property_order": 200
+        },
+        "UsernameFieldPlaceholder": {
+            "type": "string",
+            "title": "Username Field Placeholder",
+            "description": "Placeholder text to show in the username textfield.",
+            "property_order": 205
+        },
+        "LoginLogo": {
+            "type": "string",
+            "title": "Login Logo",
+            "description": "Path to the logo to display on the login screen. If set to NONE, no logo will be shown.",
+            "property_order": 210
+        },
+        "LoginLogoData": {
+            "type": "data",
+            "title": "Login Logo Data",
+            "description": "Logo to display on the login screen.",
+            "property_order": 215
+        },
+        "LoginLogoAlpha": {
+            "type": "integer",
+            "title": "Login Logo Alpha",
+            "default": 8,
+            "description": "Alpha value of the logo image.",
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+            ],
+            "options": {
+                "enum_titles": [
+                    "0%",
+                    "10%",
+                    "20%",
+                    "30%",
+                    "40%",
+                    "50%",
+                    "60%",
+                    "70%",
+                    "80%",
+                    "90%",
+                    "100%"
+                ]
+            },
+            "property_order": 220
+        },
+        "BackgroundImage": {
+            "type": "string",
+            "title": "Login Window Background Image",
+            "description": "Path to the background image to be used.",
+            "property_order": 225
+        },
+        "BackgroundImageData": {
+            "type": "data",
+            "title": "Background Image Data",
+            "description": "Background to display on the login screen.",
+            "property_order": 230
+        },
+        "BackgroundImageAlpha": {
+            "type": "integer",
+            "title": "Login Window Background Image Alpha",
+            "default": 8,
+            "description": "Alpha value of the background image.",
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+            ],
+            "options": {
+                "enum_titles": [
+                    "0%",
+                    "10%",
+                    "20%",
+                    "30%",
+                    "40%",
+                    "50%",
+                    "60%",
+                    "70%",
+                    "80%",
+                    "90%",
+                    "100%"
+                ]
+            },
+            "property_order": 235
+        },
+        "AllowNetworkSelection": {
+            "type": "boolean",
+            "title": "Show Network Selection",
+            "default": false,
+            "description": "If enabled, the network selection button is shown",
+            "property_order": 240
+        },
+        "DefaultSystemInformation": {
+            "type": "string",
+            "title": "Default System Information",
+            "description": "Defines which system information should be showed on login window, by default",
+            "enum": [
+                "None",
+                "Serial",
+                "MAC",
+                "Hostname",
+                "ComputerName",
+                "SystemVersion",
+                "IP"
+            ],
+            "property_order": 245
+        },
+        "PowerControlDisabled": {
+            "type": "boolean",
+            "title": "Hide Shutdown and Restart",
+            "default": false,
+            "description": "If set to yes, hides the shutdown and restart buttons",
+            "property_order": 250
+        },
+        "ManageSecureTokens": {
+            "type": "boolean",
+            "title": "Enable Secure Token Management",
+            "default": false,
+            "description": "This key will enable SecureToken management capabilites in NomadLogin 1.4. This utilizes a service account which can be modified from default using the below optional preferences.",
+            "property_order": 255
+        },
+        "SecureTokenManagementEnableOnlyAdminUsers": {
+            "type": "boolean",
+            "title": "Enable Only Admin User",
+            "default": false,
+            "description": "If enabled, the SecureToken service account will only enable administrative users created with NoMAD Login.",
+            "property_order": 260
+        },
+        "SecureTokenManagementIconPath": {
+            "type": "string",
+            "title": "Secure Token Icon Path",
+            "property_order": 265
+        },
+        "SecureTokenManagementOnlyEnableFirstUser": {
+            "type": "boolean",
+            "title": "Only Enable First User",
+            "default": false,
+            "description": "If enabled, NoMAD Login will only enable the first user that is eligable for a SecureToken, and delete the service account afterwards.",
+            "property_order": 270
+        },
+        "SecureTokenManagementFullName": {
+            "type": "string",
+            "title": "Service Account Full Name",
+            "property_order": 275
+        },
+        "SecureTokenManagementUID": {
+            "type": "string",
+            "title": "Service Account UID",
+            "property_order": 280
+        },
+        "SecureTokenManagementPasswordLocation": {
+            "type": "string",
+            "title": "Service Account Password Storage Path",
+            "property_order": 285
+        },
+        "SecureTokenManagementPasswordLength": {
+            "type": "integer",
+            "title": "Service Account Password Length",
+            "default": 16,
+            "description": "Defines a custom SecureToken service account password length.",
+            "enum": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32
+            ],
+            "property_order": 290
+        },
+        "SecureTokenManagementUsername": {
+            "type": "string",
+            "title": "Service Account User Name",
+            "property_order": 295
+        },
+        "MessagePasswordSync": {
+            "type": "string",
+            "title": "Password Sync Message",
+            "description": "Message to show when the password needs to sync",
+            "property_order": 300
+        },
+        "ScriptPath": {
+            "type": "string",
+            "title": "Script Path",
+            "property_order": 305
+        },
+        "ScriptArgs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Arguments"
+            },
+            "title": "Script Arguments",
+            "property_order": 310
+        },
+        "UIDTool": {
+            "type": "string",
+            "title": "UID Tool",
+            "description": "String to determine the path of an executable that is run when a new user is created. It is expected to return the UID that the user should be created with. It passes in the new users username as the first argument, default is to use the built in functionality",
+            "property_order": 315
+        },
+        "GUIDTool": {
+            "type": "string",
+            "title": "GUID Tool",
+            "description": "String to determine the path of an executable that is run when a new user is created. It is expected to return the GUID that the user should be created with. It passes in the new users username as the first argument, default is to use the built in functionality",
+            "property_order": 320
+        },
+        "NotifyLogStyle": {
+            "type": "string",
+            "title": "Add Notify to Management Log File",
+            "description": "Adds the appropriate log file to the the Notify mechanism.",
+            "enum": [
+                "none",
+                "jamf",
+                "filewave",
+                "munki"
+            ],
+            "options": {
+                "enum_titles": [
+                    "None",
+                    "Jamf",
+                    "Filewave",
+                    "Munki"
+                ]
+            },
+            "property_order": 325
+        },
+        "KeychainCreate": {
+            "type": "boolean",
+            "title": "Create Keychain",
+            "description": "Create keychain if it does not exist.",
+            "property_order": 330
+        },
+        "KeychainAddNoMAD": {
+            "type": "boolean",
+            "title": "Add NoMAD to Keychain",
+            "description": "Add a NoMAD entry into the keychain.",
+            "property_order": 335
+        },
+        "CustomNoMADLocation": {
+            "type": "string",
+            "title": "Custom NoMAD Location",
+            "description": "If defined it specifies the custom location of the application to be given access to the keychain item.",
+            "property_order": 340
+        },
+        "LastUser": {
+            "type": "string",
+            "title": "Last User Shortname",
+            "description": "Shortname of the last user to login. This allows NoMAD to login on first launch.",
+            "property_order": 345
+        },
+        "KeychainReset": {
+            "type": "boolean",
+            "title": "Reset Keychain if Password Doesn't Match",
+            "description": "Reset keychain if login password doesn't match.",
+            "property_order": 350
+        },
+        "GuestUser": {
+            "type": "boolean",
+            "title": "Allow Guest User Login",
+            "description": "Allows guest users login",
+            "property_order": 355
+        },
+        "GuestUserAccounts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Guest User Accounts",
+            "description": "List of names that can be entered into the username field to trigger a guest user creation",
+            "property_order": 360
+        },
+        "GuestUserAccountPasswordPath": {
+            "type": "string",
+            "title": "Guest User Password Path",
+            "description": "The path to write out the guest users randomly generated password",
+            "property_order": 365
+        },
+        "GuestUserFirst": {
+            "type": "string",
+            "title": "Guest User First Name",
+            "description": "Defines the first name of the guest user account",
+            "property_order": 370
+        },
+        "GuestUserLast": {
+            "type": "string",
+            "title": "Guest User Last Name",
+            "description": "Defines the last name of the guest user account",
+            "property_order": 375
+        }
+    }
+}

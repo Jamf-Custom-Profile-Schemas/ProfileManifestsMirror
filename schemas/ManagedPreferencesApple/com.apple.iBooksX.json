@@ -1,0 +1,24 @@
+{
+    "title": "Books/iBooks (com.apple.iBooksX)",
+    "description": "Books/iBooks settings",
+    "properties": {
+        "BKDisableBookStorePreferenceKey": {
+            "type": "boolean",
+            "title": "Disable iBooks Store",
+            "description": "This payload also requires an iTunes payload with the \"disableMusicStore\" key set.",
+            "property_order": 5
+        },
+        "BKAlreadyDisplayedGDPRWelcomeExperience": {
+            "type": "boolean",
+            "title": "Suppress Welcome to Apple Books Screen",
+            "description": "Suppresses the \"Welcome to Apple Books\" screen at launch. This payload should be used in conjunction with the \"Suppress Empty Library\" key.",
+            "property_order": 10
+        },
+        "BKAlreadyDisplayedUbiquity": {
+            "type": "boolean",
+            "title": "Suppress Empty Library / Go to Store Screen",
+            "description": "Suppresses the \"There are no books in your library\" screen. This payload should be used in conjunction with the \"Suppress Welcome to Apple Books Screen\" key",
+            "property_order": 15
+        }
+    }
+}

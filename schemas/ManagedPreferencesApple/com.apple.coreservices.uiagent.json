@@ -1,0 +1,19 @@
+{
+    "title": "CoreServices UIAgent (com.apple.coreservices.uiagent)",
+    "description": "CoreServices UIAgent",
+    "properties": {
+        "CSUIDisable32BitWarnings": {
+            "type": "boolean",
+            "title": "Hide 32-bit app compatibility alert",
+            "default": false,
+            "description": "Hides the one-time alert shown when opening a 32-bit application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/en-us/HT209028"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}

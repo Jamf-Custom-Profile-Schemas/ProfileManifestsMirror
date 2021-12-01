@@ -1,0 +1,98 @@
+{
+    "title": "Google Drive File Stream (com.google.drivefs.settings)",
+    "description": "Google Drive File Stream settings",
+    "properties": {
+        "AutoStartOnLogin": {
+            "type": "boolean",
+            "title": "Auto Start on Login",
+            "description": "Start Drive File Stream automatically on session login.",
+            "property_order": 5
+        },
+        "BandwidthRxKBPS": {
+            "type": "integer",
+            "title": "Max Downstream Bandwidth",
+            "description": "Maximum downstream kilobytes per second.",
+            "property_order": 10
+        },
+        "BandwidthTxKBPS": {
+            "type": "integer",
+            "title": "Max Upstream Bandwidth",
+            "description": "Maximum upstream kilobytes per second.",
+            "property_order": 15
+        },
+        "ContentCachePath": {
+            "type": "string",
+            "title": "Content Cache Path",
+            "default": "~/Library/Application Support/Google/DriveFS",
+            "description": "Sets the path to the content cache location on a connected APFS or HFS+ file system.",
+            "property_order": 20
+        },
+        "ContentCacheMaxKbytes": {
+            "type": "integer",
+            "title": "Max Content Cache Size",
+            "description": "Sets the limit on content cache size in kilobytes. The limit is capped at 20% of the available space on the hard drive regardless of the setting value.",
+            "property_order": 25
+        },
+        "DefaultMountPoint": {
+            "type": "string",
+            "title": "Default Mount Point",
+            "default": "/Volumes/GoogleDrive",
+            "description": "Set the mounted drive path. You can include tilde (~) or environment variables in the path.",
+            "property_order": 30
+        },
+        "DisableMeetOutlookPlugin": {
+            "type": "boolean",
+            "title": "Disable Meet Outlook Plugin",
+            "description": "Disables the Microsoft Outlook Meet plugin that's bundled with Drive File Stream.",
+            "property_order": 35
+        },
+        "DisableOutlookPlugin": {
+            "type": "boolean",
+            "title": "Disable Outlook Plugin",
+            "description": "Disables the Microsoft Outlook Google Drive attachment plugin that's bundled with Drive File Stream.",
+            "property_order": 40
+        },
+        "DisableRealTimePresence": {
+            "type": "boolean",
+            "title": "Disable Real Time Presence",
+            "description": "Disables real-time presence in Microsoft Office (https://support.google.com/drive/answer/7329379#realtime)",
+            "property_order": 45
+        },
+        "ForceBrowserAuth": {
+            "type": "boolean",
+            "title": "Force Browser Authentication",
+            "description": "Use browser authentication.",
+            "property_order": 50
+        },
+        "MinFreeDiskSpaceKBytes": {
+            "type": "integer",
+            "title": "Minimum Free Disk Space",
+            "description": "Controls the amount of local space used by Drive File Stream's cache. Stops writing content to the disk when free disk space gets below this threshold, in kilobytes.",
+            "property_order": 55
+        },
+        "DirectConnection": {
+            "type": "boolean",
+            "title": "Direct Connection",
+            "description": "This bypasses proxy configurations. ",
+            "property_order": 60
+        },
+        "DisableCRLCheck": {
+            "type": "boolean",
+            "title": "Disable CRL Check",
+            "description": "This disables checking Certificate Revocation Lists (CRLs) provided by certificate authorities. If not explicitly set, this defaults to true if TrustedRootCertsFile is provided, otherwise false.",
+            "property_order": 65
+        },
+        "DisableSSLValidation": {
+            "type": "boolean",
+            "title": "Disable SSL Validation",
+            "description": "This disables validating SSL traffic. Traffic will still be encrypted, but we will not validate that the SSL certificates of the upstream servers are all valid.",
+            "property_order": 70
+        },
+        "TrustedRootCertsFile": {
+            "type": "string",
+            "title": "Trusted Root Certs File",
+            "description": "This is the full path to an alternate file to use for validating host SSL certificates. It must be in Privacy Enhanced Mail (PEM) format. Set this if your users are on networks with decrypting proxies.",
+            "property_order": 75
+        }
+    }
+}

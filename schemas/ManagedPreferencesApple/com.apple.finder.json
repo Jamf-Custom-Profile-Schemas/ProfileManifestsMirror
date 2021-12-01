@@ -1,0 +1,141 @@
+{
+    "title": "Finder (com.apple.finder)",
+    "description": "Finder settings",
+    "properties": {
+        "ShowExternalHardDrivesOnDesktop": {
+            "type": "boolean",
+            "title": "Show External Hard Drives on the Desktop",
+            "property_order": 5
+        },
+        "ShowHardDrivesOnDesktop": {
+            "type": "boolean",
+            "title": "Show Internal Hard Drives on the Desktop",
+            "property_order": 10
+        },
+        "ShowMountedServersOnDesktop": {
+            "type": "boolean",
+            "title": "Show Mounted Servers on the Desktop",
+            "property_order": 15
+        },
+        "ShowRemovableMediaOnDesktop": {
+            "type": "boolean",
+            "title": "Show Removable Media on the Desktop",
+            "property_order": 20
+        },
+        "NewWindowTarget": {
+            "type": "string",
+            "title": "New Finder windows show ...",
+            "description": "New Finder windows will open to the selected location.",
+            "enum": [
+                "PfHm",
+                "PfCm",
+                "PfVo",
+                "PfDe",
+                "PfDo",
+                "file:///System/Library/CoreServices/Finder.app/Contents/Resources/MyLibraries/myDocuments.cannedSearch"
+            ],
+            "options": {
+                "enum_titles": [
+                    "User Home Folder",
+                    "Computer",
+                    "Volume",
+                    "Desktop",
+                    "Documents",
+                    "Recents"
+                ]
+            },
+            "property_order": 25
+        },
+        "NewWindowTargetPath": {
+            "type": "string",
+            "title": "Finder Volume Path",
+            "default": "file:///",
+            "description": "ex. file:/// = Root of Boot Volume",
+            "pattern": "^file\\:\\/\\/\\/.*",
+            "property_order": 30
+        },
+        "FinderSpawnTab": {
+            "type": "boolean",
+            "title": "Open folders in Finder tabs instead of new windows",
+            "property_order": 35
+        },
+        "AppleShowAllFiles": {
+            "type": "boolean",
+            "title": "Show all hidden files",
+            "property_order": 40
+        },
+        "FXEnableExtensionChangeWarning": {
+            "type": "boolean",
+            "title": "Show warning before changing a file extension",
+            "default": true,
+            "description": "Prompts the user to confirm they wish to change the extension on files.",
+            "property_order": 45
+        },
+        "WarnOnEmptyTrash": {
+            "type": "boolean",
+            "title": "Show warning before emptying the Trash",
+            "default": true,
+            "description": "Prompts the user to confirm they wish to empty their Trash.",
+            "property_order": 50
+        },
+        "FXRemoveOldTrashItems": {
+            "type": "boolean",
+            "title": "Remove items from the Trash after 30 days",
+            "default": false,
+            "property_order": 55
+        },
+        "_FXSortFoldersFirst": {
+            "type": "boolean",
+            "title": "Keep folders on top when sorting by name",
+            "default": false,
+            "property_order": 60
+        },
+        "_FXSortFoldersFirstOnDesktop": {
+            "type": "boolean",
+            "title": "Keep folders on top on the Desktop",
+            "default": false,
+            "property_order": 65
+        },
+        "ShowSidebar": {
+            "type": "boolean",
+            "title": "Show the Finder Sidebar",
+            "property_order": 70
+        },
+        "FXDefaultSearchScope": {
+            "type": "string",
+            "title": "When performing a search ...",
+            "enum": [
+                "SCev",
+                "SCcf",
+                "SCsp"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Search This Mac",
+                    "Search the Current Folder",
+                    "Use the Previous Search Scope"
+                ]
+            },
+            "property_order": 75
+        },
+        "FXPreferredViewStyle": {
+            "type": "string",
+            "title": "Preferred Finder View Style",
+            "enum": [
+                "icnv",
+                "Nlsv",
+                "clmv",
+                "glyv"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Icon View",
+                    "List View",
+                    "Column View",
+                    "Gallery View"
+                ]
+            },
+            "property_order": 80
+        }
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "title": "MDM (com.apple.mdm)",
+    "description": "Use this section to define mobile device management (MDM) settings.",
+    "properties": {
+        "ServerURL": {
+            "type": "string",
+            "title": "Server URL",
+            "description": "URL used by the device to contact and retrieve device management instructions. Must be an HTTPS URL and may contain a port number.",
+            "pattern": "^https://.+$",
+            "property_order": 5
+        },
+        "ServerURLPinningCertificateUUIDs": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Server URL Pinning Certificate Identifiers",
+            "description": "An array of UUIDs of Certificate payloads in this profile. The certificates are used for evaluating trustworthiness of the Connect URLs of MDM servers.",
+            "property_order": 10
+        },
+        "ServerCapabilities": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "com.apple.mdm.per-user-connections",
+                    "com.apple.mdm.bootstraptoken"
+                ]
+            },
+            "title": "Server Capabilities",
+            "description": "An array of unique capability identifiers.",
+            "property_order": 15
+        },
+        "Topic": {
+            "type": "string",
+            "title": "Topic",
+            "description": "The topic that MDM listens to for Push notifications. The topic must have the prefix 'com.apple.mgmt.'. Also, certificate used by the server to send notifications must contain this topic in its subject.",
+            "pattern": "^com\\.apple\\.mgmt\\..+$",
+            "property_order": 20
+        },
+        "IdentityCertificateUUID": {
+            "type": "string",
+            "title": "Identity Certificate Identifier",
+            "description": "UUID of a Certificate or SCEP payload in this profile, which will be used for the identity of the device.",
+            "property_order": 25
+        },
+        "ManagedAppleID": {
+            "type": "string",
+            "title": "Managed Apple ID",
+            "description": "The user's managed Apple ID.",
+            "property_order": 30
+        },
+        "AccessRights": {
+            "type": "integer",
+            "title": "Access Rights",
+            "description": "Logical OR of access rights bit-flags. When 2 is specified 1 must be specified along. When 128 is specified 64 must be specified along. This property is ignored when ManagedAppleID is present.",
+            "property_order": 35
+        },
+        "CheckInURL": {
+            "type": "string",
+            "title": "Check-In URL",
+            "description": "URL used by the device for checking-in during installation. When omitted, ServerURL will be used for checking-in as well instead. Must be an HTTPS URL and may contain a port number.",
+            "pattern": "^https://.+$",
+            "property_order": 40
+        },
+        "CheckInURLPinningCertificateUUIDs": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Check-In URL Pinning Certificate Identifiers",
+            "description": "An array of UUIDs of Certificate payloads in this profile. The certificates are used for evaluating trustworthiness of the Check-In URLs of MDM servers.",
+            "property_order": 45
+        },
+        "CheckOutWhenRemoved": {
+            "type": "boolean",
+            "title": "Check-Out When Removed",
+            "default": false,
+            "description": "When enabled, the device will attempt to send a check-out message on removal of this profile.",
+            "property_order": 50
+        },
+        "PinningRevocationCheckRequired": {
+            "type": "boolean",
+            "title": "Pinning Revocation Check Required",
+            "default": false,
+            "description": "When enabled, verified positive responses are required in order to pass certificate revocation checks. Otherwise, failed attemps to reach the server may not fail checks.",
+            "property_order": 55
+        },
+        "PromptUserToAllowBootstrapTokenForAuthentication": {
+            "type": "boolean",
+            "title": "Prompt User to Allow Bootstrap Token for Authentication",
+            "default": false,
+            "description": "When enabled, notifies the user about needing to reboot into RecoveryOS and allowing the MDM to use the Bootstrap Token for authentication for certain operations (e.g. enabling some kernel extensions or software updates). When these operations are unnecessary for the MDM server to perform, this key can remain false.",
+            "property_order": 60
+        },
+        "SignMessage": {
+            "type": "boolean",
+            "title": "Sign Message",
+            "default": false,
+            "description": "When enabled, messages coming from the device will bear the Mdm-Signature HTTP header.",
+            "property_order": 65
+        },
+        "UseDevelopmentAPNS": {
+            "type": "boolean",
+            "title": "Use Development Apns",
+            "default": false,
+            "description": "When enabled, the device will you development APNS servers instead of production ones. Must not be enabled when using Apple Push Notification Service certificate issued by the Apple Push Certificate Portal.",
+            "property_order": 70
+        }
+    }
+}

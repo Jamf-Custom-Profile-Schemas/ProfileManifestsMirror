@@ -1,0 +1,56 @@
+{
+    "title": "macOS Server Accounts (com.apple.osxserver.account)",
+    "description": "Use the macOS Server Accounts payload to specify macOS Server account information allowing an iOS device to use it as a document repository.",
+    "properties": {
+        "AccountDescription": {
+            "type": "string",
+            "title": "Account Description",
+            "default": "My macOS Server Account",
+            "description": "The display name for the macOS Server Account.",
+            "property_order": 5
+        },
+        "HostName": {
+            "type": "string",
+            "title": "Hostname",
+            "description": "The IP address or fully qualified domain name (FQDN) of the server.",
+            "property_order": 10
+        },
+        "UserName": {
+            "type": "string",
+            "title": "User Name",
+            "description": "The name of the user.",
+            "property_order": 15
+        },
+        "Password": {
+            "type": "string",
+            "title": "Account Password",
+            "description": "The password for the user.",
+            "property_order": 20
+        },
+        "ConfiguredAccounts": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Configured Account",
+                "description": "Configured account type and relevant settings",
+                "properties": {
+                    "Type": {
+                        "type": "string",
+                        "title": "Account Type",
+                        "default": "com.apple.osxserver.documents",
+                        "description": "Must be com.apple.osxserver.documents (the Documents account type)."
+                    },
+                    "Port": {
+                        "type": "integer",
+                        "title": "Port Number",
+                        "default": 8071,
+                        "description": "The port on which to connect to the server."
+                    }
+                }
+            },
+            "title": "Documents Server Port",
+            "description": "The port on macOS Server over which the connection is established.",
+            "property_order": 25
+        }
+    }
+}

@@ -1,0 +1,2719 @@
+{
+    "title": "Firefox (org.mozilla.firefox)",
+    "description": "Configures Firefox settings. Firefox 78 is the last major release with support for macOS versions 10.9, 10.10 and 10.11.",
+    "properties": {
+        "EnterprisePoliciesEnabled": {
+            "type": "boolean",
+            "title": "Enable Enterprise Policies",
+            "default": true,
+            "description": "Enable policy support on macOS.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#enterprisepoliciesenabled"
+                }
+            ],
+            "property_order": 5
+        },
+        "General_SegmentedControl": {
+            "type": "string",
+            "property_order": 10
+        },
+        "Privacy_SegmentedControl": {
+            "type": "string",
+            "property_order": 15
+        },
+        "Security_SegmentedControl": {
+            "type": "string",
+            "property_order": 20
+        },
+        "AppAutoUpdate": {
+            "type": "boolean",
+            "title": "Firefox Auto Update",
+            "description": "Enable or disable automatic application update.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#appautoupdate"
+                }
+            ],
+            "property_order": 25
+        },
+        "AppUpdateURL": {
+            "type": "string",
+            "title": "Application Update URL",
+            "description": "Change the URL for application update.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#AppUpdateURL"
+                }
+            ],
+            "property_order": 30
+        },
+        "Authentication": {
+            "type": "dictionary",
+            "description": "Configure sites that support integrated authentication.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#Authentication"
+                }
+            ],
+            "properties": {
+                "SPNEGO": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "SPNEGO",
+                    "description": "If this preference is enabled, the specified websites are permitted to engage in SPNEGO authentication with the browser. Entries in the list are formatted as mydomain.com or https://myotherdomain.com.\n\nIf this preference is disabled or not configured, no websites are permitted to engage in SPNEGO authentication with the browser.\n\nFor more information, see https://developer.mozilla.org/en-US/docs/Mozilla/Integrated_authentication."
+                },
+                "Delegated": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Delegated",
+                    "description": "If this preference is enabled, the browser may delegate user authorization to the server for the specified websites. Entries in the list are formatted as mydomain.com or https://myotherdomain.com.\n\nIf this preference is disabled or not configured, the browser will not delegate user authorization to the server for any websites.\n\nFor more information, see https://developer.mozilla.org/en-US/docs/Mozilla/Integrated_authentication"
+                },
+                "NTLM": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Microsoft Challenge/Response (NTLM)",
+                    "description": "If this preference is enabled, the specified websites are trusted to use NTLM authentification. Entries in the list are formatted as mydomain.com or https://myotherdomain.com.\n\nIf this policy is disabled or not configured, no websites are trusted to use NTLM authentification.\n\nFor more information, see https://developer.mozilla.org/en-US/docs/Mozilla/Integrated_authentication."
+                },
+                "AllowNonFQDN": {
+                    "type": "dictionary",
+                    "title": "Allow Non-FQDN",
+                    "description": "If this preference is enabled, you can always allow SPNEGO or NTLM on non FQDNs (fully qualified domain names). If this preference is disabled or not configured, NTLM and SPNEGO are not enabled on non FQDNs.",
+                    "properties": {
+                        "NTLM": {
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "SPNEGO": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                },
+                "AllowProxies": {
+                    "type": "dictionary",
+                    "title": "Allow Proxies",
+                    "description": "If this preference is enabled, you can always allow SPNEGO or NTLM on non FQDNs (fully qualified domain names). If this preference is disabled or not configured, NTLM and SPNEGO are not enabled on non FQDNs.",
+                    "properties": {
+                        "NTLM": {
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "SPNEGO": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "title": "Locked (Authentication)"
+                },
+                "PrivateBrowsing": {
+                    "type": "boolean",
+                    "title": "Private Browsing",
+                    "description": "Enables integrated authentication in prviate browsing"
+                }
+            },
+            "property_order": 35
+        },
+        "BlockAboutAddons": {
+            "type": "boolean",
+            "title": "Block about:addons page",
+            "default": true,
+            "description": "Block access to the Add-ons Manager (about:addons).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#blockaboutaddons"
+                }
+            ],
+            "property_order": 40
+        },
+        "BlockAboutConfig": {
+            "type": "boolean",
+            "title": "Block about:config page",
+            "default": true,
+            "description": "Block access to about:config.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#blockaboutconfig"
+                }
+            ],
+            "property_order": 45
+        },
+        "BlockAboutProfiles": {
+            "type": "boolean",
+            "title": "Block about:profiles page",
+            "default": true,
+            "description": "Block access to About Profiles (about:profiles).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#blockaboutprofiles"
+                }
+            ],
+            "property_order": 50
+        },
+        "BlockAboutSupport": {
+            "type": "boolean",
+            "title": "Block about:support page",
+            "default": true,
+            "description": "Block access to Troubleshooting Information (about:support).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#blockaboutsupport"
+                }
+            ],
+            "property_order": 55
+        },
+        "Bookmarks": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "properties": {
+                    "Title": {
+                        "type": "string",
+                        "description": "Bookmark Title"
+                    },
+                    "URL": {
+                        "type": "string",
+                        "description": "Full URL to be bookmarked (e.g. https://www.example.org/)"
+                    },
+                    "Placement": {
+                        "type": "string",
+                        "description": "Place bookmark in either the Bookmark menu or Bookmark Toolbar.",
+                        "enum": [
+                            "toolbar",
+                            "menu"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "toolbar",
+                                "menu"
+                            ]
+                        }
+                    },
+                    "Favicon": {
+                        "type": "string",
+                        "description": "URL to icon file to display on bookmark (e.g. https://www.example.org/favicon.ico)"
+                    },
+                    "Folder": {
+                        "type": "string",
+                        "description": "Folder to place bookmark in. If a folder is specified, it is automatically created and bookmarks with the same folder name are grouped together. You cannot nest folders."
+                    }
+                }
+            },
+            "description": "Add bookmarks in either the bookmarks toolbar or menu.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#bookmarks"
+                }
+            ],
+            "property_order": 60
+        },
+        "DefaultDownloadDirectory": {
+            "type": "string",
+            "title": "Default Download Directory",
+            "description": "Set the default download directory.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#defaultdownloaddirectory"
+                }
+            ],
+            "property_order": 65
+        },
+        "DisableAppUpdate": {
+            "type": "boolean",
+            "title": "Disable Application Update",
+            "default": true,
+            "description": "Turn off application updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableappupdate"
+                }
+            ],
+            "property_order": 70
+        },
+        "DisableBuiltinPDFViewer": {
+            "type": "boolean",
+            "title": "Disable Built-in PDF Viewer",
+            "default": true,
+            "description": "Disable the built in PDF viewer. PDF files are downloaded and sent externally.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablebuiltinpdfviewer"
+                }
+            ],
+            "property_order": 75
+        },
+        "PDFjs": {
+            "type": "dictionary",
+            "title": "PDF.js",
+            "description": "Disable or configure PDF.js, the built-in PDF viewer.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#pdfjs"
+                }
+            ],
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "If Enabled is set to false, the built-in PDF viewer is disabled."
+                },
+                "EnablePermissions": {
+                    "type": "boolean",
+                    "description": "If EnablePermissions is set to true, the built-in PDF viewer will honor document permissions like preventing the copying of text."
+                }
+            },
+            "property_order": 80
+        },
+        "DisableDeveloperTools": {
+            "type": "boolean",
+            "title": "Disable Developer Tools",
+            "default": true,
+            "description": "Remove access to all developer tools.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disabledevelopertools"
+                }
+            ],
+            "property_order": 85
+        },
+        "DisableFeedbackCommands": {
+            "type": "boolean",
+            "title": "Disable Feedback Commands",
+            "default": true,
+            "description": "Disable the menus for reporting sites (Submit Feedback, Report Deceptive Site).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablefeedbackcommands"
+                }
+            ],
+            "property_order": 90
+        },
+        "DisableFirefoxAccounts": {
+            "type": "boolean",
+            "title": "Disable Firefox Accounts / Sync",
+            "default": true,
+            "description": "Disable Firefox Accounts integration (Sync).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablefirefoxaccounts"
+                }
+            ],
+            "property_order": 95
+        },
+        "DisableFirefoxScreenshots": {
+            "type": "boolean",
+            "title": "Disable Firefox Screenshots",
+            "default": true,
+            "description": "Remove access to Firefox Screenshots.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablefirefoxscreenshots"
+                }
+            ],
+            "property_order": 100
+        },
+        "DisableFirefoxStudies": {
+            "type": "boolean",
+            "title": "Disable Firefox Studies (Shield)",
+            "default": true,
+            "description": "Disable Firefox studies (Shield).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablefirefoxstudies"
+                }
+            ],
+            "property_order": 105
+        },
+        "DisableForgetButton": {
+            "type": "boolean",
+            "title": "Disable Forget Button",
+            "default": true,
+            "description": "Disable the \"Forget\" button.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableforgetbutton"
+                }
+            ],
+            "property_order": 110
+        },
+        "DisableMasterPasswordCreation": {
+            "type": "boolean",
+            "title": "Disable Master Password Creation",
+            "default": true,
+            "description": "Remove the master password functionality. If this preference is set to true, the master password functionality is removed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablemasterpasswordcreation"
+                }
+            ],
+            "property_order": 115
+        },
+        "PrimaryPassword": {
+            "type": "boolean",
+            "title": "Enable Primary Password",
+            "description": "Require or prevent using a primary (formerly master) password. If this value is true, a primary password is required.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#primarypassword"
+                }
+            ],
+            "property_order": 120
+        },
+        "DisablePocket": {
+            "type": "boolean",
+            "title": "Disable Pocket",
+            "default": true,
+            "description": "Remove Pocket in the Firefox UI.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablepocket"
+                }
+            ],
+            "property_order": 125
+        },
+        "DisablePrivateBrowsing": {
+            "type": "boolean",
+            "title": "Disable Private Browsing",
+            "default": true,
+            "description": "Remove access to private browsing.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableprivatebrowsing"
+                }
+            ],
+            "property_order": 130
+        },
+        "DisableProfileImport": {
+            "type": "boolean",
+            "title": "Disable Profile Import",
+            "default": true,
+            "description": "Disables the \"Import data from another browser\" option in the bookmarks window.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableprofileimport"
+                }
+            ],
+            "property_order": 135
+        },
+        "DisableProfileRefresh": {
+            "type": "boolean",
+            "title": "Disable Profile Refresh",
+            "default": true,
+            "description": "Disable the Refresh Firefox button on about:support and support.mozilla.org, as well as the prompt that displays offering to refresh Firefox when you haven't used it in a while.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableprofilerefresh"
+                }
+            ],
+            "property_order": 140
+        },
+        "DisableSafeMode": {
+            "type": "boolean",
+            "title": "Disable Safe Mode",
+            "default": true,
+            "description": "Disable safe mode within the browser.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablesafemode"
+                }
+            ],
+            "property_order": 145
+        },
+        "DisableSetDesktopBackground": {
+            "type": "boolean",
+            "title": "Disable Set Desktop Background",
+            "default": true,
+            "description": "This preference removes the \"Set As Desktop Background...\" menu item when right clicking on an image.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablesetdesktopbackground"
+                }
+            ],
+            "property_order": 150
+        },
+        "DisplayMenuBar": {
+            "type": "boolean",
+            "title": "Display Menu Bar",
+            "default": true,
+            "description": "Set the initial state of the menubar. A user can still hide it and it will stay hidden.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#displaymenubar"
+                }
+            ],
+            "property_order": 155
+        },
+        "DisableSystemAddonUpdate": {
+            "type": "boolean",
+            "title": "Disable System Add-on Update",
+            "default": true,
+            "description": "Prevent system add-ons from being installed or update.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablesystemaddonupdate"
+                }
+            ],
+            "property_order": 160
+        },
+        "DisplayBookmarksToolbar": {
+            "type": "boolean",
+            "title": "Display Bookmarks Toolbar",
+            "default": true,
+            "description": "Set the initial state of the bookmarks toolbar. A user can still hide it and it will stay hidden.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#displaybookmarkstoolbar"
+                }
+            ],
+            "property_order": 165
+        },
+        "DontCheckDefaultBrowser": {
+            "type": "boolean",
+            "title": "Do Not Check Default Browser",
+            "default": true,
+            "description": "Don't check if Firefox is the default browser at startup.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#dontcheckdefaultbrowser"
+                }
+            ],
+            "property_order": 170
+        },
+        "DownloadDirectory": {
+            "type": "string",
+            "title": "Download Directory",
+            "description": "Set and lock the download directory.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#downloaddirectory"
+                }
+            ],
+            "property_order": 175
+        },
+        "Extensions": {
+            "type": "dictionary",
+            "description": "Control the installation, uninstallation and locking of extensions. Locked extensions cannot be disabled or uninstalled. For Install, you specify a list of URLs or paths. For Uninstall and Locked, you specify extension IDs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#extensions"
+                }
+            ],
+            "properties": {
+                "Install": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Install"
+                    },
+                    "title": "Install",
+                    "description": "A list of URLs or native paths for extensions to be installed."
+                },
+                "Uninstall": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Extension ID To Uninstall"
+                    },
+                    "title": "Uninstall",
+                    "description": "A list of extension IDs that should be uninstalled if found."
+                },
+                "Locked": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Extension ID To Lock"
+                    },
+                    "title": "Locked",
+                    "description": "A list of extension IDs that the user cannot disable or uninstall."
+                }
+            },
+            "property_order": 180
+        },
+        "ExtensionSettings": {
+            "type": "dictionary",
+            "description": "Manage all aspects of extensions. A default configuration can be set for the special ID \"*\", which will apply to all extensions that don't have a custom configuration set in this policy.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#extensionsettings"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Extension ID"
+                },
+                "{{value}}": {
+                    "type": "dictionary",
+                    "properties": {
+                        "installation_mode": {
+                            "type": "string",
+                            "title": "Installation Mode",
+                            "description": "Maps to a string indicating the installation mode for the extension.",
+                            "enum": [
+                                "allowed",
+                                "blocked",
+                                "force_installed",
+                                "normal_installed"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Allowed (default behavior)",
+                                    "Blocked",
+                                    "Force Installed",
+                                    "Normal Installed"
+                                ]
+                            }
+                        },
+                        "install_url": {
+                            "type": "string",
+                            "title": "Install URL",
+                            "description": "Maps to a string indicating where Firefox can download a force_installed or normal_installed extension. If installing from the addons.mozilla.org, use the following URL (substituting SHORT_NAME from the URL on AMO), https://addons.mozilla.org/firefox/downloads/latest/SHORT_NAME/latest.xpi. If installing from the local file system, use a file:/// URL. Languages packs are available from https://releases.mozilla.org/pub/firefox/releases/VERSION/PLATFORM/xpi/LANGUAGE.xpi."
+                        },
+                        "install_sources": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "title": "Install Sources",
+                            "description": "Each item in this list is an extension-style match pattern."
+                        },
+                        "allowed_types": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "extension",
+                                    "theme",
+                                    "dictionary",
+                                    "langpack"
+                                ]
+                            },
+                            "title": "Allowed Types",
+                            "description": "This setting allowlists the allowed types of extension/apps that can be installed in Firefox."
+                        },
+                        "blocked_install_message": {
+                            "type": "string",
+                            "description": "This maps to a string specifying the error message to display to users if they're blocked from installing an extension."
+                        },
+                        "restricted_domains": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Restricted Domain"
+                            },
+                            "title": "Restricted Domains",
+                            "description": "An array of domains on which content scripts can't be run."
+                        }
+                    }
+                }
+            },
+            "property_order": 185
+        },
+        "ExtensionUpdate": {
+            "type": "boolean",
+            "title": "Extension Update",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#extensionupdate"
+                }
+            ],
+            "property_order": 190
+        },
+        "EncryptedMediaExtensions": {
+            "type": "dictionary",
+            "title": "Encrypted Media Extensions",
+            "description": "Enable or disable Encrypted Media Extensions and optionally lock it.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#encryptedmediaextensions"
+                }
+            ],
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "If Enabled is set to false, encrypted media extensions (like Widevine) are not downloaded by Firefox unless the user consents to installing them.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#encryptedmediaextensions"
+                        }
+                    ]
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "description": "If Locked is set to true and Enabled is set to false, Firefox will not download encrypted media extensions (like Widevine) or ask the user to install them.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#encryptedmediaextensions"
+                        }
+                    ]
+                }
+            },
+            "property_order": 195
+        },
+        "HardwareAcceleration": {
+            "type": "boolean",
+            "title": "Hardware Acceleration",
+            "default": false,
+            "description": "Control hardware acceleration.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#hardwareacceleration"
+                }
+            ],
+            "property_order": 200
+        },
+        "FirefoxHome": {
+            "type": "dictionary",
+            "title": "FirefoxHome",
+            "description": "Customize the Firefox Home page.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#firefoxhome"
+                }
+            ],
+            "properties": {
+                "Search": {
+                    "type": "boolean",
+                    "title": "Search",
+                    "default": false
+                },
+                "TopSites": {
+                    "type": "boolean",
+                    "title": "TopSites",
+                    "default": false
+                },
+                "Highlights": {
+                    "type": "boolean",
+                    "title": "Highlights",
+                    "default": false
+                },
+                "Pocket": {
+                    "type": "boolean",
+                    "title": "Pocket",
+                    "default": false
+                },
+                "Snippets": {
+                    "type": "boolean",
+                    "title": "Snippets",
+                    "default": false
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "title": "Locked",
+                    "default": false
+                }
+            },
+            "property_order": 205
+        },
+        "Homepage": {
+            "type": "dictionary",
+            "description": "Configure the default homepage and how Firefox starts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#homepage"
+                }
+            ],
+            "properties": {
+                "URL": {
+                    "type": "string",
+                    "description": "Optional. Set the default home page."
+                },
+                "Additional": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Additional Homepages",
+                    "description": "Optional. Set additional homepages."
+                },
+                "StartPage": {
+                    "type": "string",
+                    "title": "Start Page",
+                    "description": "Optional. This preference sets what displays when Firefox starts. It can be the homepage, the previous session, or a blank page.",
+                    "enum": [
+                        "none",
+                        "homepage",
+                        "homepage-locked",
+                        "previous-session"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "None",
+                            "Homepage",
+                            "Homepage (Locked)",
+                            "Previous Session"
+                        ]
+                    }
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true, prevents the user from changing homepage preferences."
+                }
+            },
+            "property_order": 210
+        },
+        "LocalFileLinks": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Local File Links",
+            "description": "Enable linking to local files by origin",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#localfilelinks"
+                }
+            ],
+            "property_order": 215
+        },
+        "NewTabPage": {
+            "type": "boolean",
+            "title": "New Tab Page",
+            "default": false,
+            "description": "Enable or disable the New Tab page.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#newtabpage"
+                }
+            ],
+            "property_order": 220
+        },
+        "NoDefaultBookmarks": {
+            "type": "boolean",
+            "title": "No Default Bookmarks",
+            "default": true,
+            "description": "Disable the creation of default bookmarks.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#nodefaultbookmarks"
+                }
+            ],
+            "property_order": 225
+        },
+        "OverrideFirstRunPage": {
+            "type": "string",
+            "title": "Override First Run Page",
+            "description": "Override the first run page. If the value is blank, no first run page is displayed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#overridefirstrunpage"
+                }
+            ],
+            "property_order": 230
+        },
+        "OverridePostUpdatePage": {
+            "type": "string",
+            "title": "Override Post Update Page",
+            "description": "Override the upgrade page. If the value is blank, no upgrade page is displayed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#overridepostupdatepage"
+                }
+            ],
+            "property_order": 235
+        },
+        "PictureInPicture": {
+            "type": "boolean",
+            "title": "Picture-in-Picture",
+            "description": "Enable or disable Picture-in-Picture.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#pictureinpicture"
+                }
+            ],
+            "property_order": 240
+        },
+        "PromptForDownloadLocation": {
+            "type": "boolean",
+            "title": "Prompt for Download Location",
+            "default": false,
+            "description": "Ask where to save each file before downloading.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates#promptfordownloadlocation"
+                }
+            ],
+            "property_order": 245
+        },
+        "RequestedLocales": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Action",
+                "description": "Action",
+                "enum": [
+                    "ach",
+                    "af",
+                    "sq",
+                    "ar",
+                    "an",
+                    "hy-AM",
+                    "as",
+                    "ast",
+                    "az",
+                    "eu",
+                    "be",
+                    "bn-BD",
+                    "bn-IN",
+                    "bs",
+                    "br",
+                    "bg",
+                    "my",
+                    "ca",
+                    "zh-CN",
+                    "zh-TW",
+                    "hr",
+                    "cs",
+                    "da",
+                    "nl",
+                    "en-GB",
+                    "en-CA",
+                    "en-ZA",
+                    "en-US",
+                    "eo",
+                    "et",
+                    "fi",
+                    "fr",
+                    "fy-NL",
+                    "ff",
+                    "gd",
+                    "gl",
+                    "ka",
+                    "de",
+                    "el",
+                    "gn",
+                    "gu-IN",
+                    "he",
+                    "hi-IN",
+                    "hu",
+                    "is",
+                    "id",
+                    "ia",
+                    "ga-IE",
+                    "it",
+                    "ja",
+                    "kab",
+                    "kn",
+                    "cak",
+                    "kk",
+                    "km",
+                    "ko",
+                    "lv",
+                    "lij",
+                    "lt",
+                    "dsb",
+                    "mk",
+                    "mai",
+                    "ms",
+                    "ml",
+                    "mr",
+                    "ne-NP",
+                    "nb-NO",
+                    "nn-NO",
+                    "oc",
+                    "or",
+                    "fa",
+                    "pl",
+                    "pt-BR",
+                    "pt-PT",
+                    "pa-IN",
+                    "ro",
+                    "rm",
+                    "ru",
+                    "sr",
+                    "si",
+                    "sk",
+                    "sl",
+                    "son",
+                    "es-AR",
+                    "es-CL",
+                    "es-MX",
+                    "es-ES",
+                    "sv-SE",
+                    "ta",
+                    "te",
+                    "th",
+                    "tr",
+                    "uk",
+                    "hsb",
+                    "ur",
+                    "uz",
+                    "vi",
+                    "cy",
+                    "xh"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Acholi",
+                        "Afrikaans",
+                        "Albanian",
+                        "Arabic",
+                        "Aragonese",
+                        "Armenian",
+                        "Assamese",
+                        "Asturian",
+                        "Azerbaijani",
+                        "Basque",
+                        "Belarusian",
+                        "Bengali (Bangladesh)",
+                        "Bengali (India)",
+                        "Bosnian",
+                        "Breton",
+                        "Bulgarian",
+                        "Burmese",
+                        "Catalan",
+                        "Chinese (Simplified)",
+                        "Chinese (Traditional)",
+                        "Croatian",
+                        "Czech",
+                        "Danish",
+                        "Dutch",
+                        "English (British)",
+                        "English (Canadian)",
+                        "English (South African)",
+                        "English (US)",
+                        "Esperanto",
+                        "Estonian",
+                        "Finnish",
+                        "French",
+                        "Frisian",
+                        "Fulah",
+                        "Gaelic (Scotland)",
+                        "Galician",
+                        "Georgian",
+                        "German",
+                        "Greek",
+                        "Guarani",
+                        "Gujarati (India)",
+                        "Hebrew",
+                        "Hindi (India)",
+                        "Hungarian",
+                        "Icelandic",
+                        "Indonesian",
+                        "Interlingua",
+                        "Irish",
+                        "Italian",
+                        "Japanese",
+                        "Kabyle",
+                        "Kannada",
+                        "Kaqchikel",
+                        "Kazakh",
+                        "Khmer",
+                        "Korean",
+                        "Latvian",
+                        "Ligurian",
+                        "Lithuanian",
+                        "Lower Sorbian",
+                        "Macedonian",
+                        "Maithili",
+                        "Malay",
+                        "Malayalam",
+                        "Marathi",
+                        "Nepali",
+                        "Norwegian (Bokm\u00e5l)",
+                        "Norwegian (Nynorsk)",
+                        "Occitan (Lengadocian)",
+                        "Odia",
+                        "Persian",
+                        "Polish",
+                        "Portuguese (Brazilian)",
+                        "Portuguese (Portugal)",
+                        "Punjabi (India)",
+                        "Romanian",
+                        "Romansh",
+                        "Russian",
+                        "Serbian",
+                        "Sinhala",
+                        "Slovak",
+                        "Slovenian",
+                        "Songhai",
+                        "Spanish (Argentina)",
+                        "Spanish (Chile)",
+                        "Spanish (Mexico)",
+                        "Spanish (Spain)",
+                        "Swedish",
+                        "Tamil",
+                        "Telugu",
+                        "Thai",
+                        "Turkish",
+                        "Ukrainian",
+                        "Upper Sorbian",
+                        "Urdu",
+                        "Uzbek",
+                        "Vietnamese",
+                        "Welsh",
+                        "Xhosa"
+                    ]
+                }
+            },
+            "title": "Requested Locales",
+            "description": "Set the the list of requested locales for the application in order of preference. It will cause the corresponding language pack to become active.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#requestedlocales"
+                }
+            ],
+            "property_order": 250
+        },
+        "SanitizeOnShutdown": {
+            "type": "dictionary",
+            "title": "Sanitize On Shutdown (Selective)",
+            "description": "Clear data on shutdown. Choose from Cache, Cookies, Download History, Form & Search History, Browsing History, Active Logins, Site Preferences and Offline Website Data.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#sanitizeonshutdown-selective"
+                }
+            ],
+            "properties": {
+                "Cache": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Cookies": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Downloads": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "FormData": {
+                    "type": "boolean",
+                    "title": "Form Data",
+                    "default": false
+                },
+                "History": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Sessions": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "SiteSettings": {
+                    "type": "boolean",
+                    "title": "Site Settings",
+                    "default": false
+                },
+                "OfflineApps": {
+                    "type": "boolean",
+                    "title": "Offline Apps",
+                    "default": false
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "default": false
+                }
+            },
+            "property_order": 255
+        },
+        "SearchBar": {
+            "type": "string",
+            "title": "Search Bar",
+            "default": "separate",
+            "description": "Set whether or not search bar is displayed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchbar"
+                }
+            ],
+            "enum": [
+                "separate",
+                "unified"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Separate",
+                    "Unified"
+                ]
+            },
+            "property_order": 260
+        },
+        "SearchEngines": {
+            "type": "dictionary",
+            "title": "Search Engines",
+            "default": "separate",
+            "description": "Set whether or not search bar is displayed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines-this-policy-is-only-available-on-the-esr"
+                }
+            ],
+            "properties": {
+                "Default": {
+                    "type": "string",
+                    "description": "Set the default search engine. This policy is only available on the ESR.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines--default"
+                        }
+                    ]
+                },
+                "PreventInstalls": {
+                    "type": "boolean",
+                    "description": "Prevent installing search engines from webpages. This policy is only available on the ESR.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines--preventinstalls"
+                        }
+                    ]
+                },
+                "Remove": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Hidden Search Engines"
+                    },
+                    "description": "Hide built-in search engines. This policy is only available on the ESR.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines--remove"
+                        }
+                    ]
+                },
+                "Add": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "Search Engines",
+                        "properties": {
+                            "Name": {
+                                "type": "string",
+                                "description": "Name of the search engine"
+                            },
+                            "URLTemplate": {
+                                "type": "string"
+                            },
+                            "Method": {
+                                "type": "string",
+                                "enum": [
+                                    "GET",
+                                    "POST"
+                                ]
+                            },
+                            "IconURL": {
+                                "type": "string",
+                                "description": "URL for the icon to use"
+                            },
+                            "Alias": {
+                                "type": "string",
+                                "description": "keyword to use for the engine"
+                            },
+                            "Description": {
+                                "type": "string",
+                                "description": "Description of the search engine."
+                            },
+                            "PostData": {
+                                "type": "string",
+                                "description": "POST data as name value pairs separated by '&'"
+                            },
+                            "SuggestURLTemplate": {
+                                "type": "string",
+                                "description": "Search suggestions URL with {searchTerms} to substitute for the search term."
+                            }
+                        }
+                    },
+                    "title": "Add Search Engines",
+                    "description": "Add new search engines. This policy is only available on the ESR.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines--add"
+                        }
+                    ]
+                }
+            },
+            "property_order": 265
+        },
+        "SearchSuggestEnabled": {
+            "type": "boolean",
+            "title": "Enable Search Suggest",
+            "description": "Enable search suggestions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchsuggestenabled"
+                }
+            ],
+            "property_order": 270
+        },
+        "Handlers": {
+            "type": "dictionary",
+            "description": "Configure default application handlers. This policy is based on the internal format of handlers.json. You can configure handlers based on a mime type (mimeTypes), a file's extension (extensions), or a protocol (schemes).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#handlers"
+                }
+            ],
+            "properties": {
+                "mimeTypes": {
+                    "type": "dictionary",
+                    "title": "MIME Types",
+                    "description": "Specify MIME types. More info here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types",
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "MIME Type",
+                            "description": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types"
+                        },
+                        "{{value}}": {
+                            "type": "dictionary",
+                            "properties": {
+                                "action": {
+                                    "type": "string",
+                                    "title": "Action",
+                                    "description": "Can be either saveToDisk, useHelperApp, useSystemDefault.",
+                                    "enum": [
+                                        "saveToDisk",
+                                        "useHelperApp",
+                                        "useSystemDefault"
+                                    ],
+                                    "options": {
+                                        "enum_titles": [
+                                            "Save to Disk",
+                                            "Use Helper App",
+                                            "Use System Default"
+                                        ]
+                                    }
+                                },
+                                "ask": {
+                                    "type": "boolean",
+                                    "title": "Ask",
+                                    "description": "If true, the user is asked if what they want to do with the file. If false, the action is taken without user intervention."
+                                }
+                            }
+                        }
+                    }
+                },
+                "schemes": {
+                    "type": "dictionary",
+                    "title": "Schemes",
+                    "properties": {
+                        "action": {
+                            "type": "string",
+                            "title": "Action",
+                            "description": "Can be either saveToDisk, useHelperApp, useSystemDefault.",
+                            "enum": [
+                                "saveToDisk",
+                                "useHelperApp",
+                                "useSystemDefault"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Save to Disk",
+                                    "Use Helper App",
+                                    "Use System Default"
+                                ]
+                            }
+                        },
+                        "ask": {
+                            "type": "boolean",
+                            "title": "Ask",
+                            "description": "If true, the user is asked if what they want to do with the file. If false, the action is taken without user intervention."
+                        },
+                        "handlers": {
+                            "type": "array",
+                            "items": {
+                                "type": "dictionary",
+                                "title": "MIME Type",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "title": "Name",
+                                        "description": "The display name of the handler (might not be used)."
+                                    },
+                                    "path": {
+                                        "type": "string",
+                                        "title": "Path",
+                                        "description": "The native path to the executable to be used."
+                                    },
+                                    "uriTemplate": {
+                                        "type": "string",
+                                        "title": "URI Template",
+                                        "description": "A url to a web based application handler. The URL must be https and contain a %s to be used for substitution.",
+                                        "pattern": "^https:\\/\\/.*%s.*"
+                                    }
+                                }
+                            },
+                            "title": "Handlers",
+                            "description": "An array of handlers with the first one being the default. If you don't want to have a default handler, use an empty object for the first handler. Choose between path or uriTemplate."
+                        }
+                    }
+                },
+                "extensions": {
+                    "type": "dictionary",
+                    "title": "Extensions",
+                    "properties": {
+                        "action": {
+                            "type": "string",
+                            "title": "Action",
+                            "description": "Can be either saveToDisk, useHelperApp, useSystemDefault.",
+                            "enum": [
+                                "saveToDisk",
+                                "useHelperApp",
+                                "useSystemDefault"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Save to Disk",
+                                    "Use Helper App",
+                                    "Use System Default"
+                                ]
+                            }
+                        },
+                        "ask": {
+                            "type": "boolean",
+                            "title": "Ask",
+                            "description": "If true, the user is asked if what they want to do with the file. If false, the action is taken without user intervention."
+                        },
+                        "handlers": {
+                            "type": "array",
+                            "items": {
+                                "type": "dictionary",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "title": "Name",
+                                        "description": "The display name of the handler (might not be used)."
+                                    },
+                                    "path": {
+                                        "type": "string",
+                                        "title": "Path",
+                                        "description": "The native path to the executable to be used."
+                                    },
+                                    "uriTemplate": {
+                                        "type": "string",
+                                        "title": "URI Template",
+                                        "description": "A url to a web based application handler. The URL must be https and contain a %s to be used for substitution.",
+                                        "pattern": "^https:\\/\\/.*%s.*"
+                                    }
+                                }
+                            },
+                            "title": "Handlers",
+                            "description": "An array of handlers with the first one being the default. If you don't want to have a default handler, use an empty object for the first handler. Choose between path or uriTemplate."
+                        }
+                    }
+                }
+            },
+            "property_order": 275
+        },
+        "DisabledCiphers": {
+            "type": "dictionary",
+            "title": "Disabled Ciphers",
+            "description": "Disable specific cryptographic ciphers. This policy was updated in Firefox 78 to allow enabling ciphers as well. Setting the value to true disables the cipher, setting the value to false enables the cipher. Previously setting the value to true or false disabled the cipher.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disabledciphers"
+                }
+            ],
+            "properties": {
+                "TLS_DHE_RSA_WITH_AES_128_CBC_SHA": {
+                    "type": "boolean"
+                },
+                "TLS_DHE_RSA_WITH_AES_256_CBC_SHA": {
+                    "type": "boolean"
+                },
+                "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA": {
+                    "type": "boolean"
+                },
+                "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA": {
+                    "type": "boolean"
+                },
+                "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256": {
+                    "type": "boolean"
+                },
+                "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256": {
+                    "type": "boolean"
+                },
+                "TLS_RSA_WITH_AES_128_CBC_SHA": {
+                    "type": "boolean"
+                },
+                "TLS_RSA_WITH_AES_256_CBC_SHA": {
+                    "type": "boolean"
+                },
+                "TLS_RSA_WITH_AES_128_GCM_SHA256": {
+                    "type": "boolean"
+                },
+                "TLS_RSA_WITH_AES_256_GCM_SHA384": {
+                    "type": "boolean"
+                },
+                "TLS_RSA_WITH_3DES_EDE_CBC_SHA": {
+                    "type": "boolean"
+                }
+            },
+            "property_order": 280
+        },
+        "DNSOverHTTPS": {
+            "type": "dictionary",
+            "title": "DNS over HTTPS",
+            "description": "Configure DNS over HTTPS.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#dnsoverhttps"
+                }
+            ],
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enable DNS over HTTPS."
+                },
+                "ProviderURL": {
+                    "type": "string",
+                    "title": "Provider URL",
+                    "description": "URL to an alternative DNS over HTTPS provider."
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this is true, DNS over HTTPS preferences cannot be changed."
+                },
+                "ExcludedDomains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Excluded Domains"
+                    },
+                    "title": "Excluded Domains",
+                    "description": "List of excluded domains from DNS over HTTPS."
+                }
+            },
+            "property_order": 285
+        },
+        "Proxy": {
+            "type": "dictionary",
+            "description": "Configure proxy settings. These settings correspond to the connection settings in Firefox preferences. To specify ports, append them to the hostnames with a colon (:).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#proxy"
+                }
+            ],
+            "properties": {
+                "Mode": {
+                    "type": "string",
+                    "description": "If this preference is enabled, you will be setting the proxy mode.",
+                    "enum": [
+                        "none",
+                        "system",
+                        "manual",
+                        "autoDetect",
+                        "autoConfig"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "No Proxy",
+                            "Use system proxy settings",
+                            "Manual proxy configuration",
+                            "Auto-detect proxy settings",
+                            "Automatic proxy configuration"
+                        ]
+                    }
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If this preference is enabled, Proxy preferences cannot be changed."
+                },
+                "AutoLogin": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this preference is enabled, do not prompt for authentication if password is saved."
+                },
+                "UseProxyForDNS": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this preference is enabled, you will use Proxy DNS when using SOCKS v5."
+                },
+                "HTTPProxy": {
+                    "type": "string",
+                    "title": "HTTP Proxy",
+                    "description": "HTTP Proxy URL."
+                },
+                "UseHTTPProxyForAllProtocols": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this preference is enabled, use the HTTP proxy server for all protocols."
+                },
+                "SSLProxy": {
+                    "type": "string",
+                    "title": "SSL Proxy",
+                    "description": "SSL Proxy URL."
+                },
+                "FTPProxy": {
+                    "type": "string",
+                    "title": "FTP Proxy",
+                    "description": "FTP Proxy URL."
+                },
+                "SOCKSProxy": {
+                    "type": "string",
+                    "title": "SOCKS Proxy",
+                    "description": "SOCKS Proxy URL."
+                },
+                "SOCKSVersion": {
+                    "type": "string",
+                    "title": "SOCKS Version",
+                    "description": "Select SOCKS Version.",
+                    "enum": [
+                        "4",
+                        "5"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "4",
+                            "5"
+                        ]
+                    }
+                },
+                "Passthrough": {
+                    "type": "string",
+                    "title": "No Proxy For",
+                    "default": "localhost, 127.0.0.1",
+                    "description": "Proxy bypass URLs."
+                },
+                "AutoConfigURL": {
+                    "type": "string",
+                    "title": "Automatic Proxy Configuration URL",
+                    "description": "Proxy bypass URLs."
+                }
+            },
+            "property_order": 290
+        },
+        "SSLVersionMin": {
+            "type": "string",
+            "title": "SSLVersionMin",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#sslversionmin"
+                }
+            ],
+            "enum": [
+                "tls1",
+                "tls1.1",
+                "tls1.2",
+                "tls1.3"
+            ],
+            "options": {
+                "enum_titles": [
+                    "TLS 1.0",
+                    "TLS 1.1",
+                    "TLS 1.2",
+                    "TLS 1.3"
+                ]
+            },
+            "property_order": 295
+        },
+        "SSLVersionMax": {
+            "type": "string",
+            "title": "SSLVersionMax",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#sslversionmax"
+                }
+            ],
+            "enum": [
+                "tls1",
+                "tls1.1",
+                "tls1.2",
+                "tls1.3"
+            ],
+            "options": {
+                "enum_titles": [
+                    "TLS 1.0",
+                    "TLS 1.1",
+                    "TLS 1.2",
+                    "TLS 1.3"
+                ]
+            },
+            "property_order": 300
+        },
+        "NetworkPrediction": {
+            "type": "boolean",
+            "title": "Network Prediction",
+            "description": "Enable or disable network prediction (DNS prefetching).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#networkprediction"
+                }
+            ],
+            "property_order": 305
+        },
+        "Cookies": {
+            "type": "dictionary",
+            "description": "Configure cookie preferences.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#cookies"
+                }
+            ],
+            "properties": {
+                "Allow": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL",
+                        "pattern": "^https?://.*$"
+                    },
+                    "title": "Allow",
+                    "description": "A list of origins (not domains) where cookies are always allowed."
+                },
+                "AllowSession": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL",
+                        "pattern": "^https?://.*$"
+                    },
+                    "title": "Allow Session",
+                    "description": "A list of origins (not domains) where cookies are only allowed for the current session."
+                },
+                "Block": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL",
+                        "pattern": "^https?://.*$"
+                    },
+                    "title": "Block",
+                    "description": "A list of origins (not domains) where cookies are always blocked."
+                },
+                "Default": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "This sets the default value for \"Accept cookies from websites\"."
+                },
+                "AcceptThirdParty": {
+                    "type": "string",
+                    "description": "This sets the default value for \"Accept third-party cookies\".",
+                    "enum": [
+                        "always",
+                        "never",
+                        "from-visited"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "always",
+                            "never",
+                            "from-visited"
+                        ]
+                    }
+                },
+                "ExpireAtSessionEnd": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "This determines when cookies expire."
+                },
+                "RejectTracker": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Only reject trackers."
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this is true, cookies preferences cannot be changed."
+                }
+            },
+            "property_order": 310
+        },
+        "DisableFormHistory": {
+            "type": "boolean",
+            "title": "Disable Form History",
+            "default": true,
+            "description": "Turn off saving information on web forms and the search bar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableformhistory"
+                }
+            ],
+            "property_order": 315
+        },
+        "DisablePasswordReveal": {
+            "type": "boolean",
+            "title": "Disable Password Reveal",
+            "default": true,
+            "description": "Do not allow passwords to be shown in saved logins",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablepasswordreveal"
+                }
+            ],
+            "property_order": 320
+        },
+        "DisableTelemetry": {
+            "type": "boolean",
+            "title": "Disable Telemetry",
+            "default": true,
+            "description": "Prevent the upload of telemetry data.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disabletelemetry"
+                }
+            ],
+            "property_order": 325
+        },
+        "EnableTrackingProtection": {
+            "type": "dictionary",
+            "title": "Enable Tracking Protection",
+            "default": {
+                "Locked": true,
+                "Value": true
+            },
+            "description": "Configure tracking protection. If this policy is not configured, tracking protection is not enabled by default in the browser, but it is enabled by default in private browsing and the user can change it.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#enabletrackingprotection"
+                }
+            ],
+            "properties": {
+                "Value": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If Value is set to false, tracking protection is disabled and locked in both the regular browser and private browsing. If Value is set to true, tracking protection is enabled by default in both the regular browser and private browsing."
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this is true, Tracking Protection preferences cannot be changed."
+                },
+                "Cryptomining": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If Cryptomining is set to true, cryptomining scripts on websites are blocked."
+                },
+                "Fingerprinting": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If Fingerprinting is set to true, fingerprinting scripts on websites are blocked."
+                }
+            },
+            "property_order": 330
+        },
+        "FlashPlugin": {
+            "type": "dictionary",
+            "title": "Flash Plugin Permissions",
+            "description": "Configure the default Flash plugin policy as well as origins for which Flash is allowed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#flashplugin"
+                }
+            ],
+            "properties": {
+                "Allow": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^https?://.*"
+                    },
+                    "title": "Allowed Domains",
+                    "description": "If this preference is enabled, sites on the allow list do not override Flash being completely disabled. Flash is activated by default for the domains indicated unless Flash is completely disabled. If a top level domain is specified (http://example.org), Flash is allowed for all subdomains as well."
+                },
+                "Block": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^https?://.*"
+                    },
+                    "title": "Blocked Domains",
+                    "description": "If this preference is enabled, Flash is blocked for the domains indicated. If a top level domain is specified (http://example.org), Flash is blocked from all subdomains as well."
+                },
+                "Default": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this is true, Flash preferences cannot be changed. If this is false, Flash is never activated on websites even if they are in the specified in the Allow list."
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this is true, Flash preferences cannot be changed."
+                }
+            },
+            "property_order": 335
+        },
+        "InstallAddonsPermission": {
+            "type": "dictionary",
+            "title": "Install Add-ons Permissions",
+            "description": "Configure the default extension install policy as well as origins for extension installs are allowed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#installaddonspermission"
+                }
+            ],
+            "properties": {
+                "Allow": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Allowed Domains",
+                    "description": "If this preference is enabled, add-ons are always allowed for the domains indicated unless add-on install is disabled. If a top level domain is specified (http://example.org), add-ons are allowed for all subdomains as well."
+                },
+                "Default": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this is set to false, add-ons cannot be installed by the user."
+                }
+            },
+            "property_order": 340
+        },
+        "OfferToSaveLogins": {
+            "type": "boolean",
+            "title": "Offer To Save Logins",
+            "default": false,
+            "description": "Control whether or not Firefox offers to save passwords.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#offertosavelogins"
+                }
+            ],
+            "property_order": 345
+        },
+        "OfferToSaveLoginsDefault": {
+            "type": "boolean",
+            "title": "Offer To Save Logins Default",
+            "default": false,
+            "description": "Sets the default value of signon.rememberSignons without locking it.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#offertosaveloginsdefault"
+                }
+            ],
+            "property_order": 350
+        },
+        "PasswordManagerEnabled": {
+            "type": "boolean",
+            "title": "Enable Password Manager",
+            "default": false,
+            "description": "Remove access to the password manager via preferences and blocks about:logins on Firefox 70.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#passwordmanagerenabled"
+                }
+            ],
+            "property_order": 355
+        },
+        "Permissions": {
+            "type": "dictionary",
+            "description": "Set permissions associated with camera, microphone, location, notifications, and autoplay.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#permissions"
+                }
+            ],
+            "properties": {
+                "Camera": {
+                    "type": "dictionary",
+                    "title": "Camera Permissions",
+                    "description": "This preference allows you to change the camera permissions.",
+                    "properties": {
+                        "Allow": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, access to the camera is always allowed for the domains indicated. If this preference is disabled or not configured, the default camera preference is followed."
+                        },
+                        "Block": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, access to the camera is blocked for the domains indicated. If this preference is disabled or not configured, access to the camera is not blocked by default."
+                        },
+                        "BlockNewRequests": {
+                            "type": "boolean",
+                            "title": "Block New Requests",
+                            "default": true,
+                            "description": "If this preference is enabled, sites that are not in the Allow preference will not be allowed to ask permission to access the camera. If this preference is disabled or not configured, any site that is not in the Block preference can ask permission to access the camera."
+                        },
+                        "Locked": {
+                            "type": "boolean",
+                            "default": false,
+                            "description": "If this preference is enabled, camera preferences cannot be changed by the user. If this preference is disabled or not configured, the user can change their camera preferences."
+                        }
+                    }
+                },
+                "Microphone": {
+                    "type": "dictionary",
+                    "title": "Microphone Permissions",
+                    "description": "This preference allows you to change the microphone permissions.",
+                    "properties": {
+                        "Allow": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, access to the microphone is always allowed for the domains indicated. If this preference is disabled or not configured, the default microphone preference is followed."
+                        },
+                        "Block": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, access to the microphone is blocked for the domains indicated. If this preference is disabled or not configured, access to the microphone is not blocked by default."
+                        },
+                        "BlockNewRequests": {
+                            "type": "boolean",
+                            "title": "Block New Requests",
+                            "default": true,
+                            "description": "If this preference is enabled, sites that are not in the Allow preference will not be allowed to ask permission to access the microphone. If this preference is disabled or not configured, any site that is not in the Block preference can ask permission to access the microphone."
+                        },
+                        "Locked": {
+                            "type": "boolean",
+                            "default": false,
+                            "description": "If this preference is enabled, microphone preferences cannot be changed by the user. If this preference is disabled or not configured, the user can change their microphone preferences."
+                        }
+                    }
+                },
+                "Location": {
+                    "type": "dictionary",
+                    "title": "Location Permissions",
+                    "description": "This preference allows you to change the location permissions.",
+                    "properties": {
+                        "Allow": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, access to location is always allowed for the domains indicated. If this preference is disabled or not configured, the default location preference is followed."
+                        },
+                        "Block": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, access to location is blocked for the domains indicated. If this preference is disabled or not configured, access to location is not blocked by default."
+                        },
+                        "BlockNewRequests": {
+                            "type": "boolean",
+                            "title": "Block New Requests",
+                            "default": true,
+                            "description": "If this preference is enabled, sites that are not in the Allow preference will not be allowed to ask permission to access location. If this preference is disabled or not configured, any site that is not in the Block preference can ask permission to access the location."
+                        },
+                        "Locked": {
+                            "type": "boolean",
+                            "default": false,
+                            "description": "If this preference is enabled, location preferences cannot be changed by the user. If this preference is disabled or not configured, the user can change their location preferences."
+                        }
+                    }
+                },
+                "Notifications": {
+                    "type": "dictionary",
+                    "title": "Notifications Permissions",
+                    "description": "This preference allows you to change the notifications permissions.",
+                    "properties": {
+                        "Allow": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, notifications can always be sent for the domains indicated. If this preference is disabled or not configured, the default nofication preference is followed."
+                        },
+                        "Block": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, notifications are always blocked for the domains indicated. If this preference is disabled or not configured, notifications are not blocked by default."
+                        },
+                        "BlockNewRequests": {
+                            "type": "boolean",
+                            "title": "Block New Requests",
+                            "default": true,
+                            "description": "If this preference is enabled, sites that are not in the Allow preference will not be allowed to ask permission to send notifications. If this preference is disabled or not configured, any site that is not in the Block preference can ask permission to send notifications."
+                        },
+                        "Locked": {
+                            "type": "boolean",
+                            "default": false,
+                            "description": "If this preference is enabled, notification preferences cannot be changed by the user. If this preference is disabled or not configured, the user can change their notification preferences."
+                        }
+                    }
+                },
+                "Autoplay": {
+                    "type": "dictionary",
+                    "title": "Autoplay Permissions",
+                    "description": "This preference allows you to change the autoplay permissions.",
+                    "properties": {
+                        "Allow": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, autoplay can always be enabled for the domains indicated. If this preference is disabled or not configured, the default autoplay preference is followed."
+                        },
+                        "Block": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, autoplay are always blocked for the domains indicated. If this preference is disabled or not configured, autoplay is not blocked by default."
+                        },
+                        "Default": {
+                            "type": "string",
+                            "title": "Default Autoplay Behavior",
+                            "description": "Configures the default Autoplay behavior.",
+                            "enum": [
+                                "allow-audio-video",
+                                "block-audio",
+                                "block-audio-video"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Allow Audio & Video",
+                                    "Block Audio",
+                                    "Block Audio & Video"
+                                ]
+                            }
+                        },
+                        "Locked": {
+                            "type": "boolean",
+                            "title": "Locked",
+                            "default": false,
+                            "description": "If this preference is enabled, autoplay preferences cannot be changed by the user. If this preference is disabled or not configured, the user can change their autoplay preferences."
+                        }
+                    }
+                },
+                "VirtualReality": {
+                    "type": "dictionary",
+                    "title": "Virutal Reality Permissions",
+                    "description": "This preference allows you to change the virtual reality permissions.",
+                    "properties": {
+                        "Allow": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, access to virtual reality is always allowed for the domains indicated. If this preference is disabled or not configured, the default virtual reality preference is followed."
+                        },
+                        "Block": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "If this preference is enabled, access to virtual reality is blocked for the domains indicated. If this preference is disabled or not configured, access to the virtual reality is not blocked by default."
+                        },
+                        "BlockNewRequests": {
+                            "type": "boolean",
+                            "title": "Block New Requests",
+                            "default": true,
+                            "description": "If this preference is enabled, sites that are not in the Allow preference will not be allowed to ask permission to access virtual reality. If this preference is disabled or not configured, any site that is not in the Block preference can ask permission to access virtual reality."
+                        },
+                        "Locked": {
+                            "type": "boolean",
+                            "default": false,
+                            "description": "If this preference is enabled, virtual reality preferences cannot be changed by the user. If this preference is disabled or not configured, the user can change their virtual reality preferences."
+                        }
+                    }
+                }
+            },
+            "property_order": 360
+        },
+        "PopupBlocking": {
+            "type": "dictionary",
+            "title": "Popup Blocking",
+            "description": "Configure the default pop-up window policy as well as origins for which pop-up windows are allowed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#popupblocking"
+                }
+            ],
+            "properties": {
+                "Allow": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Allowed Domains",
+                    "description": "Specify the domains for which pop-up windows are always allowed. If a top level domain is specified (http://example.org), pop-up windows are allowed for all subdomains as well."
+                },
+                "Default": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If this is false, pop-up windows are allowed by default."
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If this is true, pop-up blocking preferences cannot be changed."
+                }
+            },
+            "property_order": 365
+        },
+        "Certificates": {
+            "type": "dictionary",
+            "description": "Trust certificates that have been added to the operating system certificate store by a user or administrator in the macOS Keychain.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#certificates"
+                }
+            ],
+            "properties": {
+                "ImportEnterpriseRoots": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If this preference is enabled, Firefox will read certificates from the macOS keychain. If this preference is disabled or not configured, Firefox will not read certificates from the macOS keychain.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#certificates--importenterpriseroots"
+                        }
+                    ]
+                },
+                "Install": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Install",
+                    "description": "If this preference is enabled, Firefox will install the listed certificates. It will look in /Library/Application Support/Mozilla/Certificates and ~/Library/Application Support/Mozilla/Certificates.\n\nIf this preference is disabled or not configured, Firefox will not install additional certificates.\n\nStarting in Firefox 65, you can specify a fully qualified path (e.g. /Library/Company/cer1.der). If Firefox does not find something at your fully qualified path, it will search the default directories.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#certificates--install"
+                        }
+                    ]
+                }
+            },
+            "property_order": 370
+        },
+        "DisableSecurityBypass": {
+            "type": "dictionary",
+            "title": "Disable Security Bypass",
+            "description": "Prevent the user from bypassing security in certain cases.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablesecuritybypass"
+                }
+            ],
+            "properties": {
+                "InvalidCertificate": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Prevents adding an exception when an invalid certificate is shown. If this preference is enabled, the \"Add Exception\" button is not available when a certificate is invalid. This prevents the user from overriding the certificate error. If this preference is disabled or not configured, certificate errors can be overridden."
+                },
+                "SafeBrowsing": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Prevents selecting \"ignore the risk\" and visiting a harmful site anyway. If this preference is enabled, a user cannot bypass the warning and visit a harmful site. If this preference is disabled or not configured, a user can choose to visit a harmful site."
+                }
+            },
+            "property_order": 375
+        },
+        "SecurityDevices": {
+            "type": "dictionary",
+            "default": {
+                "NAME_OF_DEVICE": "PATH_TO_LIBRARY_FOR_DEVICE"
+            },
+            "description": "Install PKCS #11 modules.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#securitydevices"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Device Name"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Library Path"
+                }
+            },
+            "property_order": 380
+        },
+        "UserMessaging": {
+            "type": "dictionary",
+            "title": "Search Engine Installs from Websites",
+            "description": "Prevent installing search engines from webpages.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#usermessaging"
+                }
+            ],
+            "properties": {
+                "WhatsNew": {
+                    "type": "boolean",
+                    "title": "What's New",
+                    "description": "If enabled, remove the \"What's New\" icon and menuitem."
+                },
+                "ExtensionRecommendations": {
+                    "type": "boolean",
+                    "title": "Extension Recomendations",
+                    "description": "If enabled, don't recommend extensions."
+                },
+                "FeatureRecommendations": {
+                    "type": "boolean",
+                    "title": "Feature Recommendations",
+                    "description": "If enabled, don't recommend browser features."
+                },
+                "UrlbarInterventions": {
+                    "type": "boolean",
+                    "title": "URL Bar Interventions",
+                    "description": "If enabled, don't offer Firefox specific suggestions in the URL bar."
+                }
+            },
+            "property_order": 385
+        },
+        "WebsiteFilter": {
+            "type": "dictionary",
+            "description": "Block websites from being visited. The parameters take an array of Match Patterns, as documented in https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. Only http/https addresses are supported at the moment. The arrays are limited to 1000 entries each.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#websitefilter"
+                }
+            ],
+            "properties": {
+                "Block": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Blocked Sites"
+                    },
+                    "title": "Block",
+                    "description": "If this preference is enabled, you can specify match patterns that indicate sites to be blocked. The match patterns are documented at https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. Only http/https addresses are supported at the moment. There is a 1000 entry limit. If this preference is disabled or not configured, no websites are blocked."
+                },
+                "Exceptions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Exceptions To Website Filter",
+                        "pattern": "^https?://.*"
+                    },
+                    "title": "Exceptions",
+                    "description": "If this preference is enabled, and the website filter is enabled, you can specify match patterns for sites you do not want to block. The match patterns are documented at https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. Only http/https addresses are supported at the moment. There is a 1000 entry limit. If this preference is disabled or not configured, there are no exceptions to the website filter."
+                }
+            },
+            "property_order": 390
+        },
+        "CaptivePortal": {
+            "type": "boolean",
+            "title": "Captive Portal",
+            "description": "Enable or disable the detection of captive portals.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates#captiveportal"
+                }
+            ],
+            "property_order": 395
+        },
+        "Preferences": {
+            "type": "dictionary",
+            "title": "Preferences",
+            "description": "Set and lock certain preferences.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#preferences"
+                }
+            ],
+            "properties": {
+                "accessibility.force_disabled": {
+                    "type": "integer",
+                    "title": "accessibility.force_disabled",
+                    "default": 0,
+                    "description": "If set to 1, platform accessibility is disabled.",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Not Disabled",
+                            "Disabled"
+                        ]
+                    }
+                },
+                "app.update.auto": {
+                    "type": "boolean",
+                    "title": "app.update.auto",
+                    "default": true,
+                    "description": "If false, Firefox doesn't automatically install update."
+                },
+                "browser.bookmarks.autoExportHTML": {
+                    "type": "boolean",
+                    "title": "browser.bookmarks.autoExportHTML",
+                    "default": false,
+                    "description": "If true, bookmarks are exported on shutdown."
+                },
+                "browser.bookmarks.file": {
+                    "type": "string",
+                    "title": "browser.bookmarks.file",
+                    "description": " If set, the name of the file where bookmarks are exported and imported."
+                },
+                "browser.bookmarks.restore_default_bookmarks": {
+                    "type": "boolean",
+                    "title": "browser.bookmarks.restore_default_bookmarks",
+                    "default": false,
+                    "description": "If true, bookmarks are restored to their defaults."
+                },
+                "browser.cache.disk.enable": {
+                    "type": "boolean",
+                    "title": "browser.cache.disk.enable",
+                    "default": true,
+                    "description": "If false, don't store cache on the hard drive."
+                },
+                "browser.cache.disk.parent_directory": {
+                    "type": "string",
+                    "title": "browser.cache.disk.parent_directory",
+                    "default": "Profile temporary directory",
+                    "description": "If set, changes the location of the disk cache."
+                },
+                "browser.fixup.dns_first_for_single_words": {
+                    "type": "boolean",
+                    "title": "browser.fixup.dns_first_for_single_words",
+                    "default": false,
+                    "description": "If true, single words are sent to DNS, not directly to search."
+                },
+                "browser.newtabpage.activity-stream.default.sites": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Sites"
+                    },
+                    "title": "browser.newtabpage.activity-stream.default.sites",
+                    "description": "If set, a list of URLs to use as the default top sites on the new tab page."
+                },
+                "browser.places.importBookmarksHTML": {
+                    "type": "boolean",
+                    "title": "browser.places.importBookmarksHTML",
+                    "description": "If true, bookmarks are always imported on startup."
+                },
+                "browser.safebrowsing.malware.enabled": {
+                    "type": "boolean",
+                    "title": "browser.safebrowsing.malware.enabled",
+                    "default": true,
+                    "description": "If false, malware protection is not enabled (Not recommended)"
+                },
+                "browser.safebrowsing.phishing.enabled": {
+                    "type": "boolean",
+                    "title": "browser.safebrowsing.phishing.enabled",
+                    "default": true,
+                    "description": "If false, phishing protection is not enabled (Not recommended)"
+                },
+                "browser.search.update": {
+                    "type": "boolean",
+                    "title": "browser.search.update",
+                    "default": true,
+                    "description": "If false, updates for search engines are not checked."
+                },
+                "browser.slowStartup.notificationDisabled": {
+                    "type": "boolean",
+                    "title": "browser.slowStartup.notificationDisabled",
+                    "default": false,
+                    "description": " If true, a notification isn't shown if startup is slow."
+                },
+                "browser.tabs.warnOnClose": {
+                    "type": "boolean",
+                    "title": "browser.tabs.warnOnClose",
+                    "default": true,
+                    "description": "If false, there is no warning when the browser is closed."
+                },
+                "browser.taskbar.previews.enable": {
+                    "type": "boolean",
+                    "title": "browser.taskbar.previews.enable",
+                    "default": false,
+                    "description": "If true, tab previews are shown in the Windows taskbar."
+                },
+                "browser.urlbar.suggest.bookmark": {
+                    "type": "boolean",
+                    "title": "browser.urlbar.suggest.bookmark",
+                    "default": true,
+                    "description": "If false, bookmarks aren't suggested when typing in the URL bar."
+                },
+                "browser.urlbar.suggest.history": {
+                    "type": "boolean",
+                    "title": "browser.urlbar.suggest.history",
+                    "default": true,
+                    "description": "If false, history isn't suggested when typing in the URL bar."
+                },
+                "browser.urlbar.suggest.openpage": {
+                    "type": "boolean",
+                    "title": "browser.urlbar.suggest.openpage",
+                    "default": true,
+                    "description": "If false, open tabs aren't suggested when typing in the URL bar."
+                },
+                "datareporting.policy.dataSubmissionPolicyBypassNotification": {
+                    "type": "boolean",
+                    "title": "datareporting.policy.dataSubmissionPolicyBypassNotification",
+                    "default": false,
+                    "description": "If true, don't show the privacy policy tab on first run."
+                },
+                "dom.allow_scripts_to_close_windows": {
+                    "type": "boolean",
+                    "title": "dom.allow_scripts_to_close_windows",
+                    "default": true,
+                    "description": "If false, web page can close windows."
+                },
+                "dom.disable_window_flip": {
+                    "type": "boolean",
+                    "title": "dom.disable_window_flip",
+                    "default": true,
+                    "description": "If false, web pages can focus and activate windows."
+                },
+                "dom.disable_window_move_resize": {
+                    "type": "boolean",
+                    "title": "dom.disable_window_move_resize",
+                    "default": false,
+                    "description": "If true, web pages can't move or resize windows."
+                },
+                "dom.event.contextmenu.enabled": {
+                    "type": "boolean",
+                    "title": "dom.event.contextmenu.enabled",
+                    "default": true,
+                    "description": "If false, web pages can't override context menus."
+                },
+                "dom.keyboardevent.keypress.hack.dispatch_non_printable_keys.addl": {
+                    "type": "string",
+                    "title": "dom.keyboardevent.keypress.hack.dispatch_non_printable_keys.addl",
+                    "description": "See https://support.mozilla.org/en-US/kb/dom-events-changes-introduced-firefox-66"
+                },
+                "dom.keyboardevent.keypress.hack.use_legacy_keycode_and_charcode.addl": {
+                    "type": "string",
+                    "title": "dom.keyboardevent.keypress.hack.use_legacy_keycode_and_charcode.addl",
+                    "description": "See https://support.mozilla.org/en-US/kb/dom-events-changes-introduced-firefox-66"
+                },
+                "extensions.blocklist.enabled": {
+                    "type": "boolean",
+                    "title": "extensions.blocklist.enabled",
+                    "default": true,
+                    "description": "If false, the extensions blocklist is not used (Not recommended)"
+                },
+                "extensions.getAddons.showPane": {
+                    "type": "boolean",
+                    "title": "extensions.getAddons.showPane",
+                    "default": false,
+                    "description": "If false, the Recommendations tab is not displayed in the Add-ons Manager."
+                },
+                "extensions.htmlaboutaddons.recommendations.enabled": {
+                    "type": "boolean",
+                    "title": "extensions.htmlaboutaddons.recommendations.enabled",
+                    "default": true,
+                    "description": "If false, recommendations are not shown on the Extensions tab in the Add-ons Manager."
+                },
+                "geo.enabled": {
+                    "type": "boolean",
+                    "title": "geo.enabled",
+                    "default": true,
+                    "description": "If false, the geolocation API is disabled."
+                },
+                "intl.accept_languages": {
+                    "type": "string",
+                    "title": "intl.accept_languages",
+                    "description": "If set, preferred language for web pages."
+                },
+                "media.eme.enabled": {
+                    "type": "boolean",
+                    "title": "media.eme.enabled",
+                    "default": true,
+                    "description": "If false, Encrypted Media Extensions are not enabled."
+                },
+                "media.gmp-gmpopenh264.enabled": {
+                    "type": "boolean",
+                    "title": "media.gmp-gmpopenh264.enabled",
+                    "default": true,
+                    "description": "If false, the OpenH264 plugin is not downloaded."
+                },
+                "media.gmp-widevinecdm.enabled": {
+                    "type": "boolean",
+                    "title": "media.gmp-widevinecdm.enabled",
+                    "default": true,
+                    "description": "If false, the Widevine plugin is not downloaded."
+                },
+                "media.peerconnection.enabled": {
+                    "type": "boolean",
+                    "title": "media.peerconnection.enabled",
+                    "default": true,
+                    "description": "If false, WebRTC is disabled"
+                },
+                "media.peerconnection.ice.obfuscate_host_addresses.blocklist": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Domains"
+                    },
+                    "title": "media.peerconnection.ice.obfuscate_host_addresses.blocklist",
+                    "description": "If set, a list of domains for which mDNS hostname obfuscation is disabled."
+                },
+                "network.dns.disableIPv6": {
+                    "type": "boolean",
+                    "title": "network.dns.disableIPv6",
+                    "default": false,
+                    "description": "If true, IPv6 DNS lokoups are disabled."
+                },
+                "network.IDN_show_punycode": {
+                    "type": "boolean",
+                    "title": "network.IDN_show_punycode",
+                    "default": false,
+                    "description": "If true, display the punycode version of internationalized domain names."
+                },
+                "places.history.enabled": {
+                    "type": "boolean",
+                    "title": "places.history.enabled",
+                    "default": true,
+                    "description": "If false, history is not enabled."
+                },
+                "print.save_print_settings": {
+                    "type": "boolean",
+                    "title": "print.save_print_settings",
+                    "default": true,
+                    "description": "If false, print settings are not saved between jobs."
+                },
+                "security.default_personal_cert": {
+                    "type": "string",
+                    "title": "security.default_personal_cert",
+                    "default": "Ask Every Time",
+                    "description": "If set to \"Select Automatically\", Firefox automatically chooses the default personal certificate. Other possible option is \"Ask Every Time\".",
+                    "enum": [
+                        "Ask Every Time",
+                        "Select Automatically"
+                    ]
+                },
+                "security.mixed_content.block_active_content": {
+                    "type": "boolean",
+                    "title": "security.mixed_content.block_active_content",
+                    "default": true,
+                    "description": "If false, mixed active content (HTTP and HTTPS) is not blocked."
+                },
+                "security.osclientcerts.autoload": {
+                    "type": "boolean",
+                    "title": "security.osclientcerts.autoload",
+                    "default": false,
+                    "description": "If true, client certificates are loaded from the operating system certificate store."
+                },
+                "security.ssl.errorReporting.enabled": {
+                    "type": "boolean",
+                    "title": "security.ssl.errorReporting.enabled",
+                    "default": true,
+                    "description": "If false, SSL errors cannot be sent to Mozilla."
+                },
+                "security.tls.hello_downgrade_check": {
+                    "type": "boolean",
+                    "title": "security.tls.hello_downgrade_check",
+                    "default": true,
+                    "description": "If false, the TLS 1.3 downgrade check is disabled."
+                },
+                "widget.content.gtk-theme-override": {
+                    "type": "string",
+                    "title": "widget.content.gtk-theme-override",
+                    "description": "If set, overrides the GTK theme for widgets."
+                }
+            },
+            "property_order": 400
+        },
+        "SupportMenu": {
+            "type": "dictionary",
+            "title": "Support Menu",
+            "description": "Adds a menuitem to the help menu for specifying support information.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#supportmenu"
+                }
+            ],
+            "properties": {
+                "Title": {
+                    "type": "string",
+                    "title": "Title"
+                },
+                "URL": {
+                    "type": "string",
+                    "title": "URL"
+                },
+                "AccessKey": {
+                    "type": "string",
+                    "title": "AccessKey"
+                }
+            },
+            "property_order": 405
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "title": "Security (com.apple.security)",
+    "description": "Security settings",
+    "properties": {
+        "GKAutoRearm": {
+            "type": "boolean",
+            "title": "Disable Gatekeeper Automatic Reenablement",
+            "property_order": 5
+        }
+    }
+}

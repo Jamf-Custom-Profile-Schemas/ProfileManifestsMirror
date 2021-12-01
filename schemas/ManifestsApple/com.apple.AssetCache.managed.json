@@ -1,0 +1,672 @@
+{
+    "title": "Content Caching (com.apple.AssetCache.managed)",
+    "description": "Content Caching settings",
+    "properties": {
+        "AutoActivation": {
+            "type": "boolean",
+            "title": "Automatically activate content caching",
+            "default": true,
+            "description": "Users can't turn off the content caching service.",
+            "property_order": 5
+        },
+        "CacheLimit": {
+            "type": "integer",
+            "title": "Maximum Cache Size",
+            "default": 0,
+            "description": "The maximum number of bytes of disk space that will be used for the content cache. The value of zero allows unlimited space.",
+            "property_order": 10
+        },
+        "AllowPersonalCaching": {
+            "type": "boolean",
+            "title": "Allow Personal iCloud Data Caching",
+            "default": true,
+            "description": "Clients may take some time (hours, days) to react to changes to this setting; it does not have an immediate effect. At least one of the AllowPersonalCaching or AllowSharedCaching keys must be true. Data includes documents and photos, among others.",
+            "property_order": 15
+        },
+        "PersonalCacheLimit": {
+            "type": "integer",
+            "title": "Max Personal Cache Size",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 20
+        },
+        "AllowSharedCaching": {
+            "type": "boolean",
+            "title": "Allow non-iCloud Data Caching",
+            "default": true,
+            "description": "Clients may take some time (hours, days) to react to changes to this setting; it does not have an immediate effect. At least one of the AllowPersonalCaching or AllowSharedCaching keys must be true. Data includes apps and software updates.",
+            "property_order": 25
+        },
+        "AutoEnableTetheredCaching": {
+            "type": "boolean",
+            "title": "Automatically activate Internet connection sharing",
+            "description": "Requires you to allow sharing the computer's Internet connection and cached content with iOS devices connected using USB.",
+            "property_order": 30
+        },
+        "Port": {
+            "type": "integer",
+            "title": "Port",
+            "default": 0,
+            "description": "TCP port on which the content caching service accepts requests for uploads or downloads. Set to 0 to pick a random port.",
+            "property_order": 35
+        },
+        "DataPath": {
+            "type": "string",
+            "title": "Data Path",
+            "default": "/Library/Application Support/Apple/AssetCache/Data",
+            "description": "The path to the directory used to store cached content. Changing this setting manually doesn't automatically move cached content from the old to the new location. To move content automatically, use Content Caching preferences. You can also set this value in Content Caching preferences.",
+            "property_order": 40
+        },
+        "DenyTetheredCaching": {
+            "type": "boolean",
+            "title": "Share Internet Connection",
+            "default": false,
+            "description": "Share this computer's Internet connection and cached content with iOS devices connected using USB.",
+            "property_order": 45
+        },
+        "LogClientIdentity": {
+            "type": "boolean",
+            "title": "Log Client Details",
+            "default": false,
+            "description": "Log the IP address and port number of clients that request content.",
+            "property_order": 50
+        },
+        "Parents": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "IP Address"
+            },
+            "title": "Parents IP Addresses",
+            "description": "A list of the local IP addresses of other content caches from which this cache should download or upload content instead of downloading from or uploading to Apple directly.",
+            "property_order": 55
+        },
+        "ParentSelectionPolicy": {
+            "type": "string",
+            "title": "Parent Selection Policy",
+            "default": "round-robin",
+            "description": "The policy to use when choosing among more than one configured parent content cache.",
+            "enum": [
+                "first-available",
+                "random",
+                "round-robin",
+                "sticky-available",
+                "url-path-hash"
+            ],
+            "options": {
+                "enum_titles": [
+                    "First available",
+                    "Random",
+                    "Round robin",
+                    "Sticky available",
+                    "Hash"
+                ]
+            },
+            "property_order": 60
+        },
+        "PublicRanges": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "RangeDict",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "title": "IP Address Type",
+                        "default": "IPv4",
+                        "enum": [
+                            "IPv4",
+                            "IPv6"
+                        ]
+                    },
+                    "first": {
+                        "type": "string",
+                        "title": "Start IP Address"
+                    },
+                    "last": {
+                        "type": "string",
+                        "title": "End IP Address"
+                    }
+                }
+            },
+            "title": "Public Ranges",
+            "description": "A range of public IP addresses that the cloud servers should use for matching clients to Content Caches.",
+            "property_order": 65
+        },
+        "AllowCacheDelete": {
+            "type": "boolean",
+            "title": "Allow Cache Delete",
+            "default": true,
+            "description": "Automatically remove content from the cache when the system needs disk space for other apps.",
+            "property_order": 70
+        },
+        "DisplayAlerts": {
+            "type": "boolean",
+            "title": "Display Content Caching Alerts",
+            "default": false,
+            "description": "Display Content Caching alerts as notifications.",
+            "property_order": 75
+        },
+        "KeepAwake": {
+            "type": "boolean",
+            "title": "Keep Awake for Content Caching",
+            "default": false,
+            "description": "Prevent the computer from sleeping while caching is on.",
+            "property_order": 80
+        },
+        "AgeForLowSpaceAlert": {
+            "type": "integer",
+            "title": "Low Space Alert",
+            "default": 30,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 85
+        },
+        "AllowImports": {
+            "type": "boolean",
+            "title": "Allow Imports",
+            "default": true,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 90
+        },
+        "AllowWirelessPortable": {
+            "type": "boolean",
+            "title": "Allow Laptop Wireless Caching",
+            "default": true,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 95
+        },
+        "DatabaseUpdateInterval": {
+            "type": "integer",
+            "title": "Cache Database Update Interval",
+            "default": 5,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 100
+        },
+        "DownloadMinRate": {
+            "type": "integer",
+            "title": "Minimum Download Rate",
+            "default": 8000,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 105
+        },
+        "DownloadTimeout": {
+            "type": "integer",
+            "title": "Download Timeout",
+            "default": 180,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 110
+        },
+        "ImportMaxRate": {
+            "type": "integer",
+            "title": "Max Import Rate",
+            "default": 0,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 115
+        },
+        "ImportMinRate": {
+            "type": "integer",
+            "title": "Min Import Rate",
+            "default": 2000,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 120
+        },
+        "ImportRateAttenuation": {
+            "type": "real",
+            "title": "Import Rate Attenuation",
+            "default": 0.2,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 125
+        },
+        "ImportTimeout": {
+            "type": "integer",
+            "title": "Import Timeout",
+            "default": 300,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 130
+        },
+        "Interface": {
+            "type": "string",
+            "default": "Listen on all interfaces",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "enum": [
+                "Listen on all interfaces",
+                "en0",
+                "en1",
+                "en2"
+            ],
+            "property_order": 135
+        },
+        "ListenWithPeersAndParents": {
+            "type": "boolean",
+            "title": "Listen with Peers and Parents",
+            "default": true,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 140
+        },
+        "MaxParentDepth": {
+            "type": "integer",
+            "title": "Max Parent Depth",
+            "default": 8,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 145
+        },
+        "MaxPeersToQuery": {
+            "type": "integer",
+            "title": "Max Peers to Query",
+            "default": 0,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 150
+        },
+        "MetricsInterval": {
+            "type": "integer",
+            "title": "Metrics Interval",
+            "default": 60,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 155
+        },
+        "MetricsMaxAge": {
+            "type": "integer",
+            "title": "Max Metrics Age",
+            "default": 30,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 160
+        },
+        "OriginDownloadTimeout": {
+            "type": "integer",
+            "title": "Origin Download Timeout",
+            "default": 60,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 165
+        },
+        "OriginUploadTimeout": {
+            "type": "integer",
+            "title": "Origin Upload Timeout",
+            "default": 600,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 170
+        },
+        "ParentDownloadTimeout": {
+            "type": "integer",
+            "title": "Parent Download Timeout",
+            "default": 60,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 175
+        },
+        "ParentUploadTimeout": {
+            "type": "integer",
+            "title": "Parent Upload Timeout",
+            "default": 600,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 180
+        },
+        "ParentRetryInterval": {
+            "type": "integer",
+            "title": "Parent Retry Interval",
+            "default": 900,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 185
+        },
+        "PruneAffinitiesAge": {
+            "type": "integer",
+            "title": "Prune Affinities Cache Age",
+            "default": 30,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 190
+        },
+        "PruneAffinitiesInterval": {
+            "type": "integer",
+            "title": "Prune Affinities Cache Interval",
+            "default": 7,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 195
+        },
+        "PruneAssetsAge": {
+            "type": "integer",
+            "title": "Prune Assets Age",
+            "default": 120,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 200
+        },
+        "PruneAssetsInterval": {
+            "type": "integer",
+            "title": "Prune Assets Interval",
+            "default": 7,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 205
+        },
+        "ReservedVolumeSpace": {
+            "type": "integer",
+            "title": "Reserved Volume Size",
+            "default": 2000000000,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 210
+        },
+        "TerminationTimeout": {
+            "type": "integer",
+            "title": "Termination Timeout",
+            "default": 10,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 215
+        },
+        "Verbose": {
+            "type": "boolean",
+            "default": false,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 220
+        },
+        "LocalSubnetsOnly": {
+            "type": "boolean",
+            "title": "Restrict Clients To Local Network",
+            "default": true,
+            "description": "Content Cache offers content to clients only on the same immediate local network.",
+            "property_order": 225
+        },
+        "ListenRangesOnly": {
+            "type": "boolean",
+            "title": "Restrict To Client Listen Ranges",
+            "default": false,
+            "description": "Provide content only to the clients specified by the listen ranges.",
+            "property_order": 230
+        },
+        "ListenRanges": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "title": "IP Address Type",
+                        "default": "IPv4",
+                        "description": "IP version",
+                        "enum": [
+                            "IPv4",
+                            "IPv6"
+                        ]
+                    },
+                    "first": {
+                        "type": "string",
+                        "title": "Start IP Address",
+                        "description": "First IP address in range"
+                    },
+                    "last": {
+                        "type": "string",
+                        "title": "End IP Address",
+                        "description": "Last IP address in range"
+                    }
+                }
+            },
+            "title": "Client Listen Ranges",
+            "description": "A range of IPv4 and IPv6 addresses to restrict clients to.",
+            "property_order": 235
+        },
+        "MaxConcurrentClients": {
+            "type": "integer",
+            "title": "Max Concurrent Clients",
+            "default": 3400,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 240
+        },
+        "PeerLocalSubnetsOnly": {
+            "type": "boolean",
+            "title": "Restrict Peers To Local Network",
+            "default": true,
+            "description": "Content Cache will only peer with other Content Caches on the same immediate local network, rather than with Content Caches that use the same public IP address as the device.",
+            "property_order": 245
+        },
+        "PeerFilterRanges": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "RangeDict",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "title": "IP Address Type",
+                        "default": "IPv4",
+                        "enum": [
+                            "IPv4",
+                            "IPv6"
+                        ]
+                    },
+                    "first": {
+                        "type": "string",
+                        "title": "Start IP Address"
+                    },
+                    "last": {
+                        "type": "string",
+                        "title": "End IP Address"
+                    }
+                }
+            },
+            "title": "Peer Filter Ranges",
+            "description": "A range of peer IP addresses that the Content Cache will use to filter its list of peers to query for content.",
+            "property_order": 250
+        },
+        "PeerListenRanges": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "RangeDict",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "title": "IP Address Type",
+                        "default": "IPv4",
+                        "enum": [
+                            "IPv4",
+                            "IPv6"
+                        ]
+                    },
+                    "first": {
+                        "type": "string",
+                        "title": "Start IP Address"
+                    },
+                    "last": {
+                        "type": "string",
+                        "title": "End IP Address"
+                    }
+                }
+            },
+            "title": "Peer Listen Ranges",
+            "description": "A range of peer IP addresses the Content Cache will respond to peer cache queries from.",
+            "property_order": 255
+        },
+        "PeerDownloadTimeout": {
+            "type": "integer",
+            "title": "Peer Download Timeout",
+            "default": 30,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 260
+        },
+        "PeerNotifyTimeout": {
+            "type": "integer",
+            "title": "Peer Notify Timeout",
+            "default": 30,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 265
+        },
+        "PeerQueryTimeout": {
+            "type": "integer",
+            "title": "Peer Query Timeout",
+            "default": 5,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 270
+        },
+        "PeerRetryInterval": {
+            "type": "integer",
+            "title": "Peer Retry Interval",
+            "default": 900,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/guide/mac-help/configure-advanced-content-caching-settings-mchl91e7141a/10.15/mac/10.15"
+                }
+            ],
+            "property_order": 275
+        }
+    }
+}

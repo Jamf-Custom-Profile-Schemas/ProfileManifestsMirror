@@ -1,0 +1,413 @@
+{
+    "title": "NoMAD Pro (menu.nomad.NoMADPro)",
+    "description": "NoMAD Pro settings",
+    "properties": {
+        "AuthServer": {
+            "type": "string",
+            "default": "dev-660125.oktapreview.com",
+            "description": "URL for the Okta server, note no preceding https: is required.",
+            "property_order": 5
+        },
+        "LicenseFile": {
+            "type": "data",
+            "description": "The contents of a .nomadlicense file encoded as Base64 data.",
+            "property_order": 10
+        },
+        "PeriodicUpdateTime": {
+            "type": "integer",
+            "default": 15,
+            "description": "Time in minutes between periodic background updates.",
+            "property_order": 15
+        },
+        "SignInCommand": {
+            "type": "string",
+            "description": "Path to a script or other binary to be run after a successful sign in.",
+            "property_order": 20
+        },
+        "UseKeychainPrompt": {
+            "type": "boolean",
+            "description": "Shows the Sign In window on launch unless the user has a password in the keychain.",
+            "property_order": 25
+        },
+        "UseKeychainPromptExlusions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of users that can ignore the keychain prompt.",
+            "property_order": 30
+        },
+        "SignInLogo": {
+            "type": "string",
+            "description": "Path to a logo file. The space is 342x90 pixels.",
+            "property_order": 35
+        },
+        "TitleSignIn": {
+            "type": "string",
+            "default": "Sign in to Okta",
+            "description": "Title of the Sign In window.",
+            "property_order": 40
+        },
+        "LabelUsername": {
+            "type": "string",
+            "default": "Corporate e-mail",
+            "description": "The text label for the username field in the Sign In window.",
+            "property_order": 45
+        },
+        "LabelPassword": {
+            "type": "string",
+            "default": "Corporate Password",
+            "description": "The text label for the password field in the Sign In window.",
+            "property_order": 50
+        },
+        "DontShowWelcome": {
+            "type": "boolean",
+            "description": "Disables the showing of the welcome splash screen on launch.",
+            "property_order": 55
+        },
+        "AutoAuth": {
+            "type": "boolean",
+            "default": true,
+            "description": "Determines if web extensions automatically authenticate via the NoMAD Pro UI.",
+            "property_order": 60
+        },
+        "CheckSafariExtension": {
+            "type": "boolean",
+            "default": true,
+            "description": "Determines if the user is warned that the NoMAD Pro extension has not been enabled in Safari.",
+            "property_order": 65
+        },
+        "MessagePluginDisabled": {
+            "type": "string",
+            "default": "Please enable the plugin in Safari.",
+            "description": "Text to show when alerting the user that the Safari plugin has not been enabled.",
+            "property_order": 70
+        },
+        "IgnoreDomainReachability": {
+            "type": "boolean",
+            "description": "Determines if SRV record lookups are used to determine if the AD domain is reachable.",
+            "property_order": 75
+        },
+        "LDAPServers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "LDAPServer"
+            },
+            "description": "Specific Domain Controllers to use for AD lookups.",
+            "property_order": 80
+        },
+        "KerberosRealm": {
+            "type": "string",
+            "description": "Kerberos realm to use to get Kerberos tickets as a side effect of authentication.",
+            "property_order": 85
+        },
+        "TicketsOnSignIn": {
+            "type": "boolean",
+            "description": "Causes NoMAD Pro to get Kerberos Tickets.",
+            "property_order": 90
+        },
+        "KerberosRenew": {
+            "type": "boolean",
+            "description": "Determines if the Kerberos tickets should be renewed or not.",
+            "property_order": 95
+        },
+        "KerberosShortNameAsk": {
+            "type": "boolean",
+            "description": "Determines if the user is asked to enter their Kerberos short name on first sign in.",
+            "property_order": 100
+        },
+        "KerberosShortNameAskMessage": {
+            "type": "string",
+            "default": "Please enter your AD user name.",
+            "description": "The message text when asking the user for their Kerberos short name.",
+            "property_order": 105
+        },
+        "KerberosShortName": {
+            "type": "string",
+            "default": "joel",
+            "description": "The shortname to use for Kerberos tickets. If unset the sign in name is used.",
+            "property_order": 110
+        },
+        "UseKeychain": {
+            "type": "boolean",
+            "description": "Determines if the Okta password is stored in the user\u2019s keychain.",
+            "property_order": 115
+        },
+        "LocalPasswordSync": {
+            "type": "boolean",
+            "description": "Determines if the Okta password is synchronized with the local account.",
+            "property_order": 120
+        },
+        "LocalPasswordSyncOnMatchOnly": {
+            "type": "boolean",
+            "description": "Only sync the password if the Okta account name is the same as the local account name.",
+            "property_order": 125
+        },
+        "LocalPasswordSyncMessage": {
+            "type": "string",
+            "default": "Please enter your local user account password.",
+            "description": "The alert dialog text that the user is presented with when asked to enter in his or her local password.",
+            "property_order": 130
+        },
+        "KeychainItems": {
+            "type": "dictionary",
+            "title": "KeychainItems",
+            "description": "Items to update when the user's local password is updated as well.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Keychain Item"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Account"
+                }
+            },
+            "property_order": 135
+        },
+        "KeychainItemsDebug": {
+            "type": "boolean",
+            "default": true,
+            "description": "Updates keychain items on every sign in. Used for debugging.",
+            "property_order": 140
+        },
+        "ChangePasswordOrder": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "ChangePasswordItem",
+                "properties": {
+                    "": {
+                        "type": "dictionary"
+                    }
+                }
+            },
+            "description": "Determines the order and setting for the password change menu. NOT IMPLEMENTED YET, THERE IS NO DOCUMENTATION ON THIS KEY.",
+            "property_order": 145
+        },
+        "PasswordChangeCommand": {
+            "type": "string",
+            "description": "Script or other binary to run when a password is successfully changed.",
+            "property_order": 150
+        },
+        "ChangePasswordTimer": {
+            "type": "integer",
+            "default": 3,
+            "description": "Time in minutes until the user is prompted to sign in again after a Password Change.",
+            "property_order": 155
+        },
+        "WarnOnPasswordExpiration": {
+            "type": "boolean",
+            "description": "Determines whether NoMAD Pro should warn the user on sign in if the password is about to expire.",
+            "property_order": 160
+        },
+        "PasswordExpirationMenu": {
+            "type": "boolean",
+            "description": "Determines if the countdown before password expiration is shown in the menu.",
+            "property_order": 165
+        },
+        "PasswordExpirationMenuDays": {
+            "type": "integer",
+            "default": 15,
+            "description": "Number of days remaining before the password expiration countdown is shown in the menu bar.",
+            "property_order": 170
+        },
+        "ExpirationWarningDays": {
+            "type": "integer",
+            "default": 5,
+            "description": "Number of days remaining before sending notifications via the Notification Center.",
+            "property_order": 175
+        },
+        "ADExpirationShow": {
+            "type": "boolean",
+            "description": "Shows a menu item beneath the current user\u2019s name showing the user\u2019s password expiration as determined by AD.",
+            "property_order": 180
+        },
+        "PasswordPolicy": {
+            "type": "dictionary",
+            "description": "Complexity policy for changing the password via Kerberos.",
+            "properties": {
+                "minLength": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minLowerCase": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minNumber": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minSymbol": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minUpperCase": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "minMatches": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                }
+            },
+            "property_order": 185
+        },
+        "ExportableKey": {
+            "type": "boolean",
+            "description": "Allows the private key of the user certificate to be exported.",
+            "property_order": 190
+        },
+        "X509CA": {
+            "type": "string",
+            "description": "FQDN of the Windows web CA for NoMAD Pro to use for certificates.",
+            "property_order": 195
+        },
+        "Template": {
+            "type": "string",
+            "default": "User Auth",
+            "description": "Certificate template to request when using the Windows CA.",
+            "property_order": 200
+        },
+        "WifiNetworks": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of wireless networks that the certificate created by NoMAD Pro should be associated with.",
+            "property_order": 205
+        },
+        "MenuIcon": {
+            "type": "string",
+            "description": "Path to a 16x16 pixel image to use as the icon in the menu bar.",
+            "property_order": 210
+        },
+        "ActionsUpdateTime": {
+            "type": "integer",
+            "default": 15,
+            "description": "Number of minutes between updating the Actions Menu.",
+            "property_order": 215
+        },
+        "GetHelpType": {
+            "type": "string",
+            "description": "Determines type of GetHelp function",
+            "enum": [
+                "Bomgar",
+                "URL",
+                "App"
+            ],
+            "property_order": 220
+        },
+        "GetHelpOptions": {
+            "type": "string",
+            "description": "URL or Path for GetHelpType (<<serial>>, <<fullname>>, <<shortname>> and <<domain>> are currently supported as substitutions)",
+            "property_order": 225
+        },
+        "SelfServicePath": {
+            "type": "string",
+            "description": "File path for a Self Service application not found automatically.",
+            "property_order": 230
+        },
+        "HideAbout": {
+            "type": "boolean",
+            "description": "Hides the About menu item.",
+            "property_order": 235
+        },
+        "HideActions": {
+            "type": "boolean",
+            "description": "Hides the Actions menu item.",
+            "property_order": 240
+        },
+        "HideChangePassword": {
+            "type": "boolean",
+            "description": "Hides the Change Password menu item.",
+            "property_order": 245
+        },
+        "HideGetHelp": {
+            "type": "boolean",
+            "description": "Hides the Get Help menu item.",
+            "property_order": 250
+        },
+        "HideGetSoftware": {
+            "type": "boolean",
+            "description": "Hides the Get Software menu item.",
+            "property_order": 255
+        },
+        "HideLockScreen": {
+            "type": "boolean",
+            "description": "Hides the Lock Screen menu item.",
+            "property_order": 260
+        },
+        "HidePreferences": {
+            "type": "boolean",
+            "description": "Hides the Preferences menu item.",
+            "property_order": 265
+        },
+        "HideSignIn": {
+            "type": "boolean",
+            "description": "Hides the Sign In menu item.",
+            "property_order": 270
+        },
+        "HideQuit": {
+            "type": "boolean",
+            "description": "Hides the Quit menu item.",
+            "property_order": 275
+        },
+        "MessagePasswordChangePolicy": {
+            "type": "string",
+            "default": "Please review the employee handbook.",
+            "description": "Message text when changing password via Kerberos for the AD complexity policy.",
+            "property_order": 280
+        },
+        "MenuAbout": {
+            "type": "string",
+            "default": "This Application",
+            "description": "Menu item text for the About item.",
+            "property_order": 285
+        },
+        "MenuActions": {
+            "type": "string",
+            "default": "Quick Actions",
+            "description": "Menu item text for the Actions item.",
+            "property_order": 290
+        },
+        "MenuChangePassword": {
+            "type": "string",
+            "default": "Change network password",
+            "description": "Menu item text for the Change Password item.",
+            "property_order": 295
+        },
+        "MenuGetHelp": {
+            "type": "string",
+            "default": "File ticket",
+            "description": "Menu item text for the Get Help item.",
+            "property_order": 300
+        },
+        "MenuGetSoftware": {
+            "type": "string",
+            "default": "Get Apps",
+            "description": "Menu item text for the Get Software item.",
+            "property_order": 305
+        },
+        "MenuLockScreen": {
+            "type": "string",
+            "default": "Screen Lock",
+            "description": "Menu item text for the Lock Screen item.",
+            "property_order": 310
+        },
+        "MenuPreferences": {
+            "type": "string",
+            "default": "Prefs",
+            "description": "Menu item text for the Preferences item.",
+            "property_order": 315
+        },
+        "MenuSignIn": {
+            "type": "string",
+            "default": "Login",
+            "description": "Menu item text for the Sign In item.",
+            "property_order": 320
+        }
+    }
+}

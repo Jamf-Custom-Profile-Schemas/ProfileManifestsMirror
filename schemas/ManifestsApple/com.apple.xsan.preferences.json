@@ -1,0 +1,48 @@
+{
+    "title": "Xsan Preferences (com.apple.xsan.preferences)",
+    "description": "Xsan Preference settings",
+    "properties": {
+        "useDLC": {
+            "type": "boolean",
+            "title": "Use Distributed LAN Client (DLC)",
+            "default": false,
+            "property_order": 5
+        },
+        "onlyMount": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Xsan or StorNext Volume Name"
+            },
+            "title": "Only Mount",
+            "property_order": 10
+        },
+        "denyMount": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Xsan or StorNext Volume Name"
+            },
+            "title": "Deny Mount",
+            "property_order": 15
+        },
+        "preferDLC": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "StorNext Volume Name"
+            },
+            "title": "Prefer DLC",
+            "property_order": 20
+        },
+        "denyDLC": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "StorNext Volume Name"
+            },
+            "title": "Deny DLC",
+            "property_order": 25
+        }
+    }
+}

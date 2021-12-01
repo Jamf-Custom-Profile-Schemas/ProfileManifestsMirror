@@ -1,0 +1,34 @@
+{
+    "title": "Parental Controls: Game Center (com.apple.gamed)",
+    "description": "Parental Controls: Game Center settings",
+    "properties": {
+        "GKFeatureGameCenterAllowed": {
+            "type": "boolean",
+            "title": "Allow use of Game Center",
+            "default": true,
+            "description": "Set to false to disable Game Center.",
+            "property_order": 5
+        },
+        "GKFeatureAccountModificationAllowed": {
+            "type": "boolean",
+            "title": "Allow Game Center account modification",
+            "default": true,
+            "description": "Set to false to disable account modifications.",
+            "property_order": 10
+        },
+        "GKFeatureAddingGameCenterFriendsAllowed": {
+            "type": "boolean",
+            "title": "Allow adding Game Center friends",
+            "default": true,
+            "description": "Set to false to disable adding Game Center friends.",
+            "property_order": 15
+        },
+        "GKFeatureMultiplayerGamingAllowed": {
+            "type": "boolean",
+            "title": "Allow multiplayer gaming",
+            "default": true,
+            "description": "Set to false to disable multiplayer gaming.",
+            "property_order": 20
+        }
+    }
+}

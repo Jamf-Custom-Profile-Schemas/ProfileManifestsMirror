@@ -1,0 +1,48 @@
+{
+    "title": "AirPlay Security (com.apple.airplay.security)",
+    "description": "Use the AirPlay Security payload to preconfigure access and security settings when connecting to Apple TV.",
+    "properties": {
+        "AccessType": {
+            "type": "string",
+            "title": "Access",
+            "description": "Network requirement for devices that connect to Apple TV using airplay.",
+            "enum": [
+                "ANY",
+                "WIFI_ONLY"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Any device",
+                    "Devices on the same network only"
+                ]
+            },
+            "property_order": 5
+        },
+        "SecurityType": {
+            "type": "string",
+            "title": "Security",
+            "description": "Security requirement for for devices that connect to Apple TV using airplay.",
+            "enum": [
+                "NONE",
+                "PASSCODE_ONCE",
+                "PASSCODE_ALWAYS",
+                "PASSWORD"
+            ],
+            "options": {
+                "enum_titles": [
+                    "None (deprecated since tvOS 11.3)",
+                    "First-time passcode",
+                    "Passcode",
+                    "Password"
+                ]
+            },
+            "property_order": 10
+        },
+        "Password": {
+            "type": "string",
+            "title": "Password",
+            "description": "The Airplay Password",
+            "property_order": 15
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "title": "Desktop Services (com.apple.desktopservices)",
+    "description": "Desktop Services settings",
+    "properties": {
+        "DSDontWriteNetworkStores": {
+            "type": "boolean",
+            "title": "Prevent .DS_Store file creation on network volumes",
+            "description": "Prevent .DS_Store file creation when interacting with a remote file server using the Finder.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/en-us/HT1629"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}

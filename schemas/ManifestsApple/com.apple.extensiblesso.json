@@ -1,0 +1,223 @@
+{
+    "title": "Single-Sign On Extensions (com.apple.extensiblesso)",
+    "description": "Single-Sign On Extension settings. User-level payload support for macOS 11.x and later.",
+    "properties": {
+        "ExtensionIdentifier": {
+            "type": "string",
+            "title": "Extension Identifier",
+            "description": "The bundle identifier of the app extension that performs single sign-on (SSO) for the specified URLs. Enter com.apple.AppSSOKerberos.KerberosExtension to use Apple's Kerberos SSO extension.",
+            "property_order": 5
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of SSO.",
+            "enum": [
+                "Credential",
+                "Redirect"
+            ],
+            "property_order": 10
+        },
+        "TeamIdentifier": {
+            "type": "string",
+            "title": "Team Identifier",
+            "description": "The team identifier of the app extension. This key is required on macOS and ignored elsewhere.",
+            "property_order": 15
+        },
+        "Hosts": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Hostname / Domain name"
+            },
+            "description": "An array of host names or domain names that can be authenticated through the app extension. Required for Credential payloads. Ignored for Redirect payloads.",
+            "property_order": 20
+        },
+        "Realm": {
+            "type": "string",
+            "description": "The realm name for Credential payloads. This value should be properly capitalized. This key is ignored for Redirect payloads.",
+            "property_order": 25
+        },
+        "URLs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "URL",
+                "pattern": "^https?://.*"
+            },
+            "description": "The realm name for Credential payloads. This value should be properly capitalized. This key is ignored for Redirect payloads.",
+            "property_order": 30
+        },
+        "ExtensionData": {
+            "type": "dictionary",
+            "title": "Kerberos Extension Data",
+            "description": "Used by the Apple built-in Kerberos extension.",
+            "properties": {
+                "allowAutomaticLogin": {
+                    "type": "boolean",
+                    "title": "Allow Automatic Login",
+                    "default": true,
+                    "description": "If false, passwords are not allowed to be saved to the keychain."
+                },
+                "allowPasswordChange": {
+                    "type": "boolean",
+                    "title": "Allow Password Change",
+                    "default": true,
+                    "description": "If false, disables password changes. Available in macOS 10.15 and later."
+                },
+                "cacheName": {
+                    "type": "string",
+                    "title": "Cache Name",
+                    "description": "The GSS name of the Kerberos cache to use. Rarely set by an administrator."
+                },
+                "certificateUUID": {
+                    "type": "string",
+                    "title": "Certificate UUID",
+                    "description": "The PayloadUUID of a PKINIT certificate."
+                },
+                "credentialBundleIdACL": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Bundle ID"
+                    },
+                    "title": "Credential Bundle ID ACL",
+                    "description": "A list of bundle IDs allowed to access the ticket-granting ticket (TGT)."
+                },
+                "credentialUseMode": {
+                    "type": "string",
+                    "title": "Credential Use Mode",
+                    "default": "always",
+                    "description": "This setting affects how the Kerberos Extension credential is used by other processes. Available in macOS 11 and later.",
+                    "enum": [
+                        "always",
+                        "kerberosDefault",
+                        "whenNotSpecified"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Always",
+                            "Kerberos Default",
+                            "When Not Specified"
+                        ]
+                    }
+                },
+                "customUsernameLabel": {
+                    "type": "string",
+                    "title": "Custom Username Label",
+                    "description": "The custom user name label used in the Kerberos extension instead of \"Username\". For example, \"Company ID\". Available on macOS 11 and later."
+                },
+                "delayUserSetup": {
+                    "type": "boolean",
+                    "title": "Delay User Setup",
+                    "default": false,
+                    "description": "If true, doesn't prompt the user to setup the Kerberos extension until either the administrator enables it with the app-sso tool or a Kerberos challenge is received. Available in macOS 11 and later."
+                },
+                "helpText": {
+                    "type": "string",
+                    "title": "Help Text",
+                    "description": "The text to be displayed to the user at the bottom of the Kerberos login window. It can be used to display help information or disclaimer text. Available in iOS 14 and later and macOS 11 and later."
+                },
+                "isDefaultRealm": {
+                    "type": "boolean",
+                    "title": "Is Default Realm",
+                    "default": false,
+                    "description": "This property specifies it is the default realm if there is more than one Kerberos extension configuration."
+                },
+                "includeManagedAppsInBundleIdACL": {
+                    "type": "boolean",
+                    "title": "Include Managed Apps in Bundle ID ACL",
+                    "default": false,
+                    "description": "If true, the Kerberos extension will allow only managed apps to access and use the credential. This is in addition to the credentialBundleIDACL, if it is specified. Available in iOS 14 and later."
+                },
+                "monitorCredentialsCache": {
+                    "type": "boolean",
+                    "title": "Monitor Credential Cache",
+                    "default": true,
+                    "description": "If false, the credential is requested on the next matching Kerberos challenge or network state change. If the credential is expired or missing, a new one will be created. Available in macOS 11 and later."
+                },
+                "principalName": {
+                    "type": "string",
+                    "title": "Principal Name",
+                    "description": "The principal (aka username) to use. You do not need to include the realm."
+                },
+                "pwChangeURL": {
+                    "type": "string",
+                    "title": "Password Change URL",
+                    "description": "This URL will launch in the user's default web browser when they initiate a password change. Available in macOS 10.15 and later."
+                },
+                "pwNotificationDays": {
+                    "type": "integer",
+                    "title": "Password Notification Days",
+                    "default": 15,
+                    "description": "The number of days prior to password expiration when a notification of password expiration will be sent to the user. Available in macOS 10.15 and later."
+                },
+                "pwExpireOverride": {
+                    "type": "integer",
+                    "title": "Password Expiration Override",
+                    "description": "The number of days that passwords can be used on this domain. For most domains, this can be calculated automatically. Available in macOS 10.15 and later."
+                },
+                "pwReqComplexity": {
+                    "type": "boolean",
+                    "title": "Password Requirement Complexity",
+                    "default": false,
+                    "description": "If true, passwords must meet Active Directory's definition of \"complex\". Available in macOS 10.15 and later."
+                },
+                "pwReqHistory": {
+                    "type": "integer",
+                    "title": "Password Requirement History",
+                    "description": "The number of prior passwords that cannot be re-used on this domain. Available in macOS 10.15 and later."
+                },
+                "pwReqLength": {
+                    "type": "integer",
+                    "title": "Password Requirement Length",
+                    "description": "The minimum length of passwords on the domain. Available in macOS 10.15 and later."
+                },
+                "pwReqMinAge": {
+                    "type": "integer",
+                    "title": "Password Requirement Minimum Age",
+                    "description": "The minimum age of passwords before they can be changed on this domain. Available in macOS 10.15 and later."
+                },
+                "pwReqText": {
+                    "type": "string",
+                    "title": "Password Requirement Text",
+                    "description": "The text version of the domain's password requirements. Only for use if pwReqComplexity or pwReqLength aren't specified. Available in macOS 10.15 and later."
+                },
+                "replicationTime": {
+                    "type": "intger",
+                    "title": "Replication Time",
+                    "default": 900,
+                    "description": "The time, in seconds, required to replicate changes in the Active Directory domain. The Kerberos extension will use this when checking password age after a change. Available in macOS 11 and later."
+                },
+                "requireTLSForLDAP": {
+                    "type": "boolean",
+                    "title": "Require TLS for LDAP",
+                    "description": "Require that LDAP connections use TLS. Available in macOS 11 and later."
+                },
+                "requireUserPresence": {
+                    "type": "boolean",
+                    "title": "Require User Presence",
+                    "default": false,
+                    "description": "If true, requires the user to provide Touch ID, Face ID or their passcode to access the keychain entry."
+                },
+                "siteCode": {
+                    "type": "string",
+                    "title": "Site Code",
+                    "description": "The name of the Active Directory site the Kerberos extension should use. Most administrators will never need to modify this value, as the Kerberos extension can normally find the site automatically."
+                },
+                "syncLocalPassword": {
+                    "type": "boolean",
+                    "title": "Sync Local Password",
+                    "default": false,
+                    "description": "If false, disables password sync. Note that this will not work if the user is logged in with a mobile account. Available in macOS 10.15 and later."
+                },
+                "useSiteAutoDiscovery": {
+                    "type": "boolean",
+                    "title": "Use Site Auto Discovery",
+                    "default": true,
+                    "description": "If false, the Kerberos extension doesn't automatically use LDAP and DNS to determine its AD site name."
+                }
+            },
+            "property_order": 35
+        }
+    }
+}

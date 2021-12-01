@@ -1,0 +1,264 @@
+{
+    "title": "Jamf Connect Verify (com.jamf.connect.verify)",
+    "description": "Jamf Connect Verify settings",
+    "properties": {
+        "OIDCProvider": {
+            "type": "string",
+            "description": "Specifies the IdP provider integrated with Jamf Connect Verify.",
+            "enum": [
+                "Azure"
+            ],
+            "property_order": 5
+        },
+        "OIDCROPGID": {
+            "type": "string",
+            "description": "The Client ID of the added app in your IdP used for authenticating the user's password via a resource owner password grant (ROPG) workflow.",
+            "property_order": 10
+        },
+        "DontShowWelcome": {
+            "type": "boolean",
+            "property_order": 15
+        },
+        "FailToolPath": {
+            "type": "string",
+            "property_order": 20
+        },
+        "ForceSignInWindow": {
+            "type": "boolean",
+            "property_order": 25
+        },
+        "GetHelpType": {
+            "type": "string",
+            "enum": [
+                "URL",
+                "Path",
+                "App"
+            ],
+            "property_order": 30
+        },
+        "GetHelpOptions": {
+            "type": "string",
+            "description": "Specifies the URL or path for GetHelpType. <<serial>>, <<fullname>>, <<shortname>> and <<domain>> are supported as substitutions.",
+            "property_order": 35
+        },
+        "LoginLogo": {
+            "type": "string",
+            "property_order": 40
+        },
+        "SelfServicePath": {
+            "type": "string",
+            "property_order": 45
+        },
+        "MenuIconActive": {
+            "type": "string",
+            "property_order": 50
+        },
+        "MenuIconDark": {
+            "type": "string",
+            "property_order": 55
+        },
+        "HideAbout": {
+            "type": "boolean",
+            "property_order": 60
+        },
+        "HideChangePassword": {
+            "type": "boolean",
+            "property_order": 65
+        },
+        "HideGetHelp": {
+            "type": "boolean",
+            "property_order": 70
+        },
+        "HideGetSoftware": {
+            "type": "boolean",
+            "property_order": 75
+        },
+        "HideHomeDirectory": {
+            "type": "boolean",
+            "property_order": 80
+        },
+        "HideLastUser": {
+            "type": "boolean",
+            "property_order": 85
+        },
+        "HidePrefs": {
+            "type": "boolean",
+            "property_order": 90
+        },
+        "HideResetPassword": {
+            "type": "boolean",
+            "property_order": 95
+        },
+        "HideShares": {
+            "type": "boolean",
+            "property_order": 100
+        },
+        "HideSignIn": {
+            "type": "boolean",
+            "property_order": 105
+        },
+        "HideTickets": {
+            "type": "boolean",
+            "property_order": 110
+        },
+        "HideQuit": {
+            "type": "boolean",
+            "property_order": 115
+        },
+        "MenuAbout": {
+            "type": "string",
+            "property_order": 120
+        },
+        "MenuActions": {
+            "type": "string",
+            "property_order": 125
+        },
+        "MenuChangePassword": {
+            "type": "string",
+            "property_order": 130
+        },
+        "MenuGetHelp": {
+            "type": "string",
+            "property_order": 135
+        },
+        "MenuGetSoftware": {
+            "type": "string",
+            "property_order": 140
+        },
+        "MenuHomeDirectory": {
+            "type": "string",
+            "property_order": 145
+        },
+        "MenuKerberosTickets": {
+            "type": "string",
+            "property_order": 150
+        },
+        "MenuResetPassword": {
+            "type": "string",
+            "property_order": 155
+        },
+        "MenuShares": {
+            "type": "string",
+            "property_order": 160
+        },
+        "Version": {
+            "type": "integer",
+            "default": 1,
+            "description": "The numeric version of the preference file. Currently, only \"1\" is supported.",
+            "property_order": 165
+        },
+        "MenuIcon": {
+            "type": "boolean",
+            "title": "Display status icon on the main Action Menu",
+            "description": "Determines if the Action menu will display a status icon (green, yellow, or red).",
+            "property_order": 170
+        },
+        "MenuText": {
+            "type": "boolean",
+            "title": "Display result of command as Action Menu title",
+            "description": "Determines if the text of the main action menu will be the result of the command.",
+            "property_order": 175
+        },
+        "KerberosGetTicketsAutomatically": {
+            "type": "boolean",
+            "property_order": 180
+        },
+        "KerberosRealm": {
+            "type": "string",
+            "property_order": 185
+        },
+        "KerberosShowCountdown": {
+            "type": "boolean",
+            "property_order": 190
+        },
+        "KerberosShowCountdownLimit": {
+            "type": "integer",
+            "description": "An integer, in days remaining, before the password expiration countdown is displayed in the menu bar.",
+            "property_order": 195
+        },
+        "TimerKerberosCheck": {
+            "type": "integer",
+            "property_order": 200
+        },
+        "KeychainItemsCreateSerial": {
+            "type": "string",
+            "property_order": 205
+        },
+        "KeychainItems": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Keychain Item"
+            },
+            "property_order": 210
+        },
+        "KeychainItemsInternet": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "property_order": 215
+        },
+        "KeychainItemsDebug": {
+            "type": "boolean",
+            "property_order": 220
+        },
+        "NetworkCheckAutomatically": {
+            "type": "boolean",
+            "description": "Determines if the network password is verified automatically",
+            "property_order": 225
+        },
+        "TimerLocalCheck": {
+            "type": "integer",
+            "property_order": 230
+        },
+        "TimerNetworkCheck": {
+            "type": "integer",
+            "property_order": 235
+        },
+        "LocalPasswordIgnore": {
+            "type": "boolean",
+            "property_order": 240
+        },
+        "WindowSignIn": {
+            "type": "string",
+            "property_order": 245
+        },
+        "WindowAbout": {
+            "type": "string",
+            "property_order": 250
+        },
+        "MessageBrowserPasswordChange": {
+            "type": "string",
+            "property_order": 255
+        },
+        "MessageLocalSync": {
+            "type": "string",
+            "property_order": 260
+        },
+        "MessageNetworkPasswordWrong": {
+            "type": "string",
+            "property_order": 265
+        },
+        "OIDCClientSecret": {
+            "type": "string",
+            "property_order": 270
+        },
+        "OIDCChangePasswordURL": {
+            "type": "string",
+            "property_order": 275
+        },
+        "OIDCLoginURL": {
+            "type": "string",
+            "property_order": 280
+        },
+        "OIDCRedirectURI": {
+            "type": "string",
+            "property_order": 285
+        },
+        "OIDCResetPasswordURL": {
+            "type": "string",
+            "property_order": 290
+        }
+    }
+}

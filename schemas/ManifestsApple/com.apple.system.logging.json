@@ -1,0 +1,17 @@
+{
+    "title": "System Logging (com.apple.system.logging)",
+    "description": "System Logging settings",
+    "properties": {
+        "System": {
+            "type": "dictionary",
+            "properties": {
+                "Enable-Private-Data": {
+                    "type": "boolean",
+                    "title": "Allow private data system-wide in unified logs",
+                    "description": "Enables private data logging for the entire system"
+                }
+            },
+            "property_order": 5
+        }
+    }
+}

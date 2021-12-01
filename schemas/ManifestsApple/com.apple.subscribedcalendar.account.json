@@ -1,0 +1,38 @@
+{
+    "title": "Subscribed Calendars (com.apple.subscribedcalendar.account)",
+    "description": "Use this section to define settings for subscribed calendar account.",
+    "properties": {
+        "SubCalAccountDescription": {
+            "type": "string",
+            "title": "Description",
+            "default": "My Subscribed Calendar",
+            "description": "The description of the calendar subscription",
+            "property_order": 5
+        },
+        "SubCalAccountHostName": {
+            "type": "string",
+            "title": "URL",
+            "description": "The URL of the calendar file",
+            "property_order": 10
+        },
+        "SubCalAccountUsername": {
+            "type": "string",
+            "title": "Username",
+            "description": "The username for this subscription",
+            "property_order": 15
+        },
+        "SubCalAccountPassword": {
+            "type": "string",
+            "title": "Password",
+            "description": "The password for this subscription",
+            "property_order": 20
+        },
+        "SubCalAccountUseSSL": {
+            "type": "boolean",
+            "title": "Use SSL",
+            "default": true,
+            "description": "Use Secure Socket Layer for this subscription",
+            "property_order": 25
+        }
+    }
+}

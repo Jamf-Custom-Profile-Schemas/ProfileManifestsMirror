@@ -1,0 +1,40 @@
+{
+    "title": "App Store (com.apple.appstore)",
+    "description": "App Store settings",
+    "properties": {
+        "restrict-store-require-admin-to-install": {
+            "type": "boolean",
+            "title": "Require Admin To Install",
+            "default": false,
+            "description": "Restrict app installations to admin users",
+            "property_order": 5
+        },
+        "restrict-store-softwareupdate-only": {
+            "type": "boolean",
+            "title": "Restrict app installations to software updates only",
+            "default": false,
+            "description": "Restrict app installations to software updates only",
+            "property_order": 10
+        },
+        "restrict-store-disable-app-adoption": {
+            "type": "boolean",
+            "title": "Disable App Adoption by users",
+            "default": false,
+            "description": "Disable App Adoption by users",
+            "property_order": 15
+        },
+        "DisableSoftwareUpdateNotifications": {
+            "type": "boolean",
+            "title": "Disable software update notifications",
+            "default": false,
+            "description": "Disable software update notifications",
+            "property_order": 20
+        },
+        "restrict-store-mdm-install-softwareupdate-only": {
+            "type": "boolean",
+            "title": "Restrict app installations to MDM-installed apps and software updates",
+            "description": "Restrict app installations to MDM-installed apps and software updates",
+            "property_order": 25
+        }
+    }
+}

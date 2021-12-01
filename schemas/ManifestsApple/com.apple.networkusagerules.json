@@ -1,0 +1,73 @@
+{
+    "title": "Network Usage Rules (com.apple.networkusagerules)",
+    "description": "Network Usage Rules settings",
+    "properties": {
+        "ApplicationRules": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "Network Usage Rules",
+                "properties": {
+                    "AppIdentifierMatches": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Bundle Identifier",
+                            "pattern": "^[^\\*\\.]+(\\.[^\\*\\.]+)*(\\.\\*)?$"
+                        },
+                        "title": "Bundle Identifier Matches",
+                        "description": "A list of managed app identifiers, as strings, that must follow the associated rules. If this key is missing, the rules will apply to all managed apps on the device."
+                    },
+                    "AllowCellularData": {
+                        "type": "boolean",
+                        "title": "Allow Cellular Data",
+                        "default": true,
+                        "description": "Allow cellular data over the network"
+                    },
+                    "AllowRoamingCellularData": {
+                        "type": "boolean",
+                        "title": "Allow Data Roaming",
+                        "default": true,
+                        "description": "Allow data roaming over the network"
+                    }
+                }
+            },
+            "title": "Application Network Usage Rules",
+            "description": "Specify how managed apps use cellular data networks",
+            "property_order": 5
+        },
+        "SIMRules": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "properties": {
+                    "ICCIDs": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "pattern": "^[0-9]{1,20}$"
+                        },
+                        "title": "SIM ICCIDs"
+                    },
+                    "WiFiAssistPolicy": {
+                        "type": "integer",
+                        "title": "Policy",
+                        "enum": [
+                            2,
+                            3
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Default",
+                                "Allow frequent switching to cellular data"
+                            ]
+                        }
+                    }
+                }
+            },
+            "title": "Wi-Fi Assist Policy Rules",
+            "description": "Specify the Wi-Fi assist policy to be used with specific SIM cards",
+            "property_order": 10
+        }
+    }
+}

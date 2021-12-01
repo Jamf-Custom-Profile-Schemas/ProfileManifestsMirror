@@ -1,0 +1,24 @@
+{
+    "title": "FileVault Recovery Key Escrow (com.apple.security.FDERecoveryKeyEscrow)",
+    "description": "FileVault Recovery Key Escrow settings",
+    "properties": {
+        "Location": {
+            "type": "string",
+            "title": "Location",
+            "description": "A short description of the location where the recovery key will be escrowed. This text will be inserted into the message the user sees when enabling FileVault.",
+            "property_order": 5
+        },
+        "EncryptCertPayloadUUID": {
+            "type": "string",
+            "title": "EncryptCertPayloadUUID",
+            "description": "The UUID of a payload within the same profile that contains the certificate that will be used to encrypt the recovery key. The referenced payload must be of type com.apple.security.pkcs1.",
+            "property_order": 10
+        },
+        "DeviceKey": {
+            "type": "string",
+            "title": "DeviceKey",
+            "description": "An optional string that will be included in help text if the user appears to have forgotten the password. Can be used by a site admin to look up the escrowed key for the particular machine. Replaces the RecordNumber key used in previous escrow mechanism. If missing, the device serial number will be used instead.",
+            "property_order": 15
+        }
+    }
+}

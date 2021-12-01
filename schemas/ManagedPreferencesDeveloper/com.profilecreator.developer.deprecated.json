@@ -1,0 +1,18 @@
+{
+    "title": "Developer: Deprecated (com.profilecreator.developer.deprecated)",
+    "description": "Developer: Deprecated settings",
+    "properties": {
+        "Deprecated01": {
+            "type": "string",
+            "title": "Deprecated 01: Standard",
+            "description": "Standard TextField.",
+            "property_order": 5
+        },
+        "Deprecated02": {
+            "type": "string",
+            "title": "Deprecated 02: Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Title",
+            "description": "TextField with a long title.",
+            "property_order": 10
+        }
+    }
+}

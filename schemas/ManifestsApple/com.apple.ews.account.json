@@ -1,0 +1,94 @@
+{
+    "title": "Exchange (macOS) (com.apple.ews.account)",
+    "description": "Exchange Web Services settings",
+    "properties": {
+        "UserName": {
+            "type": "string",
+            "title": "Account user name",
+            "description": "The user name with the optional domain (e.g \"user\" or \"domain\\user\").",
+            "property_order": 5
+        },
+        "EmailAddress": {
+            "type": "string",
+            "title": "Account email address",
+            "description": "The email address for the account (e.g. \"john@company.com).",
+            "property_order": 10
+        },
+        "Password": {
+            "type": "string",
+            "title": "Account password",
+            "description": "The password of the user account.",
+            "property_order": 15
+        },
+        "IdentificationUUID": {
+            "type": "string",
+            "title": "IdentificationUUID",
+            "description": "The UUID of the Identification Payload to use as the source for user values.",
+            "property_order": 20
+        },
+        "Host": {
+            "type": "string",
+            "title": "Internal Exchange Host",
+            "description": "The IP address or fully qualified domain name (FQDN) of the internal Exchange host.",
+            "property_order": 25
+        },
+        "Port": {
+            "type": "integer",
+            "title": "Internal Exchange Host Port",
+            "description": "The port on which to connect to the internal Exchange host.",
+            "property_order": 30
+        },
+        "Path": {
+            "type": "string",
+            "title": "Internal server path",
+            "description": "The server path for the internal Exchange host.",
+            "property_order": 35
+        },
+        "SSL": {
+            "type": "boolean",
+            "title": "Use SSL for Internal Exchange Host",
+            "default": true,
+            "description": "Send all communication through Secure Socket Layer.",
+            "property_order": 40
+        },
+        "ExternalHost": {
+            "type": "string",
+            "title": "External Exchange Host",
+            "description": "The IP address or fully qualified domain name (FQDN) of the external Exchange host.",
+            "property_order": 45
+        },
+        "ExternalPort": {
+            "type": "integer",
+            "title": "External Exchange Host Port",
+            "description": "The port on which to connect to the external Exchange host.",
+            "property_order": 50
+        },
+        "ExternalPath": {
+            "type": "string",
+            "title": "External server path",
+            "description": "The server path for the external Exchange host.",
+            "property_order": 55
+        },
+        "ExternalSSL": {
+            "type": "boolean",
+            "title": "Use SSL for External Exchange Host",
+            "default": true,
+            "description": "Send all communication through Secure Socket Layer.",
+            "property_order": 60
+        },
+        "OAuth": {
+            "type": "boolean",
+            "title": "Use OAuth",
+            "default": true,
+            "description": "Specifies whether the connection should use OAuth for authentication.",
+            "property_order": 65
+        },
+        "OAuthSignInURL": {
+            "type": "string",
+            "title": "OAuth Sign-In URL",
+            "default": true,
+            "description": "URL to load into a webview for authentication via OAuth when auto-discovery is not used.",
+            "property_order": 70
+        }
+    }
+}

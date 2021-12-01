@@ -1,0 +1,487 @@
+{
+    "title": "Nudge (com.github.macadmins.Nudge)",
+    "description": "Nudge settings",
+    "properties": {
+        "asyncronousSoftwareUpdate": {
+            "type": "boolean",
+            "title": "Asyncronous Software Update",
+            "default": true,
+            "description": "When enabled Nudge will wait for Software Update to finish downloading (if any) updates before showing the UI.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#asyncronoussoftwareupdate---type-boolean-default-value-true-required-no"
+                }
+            ],
+            "property_order": 5
+        },
+        "enforceMinorUpdates": {
+            "type": "boolean",
+            "title": "Enforce Minor Updates",
+            "default": true,
+            "description": "When enabled, Nudge will enforce minor updates. This should likely never be disabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#enforceminorupdates---type-boolean-default-value-true-required-no"
+                }
+            ],
+            "property_order": 10
+        },
+        "osVersionRequirements": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "title": "osVersionRequirements Dictionary",
+                "properties": {
+                    "aboutUpdateURLs": {
+                        "type": "array",
+                        "items": {
+                            "type": "dictionary",
+                            "title": "aboutUpdateURLs dictionary",
+                            "properties": {
+                                "_language": {
+                                    "type": "string"
+                                },
+                                "aboutUpdateURL": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "A list of arrays, enabling localization of the More Info button URL path. Please see the aboutUpdateURLs wiki article for more information.",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#aboutupdateurls---type-array-default-value--required-no"
+                            }
+                        ]
+                    },
+                    "majorUpgradeAppPath": {
+                        "type": "string",
+                        "title": "Major macOS Upgrade App Path",
+                        "description": "The app path for a major upgrade.",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#majorupgradeapppath---type-string-default-value--required-no"
+                            }
+                        ]
+                    },
+                    "requiredInstallationDate": {
+                        "type": "date",
+                        "title": "Required Installation Date",
+                        "description": "The required installation date for Nudge to enforce the required operating system version.",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#requiredinstallationdate---type-string-default-value--required-yes"
+                            }
+                        ]
+                    },
+                    "requiredMinimumOSVersion": {
+                        "type": "string",
+                        "title": "Required Minimum OS Version",
+                        "description": "The required minimum operating system version. ",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#requiredminimumosversion---type-string-default-value--required-yes"
+                            }
+                        ]
+                    },
+                    "targetedOSVersions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Targeted OS Versions",
+                        "description": "The versions of macOS that require a security update. You can specify single version or multiple versions.",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#targetedosversions---type-array-default-value-"
+                            }
+                        ]
+                    }
+                }
+            },
+            "title": "OS Version Requirements",
+            "description": "The required components necessary to enforce an Operating System version through Nudge.\n\nSpecify one array to enforce a single Operating System version across all machines or specify multiple arrays for specific enforcements.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#osversionrequirements---type-array-default-value-"
+                }
+            ],
+            "property_order": 15
+        },
+        "userExperience": {
+            "type": "dictionary",
+            "title": "User Experience",
+            "properties": {
+                "noTimers": {
+                    "type": "boolean",
+                    "title": "No Timers",
+                    "default": false,
+                    "description": "This will disable ALL functionality related to the User Experience preference domain.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#notimers---type-boolean-default-value-false"
+                        }
+                    ]
+                },
+                "allowedDeferrals": {
+                    "type": "integer",
+                    "title": "Allowed Deferrals",
+                    "default": 1000000,
+                    "description": "The amount of times a user can defer Nudge (change it from the currently active window) in the current user session before the \"aggressive user experience\" is enabled.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#alloweddeferrals---type-integer-default-value-1000000"
+                        }
+                    ]
+                },
+                "allowedDeferralsUntilForcedSecondaryQuitButton": {
+                    "type": "integer",
+                    "title": "Allowed Deferrals until Forced Secondary Quit Button",
+                    "default": 14,
+                    "description": "The amount of times a user can defer Nudge (change it from the currently active window) in the current user session before the both quit buttons need to be actioned.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#alloweddeferralsuntilforcedsecondaryquitbutton---type-integer-default-value-14"
+                        }
+                    ]
+                },
+                "approachingRefreshCycle": {
+                    "type": "integer",
+                    "title": "Approaching Refresh Cycle",
+                    "default": 6000,
+                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#approachingrefreshcycle---type-integer-default-value-6000"
+                        }
+                    ]
+                },
+                "approachingWindowTime": {
+                    "type": "integer",
+                    "title": "Approaching Window Time",
+                    "default": 72,
+                    "description": "The amount of time in hours Nudge will use to determine that the requiredInstallationDate is \"approaching\".",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#approachingwindowtime---type-integer-default-value-72"
+                        }
+                    ]
+                },
+                "elapsedRefreshCycle": {
+                    "type": "integer",
+                    "title": "Elapsed Refresh Cycle",
+                    "default": 6000,
+                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window. This key is triggered once the requiredInstallationDate has expired.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#elapsedrefreshcycle---type-integer-default-value-6000"
+                        }
+                    ]
+                },
+                "imminentRefeshCycle": {
+                    "type": "integer",
+                    "title": "Imminent Refresh Cycle",
+                    "default": 600,
+                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#imminentrefeshcycle---type-integer-default-value-600"
+                        }
+                    ]
+                },
+                "imminentWindowTime": {
+                    "type": "integer",
+                    "title": "Imminent Window Time",
+                    "default": 25,
+                    "description": "The amount of time in hours Nudge will use to determine that the requiredInstallationDate is \"imminent\".",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#imminentwindowtime---type-integer-default-value-24"
+                        }
+                    ]
+                },
+                "initialRefreshCycle": {
+                    "type": "integer",
+                    "title": "Initial Refresh Cycle",
+                    "default": 18000,
+                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window. This key is triggered for all Nudge launches until the approachingWindowTime has been passed.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#initialrefreshcycle---type-integer-default-value-18000"
+                        }
+                    ]
+                },
+                "maxRandomDelayInSeconds": {
+                    "type": "integer",
+                    "title": "Max Random Delay",
+                    "default": 1200,
+                    "description": "The maximum amount of delay Nudge will utilize before launching the UI. This is useful if you do not want your users to all receive the Nudge prompt at the exact time of the LaunchAgent.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#maxrandomdelayinseconds---type-integer-default-value-1200"
+                        }
+                    ]
+                },
+                "nudgeRefreshCycle": {
+                    "type": "integer",
+                    "title": "Nudge Refresh Cycle",
+                    "default": 60,
+                    "description": "The amount of time in seconds Nudge will use as its core timer to refresh all the core code paths.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#nudgerefreshcycle---type-integer-default-value-60"
+                        }
+                    ]
+                },
+                "randomDelay": {
+                    "type": "boolean",
+                    "title": "Random Delay",
+                    "default": false,
+                    "description": "Enables an initial delay Nudge before launching the UI. This is useful if you do not want your users to all receive the Nudge prompt at the exact time of the LaunchAgent.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#nudgerefreshcycle---type-integer-default-value-60"
+                        }
+                    ]
+                }
+            },
+            "property_order": 20
+        },
+        "userInterface": {
+            "type": "dictionary",
+            "title": "User Interface",
+            "properties": {
+                "simpleMode": {
+                    "type": "boolean",
+                    "title": "Simple Mode",
+                    "default": false,
+                    "description": "Enables Nudge to launch in the simplified user experience.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#simplemode---type-boolean-default-value-false"
+                        }
+                    ]
+                },
+                "forceScreenShotIcon": {
+                    "type": "boolean",
+                    "title": "Force Screen Shot Icon",
+                    "default": false,
+                    "description": "Force the built-in ScreenShot icon to render in the UI if a ScreenShot path is not passed.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#forcescreenshoticon---type-boolean-default-value-false"
+                        }
+                    ]
+                },
+                "iconDarkPath": {
+                    "type": "string",
+                    "title": "Dark Icon Path",
+                    "description": "A path to a local jpg, png, icns that contains the icon for dark mode. This will replace the Apple logo on the left side of Nudge.",
+                    "pattern": "^.*\\.(icns|jpg|png)",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#icondarkpath---type-string-default-value-"
+                        }
+                    ]
+                },
+                "iconLightPath": {
+                    "type": "string",
+                    "title": "Light Icon Path",
+                    "description": "A path to a local jpg, png, icns that contains the icon for light mode. This will replace the Apple logo on the left side of Nudge.",
+                    "pattern": "^.*\\.(icns|jpg|png)",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#iconlightpath---type-string-default-value-"
+                        }
+                    ]
+                },
+                "screenShotDarkPath": {
+                    "type": "string",
+                    "title": "Dark Screen Shot Path",
+                    "description": "A path to a local jpg, png, icns that contains the screen shot for dark mode. This will replace the Big Sur logo on the lower right side of Nudge.",
+                    "pattern": "^.*\\.(icns|jpg|png)",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#screenshotdarkpath---type-string-default-value-"
+                        }
+                    ]
+                },
+                "screenShotLightPath": {
+                    "type": "string",
+                    "title": "Light Screen Shot Path",
+                    "description": "A path to a local jpg, png, icns that contains the screen shot for light mode. This will replace the Big Sur logo on the lower right side of Nudge.",
+                    "pattern": "^.*\\.(icns|jpg|png)",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#screenshotlightpath---type-string-default-value-"
+                        }
+                    ]
+                },
+                "updateElements": {
+                    "type": "array",
+                    "items": {
+                        "type": "dictionary",
+                        "title": "updateElements Dictionary",
+                        "properties": {
+                            "_language": {
+                                "type": "string",
+                                "title": "Language",
+                                "description": "The targeted language locale for the user interface.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#_language---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "informationButtonText": {
+                                "type": "string",
+                                "title": "Information Button Text",
+                                "description": "Modifies the informationButton, also known as the 'More Info' button.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#informationbuttontext---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "mainContentHeader": {
+                                "type": "string",
+                                "title": "Main Content Header",
+                                "description": "Modifies the mainContentHeader. This is the 'Your device will restart during this update' text.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#maincontentheader---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "mainContentSubHeader": {
+                                "type": "string",
+                                "title": "Main Content Sub Header",
+                                "description": "Modifies the mainContentSubHeader. This is the 'Updates can take around 30 minutes to complete' text.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#maincontentsubheader---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "mainContentText": {
+                                "type": "string",
+                                "title": "Main Content Text",
+                                "description": "Modifies the mainContentText. This is the 'A fully up-to-date device is required to ensure that IT can your accurately protect your device.\\n\\nIf you do not update your device, you may lose access to some items necessary for your day-to-day tasks.\\n\\nTo begin the update, simply click on the button below and follow the provided steps.' text.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#maincontenttext---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "mainContentNote": {
+                                "type": "string",
+                                "title": "Main Content Note",
+                                "description": "Modifies the mainContentNote. This is the 'Important Notes' text.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#maincontentnote---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "mainHeader": {
+                                "type": "string",
+                                "title": "Main Header",
+                                "description": "Modifies the mainHeader. This is the 'Your device requires a security update' text.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#mainheader---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "actionButtonText": {
+                                "type": "string",
+                                "title": "Action Button Text",
+                                "description": "Modifies the actionButton, also known as the 'Update Device' button.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#actionbuttontext---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "primaryQuitButtonText": {
+                                "type": "string",
+                                "title": "Primary Quit Button Text",
+                                "description": "Modifies the primaryQuitButton, also known as the 'Later' button.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#primaryquitbuttontext---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "secondaryQuitButtonText": {
+                                "type": "string",
+                                "title": "Secondary Quit Button Text",
+                                "description": "Modifies the secondaryQuitButton, also known as the 'I understand' button.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#secondaryquitbuttontext---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "subHeader": {
+                                "type": "string",
+                                "title": "Sub Header",
+                                "description": "Modifies the subHeader. This is the 'A friendly reminder from your local IT team' text.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#subheader---type-string-default-value-"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "title": "Update Elements",
+                    "description": "A path to a local jpg, png, icns that contains the screen shot for light mode. This will replace the Big Sur logo on the lower right side of Nudge.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/updateElements"
+                        }
+                    ]
+                }
+            },
+            "property_order": 25
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "title": "GarageBand (com.apple.garageband10)",
+    "description": "GarageBand settings",
+    "properties": {
+        "welcomeScreenShown": {
+            "type": "boolean",
+            "title": "Suppress Welcome Screen",
+            "description": "If enabled, suppresses the welcome screen.",
+            "property_order": 5
+        },
+        "ShowMoreDownloadsDialogGB": {
+            "type": "boolean",
+            "title": "Download Additional Content Prompt",
+            "description": "If disabled, suppresses the prompt to download additional optional GarageBand content.",
+            "property_order": 10
+        },
+        "RecentWhatsNewPanelVersion": {
+            "type": "integer",
+            "title": "Suppress What's New Prompt",
+            "default": 99,
+            "description": "So long as the integer value of this preference is set equal or higher to the value produced in the user-level plist after launching the app and acknowledging the \"What's New\" prompt, this will prevent the \"What's New\" prompt from appearing.",
+            "property_order": 15
+        }
+    }
+}

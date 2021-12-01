@@ -1,0 +1,73 @@
+{
+    "title": "Spotlight (com.apple.Spotlight)",
+    "description": "Spotlight Search settings",
+    "properties": {
+        "orderedItems": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "description": "Array of dictionaries.",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Spotlight Search Item Category",
+                        "enum": [
+                            "APPLICATIONS",
+                            "BOOKMARKS",
+                            "MENU_EXPRESSION",
+                            "CONTACT",
+                            "MENU_CONVERSION",
+                            "MENU_DEFINITION",
+                            "SOURCE",
+                            "DOCUMENTS",
+                            "EVENT_TODO",
+                            "DIRECTORIES",
+                            "FONTS",
+                            "IMAGES",
+                            "MESSAGES",
+                            "MOVIES",
+                            "MUSIC",
+                            "MENU_OTHER",
+                            "PDF",
+                            "PRESENTATIONS",
+                            "MENU_SPOTLIGHT_SUGGESTIONS",
+                            "SPREADSHEETS",
+                            "SYSTEM_PREFS"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Applications",
+                                "Bookmarks & History",
+                                "Calculator",
+                                "Contacts",
+                                "Conversion",
+                                "Definition",
+                                "Developer",
+                                "Documents",
+                                "Events & Reminders",
+                                "Folders",
+                                "Fonts",
+                                "Images",
+                                "Mail & Messages",
+                                "Movies",
+                                "Music",
+                                "Other",
+                                "PDF Documents",
+                                "Presentations",
+                                "Spotlight Suggestions",
+                                "Spreadsheets",
+                                "System Preferences"
+                            ]
+                        }
+                    },
+                    "enabled": {
+                        "type": "boolean",
+                        "description": "Set this preference to 'false' to disable the applicable Spotlight search option."
+                    }
+                }
+            },
+            "description": "Add each Spotlight search item in the order you want them to be displayed in Spotlight. As these items are all contained in a single array, to manage any single item each individual Spotlight search category needs to be added below.  You may need to logout after installing the profile to verify the results.",
+            "property_order": 5
+        }
+    }
+}

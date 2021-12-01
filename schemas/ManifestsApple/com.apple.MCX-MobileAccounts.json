@@ -1,0 +1,38 @@
+{
+    "title": "Mobile Accounts (com.apple.MCX)",
+    "description": "Mobile Accounts settings",
+    "properties": {
+        "cachedaccounts.askForSecureTokenAuthBypass": {
+            "type": "boolean",
+            "title": "Ask for Secure Token Auth Bypass",
+            "default": false,
+            "description": "Hides the authentication UI when a mobile account is created.",
+            "property_order": 5
+        },
+        "cachedaccounts.expiry.delete.disusedSeconds": {
+            "type": "integer",
+            "title": "Cached Accounts Expiry",
+            "default": -1,
+            "description": "Mobile account lifetime before automatic removal in an integer value representing seconds, where -1 means never and 0 means at next login",
+            "property_order": 10
+        },
+        "cachedaccounts.WarnOnCreate.allowNever": {
+            "type": "boolean",
+            "title": "Allow Users to Stop Mobile Account Creation Prompts",
+            "default": false,
+            "property_order": 15
+        },
+        "com.apple.cachedaccounts.CreateAtLogin": {
+            "type": "boolean",
+            "title": "Create Mobile Account at Login Time",
+            "default": false,
+            "property_order": 20
+        },
+        "com.apple.cachedaccounts.WarnOnCreate": {
+            "type": "boolean",
+            "title": "Prompt for Mobile Account Creation",
+            "default": false,
+            "property_order": 25
+        }
+    }
+}

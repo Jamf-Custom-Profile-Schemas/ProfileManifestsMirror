@@ -1,0 +1,12 @@
+{
+    "title": "Ad Tracking (com.apple.AdLib)",
+    "description": "Ad Tracking settings",
+    "properties": {
+        "forceLimitAdTracking": {
+            "type": "boolean",
+            "title": "Force Limiting Ad Tracking",
+            "description": "Enabling this opts out of receiving ads targeted to interests in Apple Apps and macOS devices. May still receive the same number of ads, but the ads may be less relevant.",
+            "property_order": 5
+        }
+    }
+}

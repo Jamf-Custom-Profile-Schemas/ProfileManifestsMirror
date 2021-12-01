@@ -1,0 +1,18 @@
+{
+    "title": "System Policy: Control (com.apple.systempolicy.control)",
+    "description": "System Policy: Control settings",
+    "properties": {
+        "EnableAssessment": {
+            "type": "boolean",
+            "title": "Enable Gatekeeper",
+            "description": "If the key is present and has a value of YES, Gatekeeper is enabled. If the key is present and has a value of NO, Gatekeeper is disabled.",
+            "property_order": 5
+        },
+        "AllowIdentifiedDevelopers": {
+            "type": "boolean",
+            "title": "Allow Identified Developers",
+            "description": "If the key is present and has a value of YES, Gatekeeper\u2019s \u201cMac App Store and identified developers\u201d option is chosen. If the key is present and has a value of NO, Gatekeeper\u2019s \u201cMac App Store\u201d option is chosen. If EnableAssessment is not true, this key has no effect.",
+            "property_order": 10
+        }
+    }
+}

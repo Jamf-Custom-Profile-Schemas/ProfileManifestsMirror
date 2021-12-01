@@ -1,0 +1,47 @@
+{
+    "title": "Screensaver (com.apple.screensaver)",
+    "description": "Screensaver settings",
+    "properties": {
+        "askForPassword": {
+            "type": "boolean",
+            "title": "Require password to unlock screen.",
+            "default": false,
+            "description": "If true, the user will be prompted for a password when the screensaver is unlocked or stopped.",
+            "property_order": 5
+        },
+        "askForPasswordDelay": {
+            "type": "integer",
+            "title": "Require password delay",
+            "default": 0,
+            "description": "Number of seconds to delay before the password will be required to unlock or stop the screen saver (the \"grace period\"). A value of 2147483647 can be used to disable this requirement.",
+            "property_order": 10
+        },
+        "loginWindowModulePath": {
+            "type": "string",
+            "title": "Screensaver path",
+            "description": "A full path to the screen saver module to be used.",
+            "property_order": 15
+        },
+        "loginWindowIdleTime": {
+            "type": "integer",
+            "title": "LoginWindow Screensaver idle time",
+            "default": 300,
+            "description": "Number of seconds of inactivity before screensaver activates. (0 = never activate).",
+            "property_order": 20
+        },
+        "idleTime": {
+            "type": "integer",
+            "title": "Screensaver idle time",
+            "default": 300,
+            "description": "Number of seconds of inactivity before screensaver activates. (0 = never activate).",
+            "property_order": 25
+        },
+        "moduleName": {
+            "type": "string",
+            "title": "Screensaver Module Name",
+            "default": "Flurry",
+            "description": "Name of the screensaver module to use.",
+            "property_order": 30
+        }
+    }
+}

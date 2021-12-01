@@ -1,0 +1,147 @@
+{
+    "title": "Proxies (com.apple.SystemConfiguration)",
+    "description": "Proxies settings",
+    "properties": {
+        "Proxies": {
+            "type": "dictionary",
+            "title": "Proxy Configuration",
+            "description": "macOS System Proxy Configuration",
+            "properties": {
+                "HTTPEnable": {
+                    "type": "integer",
+                    "title": "Enable HTTP Proxy",
+                    "default": 0
+                },
+                "HTTPProxy": {
+                    "type": "string",
+                    "title": "HTTP Proxy Hostname",
+                    "description": "The IP address or fully qualified domain name (FQDN) of the http proxy server."
+                },
+                "HTTPPort": {
+                    "type": "integer",
+                    "title": "HTTP Proxy Port",
+                    "default": 80,
+                    "description": "The port on which to connect to the http proxy server."
+                },
+                "HTTPSEnable": {
+                    "type": "integer",
+                    "title": "Enable HTTPS Proxy",
+                    "default": 0
+                },
+                "HTTPSProxy": {
+                    "type": "string",
+                    "title": "HTTPS Proxy Hostname",
+                    "description": "The IP address or fully qualified domain name (FQDN) of the https proxy server."
+                },
+                "HTTPSPort": {
+                    "type": "integer",
+                    "title": "HTTPS Proxy Port",
+                    "default": 80,
+                    "description": "The port on which to connect to the https proxy server."
+                },
+                "FTPEnable": {
+                    "type": "integer",
+                    "title": "Enable FTP Proxy",
+                    "default": 0
+                },
+                "FTPPassive": {
+                    "type": "integer",
+                    "title": "Use Passive FTP Mode (PASV)",
+                    "default": 0
+                },
+                "FTPProxy": {
+                    "type": "string",
+                    "title": "FTP Proxy Hostname",
+                    "description": "The IP address or fully qualified domain name (FQDN) of the ftp proxy server."
+                },
+                "FTPPort": {
+                    "type": "integer",
+                    "title": "FTP Proxy Port",
+                    "default": 80,
+                    "description": "The port on which to connect to the ftp proxy server."
+                },
+                "SOCKSEnable": {
+                    "type": "integer",
+                    "title": "Enable SOCKS Proxy",
+                    "default": 0
+                },
+                "SOCKSProxy": {
+                    "type": "string",
+                    "title": "SOCKS Proxy Hostname",
+                    "description": "The IP address or fully qualified domain name (FQDN) of the socks proxy server."
+                },
+                "SOCKSPortInteger": {
+                    "type": "integer",
+                    "title": "SOCKS Proxy Port",
+                    "default": 80,
+                    "description": "The port on which to connect to the socks proxy server."
+                },
+                "RTSPEnable": {
+                    "type": "integer",
+                    "title": "Enable RTSP Steaming Proxy",
+                    "default": 0
+                },
+                "RTSPProxy": {
+                    "type": "string",
+                    "title": "RTSP Proxy Hostname",
+                    "description": "The IP address or fully qualified domain name (FQDN) of the rtsp proxy server."
+                },
+                "RTSPPort": {
+                    "type": "integer",
+                    "title": "RTSP Proxy Port",
+                    "default": 80,
+                    "description": "The port on which to connect to the rtsp proxy server."
+                },
+                "GopherEnable": {
+                    "type": "integer",
+                    "title": "Enable Gopher Proxy",
+                    "default": 0
+                },
+                "GopherProxy": {
+                    "type": "string",
+                    "title": "Gopher Proxy Hostname",
+                    "description": "The IP address or fully qualified domain name (FQDN) of the gopher proxy server."
+                },
+                "GopherPort": {
+                    "type": "integer",
+                    "title": "Gopher Proxy Port",
+                    "default": 80,
+                    "description": "The port on which to connect to the gopher proxy server."
+                },
+                "ExceptionsList": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Bypassed Domain",
+                        "description": "Bypassed domain or IP address. May contain wildcards. IP addresses may be in CIDR format."
+                    },
+                    "title": "Exceptions",
+                    "description": "Bypass proxy settings for these Hosts & Domains."
+                },
+                "ProxyAutoConfigEnable": {
+                    "type": "integer",
+                    "title": "Enable Automatic Proxy Configuration",
+                    "default": 0,
+                    "description": "Enable the use of a Proxy AutoConfig file."
+                },
+                "ProxyAutoConfigURLString": {
+                    "type": "string",
+                    "title": "Automatic Proxy Configuration URL",
+                    "description": "URL to the Automatic Proxy Configuration file."
+                },
+                "FallBackAllowed": {
+                    "type": "integer",
+                    "title": "Allow Proxy PAC Fallback",
+                    "description": "Enables fallback when set to 1. The default value is 1, except for managed devices whose default is 0."
+                },
+                "ProxyCaptiveLoginAllowed": {
+                    "type": "boolean",
+                    "title": "Allow Proxy Bypass for Captive Portal Logins",
+                    "default": false,
+                    "description": "Allow the device to bypass the proxy server to display the login page for captive networks."
+                }
+            },
+            "property_order": 5
+        }
+    }
+}

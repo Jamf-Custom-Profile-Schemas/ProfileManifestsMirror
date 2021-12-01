@@ -1,0 +1,218 @@
+{
+    "title": "SAP Privileges (corp.sap.privileges)",
+    "description": "SAP Privileges app settings",
+    "properties": {
+        "EnforcePrivileges": {
+            "type": "string",
+            "title": "Enforce Privileges",
+            "default": "admin",
+            "description": "Enforces certain privileges. Whenever Privileges.app or the PrivilegesCLI command line tool are launched, the corresponding privileges are set.",
+            "enum": [
+                "admin",
+                "user",
+                "none"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Admin",
+                    "User",
+                    "None"
+                ]
+            },
+            "property_order": 5
+        },
+        "DockToggleTimeout": {
+            "type": "integer",
+            "title": "Dock Toggle Timeout",
+            "description": "Sets a fixed timeout for the Dock tile's Toggle Privileges command. After this time, the admin rights are removed and set back to standard user rights. A value of 0 disables the timeout and allows the user to permanently toggle privileges.",
+            "property_order": 10
+        },
+        "DockToggleMaxTimeout": {
+            "type": "integer",
+            "title": "Dock Toggle Max Timeout",
+            "description": "Set a maximum timeout for the Dock tile's Toggle Privileges command. This generally works the same way as the DockToggleTimeout but allows the user to choose every timeout value up to the one specified. If set to 20 min. for example, the user may decide to set it to a value below 20 instead of being forced to use the 20 minute timeout.",
+            "property_order": 15
+        },
+        "LimitToGroup": {
+            "type": "string",
+            "title": "Limit to Group",
+            "description": "Limits the usage of Privileges.app to the given user group.",
+            "property_order": 20
+        },
+        "LimitToUser": {
+            "type": "string",
+            "title": "Limit to User",
+            "description": "Limits the usage of Privileges.app to the given user account.",
+            "property_order": 25
+        },
+        "ReasonRequired": {
+            "type": "boolean",
+            "title": "Reason Required",
+            "description": "If ReasonRequired is set to true, the user must provide a reason for needing admin rights.",
+            "property_order": 30
+        },
+        "ReasonMinLength": {
+            "type": "integer",
+            "title": "Reason Minimum Length",
+            "default": 10,
+            "description": "Specifies the minimum number of characters the user has to enter as the reason for becoming an admin.",
+            "property_order": 35
+        },
+        "RequireAuthentication": {
+            "type": "boolean",
+            "title": "Require User Authentication",
+            "description": "Requires authentication before using Privileges.app. If set to true, the logged-in user is prompted to authenticate via Touch ID or by entering their account password.",
+            "property_order": 40
+        },
+        "RemoteLogging": {
+            "type": "dictionary",
+            "title": "Remote Logging Settings",
+            "description": "Remote logging settings",
+            "properties": {
+                "ServerType": {
+                    "type": "string",
+                    "title": "Server Type",
+                    "enum": [
+                        "syslog"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Syslog"
+                        ]
+                    }
+                },
+                "ServerAddress": {
+                    "type": "string",
+                    "title": "Server Address",
+                    "description": "This will usually be an IP address, unless the syslog server is set up to respond using a DNS hostname."
+                },
+                "ServerPort": {
+                    "type": "integer",
+                    "title": "Server Port",
+                    "default": 514,
+                    "description": "The port of the logging server."
+                },
+                "EnableTCP": {
+                    "type": "boolean",
+                    "title": "Enable TCP",
+                    "default": false,
+                    "description": "If set to true, the log messages are sent via TCP instead of UDP. By default, messages are sent via UDP."
+                },
+                "SyslogOptions": {
+                    "type": "dictionary",
+                    "title": "Syslog Options",
+                    "description": "Syslog-specific options",
+                    "properties": {
+                        "LogFacility": {
+                            "type": "integer",
+                            "title": "Log Facility",
+                            "default": 4,
+                            "description": "Configure syslog facility.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://tools.ietf.org/html/rfc5424#section-6.2.1"
+                                }
+                            ],
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6,
+                                7,
+                                8,
+                                9,
+                                10,
+                                11,
+                                12,
+                                13,
+                                14,
+                                15,
+                                16,
+                                17,
+                                18,
+                                19,
+                                20,
+                                21,
+                                22,
+                                23
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Kernel",
+                                    "User-level",
+                                    "Mail System",
+                                    "System Daemons",
+                                    "Security / Authorization",
+                                    "Internal Syslogd",
+                                    "Line Printer",
+                                    "Network News",
+                                    "UUCP",
+                                    "Clock Daemon",
+                                    "Security / Authorization",
+                                    "FTP",
+                                    "NTP",
+                                    "Log Audit",
+                                    "Log Alert",
+                                    "Clock Daemon (note 2)",
+                                    "Local Use 0 (local0)",
+                                    "Local Use 1 (local1)",
+                                    "Local Use 2 (local2)",
+                                    "Local Use 3 (local3)",
+                                    "Local Use 4 (local4)",
+                                    "Local Use 5 (local5)",
+                                    "Local Use 6 (local6)",
+                                    "Local Use 7 (local7)"
+                                ]
+                            }
+                        },
+                        "LogSeverity": {
+                            "type": "integer",
+                            "title": "Log Severity",
+                            "default": 6,
+                            "description": "Configure syslog severity.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://tools.ietf.org/html/rfc5424#section-6.2.1"
+                                }
+                            ],
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6,
+                                7
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Emergency",
+                                    "Alert",
+                                    "Critical",
+                                    "Error",
+                                    "Warning",
+                                    "Notice",
+                                    "Informational",
+                                    "Debug"
+                                ]
+                            }
+                        },
+                        "MaximumMessageSize": {
+                            "type": "integer",
+                            "title": "Maximum Message Size",
+                            "default": 480,
+                            "description": "Specify the maximum size of the syslog message (header + event message). If the syslog message is larger than the specified maximum, the message will be truncated at the end."
+                        }
+                    }
+                }
+            },
+            "property_order": 45
+        }
+    }
+}

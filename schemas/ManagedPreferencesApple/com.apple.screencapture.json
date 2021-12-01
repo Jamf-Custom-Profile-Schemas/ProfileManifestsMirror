@@ -1,0 +1,11 @@
+{
+    "title": "Screencapture (com.apple.screencapture)",
+    "description": "Screencapture settings",
+    "properties": {
+        "disable-shadow": {
+            "type": "boolean",
+            "title": "Disable Screenshot Drop Shadow",
+            "property_order": 5
+        }
+    }
+}

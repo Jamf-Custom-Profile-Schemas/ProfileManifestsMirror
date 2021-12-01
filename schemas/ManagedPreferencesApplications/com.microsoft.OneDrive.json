@@ -1,0 +1,201 @@
+{
+    "title": "Microsoft OneDrive (com.microsoft.OneDrive)",
+    "description": "Microsoft OneDrive settings",
+    "properties": {
+        "DisablePersonalSync": {
+            "type": "boolean",
+            "title": "Disable personal accounts",
+            "default": true,
+            "description": "Prevents users from adding or syncing personal accounts.",
+            "property_order": 5
+        },
+        "DisableTutorial": {
+            "type": "boolean",
+            "title": "Disable tutorial screens",
+            "description": "Disable tutorial screens during first setup.",
+            "property_order": 10
+        },
+        "Tenants": {
+            "type": "dictionary",
+            "description": "OneDrive folder default location.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "TenantID",
+                    "description": "A globally unique identifier (GUID) that is different than your tenant name or domain."
+                },
+                "{{value}}": {
+                    "type": "dictionary",
+                    "title": "DefaultFolderDict",
+                    "properties": {
+                        "DefaultFolder": {
+                            "type": "string",
+                            "title": "Folder Path"
+                        }
+                    }
+                }
+            },
+            "property_order": 15
+        },
+        "AutomaticUploadBandwidthPercentage": {
+            "type": "integer",
+            "title": "Automatic upload bandwidth percentage",
+            "description": "Percentage of local upload bandwidth that the sync client can use.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 20
+        },
+        "UploadBandwidthLimited": {
+            "type": "integer",
+            "title": "Maximum upload throughput",
+            "description": "Upload throughput in KB/sec that the sync client can use.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 25
+        },
+        "DownloadBandwidthLimited": {
+            "type": "integer",
+            "title": "Maximum download throughput",
+            "description": "Download throughput in KB/sec that the sync client can use.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 30
+        },
+        "HideDockIcon": {
+            "type": "boolean",
+            "title": "Hide Dock Icon",
+            "description": "Hides the OneDrive dock icon even when the application is running.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 35
+        },
+        "OpenAtLogin": {
+            "type": "boolean",
+            "title": "Open at login",
+            "description": "Automatically start OneDrive when the user logs in.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 40
+        },
+        "SharePointOnPremFrontDoorUrl": {
+            "type": "string",
+            "title": "SharePoint Server Front Door URL",
+            "description": "The URL of the on-premises SharePoint Server.",
+            "property_order": 45
+        },
+        "SharePointOnPremTenantName": {
+            "type": "string",
+            "title": "SharePoint Server Tenant Name",
+            "description": "The name that will be used when creating a folder to sync the on-premises SharePoint Server files.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 50
+        },
+        "SharePointOnPremPrioritzationPolicy": {
+            "type": "integer",
+            "title": "SharePoint OnPrem Prioritization",
+            "description": "Determines whether or not the client should set up sync for SharePoint Server or SharePoint Online first during the first-run scenario.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "SharePoint Online",
+                    "SharePoint Server"
+                ]
+            },
+            "property_order": 55
+        },
+        "DefaultToBusinessFRE": {
+            "type": "boolean",
+            "description": "Default to OneDrive Business",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 60
+        },
+        "EnableAddAccounts": {
+            "type": "boolean",
+            "description": "Allow users to add accounts to OneDrive",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 65
+        },
+        "FilesOnDemandEnabled": {
+            "type": "boolean",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 70
+        },
+        "IsHydrationToastAllowed": {
+            "type": "boolean",
+            "description": "When set to false, toasts will not appear when applications trigger the download of file contents.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 75
+        },
+        "HydrationDisallowedApps": {
+            "type": "string",
+            "description": "String in JSON format. AppID can be either the BSD process name or the bundle display name. \nMaxBuildVersion denotes the maximum build version of the application that will be blocked. \nMaxBundleVersion denotes the maximum bundle version of the application that will be blocked.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 80
+        }
+    }
+}

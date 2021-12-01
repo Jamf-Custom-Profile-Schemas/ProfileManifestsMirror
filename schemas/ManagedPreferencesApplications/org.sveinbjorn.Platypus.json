@@ -1,0 +1,58 @@
+{
+    "title": "Platypus (org.sveinbjorn.Platypus)",
+    "description": "Platypus settings",
+    "properties": {
+        "DefaultBundleIdentifierPrefix": {
+            "type": "string",
+            "description": "Enter the desired default bundle identifier prefix for apps built with Platypus. This string must end with a period.",
+            "property_order": 5
+        },
+        "DefaultAuthor": {
+            "type": "string",
+            "description": "The default name to have listed as the application author.",
+            "property_order": 10
+        },
+        "DefaultEditor": {
+            "type": "string",
+            "description": "The default text editor to use with Platypus. If you want to use built-in Platypus editor, don't enable this preference.",
+            "enum": [
+                "Atom",
+                "BBEdit",
+                "Sublime Text",
+                "TextEdit"
+            ],
+            "property_order": 15
+        },
+        "RevealApplicationWhenCreated": {
+            "type": "boolean",
+            "description": "After building an application with Platypus, reveal the application in the Finder.",
+            "property_order": 20
+        },
+        "OpenApplicationWhenCreated": {
+            "type": "boolean",
+            "description": "After building an appliction with Platypus, launch the application.",
+            "property_order": 25
+        },
+        "SUAutomaticallyUpdate": {
+            "type": "boolean",
+            "description": "Automatically download available updates for Platypus. When combined with SUEnableAutomaticChecks, Platypus will automatically check and download these updates. Updates are subsequently installed when the user quits the app.",
+            "property_order": 30
+        },
+        "SUEnableAutomaticChecks": {
+            "type": "boolean",
+            "default": true,
+            "description": "Automatically check for Platypus software updates.",
+            "property_order": 35
+        },
+        "SUFeedURL": {
+            "type": "string",
+            "description": "Sparkle update framework key. While automatic update checks can be disabled via the SUEnableAutomaticChecks key, this does not prevent users from manually running a software update check via the GUI. Setting this key to a non-existant local address will prevent users from manually triggering and/or installing updates themselves.",
+            "property_order": 40
+        },
+        "SUSendProfileInfo": {
+            "type": "boolean",
+            "description": "When running software update checks, submit anonymous computer profile data to Platypus.",
+            "property_order": 45
+        }
+    }
+}

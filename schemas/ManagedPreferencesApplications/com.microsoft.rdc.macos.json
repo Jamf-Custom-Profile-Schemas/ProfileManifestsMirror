@@ -1,0 +1,59 @@
+{
+    "title": "Microsoft Remote Desktop (com.microsoft.rdc.macos)",
+    "description": "Microsoft Remote Desktop settings",
+    "properties": {
+        "ClientSettings.FirstRunExperienceLaunchedVersion": {
+            "type": "string",
+            "title": "Disable First Run Dialog",
+            "description": "Disable the first run dialog \"Help us make your experience better\".",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C8J5E5VPW/p1530676449000004"
+                }
+            ],
+            "enum": [
+                "1"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disable"
+                ]
+            },
+            "property_order": 5
+        },
+        "ClientSettings.DisableTelemetryUpload": {
+            "type": "boolean",
+            "title": "Disable Telemetry Upload",
+            "default": false,
+            "description": "Disable upload of telemetry data.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C8J5E5VPW/p1549656233101800"
+                }
+            ],
+            "property_order": 10
+        },
+        "ClientSettings.EnforceCredSSPSupport": {
+            "type": "string",
+            "title": "Enforce Cred SSP Support",
+            "description": "Support for all possible values of the \"EnableCredSspSupport\" and \"Authentication Level\" RDP file settings if this key is set to 0.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/mac-whatsnew#updates-for-version-1022"
+                }
+            ],
+            "enum": [
+                "0"
+            ],
+            "options": {
+                "enum_titles": [
+                    "0"
+                ]
+            },
+            "property_order": 15
+        }
+    }
+}

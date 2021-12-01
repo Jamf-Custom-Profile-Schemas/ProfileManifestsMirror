@@ -1,0 +1,15 @@
+{
+    "title": "Siri (com.apple.Siri)",
+    "description": "Siri settings",
+    "properties": {
+        "StatusMenuVisible": {
+            "type": "boolean",
+            "title": "Enable Status Menu",
+            "property_order": 5
+        },
+        "UserHasDeclinedEnable": {
+            "type": "boolean",
+            "property_order": 10
+        }
+    }
+}

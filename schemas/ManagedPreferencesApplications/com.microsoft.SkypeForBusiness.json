@@ -1,0 +1,80 @@
+{
+    "title": "Skype for Business (com.microsoft.SkypeForBusiness)",
+    "description": "Skype for Business settings",
+    "properties": {
+        "userName": {
+            "type": "string",
+            "title": "Username",
+            "description": "The UPN (UserName) used to sign-in to Skype for Business.",
+            "property_order": 5
+        },
+        "sipAddress": {
+            "type": "string",
+            "title": "SIP Address",
+            "description": "The SIP address (Email) used to sign-in to Skype for Business.",
+            "property_order": 10
+        },
+        "userNameInAdvancedOnly": {
+            "type": "boolean",
+            "title": "User Name field location",
+            "description": "Specify where the User Name field is displayed during sign-in.",
+            "property_order": 15
+        },
+        "autoAcceptTimeout": {
+            "type": "integer",
+            "title": "Auto Accept Timeout",
+            "default": 300,
+            "description": "Auto-Accept timeout for users without Server-side Conversation History.",
+            "property_order": 20
+        },
+        "warnWhenUnknownLocationForE911": {
+            "type": "boolean",
+            "title": "Warn Unknown Location for Emergency 911",
+            "description": "Warns the user when dialing an emergency number from an unknown location.",
+            "property_order": 25
+        },
+        "autoDetectAutoDicoveryURLs": {
+            "type": "boolean",
+            "title": "Server Discovery Method",
+            "default": true,
+            "description": "Specify how Skype for Business identifies the transport and server to use during sign-in. (The misspelling of Discovery in the key is intentional.)",
+            "property_order": 30
+        },
+        "internalAutoDiscoveryURL": {
+            "type": "string",
+            "title": "Internal Auto Discovery URL",
+            "default": true,
+            "property_order": 35
+        },
+        "externalAutoDiscoveryURL": {
+            "type": "string",
+            "title": "External Auto Discovery URL",
+            "default": true,
+            "property_order": 40
+        },
+        "httpProxyDomain": {
+            "type": "string",
+            "title": "HTTP Proxy Domain",
+            "property_order": 45
+        },
+        "httpProxyUserName": {
+            "type": "string",
+            "title": "HTTP Proxy Username",
+            "property_order": 50
+        },
+        "httpProxyPassword": {
+            "type": "string",
+            "title": "HTTP Proxy Password",
+            "property_order": 55
+        },
+        "trustedDomainList": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Trusted Domain List",
+            "description": "List of trusted domains for HTTP redirects.",
+            "property_order": 60
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "title": "Microsoft Office 365 Service (com.microsoft.Office365ServiceV2)",
+    "description": "Microsoft Office 365 Service settings",
+    "properties": {
+        "SendAllTelemetryEnabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Set to false to send minimal heartbeat data, no application usage, and no environment details.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1565795925296800?thread_ts=1565795743.294700%26cid=C07UZ1X7B"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}

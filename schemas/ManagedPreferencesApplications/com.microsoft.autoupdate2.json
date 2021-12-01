@@ -1,0 +1,1178 @@
+{
+    "title": "Microsoft AutoUpdate (com.microsoft.autoupdate2)",
+    "description": "Microsoft AutoUpdate settings",
+    "properties": {
+        "AcknowledgedDataCollectionPolicy": {
+            "type": "string",
+            "title": "Acknowledged Data Collection Policy",
+            "default": "RequiredDataOnly",
+            "description": "The first time Version 4.12 or later of Microsoft AutoUpdate is launched, users will see a Required Data Notice dialog which provides them with information about what data from MAU is sent to Microsoft. If you don't want your users to see this Required Data Notice dialog for Microsoft AutoUpdate, you can set the following preference. Regardless of which value you set, the dialog won't be shown to your users. If you let your users see this dialog, then when the user chooses OK, the value RequiredDataOnly is used and the dialog is not shown to the user again.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-the-required-data-notice-dialog-for-microsoft-autoupdate"
+                }
+            ],
+            "enum": [
+                "RequiredDataOnly",
+                "RequiredAndOptionalData"
+            ],
+            "options": {
+                "enum_titles": [
+                    "RequiredDataOnly",
+                    "RequiredAndOptionalData"
+                ]
+            },
+            "property_order": 5
+        },
+        "ChannelName": {
+            "type": "string",
+            "title": "Channel Name",
+            "default": "Production",
+            "description": "Set the update channel that is used to check for updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/MAU_38.pdf"
+                }
+            ],
+            "enum": [
+                "Production",
+                "External",
+                "InsiderFast",
+                "Custom"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Production",
+                    "Office Insider Slow: \"External\"",
+                    "Office Insider Fast: \"InsiderFast\"",
+                    "Custom"
+                ]
+            },
+            "property_order": 10
+        },
+        "DisableInsiderCheckbox": {
+            "type": "boolean",
+            "title": "Disable Insider Checkbox",
+            "default": false,
+            "description": "Set this option to disable the \"Join the Office Insider Program...\" checkbox.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/MAU_38.pdf"
+                }
+            ],
+            "property_order": 15
+        },
+        "EnableCheckForUpdatesButton": {
+            "type": "boolean",
+            "title": "Enable Check for Updates Button",
+            "default": true,
+            "description": "Disable this option to make the \"Check for Updates\" button in unavailable.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C8J5E5VPW/p1525938524000340"
+                }
+            ],
+            "property_order": 20
+        },
+        "ExtendedLogging": {
+            "type": "boolean",
+            "title": "Enable Extended Logging",
+            "default": false,
+            "description": "Enabled extended logging for Microsoft AutoUpdate operations.\nWrites logs to: /Library/Logs/Microsoft/autoupdate.log",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/MAU_38.pdf"
+                }
+            ],
+            "property_order": 25
+        },
+        "HowToCheck": {
+            "type": "string",
+            "title": "How to Check for Updates",
+            "default": "AutomaticCheck",
+            "description": "Control how updates are checked for and handled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/MAU_38.pdf"
+                }
+            ],
+            "enum": [
+                "Manual",
+                "AutomaticCheck",
+                "AutomaticDownload"
+            ],
+            "options": {
+                "enum_titles": [
+                    "No auto updates or checks: \"Manual\"",
+                    "Automatically check for updates: \"AutomaticCheck\"",
+                    "Automatically check for and install updates: \"AutomaticDownload\""
+                ]
+            },
+            "property_order": 30
+        },
+        "ManifestServer": {
+            "type": "string",
+            "title": "Manifest Server",
+            "description": "Force Microsoft AutoUpdate to pull collateral using a custom server. This is good when enterprise wants to have strict control on which version of Office applications get installed. Ensure that a trailing slash is used when specifying the value as this is mandatory. This requires \"ChannelName\" to be set to \"Custom\".",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/MAU_CachingServer.pdf"
+                }
+            ],
+            "property_order": 35
+        },
+        "SendAllTelemetryEnabled": {
+            "type": "boolean",
+            "title": "Send Telemetry Data",
+            "default": false,
+            "description": "Set to false to send minimal heartbeat data, no application usage, and no environment details. Replaced by \"AcknowledgedDataCollectionPolicy\" in MAU 4.12.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
+                }
+            ],
+            "property_order": 40
+        },
+        "StartDaemonOnAppLaunch": {
+            "type": "boolean",
+            "title": "Start Daemon on App Launch",
+            "default": true,
+            "description": "Enable this option to trigger the MAU Daemon when other Office applications are launched.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/MAU_38.pdf"
+                }
+            ],
+            "property_order": 45
+        },
+        "IgnoreUIOpenAfterInstall": {
+            "type": "boolean",
+            "title": "Ignore UI Open After Install",
+            "default": false,
+            "description": "Enable this option to prevent MAU UI from launching after install.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/officeupdates/release-history-microsoft-autoupdate#august-2020-release"
+                }
+            ],
+            "property_order": 50
+        },
+        "UpdateCache": {
+            "type": "string",
+            "title": "Update Cache Server",
+            "description": "Force Microsoft AutoUpdate to pull update binaries from a custom server. This is good when internet bandwidth is limited. Ensure that a trailing slash is used when specifying the value as this is mandatory.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/MAU_CachingServer.pdf"
+                }
+            ],
+            "property_order": 55
+        },
+        "UpdateCheckFrequency": {
+            "type": "integer",
+            "title": "Update Check Frequency",
+            "default": 720,
+            "description": "Change how often the Microsoft AutoUpdate daemon will look for updates. The default is 720 minutes (12 hrs). By reducing this value MAU will look for updates sooner.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1493835630209456"
+                }
+            ],
+            "property_order": 60
+        },
+        "UpdateDeadline.DaysBeforeForcedQuit": {
+            "type": "integer",
+            "title": "Update Deadline: Days Before Forced Quit",
+            "description": "Force quit applications and update X number of days after MAU first detects the update on each computer.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                }
+            ],
+            "property_order": 65
+        },
+        "UpdateDeadline.StartAutomaticUpdates": {
+            "type": "integer",
+            "title": "Update Deadline: Start Automatic Updates",
+            "default": 3,
+            "description": "How many days in advance of the deadline that Automatic Download and Install mode begins. Temporarily overrides \"HowToCheck\" with \"AutomaticDownload\" until all updates are applied.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-automatic-download-and-install-mode"
+                }
+            ],
+            "property_order": 70
+        },
+        "Applications": {
+            "type": "dictionary",
+            "title": "Applications",
+            "description": "Register applications that Microsoft AutoUpdate should update. If this is not managed MAU might have issues finding updates for applications that a user has never opened. Language Code IDs are legacy and always \"1033\".",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/pbowden-msft/Payloads"
+                }
+            ],
+            "properties": {
+                "/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft AutoUpdate",
+                    "description": "Register /Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSau04",
+                            "enum": [
+                                "MSau03",
+                                "MSau04"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "AutoUpdate <= 4.6",
+                                    "AutoUpdate => 4.7"
+                                ]
+                            }
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Microsoft Defender ATP.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Defender ATP",
+                    "description": "Register /Applications/Microsoft Defender ATP.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "WDAV00",
+                            "enum": [
+                                "WDAV00"
+                            ]
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Microsoft Edge.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Edge",
+                    "description": "Register /Applications/Microsoft Edge.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "EDGE01",
+                            "enum": [
+                                "EDGE01"
+                            ]
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Microsoft Excel.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Excel",
+                    "description": "Register /Applications/Microsoft Excel.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "XCEL2019",
+                            "enum": [
+                                "XCEL15",
+                                "XCEL2019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Microsoft OneNote.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft OneNote",
+                    "description": "Register /Applications/Microsoft OneNote.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "ONMC2019",
+                            "enum": [
+                                "ONMC15",
+                                "ONMC2019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Microsoft Outlook.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Outlook",
+                    "description": "Register /Applications/Microsoft Outlook.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "OPIM2019",
+                            "enum": [
+                                "OPIM15",
+                                "OPIM2019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Microsoft PowerPoint.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft PowerPoint",
+                    "description": "Register /Applications/Microsoft PowerPoint.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "PPT32019",
+                            "enum": [
+                                "PPT315",
+                                "PPT32019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Microsoft Remote Desktop.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Remote Desktop",
+                    "description": "Register /Applications/Microsoft Remote Desktop.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSRD10",
+                            "enum": [
+                                "MSRD10"
+                            ]
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Microsoft Teams.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Teams",
+                    "description": "Register /Applications/Microsoft Teams.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "TEAM01",
+                            "enum": [
+                                "TEAM01"
+                            ]
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Microsoft Word.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Word",
+                    "description": "Register /Applications/Microsoft Word.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSWD2019",
+                            "enum": [
+                                "MSWD15",
+                                "MSWD2019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Company Portal.app": {
+                    "type": "dictionary",
+                    "title": "Company Portal",
+                    "description": "Register /Applications/Company Portal.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "IMCP01",
+                            "enum": [
+                                "IMCP01"
+                            ]
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/OneDrive.app": {
+                    "type": "dictionary",
+                    "title": "OneDrive",
+                    "description": "Register /Applications/OneDrive.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "ONDR18",
+                            "enum": [
+                                "ONDR18"
+                            ]
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/Applications/Skype for Business.app": {
+                    "type": "dictionary",
+                    "title": "Skype for Business",
+                    "description": "Register /Applications/Skype for Business.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSFB16",
+                            "enum": [
+                                "MSFB16"
+                            ]
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "property_order": 75
+        },
+        "UpdateDeadline.ApplicationsForcedUpdateSchedule": {
+            "type": "dictionary",
+            "title": "Update Deadline: Applications Forced Update Schedule",
+            "description": "Configure a deadline for a specific update version at a specific date and time for each application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                }
+            ],
+            "properties": {
+                "/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft AutoUpdate",
+                    "description": "Schedule an update for Microsoft AutoUpdate.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSau04",
+                            "enum": [
+                                "MSau03",
+                                "MSau04"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "AutoUpdate <= 4.6",
+                                    "AutoUpdate => 4.7"
+                                ]
+                            }
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Microsoft Defender ATP.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Defender ATP",
+                    "description": "Schedule an update for Microsoft Defender ATP.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "WDAV00",
+                            "enum": [
+                                "WDAV00"
+                            ]
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Microsoft Edge.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Edge",
+                    "description": "Schedule an update for Microsoft Edge.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "EDGE01",
+                            "enum": [
+                                "EDGE01"
+                            ]
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Microsoft Excel.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Excel",
+                    "description": "Schedule an update for Microsoft Excel.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "XCEL2019",
+                            "enum": [
+                                "XCEL15",
+                                "XCEL2019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Microsoft OneNote.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft OneNote",
+                    "description": "Schedule an update for Microsoft OneNote.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "ONMC2019",
+                            "enum": [
+                                "ONMC15",
+                                "ONMC2019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Microsoft Outlook.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Outlook",
+                    "description": "Schedule an update for Microsoft Outlook.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "OPIM2019",
+                            "enum": [
+                                "OPIM15",
+                                "OPIM2019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Microsoft PowerPoint.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft PowerPoint",
+                    "description": "Schedule an update for Microsoft PowerPoint.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "PPT32019",
+                            "enum": [
+                                "PPT315",
+                                "PPT32019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Microsoft Remote Desktop.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Remote Desktop",
+                    "description": "Schedule an update for Microsoft Remote Desktop.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSRD10",
+                            "enum": [
+                                "MSRD10"
+                            ]
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Microsoft Teams.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Teams",
+                    "description": "Schedule an update for Microsoft Teams.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "TEAM01",
+                            "enum": [
+                                "TEAM01"
+                            ]
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Microsoft Word.app": {
+                    "type": "dictionary",
+                    "title": "Microsoft Word",
+                    "description": "Schedule an update for Microsoft Word.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSWD2019",
+                            "enum": [
+                                "MSWD15",
+                                "MSWD2019"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "2016 Volume License",
+                                    "2019 Volume License/Office 365"
+                                ]
+                            }
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Company Portal.app": {
+                    "type": "dictionary",
+                    "title": "Company Portal",
+                    "description": "Schedule an update for Company Portal.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "IMCP01",
+                            "enum": [
+                                "IMCP01"
+                            ]
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/OneDrive.app": {
+                    "type": "dictionary",
+                    "title": "OneDrive",
+                    "description": "Schedule an update for OneDrive.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "ONDR18",
+                            "enum": [
+                                "ONDR18"
+                            ]
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Skype for Business.app": {
+                    "type": "dictionary",
+                    "title": "Skype for Business",
+                    "description": "Schedule an update for Skype for Business.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSFB16",
+                            "enum": [
+                                "MSFB16"
+                            ]
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                }
+            },
+            "property_order": 80
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "title": "Developer: Exclude (com.profilecreator.developer.exclude)",
+    "description": "Developer: Exclude settings",
+    "properties": {
+        "Exclude00": {
+            "type": "string",
+            "title": "Exclude 00: Settings",
+            "description": "Exclude condition target.",
+            "enum": [
+                "Item01",
+                "Item02",
+                "Item03",
+                "Item04",
+                "Item05",
+                "Item06"
+            ],
+            "property_order": 5
+        },
+        "Exclude01": {
+            "type": "string",
+            "title": "Exclude 01: Always if Item01 is selected.",
+            "description": "Exclude always if Item01 is selected.",
+            "property_order": 10
+        },
+        "Exclude02": {
+            "type": "string",
+            "title": "Exclude 02: Always if Item02 or Item03 is selected.",
+            "description": "Exclude always if Item02 or Item03 is selected.",
+            "property_order": 15
+        },
+        "Exclude03": {
+            "type": "string",
+            "title": "Exclude 03: Always if Item04 is NOT selected.",
+            "description": "Exclude always if Item04 is NOT selected.",
+            "property_order": 20
+        },
+        "Exclude04": {
+            "type": "string",
+            "title": "Exclude 04: Always if Item05 or Item06 is NOT selected.",
+            "description": "Exclude always if Item05 or Item06 is NOT selected.",
+            "property_order": 25
+        }
+    }
+}

@@ -1,0 +1,284 @@
+{
+    "title": "Energy Saver (com.apple.MCX)",
+    "description": "Energy Saver settings",
+    "properties": {
+        "com.apple.EnergySaver.desktop.ACPower": {
+            "type": "dictionary",
+            "title": "Desktop Energy Saver Settings",
+            "description": "Managed settings for the desktop energy profile.",
+            "properties": {
+                "Display Sleep Timer": {
+                    "type": "integer",
+                    "title": "Display Sleep Timer",
+                    "description": "Minutes of inactivity before the display will be turned off, in an integer value where 0 means never"
+                },
+                "System Sleep Timer": {
+                    "type": "integer",
+                    "title": "System Sleep Timer",
+                    "description": "Minutes of inactivity before the system will enter sleep mode, in an integer value where 0 means never"
+                },
+                "Disk Sleep Timer": {
+                    "type": "integer",
+                    "title": "Disk(s) Sleep Timer",
+                    "default": 10,
+                    "description": "Minutes of inactivity before the disks(s) will be powered down, in an integer value where 0 means never"
+                },
+                "Wake On LAN": {
+                    "type": "integer",
+                    "title": "Wake on LAN",
+                    "description": "Wake the system for network access"
+                },
+                "Wake On Modem Ring": {
+                    "type": "integer",
+                    "title": "Wake On Modem Ring"
+                },
+                "Automatic Restart On Power Loss": {
+                    "type": "integer",
+                    "title": "Start up Automatically After a Power Failure"
+                },
+                "Dynamic Power Step": {
+                    "type": "integer",
+                    "title": "Dynamic Power Step",
+                    "description": "May not be available on all systems"
+                },
+                "Reduce Processor Speed": {
+                    "type": "integer",
+                    "title": "Reduce Processor Speed",
+                    "description": "May not be available on all systems"
+                }
+            },
+            "property_order": 5
+        },
+        "com.apple.EnergySaver.portable.BatteryPower": {
+            "type": "dictionary",
+            "title": "Portable Energy Saver Settings",
+            "description": "Managed settings for the portable battery power energy profile",
+            "properties": {
+                "Display Sleep Timer": {
+                    "type": "integer",
+                    "title": "Display Sleep Timer",
+                    "description": "Minutes of inactivity before the display will be turned off, in an integer value where 0 means never"
+                },
+                "System Sleep Timer": {
+                    "type": "integer",
+                    "title": "System Sleep Timer",
+                    "description": "Minutes of inactivity before the system will enter sleep mode, in an integer value where 0 means never"
+                },
+                "Disk Sleep Timer": {
+                    "type": "integer",
+                    "title": "Disk(s) Sleep Timer",
+                    "default": 10,
+                    "description": "Minutes of inactivity before the disks(s) will be powered down, in an integer value where 0 means never"
+                },
+                "Wake On LAN": {
+                    "type": "integer",
+                    "title": "Wake on LAN",
+                    "description": "Wake the system for network access"
+                },
+                "Wake On Modem Ring": {
+                    "type": "integer",
+                    "title": "Wake On Modem Ring"
+                },
+                "Automatic Restart On Power Loss": {
+                    "type": "integer",
+                    "title": "Start up Automatically After a Power Failure"
+                },
+                "Dynamic Power Step": {
+                    "type": "integer",
+                    "title": "Dynamic Power Step",
+                    "description": "May not be available on all systems"
+                },
+                "Reduce Processor Speed": {
+                    "type": "integer",
+                    "title": "Reduce Processor Speed",
+                    "description": "May not be available on all systems"
+                }
+            },
+            "property_order": 10
+        },
+        "com.apple.EnergySaver.portable.ACPower": {
+            "type": "dictionary",
+            "title": "Portable Energy Saver Settings",
+            "description": "Managed settings for the portable AC power energy profile.",
+            "properties": {
+                "Display Sleep Timer": {
+                    "type": "integer",
+                    "title": "Display Sleep Timer",
+                    "description": "Minutes of inactivity before the display will be turned off, in an integer value where 0 means never"
+                },
+                "System Sleep Timer": {
+                    "type": "integer",
+                    "title": "System Sleep Timer",
+                    "description": "Minutes of inactivity before the system will enter sleep mode, in an integer value where 0 means never"
+                },
+                "Disk Sleep Timer": {
+                    "type": "integer",
+                    "title": "Disk(s) Sleep Timer",
+                    "default": 10,
+                    "description": "Minutes of inactivity before the disks(s) will be powered down, in an integer value where 0 means never"
+                },
+                "Wake On LAN": {
+                    "type": "integer",
+                    "title": "Wake on LAN",
+                    "description": "Wake the system for network access"
+                },
+                "Wake On Modem Ring": {
+                    "type": "integer",
+                    "title": "Wake On Modem Ring"
+                },
+                "Automatic Restart On Power Loss": {
+                    "type": "integer",
+                    "title": "Start up Automatically After a Power Failure"
+                },
+                "Dynamic Power Step": {
+                    "type": "integer",
+                    "title": "Dynamic Power Step",
+                    "description": "May not be available on all systems"
+                },
+                "Reduce Processor Speed": {
+                    "type": "integer",
+                    "title": "Reduce Processor Speed",
+                    "description": "May not be available on all systems"
+                }
+            },
+            "property_order": 15
+        },
+        "com.apple.EnergySaver.desktop.Schedule": {
+            "type": "dictionary",
+            "title": "Power Schedule",
+            "description": "Use this key to manage scheduled power on and power off events.",
+            "properties": {
+                "RepeatingPowerOn": {
+                    "type": "dictionary",
+                    "title": "Start up or wake",
+                    "description": "Use this key to describe a repeating start up/wake time.",
+                    "properties": {
+                        "eventtype": {
+                            "type": "string",
+                            "title": "Action",
+                            "default": "wakepoweron",
+                            "description": "The type of action to take at the scheduled time.",
+                            "enum": [
+                                "wake",
+                                "wakepoweron"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Wake",
+                                    "Start Up/Wake"
+                                ]
+                            }
+                        },
+                        "weekdays": {
+                            "type": "integer",
+                            "title": "Days to execute",
+                            "default": 31,
+                            "description": "The days on which the scheduled event occurs.",
+                            "properties": {
+                                "weekday": {
+                                    "type": "integer",
+                                    "title": "Weekday",
+                                    "enum": [
+                                        1,
+                                        2,
+                                        4,
+                                        8,
+                                        16,
+                                        32,
+                                        64
+                                    ],
+                                    "options": {
+                                        "enum_titles": [
+                                            "Monday",
+                                            "Tuesday",
+                                            "Wednesday",
+                                            "Thursday",
+                                            "Friday",
+                                            "Saturday",
+                                            "Sunday"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "time": {
+                            "type": "integer",
+                            "title": "Time of day",
+                            "default": 0,
+                            "description": "The time of day to perform the action."
+                        }
+                    }
+                },
+                "RepeatingPowerOff": {
+                    "type": "dictionary",
+                    "title": "Shut down, sleep or restart",
+                    "description": "Use this key to describe a repeating shut down, sleep or restart.",
+                    "properties": {
+                        "eventtype": {
+                            "type": "string",
+                            "title": "Action",
+                            "description": "The type of action to take at the scheduled time.",
+                            "enum": [
+                                "sleep",
+                                "restart",
+                                "shutdown"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Sleep",
+                                    "Restart",
+                                    "Shut Down"
+                                ]
+                            }
+                        },
+                        "weekdays": {
+                            "type": "integer",
+                            "title": "Days to execute",
+                            "default": 31,
+                            "description": "The days on which the scheduled event occurs.",
+                            "properties": {
+                                "weekday": {
+                                    "type": "integer",
+                                    "title": "Weekday",
+                                    "enum": [
+                                        1,
+                                        2,
+                                        4,
+                                        8,
+                                        16,
+                                        32,
+                                        64
+                                    ],
+                                    "options": {
+                                        "enum_titles": [
+                                            "Monday",
+                                            "Tuesday",
+                                            "Wednesday",
+                                            "Thursday",
+                                            "Friday",
+                                            "Saturday",
+                                            "Sunday"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "time": {
+                            "type": "integer",
+                            "title": "Time of day",
+                            "default": 0,
+                            "description": "The time of day to perform the action."
+                        }
+                    }
+                }
+            },
+            "property_order": 20
+        },
+        "SleepDisabled": {
+            "type": "boolean",
+            "title": "Sleep Disabled",
+            "default": true,
+            "property_order": 25
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "title": "Time Machine (com.apple.MCX.TimeMachine)",
+    "description": "Time Machine settings",
+    "properties": {
+        "BackupDestURL": {
+            "type": "string",
+            "title": "Backup Destination",
+            "description": "URL of the backup destination. (e.g., smb://server.example.com/backups/)",
+            "property_order": 5
+        },
+        "BackupAllVolumes": {
+            "type": "boolean",
+            "title": "Backup all volumes",
+            "default": false,
+            "description": "Only startup volume is backed up by default.",
+            "property_order": 10
+        },
+        "BackupSkipSys": {
+            "type": "boolean",
+            "title": "Back up system files and folders",
+            "default": false,
+            "description": "System files and folders are skipped by default.",
+            "property_order": 15
+        },
+        "AutoBackup": {
+            "type": "boolean",
+            "title": "Enable automatic backups",
+            "default": true,
+            "description": "Automatically backup at regulard intervals.",
+            "property_order": 20
+        },
+        "MobileBackups": {
+            "type": "boolean",
+            "title": "Enable local snapshots",
+            "default": true,
+            "description": "Creates local backup snapshots if the backup destination is offline.",
+            "property_order": 25
+        },
+        "BackupSizeMB": {
+            "type": "integer",
+            "title": "Backup size limit",
+            "default": 0,
+            "description": "Enter a limit in MB for the size of the backup. Set to 0 for unlimited.",
+            "property_order": 30
+        },
+        "SkipPaths": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Path to skip"
+            },
+            "title": "Paths to skip",
+            "description": "Enter additional volumes and locations to exclude from the backup.",
+            "property_order": 35
+        }
+    }
+}

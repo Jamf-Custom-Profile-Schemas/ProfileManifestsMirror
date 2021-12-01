@@ -1,0 +1,142 @@
+{
+    "title": "Citrix Receiver (com.citrix.receiver.nomas)",
+    "description": "Citrix Receiver",
+    "properties": {
+        "AutoUpdateState": {
+            "type": "string",
+            "description": "Used to configure Citrix Receiver Updates state.",
+            "enum": [
+                "Auto",
+                "Manual",
+                "FollowSF",
+                "Disabled"
+            ],
+            "property_order": 5
+        },
+        "AutoUpdateRollOutBucketIndex": {
+            "type": "integer",
+            "description": "Used to configure the Updates rollout period.",
+            "enum": [
+                0,
+                4,
+                9
+            ],
+            "options": {
+                "enum_titles": [
+                    "Fast",
+                    "Medium",
+                    "Slow"
+                ]
+            },
+            "property_order": 10
+        },
+        "PreferH264HardwareDecoder": {
+            "type": "boolean",
+            "property_order": 15
+        },
+        "PreferFFMPEGDecoder": {
+            "type": "boolean",
+            "property_order": 20
+        },
+        "MenuBarAutoShowDelayEnabled": {
+            "type": "boolean",
+            "property_order": 25
+        },
+        "MenuBarAutoShowDelay": {
+            "type": "real",
+            "property_order": 30
+        },
+        "UDPStackParameters": {
+            "type": "boolean",
+            "property_order": 35
+        },
+        "HockeySDKAutomaticallySendCrashReports": {
+            "type": "boolean",
+            "property_order": 40
+        },
+        "HockeySDKCrashReportActivated": {
+            "type": "boolean",
+            "property_order": 45
+        },
+        "TraceOn": {
+            "type": "boolean",
+            "property_order": 50
+        },
+        "DisplaySplashScreen": {
+            "type": "boolean",
+            "property_order": 55
+        },
+        "BITApplicationWasLaunched": {
+            "type": "boolean",
+            "property_order": 60
+        },
+        "CEIPEnabled": {
+            "type": "boolean",
+            "property_order": 65
+        },
+        "PreferMetalRendering": {
+            "type": "boolean",
+            "property_order": 70
+        },
+        "HDXOverUDPAllowed": {
+            "type": "boolean",
+            "description": "Disables Enlightened Data Transport (EDT).",
+            "property_order": 75
+        },
+        "LegacyPublishedContentEnabled": {
+            "type": "boolean",
+            "description": "Allows the use of non-HTTP(S) URLs",
+            "property_order": 80
+        },
+        "NetDisruptBrightness": {
+            "type": "integer",
+            "default": 80,
+            "description": "Configures the greyscale brightness used for an inactive session. 100 = transparent, 0 = black",
+            "property_order": 85
+        },
+        "SecurityComplianceMode": {
+            "type": "string",
+            "default": "FIPS",
+            "description": "Sets the security compliance mode for the policy. If you don\u2019t configure SecurityComplianceMode, FIPS is used as the default value.",
+            "enum": [
+                "None",
+                "FIPS",
+                "SP800-52"
+            ],
+            "property_order": 90
+        },
+        "SecurityAllowedTLSVersions": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "TLS10",
+                    "TLS11",
+                    "TLS12"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "TLS 1.0",
+                        "TLS 1.1",
+                        "TLS 1.2"
+                    ]
+                }
+            },
+            "description": "This setting specifies the TLS protocol versions that should be accepted during protocol negotiation. This information is represented as an array and any combination of the possible values is supported. When this setting is not configured, the values TLS10, TLS11 and TLS12 are used as the default values. ",
+            "property_order": 95
+        },
+        "SSLCertificateRevocationCheckPolicy": {
+            "type": "string",
+            "default": "FullAccessCheck",
+            "description": "This setting governs how a given trusted root certificate authority is treated during an attempt to open a remote session through SSL. When you enable this setting, the client checks whether or not the server\u2019s certificate is revoked.",
+            "enum": [
+                "NoCheck",
+                "CheckWithNoNetworkAccess",
+                "FullAccessCheck",
+                "FullAccessCheckAndCRLRequired",
+                "FullAccessCheckAndCRLRequiredAll"
+            ],
+            "property_order": 100
+        }
+    }
+}

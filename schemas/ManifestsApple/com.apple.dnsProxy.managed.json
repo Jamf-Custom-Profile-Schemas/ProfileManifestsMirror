@@ -1,0 +1,24 @@
+{
+    "title": "DNS Proxy (com.apple.dnsProxy.managed)",
+    "description": "DNS Proxy settings",
+    "properties": {
+        "AppBundleIdentifier": {
+            "type": "string",
+            "title": "App Bundle ID",
+            "description": "Bundle ID of the app containing the DNS proxy network extension.",
+            "property_order": 5
+        },
+        "ProviderBundleIdentifier": {
+            "type": "string",
+            "title": "Provider Bundle ID",
+            "description": "Bundle ID of the DNS proxy network extension to use.",
+            "property_order": 10
+        },
+        "ProviderConfiguration": {
+            "type": "dictionary",
+            "title": "Provider Custom Configuration",
+            "description": "A plist formatted dictionary of custom options.",
+            "property_order": 15
+        }
+    }
+}

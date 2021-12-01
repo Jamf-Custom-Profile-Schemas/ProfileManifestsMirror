@@ -1,0 +1,78 @@
+{
+    "title": "System Extension Policy (com.apple.system-extension-policy)",
+    "description": "Use this section to define policy for system extensions.",
+    "properties": {
+        "AllowUserOverrides": {
+            "type": "boolean",
+            "title": "Allow users to approve system extensions",
+            "default": true,
+            "description": "Set this property to false to prevent users from approving system extensions not explicitly allowed by configuration profiles.",
+            "property_order": 5
+        },
+        "AllowedTeamIdentifiers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Team Identifier"
+            },
+            "title": "Allowed Team Identifiers",
+            "description": "List of team identifiers that define which validly signed system extensions will be allowed to load.",
+            "pattern": "^[A-Z0-9]{10}$",
+            "property_order": 10
+        },
+        "AllowedSystemExtensions": {
+            "type": "dictionary",
+            "title": "Allowed System Extensions",
+            "description": "Dictionary of system extensions that will be allowed. Extensions are represented in the dictionary using a team identifier string as key and an array of allowed extension bundle identifier strings as the associated value.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Team Identifier",
+                    "pattern": "^[A-Z0-9]{10}$"
+                },
+                "{{value}}": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Bundle Identifier"
+                    },
+                    "title": "Bundle Identifier"
+                }
+            },
+            "property_order": 15
+        },
+        "AllowedSystemExtensionTypes": {
+            "type": "dictionary",
+            "title": "Allowed System Extension Types",
+            "description": "Dictionary of developer teams and their allowed system extension types. Entries use the team identifier as the key and an array of the allowed extension type strings as the associated value.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Team Identifier",
+                    "pattern": "^[A-Z0-9]{10}$"
+                },
+                "{{value}}": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "System Extension Type",
+                        "enum": [
+                            "DriverExtension",
+                            "NetworkExtension",
+                            "EndpointSecurityExtension"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Driver",
+                                "Network",
+                                "Endpoint Security"
+                            ]
+                        }
+                    },
+                    "title": "System Extension Types"
+                }
+            },
+            "property_order": 20
+        }
+    }
+}

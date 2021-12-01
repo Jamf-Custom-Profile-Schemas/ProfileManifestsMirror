@@ -1,0 +1,58 @@
+{
+    "title": "Web Clips (com.apple.webClip.managed)",
+    "description": "Use this section to define web clips",
+    "properties": {
+        "Label": {
+            "type": "string",
+            "title": "Label",
+            "description": "The name of the Web Clip",
+            "property_order": 5
+        },
+        "URL": {
+            "type": "string",
+            "title": "URL",
+            "description": "The URL that\u2019s displayed when users open the Web Clip. The URL must begin with HTTP or HTTPS",
+            "property_order": 10
+        },
+        "IsRemovable": {
+            "type": "boolean",
+            "title": "Removable",
+            "default": true,
+            "description": "Whether the Web Clip can be removed by users",
+            "property_order": 15
+        },
+        "Icon": {
+            "type": "data",
+            "title": "Icon",
+            "description": "The icon to use for the Web Clip",
+            "property_order": 20
+        },
+        "Precomposed": {
+            "type": "boolean",
+            "title": "Precomposed Icon",
+            "default": false,
+            "description": "Prevents the iOS device from adding a shine to the image",
+            "property_order": 25
+        },
+        "FullScreen": {
+            "type": "boolean",
+            "title": "Full Screen",
+            "default": false,
+            "description": "Opens the URL as a web app without a browser",
+            "property_order": 30
+        },
+        "IgnoreManifestScope": {
+            "type": "boolean",
+            "title": "Ignore Manifest Scope",
+            "default": false,
+            "description": "If true, a full screen web clip will not show the Safari UI when navigating to URLs other than the web clip's own.",
+            "property_order": 35
+        },
+        "TargetApplicationBundleIdentifier": {
+            "type": "string",
+            "title": "Target Application Bundle Identifier",
+            "description": "Bundle identifier of the application that opens this web clip's URL.",
+            "property_order": 40
+        }
+    }
+}

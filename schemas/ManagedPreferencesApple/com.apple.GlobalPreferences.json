@@ -1,0 +1,89 @@
+{
+    "title": "Global Preferences (.GlobalPreferences)",
+    "description": "Global Preferences settings",
+    "properties": {
+        "com.apple.autologout.AutoLogOutDelay": {
+            "type": "integer",
+            "title": "Auto LogOut Delay",
+            "description": "The autologout delay, in seconds. A value of 0 means autologout is off. In some cases, this delay may be restricted to values between 5 minutes and 24 hours.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/globalpreferences"
+                }
+            ],
+            "property_order": 5
+        },
+        "MultipleSessionEnabled": {
+            "type": "boolean",
+            "title": "Enable Fast User Switching",
+            "default": true,
+            "description": "If set to false, fast user switching is disabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/globalpreferences"
+                }
+            ],
+            "property_order": 10
+        },
+        "CSUIDisable32BitWarning": {
+            "type": "boolean",
+            "title": "Hide 32-bit App Compatibility Alert",
+            "default": false,
+            "description": "Hides the one-time alert shown when opening a 32-bit application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/en-us/HT208436"
+                }
+            ],
+            "property_order": 15
+        },
+        "NSDocumentSaveNewDocumentsToCloud": {
+            "type": "boolean",
+            "title": "Save New Documents to iCloud",
+            "default": true,
+            "description": "If set to false, applications won't default to save to iCloud.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://eclecticlight.co/2017/11/09/customising-it-all-global-defaults-in-macos-sierra-and-high-sierra/"
+                }
+            ],
+            "property_order": 20
+        },
+        "AppleShowScrollBars": {
+            "type": "string",
+            "title": "Show Scroll Bars",
+            "default": "Automatic",
+            "description": "When should the scroll bars be shown?",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://eclecticlight.co/2017/11/09/customising-it-all-global-defaults-in-macos-sierra-and-high-sierra/"
+                }
+            ],
+            "enum": [
+                "Automatic",
+                "WhenScrolling",
+                "Always"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Automatically based on mouse or trackpad",
+                    "When scrolling",
+                    "Always"
+                ]
+            },
+            "property_order": 25
+        },
+        "AppleShowAllExtensions": {
+            "type": "boolean",
+            "title": "Show all filename extensions",
+            "default": false,
+            "description": "Enable to forcibly show all file extensions in Finder.",
+            "property_order": 30
+        }
+    }
+}

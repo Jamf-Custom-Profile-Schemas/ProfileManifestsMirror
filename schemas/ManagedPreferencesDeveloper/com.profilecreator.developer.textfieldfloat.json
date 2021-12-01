@@ -1,0 +1,78 @@
+{
+    "title": "Developer: TextField Float (com.profilecreator.developer.TextFieldFloat)",
+    "description": "Developer: TextField Float settings",
+    "properties": {
+        "TextFieldFloat01": {
+            "type": "float",
+            "title": "TextFieldFloat 01: Standard Float",
+            "description": "TextField Float.",
+            "property_order": 5
+        },
+        "TextFieldFloat02": {
+            "type": "float",
+            "title": "TextFieldFloat 02: Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Title",
+            "description": "TextField Float with a long title.",
+            "property_order": 10
+        },
+        "TextFieldFloat03": {
+            "type": "float",
+            "title": "TextFieldFloat 03: Long Description",
+            "description": "TextFieldFloat with a long long long long long long long long long long long long long long long long long long long long long long long long long description.",
+            "property_order": 15
+        },
+        "TextFieldFloat04": {
+            "type": "float",
+            "title": "TextFieldFloat 04: Placeholder Value",
+            "description": "TextFieldFloat with a placeholder value.",
+            "property_order": 20
+        },
+        "TextFieldFloat05": {
+            "type": "float",
+            "title": "TextFieldFloat 05: Default Value",
+            "default": 99,
+            "description": "TextFieldFloat with a default value.",
+            "property_order": 25
+        },
+        "TextFieldFloat06": {
+            "type": "float",
+            "description": "TextFieldFloat with no title.",
+            "property_order": 30
+        },
+        "TextFieldFloat07": {
+            "type": "float",
+            "description": "TextFieldFloat with an empty title.",
+            "property_order": 35
+        },
+        "TextFieldFloat08": {
+            "type": "float",
+            "title": "TextFieldFloat 08: No Description",
+            "property_order": 40
+        },
+        "TextFieldFloat09": {
+            "type": "float",
+            "title": "TextFieldFloat 09: Empty Description",
+            "property_order": 45
+        },
+        "TextFieldFloat10": {
+            "type": "float",
+            "title": "TextFieldFloat 10: Max Value",
+            "default": 98,
+            "description": "TextFieldFloat with a max value of: 99",
+            "property_order": 50
+        },
+        "TextFieldFloat11": {
+            "type": "float",
+            "title": "TextFieldFloat 11: Min Value",
+            "default": 2,
+            "description": "TextFieldFloat with a min value of: 1",
+            "property_order": 55
+        },
+        "TextFieldFloat12": {
+            "type": "float",
+            "title": "TextFieldFloat 12: Min and Max Value",
+            "default": 2,
+            "description": "TextFieldFloat with a min value of: 1 and max value of: 99",
+            "property_order": 60
+        }
+    }
+}

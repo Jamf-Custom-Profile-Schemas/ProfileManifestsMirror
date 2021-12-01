@@ -1,0 +1,56 @@
+{
+    "title": "Single Sign-On (com.apple.sso)",
+    "description": "Single Sign-On Account Payload",
+    "properties": {
+        "Name": {
+            "type": "string",
+            "title": "Account Name",
+            "description": "Human-readable name for the account",
+            "property_order": 5
+        },
+        "Kerberos": {
+            "type": "dictionary",
+            "title": "Kerberos-Related Information",
+            "description": "Kerberos-related information.",
+            "properties": {
+                "AppIdentifierMatches": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "App Bundle ID Item",
+                        "description": "Exact or partial bundle ID match using the wildcard character eg com.apple.*"
+                    },
+                    "title": "App Identifiers",
+                    "description": "List of app identifiers that are allowed to use this login"
+                },
+                "PayloadCertificateUUID": {
+                    "type": "string",
+                    "title": "Identity Certificate UUID",
+                    "description": "The PayloadUUID of an identity certificate payload for Kerberos credential renewal without user interaction.",
+                    "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$"
+                },
+                "PrincipalName": {
+                    "type": "string",
+                    "title": "Kerberos Principal Name",
+                    "description": "The Kerberos principal name. The user will be prompted for one during profile installation if not provided."
+                },
+                "Realm": {
+                    "type": "string",
+                    "title": "Kerberos Realm Name",
+                    "description": "Properly capitalized Kerberos realm name"
+                },
+                "URLPrefixMatches": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Matching Item",
+                        "description": "Each entry in the URLPrefixMatches array must contain a URL prefix. Only URLs that begin with one of the strings in this account are allowed to access the Kerberos ticket."
+                    },
+                    "title": "URLs Prefix Matches",
+                    "description": "List of URLs prefixes that must be matched to use this account for Kerberos authentication over HTTP. Note that the URL postfixes must match as well."
+                }
+            },
+            "property_order": 10
+        }
+    }
+}

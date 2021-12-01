@@ -1,0 +1,29 @@
+{
+    "title": "Motion (com.apple.motionapp)",
+    "description": "Motion settings",
+    "properties": {
+        "FFCheckedUpgrade": {
+            "type": "boolean",
+            "title": "Upgrade Checked",
+            "description": "Suppresses the popup to upgrade an Motion on first run.",
+            "property_order": 5
+        },
+        "LKWhatsNewDisplayedForAppVersion": {
+            "type": "dictionary",
+            "title": "Whats New displayed",
+            "description": "Suppress the Whats New screen on the selected versions of Motion.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Motion Version"
+                },
+                "{{value}}": {
+                    "type": "boolean",
+                    "title": "Suppressed",
+                    "default": true
+                }
+            },
+            "property_order": 10
+        }
+    }
+}

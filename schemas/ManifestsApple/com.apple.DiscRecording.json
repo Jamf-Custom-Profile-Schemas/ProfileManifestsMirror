@@ -1,0 +1,24 @@
+{
+    "title": "Disc Recording (com.apple.DiscRecording)",
+    "description": "Disc Burning settings",
+    "properties": {
+        "BurnSupport": {
+            "type": "string",
+            "title": "Enable Disc Burning",
+            "description": "\u2022 Set to off to disable disc burning.\\n\u2022 Set to on for normal default operation.\\n\u2022 Set to authenticate to require authentication.\\nSetting this key to on will not enable disc burn support if it has already been disabled by other mechanisms or preferences.",
+            "enum": [
+                "on",
+                "off",
+                "authenticate"
+            ],
+            "options": {
+                "enum_titles": [
+                    "On",
+                    "Off",
+                    "Authenticate"
+                ]
+            },
+            "property_order": 5
+        }
+    }
+}

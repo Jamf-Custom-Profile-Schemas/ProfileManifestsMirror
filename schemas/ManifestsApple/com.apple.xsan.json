@@ -1,0 +1,42 @@
+{
+    "title": "Xsan (com.apple.xsan)",
+    "description": "Xsan settings",
+    "properties": {
+        "sanName": {
+            "type": "string",
+            "title": "Xsan name",
+            "description": "The name of the Xsan network.",
+            "property_order": 5
+        },
+        "fsnameservers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "File system name server",
+                "description": "The IP address or fully qualified domain name (FQDN) of an Xsan file server."
+            },
+            "title": "File system name servers",
+            "description": "The IP address or fully qualified domain name (FQDN) of each Xsan file server.",
+            "property_order": 10
+        },
+        "sanAuthMethod": {
+            "type": "string",
+            "title": "Authentication method",
+            "enum": [
+                "auth_secret"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Shared Secret"
+                ]
+            },
+            "property_order": 15
+        },
+        "sharedSecret": {
+            "type": "string",
+            "title": "Authentication secret",
+            "description": "The secret credential used to join the Xsan network.",
+            "property_order": 20
+        }
+    }
+}

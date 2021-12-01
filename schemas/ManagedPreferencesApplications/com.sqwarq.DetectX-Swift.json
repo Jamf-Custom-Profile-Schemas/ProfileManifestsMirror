@@ -1,0 +1,157 @@
+{
+    "title": "DetectX Swift (com.sqwarq.DetectX-Swift)",
+    "description": "DetectX Swift settings",
+    "properties": {
+        "BrandedText": {
+            "type": "string",
+            "description": "Display organizational branding. Maximum of 25 characters in length - including spaces and punctuation. Requires DetectX Swift to be registered.",
+            "property_order": 5
+        },
+        "ignoreKeywords": {
+            "type": "boolean",
+            "description": "Registered users can specify key words to be ignored by the Folder Observer action when changes are made to the LaunchDaemons and LaunchAgents folders. This allows you to stop the alert from being thrown when items whose file name contains the key word is added or removed from one of the Launch folders.",
+            "property_order": 10
+        },
+        "FobWhitelist": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "Array of strings"
+            },
+            "title": "Fob Allowlist",
+            "description": "Array of strings of key words to be ignored by Folder Observer.",
+            "property_order": 15
+        },
+        "folderObserver": {
+            "type": "integer",
+            "description": "Folder Observer notifies users when changes are made to the LaunchDaemons and LaunchAgents folders.",
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disable Folder Observer",
+                    "Enable Folder Observer"
+                ]
+            },
+            "property_order": 20
+        },
+        "ObserverButton": {
+            "type": "string",
+            "description": "Custom button text for the Folder Observer alert. Requires DetectX Swift to be registered.",
+            "property_order": 25
+        },
+        "ObserverIcon": {
+            "type": "string",
+            "description": "Path to custom image for the Folder Observer alert. By default, shows the DetectX Swift icon. Requires DetectX Swift to be registered.",
+            "property_order": 30
+        },
+        "ObserverMessage": {
+            "type": "string",
+            "description": "Custom message for the Folder Observer alert. Requires DetectX Swift to be registered.",
+            "property_order": 35
+        },
+        "ObserverTitle": {
+            "type": "string",
+            "description": "Custom title for the Folder Observer alert. Requires DetectX Swift to be registered.",
+            "property_order": 40
+        },
+        "VisualUpdates": {
+            "type": "integer",
+            "description": "In the DetectX Swift GUI, display a visual button to indicate software updates are available.",
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disable Visual Updates",
+                    "Enable Visual Updates"
+                ]
+            },
+            "property_order": 45
+        },
+        "whitelist": {
+            "type": "array",
+            "items": {
+                "type": "dictionary",
+                "description": "Array of dictionaries.",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "description": "Paths of files to whitelist:\nex. /Library/Scripts/script.sh\nex. ~/Library/Preferences/preference.plist"
+                    }
+                }
+            },
+            "title": "Allowlist",
+            "description": "Allowlist of file paths that produce false positives in DetectX Swift. Can be full path or in users' home folders.",
+            "property_order": 50
+        },
+        "SUFeedURL": {
+            "type": "string",
+            "title": "Sparkle Feed URL",
+            "description": "Setting this to a non-existent URL will disable the ability for users to manually check for updates. Useful when you intend to use your own software distribution mechanism to deploy updates.",
+            "pattern": "^https://.*$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 55
+        },
+        "SUEnableAutomaticChecks": {
+            "type": "boolean",
+            "title": "Enable Automatic Update Checks",
+            "default": true,
+            "description": "Controls automatic update checks.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 60
+        },
+        "SUScheduledCheckInterval": {
+            "type": "integer",
+            "title": "Automatic Update Check Interval",
+            "default": 86400,
+            "description": "Controls the automatic update check interval. The default is 1 day (86400 seconds). Setting to 0 disables updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 65
+        },
+        "SUAllowsAutomaticUpdates": {
+            "type": "boolean",
+            "title": "Automatic Update Install Prompt",
+            "default": true,
+            "description": "Controls the automatic update install prompt. When enabled, presents users with the option to allow automatic download and install of available updates. If disabled, disallows automatic updates and requires manual installation every time.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 70
+        },
+        "SUAutomaticallyUpdate": {
+            "type": "boolean",
+            "title": "Enable Automatic Silent Updates",
+            "default": false,
+            "description": "Controls automatic silent updates. If enabled, users will not be informed about updates and updates will be silently installed when the app quits.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://sparkle-project.org/documentation/customization/"
+                }
+            ],
+            "property_order": 75
+        }
+    }
+}

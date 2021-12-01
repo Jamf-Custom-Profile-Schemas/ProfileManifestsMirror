@@ -1,0 +1,442 @@
+{
+    "title": "Safari (com.apple.Safari)",
+    "description": "Safari settings",
+    "properties": {
+        "DidShowWhatsNewInSafari": {
+            "type": "boolean",
+            "title": "Hide What's New in Safari Prompt",
+            "default": false,
+            "description": "If enabled, hides any What's New with Safari prompts.",
+            "property_order": 5
+        },
+        "HomePage": {
+            "type": "string",
+            "title": "Homepage",
+            "default": "http://www.apple.com/startpage/",
+            "description": "Homepage URL.",
+            "property_order": 10
+        },
+        "NewWindowBehavior": {
+            "type": "integer",
+            "title": "Contents of New Windows",
+            "default": 0,
+            "description": "Policy for new window contents.",
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Homepage",
+                    "Empty Page",
+                    "Same Page as current window",
+                    "Bookmarks"
+                ]
+            },
+            "property_order": 15
+        },
+        "NewTabBehavior": {
+            "type": "integer",
+            "title": "Contents of New Tabs",
+            "default": 0,
+            "description": "Policy for new tab contents.",
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show Homepage",
+                    "Show Empty Page",
+                    "Show Same Page as current window",
+                    "Show Bookmarks"
+                ]
+            },
+            "property_order": 20
+        },
+        "TabCreationPolicy": {
+            "type": "integer",
+            "title": "Open pages in tabs instead of windows",
+            "default": 0,
+            "description": "Policy for when to create a tab instead of a window.",
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Never",
+                    "Automatically",
+                    "Always"
+                ]
+            },
+            "property_order": 25
+        },
+        "CommandClickMakesTabs": {
+            "type": "boolean",
+            "title": "\u2318-click opens a link in a new tab",
+            "default": true,
+            "description": "Open command-clicked links in a new tab rather than a new window.",
+            "property_order": 30
+        },
+        "OpenNewTabsInFront": {
+            "type": "boolean",
+            "title": "When a new tab or window opens, make it active",
+            "default": false,
+            "description": "Select a tab when it is created.",
+            "property_order": 35
+        },
+        "HistoryAgeInDaysLimit": {
+            "type": "integer",
+            "title": "History Age Limit",
+            "default": 31,
+            "description": "Policy for when to automatically remove items from History.",
+            "enum": [
+                1,
+                7,
+                14,
+                31,
+                365,
+                365000
+            ],
+            "options": {
+                "enum_titles": [
+                    "After one day",
+                    "After one week",
+                    "After two weeks",
+                    "After one month",
+                    "After one year",
+                    "Manually"
+                ]
+            },
+            "property_order": 40
+        },
+        "DownloadsPath": {
+            "type": "string",
+            "title": "Downloads Location",
+            "default": "~/Downloads/",
+            "description": "File system path (can start with ~) where downloaded files will be saved.",
+            "property_order": 45
+        },
+        "DownloadsClearingPolicy": {
+            "type": "integer",
+            "title": "Downloads Clearing Policy",
+            "default": 0,
+            "description": "Policy for when to remove items from the Downloads window.",
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Manually",
+                    "When Safari quits",
+                    "Upon successful download"
+                ]
+            },
+            "property_order": 50
+        },
+        "AutoOpenSafeDownloads": {
+            "type": "boolean",
+            "title": "Open Safe Downloads Automatically",
+            "default": true,
+            "description": "Automatically open downloaded files that are of certain well-known safe types.",
+            "property_order": 55
+        },
+        "ConfirmClosingMultiplePages": {
+            "type": "boolean",
+            "title": "Confirm Closing Multiple Pages",
+            "default": true,
+            "description": "Display a confirmation alert when multiple pages are closed at once.",
+            "property_order": 60
+        },
+        "DefaultBrowserPromptingState2": {
+            "type": "integer",
+            "title": "Suppress Default Web Browser Prompt",
+            "description": "When Safari is quit for the first time, if it detects it is not configured as the default browser it will present a prompt to the user to choose whether to keep the current default browser or change it to Safari. Enable this preference to suppress this prompt.",
+            "enum": [
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Suppress"
+                ]
+            },
+            "property_order": 65
+        },
+        "DefaultBrowserPromptingState3": {
+            "type": "integer",
+            "title": "Suppress Default Web Browser Banner",
+            "description": "Suppresses the \"Make Safari your Default Browser?\" banner when Safari is launched and is not already set as the default browser.",
+            "enum": [
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Suppress"
+                ]
+            },
+            "property_order": 70
+        },
+        "BookmarksMenuIncludesBookmarksToolbar": {
+            "type": "boolean",
+            "title": "Bookmarks Menu Includes Bookmarks Bar",
+            "default": true,
+            "description": "Include the Bookmarks Bar bookmarks in the bookmarks menu.",
+            "property_order": 75
+        },
+        "BookmarksMenuIncludesAddressBook": {
+            "type": "boolean",
+            "title": "Bookmarks Menu Includes Contacts",
+            "default": false,
+            "description": "Include the Contacts bookmarks in the bookmarks menu.",
+            "property_order": 80
+        },
+        "BookmarksMenuIncludesRendezvous": {
+            "type": "boolean",
+            "title": "Bookmarks Menu Includes Bonjour",
+            "default": false,
+            "description": "Include the Bonjour bookmarks in the bookmarks menu.",
+            "property_order": 85
+        },
+        "BookmarksCollectionsIncludeAddressBook": {
+            "type": "boolean",
+            "title": "Bookmarks Collections Include Contacts",
+            "default": true,
+            "description": "Include the Contacts bookmarks in the Collections column of the bookmarks view.",
+            "property_order": 90
+        },
+        "BookmarksCollectionsIncludeRendezvous": {
+            "type": "boolean",
+            "title": "Bookmarks Collections Include Bonjour",
+            "default": true,
+            "description": "Include the Bonjour bookmarks in the Collections column of the bookmarks view.",
+            "property_order": 95
+        },
+        "AutoFillFromAddressBook": {
+            "type": "boolean",
+            "title": "AutoFill web forms from contacts",
+            "default": true,
+            "description": "Autofill web forms using info from Contacts.",
+            "property_order": 100
+        },
+        "AutoFillPasswords": {
+            "type": "boolean",
+            "title": "AutoFill Passwords",
+            "default": false,
+            "description": "Autofill user names and passwords in web forms.",
+            "property_order": 105
+        },
+        "AutoFillCreditCardData": {
+            "type": "boolean",
+            "title": "AutoFill Credit Cards",
+            "default": false,
+            "description": "Autofill credit cards in web forms.",
+            "property_order": 110
+        },
+        "AutoFillMiscellaneousForms": {
+            "type": "boolean",
+            "title": "AutoFill Miscellaneous Forms",
+            "default": true,
+            "description": "Autofill web forms using previously-typed text.",
+            "property_order": 115
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled": {
+            "type": "boolean",
+            "title": "Enable Plug-ins",
+            "default": true,
+            "property_order": 120
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled": {
+            "type": "boolean",
+            "title": "Enable Java",
+            "default": true,
+            "property_order": 125
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptEnabled": {
+            "type": "boolean",
+            "title": "Enable JavaScript",
+            "default": true,
+            "property_order": 130
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically": {
+            "type": "boolean",
+            "title": "Allow JavaScript to Open Windows Automatically",
+            "default": false,
+            "property_order": 135
+        },
+        "AskBeforeSubmittingInsecureForms": {
+            "type": "boolean",
+            "title": "Ask Before Submitting Insecure Forms",
+            "default": true,
+            "description": "Display a confirmation alert when an insecure form is submitted from a secure site",
+            "property_order": 140
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2PrivateBrowsingEnabled": {
+            "type": "boolean",
+            "title": "Private Browsing",
+            "default": false,
+            "description": "Prevent Safari from keeping track of most user activities.",
+            "property_order": 145
+        },
+        "BlockStoragePolicy": {
+            "type": "integer",
+            "title": "Block cookies and other website data",
+            "default": 2,
+            "description": "Policy for blocking cookies and other website data.",
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always",
+                    "Never",
+                    "Third Parties except sites you visited",
+                    "Thrid Parties"
+                ]
+            },
+            "property_order": 150
+        },
+        "SendDoNotTrackHTTPHeader": {
+            "type": "boolean",
+            "title": "Do Not Track",
+            "default": true,
+            "description": "Send \"Do Not Track\" HTTP Header",
+            "property_order": 155
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2LoadsImagesAutomatically": {
+            "type": "boolean",
+            "title": "Display Images",
+            "default": true,
+            "description": "Load and display images when a webpage is loaded.",
+            "property_order": 160
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks": {
+            "type": "boolean",
+            "title": "Press Tab to highlight each item on a webpage",
+            "default": false,
+            "description": "Highlight links and form controls as you press the Tab key.",
+            "property_order": 165
+        },
+        "IncludeDevelopMenu": {
+            "type": "boolean",
+            "title": "Show Develop menu in menu bar",
+            "default": false,
+            "description": "Include the Develop menu in the menu bar.",
+            "property_order": 170
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultTextEncodingName": {
+            "type": "string",
+            "title": "Default Text Encoding",
+            "default": "ISO-8859-1",
+            "description": "The name of the text encoding to use for webpages that don't specify a text encoding. See http://www.iana.org/assignments/character-sets",
+            "property_order": 175
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2MinimumFontSize": {
+            "type": "integer",
+            "title": "Minimum Font Size",
+            "default": 9,
+            "description": "Minimum font size used for any webpage text.",
+            "property_order": 180
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2StandardFontFamily": {
+            "type": "string",
+            "title": "Default Font",
+            "default": "Times",
+            "description": "The font family used when a webpage does not specify a font.",
+            "property_order": 185
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultFontSize": {
+            "type": "integer",
+            "title": "Default Font Size",
+            "default": 16,
+            "description": "The font size used when a webpage does not specify a font size.",
+            "property_order": 190
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2FixedFontFamily": {
+            "type": "string",
+            "title": "Default Fixed-width Font",
+            "default": "Courier",
+            "description": "The font family used when a webpage specifies a fixed-width font.",
+            "property_order": 195
+        },
+        "ExtensionsEnabled": {
+            "type": "boolean",
+            "title": "Enable Extensions",
+            "default": true,
+            "description": "Allow extensions from the App Store to be enabled/disabled. This will only apply after Safari's first launch unless the \"Disable Extensions Immediately\" key is also set",
+            "property_order": 200
+        },
+        "DidDisableIndividualExtensionsAfterRemovingOnOffSwitchIfNecessary": {
+            "type": "boolean",
+            "title": "Disable Extensions Immediately",
+            "default": false,
+            "description": "Necessary for extensions to be disabled from first launch",
+            "property_order": 205
+        },
+        "CanPromptForPushNotifications": {
+            "type": "boolean",
+            "title": "Allow Notifications",
+            "default": true,
+            "description": "Allow websites to request permission to send notifications",
+            "property_order": 210
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultFixedFontSize": {
+            "type": "integer",
+            "title": "Default Fixed-width Font Size",
+            "default": 13,
+            "description": "The font size used when a webpage specifies a fixed-width font.",
+            "property_order": 215
+        },
+        "DefaultDatabaseQuota": {
+            "type": "integer",
+            "title": "Default Space for Database Storage",
+            "default": 5242880,
+            "description": "Default space reserved for database storage.",
+            "enum": [
+                0,
+                1048576,
+                5242880,
+                10485760,
+                52428800,
+                104857600,
+                524288000
+            ],
+            "options": {
+                "enum_titles": [
+                    "0 MB",
+                    "1 MB",
+                    "5 MB",
+                    "10 MB",
+                    "50 MB",
+                    "100 MB",
+                    "500 MB"
+                ]
+            },
+            "property_order": 220
+        },
+        "com.apple.Safari.ContentPageGroupIdentifier.WebKit2ShouldPrintBackgrounds": {
+            "type": "boolean",
+            "title": "Print Backgrounds",
+            "default": false,
+            "description": "Print background images and colors.",
+            "property_order": 225
+        },
+        "PrintHeadersAndFooters": {
+            "type": "boolean",
+            "title": "Print Headers and Footers",
+            "default": true,
+            "description": "Print the URL, date, page title, and page number in headers and footers.",
+            "property_order": 230
+        }
+    }
+}

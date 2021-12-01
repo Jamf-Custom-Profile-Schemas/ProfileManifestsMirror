@@ -1,0 +1,464 @@
+{
+    "title": "Microsoft Outlook (com.microsoft.Outlook)",
+    "description": "Microsoft Outlook settings",
+    "properties": {
+        "AllowedEmailDomains": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allowed Email Domains",
+            "description": "Specify one or more domains users are allowed to add in Outlook. Format strings as regular expressions. Does not remove or disconnect accounts already added in Outlook. Supports regular expressions to allow for catching multiple domains.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/DeployOffice/mac/preferences-outlook#allow-only-corporate-mailboxes-to-be-added"
+                }
+            ],
+            "property_order": 5
+        },
+        "AutomaticallyDownloadExternalContent": {
+            "type": "integer",
+            "title": "Automatically Download External Content",
+            "default": 0,
+            "description": "Set when pictures are automatically downloaded from the Internet for email.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/DeployOffice/mac/preferences-outlook#specify-when-pictures-are-downloaded-for-email"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Never",
+                    "In messages from my contacts",
+                    "In all messages"
+                ]
+            },
+            "property_order": 10
+        },
+        "CalendarFirstDayOfWeek": {
+            "type": "integer",
+            "title": "Calendar: First Day of the Week",
+            "default": 1,
+            "description": "Set the first day of week in calendar view.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#specify-calendar-first-day-of-week"
+                }
+            ],
+            "enum": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "options": {
+                "enum_titles": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ]
+            },
+            "property_order": 15
+        },
+        "DefaultEmailAddressOrDomain": {
+            "type": "string",
+            "title": "Default Email Address or Domain",
+            "description": "Set the domain or full email address of Office 365 mailbox to be added on first launch. The full email address or domain specified will be added in Outlook instead of the Office activation email address. For a domain use \"example.com\" formatting (no \"@\") and the alias/username from the activation email address will be combined with the domain entered in this pref key.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#specify-office-365-mailbox-to-be-added-on-first-launch"
+                }
+            ],
+            "property_order": 20
+        },
+        "NSRequiresAquaSystemAppearance": {
+            "type": "boolean",
+            "title": "Disable Dark Mode",
+            "default": false,
+            "description": "Disable macOS Dark Mode settings for application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1544660345485200"
+                }
+            ],
+            "property_order": 25
+        },
+        "DisableExport": {
+            "type": "boolean",
+            "title": "Disable Export",
+            "default": false,
+            "description": "Prevent users from being able to export archive files (.olm).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#disable-export"
+                }
+            ],
+            "property_order": 30
+        },
+        "DisableImport": {
+            "type": "boolean",
+            "title": "Disable Import",
+            "default": false,
+            "description": "Prevent users from being able to import archive files (.olm and .pst) and Outlook 2011 for Mac data.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#disable-import"
+                }
+            ],
+            "property_order": 35
+        },
+        "DisableModernAuth": {
+            "type": "boolean",
+            "title": "Disable Modern Authentication",
+            "default": false,
+            "description": "Disable Modern Authentication connections from Outlook.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Announcing-Hybrid-Modern-Authentication-for-Exchange-On-Premises/ba-p/607476#toc-hId-1074080815"
+                }
+            ],
+            "property_order": 40
+        },
+        "DisablePreviewForSMIME": {
+            "type": "boolean",
+            "title": "Disable Preview for SMIME",
+            "default": false,
+            "description": "Disable preview generation for encrypted email messages.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.microsoft.com/en-us/help/3172627/outlook-2016-for-mac-freezes-on-email-folders-that-contain-several-enc"
+                }
+            ],
+            "property_order": 45
+        },
+        "DisableSignatures": {
+            "type": "boolean",
+            "title": "Disable Signatures",
+            "default": false,
+            "description": "Prevent users from being able to create, edit, and add client-side signatures.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#disable-signatures"
+                }
+            ],
+            "property_order": 50
+        },
+        "DisableSkypeMeeting": {
+            "type": "boolean",
+            "title": "Disable Skype Meetings",
+            "default": false,
+            "description": "Prevent users from adding Skype for Business online meeting details to events.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#disable-skype-for-business-online-meetings"
+                }
+            ],
+            "property_order": 55
+        },
+        "DisableTeamsMeeting": {
+            "type": "boolean",
+            "title": "Disable Teams Meetings",
+            "default": false,
+            "description": "Prevent users from adding Teams online meeting details to events.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#disable-teams-online-meetings"
+                }
+            ],
+            "property_order": 60
+        },
+        "FirstRunExperienceCompletedO15": {
+            "type": "boolean",
+            "title": "First Run Experience Completed",
+            "default": false,
+            "description": "Disable the offer to import mailbox or setup an email account in Outlook 2016.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://derflounder.wordpress.com/2016/01/17/suppressing-office-2016s-first-run-dialog-windows/"
+                }
+            ],
+            "property_order": 65
+        },
+        "kSubUIAppCompletedFirstRunSetup1507": {
+            "type": "boolean",
+            "title": "First Run Setup Completed",
+            "default": false,
+            "description": "Controls the original \"What's New\" dialog and Office 365 activation prompt on first launch. Replaced by 'OfficeAutoSignIn' in the main Office profile starting in version 16.17 and should not be used for Office 2019.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://derflounder.wordpress.com/2016/01/17/suppressing-office-2016s-first-run-dialog-windows/"
+                }
+            ],
+            "property_order": 70
+        },
+        "HideFoldersOnMyComputerRootInFolderList": {
+            "type": "boolean",
+            "title": "Hide Local Folders",
+            "default": false,
+            "description": "Prevent users from viewing local On My Computer folders in the sidebar. Found under Outlook > Preferences > General > Sidebar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/DeployOffice/mac/preferences-outlook#hide-local-folders"
+                }
+            ],
+            "property_order": 75
+        },
+        "HideCanAddOtherAccountTypesTipText": {
+            "type": "boolean",
+            "title": "Hide text about adding non-corporate mailboxes",
+            "default": false,
+            "description": "Hide the \u201cDid you know? Outlook supports\u2026\u201d text in the Set Up Your Email success dialog box. Only hides text. Does not impact ability to add non-corporate mailboxes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#hide-text-about-adding-non-corporate-mailboxes"
+                }
+            ],
+            "property_order": 80
+        },
+        "SignInOptions": {
+            "type": "integer",
+            "title": "Sign In Options",
+            "description": "Prevent users from signing in to any O365 service. This has the added effect of making sure users store no data online via microsoft servers.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.google.com/spreadsheets/d/1ESX5td0y0OP3jdzZ-C2SItm-TUi-iA_bcHCBvaoCumw/"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2,
+                4
+            ],
+            "options": {
+                "enum_titles": [
+                    "All accounts allowed",
+                    "Only personal accounts (MSA)",
+                    "Only institution accounts",
+                    "No accounts allowed"
+                ]
+            },
+            "property_order": 85
+        },
+        "SendASmileEnabled": {
+            "type": "boolean",
+            "title": "Send A Smile Enabled",
+            "default": true,
+            "description": "This key when set to false will deactivate the ability for users to use the \"Smile\" feature to send feedback to Microsoft.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.google.com/spreadsheets/d/1ESX5td0y0OP3jdzZ-C2SItm-TUi-iA_bcHCBvaoCumw/"
+                }
+            ],
+            "property_order": 90
+        },
+        "SendAllTelemetryEnabled": {
+            "type": "boolean",
+            "title": "Send Telemetry Data",
+            "default": true,
+            "description": "Set to FALSE to send minimal heartbeat data, no application usage, and no environment details.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/deploy-office-365-proplus-in-gcc-high-dod#turn-off-sending-telemetry-data-to-microsoft-from-office-for-mac"
+                }
+            ],
+            "property_order": 95
+        },
+        "SendCrashReportsEvenWithTelemetryDisabled": {
+            "type": "boolean",
+            "title": "Send Crash Reports even with Telemetry Disabled",
+            "description": "Sends crash reports even if telemetry is disabled. Will only be evaluated if 'Send Telemetry Data' is FALSE.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1536706447000100"
+                }
+            ],
+            "property_order": 100
+        },
+        "OverrideAccountConfigurationWindow": {
+            "type": "boolean",
+            "title": "Suppress Account Configuration Window",
+            "default": false,
+            "description": "Disable account configuration window when the profile is empty.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C19MR7EM9/p1497634255270865"
+                }
+            ],
+            "property_order": 105
+        },
+        "kFRETelemetryConsentKey": {
+            "type": "boolean",
+            "title": "Suppress 'Connected Services' dialog",
+            "description": "Disable the \"Connected Services\" dialog for MSA-based (personal) accounts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1527191452000462"
+                }
+            ],
+            "property_order": 110
+        },
+        "o365GroupsOobePromoTriggeredPref": {
+            "type": "boolean",
+            "title": "Suppress Groups Promotion dialog",
+            "default": false,
+            "description": "Disable the \"Introducing groups in Outlook\" dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1528845850000040"
+                }
+            ],
+            "property_order": 115
+        },
+        "googlePromoTriggeredPref": {
+            "type": "boolean",
+            "title": "Suppress Google Contacts/Calendar dialog",
+            "default": false,
+            "description": "Disable promotion dialog about adding Google Contacts/Calendar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1528897598000193"
+                }
+            ],
+            "property_order": 120
+        },
+        "TrustO365AutodiscoverRedirect": {
+            "type": "boolean",
+            "title": "Suppress Office 365 Autodiscover Redirect Warning",
+            "default": false,
+            "description": "Suppress the warning when Autodiscover is redirected from HTTP to HTTPS.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.microsoft.com/en-us/help/3206915/how-to-suppress-the-office-365-autodiscover-redirect-warning-in-outloo"
+                }
+            ],
+            "property_order": 125
+        },
+        "kFREEnterpriseTelemetryInfoKey": {
+            "type": "boolean",
+            "title": "Suppress Privacy and Services dialog",
+            "default": false,
+            "description": "Suppresses a temporary Privacy and Services Update dialog in 16.27 ONLY. (Was previously used for a similar purpose in 16.13.1 but the key was recycled.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
+                }
+            ],
+            "property_order": 130
+        },
+        "kFREIntelligenceServicesConsentV2Key": {
+            "type": "boolean",
+            "title": "Suppress 'Use Intelligent Services' dialog (1/2)",
+            "description": "Suppress the \"Use Intelligent Services?\" pop-up dialog and auto-accept the terms in 16.17 through 16.27.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
+                }
+            ],
+            "property_order": 135
+        },
+        "PII_And_Intelligent_Services_Preference": {
+            "type": "boolean",
+            "title": "Suppress 'Use Intelligent Services' dialog (2/2)",
+            "description": "Suppress the \"Use Intelligent Services?\" pop-up dialog and auto-accept the terms in 16.17 through 16.27.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
+                }
+            ],
+            "property_order": 140
+        },
+        "DefaultWeatherLocation": {
+            "type": "string",
+            "title": "Weather: Default Location",
+            "description": "Set default location for weather in calendar view. Use the format returned by the weather location search within Outlook. Example: \"Paris, France\"",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#weather-location-settings"
+                }
+            ],
+            "property_order": 145
+        },
+        "Weather_update_automatically": {
+            "type": "boolean",
+            "title": "Weather: Update Automatically",
+            "default": false,
+            "description": "Prevent users from choosing Update Location Automatically for weather location.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#disable-automatic-updating-of-weather-location"
+                }
+            ],
+            "property_order": 150
+        },
+        "EnableNewOutlook": {
+            "type": "integer",
+            "title": "Enable New Outlook",
+            "default": 0,
+            "description": "Lets users on the production channel try out the new Outlook. This key can be used to manage the deployment and default position of the new Outlook switch.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twitter.com/jeffreykalvass/status/1296500175700205575"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Switch hidden (default)",
+                    "Switch displayed, off",
+                    "Switch displayed, on",
+                    "Enabled, switch hidden"
+                ]
+            },
+            "property_order": 155
+        }
+    }
+}

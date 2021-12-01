@@ -1,0 +1,34 @@
+{
+    "title": "Big Sur Blocker (com.hjuutilainen.bigsurblocker)",
+    "description": "Big Sur Blocker settings",
+    "properties": {
+        "bundleIDsToBlock": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Bundle Identifier"
+            },
+            "title": "Additional Bundle IDs to Block",
+            "description": "Add any additional bundle identifiers to have Big Sur Blocker block those items as well.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/hjuutilainen/bigsurblocker/releases/tag/v20201029"
+                }
+            ],
+            "property_order": 5
+        },
+        "AlertTitle": {
+            "type": "string",
+            "title": "Alert Title",
+            "description": "Custom Big Sur Blocker alert title.",
+            "property_order": 10
+        },
+        "AlertText": {
+            "type": "string",
+            "title": "Alert Text",
+            "description": "Custom Big Sur Blocker alert text.",
+            "property_order": 15
+        }
+    }
+}

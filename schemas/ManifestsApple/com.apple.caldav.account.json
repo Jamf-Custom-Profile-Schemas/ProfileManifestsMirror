@@ -1,0 +1,51 @@
+{
+    "title": "Calendar (com.apple.caldav.account)",
+    "description": "Calendar settings",
+    "properties": {
+        "CalDAVAccountDescription": {
+            "type": "string",
+            "title": "Account Description",
+            "default": "My Calendar Account",
+            "description": "The display name of the account (e.g. \"Company Calendar Account\")",
+            "property_order": 5
+        },
+        "CalDAVHostName": {
+            "type": "string",
+            "title": "Account Hostname",
+            "description": "The IP address or fully qualified domain name (FQDN) of the CalDAV server.",
+            "property_order": 10
+        },
+        "CalDAVPort": {
+            "type": "integer",
+            "title": "Port Number",
+            "default": 443,
+            "description": "The port on which to connect to the CalDAV server.",
+            "property_order": 15
+        },
+        "CalDAVPrincipalURL": {
+            "type": "string",
+            "title": "Principal URL",
+            "description": "The base URL to the user's calendar. In macOS this URL is required if the user doesn\u2019t provide a password, because auto-discovery of the service will fail and the account won\u2019t be created.",
+            "property_order": 20
+        },
+        "CalDAVUsername": {
+            "type": "string",
+            "title": "Account Username",
+            "description": "The user name for the CalDAV account.",
+            "property_order": 25
+        },
+        "CalDAVPassword": {
+            "type": "string",
+            "title": "Account Password",
+            "description": "The CalDAV password",
+            "property_order": 30
+        },
+        "CalDAVUseSSL": {
+            "type": "boolean",
+            "title": "Use SSL",
+            "default": false,
+            "description": "Enable Secure Socket Layer communication with CalDAV server",
+            "property_order": 35
+        }
+    }
+}

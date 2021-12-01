@@ -1,0 +1,43 @@
+{
+    "title": "Google Account (com.apple.google-oauth)",
+    "description": "Use this section to configure Google accounts. The user will be prompted to sign in afterward.",
+    "properties": {
+        "AccountDescription": {
+            "type": "string",
+            "title": "Account Description",
+            "description": "Description of the account shown to the user",
+            "property_order": 5
+        },
+        "AccountName": {
+            "type": "string",
+            "title": "Account Name",
+            "description": "Full user name of the Google account",
+            "property_order": 10
+        },
+        "EmailAddress": {
+            "type": "string",
+            "title": "Email Address",
+            "description": "Full Google/Gmail email address for the account",
+            "property_order": 15
+        },
+        "CommunicationServiceRules": {
+            "type": "dictionary",
+            "title": "Communication Service Rules",
+            "description": "The communication service handler rules for this account",
+            "properties": {
+                "DefaultServiceHandlers": {
+                    "type": "dictionary",
+                    "title": "Default Service Handlers",
+                    "properties": {
+                        "AudioCall": {
+                            "type": "string",
+                            "title": "Bundle Identifier",
+                            "description": "Bundle identifier for the default application that handles audio calls made to contacts from this account"
+                        }
+                    }
+                }
+            },
+            "property_order": 20
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "title": "iCloud Find My (com.apple.icloud.managed)",
+    "description": "iCloud Find My settings",
+    "properties": {
+        "DisableFMMiCloudSetting": {
+            "type": "boolean",
+            "title": "Disable Find My iCloud Setting",
+            "property_order": 5
+        }
+    }
+}

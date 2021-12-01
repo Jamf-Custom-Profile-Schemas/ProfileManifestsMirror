@@ -1,0 +1,18 @@
+{
+    "title": "Skype (com.skype.skype)",
+    "description": "Skype settings",
+    "properties": {
+        "SKSilentUpgradeNoticeShown": {
+            "type": "boolean",
+            "default": true,
+            "description": "Surpress Upgrade Notification.",
+            "property_order": 5
+        },
+        "SKAllowStealthUpgrade": {
+            "type": "boolean",
+            "default": true,
+            "description": "Supress installation prompt for Privilege Helper Tool.",
+            "property_order": 10
+        }
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "title": "Single App Mode (com.apple.app.lock)",
+    "description": "Single App Mode settings",
+    "properties": {
+        "App": {
+            "type": "dictionary",
+            "title": "App",
+            "description": "A dictionary containing information about the app",
+            "properties": {
+                "Identifier": {
+                    "type": "string",
+                    "title": "Identifier",
+                    "description": "The bundle identifier of the application."
+                },
+                "Options": {
+                    "type": "dictionary",
+                    "title": "Options",
+                    "description": "Settings enforced when in Single App Mode",
+                    "properties": {
+                        "DisableTouch": {
+                            "type": "boolean",
+                            "title": "Disable Touch",
+                            "default": false,
+                            "description": "Disable Touch Screen"
+                        },
+                        "DisableDeviceRotation": {
+                            "type": "boolean",
+                            "title": "Disable Device Rotation",
+                            "default": false,
+                            "description": "Disable Device Rotation"
+                        },
+                        "DisableVolumeButtons": {
+                            "type": "boolean",
+                            "title": "Disable Volume Buttons",
+                            "default": false,
+                            "description": "Disable Volume Buttons"
+                        },
+                        "DisableRingerSwitch": {
+                            "type": "boolean",
+                            "title": "Disable Ringer Switch",
+                            "default": false,
+                            "description": "Disable Ringer Switch"
+                        },
+                        "DisableSleepWakeButton": {
+                            "type": "boolean",
+                            "title": "Disable Sleep Wake Button",
+                            "default": false,
+                            "description": "Disable Sleep Wake Button"
+                        },
+                        "DisableAutoLock": {
+                            "type": "boolean",
+                            "title": "Disable Auto Lock",
+                            "default": false,
+                            "description": "Disable Auto Lock"
+                        },
+                        "EnableVoiceOver": {
+                            "type": "boolean",
+                            "title": "Enable Voice Over",
+                            "default": false,
+                            "description": "Enable Voice Over"
+                        },
+                        "EnableZoom": {
+                            "type": "boolean",
+                            "title": "Enable Zoom",
+                            "default": false,
+                            "description": "Enable Zoom"
+                        },
+                        "EnableInvertColors": {
+                            "type": "boolean",
+                            "title": "Enable Invert Colors",
+                            "default": false,
+                            "description": "Enable Inverted Colors"
+                        },
+                        "EnableAssistiveTouch": {
+                            "type": "boolean",
+                            "title": "Enable Assistive Touch",
+                            "default": false,
+                            "description": "Enable Assistive Touch"
+                        },
+                        "EnableSpeakSelection": {
+                            "type": "boolean",
+                            "title": "Enable Speak Selection",
+                            "default": false,
+                            "description": "Enable Speak Selection"
+                        },
+                        "EnableMonoAudio": {
+                            "type": "boolean",
+                            "title": "Enable Mono Audio",
+                            "default": false,
+                            "description": "Enable Mono Audio"
+                        }
+                    }
+                },
+                "UserEnabledOptions": {
+                    "type": "dictionary",
+                    "title": "User Enabled Options",
+                    "description": "Allow the user to change these settings when in Single App Mode",
+                    "properties": {
+                        "VoiceOver": {
+                            "type": "boolean",
+                            "title": "Voice Over",
+                            "default": false,
+                            "description": "Allow user to enable Voice Over"
+                        },
+                        "Zoom": {
+                            "type": "boolean",
+                            "title": "Zoom",
+                            "default": false,
+                            "description": "Allow user to enable Zoom"
+                        },
+                        "InvertColors": {
+                            "type": "boolean",
+                            "title": "Invert Colors",
+                            "default": false,
+                            "description": "Allow user to enable Inverted Colors"
+                        },
+                        "AssistiveTouch": {
+                            "type": "boolean",
+                            "title": "Assistive Touch",
+                            "default": false,
+                            "description": "Allow user to enable Assistive Touch"
+                        }
+                    }
+                }
+            },
+            "property_order": 5
+        }
+    }
+}

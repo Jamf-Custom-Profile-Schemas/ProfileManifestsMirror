@@ -1,0 +1,18 @@
+{
+    "title": "Unity Editor (com.unity3d.UnityEditor5.x)",
+    "description": "Unity Editor settings",
+    "properties": {
+        "EditorUpdateShowAtStartup": {
+            "type": "boolean",
+            "title": "Show Unity Editor updater at launch",
+            "description": "Check to show the Unity Editor updater at launch",
+            "property_order": 5
+        },
+        "ReopenLastUsedProjectOnStartup": {
+            "type": "boolean",
+            "title": "Open previously opened project at launch",
+            "description": "Check to open the previously opened project at launch",
+            "property_order": 10
+        }
+    }
+}

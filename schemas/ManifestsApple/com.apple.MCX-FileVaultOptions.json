@@ -1,0 +1,30 @@
+{
+    "title": "FileVault Options (com.apple.MCX)",
+    "description": "FileVault Options settings",
+    "properties": {
+        "dontAllowFDEDisable": {
+            "type": "boolean",
+            "title": "Prevent Disabling FileVault",
+            "default": false,
+            "property_order": 5
+        },
+        "dontAllowFDEEnable": {
+            "type": "boolean",
+            "title": "Prevent Enabling FileVault",
+            "default": false,
+            "property_order": 10
+        },
+        "DestroyFVKeyOnStandby": {
+            "type": "boolean",
+            "title": "Prevent Storing Temporary FileVault Key for Standby",
+            "default": false,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/energysaver"
+                }
+            ],
+            "property_order": 15
+        }
+    }
+}

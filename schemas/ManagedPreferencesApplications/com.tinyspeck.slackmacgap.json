@@ -1,0 +1,19 @@
+{
+    "title": "Slack (com.tinyspeck.slackmacgap)",
+    "description": "Slack settings",
+    "properties": {
+        "SlackNoAutoUpdates": {
+            "type": "boolean",
+            "title": "Disable Automatic Updates",
+            "default": false,
+            "description": "When true, disables Slack's built-in automatic update mechanism. Useful if you update Slack using a tool like Munki.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://rickheil.com/disabling-slack-updates-in-v4-0/"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}

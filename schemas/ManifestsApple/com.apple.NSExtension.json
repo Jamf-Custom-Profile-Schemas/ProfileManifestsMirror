@@ -1,0 +1,63 @@
+{
+    "title": "Extensions (com.apple.NSExtension)",
+    "description": "Use the Extensions payload to control which extensions can be used with macOS.",
+    "properties": {
+        "AllowedExtensions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allowed extensions",
+            "description": "Add the bundle identifier for each extension allowed to run on the Mac. Any extensions not listed are unable to run.",
+            "property_order": 5
+        },
+        "DeniedExtensions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Disallowed extensions",
+            "description": "Disallow specific extensions by their bundle identifier.",
+            "property_order": 10
+        },
+        "DeniedExtensionPoints": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "AllPublicExtensionPoints",
+                    "com.apple.ui-services",
+                    "com.apple.AudioUnit-UI",
+                    "com.apple.Safari.content-blocker",
+                    "com.apple.FinderSync",
+                    "com.apple.photo-editing",
+                    "com.apple.Safari.extension",
+                    "com.apple.share-services",
+                    "com.apple.Safari.sharedlinks-service",
+                    "com.apple.ctk-tokens",
+                    "com.apple.widget-extension",
+                    "com.apple.dt.Xcode.extension.source-editor"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "All Extension Points",
+                        "Action",
+                        "Audio Unit",
+                        "Content Blocker",
+                        "Finder Sync",
+                        "Photo Editing",
+                        "Safari",
+                        "Share",
+                        "Shared Links",
+                        "Smart Card Token",
+                        "Today",
+                        "Xcode Source Editor"
+                    ]
+                }
+            },
+            "title": "Disallow some extensions points",
+            "description": "Disallow specific extension points.",
+            "property_order": 15
+        }
+    }
+}

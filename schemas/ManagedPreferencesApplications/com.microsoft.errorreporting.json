@@ -1,0 +1,23 @@
+{
+    "title": "Microsoft Error Reporting (com.microsoft.errorreporting)",
+    "description": "Microsoft Error Reporting settings",
+    "properties": {
+        "IsAttachedEnabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Disable attaching the file that caused the crash in the crash report. If you are working in a sensitive business it is recommended to set this to false.",
+            "property_order": 5
+        },
+        "IsStoreLastCrashEnabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Will store the last crash report in the following path: ~/Library/Group Containers/UBF8T346G9.ms/MerpTempItems",
+            "property_order": 10
+        },
+        "SendCrashReportsEvenWithTelemetryDisabled": {
+            "type": "boolean",
+            "description": "Disable upload of telemetry data in Crash Reports.",
+            "property_order": 15
+        }
+    }
+}

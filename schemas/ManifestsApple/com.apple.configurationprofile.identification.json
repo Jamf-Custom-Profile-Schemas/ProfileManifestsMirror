@@ -1,0 +1,53 @@
+{
+    "title": "Identification (com.apple.configurationprofile.identification)",
+    "description": "Identification settings",
+    "properties": {
+        "PayloadIdentification": {
+            "type": "dictionary",
+            "title": "PayloadIdentification",
+            "properties": {
+                "FullName": {
+                    "type": "string",
+                    "title": "Full Name",
+                    "description": "The full name of the designated accounts."
+                },
+                "EmailAddress": {
+                    "type": "string",
+                    "title": "E-mail address",
+                    "description": "The address for the accounts."
+                },
+                "UserName": {
+                    "type": "string",
+                    "title": "Username",
+                    "description": "The UNIX user name for the accounts."
+                },
+                "Password": {
+                    "type": "string",
+                    "title": "Password",
+                    "description": "You can provide the password or choose to have the user provide it when he or she installs the profile."
+                },
+                "AuthMethod": {
+                    "type": "string",
+                    "title": "Authentication Method",
+                    "default": "UserEnteredPassword",
+                    "description": "Allow the user to enter the password upon installation instead of being supplied in the payload",
+                    "enum": [
+                        "Password",
+                        "UserEnteredPassword"
+                    ]
+                },
+                "Prompt": {
+                    "type": "string",
+                    "title": "Prompt",
+                    "description": "Short prompt text"
+                },
+                "PromptMessage": {
+                    "type": "string",
+                    "title": "Prompt Message",
+                    "description": "Additional prompt description."
+                }
+            },
+            "property_order": 5
+        }
+    }
+}

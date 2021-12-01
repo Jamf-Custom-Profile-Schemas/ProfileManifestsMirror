@@ -1,0 +1,40 @@
+{
+    "title": "Final Cut Pro (com.apple.FinalCut)",
+    "description": "Final Cut Pro settings",
+    "properties": {
+        "LKWelcomeDisplayedForAppVersion": {
+            "type": "dictionary",
+            "title": "Welcome displayed",
+            "description": "Suppress the Welcome screen on the selected versions of Final Cut Pro.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Final Cut Pro Version"
+                },
+                "{{value}}": {
+                    "type": "boolean",
+                    "title": "Suppressed",
+                    "default": true
+                }
+            },
+            "property_order": 5
+        },
+        "LKWhatsNewDisplayedForAppVersion": {
+            "type": "dictionary",
+            "title": "Whats New displayed",
+            "description": "Suppress the Whats New screen on the selected versions of Final Cut Pro.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Final Cut Pro Version"
+                },
+                "{{value}}": {
+                    "type": "boolean",
+                    "title": "Suppressed",
+                    "default": true
+                }
+            },
+            "property_order": 10
+        }
+    }
+}

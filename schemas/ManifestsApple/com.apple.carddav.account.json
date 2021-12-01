@@ -1,0 +1,70 @@
+{
+    "title": "Contacts (com.apple.carddav.account)",
+    "description": "Use the Contacts payload to provide account settings for connecting to a CardDAV-compliant contact server. If you omit the account information, users need to enter it manually when the profile is installed.",
+    "properties": {
+        "CardDAVAccountDescription": {
+            "type": "string",
+            "title": "Account Description",
+            "default": "My Contacts Account",
+            "description": "The display name of the account (e.g. \"Company Contacts Account\")",
+            "property_order": 5
+        },
+        "CardDAVHostName": {
+            "type": "string",
+            "title": "Account Hostname",
+            "description": "The IP address or fully qualified domain name (FQDN) of the CardDAV server.",
+            "property_order": 10
+        },
+        "CardDAVPort": {
+            "type": "integer",
+            "title": "Port Number",
+            "default": 443,
+            "description": "The port on which to connect to the CardDAV server.",
+            "property_order": 15
+        },
+        "CardDAVPrincipalURL": {
+            "type": "string",
+            "title": "Principal URL",
+            "description": "The Principal URL for the CardDAV account.",
+            "property_order": 20
+        },
+        "CardDAVUsername": {
+            "type": "string",
+            "title": "Account Username",
+            "description": "The CardDAV username",
+            "property_order": 25
+        },
+        "CardDAVPassword": {
+            "type": "string",
+            "title": "Account Password",
+            "description": "The CardDAV password",
+            "property_order": 30
+        },
+        "CardDAVUseSSL": {
+            "type": "boolean",
+            "title": "Use SSL",
+            "default": true,
+            "description": "Enable Secure Socket Layer communication with CardDAV server",
+            "property_order": 35
+        },
+        "CommunicationServiceRules": {
+            "type": "dictionary",
+            "title": "Communication Service Rules",
+            "description": "The communication service handler rules for this account.",
+            "properties": {
+                "DefaultServiceHandlers": {
+                    "type": "dictionary",
+                    "title": "Default Service Handlers",
+                    "properties": {
+                        "AudioCall": {
+                            "type": "string",
+                            "title": "Bundle Identifier",
+                            "description": "Bundle identifier for the default application that handles audio calls made to contacts from this account"
+                        }
+                    }
+                }
+            },
+            "property_order": 40
+        }
+    }
+}

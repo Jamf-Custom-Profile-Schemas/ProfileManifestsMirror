@@ -1,0 +1,974 @@
+{
+    "title": "Restrictions (iOS) (com.apple.applicationaccess)",
+    "description": "iOS Restrictions preferences",
+    "properties": {
+        "allowCamera": {
+            "type": "boolean",
+            "title": "Allow Camera",
+            "default": true,
+            "property_order": 5
+        },
+        "allowVideoConferencing": {
+            "type": "boolean",
+            "title": "Allow FaceTime",
+            "default": true,
+            "description": "If Allow use of Camera is set to 'false', this will override this preference if set to 'true'.",
+            "property_order": 10
+        },
+        "allowCloudBackup": {
+            "type": "boolean",
+            "title": "Allow iCloud backup",
+            "default": true,
+            "property_order": 15
+        },
+        "allowCloudPhotoLibrary": {
+            "type": "boolean",
+            "title": "Allow iCloud Photo Library",
+            "default": true,
+            "property_order": 20
+        },
+        "allowPhotoStream": {
+            "type": "boolean",
+            "title": "Allow My Photo Stream",
+            "default": true,
+            "description": "Disallowing can cause data loss.",
+            "property_order": 25
+        },
+        "allowSharedStream": {
+            "type": "boolean",
+            "title": "Allow iCloud Photo Sharing",
+            "default": true,
+            "property_order": 30
+        },
+        "allowPasswordAutoFill": {
+            "type": "boolean",
+            "title": "Allow password AutoFill",
+            "default": true,
+            "property_order": 35
+        },
+        "allowAutoUnlock": {
+            "type": "boolean",
+            "title": "Allow Apple Watch to auto unlock device",
+            "default": true,
+            "property_order": 40
+        },
+        "allowFingerprintForUnlock": {
+            "type": "boolean",
+            "title": "Allow Touch ID / Face ID to unlock device",
+            "default": true,
+            "property_order": 45
+        },
+        "allowBookstore": {
+            "type": "boolean",
+            "title": "Allow iBooks Store",
+            "default": true,
+            "property_order": 50
+        },
+        "allowChat": {
+            "type": "boolean",
+            "title": "Allow iMessage",
+            "default": true,
+            "property_order": 55
+        },
+        "allowiTunes": {
+            "type": "boolean",
+            "title": "Allow iTunes Store",
+            "default": true,
+            "property_order": 60
+        },
+        "allowMusicService": {
+            "type": "boolean",
+            "title": "Allow Apple Music",
+            "default": true,
+            "property_order": 65
+        },
+        "allowNews": {
+            "type": "boolean",
+            "title": "Allow News",
+            "default": true,
+            "property_order": 70
+        },
+        "allowPodcasts": {
+            "type": "boolean",
+            "title": "Allow Podcasts",
+            "default": true,
+            "property_order": 75
+        },
+        "allowRadioService": {
+            "type": "boolean",
+            "title": "Allow Radio",
+            "default": true,
+            "property_order": 80
+        },
+        "allowYouTube": {
+            "type": "boolean",
+            "title": "Allow Apple's YouTube",
+            "default": true,
+            "description": "This key is ignored on iOS 6 and later because the YouTube app is no longer built in.",
+            "property_order": 85
+        },
+        "allowCloudDocumentSync": {
+            "type": "boolean",
+            "title": "Allow iCloud Drive",
+            "default": true,
+            "property_order": 90
+        },
+        "allowCloudKeychainSync": {
+            "type": "boolean",
+            "title": "Allow iCloud Keychain",
+            "default": true,
+            "property_order": 95
+        },
+        "allowDefinitionLookup": {
+            "type": "boolean",
+            "title": "Allow definition lookup",
+            "default": true,
+            "property_order": 100
+        },
+        "allowDeprecatedWebKitTLS": {
+            "type": "boolean",
+            "title": "Allow accessing websites using TLS 1.0 and 1.1",
+            "default": false,
+            "description": "Allow websites that use TLS 1.0 and TLS 1.1 to be accessed using Safari.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jamf.com/10.20.0/jamf-pro/release-notes/What%27s_New.html"
+                }
+            ],
+            "property_order": 105
+        },
+        "allowAirPrint": {
+            "type": "boolean",
+            "title": "Allow AirPrint",
+            "default": true,
+            "property_order": 110
+        },
+        "allowAirPrintiBeaconDiscovery": {
+            "type": "boolean",
+            "title": "Allow discovery of AirPrint printers using iBeacons",
+            "default": true,
+            "description": "If Allow AirPrint is set to 'false', it also overrides this preference.",
+            "property_order": 115
+        },
+        "forceAirPrintTrustedTLSRequirement": {
+            "type": "boolean",
+            "title": "Disallow AirPrint to destinations with untrusted certificates",
+            "default": false,
+            "description": "If Allow AirPrint is set to 'false', it also overrides this preference.",
+            "property_order": 120
+        },
+        "allowScreenShot": {
+            "type": "boolean",
+            "title": "Allow screenshots and screen recording",
+            "default": true,
+            "description": "Updated in iOS 9.0 to include screen recordings.",
+            "property_order": 125
+        },
+        "allowRemoteScreenObservation": {
+            "type": "boolean",
+            "title": "Allow AirPlay and View Screen by Classroom app",
+            "default": true,
+            "description": "If Allow screenshots and screen recording is set to 'false', it also overrides this preference and prevents the Classroom app from observing remote screens.",
+            "property_order": 130
+        },
+        "forceClassroomUnpromptedScreenObservation": {
+            "type": "boolean",
+            "title": "Allow Classroom app to perform AirPlay and View Screen without prompting",
+            "default": false,
+            "description": "If Allow screenshots and screen recording is set to 'false' or Allow AirPlay and View Screen by Classroom app, they also override this preference and prevents the Classroom app from unprompted remote AirPlay and view screens.\n\nAdditionally, if set to true and ScreenObservationPermissionModificationAllowed is also true in the Education payload, a student enrolled in a managed course via the Classroom app will automatically give permission to that course's teacher's requests to observe the student's screen without prompting the student.",
+            "property_order": 135
+        },
+        "forceUnpromptedManagedClassroomScreenObservation": {
+            "type": "boolean",
+            "default": false,
+            "description": "Deprecated in iOS 11. Use forceClassroomUnpromptedScreenObservation instead.",
+            "property_order": 140
+        },
+        "allowVoiceDialing": {
+            "type": "boolean",
+            "title": "Allow voice dialing while the device is locked",
+            "default": true,
+            "property_order": 145
+        },
+        "allowAssistant": {
+            "type": "boolean",
+            "title": "Allow Siri",
+            "default": true,
+            "property_order": 150
+        },
+        "allowAssistantWhileLocked": {
+            "type": "boolean",
+            "title": "Allow Siri when device is locked",
+            "default": true,
+            "description": "If Allow Siri is set to 'false', it also overrides this preference. This preference is ignored if the device does not have a passcode set.",
+            "property_order": 155
+        },
+        "forceAssistantProfanityFilter": {
+            "type": "boolean",
+            "title": "Enable Siri profanity filter",
+            "default": true,
+            "description": "If Allow Siri is set to 'false', it also overrides this preference. This preference is ignored if the device does not have a passcode set.",
+            "property_order": 160
+        },
+        "allowAssistantUserGeneratedContent": {
+            "type": "boolean",
+            "title": "Show user-generated content in Siri",
+            "default": true,
+            "description": "If Allow Siri is set to 'false', it also overrides this preference. This preference is ignored if the device does not have a passcode set.",
+            "property_order": 165
+        },
+        "allowSiriServerLogging": {
+            "type": "boolean",
+            "title": "Allow server-side logging of Siri commands",
+            "default": true,
+            "description": "Allow server-side logging of Siri commands",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jamf.com/10.11.0/jamf-pro/release-notes/What's_New.html"
+                }
+            ],
+            "property_order": 170
+        },
+        "allowSpotlightInternetResults": {
+            "type": "boolean",
+            "title": "Allow Siri Suggestions",
+            "default": true,
+            "property_order": 175
+        },
+        "allowAppInstallation": {
+            "type": "boolean",
+            "title": "Allow installing apps",
+            "default": true,
+            "property_order": 180
+        },
+        "allowUIAppInstallation": {
+            "type": "boolean",
+            "title": "Allow installing apps using App Store",
+            "default": true,
+            "description": "If Allow installing apps is set to 'false', this will override this preference.",
+            "property_order": 185
+        },
+        "allowAutomaticAppDownloads": {
+            "type": "boolean",
+            "title": "Allow automatic app downloads",
+            "default": true,
+            "description": "If Allow installing apps is set to 'false', this will override this preference.",
+            "property_order": 190
+        },
+        "allowAppRemoval": {
+            "type": "boolean",
+            "title": "Allow removing apps",
+            "default": true,
+            "description": "Deprecated on unsupervised devices.",
+            "property_order": 195
+        },
+        "allowAppClips": {
+            "type": "boolean",
+            "title": "Allow App Clips",
+            "default": true,
+            "property_order": 200
+        },
+        "allowSystemAppRemoval": {
+            "type": "boolean",
+            "title": "Allow removing system apps",
+            "default": true,
+            "property_order": 205
+        },
+        "allowInAppPurchases": {
+            "type": "boolean",
+            "title": "Allow in app purchases",
+            "default": true,
+            "property_order": 210
+        },
+        "forceITunesStorePasswordEntry": {
+            "type": "boolean",
+            "title": "Require iTunes Store password for all purchases",
+            "default": false,
+            "property_order": 215
+        },
+        "allowManagedAppsCloudSync": {
+            "type": "boolean",
+            "title": "Allow managed apps to store data in iCloud",
+            "default": true,
+            "property_order": 220
+        },
+        "allowEnterpriseBookBackup": {
+            "type": "boolean",
+            "title": "Allow backup of enterprise books",
+            "default": true,
+            "property_order": 225
+        },
+        "allowEnterpriseBookMetadataSync": {
+            "type": "boolean",
+            "title": "Allow notes and highlights sync for enterprise books",
+            "default": true,
+            "property_order": 230
+        },
+        "allowGlobalBackgroundFetchWhenRoaming": {
+            "type": "boolean",
+            "title": "Allow automatic sync while roaming",
+            "default": true,
+            "property_order": 235
+        },
+        "forceEncryptedBackup": {
+            "type": "boolean",
+            "title": "Force encrypted backups",
+            "default": false,
+            "property_order": 240
+        },
+        "allowEraseContentAndSettings": {
+            "type": "boolean",
+            "title": "Allow Erase All Content and Settings",
+            "default": true,
+            "property_order": 245
+        },
+        "allowUntrustedTLSPrompt": {
+            "type": "boolean",
+            "title": "Allow users to accept untrusted TLS certificates",
+            "default": true,
+            "property_order": 250
+        },
+        "allowEnterpriseAppTrust": {
+            "type": "boolean",
+            "title": "Allow trusting new enterprise app authors",
+            "default": true,
+            "property_order": 255
+        },
+        "allowOTAPKIUpdates": {
+            "type": "boolean",
+            "title": "Allow automatic updates to certificate trust settings",
+            "default": true,
+            "property_order": 260
+        },
+        "allowUIConfigurationProfileInstallation": {
+            "type": "boolean",
+            "title": "Allow user installation of configuration profiles",
+            "default": true,
+            "property_order": 265
+        },
+        "allowVPNCreation": {
+            "type": "boolean",
+            "title": "Allow adding VPN configurations",
+            "default": true,
+            "property_order": 270
+        },
+        "forceAutomaticDateAndTime": {
+            "type": "boolean",
+            "title": "Force automatic date and time",
+            "default": false,
+            "property_order": 275
+        },
+        "forceClassroomUnpromptedAppAndDeviceLock": {
+            "type": "boolean",
+            "title": "Allow Classroom to lock apps or the device without prompting",
+            "default": false,
+            "property_order": 280
+        },
+        "forceClassroomAutomaticallyJoinClasses": {
+            "type": "boolean",
+            "title": "Automatically join Classroom classes without prompting",
+            "default": false,
+            "property_order": 285
+        },
+        "forceClassroomRequestPermissionToLeaveClasses": {
+            "type": "boolean",
+            "title": "Require teacher permission to leave Classroom app unmanaged classes",
+            "default": false,
+            "property_order": 290
+        },
+        "allowAccountModification": {
+            "type": "boolean",
+            "title": "Allow modifying account settings",
+            "default": true,
+            "property_order": 295
+        },
+        "allowBluetoothModification": {
+            "type": "boolean",
+            "title": "Allow modifying Bluetooth settings",
+            "default": true,
+            "property_order": 300
+        },
+        "allowAppCellularDataModification": {
+            "type": "boolean",
+            "title": "Allow modifying celluar data app settings",
+            "default": true,
+            "property_order": 305
+        },
+        "allowCellularPlanModification": {
+            "type": "boolean",
+            "title": "Allow modifying celluar plan settings",
+            "default": true,
+            "property_order": 310
+        },
+        "allowESIMModification": {
+            "type": "boolean",
+            "title": "Allow modifying eSIM settings",
+            "default": true,
+            "property_order": 315
+        },
+        "allowFindMyFriendsModification": {
+            "type": "boolean",
+            "title": "Allow modifying Find My Friends settings",
+            "default": true,
+            "property_order": 320
+        },
+        "allowNotificationsModification": {
+            "type": "boolean",
+            "title": "Allow modifying notification settings",
+            "default": true,
+            "property_order": 325
+        },
+        "allowPasscodeModification": {
+            "type": "boolean",
+            "title": "Allow modifying passcode",
+            "default": true,
+            "property_order": 330
+        },
+        "allowFingerprintModification": {
+            "type": "boolean",
+            "title": "Allow modifying Touch ID / Face ID",
+            "default": true,
+            "description": "If Allow modifying passcode is set to 'false', this will override this preference if set to 'true'.",
+            "property_order": 335
+        },
+        "allowEnablingRestrictions": {
+            "type": "boolean",
+            "title": "Allow Screen Time",
+            "default": true,
+            "description": "If set to 'false', disables the \"Enable ScreenTime\" option in the ScreenTime UI in Settings and disables ScreenTime if already enabled.",
+            "property_order": 340
+        },
+        "allowWallpaperModification": {
+            "type": "boolean",
+            "title": "Allow modifying Wallpaper",
+            "default": true,
+            "property_order": 345
+        },
+        "allowUSBRestrictedMode": {
+            "type": "boolean",
+            "title": "Allow USB accessories while device is locked",
+            "default": true,
+            "property_order": 350
+        },
+        "allowHostPairing": {
+            "type": "boolean",
+            "title": "Allow pairing with non-Configurator hosts",
+            "default": true,
+            "property_order": 355
+        },
+        "allowUnpairedExternalBootToRecovery": {
+            "type": "boolean",
+            "title": "Allow booting into recovery by unpaired devices",
+            "default": false,
+            "property_order": 360
+        },
+        "allowOpenFromManagedToUnmanaged": {
+            "type": "boolean",
+            "title": "Allow documents from managed sources in unmanaged destinations",
+            "default": true,
+            "property_order": 365
+        },
+        "allowOpenFromUnmanagedToManaged": {
+            "type": "boolean",
+            "title": "Allow documents from unmanaged sources in managed destinations",
+            "default": true,
+            "property_order": 370
+        },
+        "allowUnmanagedToReadManagedContacts": {
+            "type": "boolean",
+            "title": "Allow unmanaged apps to read contacts from managed contacts accounts",
+            "default": false,
+            "description": "Allow unmanaged apps to read contacts from managed contacts accounts",
+            "property_order": 375
+        },
+        "allowManagedToWriteUnmanagedContacts": {
+            "type": "boolean",
+            "title": "Allow managed apps to write contacts to unmanaged contacts accounts",
+            "default": false,
+            "description": "Allow managed apps to write contacts to unmanaged contacts accounts",
+            "property_order": 380
+        },
+        "allowAirDrop": {
+            "type": "boolean",
+            "title": "Allow AirDrop",
+            "default": true,
+            "property_order": 385
+        },
+        "forceAirDropUnmanaged": {
+            "type": "boolean",
+            "title": "Treat AirDrop as unmanaged destination",
+            "default": false,
+            "property_order": 390
+        },
+        "allowActivityContinuation": {
+            "type": "boolean",
+            "title": "Allow Handoff",
+            "default": true,
+            "property_order": 395
+        },
+        "allowDiagnosticSubmission": {
+            "type": "boolean",
+            "title": "Allow submitting diagnostic and usage data to Apple",
+            "default": true,
+            "property_order": 400
+        },
+        "allowDiagnosticSubmissionModification": {
+            "type": "boolean",
+            "title": "Allow modifying diagnostic settings",
+            "default": true,
+            "description": "If Allow diagnostic and usage data to Apple is set to 'false', this will override this preference if set to 'true'.",
+            "property_order": 405
+        },
+        "forceAuthenticationBeforeAutoFill": {
+            "type": "boolean",
+            "title": "Require Touch ID / Face ID authentication before Autofill",
+            "default": true,
+            "property_order": 410
+        },
+        "allowPairedWatch": {
+            "type": "boolean",
+            "title": "Allow pairing with Apple Watch",
+            "default": true,
+            "property_order": 415
+        },
+        "forceWatchWristDetection": {
+            "type": "boolean",
+            "title": "Force Apple Watch wrist detection",
+            "default": false,
+            "property_order": 420
+        },
+        "forceWiFiPowerOn": {
+            "type": "boolean",
+            "title": "Force Wi-Fi Power On",
+            "default": false,
+            "description": "Prevents turning Wi-Fi off in Settings, Control Center, or by entering Airplane Mode.",
+            "property_order": 425
+        },
+        "forceWiFiToAllowedNetworksOnly": {
+            "type": "boolean",
+            "title": "Join only Wi-Fi networks installed by a Wi-Fi payload",
+            "default": false,
+            "property_order": 430
+        },
+        "forceWiFiWhitelisting": {
+            "type": "boolean",
+            "title": "Join only Wi-Fi networks installed by a Wi-Fi payload",
+            "default": false,
+            "property_order": 435
+        },
+        "allowProximitySetupToNewDevice": {
+            "type": "boolean",
+            "title": "Allow setting up new nearby iOS devices",
+            "default": true,
+            "property_order": 440
+        },
+        "allowPredictiveKeyboard": {
+            "type": "boolean",
+            "title": "Allow predictive keyboard",
+            "default": true,
+            "property_order": 445
+        },
+        "allowKeyboardShortcuts": {
+            "type": "boolean",
+            "title": "Allow keyboard shortcuts",
+            "default": true,
+            "property_order": 450
+        },
+        "allowAutoCorrection": {
+            "type": "boolean",
+            "title": "Allow auto correction",
+            "default": true,
+            "property_order": 455
+        },
+        "allowContinuousPathKeyboard": {
+            "type": "boolean",
+            "title": "Allow continuous path keyboard",
+            "default": true,
+            "description": "Permits usage of QuickPath keyboard",
+            "property_order": 460
+        },
+        "allowSpellCheck": {
+            "type": "boolean",
+            "title": "Allow spell check",
+            "default": true,
+            "property_order": 465
+        },
+        "allowSharedDeviceTemporarySession": {
+            "type": "boolean",
+            "title": "Allow Shared iPad temporary session",
+            "default": true,
+            "description": "Enable temporary sessions for iPads that have been enabled as Shared iPad.",
+            "property_order": 470
+        },
+        "allowDictation": {
+            "type": "boolean",
+            "title": "Allow dictation",
+            "default": true,
+            "property_order": 475
+        },
+        "forceOnDeviceOnlyDictation": {
+            "type": "boolean",
+            "title": "Force on-device only dictation",
+            "default": false,
+            "property_order": 480
+        },
+        "allowPassbookWhileLocked": {
+            "type": "boolean",
+            "title": "Allow Apple Wallet notifications on Lock screen",
+            "default": true,
+            "property_order": 485
+        },
+        "allowPersonalHotspotModification": {
+            "type": "boolean",
+            "title": "Allow Personal Hotspot modification",
+            "default": true,
+            "description": "Allow modifying Personal Hotspot settings",
+            "property_order": 490
+        },
+        "allowLockScreenControlCenter": {
+            "type": "boolean",
+            "title": "Show Control Center on Lock screen",
+            "default": true,
+            "property_order": 495
+        },
+        "allowLockScreenNotificationsView": {
+            "type": "boolean",
+            "title": "Show Notification Center on Lock screen",
+            "default": true,
+            "property_order": 500
+        },
+        "allowLockScreenTodayView": {
+            "type": "boolean",
+            "title": "Show Today view on Lock screen",
+            "default": true,
+            "property_order": 505
+        },
+        "forceAirPlayOutgoingRequestsPairingPassword": {
+            "type": "boolean",
+            "title": "Require passcode on first AirPlay pairing",
+            "property_order": 510
+        },
+        "allowAirPrintCredentialsStorage": {
+            "type": "boolean",
+            "title": "Allow storage of AirPrint credentials in Keychain",
+            "default": true,
+            "description": "If Allow AirPrint is set to 'false', it also overrides this preference.",
+            "property_order": 515
+        },
+        "forceLimitAdTracking": {
+            "type": "boolean",
+            "title": "Force limited ad tracking",
+            "default": false,
+            "property_order": 520
+        },
+        "allowApplePersonalizedAdvertising": {
+            "type": "boolean",
+            "title": "Allow Apple-personalized advertizing",
+            "default": true,
+            "property_order": 525
+        },
+        "allowGameCenter": {
+            "type": "boolean",
+            "title": "Allow Game Center",
+            "default": true,
+            "property_order": 530
+        },
+        "allowAddingGameCenterFriends": {
+            "type": "boolean",
+            "title": "Allow adding Game Center friends",
+            "default": true,
+            "description": "If Allow use of Game Center is set to 'false', this will override this preference.",
+            "property_order": 535
+        },
+        "allowMultiplayerGaming": {
+            "type": "boolean",
+            "title": "Allow multiplayer gaming",
+            "default": true,
+            "description": "If Allow use of Game Center is set to 'false', this will override this preference.",
+            "property_order": 540
+        },
+        "allowSafari": {
+            "type": "boolean",
+            "title": "Allow use of Safari",
+            "default": true,
+            "property_order": 545
+        },
+        "safariAllowAutoFill": {
+            "type": "boolean",
+            "title": "Enable AutoFill",
+            "default": true,
+            "description": "If Allow use of Safari is set to 'false', this will override this preference.",
+            "property_order": 550
+        },
+        "safariForceFraudWarning": {
+            "type": "boolean",
+            "title": "Force fraud warning",
+            "default": false,
+            "description": "If Allow use of Safari is set to 'false', this will override this preference.",
+            "property_order": 555
+        },
+        "safariAllowJavaScript": {
+            "type": "boolean",
+            "title": "Enable JavaScript",
+            "default": true,
+            "description": "If Allow use of Safari is set to 'false', this will override this preference.",
+            "property_order": 560
+        },
+        "safariAllowPopups": {
+            "type": "boolean",
+            "title": "Block popups",
+            "default": true,
+            "description": "If Allow use of Safari is set to 'false', this will override this preference.",
+            "property_order": 565
+        },
+        "safariAcceptCookies": {
+            "type": "real",
+            "title": "Accept cookies",
+            "default": 2.0,
+            "description": "If Allow use of Safari is set to 'false', this will override this preference.",
+            "enum": [
+                0.0,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "options": {
+                "enum_titles": [
+                    "Never / Prevent Cross-Site Tracking & Block All Cookies (User Restricted)",
+                    "Allow from current website only / Prevent Cross-Site Tracking (User Restricted)",
+                    "Allow from websites visited (iOS 10 & earlier)",
+                    "Always / Prevent Cross-Site Tracking"
+                ]
+            },
+            "property_order": 570
+        },
+        "allowDeviceNameModification": {
+            "type": "boolean",
+            "title": "Allow modifying device name",
+            "default": true,
+            "property_order": 575
+        },
+        "blacklistedAppBundleIDs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "iOS / tvOS Bundle ID"
+            },
+            "title": "Restrict App Usage - Denylist",
+            "description": "If enabled, cannot use the allowlist to restrict app usage.",
+            "property_order": 580
+        },
+        "whitelistedAppBundleIDs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "iOS / tvOS Bundle ID"
+            },
+            "title": "Restrict App Usage - Allowlist",
+            "description": "If enabled, cannot use the denylist to restrict app usage.",
+            "property_order": 585
+        },
+        "ratingRegion": {
+            "type": "string",
+            "title": "Ratings region",
+            "default": "us",
+            "enum": [
+                "au",
+                "ca",
+                "fr",
+                "de",
+                "ie",
+                "jp",
+                "nz",
+                "gb",
+                "us"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Australia",
+                    "Canada",
+                    "France",
+                    "Germany",
+                    "Ireland",
+                    "Japan",
+                    "New Zealand",
+                    "United Kingdom",
+                    "United States"
+                ]
+            },
+            "property_order": 590
+        },
+        "ratingApps": {
+            "type": "integer",
+            "title": "Allowed content ratings - Apps",
+            "default": 1000,
+            "description": "Integer rating value based on region. Not all integer values are used in each region. Apple's Configuration Profile documentation includes the values for the US, so you may need to do some sleuthing here.",
+            "enum": [
+                1000,
+                900,
+                800,
+                700,
+                600,
+                500,
+                400,
+                300,
+                200,
+                100,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow All Apps",
+                    "900",
+                    "800",
+                    "700",
+                    "600",
+                    "500",
+                    "400",
+                    "300",
+                    "200",
+                    "100",
+                    "Don't Allow Apps"
+                ]
+            },
+            "property_order": 595
+        },
+        "ratingMovies": {
+            "type": "integer",
+            "title": "Allowed content ratings - Movies",
+            "default": 1000,
+            "description": "Integer rating value based on region. Not all integer values are used in each region. Apple's Configuration Profile documentation includes the values for the US, so you may need to do some sleuthing here.",
+            "enum": [
+                1000,
+                900,
+                800,
+                700,
+                600,
+                500,
+                400,
+                300,
+                200,
+                100,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow All Movies",
+                    "900",
+                    "800",
+                    "700",
+                    "600",
+                    "500",
+                    "400",
+                    "300",
+                    "200",
+                    "100",
+                    "Don't Allow Movies"
+                ]
+            },
+            "property_order": 600
+        },
+        "ratingTVShows": {
+            "type": "integer",
+            "title": "Allowed content ratings - TV Shows",
+            "default": 1000,
+            "description": "Integer rating value based on region. Not all integer values are used in each region. Apple's Configuration Profile documentation includes the values for the US, so you may need to do some sleuthing here.",
+            "enum": [
+                1000,
+                900,
+                800,
+                700,
+                600,
+                500,
+                400,
+                300,
+                200,
+                100,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow All TV Shows",
+                    "900",
+                    "800",
+                    "700",
+                    "600",
+                    "500",
+                    "400",
+                    "300",
+                    "200",
+                    "100",
+                    "Don't Allow TV Shows"
+                ]
+            },
+            "property_order": 605
+        },
+        "allowExplicitContent": {
+            "type": "boolean",
+            "title": "Allow playback of explicit music, podcasts, and iTunes U",
+            "default": true,
+            "property_order": 610
+        },
+        "allowFilesUSBDriveAccess": {
+            "type": "boolean",
+            "title": "Allow Files USB Drive Access",
+            "default": true,
+            "description": "Allow connecting to and browsing any USB storage device in the Files App",
+            "property_order": 615
+        },
+        "allowBookstoreErotica": {
+            "type": "boolean",
+            "title": "Allow explicit sexual content in iBooks Store",
+            "default": true,
+            "property_order": 620
+        },
+        "allowPasswordSharing": {
+            "type": "boolean",
+            "title": "Allow password sharing",
+            "default": true,
+            "property_order": 625
+        },
+        "allowPasswordProximityRequests": {
+            "type": "boolean",
+            "title": "Allow proximity based password sharing requests",
+            "default": true,
+            "property_order": 630
+        },
+        "forceDelayedSoftwareUpdates": {
+            "type": "boolean",
+            "title": "Defer Software Updates",
+            "default": false,
+            "property_order": 635
+        },
+        "enforcedSoftwareUpdateDelay": {
+            "type": "integer",
+            "title": "Deferred Software Updates Delay",
+            "default": 30,
+            "description": "Number of days the software updates will be hidden from the user.",
+            "property_order": 640
+        },
+        "allowFindMyDevice": {
+            "type": "boolean",
+            "title": "Allow Find My Devices",
+            "default": true,
+            "description": "Allows disabling Find My Device in the Find My app",
+            "property_order": 645
+        },
+        "allowFindMyFriends": {
+            "type": "boolean",
+            "title": "Allow Find My Friends",
+            "default": true,
+            "description": "Allows disabling Find My Friends in the Find My app",
+            "property_order": 650
+        },
+        "allowFilesNetworkDriveAccess": {
+            "type": "boolean",
+            "title": "Allow Files Network Drive Access",
+            "default": true,
+            "description": "Allows preventing connection to network drives in the Files app",
+            "property_order": 655
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "title": "Safari Developer (com.apple.Safari.SandboxBroker)",
+    "description": "Safari Developer settings",
+    "properties": {
+        "ShowDevelopMenu": {
+            "type": "boolean",
+            "title": "Show Develop Menu",
+            "description": "If enabled, displays the 'Develop' menu bar item (Preferences > Advanced > Show Develop).",
+            "property_order": 5
+        }
+    }
+}

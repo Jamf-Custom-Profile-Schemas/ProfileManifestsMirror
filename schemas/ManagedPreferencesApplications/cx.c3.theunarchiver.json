@@ -1,0 +1,13 @@
+{
+    "title": "The Unarchiver (MAS) (cx.c3.theunarchiver)",
+    "description": "The Unarchiver settings",
+    "properties": {
+        "OnboardingUserViewedWelcomeSlide": {
+            "type": "boolean",
+            "title": "Suppress Welcome Screen",
+            "default": false,
+            "description": "Suppress \"Welcome to The Unarchiver!\" slide.",
+            "property_order": 5
+        }
+    }
+}

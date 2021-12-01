@@ -1,0 +1,12 @@
+{
+    "title": "Parental Controls: Dictionary (com.apple.Dictionary)",
+    "description": "Parental Controls: Dictionary settings",
+    "properties": {
+        "parentalControl": {
+            "type": "boolean",
+            "title": "Hide profanity in dictionary",
+            "description": "Enable parental controls dictionary restrictions.",
+            "property_order": 5
+        }
+    }
+}
