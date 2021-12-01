@@ -1,0 +1,44 @@
+name: Rebuild Schemas
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone profilecreator-schemas repository
+        uses: actions/checkout@v2
+        with:
+          ref: dev
+          path: dev
+
+      - name: Clone ProfileManifests repository
+        uses: actions/checkout@v2
+        with:
+          ref: master
+          repository: ProfileCreator/ProfileManifests
+          path: ProfileManifests
+
+      - name: Regenerate schemas and commit changes
+        working-directory: dev
+        run: |
+          PREV=$(cat last_build.json | jq -r .hash)
+          # TODO: Why doesn't this work?
+          # HASH=$(git show-ref refs/heads/master --hash)
+          HASH=$(cat $GITHUB_WORKSPACE/ProfileManifests/.git/refs/heads/master)
+          [[ $PREV == $HASH ]] && exit 0
+          DATE=$(date -u "+%Y-%m-%d %H:%M:%S")
+          echo "{ \"hash\": \"$HASH\", \"date\": \"$DATE\" }" > last_build.json
+          /usr/bin/python3 ./build.py $GITHUB_WORKSPACE/ProfileManifests/Manifests --output-dir ./schemas --overwrite --verbose
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A
+          git commit -am "Regenerate schemas" -m "Upstream diff: https://github.com/ProfileCreator/ProfileManifests/compare/$PREV..$HASH" || true
+          git push --set-upstream origin dev || true
