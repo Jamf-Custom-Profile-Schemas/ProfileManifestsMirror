@@ -5,7 +5,7 @@ on:
     - cron: "0 */6 * * *"
   push:
     branches: [main]
-  repository_dispatch:
+  workflow_dispatch:
 
 jobs:
   build:
