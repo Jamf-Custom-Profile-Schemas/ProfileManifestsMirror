@@ -1,0 +1,431 @@
+{
+    "title": "MunkiAdmin (com.hjuutilainen.MunkiAdmin)",
+    "description": "MunkiAdmin app settings",
+    "properties": {
+        "startupWhatToDo": {
+            "type": "integer",
+            "title": "On Startup",
+            "default": 1,
+            "description": "Determines what MunkiAdmin's startup behavior is. Leave unspecified or set to integer 1 for the default behavior, which is \"Prompt to Select a Repository.\"",
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Do Nothing",
+                    "Prompt to Select a Repository",
+                    "Open Previous Repository"
+                ]
+            },
+            "property_order": 5
+        },
+        "UpdatePkginfosOnSave": {
+            "type": "boolean",
+            "title": "Write changed pkginfo files to repository on save",
+            "default": true,
+            "description": "When saving, write changed pkginfo files to repository.",
+            "property_order": 10
+        },
+        "UpdateManifestsOnSave": {
+            "type": "boolean",
+            "title": "Write changed manifest files to repository on save",
+            "default": true,
+            "description": "When saving, write changed manifest files to repository.",
+            "property_order": 15
+        },
+        "UpdateCatalogsOnSave": {
+            "type": "boolean",
+            "title": "Write changed catalog files to repository on save",
+            "default": true,
+            "description": "When saving, write changed catalog files to repository.",
+            "property_order": 20
+        },
+        "makecatalogsForceEnabled": {
+            "type": "boolean",
+            "title": "Disable \"sanity checks\" when running makecatalogs",
+            "default": false,
+            "description": "Adds --force option to makecatalogs command.",
+            "property_order": 25
+        },
+        "makecatalogsSkipPkgCheck": {
+            "type": "boolean",
+            "title": "Skip checking of pkg existence when running makecatalogs",
+            "default": false,
+            "description": "Adds --skip-pkg-check option to makecatalogs command.",
+            "property_order": 30
+        },
+        "makecatalogsOnlyIfNeeded": {
+            "type": "boolean",
+            "title": "Only run makecatalogs if pkginfo files were changed",
+            "default": false,
+            "property_order": 35
+        },
+        "MoveInstallerItemsWithPkginfos": {
+            "type": "boolean",
+            "title": "Move installer items when moving pkginfo files",
+            "default": true,
+            "property_order": 40
+        },
+        "sidebarDirectoriesVisible": {
+            "type": "boolean",
+            "title": "Directories Visible in sidebar",
+            "default": true,
+            "property_order": 45
+        },
+        "sidebarInstallerTypesVisible": {
+            "type": "boolean",
+            "title": "Installer Types Visible in Sidebar",
+            "default": true,
+            "property_order": 50
+        },
+        "sidebarCategoriesVisible": {
+            "type": "boolean",
+            "title": "Categories Visible in Sidebar",
+            "default": true,
+            "property_order": 55
+        },
+        "sidebarDevelopersVisible": {
+            "type": "boolean",
+            "title": "Developers Visible in Sidebar",
+            "default": true,
+            "property_order": 60
+        },
+        "sidebarDeveloperMinimumNumberOfPackageNames": {
+            "type": "integer",
+            "title": "Developer Minimum Number of Package Names in Sidebar",
+            "default": 1,
+            "description": "The minimum number of package names a developer must have in order to be shown in the sidebar.",
+            "property_order": 65
+        },
+        "makepkginfoPath": {
+            "type": "string",
+            "title": "makepkginfo Path",
+            "default": "/usr/local/munki/makepkginfo",
+            "description": "The path to the makepkginfo binary.",
+            "property_order": 70
+        },
+        "makecatalogsPath": {
+            "type": "string",
+            "title": "makecatalogs Path",
+            "default": "/usr/local/munki/makecatalogs",
+            "description": "The path to the makecatalogs binary.",
+            "property_order": 75
+        },
+        "sortManagedInstallsByTitle": {
+            "type": "boolean",
+            "title": "Keep managed installs sorted by name",
+            "default": true,
+            "property_order": 80
+        },
+        "sortManagedUninstallsByTitle": {
+            "type": "boolean",
+            "title": "Keep managed uninstalls sorted by name",
+            "default": true,
+            "property_order": 85
+        },
+        "sortManagedUpdatesByTitle": {
+            "type": "boolean",
+            "title": "Keep managed updates sorted by name",
+            "default": true,
+            "property_order": 90
+        },
+        "sortOptionalInstallsByTitle": {
+            "type": "boolean",
+            "title": "Keep optional installs sorted by name",
+            "default": true,
+            "property_order": 95
+        },
+        "sortFeaturedItemsByTitle": {
+            "type": "boolean",
+            "title": "Keep featured items sorted by name",
+            "default": true,
+            "property_order": 100
+        },
+        "sortPkginfoCatalogsByTitle": {
+            "type": "boolean",
+            "title": "Keep catalogs sorted by name",
+            "default": true,
+            "property_order": 105
+        },
+        "CopyPkgsToRepo": {
+            "type": "boolean",
+            "title": "Copy package to repository upon import",
+            "default": true,
+            "property_order": 110
+        },
+        "items_to_copyUseDefaults": {
+            "type": "boolean",
+            "title": "Override items_to_copy default values",
+            "default": false,
+            "property_order": 115
+        },
+        "items_to_copyOwner": {
+            "type": "string",
+            "title": "Override items_to_copy default owner",
+            "default": "admin",
+            "property_order": 120
+        },
+        "items_to_copyGroup": {
+            "type": "string",
+            "title": "Override items_to_copy default group",
+            "default": "admin",
+            "property_order": 125
+        },
+        "items_to_copyMode": {
+            "type": "string",
+            "title": "Override items_to_copy default file mode",
+            "default": "admin",
+            "property_order": 130
+        },
+        "assimilate_enabled": {
+            "type": "boolean",
+            "title": "Assimilate pkginfo properties on import",
+            "default": true,
+            "property_order": 135
+        },
+        "assimilate_autoremove": {
+            "type": "boolean",
+            "title": "Assimilate autoremove on import",
+            "default": true,
+            "property_order": 140
+        },
+        "assimilate_blocking_applications": {
+            "type": "boolean",
+            "title": "Assimilate blocking_applications on import",
+            "default": true,
+            "property_order": 145
+        },
+        "assimilate_category": {
+            "type": "boolean",
+            "title": "Assimilate category on import",
+            "default": true,
+            "property_order": 150
+        },
+        "assimilate_description": {
+            "type": "boolean",
+            "title": "Assimilate description on import",
+            "default": true,
+            "property_order": 155
+        },
+        "assimilate_developer": {
+            "type": "boolean",
+            "title": "Assimilate developer on import",
+            "default": true,
+            "property_order": 160
+        },
+        "assimilate_display_name": {
+            "type": "boolean",
+            "title": "Assimilate display_name on import",
+            "default": true,
+            "property_order": 165
+        },
+        "assimilate_icon_hash": {
+            "type": "boolean",
+            "title": "Assimilate icon_hash on import",
+            "default": true,
+            "property_order": 170
+        },
+        "assimilate_icon_name": {
+            "type": "boolean",
+            "title": "Assimilate icon_name on import",
+            "default": true,
+            "property_order": 175
+        },
+        "assimilate_installable_condition": {
+            "type": "boolean",
+            "title": "Assimilate installable_condition on import",
+            "default": true,
+            "property_order": 180
+        },
+        "assimilate_installcheck_script": {
+            "type": "boolean",
+            "title": "Assimilate installcheck_script on import",
+            "default": true,
+            "property_order": 185
+        },
+        "assimilate_installer_choices_xml": {
+            "type": "boolean",
+            "title": "Assimilate installer_choices_xml on import",
+            "default": true,
+            "property_order": 190
+        },
+        "assimilate_installs_items": {
+            "type": "boolean",
+            "title": "Assimilate installs_items on import",
+            "default": false,
+            "property_order": 195
+        },
+        "assimilate_items_to_copy": {
+            "type": "boolean",
+            "title": "Assimilate items_to_copy on import",
+            "default": false,
+            "property_order": 200
+        },
+        "assimilate_maximum_os_version": {
+            "type": "boolean",
+            "title": "Assimilate maximum_os_version on import",
+            "default": true,
+            "property_order": 205
+        },
+        "assimilate_minimum_munki_version": {
+            "type": "boolean",
+            "title": "Assimilate minimum_munki_version on import",
+            "default": true,
+            "property_order": 210
+        },
+        "assimilate_minimum_os_version": {
+            "type": "boolean",
+            "title": "Assimilate minimum_os_version on import",
+            "default": true,
+            "property_order": 215
+        },
+        "assimilate_name": {
+            "type": "boolean",
+            "title": "Assimilate name on import",
+            "default": false,
+            "property_order": 220
+        },
+        "assimilate_pre_scripts": {
+            "type": "boolean",
+            "title": "Assimilate pre_scripts on import",
+            "default": true,
+            "property_order": 225
+        },
+        "assimilate_preinstall_script": {
+            "type": "boolean",
+            "title": "Assimilate preinstall_script on import",
+            "default": true,
+            "property_order": 230
+        },
+        "assimilate_postinstall_script": {
+            "type": "boolean",
+            "title": "Assimilate postinstall_script on import",
+            "default": true,
+            "property_order": 235
+        },
+        "assimilate_preuninstall_script": {
+            "type": "boolean",
+            "title": "Assimilate preuninstall_script on import",
+            "default": true,
+            "property_order": 240
+        },
+        "assimilate_postuninstall_script": {
+            "type": "boolean",
+            "title": "Assimilate postuninstall_script on import",
+            "default": true,
+            "property_order": 245
+        },
+        "assimilate_post_scripts": {
+            "type": "boolean",
+            "title": "Assimilate post_scripts on import",
+            "default": true,
+            "property_order": 250
+        },
+        "assimilate_receipts": {
+            "type": "boolean",
+            "title": "Assimilate receipts on import",
+            "default": false,
+            "property_order": 255
+        },
+        "assimilate_requires": {
+            "type": "boolean",
+            "title": "Assimilate requires on import",
+            "default": true,
+            "property_order": 260
+        },
+        "assimilate_supported_architectures": {
+            "type": "boolean",
+            "title": "Assimilate supported_architectures on import",
+            "default": true,
+            "property_order": 265
+        },
+        "assimilate_unattended_install": {
+            "type": "boolean",
+            "title": "Assimilate unattended_install on import",
+            "default": true,
+            "property_order": 270
+        },
+        "assimilate_unattended_uninstall": {
+            "type": "boolean",
+            "title": "Assimilate unattended_uninstall on import",
+            "default": true,
+            "property_order": 275
+        },
+        "assimilate_uninstall_method": {
+            "type": "boolean",
+            "title": "Assimilate uninstall_method on import",
+            "default": true,
+            "property_order": 280
+        },
+        "assimilate_uninstall_script": {
+            "type": "boolean",
+            "title": "Assimilate uninstall_script on import",
+            "default": true,
+            "property_order": 285
+        },
+        "assimilate_uninstallable": {
+            "type": "boolean",
+            "title": "Assimilate uninstallable on import",
+            "default": true,
+            "property_order": 290
+        },
+        "assimilate_uninstallcheck_script": {
+            "type": "boolean",
+            "title": "Assimilate uninstallcheck_script on import",
+            "default": true,
+            "property_order": 295
+        },
+        "assimilate_uninstaller_item_location": {
+            "type": "boolean",
+            "title": "Assimilate uninstaller_item_location on import",
+            "default": true,
+            "property_order": 300
+        },
+        "assimilate_update_for": {
+            "type": "boolean",
+            "title": "Assimilate update_for on import",
+            "default": true,
+            "property_order": 305
+        },
+        "logLevel": {
+            "type": "integer",
+            "title": "Log level",
+            "default": 3,
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "options": {
+                "enum_titles": [
+                    "Off",
+                    "Error",
+                    "Warn",
+                    "Info",
+                    "Debug",
+                    "Verbose"
+                ]
+            },
+            "property_order": 310
+        },
+        "logToFile": {
+            "type": "boolean",
+            "title": "Log to file",
+            "default": true,
+            "description": "Send log statements to a file in ~/Library/Logs/MunkiAdmin/",
+            "property_order": 315
+        },
+        "logToSyslog": {
+            "type": "boolean",
+            "title": "Log to Apple System Log",
+            "default": false,
+            "description": "Send log statements to Apple System Log, so they show up in Console.app.",
+            "property_order": 320
+        }
+    }
+}

@@ -241,29 +241,35 @@
             "description": "Base URL for Munki catalogs. Useful if your catalogs are served from a different server than your packages or manifests.",
             "property_order": 125
         },
+        "ManifestURL": {
+            "type": "string",
+            "title": "Base Manifest URL",
+            "description": "Base URL for Munki manifests. Useful if your manifests are served from a different server than your catalogs or manifests.",
+            "property_order": 130
+        },
         "IconURL": {
             "type": "string",
             "title": "Base Icon URL",
             "description": "Base URL for product icons. Useful if your icons are served from a different server or different directory than the default.",
-            "property_order": 130
+            "property_order": 135
         },
         "ClientResourceURL": {
             "type": "string",
             "title": "Base Client Resource URL",
             "description": "Base URL for custom client resources for Managed Software Center. Useful if your resources are served from a different server or different directory than the default.",
-            "property_order": 135
+            "property_order": 140
         },
         "ClientResourcesFilename": {
             "type": "string",
             "title": "Client Resources Filename",
             "description": "Specific filename to use when requesting custom client resources.",
-            "property_order": 140
+            "property_order": 145
         },
         "HelpURL": {
             "type": "string",
             "title": "Help URL",
             "description": "URL to open/display when the user selects \"Managed Software Center Help\" from Managed Software Center's Help menu.",
-            "property_order": 145
+            "property_order": 150
         },
         "LicenseInfoURL": {
             "type": "string",
@@ -275,57 +281,57 @@
                     "href": "https://github.com/munki/munki/wiki/License-Seat-Tracking"
                 }
             ],
-            "property_order": 150
+            "property_order": 155
         },
         "SoftwareUpdateServerURL": {
             "type": "string",
             "title": "Software Update Server URL",
-            "description": "Catalog URL for Apple Software Updates. If undefined or empty, Munki will use the same catalog that the OS uses.",
+            "description": "Catalog URL for Apple Software Updates. If undefined or empty, Munki will use the same catalog that the OS uses when you run Apple's Software Update application or call /usr/sbin/softwareupdate.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/munki/munki/wiki/Preferences#softwareupdateserverurl"
                 }
             ],
-            "property_order": 155
+            "property_order": 160
         },
         "UseClientCertificate": {
             "type": "boolean",
             "title": "Use Client Certificate",
             "default": false,
             "description": "Use an SSL client certificate when communicating with the Munki server. Requires an https:// URL for the Munki repo.",
-            "property_order": 160
+            "property_order": 165
         },
         "UseClientCertificateCNAsClientIdentifier": {
             "type": "boolean",
             "title": "Use Client Certificate CN As Client Identifier",
             "default": false,
             "description": "Use the CN of the client certificate as the Client Identifier. Used in combination with the UseClientCertificate key.",
-            "property_order": 165
+            "property_order": 170
         },
         "ClientCertificatePath": {
             "type": "string",
             "title": "Client Certificate Path",
             "description": "Absolute path to a client certificate. There are 3 defaults for this key. Concatenated cert/key PEM file accepted.",
-            "property_order": 170
+            "property_order": 175
         },
         "ClientKeyPath": {
             "type": "string",
             "title": "Client Key Path",
             "description": "Absolute path to a client private key.",
-            "property_order": 175
+            "property_order": 180
         },
         "SoftwareRepoCAPath": {
             "type": "string",
             "title": "Software Repo CA Path",
             "description": "Path to the directory that stores your CA certificate(s).",
-            "property_order": 180
+            "property_order": 185
         },
         "SoftwareRepoCACertificate": {
             "type": "string",
             "title": "Software Repo CA Certificate",
             "description": "Absolute path to your CA Certificate.",
-            "property_order": 185
+            "property_order": 190
         },
         "LogFile": {
             "type": "string",
@@ -338,35 +344,35 @@
                     "href": "https://github.com/munki/munki/wiki/Preferences#logfile"
                 }
             ],
-            "property_order": 190
+            "property_order": 195
         },
         "LogToSyslog": {
             "type": "boolean",
             "title": "Log to Syslog",
             "default": false,
             "description": "Log to syslog in addition to ManagedSoftwareUpdate.log.",
-            "property_order": 195
+            "property_order": 200
         },
         "LoggingLevel": {
             "type": "integer",
             "title": "Logging Level",
             "default": 1,
             "description": "Higher values cause more detail to be written to the primary log.",
-            "property_order": 200
+            "property_order": 205
         },
         "MSULogEnabled": {
             "type": "boolean",
             "title": "Log Enabled",
             "default": false,
             "description": "Log user actions in the GUI.",
-            "property_order": 205
+            "property_order": 210
         },
         "MSUDebugLogEnabled": {
             "type": "boolean",
             "title": "Debug Log Enabled",
             "default": false,
             "description": "Debug logging for Managed Software Center.",
-            "property_order": 210
+            "property_order": 215
         },
         "AccessKey": {
             "type": "string",
@@ -378,7 +384,7 @@
                     "href": "https://github.com/waderobson/s3-auth"
                 }
             ],
-            "property_order": 215
+            "property_order": 220
         },
         "Region": {
             "type": "string",
@@ -389,7 +395,7 @@
                     "href": "https://github.com/waderobson/s3-auth"
                 }
             ],
-            "property_order": 220
+            "property_order": 225
         },
         "SecretKey": {
             "type": "string",
@@ -401,7 +407,7 @@
                     "href": "https://github.com/waderobson/s3-auth"
                 }
             ],
-            "property_order": 225
+            "property_order": 230
         },
         "S3Endpoint": {
             "type": "string",
@@ -413,7 +419,7 @@
                     "href": "https://github.com/waderobson/s3-auth"
                 }
             ],
-            "property_order": 230
+            "property_order": 235
         },
         "AggressiveUpdateNotificationDays": {
             "type": "integer",
@@ -426,7 +432,7 @@
                     "href": "https://github.com/munki/munki/wiki/aggressive-update-notifications-in-munki-5"
                 }
             ],
-            "property_order": 235
+            "property_order": 240
         }
     }
 }

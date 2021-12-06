@@ -38,6 +38,30 @@
             ],
             "property_order": 15
         },
+        "PasswordGrouping": {
+            "type": "integer",
+            "title": "Password Grouping",
+            "default": 0,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 20
+        },
+        "PasswordSeparator": {
+            "type": "string",
+            "title": "Password Separator",
+            "default": "-",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
+                }
+            ],
+            "property_order": 25
+        },
         "RemoveKeyChain": {
             "type": "boolean",
             "title": "Remove Keychain",
@@ -48,7 +72,7 @@
                     "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
                 }
             ],
-            "property_order": 20
+            "property_order": 30
         },
         "RemovePassChars": {
             "type": "string",
@@ -59,7 +83,7 @@
                     "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
                 }
             ],
-            "property_order": 25
+            "property_order": 35
         },
         "ExclusionSets": {
             "type": "array",
@@ -87,7 +111,7 @@
                     "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
                 }
             ],
-            "property_order": 30
+            "property_order": 40
         },
         "Method": {
             "type": "string",
@@ -102,7 +126,7 @@
                 "AD",
                 "Local"
             ],
-            "property_order": 35
+            "property_order": 45
         },
         "PreferredDC": {
             "type": "string",
@@ -113,7 +137,7 @@
                     "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
                 }
             ],
-            "property_order": 40
+            "property_order": 50
         },
         "FirstPass": {
             "type": "string",
@@ -125,7 +149,7 @@
                     "href": "https://github.com/joshua-d-miller/macOSLAPS#requirements"
                 }
             ],
-            "property_order": 45
+            "property_order": 55
         }
     }
 }
