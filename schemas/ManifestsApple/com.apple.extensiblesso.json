@@ -183,7 +183,7 @@
                     "description": "The text version of the domain's password requirements. Only for use if pwReqComplexity or pwReqLength aren't specified. Available in macOS 10.15 and later."
                 },
                 "replicationTime": {
-                    "type": "intger",
+                    "type": "integer",
                     "title": "Replication Time",
                     "default": 900,
                     "description": "The time, in seconds, required to replicate changes in the Active Directory domain. The Kerberos extension will use this when checking password age after a change. Available in macOS 11 and later."
