@@ -44,7 +44,7 @@ def build_argument_parser():
     )
     parser.add_argument(
         "-o",
-        "--output_dir",
+        "--output-dir",
         default=os.path.dirname(__file__) + "/schemas",
         action="store",
         help="path to output directory of converted Jamf JSON schema files",
