@@ -102,7 +102,7 @@
             "property_order": 60
         },
         "BRIEFStateTimeout": {
-            "type": "real",
+            "type": "number",
             "title": "Brief State Timeout",
             "default": 10.0,
             "description": "The progressive (BRIEF compatible) behavior of the Home and End keys operates within a specific time period; if you wait longer than that, the behavior state resets. The factory default timeout period is ten seconds.",
@@ -955,7 +955,7 @@
             "property_order": 400
         },
         "FullScreenWidthThreshold": {
-            "type": "real",
+            "type": "number",
             "title": "Full Screen Width Threshold",
             "description": "When entering full screen mode, the application figures out whether the window width should be increased to take up the full screen width, or not, based on the width of the window relative to the width of the screen that it's on. The threshold at which the window is made to take up the entire screen width can be set. This setting requires that FullScreenWindowsHogScreen be turned on\nNEED FLOAT NUMBER MIN & MAX",
             "links": [

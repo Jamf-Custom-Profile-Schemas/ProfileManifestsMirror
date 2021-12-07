@@ -3,7 +3,7 @@
     "description": "Developer: Slider settings",
     "properties": {
         "Slider01": {
-            "type": "float",
+            "type": "number",
             "title": "Slider 01: Range List 2 Items",
             "description": "Slider with a range list of two items: [5.0, 10.0].",
             "enum": [
@@ -13,7 +13,7 @@
             "property_order": 5
         },
         "Slider02": {
-            "type": "float",
+            "type": "number",
             "title": "Slider 02: Range List 3 Items and Titles",
             "description": "Slider with a range list of three items: [5.0, 10.0, 15.0] and titles.",
             "enum": [
@@ -31,7 +31,7 @@
             "property_order": 10
         },
         "Slider03": {
-            "type": "float",
+            "type": "number",
             "title": "Slider 03: Range List 4 Items",
             "description": "Slider with a range list of four items: [5.0, 6.0, 17.0003212, 20.0].",
             "enum": [
@@ -43,7 +43,7 @@
             "property_order": 15
         },
         "Slider04": {
-            "type": "float",
+            "type": "number",
             "title": "Slider 04: Range List 5 Items and Mixed Titles",
             "description": "Slider with a range list of five items: [0.01, 0.02, 0.13, 0.23, 0.92] and mixed titles.",
             "enum": [
@@ -65,7 +65,7 @@
             "property_order": 20
         },
         "Slider05": {
-            "type": "float",
+            "type": "number",
             "title": "Slider 05: Range List 20 Items",
             "description": "Slider with a range list of twenty items: [1.0...1.19].",
             "enum": [
@@ -93,7 +93,7 @@
             "property_order": 25
         },
         "Slider06": {
-            "type": "float",
+            "type": "number",
             "title": "Slider 06: Range List 20 Items and Short Titles",
             "description": "Slider with a range list of twenty items: [1.0...1.19] with short titles.",
             "enum": [
@@ -145,7 +145,7 @@
             "property_order": 30
         },
         "Slider07": {
-            "type": "float",
+            "type": "number",
             "title": "Slider 07: Range List 20 Items and Medium Titles",
             "description": "Slider with a range list of twenty items: [1.0...1.19] with medium titles.",
             "enum": [
@@ -197,7 +197,7 @@
             "property_order": 35
         },
         "Slider08": {
-            "type": "float",
+            "type": "number",
             "title": "Slider 08: Range List 20 Items and Long Titles",
             "description": "Slider with a range list of twenty items: [1.0...1.19] with long titles.",
             "enum": [
@@ -249,7 +249,7 @@
             "property_order": 40
         },
         "Slider09": {
-            "type": "float",
+            "type": "number",
             "title": "Slider 09: Range List 20 Items and Too Long Titles",
             "description": "Slider with a range list of twenty items: [1.0...1.19] with too long titles.",
             "enum": [

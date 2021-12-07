@@ -94,7 +94,7 @@
             "property_order": 50
         },
         "com.airserverapp.audioBufferSize2": {
-            "type": "real",
+            "type": "number",
             "default": 0.5,
             "description": "Use this setting to tweak multi-room audio sync when streaming music from iTunes.",
             "enum": [

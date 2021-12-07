@@ -124,6 +124,14 @@ def process_subkeys(subkeys):
         "PayloadOrganization",
     )
 
+    # Replacements for plist types with equivalent JSON schema types
+    replacements = (
+        ("dictionary", "object"),
+        ("real", "number"),
+        ("float", "number"),
+        # Omitting "date" since this is handled by json.dumps(default=str) later
+    )
+
     properties = {}
     for idx, subkey in enumerate(subkeys):
 
@@ -146,12 +154,13 @@ def process_subkeys(subkeys):
         # TODO: Is failing back to dictionary too broad an assumption?
         properties[name] = {"type": subkey.get("pfm_type", "object")}
 
-        # Change "dictionary" to "object" to align with JSON schema
-        if properties[name]["type"] == "dictionary":
-            properties[name]["type"] = "object"
+        # Replace with JSON schema types
+        for repl in replacements:
+            if properties[name]["type"] == repl[0]:
+                properties[name]["type"] = repl[1]
 
         # If type is array, create a dict to store its items
-        elif properties[name]["type"] == "array":
+        if properties[name]["type"] == "array":
             properties[name]["items"] = {}
 
         # Get subkey title, description, and other attributes

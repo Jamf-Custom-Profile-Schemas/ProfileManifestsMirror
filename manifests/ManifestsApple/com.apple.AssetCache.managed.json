@@ -255,7 +255,7 @@
             "property_order": 120
         },
         "ImportRateAttenuation": {
-            "type": "real",
+            "type": "number",
             "title": "Import Rate Attenuation",
             "default": 0.2,
             "links": [

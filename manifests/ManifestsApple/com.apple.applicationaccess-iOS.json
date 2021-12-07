@@ -724,7 +724,7 @@
             "property_order": 565
         },
         "safariAcceptCookies": {
-            "type": "real",
+            "type": "number",
             "title": "Accept cookies",
             "default": 2.0,
             "description": "If Allow use of Safari is set to 'false', this will override this preference.",

@@ -43,7 +43,7 @@
             "property_order": 25
         },
         "MenuBarAutoShowDelay": {
-            "type": "real",
+            "type": "number",
             "property_order": 30
         },
         "UDPStackParameters": {

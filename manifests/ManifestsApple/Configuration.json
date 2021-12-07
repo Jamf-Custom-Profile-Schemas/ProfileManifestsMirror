@@ -16,7 +16,7 @@
             "property_order": 10
         },
         "DurationUntilRemoval": {
-            "type": "real",
+            "type": "number",
             "title": "Duration Until Removal",
             "description": "Number of seconds until the profile is automatically removed. If RemovalDate key is present, its value is used instead.",
             "property_order": 15
