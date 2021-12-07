@@ -16,7 +16,7 @@
 # limitations under the License.
 
 """Given a path to a folder containing ProfileCreator manifests, this script aims to produce
-equivalent Jamf JSON schemas."""
+equivalent Jamf JSON schema manifests."""
 
 
 __author__ = "Elliot Jordan"
@@ -45,9 +45,9 @@ def build_argument_parser():
     parser.add_argument(
         "-o",
         "--output-dir",
-        default=os.path.dirname(__file__) + "/schemas",
+        default=os.path.dirname(__file__) + "/manifests",
         action="store",
-        help="path to output directory of converted Jamf JSON schema files",
+        help="path to output directory of converted Jamf JSON schema manifest files",
     )
     parser.add_argument(
         "-v",
@@ -73,7 +73,7 @@ def build_argument_parser():
         default="5",
         help="if set to a positive integer, the order of properties will be preserved during "
         "conversion and the property_order value will be incremented by this number. If set to "
-        "0, the property_order key will be omitted from the JSON schema files",
+        "0, the property_order key will be omitted from the resulting manifest files",
     )
 
     return parser
@@ -111,7 +111,7 @@ def read_manifest_plist(path):
 
 
 def process_subkeys(subkeys):
-    """Given a list of subkeys, return equivalent JSON schema properties."""
+    """Given a list of subkeys, return equivalent JSON schema manifest properties."""
 
     # Skip keys that describe the payload instead of the setting
     meta_keys = (
@@ -201,8 +201,8 @@ def process_subkeys(subkeys):
     return properties
 
 
-def convert_to_schema(data, property_order_increment=5):
-    """Convert a ProfileCreator plist object to a Jamf JSON schema.
+def convert_to_jamf_manifest(data, property_order_increment=5):
+    """Convert a ProfileCreator plist object to a Jamf JSON schema manifest.
 
     Reference: https://docs.jamf.com/technical-papers/jamf-pro/json-schema/10.19.0/Understanding_the_Structure_of_a_JSON_Schema_Manifest.html
     """
@@ -277,23 +277,22 @@ def main():
                     count["skipped"] += 1
                     continue
 
-                # Convert to schema
-                schema = convert_to_schema(pfm_data, int(args.property_order_increment))
-                if not schema:
+                # Convert to Jamf manifest
+                manifest = convert_to_jamf_manifest(
+                    pfm_data, int(args.property_order_increment)
+                )
+                if not manifest:
                     count["skipped"] += 1
                     continue
 
-                # Write schema file
+                # Write manifest file
                 output_path = os.path.join(
                     output_dir, relpath.replace(".plist", ".json")
                 )
-                write_to_file(output_path, schema)
+                write_to_file(output_path, manifest)
                 count["done"] += 1
 
-    print(
-        "Converted %d manifests to schemas. Skipped %d manifests."
-        % (count["done"], count["skipped"])
-    )
+    print("Converted %d files. Skipped %d files." % (count["done"], count["skipped"]))
 
 
 if __name__ == "__main__":

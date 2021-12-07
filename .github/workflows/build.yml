@@ -1,8 +1,6 @@
-name: Rebuild Schemas
+name: Rebuild Manifests
 
 on:
-  schedule:
-    - cron: "0 */6 * * *"
   push:
     branches: [main]
   workflow_dispatch:
@@ -25,7 +23,7 @@ jobs:
           repository: ProfileCreator/ProfileManifests
           path: ProfileManifests
 
-      - name: Regenerate schemas and commit changes
+      - name: Regenerate manifests and commit changes
         working-directory: main
         run: |
           PREV=$(cat last_build.json | jq -r .hash)
@@ -35,9 +33,9 @@ jobs:
           [[ $PREV == $HASH ]] && exit 0
           DATE=$(date -u "+%Y-%m-%d %H:%M:%S")
           echo "{ \"hash\": \"$HASH\", \"date\": \"$DATE\" }" > last_build.json
-          /usr/bin/python3 ./build.py $GITHUB_WORKSPACE/ProfileManifests/Manifests --output-dir ./schemas --overwrite --verbose
+          /usr/bin/python3 ./build.py $GITHUB_WORKSPACE/ProfileManifests/Manifests --output-dir ./manifests --overwrite --verbose
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -A
-          git commit -am "Regenerate schemas" -m "Upstream diff: https://github.com/ProfileCreator/ProfileManifests/compare/$PREV..$HASH" || true
+          git commit -am "Regenerate manifests" -m "Upstream diff: https://github.com/ProfileCreator/ProfileManifests/compare/$PREV..$HASH" || true
           git push --set-upstream origin main || true
