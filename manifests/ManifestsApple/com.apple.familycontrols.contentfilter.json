@@ -18,7 +18,7 @@
         "siteWhitelist": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Site Allowlist Item",
                 "properties": {
                     "address": {

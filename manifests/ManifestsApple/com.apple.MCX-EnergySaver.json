@@ -3,7 +3,7 @@
     "description": "Energy Saver settings",
     "properties": {
         "com.apple.EnergySaver.desktop.ACPower": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Desktop Energy Saver Settings",
             "description": "Managed settings for the desktop energy profile.",
             "properties": {
@@ -50,7 +50,7 @@
             "property_order": 5
         },
         "com.apple.EnergySaver.portable.BatteryPower": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Portable Energy Saver Settings",
             "description": "Managed settings for the portable battery power energy profile",
             "properties": {
@@ -97,7 +97,7 @@
             "property_order": 10
         },
         "com.apple.EnergySaver.portable.ACPower": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Portable Energy Saver Settings",
             "description": "Managed settings for the portable AC power energy profile.",
             "properties": {
@@ -144,12 +144,12 @@
             "property_order": 15
         },
         "com.apple.EnergySaver.desktop.Schedule": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Power Schedule",
             "description": "Use this key to manage scheduled power on and power off events.",
             "properties": {
                 "RepeatingPowerOn": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Start up or wake",
                     "description": "Use this key to describe a repeating start up/wake time.",
                     "properties": {
@@ -210,7 +210,7 @@
                     }
                 },
                 "RepeatingPowerOff": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Shut down, sleep or restart",
                     "description": "Use this key to describe a repeating shut down, sleep or restart.",
                     "properties": {

@@ -14,7 +14,7 @@
         "DisabledForCerts": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "Algorithm": {
                         "type": "string",

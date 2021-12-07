@@ -21,7 +21,7 @@
             "property_order": 10
         },
         "AllowedSystemExtensions": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Allowed System Extensions",
             "description": "Dictionary of system extensions that will be allowed. Extensions are represented in the dictionary using a team identifier string as key and an array of allowed extension bundle identifier strings as the associated value.",
             "properties": {
@@ -42,7 +42,7 @@
             "property_order": 15
         },
         "AllowedSystemExtensionTypes": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Allowed System Extension Types",
             "description": "Dictionary of developer teams and their allowed system extension types. Entries use the team identifier as the key and an array of the allowed extension type strings as the associated value.",
             "properties": {

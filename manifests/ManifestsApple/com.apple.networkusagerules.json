@@ -5,7 +5,7 @@
         "ApplicationRules": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Network Usage Rules",
                 "properties": {
                     "AppIdentifierMatches": {
@@ -39,7 +39,7 @@
         "SIMRules": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "ICCIDs": {
                         "type": "array",

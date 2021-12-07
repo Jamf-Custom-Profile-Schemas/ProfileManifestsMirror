@@ -52,7 +52,7 @@
             "property_order": 30
         },
         "Authentication": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Configure sites that support integrated authentication.",
             "links": [
                 {
@@ -86,7 +86,7 @@
                     "description": "If this preference is enabled, the specified websites are trusted to use NTLM authentification. Entries in the list are formatted as mydomain.com or https://myotherdomain.com.\n\nIf this policy is disabled or not configured, no websites are trusted to use NTLM authentification.\n\nFor more information, see https://developer.mozilla.org/en-US/docs/Mozilla/Integrated_authentication."
                 },
                 "AllowNonFQDN": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Allow Non-FQDN",
                     "description": "If this preference is enabled, you can always allow SPNEGO or NTLM on non FQDNs (fully qualified domain names). If this preference is disabled or not configured, NTLM and SPNEGO are not enabled on non FQDNs.",
                     "properties": {
@@ -101,7 +101,7 @@
                     }
                 },
                 "AllowProxies": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Allow Proxies",
                     "description": "If this preference is enabled, you can always allow SPNEGO or NTLM on non FQDNs (fully qualified domain names). If this preference is disabled or not configured, NTLM and SPNEGO are not enabled on non FQDNs.",
                     "properties": {
@@ -182,7 +182,7 @@
         "Bookmarks": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "Title": {
                         "type": "string",
@@ -264,7 +264,7 @@
             "property_order": 75
         },
         "PDFjs": {
-            "type": "dictionary",
+            "type": "object",
             "title": "PDF.js",
             "description": "Disable or configure PDF.js, the built-in PDF viewer.",
             "links": [
@@ -531,7 +531,7 @@
             "property_order": 175
         },
         "Extensions": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Control the installation, uninstallation and locking of extensions. Locked extensions cannot be disabled or uninstalled. For Install, you specify a list of URLs or paths. For Uninstall and Locked, you specify extension IDs.",
             "links": [
                 {
@@ -571,7 +571,7 @@
             "property_order": 180
         },
         "ExtensionSettings": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Manage all aspects of extensions. A default configuration can be set for the special ID \"*\", which will apply to all extensions that don't have a custom configuration set in this policy.",
             "links": [
                 {
@@ -585,7 +585,7 @@
                     "title": "Extension ID"
                 },
                 "{{value}}": {
-                    "type": "dictionary",
+                    "type": "object",
                     "properties": {
                         "installation_mode": {
                             "type": "string",
@@ -663,7 +663,7 @@
             "property_order": 190
         },
         "EncryptedMediaExtensions": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Encrypted Media Extensions",
             "description": "Enable or disable Encrypted Media Extensions and optionally lock it.",
             "links": [
@@ -710,7 +710,7 @@
             "property_order": 200
         },
         "FirefoxHome": {
-            "type": "dictionary",
+            "type": "object",
             "title": "FirefoxHome",
             "description": "Customize the Firefox Home page.",
             "links": [
@@ -754,7 +754,7 @@
             "property_order": 205
         },
         "Homepage": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Configure the default homepage and how Firefox starts.",
             "links": [
                 {
@@ -1114,7 +1114,7 @@
             "property_order": 250
         },
         "SanitizeOnShutdown": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Sanitize On Shutdown (Selective)",
             "description": "Clear data on shutdown. Choose from Cache, Cookies, Download History, Form & Search History, Browsing History, Active Logins, Site Preferences and Offline Website Data.",
             "links": [
@@ -1190,7 +1190,7 @@
             "property_order": 260
         },
         "SearchEngines": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Search Engines",
             "default": "separate",
             "description": "Set whether or not search bar is displayed.",
@@ -1238,7 +1238,7 @@
                 "Add": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Search Engines",
                         "properties": {
                             "Name": {
@@ -1302,7 +1302,7 @@
             "property_order": 270
         },
         "Handlers": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Configure default application handlers. This policy is based on the internal format of handlers.json. You can configure handlers based on a mime type (mimeTypes), a file's extension (extensions), or a protocol (schemes).",
             "links": [
                 {
@@ -1312,7 +1312,7 @@
             ],
             "properties": {
                 "mimeTypes": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "MIME Types",
                     "description": "Specify MIME types. More info here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types",
                     "properties": {
@@ -1322,7 +1322,7 @@
                             "description": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types"
                         },
                         "{{value}}": {
-                            "type": "dictionary",
+                            "type": "object",
                             "properties": {
                                 "action": {
                                     "type": "string",
@@ -1351,7 +1351,7 @@
                     }
                 },
                 "schemes": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Schemes",
                     "properties": {
                         "action": {
@@ -1379,7 +1379,7 @@
                         "handlers": {
                             "type": "array",
                             "items": {
-                                "type": "dictionary",
+                                "type": "object",
                                 "title": "MIME Type",
                                 "properties": {
                                     "name": {
@@ -1406,7 +1406,7 @@
                     }
                 },
                 "extensions": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Extensions",
                     "properties": {
                         "action": {
@@ -1434,7 +1434,7 @@
                         "handlers": {
                             "type": "array",
                             "items": {
-                                "type": "dictionary",
+                                "type": "object",
                                 "properties": {
                                     "name": {
                                         "type": "string",
@@ -1463,7 +1463,7 @@
             "property_order": 275
         },
         "DisabledCiphers": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Disabled Ciphers",
             "description": "Disable specific cryptographic ciphers. This policy was updated in Firefox 78 to allow enabling ciphers as well. Setting the value to true disables the cipher, setting the value to false enables the cipher. Previously setting the value to true or false disabled the cipher.",
             "links": [
@@ -1510,7 +1510,7 @@
             "property_order": 280
         },
         "DNSOverHTTPS": {
-            "type": "dictionary",
+            "type": "object",
             "title": "DNS over HTTPS",
             "description": "Configure DNS over HTTPS.",
             "links": [
@@ -1548,7 +1548,7 @@
             "property_order": 285
         },
         "Proxy": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Configure proxy settings. These settings correspond to the connection settings in Firefox preferences. To specify ports, append them to the hostnames with a colon (:).",
             "links": [
                 {
@@ -1709,7 +1709,7 @@
             "property_order": 305
         },
         "Cookies": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Configure cookie preferences.",
             "links": [
                 {
@@ -1827,7 +1827,7 @@
             "property_order": 325
         },
         "EnableTrackingProtection": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Enable Tracking Protection",
             "default": {
                 "Locked": true,
@@ -1865,7 +1865,7 @@
             "property_order": 330
         },
         "FlashPlugin": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Flash Plugin Permissions",
             "description": "Configure the default Flash plugin policy as well as origins for which Flash is allowed.",
             "links": [
@@ -1907,7 +1907,7 @@
             "property_order": 335
         },
         "InstallAddonsPermission": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Install Add-ons Permissions",
             "description": "Configure the default extension install policy as well as origins for extension installs are allowed.",
             "links": [
@@ -1973,7 +1973,7 @@
             "property_order": 355
         },
         "Permissions": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Set permissions associated with camera, microphone, location, notifications, and autoplay.",
             "links": [
                 {
@@ -1983,7 +1983,7 @@
             ],
             "properties": {
                 "Camera": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Camera Permissions",
                     "description": "This preference allows you to change the camera permissions.",
                     "properties": {
@@ -2015,7 +2015,7 @@
                     }
                 },
                 "Microphone": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microphone Permissions",
                     "description": "This preference allows you to change the microphone permissions.",
                     "properties": {
@@ -2047,7 +2047,7 @@
                     }
                 },
                 "Location": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Location Permissions",
                     "description": "This preference allows you to change the location permissions.",
                     "properties": {
@@ -2079,7 +2079,7 @@
                     }
                 },
                 "Notifications": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Notifications Permissions",
                     "description": "This preference allows you to change the notifications permissions.",
                     "properties": {
@@ -2111,7 +2111,7 @@
                     }
                 },
                 "Autoplay": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Autoplay Permissions",
                     "description": "This preference allows you to change the autoplay permissions.",
                     "properties": {
@@ -2155,7 +2155,7 @@
                     }
                 },
                 "VirtualReality": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Virutal Reality Permissions",
                     "description": "This preference allows you to change the virtual reality permissions.",
                     "properties": {
@@ -2190,7 +2190,7 @@
             "property_order": 360
         },
         "PopupBlocking": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Popup Blocking",
             "description": "Configure the default pop-up window policy as well as origins for which pop-up windows are allowed.",
             "links": [
@@ -2222,7 +2222,7 @@
             "property_order": 365
         },
         "Certificates": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Trust certificates that have been added to the operating system certificate store by a user or administrator in the macOS Keychain.",
             "links": [
                 {
@@ -2260,7 +2260,7 @@
             "property_order": 370
         },
         "DisableSecurityBypass": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Disable Security Bypass",
             "description": "Prevent the user from bypassing security in certain cases.",
             "links": [
@@ -2284,7 +2284,7 @@
             "property_order": 375
         },
         "SecurityDevices": {
-            "type": "dictionary",
+            "type": "object",
             "default": {
                 "NAME_OF_DEVICE": "PATH_TO_LIBRARY_FOR_DEVICE"
             },
@@ -2308,7 +2308,7 @@
             "property_order": 380
         },
         "UserMessaging": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Search Engine Installs from Websites",
             "description": "Prevent installing search engines from webpages.",
             "links": [
@@ -2342,7 +2342,7 @@
             "property_order": 385
         },
         "WebsiteFilter": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Block websites from being visited. The parameters take an array of Match Patterns, as documented in https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. Only http/https addresses are supported at the moment. The arrays are limited to 1000 entries each.",
             "links": [
                 {
@@ -2386,7 +2386,7 @@
             "property_order": 395
         },
         "Preferences": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Preferences",
             "description": "Set and lock certain preferences.",
             "links": [
@@ -2690,7 +2690,7 @@
             "property_order": 400
         },
         "SupportMenu": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Support Menu",
             "description": "Adds a menuitem to the help menu for specifying support information.",
             "links": [

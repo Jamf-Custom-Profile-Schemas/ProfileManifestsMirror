@@ -5,7 +5,7 @@
         "AllowList": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Allow List Content Item",
                 "properties": {
                     "DeviceID": {
@@ -23,7 +23,7 @@
         "Whitelist": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Allowlist Content Item",
                 "properties": {
                     "DeviceID": {
@@ -41,7 +41,7 @@
         "Passwords": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Password Content Item",
                 "description": "An item in the passwords",
                 "properties": {

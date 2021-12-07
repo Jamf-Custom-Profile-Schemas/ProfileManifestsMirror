@@ -15,7 +15,7 @@
             "property_order": 10
         },
         "ProviderConfiguration": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Provider Custom Configuration",
             "description": "A plist formatted dictionary of custom options.",
             "property_order": 15

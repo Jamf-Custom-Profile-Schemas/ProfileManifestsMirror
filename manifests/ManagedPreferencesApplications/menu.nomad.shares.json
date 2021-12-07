@@ -18,7 +18,7 @@
             "property_order": 5
         },
         "HomeMount": {
-            "type": "dictionary",
+            "type": "object",
             "description": "This is a dictionary of attributes for scenarios where the user\u2019s home profile should be mounted.",
             "links": [
                 {
@@ -72,7 +72,7 @@
         "Shares": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "description": "Dictionary of shares and their settings.",
                 "properties": {
                     "Name": {

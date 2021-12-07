@@ -9,7 +9,7 @@
             "property_order": 5
         },
         "LKWelcomeDisplayedForAppVersion": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Welcome displayed",
             "description": "Suppress the Welcome screen on the selected versions of iMovie.",
             "properties": {
@@ -26,7 +26,7 @@
             "property_order": 10
         },
         "LKWhatsNewDisplayedForAppVersion": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Whats New displayed",
             "description": "Suppress the Whats New screen on the selected versions of iMovie.",
             "properties": {

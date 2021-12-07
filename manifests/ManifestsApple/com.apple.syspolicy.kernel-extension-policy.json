@@ -27,7 +27,7 @@
             "property_order": 15
         },
         "AllowedKernelExtensions": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Allowed Kernel Extensions",
             "description": "Bundle identifier and team identifier of kernel extensions that will be allowed. Use an empty team identifier for unsigned legacy kernel extensions.",
             "properties": {

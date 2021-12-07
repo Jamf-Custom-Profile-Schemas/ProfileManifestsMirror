@@ -9,7 +9,7 @@
             "property_order": 5
         },
         "LKWhatsNewDisplayedForAppVersion": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Whats New displayed",
             "description": "Suppress the Whats New screen on the selected versions of Motion.",
             "properties": {

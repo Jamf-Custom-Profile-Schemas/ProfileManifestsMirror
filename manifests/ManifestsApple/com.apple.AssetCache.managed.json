@@ -111,7 +111,7 @@
         "PublicRanges": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "RangeDict",
                 "properties": {
                     "type": {
@@ -515,7 +515,7 @@
         "ListenRanges": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "type": {
                         "type": "string",
@@ -565,7 +565,7 @@
         "PeerFilterRanges": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "RangeDict",
                 "properties": {
                     "type": {
@@ -594,7 +594,7 @@
         "PeerListenRanges": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "RangeDict",
                 "properties": {
                     "type": {

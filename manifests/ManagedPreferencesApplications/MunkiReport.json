@@ -15,7 +15,7 @@
             "property_order": 5
         },
         "ReportItems": {
-            "type": "dictionary",
+            "type": "object",
             "description": "ReportItems contains a dictionary that tells MunkiReport where to look for the report files. The key is the name of the module, the value contains a path to the appropriate file. Note: ReportItems are set automatically when installing MunkiReport via the command line or a package.",
             "links": [
                 {

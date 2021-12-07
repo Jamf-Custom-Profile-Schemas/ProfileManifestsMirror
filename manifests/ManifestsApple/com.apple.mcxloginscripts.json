@@ -5,7 +5,7 @@
         "loginscripts": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Login Script",
                 "properties": {
                     "filename": {
@@ -34,7 +34,7 @@
         "logoutscripts": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Logout Script",
                 "properties": {
                     "filename": {

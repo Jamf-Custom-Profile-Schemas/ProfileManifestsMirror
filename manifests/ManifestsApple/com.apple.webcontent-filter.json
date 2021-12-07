@@ -60,7 +60,7 @@
         "AllowListBookmarks": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Allow List Bookmarks Dictionary",
                 "properties": {
                     "URL": {
@@ -83,7 +83,7 @@
         "WhitelistedBookmarks": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Allowlisted Bookmarks Dictionary",
                 "properties": {
                     "URL": {
@@ -196,7 +196,7 @@
             "property_order": 110
         },
         "VendorConfig": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Vendor Configuration",
             "description": "Custom key/value pairs for the filtering service plugin",
             "properties": {

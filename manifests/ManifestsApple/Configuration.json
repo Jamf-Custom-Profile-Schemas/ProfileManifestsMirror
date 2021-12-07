@@ -22,7 +22,7 @@
             "property_order": 15
         },
         "ConsentText": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Consent Text",
             "description": "Dictionary specifying localized consent text that will be displayed as a warning during profile installation.",
             "properties": {

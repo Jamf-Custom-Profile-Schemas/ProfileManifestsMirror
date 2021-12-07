@@ -3,7 +3,7 @@
     "description": "Use this section to configure the toolbar of the Add Printer window under Printers and Scanners in System Preferences. The primary use case for this manifest is for prepopulating the toolbar with the 'Advanced' button.",
     "properties": {
         "NSToolbar Configuration com.apple.print.add.toolbar": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Add Printer Dictionary",
             "properties": {
                 "TB Item Identifiers": {

@@ -24,7 +24,7 @@
         "Groups": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "GroupsDictionary",
                 "properties": {
                     "BeaconID": {
@@ -80,7 +80,7 @@
         "Users": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "UsersDictionary",
                 "properties": {
                     "Identifier": {
@@ -166,7 +166,7 @@
         "Departments": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "DepartmentsDictionary",
                 "properties": {
                     "Name": {
@@ -190,7 +190,7 @@
         "DeviceGroups": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "DeviceGroupsDictionary",
                 "properties": {
                     "Identifier": {

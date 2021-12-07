@@ -3,7 +3,7 @@
     "description": "DNS Settings",
     "properties": {
         "DNSSettings": {
-            "type": "dictionary",
+            "type": "object",
             "title": "DNS Settings",
             "description": "A dictionary that defines a configuration for an encrypted DNS server.",
             "properties": {
@@ -49,7 +49,7 @@
             "property_order": 5
         },
         "OnDemandRules": {
-            "type": "dictionary",
+            "type": "object",
             "title": "On Demand Rules",
             "description": "An array of rules defining the DNS settings. If rules are not present, the system always applies the DNS settings. These rules are identical to the OnDemandRules array in VPN payloads.",
             "properties": {
@@ -70,7 +70,7 @@
                     }
                 },
                 "ActionParameters": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Action Parameters",
                     "description": "A dictionary that provides per-connection rules. This array is used only for settings where the Action value is EvaluateConnection.",
                     "properties": {

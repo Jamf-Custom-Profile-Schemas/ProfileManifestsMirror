@@ -218,7 +218,7 @@
             "property_order": 70
         },
         "Applications": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Applications",
             "description": "Register applications that Microsoft AutoUpdate should update. If this is not managed MAU might have issues finding updates for applications that a user has never opened. Language Code IDs are legacy and always \"1033\".",
             "links": [
@@ -229,7 +229,7 @@
             ],
             "properties": {
                 "/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft AutoUpdate",
                     "description": "Register /Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app.",
                     "properties": {
@@ -270,7 +270,7 @@
                     }
                 },
                 "/Applications/Microsoft Defender ATP.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Defender ATP",
                     "description": "Register /Applications/Microsoft Defender ATP.app.",
                     "properties": {
@@ -304,7 +304,7 @@
                     }
                 },
                 "/Applications/Microsoft Edge.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Edge",
                     "description": "Register /Applications/Microsoft Edge.app.",
                     "properties": {
@@ -338,7 +338,7 @@
                     }
                 },
                 "/Applications/Microsoft Excel.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Excel",
                     "description": "Register /Applications/Microsoft Excel.app.",
                     "properties": {
@@ -379,7 +379,7 @@
                     }
                 },
                 "/Applications/Microsoft OneNote.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft OneNote",
                     "description": "Register /Applications/Microsoft OneNote.app.",
                     "properties": {
@@ -420,7 +420,7 @@
                     }
                 },
                 "/Applications/Microsoft Outlook.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Outlook",
                     "description": "Register /Applications/Microsoft Outlook.app.",
                     "properties": {
@@ -461,7 +461,7 @@
                     }
                 },
                 "/Applications/Microsoft PowerPoint.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft PowerPoint",
                     "description": "Register /Applications/Microsoft PowerPoint.app.",
                     "properties": {
@@ -502,7 +502,7 @@
                     }
                 },
                 "/Applications/Microsoft Remote Desktop.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Remote Desktop",
                     "description": "Register /Applications/Microsoft Remote Desktop.app.",
                     "properties": {
@@ -536,7 +536,7 @@
                     }
                 },
                 "/Applications/Microsoft Teams.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Teams",
                     "description": "Register /Applications/Microsoft Teams.app.",
                     "properties": {
@@ -570,7 +570,7 @@
                     }
                 },
                 "/Applications/Microsoft Word.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Word",
                     "description": "Register /Applications/Microsoft Word.app.",
                     "properties": {
@@ -611,7 +611,7 @@
                     }
                 },
                 "/Applications/Company Portal.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Company Portal",
                     "description": "Register /Applications/Company Portal.app.",
                     "properties": {
@@ -645,7 +645,7 @@
                     }
                 },
                 "/Applications/OneDrive.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "OneDrive",
                     "description": "Register /Applications/OneDrive.app.",
                     "properties": {
@@ -679,7 +679,7 @@
                     }
                 },
                 "/Applications/Skype for Business.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Skype for Business",
                     "description": "Register /Applications/Skype for Business.app.",
                     "properties": {
@@ -716,7 +716,7 @@
             "property_order": 75
         },
         "UpdateDeadline.ApplicationsForcedUpdateSchedule": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Update Deadline: Applications Forced Update Schedule",
             "description": "Configure a deadline for a specific update version at a specific date and time for each application.",
             "links": [
@@ -727,7 +727,7 @@
             ],
             "properties": {
                 "/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft AutoUpdate",
                     "description": "Schedule an update for Microsoft AutoUpdate.",
                     "links": [
@@ -765,7 +765,7 @@
                     }
                 },
                 "/Applications/Microsoft Defender ATP.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Defender ATP",
                     "description": "Schedule an update for Microsoft Defender ATP.",
                     "links": [
@@ -796,7 +796,7 @@
                     }
                 },
                 "/Applications/Microsoft Edge.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Edge",
                     "description": "Schedule an update for Microsoft Edge.",
                     "links": [
@@ -827,7 +827,7 @@
                     }
                 },
                 "/Applications/Microsoft Excel.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Excel",
                     "description": "Schedule an update for Microsoft Excel.",
                     "links": [
@@ -865,7 +865,7 @@
                     }
                 },
                 "/Applications/Microsoft OneNote.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft OneNote",
                     "description": "Schedule an update for Microsoft OneNote.",
                     "links": [
@@ -903,7 +903,7 @@
                     }
                 },
                 "/Applications/Microsoft Outlook.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Outlook",
                     "description": "Schedule an update for Microsoft Outlook.",
                     "links": [
@@ -941,7 +941,7 @@
                     }
                 },
                 "/Applications/Microsoft PowerPoint.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft PowerPoint",
                     "description": "Schedule an update for Microsoft PowerPoint.",
                     "links": [
@@ -979,7 +979,7 @@
                     }
                 },
                 "/Applications/Microsoft Remote Desktop.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Remote Desktop",
                     "description": "Schedule an update for Microsoft Remote Desktop.",
                     "links": [
@@ -1010,7 +1010,7 @@
                     }
                 },
                 "/Applications/Microsoft Teams.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Teams",
                     "description": "Schedule an update for Microsoft Teams.",
                     "links": [
@@ -1041,7 +1041,7 @@
                     }
                 },
                 "/Applications/Microsoft Word.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Microsoft Word",
                     "description": "Schedule an update for Microsoft Word.",
                     "links": [
@@ -1079,7 +1079,7 @@
                     }
                 },
                 "/Applications/Company Portal.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Company Portal",
                     "description": "Schedule an update for Company Portal.",
                     "links": [
@@ -1110,7 +1110,7 @@
                     }
                 },
                 "/Applications/OneDrive.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "OneDrive",
                     "description": "Schedule an update for OneDrive.",
                     "links": [
@@ -1141,7 +1141,7 @@
                     }
                 },
                 "/Applications/Skype for Business.app": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Skype for Business",
                     "description": "Schedule an update for Skype for Business.",
                     "links": [

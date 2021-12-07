@@ -3,7 +3,7 @@
     "description": "Proxies settings",
     "properties": {
         "Proxies": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Proxy Configuration",
             "description": "macOS System Proxy Configuration",
             "properties": {

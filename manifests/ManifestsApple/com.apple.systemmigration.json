@@ -5,7 +5,7 @@
         "CustomBehavior": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Custom Paths Item",
                 "description": "Custom Paths Item Dictionary",
                 "properties": {
@@ -20,7 +20,7 @@
                     "Paths": {
                         "type": "array",
                         "items": {
-                            "type": "dictionary",
+                            "type": "object",
                             "title": "Custom Paths Path Item",
                             "description": "Custom Paths Path Item Dictionary",
                             "properties": {

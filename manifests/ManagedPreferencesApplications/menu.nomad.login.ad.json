@@ -100,13 +100,13 @@
             "property_order": 70
         },
         "NTtoADDomainMappings": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Maps NT to AD Domains. e.g. NOMAD: nomad.menu, would allow a user to sign in as \u201cNOMAD\\user\u201d and that would be converted to \u201cuser@nomad.menu\u201d before authenticating to AD.",
             "properties": {
                 "TextFields": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "properties": {
                             "ntname": {
                                 "type": "string",
@@ -243,13 +243,13 @@
             "property_order": 170
         },
         "UserInputUI": {
-            "type": "dictionary",
+            "type": "object",
             "description": "UI elements shown during the UserInput mechanism.",
             "properties": {
                 "TextFields": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "properties": {
                             "title": {
                                 "type": "string",
@@ -266,7 +266,7 @@
                 "PopUps": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "properties": {
                             "title": {
                                 "type": "string",
@@ -284,7 +284,7 @@
                     "title": "User Input Pop Ups"
                 },
                 "Button": {
-                    "type": "dictionary",
+                    "type": "object",
                     "properties": {
                         "title": {
                             "type": "string",

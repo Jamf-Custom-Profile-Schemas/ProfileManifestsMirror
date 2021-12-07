@@ -3,10 +3,10 @@
     "description": "Google Software Update Settings",
     "properties": {
         "updatePolicies": {
-            "type": "dictionary",
+            "type": "object",
             "properties": {
                 "global": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Global Google Update settings",
                     "description": "Configure Global Google update settings",
                     "properties": {
@@ -96,7 +96,7 @@
                     }
                 },
                 "com.google.Chrome": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Chrome Update settings",
                     "description": "Configure Chrome update settings",
                     "properties": {
@@ -135,7 +135,7 @@
                     }
                 },
                 "com.google.drivefs": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Drive File Stream Update settings",
                     "description": "Configure Drive File Stream update settings",
                     "properties": {
@@ -174,7 +174,7 @@
                     }
                 },
                 "com.google.chat": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Chat Update settings",
                     "description": "Configure Chat update settings",
                     "properties": {
@@ -213,7 +213,7 @@
                     }
                 },
                 "com.google.GoogleDrive": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Backup & Sync Update settings",
                     "description": "Configure Backup & Sync update settings",
                     "properties": {

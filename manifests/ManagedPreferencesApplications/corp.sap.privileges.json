@@ -65,7 +65,7 @@
             "property_order": 40
         },
         "RemoteLogging": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Remote Logging Settings",
             "description": "Remote logging settings",
             "properties": {
@@ -99,7 +99,7 @@
                     "description": "If set to true, the log messages are sent via TCP instead of UDP. By default, messages are sent via UDP."
                 },
                 "SyslogOptions": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Syslog Options",
                     "description": "Syslog-specific options",
                     "properties": {

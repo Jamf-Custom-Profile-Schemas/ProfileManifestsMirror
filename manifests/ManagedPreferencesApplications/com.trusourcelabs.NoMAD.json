@@ -130,7 +130,7 @@
             "property_order": 105
         },
         "KeychainItems": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Keychain Items",
             "properties": {
                 "{{key}}": {
@@ -155,7 +155,7 @@
             "property_order": 120
         },
         "PasswordPolicy": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Password Policy",
             "description": "Complexity policy for changing the password via Kerberos.",
             "properties": {

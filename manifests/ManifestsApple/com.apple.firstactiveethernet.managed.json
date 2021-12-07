@@ -23,7 +23,7 @@
             "property_order": 5
         },
         "EAPClientConfiguration": {
-            "type": "dictionary",
+            "type": "object",
             "title": "EAP Client Configuration",
             "description": "Specifies 802.1x EAP authentication parameters.",
             "properties": {

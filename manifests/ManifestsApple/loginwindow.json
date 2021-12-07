@@ -12,7 +12,7 @@
         "AutoLaunchedApplicationDictionary-managed": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Login Item",
                 "description": "Automatically Launched Login Item",
                 "properties": {

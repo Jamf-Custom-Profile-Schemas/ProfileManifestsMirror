@@ -52,7 +52,7 @@
             "property_order": 50
         },
         "KeychainItems": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Determines which keychain items Jamf Connect Sync should synchronize with the local password.",
             "properties": {
                 "{{key}}": {
@@ -67,7 +67,7 @@
             "property_order": 55
         },
         "KeychainItemsInternet": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Determines which internet accounts Jamf Connect Sync should synchronize with the local password.",
             "properties": {
                 "{{key}}": {
@@ -120,7 +120,7 @@
         "ChangePasswordOrder": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "ChangePasswordItem",
                 "properties": {
                     "{{key}}": {
@@ -140,7 +140,7 @@
             "property_order": 105
         },
         "PasswordPolicy": {
-            "type": "dictionary",
+            "type": "object",
             "properties": {
                 "minLength": {
                     "type": "string",

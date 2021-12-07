@@ -3,7 +3,7 @@
     "description": "Identification settings",
     "properties": {
         "PayloadIdentification": {
-            "type": "dictionary",
+            "type": "object",
             "title": "PayloadIdentification",
             "properties": {
                 "FullName": {

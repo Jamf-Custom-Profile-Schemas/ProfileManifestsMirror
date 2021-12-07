@@ -25,7 +25,7 @@
         "Applications": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Application Item",
                 "description": "A firewall application item-",
                 "properties": {

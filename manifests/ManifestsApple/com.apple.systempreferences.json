@@ -378,7 +378,7 @@
             "property_order": 15
         },
         "AttentionPrefBundleIDs": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Attention Preference Pane Bundle IDs",
             "description": "Not documented by Apple, but by entering 0 for individual System Preference pane bundle IDs, or by adding this preference and leaving the dictionary blank, it is possible to suppress the alert icon from appearing on the System Preferences app (ex. when software updates are available).",
             "properties": {

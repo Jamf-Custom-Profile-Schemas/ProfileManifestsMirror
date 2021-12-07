@@ -30,7 +30,7 @@
         "ConfiguredAccounts": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Configured Account",
                 "description": "Configured account type and relevant settings",
                 "properties": {

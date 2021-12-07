@@ -5,7 +5,7 @@
         "NotificationSettings": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Notification Setting",
                 "description": "Notification settings for an app",
                 "properties": {

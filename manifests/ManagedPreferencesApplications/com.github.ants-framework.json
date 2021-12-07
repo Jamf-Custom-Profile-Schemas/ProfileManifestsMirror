@@ -3,7 +3,7 @@
     "description": "ANTS Framework settings",
     "properties": {
         "main": {
-            "type": "dictionary",
+            "type": "object",
             "title": "General",
             "description": "General",
             "properties": {
@@ -80,7 +80,7 @@
             "property_order": 5
         },
         "ad": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Active Directory",
             "description": "Active Directory",
             "properties": {

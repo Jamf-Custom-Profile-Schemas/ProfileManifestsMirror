@@ -9,7 +9,7 @@
             "property_order": 5
         },
         "Kerberos": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Kerberos-Related Information",
             "description": "Kerberos-related information.",
             "properties": {

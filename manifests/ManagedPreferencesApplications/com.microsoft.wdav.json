@@ -3,7 +3,7 @@
     "description": "Microsoft Defender Advanced Threat Protection settings",
     "properties": {
         "antivirusEngine": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Anti-Virus Engine",
             "description": "Manages the preferences of the antivirus component of Microsoft Defender ATP.",
             "links": [
@@ -40,7 +40,7 @@
                 "exclusions": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Exclusions",
                         "properties": {
                             "$type": {
@@ -146,7 +146,7 @@
                 "threatTypeSettings": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "properties": {
                             "key": {
                                 "type": "string",
@@ -266,7 +266,7 @@
             "property_order": 5
         },
         "cloudService": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Cloud Service",
             "links": [
                 {
@@ -322,7 +322,7 @@
             "property_order": 10
         },
         "userInterface": {
-            "type": "dictionary",
+            "type": "object",
             "title": "User Interface Preferences",
             "links": [
                 {
@@ -346,7 +346,7 @@
             "property_order": 15
         },
         "edr": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Endpoint Detection and Response Preferences",
             "links": [
                 {
@@ -369,7 +369,7 @@
                 "tags": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "properties": {
                             "key": {
                                 "type": "string",

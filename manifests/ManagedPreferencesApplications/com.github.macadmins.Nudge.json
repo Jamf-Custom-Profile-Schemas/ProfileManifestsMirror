@@ -31,13 +31,13 @@
         "osVersionRequirements": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "osVersionRequirements Dictionary",
                 "properties": {
                     "aboutUpdateURLs": {
                         "type": "array",
                         "items": {
-                            "type": "dictionary",
+                            "type": "object",
                             "title": "aboutUpdateURLs dictionary",
                             "properties": {
                                 "_language": {
@@ -116,7 +116,7 @@
             "property_order": 15
         },
         "userExperience": {
-            "type": "dictionary",
+            "type": "object",
             "title": "User Experience",
             "properties": {
                 "noTimers": {
@@ -267,7 +267,7 @@
             "property_order": 20
         },
         "userInterface": {
-            "type": "dictionary",
+            "type": "object",
             "title": "User Interface",
             "properties": {
                 "simpleMode": {
@@ -345,7 +345,7 @@
                 "updateElements": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "updateElements Dictionary",
                         "properties": {
                             "_language": {

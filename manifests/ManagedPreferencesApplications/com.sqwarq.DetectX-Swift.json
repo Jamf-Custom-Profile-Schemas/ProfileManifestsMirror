@@ -75,7 +75,7 @@
         "whitelist": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "description": "Array of dictionaries.",
                 "properties": {
                     "path": {

@@ -471,7 +471,7 @@
         "RegisteredProtocolHandlers": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "RegisteredProtocolDictionary",
                 "properties": {
                     "default": {
@@ -497,7 +497,7 @@
             "property_order": 135
         },
         "WebUsbAllowDevicesForUrls": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Automatically grant permission to these sites to connect to USB devices with the given vendor and product IDs",
             "description": "Allows you to set a list of urls that specify which sites will automatically be granted permission to access a USB device with the given vendor and product IDs.",
             "links": [
@@ -517,7 +517,7 @@
                     "title": "URLs"
                 },
                 "devices": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Devices",
                     "properties": {
                         "product_id": {
@@ -830,7 +830,7 @@
             "property_order": 240
         },
         "ExtensionSettings": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Extension management settings",
             "description": "Configures extension management settings for Google Chrome. A default configuration can be set for the special ID \"*\"",
             "links": [
@@ -845,7 +845,7 @@
                     "title": "Extension ID"
                 },
                 "{{value}}": {
-                    "type": "dictionary",
+                    "type": "object",
                     "properties": {
                         "installation_mode": {
                             "type": "string",
@@ -2268,7 +2268,7 @@
         "ManagedFavorites": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Managed Favorites Folder Name",
                 "description": "The top-level managed favorites folder name.",
                 "properties": {
@@ -2291,7 +2291,7 @@
         "ManagedSearchEngines": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Search engine",
                 "properties": {
                     "is_default": {
@@ -2495,7 +2495,7 @@
             "property_order": 765
         },
         "ProxySettings": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Proxy Settings",
             "description": "Configures the proxy settings for Google Chrome. These proxy settings will be available for ARC-apps too.\n\nIf you enable this setting, Google Chrome and ARC-apps ignore all proxy-related options specified from the command line.",
             "links": [
@@ -3078,7 +3078,7 @@
         "WebAppInstallForceList": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "url": {
                         "type": "string",
@@ -3589,11 +3589,11 @@
         "NewTabPageCompanyLogo": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "NewTabPageCompanyLogoDictionary",
                 "properties": {
                     "default_logo": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Default Logo",
                         "properties": {
                             "hash": {
@@ -3606,7 +3606,7 @@
                         }
                     },
                     "light_logo": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Light Logo",
                         "properties": {
                             "hash": {
@@ -3658,7 +3658,7 @@
         "NewTabPageManagedQuickLinks": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Links",
                 "properties": {
                     "url": {

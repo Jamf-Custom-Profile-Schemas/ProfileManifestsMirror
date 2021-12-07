@@ -3,7 +3,7 @@
     "description": "System Logging settings",
     "properties": {
         "System": {
-            "type": "dictionary",
+            "type": "object",
             "properties": {
                 "Enable-Private-Data": {
                     "type": "boolean",

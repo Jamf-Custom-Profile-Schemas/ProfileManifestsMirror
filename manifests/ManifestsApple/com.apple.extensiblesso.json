@@ -48,7 +48,7 @@
             "property_order": 30
         },
         "ExtensionData": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Kerberos Extension Data",
             "description": "Used by the Apple built-in Kerberos extension.",
             "properties": {

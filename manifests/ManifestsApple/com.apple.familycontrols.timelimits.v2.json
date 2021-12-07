@@ -9,11 +9,11 @@
             "property_order": 5
         },
         "time-limits": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Time Limits",
             "properties": {
                 "weekday-allowance": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Weekday Allowance",
                     "description": "Weekday allowance settings",
                     "properties": {
@@ -41,7 +41,7 @@
                     }
                 },
                 "weekday-curfew": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Weekday Curfew",
                     "properties": {
                         "enabled": {
@@ -74,7 +74,7 @@
                     }
                 },
                 "weekend-allowance": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Weekend Allowance",
                     "properties": {
                         "enabled": {
@@ -101,7 +101,7 @@
                     }
                 },
                 "weekend-curfew": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Weekend Curfew",
                     "properties": {
                         "enabled": {

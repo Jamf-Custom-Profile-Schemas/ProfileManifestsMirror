@@ -3,14 +3,14 @@
     "description": "Configures Privacy Preferences Policy Control settings",
     "properties": {
         "Services": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Services",
             "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
             "properties": {
                 "Accessibility": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -71,7 +71,7 @@
                 "AppleEvents": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -157,7 +157,7 @@
                 "Calendar": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -218,7 +218,7 @@
                 "Camera": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -277,7 +277,7 @@
                 "AddressBook": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -338,7 +338,7 @@
                 "FileProviderPresence": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -398,7 +398,7 @@
                 "ListenEvent": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -456,7 +456,7 @@
                 "MediaLibrary": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -516,7 +516,7 @@
                 "Microphone": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -575,7 +575,7 @@
                 "Photos": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -636,7 +636,7 @@
                 "PostEvent": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -698,7 +698,7 @@
                 "Reminders": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -759,7 +759,7 @@
                 "SystemPolicyAllFiles": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -820,7 +820,7 @@
                 "ScreenCapture": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -878,7 +878,7 @@
                 "SpeechRecognition": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -938,7 +938,7 @@
                 "SystemPolicyDesktopFolder": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -998,7 +998,7 @@
                 "SystemPolicyDocumentsFolder": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -1058,7 +1058,7 @@
                 "SystemPolicyDownloadsFolder": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -1118,7 +1118,7 @@
                 "SystemPolicyNetworkVolumes": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -1178,7 +1178,7 @@
                 "SystemPolicyRemovableVolumes": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {
@@ -1238,7 +1238,7 @@
                 "SystemPolicySysAdminFiles": {
                     "type": "array",
                     "items": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Services",
                         "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
                         "properties": {

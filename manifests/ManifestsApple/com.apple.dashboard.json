@@ -11,7 +11,7 @@
         "WhiteList": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "Type": {
                         "type": "string",

@@ -3,7 +3,7 @@
     "description": "Single App Mode settings",
     "properties": {
         "App": {
-            "type": "dictionary",
+            "type": "object",
             "title": "App",
             "description": "A dictionary containing information about the app",
             "properties": {
@@ -13,7 +13,7 @@
                     "description": "The bundle identifier of the application."
                 },
                 "Options": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Options",
                     "description": "Settings enforced when in Single App Mode",
                     "properties": {
@@ -92,7 +92,7 @@
                     }
                 },
                 "UserEnabledOptions": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "User Enabled Options",
                     "description": "Allow the user to change these settings when in Single App Mode",
                     "properties": {

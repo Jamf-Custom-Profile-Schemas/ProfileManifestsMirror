@@ -16,7 +16,7 @@
             "property_order": 10
         },
         "Tenants": {
-            "type": "dictionary",
+            "type": "object",
             "description": "OneDrive folder default location.",
             "links": [
                 {
@@ -31,7 +31,7 @@
                     "description": "A globally unique identifier (GUID) that is different than your tenant name or domain."
                 },
                 "{{value}}": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "DefaultFolderDict",
                     "properties": {
                         "DefaultFolder": {

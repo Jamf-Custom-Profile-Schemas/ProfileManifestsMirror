@@ -5,7 +5,7 @@
         "AllowedRemotes": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Allowed Remotes Content Item",
                 "description": "An item in the allowed remotes",
                 "properties": {
@@ -24,7 +24,7 @@
         "AllowedTVs": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Allowed TVs Content Item",
                 "description": "An item in the allowed TVs",
                 "properties": {

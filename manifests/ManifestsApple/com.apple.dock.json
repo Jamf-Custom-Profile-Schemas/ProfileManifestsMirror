@@ -5,7 +5,7 @@
         "static-apps": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "tile-type": {
                         "type": "string",
@@ -22,7 +22,7 @@
                         }
                     },
                     "tile-data": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Information",
                         "description": "Information about a dock item.",
                         "properties": {
@@ -50,7 +50,7 @@
                                 }
                             },
                             "file-data": {
-                                "type": "dictionary",
+                                "type": "object",
                                 "title": "File Data",
                                 "description": "Dictionary describing the target file.",
                                 "properties": {
@@ -81,7 +81,7 @@
         "static-others": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Static Other",
                 "properties": {
                     "tile-type": {
@@ -103,7 +103,7 @@
                         }
                     },
                     "tile-data": {
-                        "type": "dictionary",
+                        "type": "object",
                         "title": "Information",
                         "description": "Information about a dock item.",
                         "properties": {
@@ -135,7 +135,7 @@
                                 }
                             },
                             "file-data": {
-                                "type": "dictionary",
+                                "type": "object",
                                 "title": "File Data",
                                 "description": "Dictionary describing the target file.",
                                 "properties": {
@@ -156,7 +156,7 @@
                                 }
                             },
                             "url": {
-                                "type": "dictionary",
+                                "type": "object",
                                 "title": "URL Data",
                                 "description": "Dictionary describing the target url.",
                                 "properties": {

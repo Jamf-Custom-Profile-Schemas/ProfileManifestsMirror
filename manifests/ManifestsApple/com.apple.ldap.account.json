@@ -36,7 +36,7 @@
         "LDAPSearchSettings": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "An LDAP Search Setting",
                 "default": {
                     "LDAPSearchSettingDescription": "My Search",

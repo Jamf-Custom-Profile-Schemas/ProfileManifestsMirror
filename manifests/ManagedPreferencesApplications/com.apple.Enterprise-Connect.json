@@ -234,7 +234,7 @@
         "shares": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Share",
                 "properties": {
                     "path": {
@@ -253,7 +253,7 @@
         "managedshares": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Share",
                 "properties": {
                     "path": {

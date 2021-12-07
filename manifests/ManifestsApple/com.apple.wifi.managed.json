@@ -192,7 +192,7 @@
             "property_order": 110
         },
         "EAPClientConfiguration": {
-            "type": "dictionary",
+            "type": "object",
             "title": "EAP Client Configuration",
             "description": "Specifies 802.1x EAP authentication parameters.",
             "properties": {
@@ -350,7 +350,7 @@
             "property_order": 115
         },
         "QoSMarkingPolicy": {
-            "type": "dictionary",
+            "type": "object",
             "title": "QoS Marking Policy",
             "description": "Restrict fast lane QoS marking.",
             "properties": {

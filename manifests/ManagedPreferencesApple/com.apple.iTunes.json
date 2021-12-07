@@ -3,7 +3,7 @@
     "description": "iTunes settings",
     "properties": {
         "license-agreements": {
-            "type": "dictionary",
+            "type": "object",
             "title": "iTunes Software License Agreement",
             "description": "Agrees to the license agreement prompt when first opening iTunes",
             "properties": {

@@ -48,12 +48,12 @@
             "property_order": 35
         },
         "CommunicationServiceRules": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Communication Service Rules",
             "description": "The communication service handler rules for this account.",
             "properties": {
                 "DefaultServiceHandlers": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Default Service Handlers",
                     "properties": {
                         "AudioCall": {

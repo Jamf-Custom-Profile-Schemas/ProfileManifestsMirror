@@ -3,7 +3,7 @@
     "description": "Final Cut Pro settings",
     "properties": {
         "LKWelcomeDisplayedForAppVersion": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Welcome displayed",
             "description": "Suppress the Welcome screen on the selected versions of Final Cut Pro.",
             "properties": {
@@ -20,7 +20,7 @@
             "property_order": 5
         },
         "LKWhatsNewDisplayedForAppVersion": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Whats New displayed",
             "description": "Suppress the Whats New screen on the selected versions of Final Cut Pro.",
             "properties": {

@@ -11,7 +11,7 @@
         "whiteList": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "Allowlisted Item",
                 "description": "Allowlisted application dictionary",
                 "properties": {

@@ -5,7 +5,7 @@
         "APNs": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "Name": {
                         "type": "string",
@@ -117,7 +117,7 @@
             "property_order": 5
         },
         "AttachAPN": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Default APN",
             "default": {},
             "description": "Default APN configuration",

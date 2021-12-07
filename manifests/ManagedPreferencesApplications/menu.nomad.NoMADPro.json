@@ -151,7 +151,7 @@
             "property_order": 130
         },
         "KeychainItems": {
-            "type": "dictionary",
+            "type": "object",
             "title": "KeychainItems",
             "description": "Items to update when the user's local password is updated as well.",
             "properties": {
@@ -175,11 +175,11 @@
         "ChangePasswordOrder": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "title": "ChangePasswordItem",
                 "properties": {
                     "": {
-                        "type": "dictionary"
+                        "type": "object"
                     }
                 }
             },
@@ -225,7 +225,7 @@
             "property_order": 180
         },
         "PasswordPolicy": {
-            "type": "dictionary",
+            "type": "object",
             "description": "Complexity policy for changing the password via Kerberos.",
             "properties": {
                 "minLength": {

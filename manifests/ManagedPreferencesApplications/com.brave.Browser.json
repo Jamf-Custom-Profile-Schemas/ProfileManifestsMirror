@@ -581,7 +581,7 @@
         "RegisteredProtocolHandlers": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "default": {
                         "type": "boolean",
@@ -933,7 +933,7 @@
             "property_order": 285
         },
         "ExtensionSettings": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Extension management settings",
             "description": "Configures extension management settings for Brave Browser. A default configuration can be set for the special ID \"*\"",
             "links": [
@@ -948,7 +948,7 @@
                     "title": "Extension ID"
                 },
                 "{{value}}": {
-                    "type": "dictionary",
+                    "type": "object",
                     "properties": {
                         "installation_mode": {
                             "type": "string",
@@ -1696,7 +1696,7 @@
         "AutoLaunchProtocolsFromOrigins": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "allowed_origins": {
                         "type": "array",
@@ -2804,7 +2804,7 @@
         "ManagedBookmarks": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
@@ -3070,7 +3070,7 @@
             "property_order": 980
         },
         "ProxySettings": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Proxy Settings",
             "description": "Configures the proxy settings for Brave Browser. These proxy settings will be available for ARC-apps too.\n\nIf you enable this setting, Brave Browser and ARC-apps ignore all proxy-related options specified from the command line.",
             "links": [
@@ -3081,7 +3081,7 @@
             ],
             "properties": {
                 "ProxySetting": {
-                    "type": "dictionary",
+                    "type": "object",
                     "properties": {
                         "ProxyMode": {
                             "type": "string",
@@ -3751,7 +3751,7 @@
         "WebAppInstallForceList": {
             "type": "array",
             "items": {
-                "type": "dictionary",
+                "type": "object",
                 "properties": {
                     "url": {
                         "type": "string",
@@ -4127,7 +4127,7 @@
             "property_order": 1325
         },
         "PrinterPaperSizeDefault": {
-            "type": "dictionary",
+            "type": "object",
             "title": "Default printer paper size",
             "description": "Overrides default printing page size. If 'custom' is provided, custom size width and height keys must also be included.",
             "links": [
@@ -4138,7 +4138,7 @@
             ],
             "properties": {
                 "custom_size": {
-                    "type": "dictionary",
+                    "type": "object",
                     "title": "Custom Size",
                     "properties": {
                         "width": {
