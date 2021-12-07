@@ -20,7 +20,7 @@ equivalent Jamf JSON schemas."""
 
 
 __author__ = "Elliot Jordan"
-__version__ = "1.0"
+__version__ = "1.0.1"
 
 import argparse
 import json
@@ -144,8 +144,14 @@ def process_subkeys(subkeys):
 
         # Type is the only required property
         # TODO: Is failing back to dictionary too broad an assumption?
-        properties[name] = {"type": subkey.get("pfm_type", "dictionary")}
-        if properties[name]["type"] == "array":
+        properties[name] = {"type": subkey.get("pfm_type", "object")}
+
+        # Change "dictionary" to "object" to align with JSON schema
+        if properties[name]["type"] == "dictionary":
+            properties[name]["type"] = "object"
+
+        # If type is array, create a dict to store its items
+        elif properties[name]["type"] == "array":
             properties[name]["items"] = {}
 
         # Get subkey title, description, and other attributes
