@@ -10,10 +10,23 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://rickheil.com/disabling-slack-updates-in-v4-0/"
+                    "href": "https://slack.com/help/articles/360035635174-Deploy-Slack-for-macOS"
                 }
             ],
             "property_order": 5
+        },
+        "SlackDefaultSignInWorkspace": {
+            "type": "string",
+            "title": "Default Workspace",
+            "default": false,
+            "description": "Sets the default workspace for Slack sign-ins.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://slack.com/help/articles/360041725993-Share-a-default-sign-in-file-with-members"
+                }
+            ],
+            "property_order": 10
         }
     }
 }
