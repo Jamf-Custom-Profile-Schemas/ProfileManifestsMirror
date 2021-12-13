@@ -1,11 +1,13 @@
 # Mirror of ProfileManifests in JSON Format for Jamf
 
-![Build Status Badge](https://github.com/Jamf-Custom-Profile-Schemas/ProfileManifestsMirror/actions/workflows/build.yml/badge.svg)
+[![Build Status Badge](https://github.com/Jamf-Custom-Profile-Schemas/ProfileManifestsMirror/actions/workflows/build.yml/badge.svg)](https://github.com/Jamf-Custom-Profile-Schemas/ProfileManifestsMirror/actions/workflows/build.yml)
 ![Manifest Count](https://img.shields.io/badge/manifest%20count-216-blue)
 
 This repository contains Jamf JSON schema manifests automatically generated from the repository of [ProfileCreator manifests](https://github.com/ProfileCreator/ProfileManifests).
 
-To find a manifest on this repo's GitHub page, try typing `T` and then typing part of the preference domain for the app you wish to manage.
+To find a manifest on this repo's GitHub page, type `T` and then type part of the preference domain for the app you wish to manage.
+
+For details, see this post: https://www.elliotjordan.com/posts/profilemanifestsmirror/
 
 ## Use at your own risk
 
