@@ -20,7 +20,7 @@ equivalent Jamf JSON schema manifests."""
 
 
 __author__ = "Elliot Jordan"
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 import argparse
 import json
@@ -252,6 +252,23 @@ def write_to_file(path, data):
         )
 
 
+def update_readme(count):
+    """Updates README.md file with latest manifest count."""
+
+    with open("README.md", "r") as f:
+        readme = f.readlines()
+    for idx, line in enumerate(readme):
+        if line.startswith("![Manifest Count]("):
+            readme[idx] = (
+                "![Manifest Count](https://img.shields.io/badge/manifests-%d-blue)\n"
+                % count
+            )
+            break
+    with open("README.md", "w") as f:
+        f.write("".join(readme))
+    print("Updated README.md")
+
+
 def main():
     """Main process."""
 
@@ -302,6 +319,7 @@ def main():
                 count["done"] += 1
 
     print("Converted %d files. Skipped %d files." % (count["done"], count["skipped"]))
+    update_readme(count["done"])
 
 
 if __name__ == "__main__":
