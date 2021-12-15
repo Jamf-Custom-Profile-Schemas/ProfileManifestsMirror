@@ -22,6 +22,6 @@ On the other hand, pull requests are welcome here if you have contributions to t
 ## Further reading
 
 - [Elliot Jordan: ProfileCreator Manifests Now Available for Jamf](https://www.elliotjordan.com/posts/profilemanifestsmirror/)
-- [Jamf: Managing Settings for Computer Applications using JSON Schema and Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/json-schema/10.19.0/Introduction.html)
+- [Jamf: Application & Custom Settings](https://developer.jamf.com/developer-guide/docs/application-and-custom-settings)
 - [ProfileCreator](https://github.com/ProfileCreator/ProfileCreator)
 - [iMazing Profile Editor](https://imazing.com/profile-editor)
