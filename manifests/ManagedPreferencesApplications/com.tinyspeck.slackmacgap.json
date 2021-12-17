@@ -18,7 +18,6 @@
         "SlackDefaultSignInWorkspace": {
             "type": "string",
             "title": "Default Workspace",
-            "default": false,
             "description": "Sets the default workspace for Slack sign-ins.",
             "links": [
                 {
