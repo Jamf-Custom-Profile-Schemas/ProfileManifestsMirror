@@ -162,7 +162,7 @@
         "FilterSockets": {
             "type": "boolean",
             "title": "Enable Socket Filtering",
-            "default": true,
+            "default": false,
             "property_order": 85
         },
         "FilterDataProviderBundleIdentifier": {
@@ -180,7 +180,7 @@
         "FilterPackets": {
             "type": "boolean",
             "title": "Enable Packet Filtering",
-            "default": true,
+            "default": false,
             "property_order": 100
         },
         "FilterPacketProviderBundleIdentifier": {
