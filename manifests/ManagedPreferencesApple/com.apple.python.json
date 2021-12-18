@@ -4,8 +4,8 @@
     "properties": {
         "DisablePythonAlert": {
             "type": "boolean",
-            "title": "Disable Python Alert",
-            "default": true,
+            "title": "Disable Python Deprecation Alert",
+            "default": false,
             "description": "Controls whether warnings are shown to the user when an app or process calls the macOS-bundled Python2 interpreter. This interpreter has been deprecated and will be removed in a future version of macOS.",
             "property_order": 5
         }
