@@ -33,6 +33,11 @@
                         "title": "TV Device ID",
                         "description": "The tvOS destination MAC address",
                         "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
+                    },
+                    "TVDeviceName": {
+                        "type": "string",
+                        "title": "TV Device Name",
+                        "description": "The tvOS destination device name"
                     }
                 }
             },

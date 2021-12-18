@@ -14,6 +14,12 @@
             "default": 300,
             "description": "Number of seconds of inactivity before screensaver activates. (0 = never activate).",
             "property_order": 10
+        },
+        "moduleName": {
+            "type": "string",
+            "title": "Screensaver Module Name",
+            "description": "Name of the screensaver module to use.",
+            "property_order": 15
         }
     }
 }

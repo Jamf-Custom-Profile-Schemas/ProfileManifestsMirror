@@ -129,6 +129,12 @@
                     "default": false,
                     "description": "If true, the Kerberos extension will allow only managed apps to access and use the credential. This is in addition to the credentialBundleIDACL, if it is specified. Available in iOS 14 and later."
                 },
+                "includeKerberosAppsInBundleIdACL": {
+                    "type": "boolean",
+                    "title": "Include Kerberos Apps in Bundle ID ACL",
+                    "default": false,
+                    "description": "If true, the Kerberos extension will allow standard Kerberos utilities such as TicketViewer and klist to access and use the credential. This is in addition to either includeManagedAppsInBundleIdACL or credentialBundleIDACL, if any are specified."
+                },
                 "monitorCredentialsCache": {
                     "type": "boolean",
                     "title": "Monitor Credential Cache",
@@ -139,6 +145,16 @@
                     "type": "string",
                     "title": "Principal Name",
                     "description": "The principal (aka username) to use. You do not need to include the realm."
+                },
+                "preferredKDCs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Key Distribution Center"
+                    },
+                    "title": "Preferred KDCs",
+                    "description": "Preferred Key Distribution Centers for Kerberos traffic when the servers cannot be discovered via DNS.",
+                    "pattern": "^((kkdcp:\\/\\/)|(tcp\\/))?[^:\\/]+(:\\d+)?(\\/[^:]*)?$"
                 },
                 "pwChangeURL": {
                     "type": "string",
@@ -218,6 +234,31 @@
                 }
             },
             "property_order": 35
+        },
+        "DeniedBundleIdentifiers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Bundle Identifier"
+            },
+            "title": "Denied Bundle Identifiers",
+            "property_order": 40
+        },
+        "ScreenLockedBehavior": {
+            "type": "string",
+            "title": "Screen Locked Behavior",
+            "default": "Cancel",
+            "enum": [
+                "Cancel",
+                "DoNotHandle"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Cancel",
+                    "Do Not Handle"
+                ]
+            },
+            "property_order": 45
         }
     }
 }

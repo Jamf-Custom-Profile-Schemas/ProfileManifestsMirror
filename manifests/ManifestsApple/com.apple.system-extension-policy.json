@@ -73,6 +73,27 @@
                 }
             },
             "property_order": 20
+        },
+        "RemovableSystemExtensions": {
+            "type": "object",
+            "title": "Removable System Extensions",
+            "description": "Dictionary of system extensions that can be removed by their own app without requiring an admin password. Extensions are represented in the dictionary using a team identifier string as key and an array of removable extension bundle identifier strings as the associated value.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Team Identifier",
+                    "pattern": "^[A-Z0-9]{10}$"
+                },
+                "{{value}}": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Bundle Identifier"
+                    },
+                    "title": "Bundle Identifier"
+                }
+            },
+            "property_order": 25
         }
     }
 }

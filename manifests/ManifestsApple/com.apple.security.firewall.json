@@ -49,6 +49,29 @@
             "title": "Applications",
             "description": "Add applications to either allow or block them from connecting to your network and the Internet.",
             "property_order": 20
+        },
+        "EnableLogging": {
+            "type": "boolean",
+            "title": "Enable Logging",
+            "default": false,
+            "property_order": 25
+        },
+        "LoggingOption": {
+            "type": "string",
+            "title": "Logging Option",
+            "enum": [
+                "throttled",
+                "brief",
+                "detail"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Throttled",
+                    "Brief",
+                    "Detail"
+                ]
+            },
+            "property_order": 30
         }
     }
 }

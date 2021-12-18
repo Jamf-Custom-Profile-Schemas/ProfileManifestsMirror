@@ -106,6 +106,33 @@
             "default": false,
             "description": "When enabled, the device will you development APNS servers instead of production ones. Must not be enabled when using Apple Push Notification Service certificate issued by the Apple Push Certificate Portal.",
             "property_order": 70
+        },
+        "AssignedManagedAppleID": {
+            "type": "string",
+            "title": "Assigned Managed Apple ID",
+            "description": "The Managed Apple ID pre-assigned to the authenticated user of a user-enrolled (non-supervised) device.",
+            "property_order": 75
+        },
+        "EnrollmentMode": {
+            "type": "string",
+            "title": "EnrollmentMode",
+            "description": "The enrollment mode for a user-enrolled (non-supervised) device.",
+            "enum": [
+                "BYOD"
+            ],
+            "property_order": 80
+        },
+        "RequiredAppIDForMDM": {
+            "type": "integer",
+            "title": "Required App ID for MDM on Unsupervised Device",
+            "description": "iTunesStoreID of a single app that the MDM service can require and push to a user-enrolled (non-supervised) device.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.apple.com/en-in/guide/deployment/dep950aed53e/web"
+                }
+            ],
+            "property_order": 85
         }
     }
 }

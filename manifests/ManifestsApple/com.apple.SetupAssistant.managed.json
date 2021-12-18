@@ -58,6 +58,20 @@
             "description": "Skips the TouchID setup window.",
             "property_order": 40
         },
+        "SkipUnlockWithWatch": {
+            "type": "boolean",
+            "title": "Skip Unlock with Apple Watch",
+            "default": false,
+            "description": "Skips the Unlock with Apple Watch setup window.",
+            "property_order": 45
+        },
+        "SkipAccessibility": {
+            "type": "boolean",
+            "title": "Skip Accessibility",
+            "default": false,
+            "description": "Skips the accessibility setup window.",
+            "property_order": 50
+        },
         "SkipSetupItems": {
             "type": "array",
             "items": {
@@ -88,6 +102,7 @@
                     "SoftwareUpdate",
                     "TapToSetup",
                     "TOS",
+                    "UnlockWithWatch",
                     "UpdateCompleted",
                     "WatchMigration",
                     "Welcome",
@@ -119,6 +134,7 @@
                         "Software Update",
                         "Tap To Setup",
                         "Terms of Service",
+                        "Unlock with Apple Watch",
                         "Update Completed",
                         "Watch Migration",
                         "Welcome",
@@ -134,7 +150,7 @@
                     "href": "https://developer.apple.com/documentation/devicemanagement/skipkeys"
                 }
             ],
-            "property_order": 45
+            "property_order": 55
         }
     }
 }
