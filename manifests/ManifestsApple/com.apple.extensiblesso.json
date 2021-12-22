@@ -1,6 +1,6 @@
 {
-    "title": "Single-Sign On Extensions (com.apple.extensiblesso)",
-    "description": "Single-Sign On Extension settings. User-level payload support for macOS 11.x and later.",
+    "title": "Single Sign-On Extensions (com.apple.extensiblesso)",
+    "description": "Single Sign-On Extension settings. User-level payload support for macOS 11.x and later.",
     "properties": {
         "ExtensionIdentifier": {
             "type": "string",
@@ -46,6 +46,31 @@
             },
             "description": "The realm name for Credential payloads. This value should be properly capitalized. This key is ignored for Redirect payloads.",
             "property_order": 30
+        },
+        "DeniedBundleIdentifiers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Bundle Identifier"
+            },
+            "title": "Denied Bundle Identifiers",
+            "property_order": 35
+        },
+        "ScreenLockedBehavior": {
+            "type": "string",
+            "title": "Screen Locked Behavior",
+            "default": "Cancel",
+            "enum": [
+                "Cancel",
+                "DoNotHandle"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Cancel",
+                    "Do Not Handle"
+                ]
+            },
+            "property_order": 40
         },
         "ExtensionData": {
             "type": "object",
@@ -231,32 +256,156 @@
                     "title": "Use Site Auto Discovery",
                     "default": true,
                     "description": "If false, the Kerberos extension doesn't automatically use LDAP and DNS to determine its AD site name."
+                },
+                "Enable_SSO_On_All_ManagedApps": {
+                    "type": "integer",
+                    "title": "Enable SSO on All Managed Apps",
+                    "default": 0,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/azure/active-directory/develop/apple-sso-plugin"
+                        }
+                    ],
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Disable",
+                            "Enable"
+                        ]
+                    }
+                },
+                "AppAllowList": {
+                    "type": "string",
+                    "title": "App Allow List",
+                    "description": "Enable SSO for specific apps",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/azure/active-directory/develop/apple-sso-plugin"
+                        }
+                    ]
+                },
+                "AppPrefixAllowList": {
+                    "type": "string",
+                    "title": "App Prefix Allow List",
+                    "description": "Enable SSO for all apps with a specific bundle ID prefix",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/azure/active-directory/develop/apple-sso-plugin"
+                        }
+                    ]
+                },
+                "AppBlockList": {
+                    "type": "string",
+                    "title": "App Block List",
+                    "description": "Disable SSO for specific apps",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/azure/active-directory/develop/apple-sso-plugin"
+                        }
+                    ]
+                },
+                "AppCookieSSOAllowList": {
+                    "type": "string",
+                    "title": "App Cookie SSO Allow List",
+                    "description": "Enable SSO through cookies for a specific application",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/azure/active-directory/develop/apple-sso-plugin"
+                        }
+                    ]
+                },
+                "browser_sso_interaction_enabled": {
+                    "type": "integer",
+                    "title": "Allow Users to Sign in from Unknown Applications using the Safari Browser",
+                    "default": 0,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/azure/active-directory/develop/apple-sso-plugin"
+                        }
+                    ],
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Disable",
+                            "Enable"
+                        ]
+                    }
+                },
+                "browser_sso_disable_mfa": {
+                    "type": "integer",
+                    "title": "Disable Asking for MFA During Initial Bootstrapping",
+                    "default": 0,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/azure/active-directory/develop/apple-sso-plugin"
+                        }
+                    ],
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Enable",
+                            "Disable"
+                        ]
+                    }
+                },
+                "disable_explicit_app_prompt": {
+                    "type": "integer",
+                    "title": "Disable OAuth2 Application Prompts",
+                    "default": 0,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/azure/active-directory/develop/apple-sso-plugin"
+                        }
+                    ],
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Enable",
+                            "Disable"
+                        ]
+                    }
+                },
+                "disable_explicit_app_prompt_and_autologin": {
+                    "type": "integer",
+                    "title": "Disable OAuth2 Application Prompts and Autologin",
+                    "default": 0,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/azure/active-directory/develop/apple-sso-plugin"
+                        }
+                    ],
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Enable",
+                            "Disable"
+                        ]
+                    }
                 }
-            },
-            "property_order": 35
-        },
-        "DeniedBundleIdentifiers": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "title": "Bundle Identifier"
-            },
-            "title": "Denied Bundle Identifiers",
-            "property_order": 40
-        },
-        "ScreenLockedBehavior": {
-            "type": "string",
-            "title": "Screen Locked Behavior",
-            "default": "Cancel",
-            "enum": [
-                "Cancel",
-                "DoNotHandle"
-            ],
-            "options": {
-                "enum_titles": [
-                    "Cancel",
-                    "Do Not Handle"
-                ]
             },
             "property_order": 45
         }
