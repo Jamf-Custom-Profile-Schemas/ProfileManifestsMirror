@@ -37,5 +37,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -A
-          git commit -am "Regenerate manifests" -m "Upstream diff: https://github.com/ProfileCreator/ProfileManifests/compare/$PREV..$HASH" || true
+          git commit -anm "Regenerate manifests" -m "Upstream diff: https://github.com/ProfileCreator/ProfileManifests/compare/$PREV..$HASH" || true
           git push --set-upstream origin main || true
