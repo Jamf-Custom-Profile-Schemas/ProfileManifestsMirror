@@ -1916,7 +1916,7 @@
             "type": "boolean",
             "title": "Show an \"Always open\" checkbox in external protocol dialog",
             "default": false,
-            "description": "If you set to True, when an external protocol confirmation prompt is shown, the user can select \"Always open\". The user won\u2019t get any future confirmation prompts for this protocol.",
+            "description": "If you set to True, when an external protocol confirmation prompt is shown, the user can select \"Always open\". The user won't get any future confirmation prompts for this protocol.",
             "links": [
                 {
                     "rel": "More information",

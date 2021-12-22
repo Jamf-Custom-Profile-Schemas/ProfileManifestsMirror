@@ -97,7 +97,7 @@
         "SecurityComplianceMode": {
             "type": "string",
             "default": "FIPS",
-            "description": "Sets the security compliance mode for the policy. If you don\u2019t configure SecurityComplianceMode, FIPS is used as the default value.",
+            "description": "Sets the security compliance mode for the policy. If you don't configure SecurityComplianceMode, FIPS is used as the default value.",
             "enum": [
                 "None",
                 "FIPS",
@@ -128,7 +128,7 @@
         "SSLCertificateRevocationCheckPolicy": {
             "type": "string",
             "default": "FullAccessCheck",
-            "description": "This setting governs how a given trusted root certificate authority is treated during an attempt to open a remote session through SSL. When you enable this setting, the client checks whether or not the server\u2019s certificate is revoked.",
+            "description": "This setting governs how a given trusted root certificate authority is treated during an attempt to open a remote session through SSL. When you enable this setting, the client checks whether or not the server's certificate is revoked.",
             "enum": [
                 "NoCheck",
                 "CheckWithNoNetworkAccess",

@@ -26,7 +26,7 @@
         },
         "skipLoginHook": {
             "type": "boolean",
-            "title": "Execute the Mac computer\u2019s LoginHook script",
+            "title": "Execute the Mac computer's LoginHook script",
             "default": false,
             "description": "Run any LoginHook script in addition to the Login script",
             "property_order": 10
@@ -55,7 +55,7 @@
         },
         "skipLogoutHook": {
             "type": "boolean",
-            "title": "Execute the Mac computer\u2019s LogoutHook script",
+            "title": "Execute the Mac computer's LogoutHook script",
             "default": false,
             "description": "Run any LogoutHook script in addition to the Logout script",
             "property_order": 20

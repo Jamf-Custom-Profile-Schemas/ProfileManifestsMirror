@@ -12,7 +12,7 @@
         "allowUnmappedUsers": {
             "type": "integer",
             "title": "Allow Unmapped Users",
-            "description": "If set to integer 1, allows users who aren\u2019t paired with a smart card to log in with password.",
+            "description": "If set to integer 1, allows users who aren't paired with a smart card to log in with password.",
             "links": [
                 {
                     "rel": "More information",

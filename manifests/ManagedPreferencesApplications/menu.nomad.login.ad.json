@@ -101,7 +101,7 @@
         },
         "NTtoADDomainMappings": {
             "type": "object",
-            "description": "Maps NT to AD Domains. e.g. NOMAD: nomad.menu, would allow a user to sign in as \u201cNOMAD\\user\u201d and that would be converted to \u201cuser@nomad.menu\u201d before authenticating to AD.",
+            "description": "Maps NT to AD Domains. e.g. NOMAD: nomad.menu, would allow a user to sign in as \"NOMAD\\user\" and that would be converted to \"user@nomad.menu\" before authenticating to AD.",
             "properties": {
                 "TextFields": {
                     "type": "array",

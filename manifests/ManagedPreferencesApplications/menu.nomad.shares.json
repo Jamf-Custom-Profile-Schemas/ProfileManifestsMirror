@@ -19,7 +19,7 @@
         },
         "HomeMount": {
             "type": "object",
-            "description": "This is a dictionary of attributes for scenarios where the user\u2019s home profile should be mounted.",
+            "description": "This is a dictionary of attributes for scenarios where the user's home profile should be mounted.",
             "links": [
                 {
                     "rel": "More information",

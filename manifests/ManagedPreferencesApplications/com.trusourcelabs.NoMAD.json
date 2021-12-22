@@ -4,7 +4,7 @@
     "properties": {
         "ADDomain": {
             "type": "string",
-            "description": "Defines the AD domain you\u2019re working with.",
+            "description": "Defines the AD domain you're working with.",
             "property_order": 5
         },
         "LDAPType": {

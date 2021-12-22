@@ -131,7 +131,7 @@
         },
         "UseKeychain": {
             "type": "boolean",
-            "description": "Determines if the Okta password is stored in the user\u2019s keychain.",
+            "description": "Determines if the Okta password is stored in the user's keychain.",
             "property_order": 115
         },
         "LocalPasswordSync": {
@@ -221,7 +221,7 @@
         },
         "ADExpirationShow": {
             "type": "boolean",
-            "description": "Shows a menu item beneath the current user\u2019s name showing the user\u2019s password expiration as determined by AD.",
+            "description": "Shows a menu item beneath the current user's name showing the user's password expiration as determined by AD.",
             "property_order": 180
         },
         "PasswordPolicy": {

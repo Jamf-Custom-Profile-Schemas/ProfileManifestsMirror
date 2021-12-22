@@ -17,7 +17,7 @@
         "LoginwindowText": {
             "type": "string",
             "title": "Banner",
-            "description": "Enter a message that\u2019s displayed above the login prompt. You might use this to provide a warning about unauthorized use.",
+            "description": "Enter a message that's displayed above the login prompt. You might use this to provide a warning about unauthorized use.",
             "property_order": 10
         },
         "SHOWFULLNAME": {
@@ -47,13 +47,13 @@
         },
         "HideAdminUsers": {
             "type": "boolean",
-            "title": "Show Mac computer\u2019s administrator accounts",
+            "title": "Show Mac computer's administrator accounts",
             "default": false,
             "property_order": 35
         },
         "SHOWOTHERUSERS_MANAGED": {
             "type": "boolean",
-            "title": "Show \u201cOther\u201d",
+            "title": "Show \"Other\"",
             "default": false,
             "property_order": 40
         },
@@ -172,7 +172,7 @@
         "LocalUserLoginEnabled": {
             "type": "boolean",
             "title": "Local-only users may log in",
-            "description": "Permit only local users to log in. Network users won\u2019t be allowed to log in.",
+            "description": "Permit only local users to log in. Network users won't be allowed to log in.",
             "property_order": 125
         },
         "LocalUsersHaveWorkgroups": {
@@ -184,7 +184,7 @@
         "FlattenUserWorkgroups": {
             "type": "boolean",
             "title": "Ignore workgroup nesting",
-            "description": "If users are part of a nested workgroup, only the settings of the user\u2019s workgroup are enforced.",
+            "description": "If users are part of a nested workgroup, only the settings of the user's workgroup are enforced.",
             "property_order": 135
         },
         "CombineUserWorkgroups": {

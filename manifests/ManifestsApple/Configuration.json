@@ -39,7 +39,7 @@
                 "default": {
                     "type": "string",
                     "title": "Default License Agreement",
-                    "description": "The system chooses a localized version in the order of preference specified by the user (macOS) or based on the user\u2019s current language setting (iOS). If no exact match is found, the default localization is used. If there is no default localization, the en localization is used. If there is no en localization, then the first available localization is used."
+                    "description": "The system chooses a localized version in the order of preference specified by the user (macOS) or based on the user's current language setting (iOS). If no exact match is found, the default localization is used. If there is no default localization, the en localization is used. If there is no en localization, then the first available localization is used."
                 }
             },
             "property_order": 20

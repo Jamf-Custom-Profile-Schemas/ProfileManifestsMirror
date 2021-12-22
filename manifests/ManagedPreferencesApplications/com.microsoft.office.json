@@ -173,7 +173,7 @@
             "type": "boolean",
             "title": "'On My Mac' as default open and save location",
             "default": false,
-            "description": "When set to true will force the open/save panel to \u2018On My Mac\u2019 instead of 'Online Locations'.",
+            "description": "When set to true will force the open/save panel to \u2018On My Mac' instead of 'Online Locations'.",
             "links": [
                 {
                     "rel": "More information",
@@ -417,7 +417,7 @@
             "type": "boolean",
             "title": "Disable macros from invoking the MacScript() Visual Basic API.",
             "default": false,
-            "description": "The DisableVisualBasicMacScript setting determines if macros are allowed to invoke the MacScript() Visual Basic API. This API allows macros to execute arbitrary processes via AppleScript by including \u201cdo shell script ...\u201d in the AppleScript code.",
+            "description": "The DisableVisualBasicMacScript setting determines if macros are allowed to invoke the MacScript() Visual Basic API. This API allows macros to execute arbitrary processes via AppleScript by including \"do shell script ...\" in the AppleScript code.",
             "links": [
                 {
                     "rel": "More information",

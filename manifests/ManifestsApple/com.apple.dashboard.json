@@ -17,7 +17,7 @@
                         "type": "string",
                         "title": "Entry Type",
                         "default": "bundleID",
-                        "description": "Set to \"bundleID\" to use a widget\u2019s bundle ID as its ID.",
+                        "description": "Set to \"bundleID\" to use a widget's bundle ID as its ID.",
                         "enum": [
                             "bundleID"
                         ],

@@ -4,7 +4,7 @@
     "properties": {
         "IfLostReturnToMessage": {
             "type": "string",
-            "title": "\u201cIf lost, return to\u201d",
+            "title": "\"If lost, return to\"",
             "description": "Displays a name, address, or phone number on the Login window and Lock screen. Deprecated. Use LockScreenFootnote instead.",
             "property_order": 5
         },

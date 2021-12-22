@@ -5,7 +5,7 @@
         "adRealm": {
             "type": "string",
             "title": "Active Directory Realm",
-            "description": "The host name of your organization\u2019s Active Directory domain.",
+            "description": "The host name of your organization's Active Directory domain.",
             "property_order": 5
         },
         "launchAtLogin": {
@@ -61,13 +61,13 @@
         "checkShowLegacyCertificates": {
             "type": "boolean",
             "title": "Show Legacy Certificates",
-            "description": "Automatically check the \u201cShow Legacy Certificates\u201d option in the certificate chooser window.",
+            "description": "Automatically check the \"Show Legacy Certificates\" option in the certificate chooser window.",
             "property_order": 50
         },
         "showKeychainIdentities": {
             "type": "boolean",
             "title": "Show Keychain Identities",
-            "description": "Automatically check the \u201cShow Legacy Certificates\u201d option in the certificate chooser window.",
+            "description": "Automatically check the \"Show Legacy Certificates\" option in the certificate chooser window.",
             "property_order": 55
         },
         "disableQuitMenu": {
@@ -79,7 +79,7 @@
         "orgLogoPath": {
             "type": "string",
             "title": "Organization Logo Path",
-            "description": "The path to a file containing your organization\u2019s logo, in PNG, JPG or GIF format.",
+            "description": "The path to a file containing your organization's logo, in PNG, JPG or GIF format.",
             "property_order": 65
         },
         "debugMode": {
@@ -97,7 +97,7 @@
         "pwReqComplexity": {
             "type": "boolean",
             "title": "Password Required Complexity",
-            "description": "Tells Enterprise Connect that passwords should meet Active Directory\u2019s definition of complexity. Used to enable and configure live password testing.",
+            "description": "Tells Enterprise Connect that passwords should meet Active Directory's definition of complexity. Used to enable and configure live password testing.",
             "property_order": 80
         },
         "pwReqComplexityDisableUnicode": {
@@ -133,13 +133,13 @@
         "disablePasswordFunctions": {
             "type": "boolean",
             "title": "Disable Password Functions",
-            "description": "Disable Enterprise Connect\u2019s password management abilities, including expiration notices and the \u201cChange Password\u201d menu item. This is useful for customers who don\u2019t change their passwords in AD.",
+            "description": "Disable Enterprise Connect's password management abilities, including expiration notices and the \"Change Password\" menu item. This is useful for customers who don't change their passwords in AD.",
             "property_order": 110
         },
         "disablePasswordExpirationChecking": {
             "type": "boolean",
             "title": "Disable Password Expiration Checking",
-            "description": "Disable Enterprise Connect\u2019s password expiration checking, but still leave intact the ability for the user to change their password with Enterprise Connect.",
+            "description": "Disable Enterprise Connect's password expiration checking, but still leave intact the ability for the user to change their password with Enterprise Connect.",
             "property_order": 115
         },
         "runPasswordChangeScriptOnLocalPasswordSync": {
@@ -157,7 +157,7 @@
         "passwordChangeURL": {
             "type": "string",
             "title": "Password Change URL",
-            "description": "URL to open in the user\u2019s default web browser when they use Enterprise Connect to change their password. Standard password change functionality will no longer work.",
+            "description": "URL to open in the user's default web browser when they use Enterprise Connect to change their password. Standard password change functionality will no longer work.",
             "property_order": 130
         },
         "passwordExpireOverride": {
@@ -190,7 +190,7 @@
             "type": "integer",
             "title": "Connect Delay",
             "default": 0,
-            "description": "Delay starting the connection process when your organization\u2019s network is detected. This may be useful for customers who use Cisco NAC and need to delay connection while host checks are performed.",
+            "description": "Delay starting the connection process when your organization's network is detected. This may be useful for customers who use Cisco NAC and need to delay connection while host checks are performed.",
             "property_order": 155
         },
         "connectionCompletedScriptPath": {
@@ -228,7 +228,7 @@
         "mountNetworkHomeDirectory": {
             "type": "boolean",
             "title": "Mount Network Home Directory",
-            "description": "Determines if Enterprise Connect mounts the user\u2019s network home directory.",
+            "description": "Determines if Enterprise Connect mounts the user's network home directory.",
             "property_order": 185
         },
         "shares": {
@@ -270,7 +270,7 @@
             "type": "integer",
             "title": "Share Mount Delay",
             "default": 0,
-            "description": "Delay the mounting of network shares when your organization\u2019s network is detected. This may be useful for customers who use Cisco NAC and need to delay connection while host checks are performed.",
+            "description": "Delay the mounting of network shares when your organization's network is detected. This may be useful for customers who use Cisco NAC and need to delay connection while host checks are performed.",
             "property_order": 200
         },
         "smartCardMode": {

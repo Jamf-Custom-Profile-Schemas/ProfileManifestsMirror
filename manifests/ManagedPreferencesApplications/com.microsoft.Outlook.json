@@ -234,7 +234,7 @@
             "type": "boolean",
             "title": "Hide text about adding non-corporate mailboxes",
             "default": false,
-            "description": "Hide the \u201cDid you know? Outlook supports\u2026\u201d text in the Set Up Your Email success dialog box. Only hides text. Does not impact ability to add non-corporate mailboxes.",
+            "description": "Hide the \"Did you know? Outlook supports\u2026\" text in the Set Up Your Email success dialog box. Only hides text. Does not impact ability to add non-corporate mailboxes.",
             "links": [
                 {
                     "rel": "More information",

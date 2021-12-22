@@ -25,7 +25,7 @@
         "CalDAVPrincipalURL": {
             "type": "string",
             "title": "Principal URL",
-            "description": "The base URL to the user's calendar. In macOS this URL is required if the user doesn\u2019t provide a password, because auto-discovery of the service will fail and the account won\u2019t be created.",
+            "description": "The base URL to the user's calendar. In macOS this URL is required if the user doesn't provide a password, because auto-discovery of the service will fail and the account won't be created.",
             "property_order": 20
         },
         "CalDAVUsername": {

@@ -33,7 +33,7 @@
             "type": "boolean",
             "title": "Disable Captive Network Detection",
             "default": false,
-            "description": "Users won\u2019t have an opportunity to join networks that require agreements or other information prior to network access.",
+            "description": "Users won't have an opportunity to join networks that require agreements or other information prior to network access.",
             "property_order": 25
         },
         "DisableAssociationMACRandomization": {
@@ -149,7 +149,7 @@
                 "pattern": "^([0-9A-Za-z]{6})|([0-9A-Za-z]{9})$"
             },
             "title": "Roaming OIs",
-            "description": "Enter a series of digits corresponding to one of the service provider\u2019s Passpoint network.",
+            "description": "Enter a series of digits corresponding to one of the service provider's Passpoint network.",
             "property_order": 95
         },
         "NAIRealmNames": {

@@ -24,7 +24,7 @@
             "type": "string",
             "title": "Certificate Template",
             "default": "User",
-            "description": "The name of the certificate template as it appears in the General tab of the template\u2019s object in the Certificate Templates\u2019 Microsoft Management Console snap-in component. Usually Machine or User",
+            "description": "The name of the certificate template as it appears in the General tab of the template's object in the Certificate Templates' Microsoft Management Console snap-in component. Usually Machine or User",
             "property_order": 20
         },
         "CertificateAcquisitionMechanism": {

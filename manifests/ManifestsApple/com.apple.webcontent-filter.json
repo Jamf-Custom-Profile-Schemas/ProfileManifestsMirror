@@ -77,7 +77,7 @@
                 }
             },
             "title": "Allow List Bookmarks",
-            "description": "If present, these URLs are added to the browser\u2019s bookmarks, and the user is not allowed to visit any sites other than these. The number of these URLs should be limited to about 500.",
+            "description": "If present, these URLs are added to the browser's bookmarks, and the user is not allowed to visit any sites other than these. The number of these URLs should be limited to about 500.",
             "property_order": 30
         },
         "WhitelistedBookmarks": {
@@ -100,7 +100,7 @@
                 }
             },
             "title": "Allowlisted Bookmarks",
-            "description": "If present, these URLs are added to the browser\u2019s bookmarks, and the user is not allowed to visit any sites other than these. The number of these URLs should be limited to about 500.",
+            "description": "If present, these URLs are added to the browser's bookmarks, and the user is not allowed to visit any sites other than these. The number of these URLs should be limited to about 500.",
             "property_order": 35
         },
         "DenyListURLs": {

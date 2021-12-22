@@ -29,7 +29,7 @@
         },
         "Migrate": {
             "type": "boolean",
-            "description": "Allows local accounts to be migrated to network accounts. This is typically used when the user account was already created on the system, but you want the accounts to have the same username and password as the user\u2019s Okta identity.",
+            "description": "Allows local accounts to be migrated to network accounts. This is typically used when the user account was already created on the system, but you want the accounts to have the same username and password as the user's Okta identity.",
             "links": [
                 {
                     "rel": "More information",
