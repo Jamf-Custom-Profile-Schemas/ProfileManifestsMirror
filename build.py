@@ -253,7 +253,13 @@ def write_to_file(path, data):
     # Write file
     with open(os.path.join(path_head, path_tail), "w") as openfile:
         openfile.write(
-            json.dumps(data, ensure_ascii=True, indent=4, sort_keys=False, default=str)
+            json.dumps(
+                data,
+                ensure_ascii=False,
+                indent=4,
+                sort_keys=False,
+                default=str,
+            )
         )
 
 
