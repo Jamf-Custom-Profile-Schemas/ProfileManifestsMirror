@@ -20,7 +20,7 @@ equivalent Jamf JSON schema manifests."""
 
 
 __author__ = "Elliot Jordan"
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 
 import argparse
 import json
@@ -148,6 +148,11 @@ def process_subkeys(subkeys):
         if name in meta_keys:
             continue
         if name.lower().startswith("pfc_"):
+            continue
+
+        # Skip specific types
+        ignored_types = ("data",)
+        if subkey.get("pfm_type") in ignored_types:
             continue
 
         # Type is the only required property
