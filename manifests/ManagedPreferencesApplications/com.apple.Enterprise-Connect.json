@@ -18,6 +18,7 @@
         "runPeriodicStateCheck": {
             "type": "boolean",
             "title": "Run Periodic State Check",
+            "default": true,
             "description": "Enable or Disable periodic state checking. Customers who expose their DNS to the public Internet will need to disable periodic state checking.",
             "property_order": 15
         },
@@ -49,30 +50,35 @@
         "getRenewableTGT": {
             "type": "boolean",
             "title": "Get Renewable TGT",
+            "default": false,
             "description": "Acquire a renewable Kerberos TGT.",
             "property_order": 40
         },
         "showMenuExtra": {
             "type": "boolean",
             "title": "Show Menu Extra",
+            "default": true,
             "description": "Determines whether the Enterprise Connect menu extra is loaded.",
             "property_order": 45
         },
         "checkShowLegacyCertificates": {
             "type": "boolean",
             "title": "Show Legacy Certificates",
+            "default": false,
             "description": "Automatically check the \"Show Legacy Certificates\" option in the certificate chooser window.",
             "property_order": 50
         },
         "showKeychainIdentities": {
             "type": "boolean",
             "title": "Show Keychain Identities",
+            "default": false,
             "description": "Automatically check the \"Show Legacy Certificates\" option in the certificate chooser window.",
             "property_order": 55
         },
         "disableQuitMenu": {
             "type": "boolean",
             "title": "Disable Quit Menu",
+            "default": false,
             "description": "Disables the Quit menu item from Enterprise Connect.",
             "property_order": 60
         },
@@ -85,6 +91,7 @@
         "debugMode": {
             "type": "boolean",
             "title": "Debug Mode",
+            "default": false,
             "description": "Enables debugging mode.",
             "property_order": 70
         },
@@ -97,12 +104,14 @@
         "pwReqComplexity": {
             "type": "boolean",
             "title": "Password Required Complexity",
+            "default": false,
             "description": "Tells Enterprise Connect that passwords should meet Active Directory's definition of complexity. Used to enable and configure live password testing.",
             "property_order": 80
         },
         "pwReqComplexityDisableUnicode": {
             "type": "boolean",
             "title": "Password Required Complexity Disable Unicode",
+            "default": false,
             "description": "Disables the \"Has a Unicode character\" password test from live password testing.",
             "property_order": 85
         },
@@ -133,6 +142,7 @@
         "disablePasswordFunctions": {
             "type": "boolean",
             "title": "Disable Password Functions",
+            "default": false,
             "description": "Disable Enterprise Connect's password management abilities, including expiration notices and the \"Change Password\" menu item. This is useful for customers who don't change their passwords in AD.",
             "property_order": 110
         },
@@ -145,6 +155,7 @@
         "runPasswordChangeScriptOnLocalPasswordSync": {
             "type": "boolean",
             "title": "Run Password Change Script On Local Password Sync",
+            "default": true,
             "description": "Determines if Enterprise Connect should run the password change script upon a local password sync.",
             "property_order": 120
         },
@@ -163,7 +174,6 @@
         "passwordExpireOverride": {
             "type": "integer",
             "title": "Password Expire Override",
-            "default": 0,
             "description": "Override domain password policy when calculating password expiration.",
             "property_order": 135
         },
@@ -177,6 +187,7 @@
         "checkForNetworkType": {
             "type": "boolean",
             "title": "Check For Network Server",
+            "default": false,
             "description": "Check for a host in your organization's network.",
             "property_order": 145
         },
@@ -276,12 +287,14 @@
         "smartCardMode": {
             "type": "boolean",
             "title": "Enable Smart Card Mode",
+            "default": false,
             "description": "Determines whether smart card mode should be enabled.",
             "property_order": 205
         },
         "showUsernameWithSmartcard": {
             "type": "boolean",
             "title": "Show Username in Smart Card Mode",
+            "default": false,
             "description": "Determines if Enterprise Connect should display the username field if smart card mode is enabled.",
             "property_order": 210
         },

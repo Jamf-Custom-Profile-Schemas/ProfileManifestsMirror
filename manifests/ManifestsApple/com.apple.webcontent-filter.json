@@ -110,7 +110,6 @@
                 "title": "Deny List URL"
             },
             "title": "Deny List URLs",
-            "default": true,
             "property_order": 40
         },
         "BlacklistedURLs": {
@@ -120,7 +119,6 @@
                 "title": "Denylisted URL"
             },
             "title": "Denylisted URLs",
-            "default": true,
             "property_order": 45
         },
         "UserDefinedName": {

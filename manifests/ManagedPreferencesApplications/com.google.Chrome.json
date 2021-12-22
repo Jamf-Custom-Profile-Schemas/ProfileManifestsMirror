@@ -2058,7 +2058,6 @@
                 "type": "string"
             },
             "title": "Cross-Origin Resource Sharing mitigation list",
-            "default": true,
             "description": "Enable CORS check mitigations in the new CORS implementation, allowing Extensions to keep compatible behavior, and allowing Google Chrome to send specified headers without CORS checks.",
             "links": [
                 {
@@ -2829,6 +2828,7 @@
         "MaxConnectionsPerProxy": {
             "type": "integer",
             "title": "Maximal number of concurrent connections to the proxy server",
+            "default": 32,
             "description": "Specifies the maximal number of simultaneous connections to the proxy server.",
             "links": [
                 {

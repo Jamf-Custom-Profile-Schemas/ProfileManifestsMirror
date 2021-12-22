@@ -2347,6 +2347,7 @@
         "MaxConnectionsPerProxy": {
             "type": "integer",
             "title": "Maximal number of concurrent connections to the proxy server",
+            "default": 32,
             "description": "Specifies the maximal number of simultaneous connections to the proxy server.",
             "links": [
                 {

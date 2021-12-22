@@ -90,7 +90,7 @@
         "QuickHelpMode": {
             "type": "integer",
             "title": "Quick Help Mode",
-            "default": "1",
+            "default": 1,
             "description": "Set to 0 to disable Quick Help Mode overlays.",
             "enum": [
                 0,

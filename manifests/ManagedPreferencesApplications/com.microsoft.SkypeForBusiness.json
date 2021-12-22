@@ -43,13 +43,11 @@
         "internalAutoDiscoveryURL": {
             "type": "string",
             "title": "Internal Auto Discovery URL",
-            "default": true,
             "property_order": 35
         },
         "externalAutoDiscoveryURL": {
             "type": "string",
             "title": "External Auto Discovery URL",
-            "default": true,
             "property_order": 40
         },
         "httpProxyDomain": {

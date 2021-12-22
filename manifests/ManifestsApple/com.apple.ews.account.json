@@ -86,7 +86,6 @@
         "OAuthSignInURL": {
             "type": "string",
             "title": "OAuth Sign-In URL",
-            "default": true,
             "description": "URL to load into a webview for authentication via OAuth when auto-discovery is not used.",
             "property_order": 70
         }

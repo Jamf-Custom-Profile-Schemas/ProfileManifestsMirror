@@ -5,7 +5,7 @@
         "Tier": {
             "type": "string",
             "title": "Tier (Standalone version only)",
-            "default": true,
+            "default": "Production",
             "description": "Defines the update ring.",
             "enum": [
                 "Production",

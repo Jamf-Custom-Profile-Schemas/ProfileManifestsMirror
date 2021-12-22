@@ -56,7 +56,6 @@
         "CertificateName": {
             "type": "string",
             "title": "Certificate Name",
-            "default": true,
             "description": "Name or description of the certificate credential.",
             "property_order": 45
         },

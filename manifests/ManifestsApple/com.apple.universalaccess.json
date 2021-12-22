@@ -66,7 +66,7 @@
         "mouseDriverCursorSize": {
             "type": "number",
             "title": "Cursor Size",
-            "default": false,
+            "default": 1.0,
             "description": "The size of the mouse cursor in a decimal value between 1 and 4, where 1 is normal and 4 is the maximum",
             "property_order": 50
         },

@@ -1192,7 +1192,6 @@
         "SearchEngines": {
             "type": "object",
             "title": "Search Engines",
-            "default": "separate",
             "description": "Set whether or not search bar is displayed.",
             "links": [
                 {

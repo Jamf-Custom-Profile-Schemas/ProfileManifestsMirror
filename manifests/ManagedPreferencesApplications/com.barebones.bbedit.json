@@ -130,7 +130,7 @@
         "Editor_AutoWordCountSizeThreshold": {
             "type": "integer",
             "title": "Auto Word Count Size Threshold",
-            "default": "16777216",
+            "default": 16777216,
             "description": "Automatic word counting is disabled for documents over a set size threshold, in order to avoid needless delays when working on very large documents. The factory default is 16M characters - 16777216 -, but you may change this limit. Setting to 0 disables the limit check entirely.",
             "property_order": 75
         },
@@ -816,6 +816,7 @@
         "FixedWidthFontSmoothingThreshold": {
             "type": "integer",
             "title": "Fixed Width Font Smoothing Threshold",
+            "default": 8,
             "description": "Whether or not BBEdit uses text smoothing - antialiasing - may be adjusted separately for fixed-width and for proportional fonts. The factory default smoothing thresholds are 8pt for fixed width fonts, and 4pt for proportional fonts, respectively.",
             "links": [
                 {
@@ -828,6 +829,7 @@
         "FontSmoothingThreshold": {
             "type": "integer",
             "title": "Font Smoothing Threshold",
+            "default": 4,
             "description": "Whether or not BBEdit uses text smoothing - antialiasing - may be adjusted separately for fixed-width and for proportional fonts. Font sizes above the specified FixedWidthFontSmoothingThreshold are smoothed; font sizes below the threshold are not.",
             "links": [
                 {

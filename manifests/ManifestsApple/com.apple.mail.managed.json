@@ -28,7 +28,6 @@
         "IncomingMailServerIMAPPathPrefix": {
             "type": "string",
             "title": "Incoming Mail Server IMAP Path Prefix",
-            "default": true,
             "description": "The path prefix for the IMAP mail server.",
             "property_order": 15
         },

@@ -40,14 +40,12 @@
         "CustomColor": {
             "type": "string",
             "title": "macOS Accent Color",
-            "default": false,
             "description": "Custom color in HEX for all symbols. Leave empty to use macOS Accent Color.",
             "property_order": 35
         },
         "CustomColorDarkMode": {
             "type": "string",
             "title": "macOS Dark Mode Accent Color",
-            "default": false,
             "description": "Custom color in HEX for all symbols in Dark Mode. Leave empty to use macOS Accent Color or CustomColor if specified.",
             "property_order": 40
         },
