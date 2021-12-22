@@ -26,9 +26,9 @@ import argparse
 import json
 import os
 import plistlib
+import shutil
 import sys
 import xml
-import shutil
 
 
 def build_argument_parser():
