@@ -202,7 +202,7 @@
         "ChangePasswordDisabled": {
             "type": "boolean",
             "title": "Allow user to change password",
-            "description": "Enable or disable the \"Change Password\u2026\" button in the Users & Groups preference pane.",
+            "description": "Enable or disable the \"Change Password…\" button in the Users & Groups preference pane.",
             "property_order": 150
         },
         "RetriesUntilHint": {

@@ -7,12 +7,6 @@
             "title": "Certificate Name",
             "description": "Name or description of the certificate credential.",
             "property_order": 5
-        },
-        "PayloadContent": {
-            "type": "data",
-            "title": "Certificate or Identity Data",
-            "description": "X.509 certificate (.cer, .crt, etc) for inclusion on device.",
-            "property_order": 10
         }
     }
 }

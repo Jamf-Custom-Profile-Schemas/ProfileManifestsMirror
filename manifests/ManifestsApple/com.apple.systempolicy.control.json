@@ -11,7 +11,7 @@
         "AllowIdentifiedDevelopers": {
             "type": "boolean",
             "title": "Allow Identified Developers",
-            "description": "If the key is present and has a value of YES, Gatekeeper's \"Mac App Store and identified developers\u201d option is chosen. If the key is present and has a value of NO, Gatekeeper's \"Mac App Store\u201d option is chosen. If EnableAssessment is not true, this key has no effect.",
+            "description": "If the key is present and has a value of YES, Gatekeeper's \"Mac App Store and identified developers” option is chosen. If the key is present and has a value of NO, Gatekeeper's \"Mac App Store” option is chosen. If EnableAssessment is not true, this key has no effect.",
             "property_order": 10
         }
     }

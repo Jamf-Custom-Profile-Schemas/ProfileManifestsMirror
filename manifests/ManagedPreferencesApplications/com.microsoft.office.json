@@ -173,7 +173,7 @@
             "type": "boolean",
             "title": "'On My Mac' as default open and save location",
             "default": false,
-            "description": "When set to true will force the open/save panel to \u2018On My Mac' instead of 'Online Locations'.",
+            "description": "When set to true will force the open/save panel to ‘On My Mac' instead of 'Online Locations'.",
             "links": [
                 {
                     "rel": "More information",

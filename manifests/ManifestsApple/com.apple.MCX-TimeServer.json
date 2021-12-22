@@ -11,7 +11,7 @@
         "timeZone": {
             "type": "string",
             "title": "Time Zone",
-            "description": "Time zone path location string in /usr/share/zoneinfo/. For example, \u201dAmerica/Denver\u201d or \u201dZulu\u201d",
+            "description": "Time zone path location string in /usr/share/zoneinfo/. For example, ”America/Denver” or ”Zulu”",
             "property_order": 10
         }
     }

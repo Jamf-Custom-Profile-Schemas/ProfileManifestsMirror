@@ -25,11 +25,6 @@
                         "title": "Display Name",
                         "description": "Display name of the application."
                     },
-                    "appID": {
-                        "type": "data",
-                        "title": "Code Requirement",
-                        "description": "The designated requirement describing the code signature of this executable."
-                    },
                     "subApps": {
                         "type": "array",
                         "items": {
@@ -38,10 +33,6 @@
                             "description": "Bundle ID of application."
                         },
                         "description": "For applications that include nested helper applications, describes the signatures of embedded applications."
-                    },
-                    "detachedSignature": {
-                        "type": "data",
-                        "description": "The required signature for an unsigned binary"
                     },
                     "appStore": {
                         "type": "boolean",

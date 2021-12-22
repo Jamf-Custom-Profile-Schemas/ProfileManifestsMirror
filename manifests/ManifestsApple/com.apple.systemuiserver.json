@@ -31,7 +31,7 @@
                         }
                     },
                     "title": "External Disk",
-                    "description": "This key is the default for media types that don\u02bct fall into other categories. Like internally installed SD-Cards and USB flash drives."
+                    "description": "This key is the default for media types that donʼt fall into other categories. Like internally installed SD-Cards and USB flash drives."
                 },
                 "harddisk-internal": {
                     "type": "array",
@@ -315,7 +315,7 @@
                         }
                     },
                     "title": "External Disk",
-                    "description": "This key is the default for media types that don\u02bct fall into other categories. Like internally installed SD-Cards and USB flash drives."
+                    "description": "This key is the default for media types that donʼt fall into other categories. Like internally installed SD-Cards and USB flash drives."
                 },
                 "harddisk-internal": {
                     "type": "array",
@@ -599,7 +599,7 @@
                         }
                     },
                     "title": "External Disk",
-                    "description": "This key is the default for media types that don\u02bct fall into other categories. Like internally installed SD-Cards and USB flash drives."
+                    "description": "This key is the default for media types that donʼt fall into other categories. Like internally installed SD-Cards and USB flash drives."
                 },
                 "harddisk-internal": {
                     "type": "array",

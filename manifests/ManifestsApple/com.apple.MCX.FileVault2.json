@@ -46,49 +46,43 @@
             "description": "Path to the location where the recovery key and computer information plist will be stored.",
             "property_order": 30
         },
-        "Certificate": {
-            "type": "data",
-            "title": "Certificate",
-            "description": "DER-encoded certificate data if an institutional recovery key will be added.",
-            "property_order": 35
-        },
         "PayloadCertificateUUID": {
             "type": "string",
             "title": "Recovery Key Certificate Payload",
             "description": "UUID of the payload containing the asymmetric recovery key certificate payload.",
-            "property_order": 40
+            "property_order": 35
         },
         "Username": {
             "type": "string",
             "title": "Username",
             "description": "User name of the Open Directory user that will be added to FileVault.",
-            "property_order": 45
+            "property_order": 40
         },
         "Password": {
             "type": "string",
             "title": "Password",
             "description": "User password of the Open Directory user that will be added to FileVault. Use the UserEntersMissingInfo key if you want to prompt for this information.",
-            "property_order": 50
+            "property_order": 45
         },
         "UseKeychain": {
             "type": "boolean",
             "title": "Add institutional recovery key to keychain",
             "default": false,
             "description": "If set to true and no certificate information is provided in this payload, the keychain already created at /Library/Keychains/FileVaultMaster.keychain will be used when the institutional recovery key is added.",
-            "property_order": 55
+            "property_order": 50
         },
         "DeferForceAtUserLoginMaxBypassAttempts": {
             "type": "integer",
             "title": "Maximum number of times FileVault can be skipped",
-            "description": "When using the Defer option you can optionally set this key to the maximum number of times the user can bypass enabling FileVault before it will require that it be enabled before the user can log in. If set to 0, it will always prompt to enable FileVault until it is enabled, though it will allow you to bypass enabling it. Setting this key to \u20131 will disable this feature.",
-            "property_order": 60
+            "description": "When using the Defer option you can optionally set this key to the maximum number of times the user can bypass enabling FileVault before it will require that it be enabled before the user can log in. If set to 0, it will always prompt to enable FileVault until it is enabled, though it will allow you to bypass enabling it. Setting this key to –1 will disable this feature.",
+            "property_order": 55
         },
         "DeferDontAskAtUserLogout": {
             "type": "boolean",
             "title": "Dont ask at logout",
             "default": false,
             "description": "When using the Defer option, set this key to true to not request enabling FileVault at user logout time.",
-            "property_order": 65
+            "property_order": 60
         }
     }
 }

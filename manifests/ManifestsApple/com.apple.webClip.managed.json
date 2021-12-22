@@ -21,38 +21,32 @@
             "description": "Whether the Web Clip can be removed by users",
             "property_order": 15
         },
-        "Icon": {
-            "type": "data",
-            "title": "Icon",
-            "description": "The icon to use for the Web Clip",
-            "property_order": 20
-        },
         "Precomposed": {
             "type": "boolean",
             "title": "Precomposed Icon",
             "default": false,
             "description": "Prevents the iOS device from adding a shine to the image",
-            "property_order": 25
+            "property_order": 20
         },
         "FullScreen": {
             "type": "boolean",
             "title": "Full Screen",
             "default": false,
             "description": "Opens the URL as a web app without a browser",
-            "property_order": 30
+            "property_order": 25
         },
         "IgnoreManifestScope": {
             "type": "boolean",
             "title": "Ignore Manifest Scope",
             "default": false,
             "description": "If true, a full screen web clip will not show the Safari UI when navigating to URLs other than the web clip's own.",
-            "property_order": 35
+            "property_order": 30
         },
         "TargetApplicationBundleIdentifier": {
             "type": "string",
             "title": "Target Application Bundle Identifier",
             "description": "Bundle identifier of the application that opens this web clip's URL.",
-            "property_order": 40
+            "property_order": 35
         }
     }
 }

@@ -102,44 +102,39 @@
             "description": "The Issuer Name of a certificate in the System keychain to be used for sync authentication.",
             "property_order": 85
         },
-        "ServerAuthRootsData": {
-            "type": "data",
-            "description": "X.509 certificate (.pem) for inclusion on device. A valid PEM containing one or more certificates to be used for certificate pinning.",
-            "property_order": 90
-        },
         "ServerAuthRootsFile": {
             "type": "string",
-            "property_order": 95
+            "property_order": 90
         },
         "MachineOwner": {
             "type": "string",
             "title": "Machine Owner",
-            "property_order": 100
+            "property_order": 95
         },
         "MachineID": {
             "type": "string",
             "title": "Machine ID",
-            "property_order": 105
+            "property_order": 100
         },
         "MachineOwnerPlist": {
             "type": "string",
             "title": "Machine Owner Plist",
-            "property_order": 110
+            "property_order": 105
         },
         "MachineOwnerKey": {
             "type": "string",
             "title": "Machine Owner Key",
-            "property_order": 115
+            "property_order": 110
         },
         "MachineIDPlist": {
             "type": "string",
             "title": "Machine ID Plist",
-            "property_order": 120
+            "property_order": 115
         },
         "MachineIDKey": {
             "type": "string",
             "title": "Machine ID Key",
-            "property_order": 125
+            "property_order": 120
         },
         "EventLogType": {
             "type": "string",
@@ -149,19 +144,19 @@
                 "filelog",
                 "syslog"
             ],
-            "property_order": 130
+            "property_order": 125
         },
         "EventLogPath": {
             "type": "string",
             "title": "Event Log Path",
             "default": "/var/db/santa/santa.log",
-            "property_order": 135
+            "property_order": 130
         },
         "EnableMachineIDDecoration": {
             "type": "boolean",
             "title": "Enable Machine ID Decoration",
             "description": "Appends the MachineID to the end of each log line if enabled.",
-            "property_order": 140
+            "property_order": 135
         }
     }
 }

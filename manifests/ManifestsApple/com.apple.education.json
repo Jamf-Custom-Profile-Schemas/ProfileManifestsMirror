@@ -128,7 +128,7 @@
                 }
             },
             "title": "Users",
-            "description": "Shared: An array of dictionaries that define the users that are shown in the iOS login window.\nLeader: An array of dictionaries that define users that are members of the leader\u02bcs groups.\nMember: An array of a dictionaries that must contain the definition of the user specified in the UserIdentifier key.\nWith one-to-one member devices, this key should include only the device user and the leader but not other class members.",
+            "description": "Shared: An array of dictionaries that define the users that are shown in the iOS login window.\nLeader: An array of dictionaries that define users that are members of the leaderʼs groups.\nMember: An array of a dictionaries that must contain the definition of the user specified in the UserIdentifier key.\nWith one-to-one member devices, this key should include only the device user and the leader but not other class members.",
             "property_order": 25
         },
         "LeaderPayloadCertificateAnchorUUID": {

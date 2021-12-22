@@ -971,7 +971,7 @@
         "NSRecentDocumentsLimit:Projects": {
             "type": "integer",
             "title": "Recent Projects Limit",
-            "description": "The \"Remember the \u2026 most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nIf you don't want to remember any recent documents of a particular type - they won't appear in the menu, either -, you can set its limit to 0",
+            "description": "The \"Remember the … most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nIf you don't want to remember any recent documents of a particular type - they won't appear in the menu, either -, you can set its limit to 0",
             "links": [
                 {
                     "rel": "More information",
@@ -983,7 +983,7 @@
         "NSRecentDocumentsLimit:Folders": {
             "type": "integer",
             "title": "Recent Folders # Limit",
-            "description": "The \"Remember the \u2026 most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nIf you don't want to remember any recent documents of a particular type - they won't appear in the menu, either -, you can set its limit to 0",
+            "description": "The \"Remember the … most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nIf you don't want to remember any recent documents of a particular type - they won't appear in the menu, either -, you can set its limit to 0",
             "links": [
                 {
                     "rel": "More information",
@@ -995,7 +995,7 @@
         "NSRecentDocumentsLimit:Images": {
             "type": "integer",
             "title": "Recent Images # Limit",
-            "description": "The \"Remember the \u2026 most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nIf you don't want to remember any recent documents of a particular type - they won't appear in the menu, either -, you can set its limit to 0",
+            "description": "The \"Remember the … most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nIf you don't want to remember any recent documents of a particular type - they won't appear in the menu, either -, you can set its limit to 0",
             "links": [
                 {
                     "rel": "More information",
@@ -1007,7 +1007,7 @@
         "MostRecentItemsGroupLimit": {
             "type": "integer",
             "title": "Most recent items group limit",
-            "description": "The \"Remember the \u2026 most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nYou can also control the number of items shown in the \"Most Recently Used\" group.",
+            "description": "The \"Remember the … most recently used items\" setting in the Application preferences applies to all item types. So, if it's set to 15, BBEdit will remember 15 text documents, 15 folders, 15 projects, 15 images, and so on. If you want finer control, you can construct an expert pref using the name of the document type as it appears in the menu, and if that name contains spaces, you'll need to quote it.\n\nYou can also control the number of items shown in the \"Most Recently Used\" group.",
             "links": [
                 {
                     "rel": "More information",

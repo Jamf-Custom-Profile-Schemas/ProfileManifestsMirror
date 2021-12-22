@@ -79,7 +79,7 @@
         },
         "CommandClickMakesTabs": {
             "type": "boolean",
-            "title": "\u2318-click opens a link in a new tab",
+            "title": "⌘-click opens a link in a new tab",
             "default": true,
             "description": "Open command-clicked links in a new tab rather than a new window.",
             "property_order": 30

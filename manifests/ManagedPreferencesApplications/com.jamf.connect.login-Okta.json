@@ -6,14 +6,10 @@
             "type": "string",
             "property_order": 5
         },
-        "LicenseFile": {
-            "type": "data",
-            "property_order": 10
-        },
         "DenyLocal": {
             "type": "boolean",
             "description": "Determines if users can bypass network authentication and use the Local Auth button at the loginwindow.",
-            "property_order": 15
+            "property_order": 10
         },
         "DenyLocalExcluded": {
             "type": "array",
@@ -21,11 +17,11 @@
                 "type": "string",
                 "title": "Username"
             },
-            "property_order": 20
+            "property_order": 15
         },
         "LocalFallback": {
             "type": "boolean",
-            "property_order": 25
+            "property_order": 20
         },
         "Migrate": {
             "type": "boolean",
@@ -36,7 +32,7 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.2.3/administrator-guide/Configuring_with_Okta.html"
                 }
             ],
-            "property_order": 30
+            "property_order": 25
         },
         "MigrateUsersHide": {
             "type": "array",
@@ -44,64 +40,64 @@
                 "type": "string",
                 "title": "Username"
             },
-            "property_order": 35
+            "property_order": 30
         },
         "OIDCAccessClientID": {
             "type": "string",
-            "property_order": 40
+            "property_order": 35
         },
         "OIDCAdminClientID": {
             "type": "string",
-            "property_order": 45
+            "property_order": 40
         },
         "OIDCAuthServer": {
             "type": "string",
-            "property_order": 50
+            "property_order": 45
         },
         "OIDCIgnoreCookies": {
             "type": "boolean",
-            "property_order": 55
+            "property_order": 50
         },
         "OIDCSecondaryLoginClientID": {
             "type": "string",
-            "property_order": 60
+            "property_order": 55
         },
         "OIDCRedirectURI": {
             "type": "string",
             "default": "nomadoauth://oauth-callback/okta",
             "description": "The Redirect URI the user is sent to after successful authentication.",
-            "property_order": 65
+            "property_order": 60
         },
         "LoginLogo": {
             "type": "string",
-            "property_order": 70
+            "property_order": 65
         },
         "BackgroundImage": {
             "type": "string",
-            "property_order": 75
+            "property_order": 70
         },
         "LoginScreen": {
             "type": "boolean",
             "description": "Determines if Jamf Connect Login displays a macOS style login screen instead of a window.",
-            "property_order": 80
+            "property_order": 75
         },
         "MessageOTPEntry": {
             "type": "string",
             "description": "Text displayed when a user must enter a one time password (OTP).",
-            "property_order": 85
+            "property_order": 80
         },
         "HelpURL": {
             "type": "string",
-            "property_order": 90
+            "property_order": 85
         },
         "HelpURLLogo": {
             "type": "string",
-            "property_order": 95
+            "property_order": 90
         },
         "LocalHelpFile": {
             "type": "string",
             "description": "A path to a local file that users can access by clicking the \"Help\" button in the Jamf Connect Login window.",
-            "property_order": 100
+            "property_order": 95
         },
         "EULATitle": {
             "type": "string",
@@ -114,7 +110,7 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
                 }
             ],
-            "property_order": 105
+            "property_order": 100
         },
         "EULASubTitle": {
             "type": "string",
@@ -127,7 +123,7 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
                 }
             ],
-            "property_order": 110
+            "property_order": 105
         },
         "EULAText": {
             "type": "string",
@@ -139,7 +135,7 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
                 }
             ],
-            "property_order": 115
+            "property_order": 110
         },
         "EULAPath": {
             "type": "string",
@@ -151,27 +147,27 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
                 }
             ],
-            "property_order": 120
+            "property_order": 115
         },
         "CreateAdminUser": {
             "type": "boolean",
-            "property_order": 125
+            "property_order": 120
         },
         "EnableFDE": {
             "type": "boolean",
-            "property_order": 130
+            "property_order": 125
         },
         "EnableFDERecoveryKey": {
             "type": "boolean",
-            "property_order": 135
+            "property_order": 130
         },
         "EnableFDERecoveryKeyPath": {
             "type": "string",
-            "property_order": 140
+            "property_order": 135
         },
         "ScriptPath": {
             "type": "string",
-            "property_order": 145
+            "property_order": 140
         },
         "ScriptArgs": {
             "type": "array",
@@ -180,11 +176,11 @@
                 "title": "Arguments"
             },
             "description": "The arguments used with a specified script run by the RunScript mechanism",
-            "property_order": 150
+            "property_order": 145
         },
         "DemobilizeUsers": {
             "type": "boolean",
-            "property_order": 155
+            "property_order": 150
         }
     }
 }

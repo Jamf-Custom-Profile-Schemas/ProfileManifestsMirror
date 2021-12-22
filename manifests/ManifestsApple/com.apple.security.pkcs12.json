@@ -8,31 +8,25 @@
             "description": "Name or description of the certificate credential.",
             "property_order": 5
         },
-        "PayloadContent": {
-            "type": "data",
-            "title": "Certificate or Identity Data",
-            "description": "X.509 certificate (.p12) for inclusion on device.",
-            "property_order": 10
-        },
         "Password": {
             "type": "string",
             "title": "Password",
             "description": "Password protecting the PKCS12 file.",
-            "property_order": 15
+            "property_order": 10
         },
         "AllowAllAppsAccess": {
             "type": "boolean",
             "title": "Allow Private Key Access to All Apps",
             "default": false,
             "description": "Allows all apps on the device to access the private key of this certificate",
-            "property_order": 20
+            "property_order": 15
         },
         "KeyIsExtractable": {
             "type": "boolean",
             "title": "Key is Extractable",
             "default": true,
             "description": "Allows exporting the private key from the keychain",
-            "property_order": 25
+            "property_order": 20
         }
     }
 }

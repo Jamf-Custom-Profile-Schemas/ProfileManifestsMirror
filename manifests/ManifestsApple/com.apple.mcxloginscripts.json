@@ -12,11 +12,6 @@
                         "type": "string",
                         "title": "Name",
                         "description": "Name of the script"
-                    },
-                    "filedata": {
-                        "type": "data",
-                        "title": "Script",
-                        "description": "Script to run at login"
                     }
                 }
             },
@@ -41,11 +36,6 @@
                         "type": "string",
                         "title": "Name",
                         "description": "Name of the script"
-                    },
-                    "filedata": {
-                        "type": "data",
-                        "title": "Script",
-                        "description": "Script to run at logout"
                     }
                 }
             },

@@ -35,14 +35,10 @@
             "type": "string",
             "property_order": 15
         },
-        "LicenseFile": {
-            "type": "data",
-            "property_order": 20
-        },
         "DenyLocal": {
             "type": "boolean",
             "description": "Determines if users can bypass network authentication and use the Local Auth button at the loginwindow.",
-            "property_order": 25
+            "property_order": 20
         },
         "DenyLocalExcluded": {
             "type": "array",
@@ -50,7 +46,7 @@
                 "type": "string",
                 "title": "Username"
             },
-            "property_order": 30
+            "property_order": 25
         },
         "Migrate": {
             "type": "boolean",
@@ -61,7 +57,7 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.2.3/administrator-guide/Configuring_with_Okta.html"
                 }
             ],
-            "property_order": 35
+            "property_order": 30
         },
         "MigrateUsersHide": {
             "type": "array",
@@ -69,18 +65,18 @@
                 "type": "string",
                 "title": "Username"
             },
-            "property_order": 40
+            "property_order": 35
         },
         "OIDCROPGID": {
             "type": "string",
             "description": "The Client ID of the added app in you IdP used for authenticating the user's password via a resource owner password grant (ROPG) workflow. This value should match the OIDCClientID key.",
-            "property_order": 45
+            "property_order": 40
         },
         "OIDCNewPassword": {
             "type": "boolean",
             "default": true,
             "description": "If set to true, the user must create a new password on the computer\nIf set to false, the user must validate with their existing IdP password, which will also become the local password.",
-            "property_order": 50
+            "property_order": 45
         },
         "OIDCAdmin": {
             "type": "array",
@@ -89,20 +85,20 @@
                 "title": "Role"
             },
             "description": "Determines which roles become an admin at the loginwindow. Users assigned a specified role become an admin at the loginwindow.",
-            "property_order": 55
+            "property_order": 50
         },
         "OIDCAdminAttribute": {
             "type": "string",
-            "property_order": 60
+            "property_order": 55
         },
         "OIDCClientSecret": {
             "type": "string",
             "description": "The client secret used by Jamf Connect Login and your IdP.",
-            "property_order": 65
+            "property_order": 60
         },
         "OIDCTenant": {
             "type": "string",
-            "property_order": 70
+            "property_order": 65
         },
         "OIDCDiscoveryURL": {
             "type": "string",
@@ -112,42 +108,42 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.6.0/administrator-guide/Configuring_with_IdPs_using_OpenID_Connect.html"
                 }
             ],
-            "property_order": 75
+            "property_order": 70
         },
         "OIDCIgnoreCookies": {
             "type": "boolean",
-            "property_order": 80
+            "property_order": 75
         },
         "RightsTmpCache": {
             "type": "boolean",
             "description": "When using the AuthUI rule, determines if the token cache is set to /tmp/cachedata.",
-            "property_order": 85
+            "property_order": 80
         },
         "LoginLogo": {
             "type": "string",
-            "property_order": 90
+            "property_order": 85
         },
         "BackgroundImage": {
             "type": "string",
-            "property_order": 95
+            "property_order": 90
         },
         "MessageOTPEntry": {
             "type": "string",
             "description": "Text displayed when a user must enter a one time password (OTP).",
-            "property_order": 100
+            "property_order": 95
         },
         "HelpURL": {
             "type": "string",
-            "property_order": 105
+            "property_order": 100
         },
         "HelpURLLogo": {
             "type": "string",
-            "property_order": 110
+            "property_order": 105
         },
         "LocalHelpFile": {
             "type": "string",
             "description": "A path to a local file that users can access by clicking the \"Help\" button in the Jamf Connect Login window.",
-            "property_order": 115
+            "property_order": 110
         },
         "EULATitle": {
             "type": "string",
@@ -160,7 +156,7 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
                 }
             ],
-            "property_order": 120
+            "property_order": 115
         },
         "EULASubTitle": {
             "type": "string",
@@ -173,7 +169,7 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
                 }
             ],
-            "property_order": 125
+            "property_order": 120
         },
         "EULAText": {
             "type": "string",
@@ -185,7 +181,7 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
                 }
             ],
-            "property_order": 130
+            "property_order": 125
         },
         "EULAPath": {
             "type": "string",
@@ -197,27 +193,27 @@
                     "href": "https://docs.jamf.com/jamf-connect/1.8.0/administrator-guide/Adding_the_EULA_Mechanism.html"
                 }
             ],
-            "property_order": 135
+            "property_order": 130
         },
         "CreateAdminUser": {
             "type": "boolean",
-            "property_order": 140
+            "property_order": 135
         },
         "EnableFDE": {
             "type": "boolean",
-            "property_order": 145
+            "property_order": 140
         },
         "EnableFDERecoveryKey": {
             "type": "boolean",
-            "property_order": 150
+            "property_order": 145
         },
         "EnableFDERecoveryKeyPath": {
             "type": "string",
-            "property_order": 155
+            "property_order": 150
         },
         "ScriptPath": {
             "type": "string",
-            "property_order": 160
+            "property_order": 155
         },
         "ScriptArgs": {
             "type": "array",
@@ -226,11 +222,11 @@
                 "title": "Arguments"
             },
             "description": "The arguments used with a specified script run by the RunScript mechanism",
-            "property_order": 165
+            "property_order": 160
         },
         "DemobilizeUsers": {
             "type": "boolean",
-            "property_order": 170
+            "property_order": 165
         }
     }
 }

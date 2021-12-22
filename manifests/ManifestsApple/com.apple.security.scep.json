@@ -53,11 +53,6 @@
                         2048
                     ]
                 },
-                "CAFingerprint": {
-                    "type": "data",
-                    "title": "Fingerprint",
-                    "description": "The fingerprint (hex string) of the Certificate Authority certificate."
-                },
                 "Key Type": {
                     "type": "string",
                     "title": "Key Type",
@@ -71,7 +66,7 @@
                     "type": "integer",
                     "title": "Key Usage",
                     "default": 0,
-                    "description": "A bitmask indicating the use of the key.\\n\u2022 1 - signing\\n\u2022 4 - encryption\\n\u2022 5 - signing and encryption",
+                    "description": "A bitmask indicating the use of the key.\\n• 1 - signing\\n• 4 - encryption\\n• 5 - signing and encryption",
                     "enum": [
                         0,
                         1,

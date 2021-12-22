@@ -341,12 +341,6 @@
             "description": "Path to the logo to display on the login screen. If set to NONE, no logo will be shown.",
             "property_order": 210
         },
-        "LoginLogoData": {
-            "type": "data",
-            "title": "Login Logo Data",
-            "description": "Logo to display on the login screen.",
-            "property_order": 215
-        },
         "LoginLogoAlpha": {
             "type": "integer",
             "title": "Login Logo Alpha",
@@ -380,19 +374,13 @@
                     "100%"
                 ]
             },
-            "property_order": 220
+            "property_order": 215
         },
         "BackgroundImage": {
             "type": "string",
             "title": "Login Window Background Image",
             "description": "Path to the background image to be used.",
-            "property_order": 225
-        },
-        "BackgroundImageData": {
-            "type": "data",
-            "title": "Background Image Data",
-            "description": "Background to display on the login screen.",
-            "property_order": 230
+            "property_order": 220
         },
         "BackgroundImageAlpha": {
             "type": "integer",
@@ -427,14 +415,14 @@
                     "100%"
                 ]
             },
-            "property_order": 235
+            "property_order": 225
         },
         "AllowNetworkSelection": {
             "type": "boolean",
             "title": "Show Network Selection",
             "default": false,
             "description": "If enabled, the network selection button is shown",
-            "property_order": 240
+            "property_order": 230
         },
         "DefaultSystemInformation": {
             "type": "string",
@@ -449,55 +437,55 @@
                 "SystemVersion",
                 "IP"
             ],
-            "property_order": 245
+            "property_order": 235
         },
         "PowerControlDisabled": {
             "type": "boolean",
             "title": "Hide Shutdown and Restart",
             "default": false,
             "description": "If set to yes, hides the shutdown and restart buttons",
-            "property_order": 250
+            "property_order": 240
         },
         "ManageSecureTokens": {
             "type": "boolean",
             "title": "Enable Secure Token Management",
             "default": false,
             "description": "This key will enable SecureToken management capabilites in NomadLogin 1.4. This utilizes a service account which can be modified from default using the below optional preferences.",
-            "property_order": 255
+            "property_order": 245
         },
         "SecureTokenManagementEnableOnlyAdminUsers": {
             "type": "boolean",
             "title": "Enable Only Admin User",
             "default": false,
             "description": "If enabled, the SecureToken service account will only enable administrative users created with NoMAD Login.",
-            "property_order": 260
+            "property_order": 250
         },
         "SecureTokenManagementIconPath": {
             "type": "string",
             "title": "Secure Token Icon Path",
-            "property_order": 265
+            "property_order": 255
         },
         "SecureTokenManagementOnlyEnableFirstUser": {
             "type": "boolean",
             "title": "Only Enable First User",
             "default": false,
             "description": "If enabled, NoMAD Login will only enable the first user that is eligable for a SecureToken, and delete the service account afterwards.",
-            "property_order": 270
+            "property_order": 260
         },
         "SecureTokenManagementFullName": {
             "type": "string",
             "title": "Service Account Full Name",
-            "property_order": 275
+            "property_order": 265
         },
         "SecureTokenManagementUID": {
             "type": "string",
             "title": "Service Account UID",
-            "property_order": 280
+            "property_order": 270
         },
         "SecureTokenManagementPasswordLocation": {
             "type": "string",
             "title": "Service Account Password Storage Path",
-            "property_order": 285
+            "property_order": 275
         },
         "SecureTokenManagementPasswordLength": {
             "type": "integer",
@@ -531,23 +519,23 @@
                 31,
                 32
             ],
-            "property_order": 290
+            "property_order": 280
         },
         "SecureTokenManagementUsername": {
             "type": "string",
             "title": "Service Account User Name",
-            "property_order": 295
+            "property_order": 285
         },
         "MessagePasswordSync": {
             "type": "string",
             "title": "Password Sync Message",
             "description": "Message to show when the password needs to sync",
-            "property_order": 300
+            "property_order": 290
         },
         "ScriptPath": {
             "type": "string",
             "title": "Script Path",
-            "property_order": 305
+            "property_order": 295
         },
         "ScriptArgs": {
             "type": "array",
@@ -556,19 +544,19 @@
                 "title": "Arguments"
             },
             "title": "Script Arguments",
-            "property_order": 310
+            "property_order": 300
         },
         "UIDTool": {
             "type": "string",
             "title": "UID Tool",
             "description": "String to determine the path of an executable that is run when a new user is created. It is expected to return the UID that the user should be created with. It passes in the new users username as the first argument, default is to use the built in functionality",
-            "property_order": 315
+            "property_order": 305
         },
         "GUIDTool": {
             "type": "string",
             "title": "GUID Tool",
             "description": "String to determine the path of an executable that is run when a new user is created. It is expected to return the GUID that the user should be created with. It passes in the new users username as the first argument, default is to use the built in functionality",
-            "property_order": 320
+            "property_order": 310
         },
         "NotifyLogStyle": {
             "type": "string",
@@ -588,43 +576,43 @@
                     "Munki"
                 ]
             },
-            "property_order": 325
+            "property_order": 315
         },
         "KeychainCreate": {
             "type": "boolean",
             "title": "Create Keychain",
             "description": "Create keychain if it does not exist.",
-            "property_order": 330
+            "property_order": 320
         },
         "KeychainAddNoMAD": {
             "type": "boolean",
             "title": "Add NoMAD to Keychain",
             "description": "Add a NoMAD entry into the keychain.",
-            "property_order": 335
+            "property_order": 325
         },
         "CustomNoMADLocation": {
             "type": "string",
             "title": "Custom NoMAD Location",
             "description": "If defined it specifies the custom location of the application to be given access to the keychain item.",
-            "property_order": 340
+            "property_order": 330
         },
         "LastUser": {
             "type": "string",
             "title": "Last User Shortname",
             "description": "Shortname of the last user to login. This allows NoMAD to login on first launch.",
-            "property_order": 345
+            "property_order": 335
         },
         "KeychainReset": {
             "type": "boolean",
             "title": "Reset Keychain if Password Doesn't Match",
             "description": "Reset keychain if login password doesn't match.",
-            "property_order": 350
+            "property_order": 340
         },
         "GuestUser": {
             "type": "boolean",
             "title": "Allow Guest User Login",
             "description": "Allows guest users login",
-            "property_order": 355
+            "property_order": 345
         },
         "GuestUserAccounts": {
             "type": "array",
@@ -633,25 +621,25 @@
             },
             "title": "Guest User Accounts",
             "description": "List of names that can be entered into the username field to trigger a guest user creation",
-            "property_order": 360
+            "property_order": 350
         },
         "GuestUserAccountPasswordPath": {
             "type": "string",
             "title": "Guest User Password Path",
             "description": "The path to write out the guest users randomly generated password",
-            "property_order": 365
+            "property_order": 355
         },
         "GuestUserFirst": {
             "type": "string",
             "title": "Guest User First Name",
             "description": "Defines the first name of the guest user account",
-            "property_order": 370
+            "property_order": 360
         },
         "GuestUserLast": {
             "type": "string",
             "title": "Guest User Last Name",
             "description": "Defines the last name of the guest user account",
-            "property_order": 375
+            "property_order": 365
         }
     }
 }
