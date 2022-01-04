@@ -29,25 +29,31 @@
             "type": "string",
             "title": "Channel Name",
             "default": "Production",
-            "description": "Set the update channel that is used to check for updates.",
+            "description": "Set the update channel that is used to check for updates. Click the documentation link for more information about which channel to use.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://macadmins.software/docs/MAU_38.pdf"
+                    "href": "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/mac-updates?view=o365-worldwide#set-the-channel-name"
                 }
             ],
             "enum": [
                 "Production",
+                "Current",
                 "External",
+                "Preview",
                 "InsiderFast",
+                "Beta",
                 "Custom"
             ],
             "options": {
                 "enum_titles": [
-                    "Production",
-                    "Office Insider Slow: \"External\"",
-                    "Office Insider Fast: \"InsiderFast\"",
-                    "Custom"
+                    "Production (pre MAU 4.29)",
+                    "Current (MAU 4.29+)",
+                    "Office Insider Slow: \"External\" (pre MAU 4.29)",
+                    "Preview (MAU 4.29+)",
+                    "Office Insider Fast: \"InsiderFast\" (pre MAU 4.29)",
+                    "Beta (MAU 4.29+)",
+                    "Custom (pre MAU 4.29)"
                 ]
             },
             "property_order": 10
