@@ -32,6 +32,7 @@
                             "title": "Bundle Identifier",
                             "description": "Bundle ID of application."
                         },
+                        "title": "Sub Apps",
                         "description": "For applications that include nested helper applications, describes the signatures of embedded applications."
                     },
                     "appStore": {
