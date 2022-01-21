@@ -148,6 +148,19 @@
                 }
             ],
             "property_order": 55
+        },
+        "FXRemoveOldTrashItems": {
+            "type": "boolean",
+            "title": "Remove Old Trash Items",
+            "default": true,
+            "description": "Remove items from the Trash after 30 days",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://derflounder.wordpress.com/2016/10/30/enabling-the-remove-items-from-the-trash-after-30-days-setting-on-macos-sierra/"
+                }
+            ],
+            "property_order": 60
         }
     }
 }
