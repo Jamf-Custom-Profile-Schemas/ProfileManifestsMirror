@@ -201,12 +201,6 @@
             "type": "boolean",
             "title": "Allow screenshots and screen recording",
             "default": true,
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
-                }
-            ],
             "property_order": 160
         },
         "allowRemoteScreenObservation": {
@@ -214,12 +208,6 @@
             "title": "Allow AirPlay and View Screen by Classroom app",
             "default": true,
             "description": "If 'Allow Screenshots and Screen Recording' is set to 'false', it also overrides this preference and prevents the Classroom app from observing remote screens.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
-                }
-            ],
             "property_order": 165
         },
         "forceClassroomUnpromptedScreenObservation": {

@@ -675,6 +675,7 @@
         "forceAirPlayOutgoingRequestsPairingPassword": {
             "type": "boolean",
             "title": "Require passcode on first AirPlay pairing",
+            "default": false,
             "property_order": 530
         },
         "allowAirPrintCredentialsStorage": {
