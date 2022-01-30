@@ -223,6 +223,23 @@
             ],
             "property_order": 70
         },
+        "UpdaterOptimization": {
+            "type": "string",
+            "title": "Updater Optimization",
+            "default": "Size",
+            "description": "If you have a security agent like CrowdStrike installed and updates cause beachballs; Set UpdaterOptimization preference to \"CPU\" to prefer file-based delta updates (instead of binary deltas). The trade-off will be larger monthly updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://apple.lib.utah.edu/jan-2022-macadmins-meeting/"
+                }
+            ],
+            "enum": [
+                "Size",
+                "CPU"
+            ],
+            "property_order": 75
+        },
         "Applications": {
             "type": "object",
             "title": "Applications",
@@ -549,9 +566,9 @@
                         "Application ID": {
                             "type": "string",
                             "title": "Application ID",
-                            "default": "TEAM01",
+                            "default": "TEAMS10",
                             "enum": [
-                                "TEAM01"
+                                "TEAMS10"
                             ]
                         },
                         "LCID": {
@@ -719,7 +736,7 @@
                     }
                 }
             },
-            "property_order": 75
+            "property_order": 80
         },
         "UpdateDeadline.ApplicationsForcedUpdateSchedule": {
             "type": "object",
@@ -1029,9 +1046,9 @@
                         "Application ID": {
                             "type": "string",
                             "title": "Application ID",
-                            "default": "TEAM01",
+                            "default": "TEAMS10",
                             "enum": [
-                                "TEAM01"
+                                "TEAMS10"
                             ]
                         },
                         "ForcedUpdateDate": {
@@ -1178,7 +1195,7 @@
                     }
                 }
             },
-            "property_order": 80
+            "property_order": 85
         }
     }
 }
