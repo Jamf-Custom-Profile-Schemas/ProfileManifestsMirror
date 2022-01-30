@@ -7,6 +7,12 @@
             "title": "Tier (Standalone version only)",
             "default": "Production",
             "description": "Defines the update ring.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#tier"
+                }
+            ],
             "enum": [
                 "Production",
                 "Insiders",
