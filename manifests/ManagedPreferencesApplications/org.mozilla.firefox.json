@@ -10,7 +10,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#enterprisepoliciesenabled"
+                    "href": "https://github.com/mozilla/policy-templates#enterprisepoliciesenabled"
                 }
             ],
             "property_order": 5
@@ -27,6 +27,18 @@
             "type": "string",
             "property_order": 20
         },
+        "BackgroundAppUpdate": {
+            "type": "boolean",
+            "title": "Background App Update",
+            "description": "Enable or disable automatic application update in the background, when the application is not running. If set to true, application updates may be installed (without user approval) in the background, even when the application is not running. The operating system might still require approval.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates#backgroundappupdate"
+                }
+            ],
+            "property_order": 25
+        },
         "AppAutoUpdate": {
             "type": "boolean",
             "title": "Firefox Auto Update",
@@ -34,10 +46,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#appautoupdate"
+                    "href": "https://github.com/mozilla/policy-templates#appautoupdate"
                 }
             ],
-            "property_order": 25
+            "property_order": 30
         },
         "AppUpdateURL": {
             "type": "string",
@@ -46,10 +58,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#AppUpdateURL"
+                    "href": "https://github.com/mozilla/policy-templates#AppUpdateURL"
                 }
             ],
-            "property_order": 30
+            "property_order": 35
         },
         "Authentication": {
             "type": "object",
@@ -57,7 +69,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#Authentication"
+                    "href": "https://github.com/mozilla/policy-templates#Authentication"
                 }
             ],
             "properties": {
@@ -125,7 +137,7 @@
                     "description": "Enables integrated authentication in prviate browsing"
                 }
             },
-            "property_order": 35
+            "property_order": 40
         },
         "BlockAboutAddons": {
             "type": "boolean",
@@ -135,10 +147,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#blockaboutaddons"
+                    "href": "https://github.com/mozilla/policy-templates#blockaboutaddons"
                 }
             ],
-            "property_order": 40
+            "property_order": 45
         },
         "BlockAboutConfig": {
             "type": "boolean",
@@ -148,10 +160,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#blockaboutconfig"
+                    "href": "https://github.com/mozilla/policy-templates#blockaboutconfig"
                 }
             ],
-            "property_order": 45
+            "property_order": 50
         },
         "BlockAboutProfiles": {
             "type": "boolean",
@@ -161,10 +173,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#blockaboutprofiles"
+                    "href": "https://github.com/mozilla/policy-templates#blockaboutprofiles"
                 }
             ],
-            "property_order": 50
+            "property_order": 55
         },
         "BlockAboutSupport": {
             "type": "boolean",
@@ -174,10 +186,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#blockaboutsupport"
+                    "href": "https://github.com/mozilla/policy-templates#blockaboutsupport"
                 }
             ],
-            "property_order": 55
+            "property_order": 60
         },
         "Bookmarks": {
             "type": "array",
@@ -220,10 +232,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#bookmarks"
+                    "href": "https://github.com/mozilla/policy-templates#bookmarks"
                 }
             ],
-            "property_order": 60
+            "property_order": 65
         },
         "DefaultDownloadDirectory": {
             "type": "string",
@@ -232,10 +244,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#defaultdownloaddirectory"
+                    "href": "https://github.com/mozilla/policy-templates#defaultdownloaddirectory"
                 }
             ],
-            "property_order": 65
+            "property_order": 70
         },
         "DisableAppUpdate": {
             "type": "boolean",
@@ -245,10 +257,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableappupdate"
+                    "href": "https://github.com/mozilla/policy-templates#disableappupdate"
                 }
             ],
-            "property_order": 70
+            "property_order": 75
         },
         "DisableBuiltinPDFViewer": {
             "type": "boolean",
@@ -258,10 +270,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablebuiltinpdfviewer"
+                    "href": "https://github.com/mozilla/policy-templates#disablebuiltinpdfviewer"
                 }
             ],
-            "property_order": 75
+            "property_order": 80
         },
         "PDFjs": {
             "type": "object",
@@ -270,7 +282,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#pdfjs"
+                    "href": "https://github.com/mozilla/policy-templates#pdfjs"
                 }
             ],
             "properties": {
@@ -283,7 +295,7 @@
                     "description": "If EnablePermissions is set to true, the built-in PDF viewer will honor document permissions like preventing the copying of text."
                 }
             },
-            "property_order": 80
+            "property_order": 85
         },
         "DisableDeveloperTools": {
             "type": "boolean",
@@ -293,10 +305,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disabledevelopertools"
+                    "href": "https://github.com/mozilla/policy-templates#disabledevelopertools"
                 }
             ],
-            "property_order": 85
+            "property_order": 90
         },
         "DisableFeedbackCommands": {
             "type": "boolean",
@@ -306,10 +318,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablefeedbackcommands"
+                    "href": "https://github.com/mozilla/policy-templates#disablefeedbackcommands"
                 }
             ],
-            "property_order": 90
+            "property_order": 95
         },
         "DisableFirefoxAccounts": {
             "type": "boolean",
@@ -319,10 +331,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablefirefoxaccounts"
+                    "href": "https://github.com/mozilla/policy-templates#disablefirefoxaccounts"
                 }
             ],
-            "property_order": 95
+            "property_order": 100
         },
         "DisableFirefoxScreenshots": {
             "type": "boolean",
@@ -332,10 +344,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablefirefoxscreenshots"
+                    "href": "https://github.com/mozilla/policy-templates#disablefirefoxscreenshots"
                 }
             ],
-            "property_order": 100
+            "property_order": 105
         },
         "DisableFirefoxStudies": {
             "type": "boolean",
@@ -345,10 +357,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablefirefoxstudies"
+                    "href": "https://github.com/mozilla/policy-templates#disablefirefoxstudies"
                 }
             ],
-            "property_order": 105
+            "property_order": 110
         },
         "DisableForgetButton": {
             "type": "boolean",
@@ -358,10 +370,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableforgetbutton"
+                    "href": "https://github.com/mozilla/policy-templates#disableforgetbutton"
                 }
             ],
-            "property_order": 110
+            "property_order": 115
         },
         "DisableMasterPasswordCreation": {
             "type": "boolean",
@@ -371,10 +383,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablemasterpasswordcreation"
+                    "href": "https://github.com/mozilla/policy-templates#disablemasterpasswordcreation"
                 }
             ],
-            "property_order": 115
+            "property_order": 120
         },
         "PrimaryPassword": {
             "type": "boolean",
@@ -383,10 +395,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#primarypassword"
+                    "href": "https://github.com/mozilla/policy-templates#primarypassword"
                 }
             ],
-            "property_order": 120
+            "property_order": 125
         },
         "DisablePocket": {
             "type": "boolean",
@@ -396,10 +408,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablepocket"
+                    "href": "https://github.com/mozilla/policy-templates#disablepocket"
                 }
             ],
-            "property_order": 125
+            "property_order": 130
         },
         "DisablePrivateBrowsing": {
             "type": "boolean",
@@ -409,10 +421,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableprivatebrowsing"
+                    "href": "https://github.com/mozilla/policy-templates#disableprivatebrowsing"
                 }
             ],
-            "property_order": 130
+            "property_order": 135
         },
         "DisableProfileImport": {
             "type": "boolean",
@@ -422,10 +434,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableprofileimport"
+                    "href": "https://github.com/mozilla/policy-templates#disableprofileimport"
                 }
             ],
-            "property_order": 135
+            "property_order": 140
         },
         "DisableProfileRefresh": {
             "type": "boolean",
@@ -435,10 +447,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableprofilerefresh"
+                    "href": "https://github.com/mozilla/policy-templates#disableprofilerefresh"
                 }
             ],
-            "property_order": 140
+            "property_order": 145
         },
         "DisableSafeMode": {
             "type": "boolean",
@@ -448,10 +460,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablesafemode"
+                    "href": "https://github.com/mozilla/policy-templates#disablesafemode"
                 }
             ],
-            "property_order": 145
+            "property_order": 150
         },
         "DisableSetDesktopBackground": {
             "type": "boolean",
@@ -461,10 +473,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablesetdesktopbackground"
+                    "href": "https://github.com/mozilla/policy-templates#disablesetdesktopbackground"
                 }
             ],
-            "property_order": 150
+            "property_order": 155
         },
         "DisplayMenuBar": {
             "type": "boolean",
@@ -474,10 +486,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#displaymenubar"
+                    "href": "https://github.com/mozilla/policy-templates#displaymenubar"
                 }
             ],
-            "property_order": 155
+            "property_order": 160
         },
         "DisableSystemAddonUpdate": {
             "type": "boolean",
@@ -487,10 +499,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablesystemaddonupdate"
+                    "href": "https://github.com/mozilla/policy-templates#disablesystemaddonupdate"
                 }
             ],
-            "property_order": 160
+            "property_order": 165
         },
         "DisplayBookmarksToolbar": {
             "type": "boolean",
@@ -500,10 +512,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#displaybookmarkstoolbar"
+                    "href": "https://github.com/mozilla/policy-templates#displaybookmarkstoolbar"
                 }
             ],
-            "property_order": 165
+            "property_order": 170
         },
         "DontCheckDefaultBrowser": {
             "type": "boolean",
@@ -513,10 +525,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#dontcheckdefaultbrowser"
+                    "href": "https://github.com/mozilla/policy-templates#dontcheckdefaultbrowser"
                 }
             ],
-            "property_order": 170
+            "property_order": 175
         },
         "DownloadDirectory": {
             "type": "string",
@@ -525,10 +537,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#downloaddirectory"
+                    "href": "https://github.com/mozilla/policy-templates#downloaddirectory"
                 }
             ],
-            "property_order": 175
+            "property_order": 180
         },
         "Extensions": {
             "type": "object",
@@ -536,7 +548,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#extensions"
+                    "href": "https://github.com/mozilla/policy-templates#extensions"
                 }
             ],
             "properties": {
@@ -568,7 +580,7 @@
                     "description": "A list of extension IDs that the user cannot disable or uninstall."
                 }
             },
-            "property_order": 180
+            "property_order": 185
         },
         "ExtensionSettings": {
             "type": "object",
@@ -576,7 +588,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#extensionsettings"
+                    "href": "https://github.com/mozilla/policy-templates#extensionsettings"
                 }
             ],
             "properties": {
@@ -645,11 +657,16 @@
                             },
                             "title": "Restricted Domains",
                             "description": "An array of domains on which content scripts can't be run."
+                        },
+                        "updates_disabled": {
+                            "type": "boolean",
+                            "title": "Disable Updates",
+                            "description": "Indicates whether or not to disable automatic updates for an individual extension."
                         }
                     }
                 }
             },
-            "property_order": 185
+            "property_order": 190
         },
         "ExtensionUpdate": {
             "type": "boolean",
@@ -657,10 +674,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#extensionupdate"
+                    "href": "https://github.com/mozilla/policy-templates#extensionupdate"
                 }
             ],
-            "property_order": 190
+            "property_order": 195
         },
         "EncryptedMediaExtensions": {
             "type": "object",
@@ -669,7 +686,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#encryptedmediaextensions"
+                    "href": "https://github.com/mozilla/policy-templates#encryptedmediaextensions"
                 }
             ],
             "properties": {
@@ -679,7 +696,7 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#encryptedmediaextensions"
+                            "href": "https://github.com/mozilla/policy-templates#encryptedmediaextensions"
                         }
                     ]
                 },
@@ -689,12 +706,12 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#encryptedmediaextensions"
+                            "href": "https://github.com/mozilla/policy-templates#encryptedmediaextensions"
                         }
                     ]
                 }
             },
-            "property_order": 195
+            "property_order": 200
         },
         "HardwareAcceleration": {
             "type": "boolean",
@@ -704,10 +721,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#hardwareacceleration"
+                    "href": "https://github.com/mozilla/policy-templates#hardwareacceleration"
                 }
             ],
-            "property_order": 200
+            "property_order": 205
         },
         "FirefoxHome": {
             "type": "object",
@@ -716,7 +733,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#firefoxhome"
+                    "href": "https://github.com/mozilla/policy-templates#firefoxhome"
                 }
             ],
             "properties": {
@@ -730,6 +747,11 @@
                     "title": "TopSites",
                     "default": false
                 },
+                "SponsoredTopSites": {
+                    "type": "boolean",
+                    "title": "Sponsored Top Sites",
+                    "default": false
+                },
                 "Highlights": {
                     "type": "boolean",
                     "title": "Highlights",
@@ -738,6 +760,11 @@
                 "Pocket": {
                     "type": "boolean",
                     "title": "Pocket",
+                    "default": false
+                },
+                "SponsoredPocket": {
+                    "type": "boolean",
+                    "title": "Sponsored Pocket",
                     "default": false
                 },
                 "Snippets": {
@@ -751,7 +778,7 @@
                     "default": false
                 }
             },
-            "property_order": 205
+            "property_order": 210
         },
         "Homepage": {
             "type": "object",
@@ -759,7 +786,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#homepage"
+                    "href": "https://github.com/mozilla/policy-templates#homepage"
                 }
             ],
             "properties": {
@@ -800,7 +827,19 @@
                     "description": "If true, prevents the user from changing homepage preferences."
                 }
             },
-            "property_order": 210
+            "property_order": 215
+        },
+        "ShowHomeButton": {
+            "type": "boolean",
+            "title": "Show Home Button",
+            "description": "Show the home button on the toolbar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates#showhomebutton"
+                }
+            ],
+            "property_order": 220
         },
         "LocalFileLinks": {
             "type": "array",
@@ -812,10 +851,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#localfilelinks"
+                    "href": "https://github.com/mozilla/policy-templates#localfilelinks"
                 }
             ],
-            "property_order": 215
+            "property_order": 225
         },
         "NewTabPage": {
             "type": "boolean",
@@ -825,10 +864,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#newtabpage"
+                    "href": "https://github.com/mozilla/policy-templates#newtabpage"
                 }
             ],
-            "property_order": 220
+            "property_order": 230
         },
         "NoDefaultBookmarks": {
             "type": "boolean",
@@ -838,22 +877,22 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#nodefaultbookmarks"
+                    "href": "https://github.com/mozilla/policy-templates#nodefaultbookmarks"
                 }
             ],
-            "property_order": 225
+            "property_order": 235
         },
         "OverrideFirstRunPage": {
             "type": "string",
             "title": "Override First Run Page",
-            "description": "Override the first run page. If the value is blank, no first run page is displayed.",
+            "description": "Override the first run page. If the value is blank, no first run page is displayed. Starting with Firefox 83, Firefox ESR 78.5, you can also specify multiple URLS separated by a vertical bar (|).",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#overridefirstrunpage"
+                    "href": "https://github.com/mozilla/policy-templates#overridefirstrunpage"
                 }
             ],
-            "property_order": 230
+            "property_order": 240
         },
         "OverridePostUpdatePage": {
             "type": "string",
@@ -862,22 +901,30 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#overridepostupdatepage"
+                    "href": "https://github.com/mozilla/policy-templates#overridepostupdatepage"
                 }
             ],
-            "property_order": 235
+            "property_order": 245
         },
         "PictureInPicture": {
-            "type": "boolean",
+            "type": "object",
             "title": "Picture-in-Picture",
             "description": "Enable or disable Picture-in-Picture.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#pictureinpicture"
+                    "href": "https://github.com/mozilla/policy-templates#pictureinpicture"
                 }
             ],
-            "property_order": 240
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Locked": {
+                    "type": "boolean"
+                }
+            },
+            "property_order": 250
         },
         "PromptForDownloadLocation": {
             "type": "boolean",
@@ -890,7 +937,7 @@
                     "href": "https://github.com/mozilla/policy-templates#promptfordownloadlocation"
                 }
             ],
-            "property_order": 245
+            "property_order": 255
         },
         "RequestedLocales": {
             "type": "array",
@@ -1108,10 +1155,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#requestedlocales"
+                    "href": "https://github.com/mozilla/policy-templates#requestedlocales"
                 }
             ],
-            "property_order": 250
+            "property_order": 260
         },
         "SanitizeOnShutdown": {
             "type": "object",
@@ -1120,7 +1167,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#sanitizeonshutdown-selective"
+                    "href": "https://github.com/mozilla/policy-templates#sanitizeonshutdown-selective"
                 }
             ],
             "properties": {
@@ -1164,7 +1211,7 @@
                     "default": false
                 }
             },
-            "property_order": 255
+            "property_order": 265
         },
         "SearchBar": {
             "type": "string",
@@ -1174,7 +1221,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchbar"
+                    "href": "https://github.com/mozilla/policy-templates#searchbar"
                 }
             ],
             "enum": [
@@ -1187,7 +1234,7 @@
                     "Unified"
                 ]
             },
-            "property_order": 260
+            "property_order": 270
         },
         "SearchEngines": {
             "type": "object",
@@ -1196,7 +1243,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines-this-policy-is-only-available-on-the-esr"
+                    "href": "https://github.com/mozilla/policy-templates#searchengines-this-policy-is-only-available-on-the-esr"
                 }
             ],
             "properties": {
@@ -1206,7 +1253,7 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines--default"
+                            "href": "https://github.com/mozilla/policy-templates#searchengines--default"
                         }
                     ]
                 },
@@ -1216,7 +1263,7 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines--preventinstalls"
+                            "href": "https://github.com/mozilla/policy-templates#searchengines--preventinstalls"
                         }
                     ]
                 },
@@ -1230,7 +1277,7 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines--remove"
+                            "href": "https://github.com/mozilla/policy-templates#searchengines--remove"
                         }
                     ]
                 },
@@ -1273,6 +1320,11 @@
                             "SuggestURLTemplate": {
                                 "type": "string",
                                 "description": "Search suggestions URL with {searchTerms} to substitute for the search term."
+                            },
+                            "Encoding": {
+                                "type": "string",
+                                "default": "UTF-8",
+                                "description": "The query charset for the engine."
                             }
                         }
                     },
@@ -1281,12 +1333,12 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchengines--add"
+                            "href": "https://github.com/mozilla/policy-templates#searchengines--add"
                         }
                     ]
                 }
             },
-            "property_order": 265
+            "property_order": 275
         },
         "SearchSuggestEnabled": {
             "type": "boolean",
@@ -1295,10 +1347,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#searchsuggestenabled"
+                    "href": "https://github.com/mozilla/policy-templates#searchsuggestenabled"
                 }
             ],
-            "property_order": 270
+            "property_order": 280
         },
         "Handlers": {
             "type": "object",
@@ -1306,7 +1358,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#handlers"
+                    "href": "https://github.com/mozilla/policy-templates#handlers"
                 }
             ],
             "properties": {
@@ -1459,7 +1511,7 @@
                     }
                 }
             },
-            "property_order": 275
+            "property_order": 285
         },
         "DisabledCiphers": {
             "type": "object",
@@ -1468,7 +1520,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disabledciphers"
+                    "href": "https://github.com/mozilla/policy-templates#disabledciphers"
                 }
             ],
             "properties": {
@@ -1506,7 +1558,7 @@
                     "type": "boolean"
                 }
             },
-            "property_order": 280
+            "property_order": 290
         },
         "DNSOverHTTPS": {
             "type": "object",
@@ -1515,7 +1567,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#dnsoverhttps"
+                    "href": "https://github.com/mozilla/policy-templates#dnsoverhttps"
                 }
             ],
             "properties": {
@@ -1544,7 +1596,7 @@
                     "description": "List of excluded domains from DNS over HTTPS."
                 }
             },
-            "property_order": 285
+            "property_order": 295
         },
         "Proxy": {
             "type": "object",
@@ -1552,7 +1604,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#proxy"
+                    "href": "https://github.com/mozilla/policy-templates#proxy"
                 }
             ],
             "properties": {
@@ -1643,7 +1695,7 @@
                     "description": "Proxy bypass URLs."
                 }
             },
-            "property_order": 290
+            "property_order": 300
         },
         "SSLVersionMin": {
             "type": "string",
@@ -1651,7 +1703,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#sslversionmin"
+                    "href": "https://github.com/mozilla/policy-templates#sslversionmin"
                 }
             ],
             "enum": [
@@ -1668,7 +1720,7 @@
                     "TLS 1.3"
                 ]
             },
-            "property_order": 295
+            "property_order": 305
         },
         "SSLVersionMax": {
             "type": "string",
@@ -1676,7 +1728,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#sslversionmax"
+                    "href": "https://github.com/mozilla/policy-templates#sslversionmax"
                 }
             ],
             "enum": [
@@ -1693,7 +1745,7 @@
                     "TLS 1.3"
                 ]
             },
-            "property_order": 300
+            "property_order": 310
         },
         "NetworkPrediction": {
             "type": "boolean",
@@ -1702,10 +1754,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#networkprediction"
+                    "href": "https://github.com/mozilla/policy-templates#networkprediction"
                 }
             ],
-            "property_order": 305
+            "property_order": 315
         },
         "Cookies": {
             "type": "object",
@@ -1713,7 +1765,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#cookies"
+                    "href": "https://github.com/mozilla/policy-templates#cookies"
                 }
             ],
             "properties": {
@@ -1746,6 +1798,30 @@
                     },
                     "title": "Block",
                     "description": "A list of origins (not domains) where cookies are always blocked."
+                },
+                "Behavior": {
+                    "type": "string",
+                    "description": "This has been added replacing the existing options Default, AcceptThirdParty, and RejectTracker.",
+                    "enum": [
+                        "accept",
+                        "reject-foreign",
+                        "reject",
+                        "limit-foreign",
+                        "reject-tracker",
+                        "reject-tracker-and-partition-foreign"
+                    ]
+                },
+                "BehaviorPrivateBrowsing": {
+                    "type": "string",
+                    "title": "Behavior: Private Browsing",
+                    "enum": [
+                        "accept",
+                        "reject-foreign",
+                        "reject",
+                        "limit-foreign",
+                        "reject-tracker",
+                        "reject-tracker-and-partition-foreign"
+                    ]
                 },
                 "Default": {
                     "type": "boolean",
@@ -1784,7 +1860,7 @@
                     "description": "If this is true, cookies preferences cannot be changed."
                 }
             },
-            "property_order": 310
+            "property_order": 320
         },
         "DisableFormHistory": {
             "type": "boolean",
@@ -1794,10 +1870,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disableformhistory"
+                    "href": "https://github.com/mozilla/policy-templates#disableformhistory"
                 }
             ],
-            "property_order": 315
+            "property_order": 325
         },
         "DisablePasswordReveal": {
             "type": "boolean",
@@ -1807,10 +1883,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablepasswordreveal"
+                    "href": "https://github.com/mozilla/policy-templates#disablepasswordreveal"
                 }
             ],
-            "property_order": 320
+            "property_order": 330
         },
         "DisableTelemetry": {
             "type": "boolean",
@@ -1820,10 +1896,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disabletelemetry"
+                    "href": "https://github.com/mozilla/policy-templates#disabletelemetry"
                 }
             ],
-            "property_order": 325
+            "property_order": 335
         },
         "EnableTrackingProtection": {
             "type": "object",
@@ -1836,7 +1912,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#enabletrackingprotection"
+                    "href": "https://github.com/mozilla/policy-templates#enabletrackingprotection"
                 }
             ],
             "properties": {
@@ -1861,7 +1937,7 @@
                     "description": "If Fingerprinting is set to true, fingerprinting scripts on websites are blocked."
                 }
             },
-            "property_order": 330
+            "property_order": 340
         },
         "FlashPlugin": {
             "type": "object",
@@ -1870,7 +1946,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#flashplugin"
+                    "href": "https://github.com/mozilla/policy-templates#flashplugin"
                 }
             ],
             "properties": {
@@ -1903,7 +1979,7 @@
                     "description": "If this is true, Flash preferences cannot be changed."
                 }
             },
-            "property_order": 335
+            "property_order": 345
         },
         "InstallAddonsPermission": {
             "type": "object",
@@ -1912,7 +1988,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#installaddonspermission"
+                    "href": "https://github.com/mozilla/policy-templates#installaddonspermission"
                 }
             ],
             "properties": {
@@ -1930,7 +2006,7 @@
                     "description": "If this is set to false, add-ons cannot be installed by the user."
                 }
             },
-            "property_order": 340
+            "property_order": 350
         },
         "OfferToSaveLogins": {
             "type": "boolean",
@@ -1940,10 +2016,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#offertosavelogins"
+                    "href": "https://github.com/mozilla/policy-templates#offertosavelogins"
                 }
             ],
-            "property_order": 345
+            "property_order": 355
         },
         "OfferToSaveLoginsDefault": {
             "type": "boolean",
@@ -1953,10 +2029,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#offertosaveloginsdefault"
+                    "href": "https://github.com/mozilla/policy-templates#offertosaveloginsdefault"
                 }
             ],
-            "property_order": 350
+            "property_order": 360
         },
         "PasswordManagerEnabled": {
             "type": "boolean",
@@ -1966,10 +2042,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#passwordmanagerenabled"
+                    "href": "https://github.com/mozilla/policy-templates#passwordmanagerenabled"
                 }
             ],
-            "property_order": 355
+            "property_order": 365
         },
         "Permissions": {
             "type": "object",
@@ -1977,7 +2053,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#permissions"
+                    "href": "https://github.com/mozilla/policy-templates#permissions"
                 }
             ],
             "properties": {
@@ -2186,7 +2262,7 @@
                     }
                 }
             },
-            "property_order": 360
+            "property_order": 370
         },
         "PopupBlocking": {
             "type": "object",
@@ -2195,7 +2271,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#popupblocking"
+                    "href": "https://github.com/mozilla/policy-templates#popupblocking"
                 }
             ],
             "properties": {
@@ -2218,7 +2294,7 @@
                     "description": "If this is true, pop-up blocking preferences cannot be changed."
                 }
             },
-            "property_order": 365
+            "property_order": 375
         },
         "Certificates": {
             "type": "object",
@@ -2226,7 +2302,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#certificates"
+                    "href": "https://github.com/mozilla/policy-templates#certificates"
                 }
             ],
             "properties": {
@@ -2237,7 +2313,7 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#certificates--importenterpriseroots"
+                            "href": "https://github.com/mozilla/policy-templates#certificates--importenterpriseroots"
                         }
                     ]
                 },
@@ -2251,12 +2327,12 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#certificates--install"
+                            "href": "https://github.com/mozilla/policy-templates#certificates--install"
                         }
                     ]
                 }
             },
-            "property_order": 370
+            "property_order": 380
         },
         "DisableSecurityBypass": {
             "type": "object",
@@ -2265,7 +2341,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#disablesecuritybypass"
+                    "href": "https://github.com/mozilla/policy-templates#disablesecuritybypass"
                 }
             ],
             "properties": {
@@ -2280,7 +2356,7 @@
                     "description": "Prevents selecting \"ignore the risk\" and visiting a harmful site anyway. If this preference is enabled, a user cannot bypass the warning and visit a harmful site. If this preference is disabled or not configured, a user can choose to visit a harmful site."
                 }
             },
-            "property_order": 375
+            "property_order": 385
         },
         "SecurityDevices": {
             "type": "object",
@@ -2291,7 +2367,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#securitydevices"
+                    "href": "https://github.com/mozilla/policy-templates#securitydevices"
                 }
             ],
             "properties": {
@@ -2304,7 +2380,7 @@
                     "title": "Library Path"
                 }
             },
-            "property_order": 380
+            "property_order": 390
         },
         "UserMessaging": {
             "type": "object",
@@ -2313,7 +2389,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#usermessaging"
+                    "href": "https://github.com/mozilla/policy-templates#usermessaging"
                 }
             ],
             "properties": {
@@ -2332,21 +2408,54 @@
                     "title": "Feature Recommendations",
                     "description": "If enabled, don't recommend browser features."
                 },
+                "SkipOnboarding": {
+                    "type": "boolean",
+                    "title": "Skip Onboarding",
+                    "description": "If enabled, don't show onboarding messages on the new tab page."
+                },
                 "UrlbarInterventions": {
                     "type": "boolean",
                     "title": "URL Bar Interventions",
                     "description": "If enabled, don't offer Firefox specific suggestions in the URL bar."
                 }
             },
-            "property_order": 385
+            "property_order": 395
         },
-        "WebsiteFilter": {
-            "type": "object",
-            "description": "Block websites from being visited. The parameters take an array of Match Patterns, as documented in https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. Only http/https addresses are supported at the moment. The arrays are limited to 1000 entries each.",
+        "LegacySameSiteCookieBehaviorEnabled": {
+            "type": "boolean",
+            "title": "Legacy SameSite Cookie Behavior Enabled",
+            "description": "Enable default legacy SameSite cookie behavior setting.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#websitefilter"
+                    "href": "https://github.com/mozilla/policy-templates#legacysamesitecookiebehaviorenabled"
+                }
+            ],
+            "property_order": 400
+        },
+        "LegacySameSiteCookieBehaviorEnabledForDomainList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain"
+            },
+            "title": "Legacy SameSite Cookie Behavior Enabled for Domain List",
+            "description": "Revert to legacy SameSite behavior for cookies on specified sites.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates#legacysamesitecookiebehaviorenabledfordomainlist"
+                }
+            ],
+            "property_order": 405
+        },
+        "WebsiteFilter": {
+            "type": "object",
+            "description": "Block websites from being visited. The parameters take an array of Match Patterns, as documented in https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. http/https addresses are supported as well as local file:// URLs. The arrays are limited to 1000 entries each.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates#websitefilter"
                 }
             ],
             "properties": {
@@ -2354,7 +2463,8 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Blocked Sites"
+                        "title": "Blocked Sites",
+                        "pattern": "(^(https?|file)://.*|<all_urls>)"
                     },
                     "title": "Block",
                     "description": "If this preference is enabled, you can specify match patterns that indicate sites to be blocked. The match patterns are documented at https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. Only http/https addresses are supported at the moment. There is a 1000 entry limit. If this preference is disabled or not configured, no websites are blocked."
@@ -2364,13 +2474,38 @@
                     "items": {
                         "type": "string",
                         "title": "Exceptions To Website Filter",
-                        "pattern": "^https?://.*"
+                        "pattern": "^(https?|file)://.*"
                     },
                     "title": "Exceptions",
                     "description": "If this preference is enabled, and the website filter is enabled, you can specify match patterns for sites you do not want to block. The match patterns are documented at https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. Only http/https addresses are supported at the moment. There is a 1000 entry limit. If this preference is disabled or not configured, there are no exceptions to the website filter."
                 }
             },
-            "property_order": 390
+            "property_order": 410
+        },
+        "AllowedDomainsForApps": {
+            "type": "string",
+            "title": "Allowed Domains for Apps",
+            "description": "Comma-separated list of domains allowed to access Google Workspace. This policy is based on the Chrome policy of the same name. If this policy is enabled, users can only access Google Workspace using accounts from the specified domains. If you want to allow Gmail, you can add 'consumer_accounts' to the list.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates#alloweddomainsforapps"
+                }
+            ],
+            "property_order": 415
+        },
+        "AutoLaunchProtocolsFromOrigins": {
+            "type": "array",
+            "items": {},
+            "title": "Auto Launch Protocols from Origins",
+            "description": "Comma-separated list of domains allowed to access Google Workspace. This policy is based on the Chrome policy of the same name. If this policy is enabled, users can only access Google Workspace using accounts from the specified domains. If you want to allow Gmail, you can add 'consumer_accounts' to the list.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates#autolaunchprotocolsfromorigins"
+                }
+            ],
+            "property_order": 420
         },
         "CaptivePortal": {
             "type": "boolean",
@@ -2382,7 +2517,7 @@
                     "href": "https://github.com/mozilla/policy-templates#captiveportal"
                 }
             ],
-            "property_order": 395
+            "property_order": 425
         },
         "Preferences": {
             "type": "object",
@@ -2391,7 +2526,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#preferences"
+                    "href": "https://github.com/mozilla/policy-templates#preferences"
                 }
             ],
             "properties": {
@@ -2680,13 +2815,23 @@
                     "default": true,
                     "description": "If false, the TLS 1.3 downgrade check is disabled."
                 },
+                "security.tls.enable_0rtt_data": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If false, TLS early data is turned off."
+                },
+                "security.tls.version.enable-deprecated": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true, browser will accept TLS 1.0. and TLS 1.1."
+                },
                 "widget.content.gtk-theme-override": {
                     "type": "string",
                     "title": "widget.content.gtk-theme-override",
                     "description": "If set, overrides the GTK theme for widgets."
                 }
             },
-            "property_order": 400
+            "property_order": 430
         },
         "SupportMenu": {
             "type": "object",
@@ -2695,7 +2840,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/mozilla/policy-templates/blob/master/README.md#supportmenu"
+                    "href": "https://github.com/mozilla/policy-templates#supportmenu"
                 }
             ],
             "properties": {
@@ -2712,7 +2857,7 @@
                     "title": "AccessKey"
                 }
             },
-            "property_order": 405
+            "property_order": 435
         }
     }
 }
