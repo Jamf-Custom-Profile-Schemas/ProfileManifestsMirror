@@ -2381,6 +2381,18 @@
             ],
             "property_order": 725
         },
+        "MicrosoftEdgeInsiderPromotionEnabled": {
+            "type": "boolean",
+            "title": "Enable Microsoft Edge Insider promotions",
+            "description": "Shows content promoting the Microsoft Edge Insider channels on the About Microsoft Edge settings page.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#microsoftedgeinsiderpromotionenabled"
+                }
+            ],
+            "property_order": 730
+        },
         "OmniboxMSBProviderEnabled": {
             "type": "boolean",
             "title": "Enable Microsoft Search for Business provider in omnibox",
@@ -2392,7 +2404,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#omniboxmsbproviderenabled"
                 }
             ],
-            "property_order": 730
+            "property_order": 735
         },
         "PaymentMethodQueryEnabled": {
             "type": "boolean",
@@ -2405,7 +2417,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#paymentmethodqueryenabled"
                 }
             ],
-            "property_order": 735
+            "property_order": 740
         },
         "PersonalizationReportingEnabled": {
             "type": "boolean",
@@ -2418,7 +2430,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#personalizationreportingenabled"
                 }
             ],
-            "property_order": 740
+            "property_order": 745
         },
         "ProactiveAuthEnabled": {
             "type": "boolean",
@@ -2431,7 +2443,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proactiveauthenabled"
                 }
             ],
-            "property_order": 745
+            "property_order": 750
         },
         "NetworkPredictionOptions": {
             "type": "integer",
@@ -2453,7 +2465,7 @@
                     "Do not predict network actions on any network connection"
                 ]
             },
-            "property_order": 750
+            "property_order": 755
         },
         "OverrideSecurityRestrictionsOnInsecureOrigin": {
             "type": "array",
@@ -2468,7 +2480,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#overridesecurityrestrictionsoninsecureorigin"
                 }
             ],
-            "property_order": 755
+            "property_order": 760
         },
         "PromotionalTabsEnabled": {
             "type": "boolean",
@@ -2481,7 +2493,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#promotionaltabsenabled"
                 }
             ],
-            "property_order": 760
+            "property_order": 765
         },
         "PromptForDownloadLocation": {
             "type": "boolean",
@@ -2493,7 +2505,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#promptfordownloadlocation"
                 }
             ],
-            "property_order": 765
+            "property_order": 770
         },
         "ProxySettings": {
             "type": "object",
@@ -2540,7 +2552,7 @@
                     }
                 }
             },
-            "property_order": 770
+            "property_order": 775
         },
         "QuicAllowed": {
             "type": "boolean",
@@ -2553,7 +2565,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#quicallowed"
                 }
             ],
-            "property_order": 775
+            "property_order": 780
         },
         "RelaunchNotification": {
             "type": "integer",
@@ -2575,7 +2587,7 @@
                     "Show a recurring prompt to the user indicating that a relaunch is required"
                 ]
             },
-            "property_order": 780
+            "property_order": 785
         },
         "RelaunchNotificationPeriod": {
             "type": "integer",
@@ -2587,7 +2599,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#relaunchnotificationperiod"
                 }
             ],
-            "property_order": 785
+            "property_order": 790
         },
         "ResolveNavigationErrorsUseWebService": {
             "type": "boolean",
@@ -2599,7 +2611,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#resolvenavigationerrorsusewebservice"
                 }
             ],
-            "property_order": 790
+            "property_order": 795
         },
         "RestrictSigninToPattern": {
             "type": "string",
@@ -2611,7 +2623,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#restrictsignintopattern"
                 }
             ],
-            "property_order": 795
+            "property_order": 800
         },
         "RunAllFlashInAllowMode": {
             "type": "boolean",
@@ -2624,7 +2636,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#runallflashinallowmode"
                 }
             ],
-            "property_order": 800
+            "property_order": 805
         },
         "SSLErrorOverrideAllowed": {
             "type": "boolean",
@@ -2637,7 +2649,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#sslerroroverrideallowed"
                 }
             ],
-            "property_order": 805
+            "property_order": 810
         },
         "SSLVersionMin": {
             "type": "string",
@@ -2661,7 +2673,7 @@
                     "TLS 1.2"
                 ]
             },
-            "property_order": 810
+            "property_order": 815
         },
         "SaveCookiesOnExit": {
             "type": "array",
@@ -2677,7 +2689,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#savecookiesonexit"
                 }
             ],
-            "property_order": 815
+            "property_order": 820
         },
         "SavingBrowserHistoryDisabled": {
             "type": "boolean",
@@ -2690,7 +2702,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#savingbrowserhistorydisabled"
                 }
             ],
-            "property_order": 820
+            "property_order": 825
         },
         "SearchSuggestEnabled": {
             "type": "boolean",
@@ -2702,7 +2714,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#searchsuggestenabled"
                 }
             ],
-            "property_order": 825
+            "property_order": 830
         },
         "SecurityKeyPermitAttestation": {
             "type": "array",
@@ -2717,7 +2729,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#securitykeypermitattestation"
                 }
             ],
-            "property_order": 830
+            "property_order": 835
         },
         "SendSiteInfoToImproveServices": {
             "type": "boolean",
@@ -2729,7 +2741,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#sendsiteinfotoimproveservices"
                 }
             ],
-            "property_order": 835
+            "property_order": 840
         },
         "ShowOfficeShortcutInFavoritesBar": {
             "type": "boolean",
@@ -2742,7 +2754,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#showofficeshortcutinfavoritesbar"
                 }
             ],
-            "property_order": 840
+            "property_order": 845
         },
         "SignedHTTPExchangeEnabled": {
             "type": "boolean",
@@ -2755,7 +2767,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#signedhttpexchangeenabled"
                 }
             ],
-            "property_order": 845
+            "property_order": 850
         },
         "SitePerProcess": {
             "type": "boolean",
@@ -2767,7 +2779,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#siteperprocess"
                 }
             ],
-            "property_order": 850
+            "property_order": 855
         },
         "SpellcheckEnabled": {
             "type": "boolean",
@@ -2779,7 +2791,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#spellcheckenabled"
                 }
             ],
-            "property_order": 855
+            "property_order": 860
         },
         "StricterMixedContentTreatmentEnabled": {
             "type": "boolean",
@@ -2791,7 +2803,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#strictermixedcontenttreatmentenabled"
                 }
             ],
-            "property_order": 860
+            "property_order": 865
         },
         "SuppressUnsupportedOSWarning": {
             "type": "boolean",
@@ -2803,7 +2815,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#suppressunsupportedoswarning"
                 }
             ],
-            "property_order": 865
+            "property_order": 870
         },
         "SyncDisabled": {
             "type": "boolean",
@@ -2815,7 +2827,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#syncdisabled"
                 }
             ],
-            "property_order": 870
+            "property_order": 875
         },
         "SyncTypesListDisabled": {
             "type": "array",
@@ -2849,7 +2861,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#synctypeslistdisabled"
                 }
             ],
-            "property_order": 875
+            "property_order": 880
         },
         "TLS13HardeningForLocalAnchorsEnabled": {
             "type": "boolean",
@@ -2861,7 +2873,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#tls13hardeningforlocalanchorsenabled"
                 }
             ],
-            "property_order": 880
+            "property_order": 885
         },
         "TLSCipherSuiteDenyList": {
             "type": "array",
@@ -2889,7 +2901,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#tlsciphersuitedenylist"
                 }
             ],
-            "property_order": 885
+            "property_order": 890
         },
         "TabFreezingEnabled": {
             "type": "boolean",
@@ -2902,7 +2914,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#tabfreezingenabled"
                 }
             ],
-            "property_order": 890
+            "property_order": 895
         },
         "TaskManagerEndProcessEnabled": {
             "type": "boolean",
@@ -2915,7 +2927,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#taskmanagerendprocessenabled"
                 }
             ],
-            "property_order": 895
+            "property_order": 900
         },
         "TotalMemoryLimitMb": {
             "type": "integer",
@@ -2927,7 +2939,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#totalmemorylimitmb"
                 }
             ],
-            "property_order": 900
+            "property_order": 905
         },
         "TrackingPrevention": {
             "type": "integer",
@@ -2953,7 +2965,7 @@
                     "Strict (blocks harmful trackers and majority of trackers from all sites; content and ads will have minimal personalization. Some parts of sites might not work)"
                 ]
             },
-            "property_order": 905
+            "property_order": 910
         },
         "TranslateEnabled": {
             "type": "boolean",
@@ -2965,7 +2977,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#translateenabled"
                 }
             ],
-            "property_order": 910
+            "property_order": 915
         },
         "URLBlocklist": {
             "type": "array",
@@ -2980,7 +2992,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#urlblocklist"
                 }
             ],
-            "property_order": 915
+            "property_order": 920
         },
         "UserAgentClientHintsEnabled": {
             "type": "boolean",
@@ -2993,7 +3005,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#useragentclienthintsenabled"
                 }
             ],
-            "property_order": 920
+            "property_order": 925
         },
         "URLAllowlist": {
             "type": "array",
@@ -3008,7 +3020,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#urlallowlist"
                 }
             ],
-            "property_order": 925
+            "property_order": 930
         },
         "UserFeedbackAllowed": {
             "type": "boolean",
@@ -3021,7 +3033,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#userfeedbackallowed"
                 }
             ],
-            "property_order": 930
+            "property_order": 935
         },
         "UserDataDir": {
             "type": "string",
@@ -3033,7 +3045,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#userdatadir"
                 }
             ],
-            "property_order": 935
+            "property_order": 940
         },
         "VideoCaptureAllowed": {
             "type": "boolean",
@@ -3046,7 +3058,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#videocaptureallowed"
                 }
             ],
-            "property_order": 940
+            "property_order": 945
         },
         "VideoCaptureAllowedUrls": {
             "type": "array",
@@ -3061,7 +3073,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#videocaptureallowedurls"
                 }
             ],
-            "property_order": 945
+            "property_order": 950
         },
         "WPADQuickCheckEnabled": {
             "type": "boolean",
@@ -3074,7 +3086,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#wpadquickcheckenabled"
                 }
             ],
-            "property_order": 950
+            "property_order": 955
         },
         "WebAppInstallForceList": {
             "type": "array",
@@ -3111,7 +3123,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webappinstallforcelist"
                 }
             ],
-            "property_order": 955
+            "property_order": 960
         },
         "WebComponentsV0Enabled": {
             "type": "boolean",
@@ -3123,7 +3135,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webcomponentsv0enabled"
                 }
             ],
-            "property_order": 960
+            "property_order": 965
         },
         "WebDriverOverridesIncompatiblePolicies": {
             "type": "boolean",
@@ -3136,7 +3148,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies"
                 }
             ],
-            "property_order": 965
+            "property_order": 970
         },
         "WebRtcLocalIpsAllowedUrls": {
             "type": "array",
@@ -3151,7 +3163,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webrtclocalipsallowedurls"
                 }
             ],
-            "property_order": 970
+            "property_order": 975
         },
         "WebRtcLocalhostIpHandling": {
             "type": "string",
@@ -3176,7 +3188,7 @@
                     "Use TCP unless proxy server supports UDP and don't expose local IP"
                 ]
             },
-            "property_order": 975
+            "property_order": 980
         },
         "WebRtcUdpPortRange": {
             "type": "string",
@@ -3188,7 +3200,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webrtcudpportrange"
                 }
             ],
-            "property_order": 980
+            "property_order": 985
         },
         "NativeMessagingBlocklist": {
             "type": "array",
@@ -3203,7 +3215,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#nativemessagingblocklist"
                 }
             ],
-            "property_order": 985
+            "property_order": 990
         },
         "NativeMessagingUserLevelHosts": {
             "type": "boolean",
@@ -3215,7 +3227,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#nativemessaginguserlevelhosts"
                 }
             ],
-            "property_order": 990
+            "property_order": 995
         },
         "NativeMessagingAllowlist": {
             "type": "array",
@@ -3230,7 +3242,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#nativemessagingallowlist"
                 }
             ],
-            "property_order": 995
+            "property_order": 1000
         },
         "PasswordManagerEnabled": {
             "type": "boolean",
@@ -3242,7 +3254,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordmanagerenabled"
                 }
             ],
-            "property_order": 1000
+            "property_order": 1005
         },
         "PasswordMonitorAllowed": {
             "type": "boolean",
@@ -3254,7 +3266,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordmonitorallowed"
                 }
             ],
-            "property_order": 1005
+            "property_order": 1010
         },
         "DefaultPrinterSelection": {
             "type": "string",
@@ -3266,7 +3278,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultprinterselection"
                 }
             ],
-            "property_order": 1010
+            "property_order": 1015
         },
         "PrintHeaderFooter": {
             "type": "boolean",
@@ -3278,7 +3290,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#printheaderfooter"
                 }
             ],
-            "property_order": 1015
+            "property_order": 1020
         },
         "PrintingEnabled": {
             "type": "boolean",
@@ -3291,7 +3303,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#printingenabled"
                 }
             ],
-            "property_order": 1020
+            "property_order": 1025
         },
         "UseSystemPrintDialog": {
             "type": "boolean",
@@ -3304,7 +3316,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#usesystemprintdialog"
                 }
             ],
-            "property_order": 1025
+            "property_order": 1030
         },
         "PrintPreviewUseSystemDefaultPrinter": {
             "type": "boolean",
@@ -3317,7 +3329,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#printpreviewusesystemdefaultprinter"
                 }
             ],
-            "property_order": 1030
+            "property_order": 1035
         },
         "ProxyBypassList": {
             "type": "string",
@@ -3329,7 +3341,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proxybypasslist"
                 }
             ],
-            "property_order": 1035
+            "property_order": 1040
         },
         "ProxyMode": {
             "type": "string",
@@ -3357,7 +3369,7 @@
                     "Use system proxy settings"
                 ]
             },
-            "property_order": 1040
+            "property_order": 1045
         },
         "ProxyPacUrl": {
             "type": "string",
@@ -3370,7 +3382,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proxypacurl"
                 }
             ],
-            "property_order": 1045
+            "property_order": 1050
         },
         "ProxyServer": {
             "type": "string",
@@ -3382,7 +3394,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proxyserver"
                 }
             ],
-            "property_order": 1050
+            "property_order": 1055
         },
         "ProxyServerMode": {
             "type": "integer",
@@ -3402,7 +3414,7 @@
                     "Use system proxy settings"
                 ]
             },
-            "property_order": 1055
+            "property_order": 1060
         },
         "SmartScreenEnabled": {
             "type": "boolean",
@@ -3414,7 +3426,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#smartscreenenabled"
                 }
             ],
-            "property_order": 1060
+            "property_order": 1065
         },
         "PreventSmartScreenPromptOverride": {
             "type": "boolean",
@@ -3427,7 +3439,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#preventsmartscreenpromptoverride"
                 }
             ],
-            "property_order": 1065
+            "property_order": 1070
         },
         "PreventSmartScreenPromptOverrideForFiles": {
             "type": "boolean",
@@ -3440,7 +3452,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#preventsmartscreenpromptoverrideforfiles"
                 }
             ],
-            "property_order": 1070
+            "property_order": 1075
         },
         "SmartScreenAllowListDomains": {
             "type": "array",
@@ -3456,7 +3468,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#smartscreenallowlistdomains"
                 }
             ],
-            "property_order": 1075
+            "property_order": 1080
         },
         "SmartScreenForTrustedDownloadsEnabled": {
             "type": "boolean",
@@ -3469,7 +3481,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#smartscreenfortrusteddownloadsenabled"
                 }
             ],
-            "property_order": 1080
+            "property_order": 1085
         },
         "SmartScreenPuaEnabled": {
             "type": "boolean",
@@ -3481,7 +3493,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#smartscreenfortrusteddownloadsenabled"
                 }
             ],
-            "property_order": 1085
+            "property_order": 1090
         },
         "PasswordProtectionChangePasswordURL": {
             "type": "string",
@@ -3494,7 +3506,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordprotectionchangepasswordurl"
                 }
             ],
-            "property_order": 1090
+            "property_order": 1095
         },
         "PasswordProtectionLoginURLs": {
             "type": "array",
@@ -3510,7 +3522,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordprotectionloginurls"
                 }
             ],
-            "property_order": 1095
+            "property_order": 1100
         },
         "PasswordProtectionWarningTrigger": {
             "type": "integer",
@@ -3534,7 +3546,7 @@
                     "Password protection warning is triggered by password reuse on phishing page"
                 ]
             },
-            "property_order": 1100
+            "property_order": 1105
         },
         "HomepageIsNewTabPage": {
             "type": "boolean",
@@ -3546,7 +3558,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#homepageisnewtabpage"
                 }
             ],
-            "property_order": 1105
+            "property_order": 1110
         },
         "HomepageLocation": {
             "type": "string",
@@ -3558,7 +3570,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#homepagelocation"
                 }
             ],
-            "property_order": 1110
+            "property_order": 1115
         },
         "NewTabPageAllowedBackgroundTypes": {
             "type": "integer",
@@ -3585,7 +3597,7 @@
                     "Disable all background images"
                 ]
             },
-            "property_order": 1115
+            "property_order": 1120
         },
         "NewTabPageCompanyLogo": {
             "type": "array",
@@ -3629,7 +3641,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagecompanylogo"
                 }
             ],
-            "property_order": 1120
+            "property_order": 1125
         },
         "NewTabPageHideDefaultTopSites": {
             "type": "boolean",
@@ -3642,7 +3654,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagehidedefaulttopsites"
                 }
             ],
-            "property_order": 1125
+            "property_order": 1130
         },
         "NewTabPageLocation": {
             "type": "string",
@@ -3654,7 +3666,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagelocation"
                 }
             ],
-            "property_order": 1130
+            "property_order": 1135
         },
         "NewTabPageManagedQuickLinks": {
             "type": "array",
@@ -3684,7 +3696,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#newtabpagemanagedquicklinks"
                 }
             ],
-            "property_order": 1135
+            "property_order": 1140
         },
         "NewTabPageSetFeedType": {
             "type": "integer",
@@ -3706,7 +3718,7 @@
                     "Office 365 feed experience"
                 ]
             },
-            "property_order": 1140
+            "property_order": 1145
         },
         "RestoreOnStartup": {
             "type": "integer",
@@ -3730,7 +3742,7 @@
                     "Open a list of URLs"
                 ]
             },
-            "property_order": 1145
+            "property_order": 1150
         },
         "RestoreOnStartupURLs": {
             "type": "array",
@@ -3745,7 +3757,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#restoreonstartupurls"
                 }
             ],
-            "property_order": 1150
+            "property_order": 1155
         },
         "ShowHomeButton": {
             "type": "boolean",
@@ -3757,7 +3769,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#showhomebutton"
                 }
             ],
-            "property_order": 1155
+            "property_order": 1160
         },
         "WebUsbAskForUrls": {
             "type": "array",
@@ -3772,7 +3784,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webusbaskforurls"
                 }
             ],
-            "property_order": 1160
+            "property_order": 1165
         },
         "WebUsbBlockedForUrls": {
             "type": "array",
@@ -3787,7 +3799,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#webusbblockedforurls"
                 }
             ],
-            "property_order": 1165
+            "property_order": 1170
         }
     }
 }
