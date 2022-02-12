@@ -4,43 +4,65 @@
     "properties": {
         "DisablePersonalSync": {
             "type": "boolean",
-            "title": "Disable personal accounts",
+            "title": "Disable Personal Accounts",
             "default": true,
             "description": "Prevents users from adding or syncing personal accounts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#disablepersonalsync"
+                }
+            ],
             "property_order": 5
         },
         "DisableTutorial": {
             "type": "boolean",
-            "title": "Disable tutorial screens",
+            "title": "Disable Tutorial Screens",
             "description": "Disable tutorial screens during first setup.",
-            "property_order": 10
-        },
-        "Tenants": {
-            "type": "object",
-            "description": "OneDrive folder default location.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#disabletutorial"
                 }
             ],
-            "properties": {
-                "{{key}}": {
-                    "type": "string",
-                    "title": "TenantID",
-                    "description": "A globally unique identifier (GUID) that is different than your tenant name or domain."
-                },
-                "{{value}}": {
-                    "type": "object",
-                    "title": "DefaultFolderDict",
-                    "properties": {
-                        "DefaultFolder": {
-                            "type": "string",
-                            "title": "Folder Path"
-                        }
+            "property_order": 10
+        },
+        "DefaultFolderLocation": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "TenantID": {
+                        "type": "string",
+                        "title": "Tenant ID",
+                        "description": "The TenantID value is a string that determines the tenants to whom the default folder location setting is applicable.",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#defaultfolderlocation"
+                            }
+                        ]
+                    },
+                    "DefaultFolderPath": {
+                        "type": "string",
+                        "title": "Path",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#defaultfolderlocation"
+                            }
+                        ]
                     }
                 }
             },
+            "title": "Default Folder Location",
+            "description": "OneDrive folder default location. Specifies the default location of the OneDrive folder for each organization.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#defaultfolderlocation"
+                }
+            ],
             "property_order": 15
         },
         "AutomaticUploadBandwidthPercentage": {
@@ -50,31 +72,31 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#automaticuploadbandwidthpercentage"
                 }
             ],
             "property_order": 20
         },
         "UploadBandwidthLimited": {
             "type": "integer",
-            "title": "Maximum upload throughput",
+            "title": "Maximum Upload Bandwidth",
             "description": "Upload throughput in KB/sec that the sync client can use.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#uploadbandwidthlimited"
                 }
             ],
             "property_order": 25
         },
         "DownloadBandwidthLimited": {
             "type": "integer",
-            "title": "Maximum download throughput",
-            "description": "Download throughput in KB/sec that the sync client can use.",
+            "title": "Maximum Download Bandwidth",
+            "description": "Sets the maximum download throughput rate in kilobytes (KB)/sec for computers running the OneDrive sync client.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#downloadbandwidthlimited"
                 }
             ],
             "property_order": 30
@@ -86,19 +108,19 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#hidedockicon"
                 }
             ],
             "property_order": 35
         },
         "OpenAtLogin": {
             "type": "boolean",
-            "title": "Open at login",
+            "title": "Open at Login",
             "description": "Automatically start OneDrive when the user logs in.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#openatlogin"
                 }
             ],
             "property_order": 40
@@ -107,6 +129,12 @@
             "type": "string",
             "title": "SharePoint Server Front Door URL",
             "description": "The URL of the on-premises SharePoint Server.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#sharepointonpremfrontdoorurl"
+                }
+            ],
             "property_order": 45
         },
         "SharePointOnPremTenantName": {
@@ -116,7 +144,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#sharepointonpremtenantname"
                 }
             ],
             "property_order": 50
@@ -128,7 +156,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#sharepointonpremprioritizationpolicy"
                 }
             ],
             "enum": [
@@ -167,10 +195,12 @@
         },
         "FilesOnDemandEnabled": {
             "type": "boolean",
+            "title": "Enable Files On-Demand",
+            "description": "When set to true, new users who set up the sync app will download online-only files by default. When set to false, Files On-Demand will be disabled and users won't be able to turn it on.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#filesondemandenabled"
                 }
             ],
             "property_order": 70
@@ -192,10 +222,106 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#hydrationdisallowedapps"
                 }
             ],
             "property_order": 80
+        },
+        "EnableODIgnore": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Ignore rule"
+            },
+            "title": "OneDrive Sync Ignore Rules",
+            "description": "This setting lets you enter keywords to prevent the OneDrive sync app from uploading certain files to OneDrive or SharePoint. You can enter complete names, such as \"setup.exe\" or use the asterisk (*) as a wildcard character to represent a series of characters, such as *.pst. Keywords aren't case-sensitive.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#enableodignore"
+                }
+            ],
+            "property_order": 85
+        },
+        "EnableAllOcsiClients": {
+            "type": "boolean",
+            "title": "Enable All Osci Clients",
+            "description": "This setting lets multiple users use the Microsoft 365 Apps for enterprise, Office 2019, or Office 2016 desktop apps to simultaneously edit an Office file stored in OneDrive. It also lets users share files from the Office desktop apps.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                }
+            ],
+            "property_order": 90
+        },
+        "DisableHydrationToast": {
+            "type": "boolean",
+            "title": "Disable Hydration Toast",
+            "description": "This setting prevents toasts from appearing when applications cause file contents to be downloaded.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#hydrationdisallowedapps"
+                }
+            ],
+            "property_order": 95
+        },
+        "BlockExternalSync": {
+            "type": "boolean",
+            "title": "Block External Sync",
+            "description": "This setting prevents the sync app from syncing libraries and folders shared from other organizations. Set the setting's value to True, to prevent the users from syncing OneDrive, SharePoint libraries, and folders with organizations other than the user's own organization.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#blockexternalsync"
+                }
+            ],
+            "property_order": 100
+        },
+        "AllowTenantList": {
+            "type": "object",
+            "title": "Allow Tenant List",
+            "description": "This setting prevents the users from uploading files to other organizations by specifying a list of allowed tenant IDs. If you enable this setting, the user gets an error if they attempt to add an account from an organization that isn't in the allowed tenants list.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#allowtenantlist"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Tenant ID"
+                },
+                "{{value}}": {
+                    "type": "boolean",
+                    "title": "Check to Allow"
+                }
+            },
+            "property_order": 105
+        },
+        "BlockTenantList": {
+            "type": "object",
+            "title": "Block Tenant List",
+            "description": "This setting prevents the users from uploading files to organizations that are included in the blocked tenant IDs list. If you enable this setting, the users get an error if they attempt to add an account from an organization that is blocked. If a user has already added an account for a blocked organization, the files stop syncing.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#blocktenantlist"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "TenantID"
+                },
+                "{{value}}": {
+                    "type": "boolean",
+                    "title": "Check to Block"
+                }
+            },
+            "property_order": 110
         }
     }
 }
