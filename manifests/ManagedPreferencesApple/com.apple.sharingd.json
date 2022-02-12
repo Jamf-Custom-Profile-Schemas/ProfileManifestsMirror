@@ -1,0 +1,31 @@
+{
+    "title": "AirDrop Discoverability (macOS) (com.apple.sharingd)",
+    "description": "macOS AirDrop Discoverability Settings",
+    "properties": {
+        "DiscoverableMode": {
+            "type": "string",
+            "title": "Discoverability",
+            "default": "Off",
+            "description": "Configure the AirDrop option \"Allow me to be discovered by:\"",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.kevinmcox.com/2022/02/managing-airdrop-discoverability-options/"
+                }
+            ],
+            "enum": [
+                "Off",
+                "Contacts Only",
+                "Everyone"
+            ],
+            "options": {
+                "enum_titles": [
+                    "No One",
+                    "iCloud Contacts Only",
+                    "Everyone"
+                ]
+            },
+            "property_order": 5
+        }
+    }
+}
