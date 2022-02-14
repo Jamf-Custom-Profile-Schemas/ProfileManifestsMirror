@@ -6,6 +6,12 @@
             "type": "boolean",
             "title": "Disable AirDrop",
             "default": false,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://derflounder.wordpress.com/2011/10/07/disabling-airdrop-from-the-command-line/"
+                }
+            ],
             "property_order": 5
         }
     }
