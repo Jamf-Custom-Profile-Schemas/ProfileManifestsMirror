@@ -1,6 +1,6 @@
 {
-    "title": "Wi-Fi Managed Settings (com.apple.MCX.WiFi)",
-    "description": "Wi-Fi Managed Settings",
+    "title": "Wi-Fi Managed Settings (com.apple.MCX)",
+    "description": "Use this section to define managed Wi-Fi settings",
     "properties": {
         "RequireAdminToTurnAirPortOnOff": {
             "type": "boolean",
