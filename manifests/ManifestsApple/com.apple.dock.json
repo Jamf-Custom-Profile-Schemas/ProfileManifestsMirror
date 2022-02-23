@@ -433,6 +433,334 @@
             "title": "Managed Client Special Folders",
             "description": "Folders added by Managed Client.",
             "property_order": 120
+        },
+        "wvous-tl-corner": {
+            "type": "integer",
+            "title": "Top Left Hot Corner Action",
+            "default": 0,
+            "description": "Action to be taken when the pointer enters the top left corner of the screen",
+            "enum": [
+                5,
+                6,
+                2,
+                3,
+                4,
+                7,
+                12,
+                11,
+                14,
+                10,
+                13,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "Start Screen Saver",
+                    "Disable Screen Saver",
+                    "Mission Control",
+                    "Application Windows",
+                    "Desktop",
+                    "Dashboard (removed from macOS 10.15)",
+                    "Notification Center",
+                    "Launchpad",
+                    "Quick Note (introduced on macOS 12.0)",
+                    "Put Display to Sleep",
+                    "Lock Screen",
+                    "No Action"
+                ]
+            },
+            "property_order": 125
+        },
+        "wvous-tl-modifier": {
+            "type": "integer",
+            "title": "Top Left Hot Corner Modifier",
+            "default": 0,
+            "description": "Modifier keys required to activate the top left hot corner",
+            "enum": [
+                0,
+                1048576,
+                1572864,
+                1835008,
+                1966080,
+                1703936,
+                1310720,
+                1441792,
+                1179648,
+                524288,
+                786432,
+                917504,
+                655360,
+                262144,
+                393216,
+                131072
+            ],
+            "options": {
+                "enum_titles": [
+                    "None",
+                    "Command",
+                    "Command+Option",
+                    "Command+Option+Control",
+                    "Command+Option+Control+Shift",
+                    "Command+Option+Shift",
+                    "Command+Control",
+                    "Command+Control+Shift",
+                    "Command+Shift",
+                    "Option",
+                    "Option+Control",
+                    "Option+Control+Shift",
+                    "Option+Shift",
+                    "Control",
+                    "Control+Shift",
+                    "Shift"
+                ]
+            },
+            "property_order": 130
+        },
+        "wvous-tr-corner": {
+            "type": "integer",
+            "title": "Top Right Hot Corner Action",
+            "default": 0,
+            "description": "Action to be taken when the pointer enters the top right corner of the screen",
+            "enum": [
+                5,
+                6,
+                2,
+                3,
+                4,
+                7,
+                12,
+                11,
+                14,
+                10,
+                13,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "Start Screen Saver",
+                    "Disable Screen Saver",
+                    "Mission Control",
+                    "Application Windows",
+                    "Desktop",
+                    "Dashboard (removed from macOS 10.15)",
+                    "Notification Center",
+                    "Launchpad",
+                    "Quick Note (introduced on macOS 12.0)",
+                    "Put Display to Sleep",
+                    "Lock Screen",
+                    "No Action"
+                ]
+            },
+            "property_order": 135
+        },
+        "wvous-tr-modifier": {
+            "type": "integer",
+            "title": "Top Right Hot Corner Modifier",
+            "default": 0,
+            "description": "Modifier keys required to activate the top right hot corner",
+            "enum": [
+                0,
+                1048576,
+                1572864,
+                1835008,
+                1966080,
+                1703936,
+                1310720,
+                1441792,
+                1179648,
+                524288,
+                786432,
+                917504,
+                655360,
+                262144,
+                393216,
+                131072
+            ],
+            "options": {
+                "enum_titles": [
+                    "None",
+                    "Command",
+                    "Command+Option",
+                    "Command+Option+Control",
+                    "Command+Option+Control+Shift",
+                    "Command+Option+Shift",
+                    "Command+Control",
+                    "Command+Control+Shift",
+                    "Command+Shift",
+                    "Option",
+                    "Option+Control",
+                    "Option+Control+Shift",
+                    "Option+Shift",
+                    "Control",
+                    "Control+Shift",
+                    "Shift"
+                ]
+            },
+            "property_order": 140
+        },
+        "wvous-bl-corner": {
+            "type": "integer",
+            "title": "Bottom Left Hot Corner Action",
+            "default": 0,
+            "description": "Action to be taken when the pointer enters the bottom left corner of the screen",
+            "enum": [
+                5,
+                6,
+                2,
+                3,
+                4,
+                7,
+                12,
+                11,
+                14,
+                10,
+                13,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "Start Screen Saver",
+                    "Disable Screen Saver",
+                    "Mission Control",
+                    "Application Windows",
+                    "Desktop",
+                    "Dashboard (removed from macOS 10.15)",
+                    "Notification Center",
+                    "Launchpad",
+                    "Quick Note (introduced on macOS 12.0)",
+                    "Put Display to Sleep",
+                    "Lock Screen",
+                    "No Action"
+                ]
+            },
+            "property_order": 145
+        },
+        "wvous-bl-modifier": {
+            "type": "integer",
+            "title": "Bottom Left Hot Corner Modifier",
+            "default": 0,
+            "description": "Modifier keys required to activate the bottom left hot corner",
+            "enum": [
+                0,
+                1048576,
+                1572864,
+                1835008,
+                1966080,
+                1703936,
+                1310720,
+                1441792,
+                1179648,
+                524288,
+                786432,
+                917504,
+                655360,
+                262144,
+                393216,
+                131072
+            ],
+            "options": {
+                "enum_titles": [
+                    "None",
+                    "Command",
+                    "Command+Option",
+                    "Command+Option+Control",
+                    "Command+Option+Control+Shift",
+                    "Command+Option+Shift",
+                    "Command+Control",
+                    "Command+Control+Shift",
+                    "Command+Shift",
+                    "Option",
+                    "Option+Control",
+                    "Option+Control+Shift",
+                    "Option+Shift",
+                    "Control",
+                    "Control+Shift",
+                    "Shift"
+                ]
+            },
+            "property_order": 150
+        },
+        "wvous-br-corner": {
+            "type": "integer",
+            "title": "Bottom Right Hot Corner Action",
+            "default": 0,
+            "description": "Action to be taken when the pointer enters the bottom right corner of the screen",
+            "enum": [
+                5,
+                6,
+                2,
+                3,
+                4,
+                7,
+                12,
+                11,
+                14,
+                10,
+                13,
+                0
+            ],
+            "options": {
+                "enum_titles": [
+                    "Start Screen Saver",
+                    "Disable Screen Saver",
+                    "Mission Control",
+                    "Application Windows",
+                    "Desktop",
+                    "Dashboard (removed from macOS 10.15)",
+                    "Notification Center",
+                    "Launchpad",
+                    "Quick Note (introduced on macOS 12.0)",
+                    "Put Display to Sleep",
+                    "Lock Screen",
+                    "No Action"
+                ]
+            },
+            "property_order": 155
+        },
+        "wvous-br-modifier": {
+            "type": "integer",
+            "title": "Bottom Right Hot Corner Modifier",
+            "default": 0,
+            "description": "Modifier keys required to activate the bottom right hot corner",
+            "enum": [
+                0,
+                1048576,
+                1572864,
+                1835008,
+                1966080,
+                1703936,
+                1310720,
+                1441792,
+                1179648,
+                524288,
+                786432,
+                917504,
+                655360,
+                262144,
+                393216,
+                131072
+            ],
+            "options": {
+                "enum_titles": [
+                    "None",
+                    "Command",
+                    "Command+Option",
+                    "Command+Option+Control",
+                    "Command+Option+Control+Shift",
+                    "Command+Option+Shift",
+                    "Command+Control",
+                    "Command+Control+Shift",
+                    "Command+Shift",
+                    "Option",
+                    "Option+Control",
+                    "Option+Control+Shift",
+                    "Option+Shift",
+                    "Control",
+                    "Control+Shift",
+                    "Shift"
+                ]
+            },
+            "property_order": 160
         }
     }
 }
