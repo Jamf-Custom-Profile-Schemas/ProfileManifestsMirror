@@ -1,0 +1,70 @@
+{
+    "title": "Pinpoint (com.jelockwood.pinpoint)",
+    "description": "Pinpoint settings",
+    "properties": {
+        "YOUR_API_KEY": {
+            "type": "string",
+            "title": "API Key",
+            "description": "API key for using the Google location service API.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jelockwood/pinpoint/wiki/Preferences"
+                }
+            ],
+            "property_order": 5
+        },
+        "USE_GEOCODE": {
+            "type": "boolean",
+            "title": "Enable Geocoding",
+            "default": true,
+            "description": "If set to true then pinpoint will also use the Google Geocode API to look up the street address for the location, if set to false it skips this and records the location as an empty string but saves on an additional API call thereby either preventing you exceeding your quota or reducing the cost.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jelockwood/pinpoint/wiki/Preferences"
+                }
+            ],
+            "property_order": 10
+        },
+        "USE_ALTITUDE": {
+            "type": "boolean",
+            "title": "Enable Altitude",
+            "default": false,
+            "description": "If set to true then pinpoint will also use the Google Elevation API to determine the altitude, if set to false it skips this and records the altitude as zero but saves on an additional API call thereby either preventing you exceeding your quota or reducing the cost.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jelockwood/pinpoint/wiki/Preferences"
+                }
+            ],
+            "property_order": 15
+        },
+        "OPTIMISE": {
+            "type": "boolean",
+            "title": "Enable Optimisation",
+            "default": true,
+            "description": "Optional feature designed to reduce i.e. 'optimise' the use of the Google APIs and therefore reduce the potential bill use of these APIs might result in.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jelockwood/pinpoint/wiki/Preferences"
+                }
+            ],
+            "property_order": 20
+        },
+        "DEBUG": {
+            "type": "boolean",
+            "title": "Enable Debugging",
+            "default": false,
+            "description": "If enabled logs to /var/log/pinpoint.log",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jelockwood/pinpoint/wiki/Preferences"
+                }
+            ],
+            "property_order": 25
+        }
+    }
+}
