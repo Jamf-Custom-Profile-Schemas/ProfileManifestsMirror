@@ -1,0 +1,192 @@
+{
+    "title": "Printing (com.apple.mcxprinting)",
+    "description": "Printing settings",
+    "properties": {
+        "AllowLocalPrinters": {
+            "type": "boolean",
+            "title": "Allow Local Printers",
+            "default": true,
+            "description": "If true, allows printers that connect directly to a user's computer.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "property_order": 5
+        },
+        "DefaultPrinter": {
+            "type": "object",
+            "title": "Default Printer",
+            "description": "The default printer for the user.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "properties": {
+                "DisplayName": {
+                    "type": "string",
+                    "title": "Display Name",
+                    "description": "The display name.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://developer.apple.com/documentation/devicemanagement/printing/defaultprinter"
+                        }
+                    ]
+                },
+                "DeviceURI": {
+                    "type": "string",
+                    "title": "Device URI",
+                    "description": "The device URI.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://developer.apple.com/documentation/devicemanagement/printing/defaultprinter"
+                        }
+                    ]
+                }
+            },
+            "property_order": 10
+        },
+        "PrintFooter": {
+            "type": "boolean",
+            "title": "Footer",
+            "default": false,
+            "description": "If true, prints the page footer (including the user name and date).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "property_order": 15
+        },
+        "FooterFontName": {
+            "type": "string",
+            "title": "Footer Font Name",
+            "description": "The font to use when printing a footer.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "property_order": 20
+        },
+        "FooterFontSize": {
+            "type": "string",
+            "title": "Footer Font Size",
+            "description": "The font size to use when printing a footer.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "property_order": 25
+        },
+        "PrintMACAddress": {
+            "type": "boolean",
+            "title": "Print MAC Address",
+            "default": false,
+            "description": "If true, includes the MAC address.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "property_order": 30
+        },
+        "RequireAdminToAddPrinters": {
+            "type": "boolean",
+            "title": "Require Admin To Add Printers",
+            "default": true,
+            "description": "If true, requires an administrator password to add printers.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "property_order": 35
+        },
+        "RequireAdminToPrintLocally": {
+            "type": "boolean",
+            "title": "Require Admin To Print Locally",
+            "default": false,
+            "description": "If true, requires an administrator password to print locally.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "property_order": 40
+        },
+        "ShowOnlyManagedPrinters": {
+            "type": "boolean",
+            "title": "Show Only Managed Printers",
+            "default": false,
+            "description": "If true, shows only managed printers.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "property_order": 45
+        },
+        "UserPrinterList": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Printer",
+                "description": "A printer item in the printer list",
+                "properties": {
+                    "DisplayName": {
+                        "type": "string",
+                        "title": "Display Name",
+                        "description": "The display name."
+                    },
+                    "DeviceURI": {
+                        "type": "string",
+                        "title": "IP / Hostname",
+                        "description": "The device URI."
+                    },
+                    "Location": {
+                        "type": "string",
+                        "description": "The printer's location."
+                    },
+                    "Model": {
+                        "type": "string",
+                        "description": "The printer's model."
+                    },
+                    "PPDURL": {
+                        "type": "string",
+                        "title": "PPD Location",
+                        "description": "The printer's PPDURL."
+                    },
+                    "PrinterLocked": {
+                        "type": "boolean",
+                        "title": "Locked?",
+                        "default": false,
+                        "description": "If true, locks the printer."
+                    }
+                }
+            },
+            "title": "User Printer List",
+            "description": "The printers available to a user.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/printing"
+                }
+            ],
+            "property_order": 50
+        }
+    }
+}
