@@ -1,0 +1,32 @@
+{
+    "title": "Guest Account (com.apple.MCX)",
+    "description": "Use this section to define guest account settings",
+    "properties": {
+        "EnableGuestAccount": {
+            "type": "boolean",
+            "title": "Enable Guest Account",
+            "default": false,
+            "description": "Enables the guest account. Overrides DisableGuestAccount.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/accounts"
+                }
+            ],
+            "property_order": 5
+        },
+        "DisableGuestAccount": {
+            "type": "boolean",
+            "title": "Disable Guest Account",
+            "default": false,
+            "description": "Disables the guest account. Overridden by EnableGuestAccount.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/devicemanagement/accounts"
+                }
+            ],
+            "property_order": 10
+        }
+    }
+}
