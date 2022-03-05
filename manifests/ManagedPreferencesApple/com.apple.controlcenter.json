@@ -1,0 +1,18 @@
+{
+    "title": "Control Center (com.apple.controlcenter)",
+    "description": "Control Center settings",
+    "properties": {
+        "AirplayRecieverEnabled": {
+            "type": "boolean",
+            "title": "Enable AirPlay Receiver",
+            "description": "Airplay Receiver allows you to send content from another Apple device to be displayed on the screen as it's being played from your other device.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/usnistgov/macos_security/blob/main/rules/sysprefs/sysprefs_airplay_receiver_disable.yaml"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
