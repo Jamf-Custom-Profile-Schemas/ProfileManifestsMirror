@@ -17,7 +17,6 @@
         "MultipleSessionEnabled": {
             "type": "boolean",
             "title": "Enable Fast User Switching",
-            "default": true,
             "description": "If set to false, fast user switching is disabled.",
             "links": [
                 {

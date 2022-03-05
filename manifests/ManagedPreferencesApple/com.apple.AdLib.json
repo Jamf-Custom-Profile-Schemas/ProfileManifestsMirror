@@ -7,6 +7,18 @@
             "title": "Force Limiting Ad Tracking",
             "description": "Enabling this opts out of receiving ads targeted to interests in Apple Apps and macOS devices. May still receive the same number of ads, but the ads may be less relevant.",
             "property_order": 5
+        },
+        "allowApplePersonalizedAdvertising": {
+            "type": "boolean",
+            "title": "Allow Personalized Advertising",
+            "description": "Disabling ad tracking ensures that applications and advertisers are unable to track users’ interests and deliver targeted advertisements.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/usnistgov/macos_security/blob/main/rules/sysprefs/sysprefs_personalized_advertising_disable.yaml"
+                }
+            ],
+            "property_order": 10
         }
     }
 }
