@@ -1,0 +1,72 @@
+{
+    "title": "Media Sharing (com.apple.preferences.sharing.SharingPrefsExtension)",
+    "description": "Media Sharing settings",
+    "properties": {
+        "homeSharingUIStatus": {
+            "type": "integer",
+            "title": "Home Sharing",
+            "description": "When Media Sharing is enabled, the computer starts a network listening service that shares the contents of the user’s music collection with other users in the same subnet.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/usnistgov/macos_security/blob/main/rules/sysprefs/sysprefs_media_sharing_disabled.yaml"
+                }
+            ],
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Off",
+                    "On"
+                ]
+            },
+            "property_order": 5
+        },
+        "legacySharingUIStatus": {
+            "type": "integer",
+            "title": "Legacy Sharing",
+            "description": "When Media Sharing is enabled, the computer starts a network listening service that shares the contents of the user’s music collection with other users in the same subnet.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/usnistgov/macos_security/blob/main/rules/sysprefs/sysprefs_media_sharing_disabled.yaml"
+                }
+            ],
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Off",
+                    "On"
+                ]
+            },
+            "property_order": 10
+        },
+        "mediaSharingUIStatus": {
+            "type": "integer",
+            "title": "Media Sharing",
+            "description": "When Media Sharing is enabled, the computer starts a network listening service that shares the contents of the user’s music collection with other users in the same subnet.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/usnistgov/macos_security/blob/main/rules/sysprefs/sysprefs_media_sharing_disabled.yaml"
+                }
+            ],
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Off",
+                    "On"
+                ]
+            },
+            "property_order": 15
+        }
+    }
+}
