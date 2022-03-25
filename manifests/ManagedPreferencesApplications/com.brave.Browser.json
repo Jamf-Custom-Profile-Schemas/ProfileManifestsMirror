@@ -3081,40 +3081,24 @@
             ],
             "properties": {
                 "ProxySetting": {
-                    "type": "object",
-                    "properties": {
-                        "ProxyMode": {
-                            "type": "string",
-                            "enum": [
-                                "direct",
-                                "system",
-                                "auto_detect",
-                                "fixed_server",
-                                "pac_script"
-                            ],
-                            "options": {
-                                "enum_titles": [
-                                    "Never use proxy (ignores other fields)",
-                                    "System (ignores other fields)",
-                                    "Auto Detect (ignores other fields)",
-                                    "Fixed (Uses ProxyServer & ProxyBypassList)",
-                                    "Pac Script (Uses ProxyPacUrl & ProxyBypassList)"
-                                ]
-                            }
-                        },
-                        "ProxyPacUrl": {
-                            "type": "string",
-                            "pattern": "^https?://.*.pac$"
-                        },
-                        "ProxyServer": {
-                            "type": "string"
-                        },
-                        "ProxyBypassList": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "pattern": "^https?://.*"
-                            }
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "direct",
+                            "system",
+                            "auto_detect",
+                            "fixed_server",
+                            "pac_script"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Never use proxy (ignores other fields)",
+                                "System (ignores other fields)",
+                                "Auto Detect (ignores other fields)",
+                                "Fixed (Uses ProxyServer & ProxyBypassList)",
+                                "Pac Script (Uses ProxyPacUrl & ProxyBypassList)"
+                            ]
                         }
                     }
                 }

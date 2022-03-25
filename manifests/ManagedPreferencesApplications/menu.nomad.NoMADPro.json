@@ -172,11 +172,7 @@
             "items": {
                 "type": "object",
                 "title": "ChangePasswordItem",
-                "properties": {
-                    "": {
-                        "type": "object"
-                    }
-                }
+                "properties": {}
             },
             "description": "Determines the order and setting for the password change menu. NOT IMPLEMENTED YET, THERE IS NO DOCUMENTATION ON THIS KEY.",
             "property_order": 140
