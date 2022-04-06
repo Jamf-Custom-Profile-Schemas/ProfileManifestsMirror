@@ -322,6 +322,58 @@
                 }
             },
             "property_order": 110
+        },
+        "KFMOptInWithWizard": {
+            "type": "string",
+            "title": "Prompt Users to Move Known Folders",
+            "property_order": 115
+        },
+        "KFMSilentOptIn": {
+            "type": "string",
+            "title": "Silently Move Known Folders",
+            "property_order": 120
+        },
+        "KFMSilentOptInDesktop": {
+            "type": "boolean",
+            "title": "Silently Opt in Desktop to Known Folders",
+            "description": "Enable to silently opt-in the user's Desktop folder.",
+            "property_order": 125
+        },
+        "KFMSilentOptInDocuments": {
+            "type": "boolean",
+            "title": "Silently Opt in Documents to Known Folders",
+            "description": "Enable to silently opt-in the user's Documents folder.",
+            "property_order": 130
+        },
+        "KFMSilentOptInWithNotification": {
+            "type": "boolean",
+            "title": "Silently Opt in with Notification",
+            "description": "If enabled, displays a notification to users after their folders have been redirected.",
+            "property_order": 135
+        },
+        "KFMBlockOptIn": {
+            "type": "integer",
+            "title": "Block Opt-in",
+            "description": "If enabled, will prevent KFM opt-in.",
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Don't Block Opt-in",
+                    "Prevent Known Folder Move",
+                    "Prevent & Redirect Previous KFM'd Folders to the Device"
+                ]
+            },
+            "property_order": 140
+        },
+        "KFMBlockOptOut": {
+            "type": "boolean",
+            "title": "Block KFM Opt-out",
+            "description": "If enabled, prevents users from redirecting their known folders to the Mac.",
+            "property_order": 145
         }
     }
 }

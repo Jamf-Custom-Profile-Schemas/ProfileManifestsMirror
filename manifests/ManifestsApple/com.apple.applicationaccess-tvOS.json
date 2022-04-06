@@ -15,12 +15,18 @@
             "default": false,
             "property_order": 10
         },
+        "allowAutomaticScreenSaver": {
+            "type": "boolean",
+            "title": "Allow Automatic Screen Saver",
+            "default": true,
+            "property_order": 15
+        },
         "allowCloudPrivateRelay": {
             "type": "boolean",
             "title": "Allow iCloud Private Relay",
             "default": true,
             "description": "If set to false, prevents the use of iCloud Private Relay.",
-            "property_order": 15
+            "property_order": 20
         },
         "blockedAppBundleIDs": {
             "type": "array",
@@ -30,7 +36,7 @@
             },
             "title": "Blocked Apps",
             "description": "When populated, prevents displaying or launching listed apps. Disabled when using the Allowed Apps preference.",
-            "property_order": 20
+            "property_order": 25
         },
         "blacklistedAppBundleIDs": {
             "type": "array",
@@ -40,7 +46,7 @@
             },
             "title": "Restrict App Usage - Denylist",
             "description": "If enabled, cannot use the allowlist to restrict app usage.",
-            "property_order": 25
+            "property_order": 30
         },
         "allowListedAppBundleIDs": {
             "type": "array",
@@ -50,7 +56,7 @@
             },
             "title": "Allowed Apps",
             "description": "When populated, prevents displaying or launching apps other than the listed ones. Disabled when using the Blocked Apps preference.",
-            "property_order": 30
+            "property_order": 35
         },
         "whitelistedAppBundleIDs": {
             "type": "array",
@@ -60,21 +66,21 @@
             },
             "title": "Restrict App Usage - Allowlist",
             "description": "If enabled, cannot use the denylist to restrict app usage.",
-            "property_order": 35
+            "property_order": 40
         },
         "forceAssistantProfanityFilter": {
             "type": "boolean",
             "title": "Enable Siri profanity filter",
             "default": true,
             "description": "When true, forces the use of the profanity filter assistant.",
-            "property_order": 40
+            "property_order": 45
         },
         "allowInAppPurchases": {
             "type": "boolean",
             "title": "Allow in app purchases",
             "default": true,
             "description": "When false, prohibits in-app purchasing.",
-            "property_order": 45
+            "property_order": 50
         },
         "ratingRegion": {
             "type": "string",
@@ -105,7 +111,7 @@
                     "United States"
                 ]
             },
-            "property_order": 50
+            "property_order": 55
         },
         "ratingApps": {
             "type": "integer",
@@ -140,7 +146,7 @@
                     "Don't Allow Apps"
                 ]
             },
-            "property_order": 55
+            "property_order": 60
         },
         "ratingMovies": {
             "type": "integer",
@@ -175,7 +181,7 @@
                     "0: Don't Allow Movies"
                 ]
             },
-            "property_order": 60
+            "property_order": 65
         },
         "ratingTVShows": {
             "type": "integer",
@@ -210,62 +216,62 @@
                     "0: Don't Allow TV Shows"
                 ]
             },
-            "property_order": 65
+            "property_order": 70
         },
         "allowExplicitContent": {
             "type": "boolean",
             "title": "Allow playback of explicit music, podcasts, and iTunes U",
             "default": true,
             "description": "When false, explicit music or video content purchased from the iTunes Store is hidden. Explicit content is marked as such by content providers, such as record labels, when sold through the iTunes Store. This key is deprecated on unsupervised devices.",
-            "property_order": 70
+            "property_order": 75
         },
         "allowBookstoreErotica": {
             "type": "boolean",
             "title": "Allow explicit sexual content in iBooks Store",
             "default": true,
             "description": "If set to false, the user will not be able to download media from Apple Books that has been tagged as erotica.",
-            "property_order": 75
+            "property_order": 80
         },
         "allowAirPlayIncomingRequests": {
             "type": "boolean",
             "title": "Allow AirPlay",
             "default": true,
-            "property_order": 80
+            "property_order": 85
         },
         "forceAirPlayIncomingRequestsPairingPassword": {
             "type": "boolean",
             "title": "Require passcode on first AirPlay pairing",
             "default": true,
             "description": "It is recommended to use the AirPlay Security Payload.",
-            "property_order": 85
+            "property_order": 90
         },
         "allowRemoteAppPairing": {
             "type": "boolean",
             "title": "Allow pairing with Remote app",
             "default": true,
             "description": "If set to false, the Apple TV cannot be paired for use with the Remote app or Control Center widget.",
-            "property_order": 90
+            "property_order": 95
         },
         "allowPasswordProximityRequests": {
             "type": "boolean",
             "title": "Allow proximity based password sharing requests",
             "default": true,
             "description": "If set to false, a user's device will not request passwords from nearby devices.",
-            "property_order": 95
+            "property_order": 100
         },
         "forceDelayedSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer Software Updates",
             "default": false,
             "description": "If set to true, delays user visibility of Software Updates.",
-            "property_order": 100
+            "property_order": 105
         },
         "enforcedSoftwareUpdateDelay": {
             "type": "integer",
             "title": "Deferred Software Updates Delay",
             "default": 30,
             "description": "Number of days the software updates will be hidden from the user.",
-            "property_order": 105
+            "property_order": 110
         }
     }
 }

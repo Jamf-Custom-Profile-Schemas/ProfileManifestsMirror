@@ -72,6 +72,16 @@
                 ]
             },
             "property_order": 30
+        },
+        "AllowSigned": {
+            "type": "boolean",
+            "title": "Allow Signed",
+            "property_order": 35
+        },
+        "AllowSignedApp": {
+            "type": "boolean",
+            "title": "Allow Signed App",
+            "property_order": 40
         }
     }
 }
