@@ -1,0 +1,52 @@
+{
+    "title": "Network Share Mounter (de.fau.rrze.NetworkShareMounter)",
+    "description": "Network Share Mounter v2 settings",
+    "properties": {
+        "autostart": {
+            "type": "boolean",
+            "title": "Enable Autostart",
+            "default": false,
+            "description": "Optional. If set to true, the app will be launched on user-login.",
+            "property_order": 5
+        },
+        "canChangeAutostart": {
+            "type": "boolean",
+            "title": "Can Change Autostart",
+            "default": true,
+            "description": "Optional. If set to false, the user can not change the Autostart option.",
+            "property_order": 10
+        },
+        "helpURL": {
+            "type": "string",
+            "title": "Help URL",
+            "default": "https://www.anleitungen.rrze.fau.de/betriebssysteme/apple-macos-und-ios/macos/#networksharemounter",
+            "description": "Configure a help URL to help users interact with the application.",
+            "pattern": "^http[s]?:\\/\\/\\S*$",
+            "property_order": 15
+        },
+        "canQuit": {
+            "type": "boolean",
+            "title": "Allow to Quit App",
+            "default": true,
+            "description": "Optional. If set to true, the user can quit the app",
+            "property_order": 20
+        },
+        "unmountOnExit": {
+            "type": "boolean",
+            "title": "Unmount Shares on Exit",
+            "default": true,
+            "description": "Configure a help URL to help users interact with the application.",
+            "property_order": 25
+        },
+        "networkShares": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "^smb:\\/\\/\\S*$"
+            },
+            "title": "List of Network Shares to Mount",
+            "description": "Array with all network shares. Example: smb://filer.your.domain/share\nNote: %USERNAME% which will be replaced with the login name of the current user.",
+            "property_order": 30
+        }
+    }
+}
