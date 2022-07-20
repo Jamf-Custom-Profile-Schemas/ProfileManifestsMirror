@@ -1,0 +1,18 @@
+{
+    "title": "macOS Time Synchronization (com.apple.timed)",
+    "description": "macOS Time Synchronization Daemon settings",
+    "properties": {
+        "TMAutomaticTimeOnlyEnabled": {
+            "type": "boolean",
+            "title": "Enable automatic time synchronization",
+            "description": "If enabled, ensures the uniformity of time stamps for information systems with multiple system clocks and systems connected over a network.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/usnistgov/macos_security/blob/main/rules/sysprefs/sysprefs_time_server_enforce.yaml"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
