@@ -1,0 +1,42 @@
+{
+    "title": "CrowdStrike Falcon (com.crowdstrike.falcon)",
+    "description": "CrowdStrike Falcon Settings",
+    "properties": {
+        "ccid": {
+            "type": "string",
+            "title": "CustomerID with Checksum (CCID)",
+            "description": "The CCID licenses the CrowdStrike Falcon sensor to your customer ID.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://supportportal.crowdstrike.com/s/article/ka16T000000wwy0QAA"
+                }
+            ],
+            "property_order": 5
+        },
+        "groupingTags": {
+            "type": "string",
+            "title": "Grouping Tags",
+            "description": "Grouping Tags are an optional way to add text-based attributes that can be filtered on in Host Groups management. Multiple Grouping Tags can be added, separated by commas. Do not include spaces. See Documentation > Host and Host Group Management > Using Grouping Tags for more information.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://supportportal.crowdstrike.com/s/article/ka16T000000wwy0QAA"
+                }
+            ],
+            "property_order": 10
+        },
+        "provisioningToken": {
+            "type": "string",
+            "title": "Provisioning Token",
+            "description": "Installation Tokens are an optional way to require additional, revocable tokens (passwords) as a security measure when licensing a sensor to your CID. See Documentation > Host and Host Group Management > Protecting your CID with installation tokens for more information. Installation Tokens are disabled by default.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://supportportal.crowdstrike.com/s/article/ka16T000000wwy0QAA"
+                }
+            ],
+            "property_order": 15
+        }
+    }
+}
