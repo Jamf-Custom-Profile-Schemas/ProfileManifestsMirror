@@ -28,11 +28,11 @@
             ],
             "property_order": 10
         },
-        "DiagnosticLog": {
+        "DisablePostInstallAlert": {
             "type": "boolean",
-            "title": "Enable Diagnostic Log",
+            "title": "Disable Post-Install Alert",
             "default": false,
-            "description": "Whether to write to a persistent log file at /var/log/install-or-defer.log.",
+            "description": "Whether to suppress the persistent alert to run updates.",
             "links": [
                 {
                     "rel": "More information",
@@ -41,11 +41,10 @@
             ],
             "property_order": 15
         },
-        "MaxDeferralTime": {
-            "type": "integer",
-            "title": "Maximum Deferral Time",
-            "default": 259200,
-            "description": "Number of seconds between the first script run and the updates being enforced.",
+        "MessagingLogo": {
+            "type": "string",
+            "title": "Messaging Logo",
+            "description": "File path to a logo that will be used in messaging.",
             "links": [
                 {
                     "rel": "More information",
@@ -53,31 +52,6 @@
                 }
             ],
             "property_order": 20
-        },
-        "MessagingLogo": {
-            "type": "string",
-            "title": "Messaging Logo",
-            "description": "File path to a logo that will be used in messaging. Recommend 512px, PNG format.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
-                }
-            ],
-            "property_order": 25
-        },
-        "SkipDeferral": {
-            "type": "boolean",
-            "title": "Skip Deferral",
-            "default": false,
-            "description": "Whether to bypass deferral time entirely and skip straight to update enforcement.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
-                }
-            ],
-            "property_order": 30
         },
         "SupportContact": {
             "type": "string",
@@ -90,7 +64,85 @@
                     "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
                 }
             ],
+            "property_order": 25
+        },
+        "DeferralPeriod": {
+            "type": "integer",
+            "title": "Deferral Period",
+            "default": 14400,
+            "description": "Number of seconds between when the user clicks \"Defer\" and the next prompt appears.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 30
+        },
+        "HardRestartDelay": {
+            "type": "integer",
+            "title": "Hard Restart Delay",
+            "default": 300,
+            "description": "Number of seconds to wait between attempting a soft restart and forcing a restart.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
+                }
+            ],
             "property_order": 35
+        },
+        "MaxDeferralTime": {
+            "type": "integer",
+            "title": "Maximum Deferral Time",
+            "default": 259200,
+            "description": "Number of seconds between the first script run and the updates being enforced.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 40
+        },
+        "PromptTimeout": {
+            "type": "integer",
+            "title": "Prompt Timeout",
+            "default": 3600,
+            "description": "Number of seconds to wait before timing out the Install or Defer prompt.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 45
+        },
+        "SkipDeferral": {
+            "type": "boolean",
+            "title": "Skip Deferral",
+            "default": false,
+            "description": "Whether to bypass deferral time entirely and skip straight to update enforcement.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 50
+        },
+        "UpdateDelay": {
+            "type": "integer",
+            "title": "Update Delay",
+            "default": 600,
+            "description": "Number of seconds to wait between displaying the \"install updates\" message and applying updates, then attempting a soft restart.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 55
         },
         "WorkdayStartHour": {
             "type": "integer",
@@ -154,7 +206,7 @@
                     "10:00 PM"
                 ]
             },
-            "property_order": 40
+            "property_order": 60
         },
         "WorkdayEndHour": {
             "type": "integer",
@@ -218,7 +270,33 @@
                     "11:00 PM"
                 ]
             },
-            "property_order": 45
+            "property_order": 65
+        },
+        "DiagnosticLog": {
+            "type": "boolean",
+            "title": "Enable Diagnostic Log",
+            "default": false,
+            "description": "Whether to write to a persistent log file at /var/log/install-or-defer.log.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 70
+        },
+        "ManualUpdates": {
+            "type": "boolean",
+            "title": "Manual Updates",
+            "default": false,
+            "description": "Whether to prompt users to run updates manually via System Preferences.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mpanighetti/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 75
         }
     }
 }
