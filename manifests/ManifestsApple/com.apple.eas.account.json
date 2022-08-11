@@ -43,7 +43,7 @@
         "OAuth": {
             "type": "boolean",
             "title": "Use OAuth",
-            "default": true,
+            "default": false,
             "description": "Specifies whether the connection should use OAuth for authentication.",
             "property_order": 35
         },

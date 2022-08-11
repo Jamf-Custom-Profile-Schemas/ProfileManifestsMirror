@@ -10,7 +10,7 @@
         },
         "BlockAllIncoming": {
             "type": "boolean",
-            "title": "Block all incoming connections",
+            "title": "Block All Incoming Connections",
             "default": false,
             "description": "Blocks all incoming connections except those required for basic Internet services, such as DHCP, Bonjour and IPSec.",
             "property_order": 10
@@ -75,12 +75,12 @@
         },
         "AllowSigned": {
             "type": "boolean",
-            "title": "Allow Signed",
+            "title": "Allow Incoming Connections to macOS-Bundled Software",
             "property_order": 35
         },
         "AllowSignedApp": {
             "type": "boolean",
-            "title": "Allow Signed App",
+            "title": "Allow Incoming Connections to Downloaded Signed Apps",
             "property_order": 40
         }
     }
