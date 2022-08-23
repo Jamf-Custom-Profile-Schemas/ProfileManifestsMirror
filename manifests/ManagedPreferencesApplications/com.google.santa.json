@@ -18,145 +18,274 @@
             },
             "property_order": 5
         },
+        "FailClosed": {
+            "type": "boolean",
+            "title": "Deny on Read Error",
+            "default": false,
+            "description": "Deny execution in LOCKDOWN mode if there is an error reading or processing an executable file.",
+            "property_order": 10
+        },
         "FileChangesRegex": {
             "type": "string",
             "title": "File Changes Regex",
-            "property_order": 10
-        },
-        "WhitelistRegex": {
-            "type": "string",
-            "title": "Allowlist Regex",
+            "description": "Path regexes (ICU format) to monitor for file changes.",
             "property_order": 15
         },
-        "BlacklistRegex": {
+        "AllowedPathRegex": {
             "type": "string",
-            "title": "Denylist Regex",
+            "title": "Allowed Path Regex",
+            "description": "Path regexes (ICU format) of binaries to allow. Lower precedent than binary, certificate, and Team ID scopes.",
             "property_order": 20
+        },
+        "BlockedPathRegex": {
+            "type": "string",
+            "title": "Blocked Path Regex",
+            "description": "Path regexes (ICU format) of binaries to block. Lower precedent than binary, certificate, and Team ID scopes.",
+            "property_order": 25
+        },
+        "EnableBadSignatureProtection": {
+            "type": "boolean",
+            "title": "Bad Signature Protection",
+            "default": false,
+            "description": "Block binaries with a bad signing chain, unless explicitly allowed.",
+            "property_order": 30
         },
         "EnablePageZeroProtection": {
             "type": "boolean",
             "title": "Enable Page Zero Protection",
             "default": true,
-            "property_order": 25
+            "description": "Block 32-bit binaries missing the __PAGEZERO segment, unless explicitly allowed.",
+            "property_order": 35
+        },
+        "EnableSysxCache": {
+            "type": "boolean",
+            "title": "Enable Sysx Cache",
+            "default": true,
+            "description": "Enable secondary cache. Improves performance when multiple EndpointSecurity system extensions are installed.",
+            "property_order": 40
+        },
+        "AboutText": {
+            "type": "string",
+            "title": "About Text",
+            "description": "Custom text to display at launch.",
+            "property_order": 45
         },
         "MoreInfoURL": {
             "type": "string",
             "title": "More Info URL",
-            "property_order": 30
+            "description": "Optional \"More Info...\" link.",
+            "property_order": 50
         },
         "EventDetailURL": {
             "type": "string",
             "title": "Event Detail URL",
-            "description": "%file_sha% - SHA-256 of the file that was blocked\n%machine_id% - ID of the machine\n%username% - The executing user\n%bundle_id% - Bundle ID of the binary, if applicable\n%bundle_ver% - Bundle version of the binary, if applicable",
-            "property_order": 35
+            "description": "The URL to open when the user gets a block notification. If unset, the button will not be displayed. Can include the following variables for substitution:\n%file_identifier% - SHA-256 of the file that was blocked\n%bundle_or_file_identifier% - SHA-256 of the file that was blocked or the bundle containing it, if available\n%file_sha% - Deprecated, acts like bundle_or_file_identifier\n%machine_id% - ID of the machine\n%username% - The executing user\n%serial% - System's serial number\n%uuid% - System's UUID\n%hostname% - System's full hostname",
+            "property_order": 55
         },
         "EventDetailText": {
             "type": "string",
             "title": "Event Detail Text",
-            "property_order": 40
+            "description": "The text of the button for Event Detail URL.",
+            "property_order": 60
         },
         "UnknownBlockMessage": {
             "type": "string",
             "title": "Unknown Block Message",
-            "property_order": 45
+            "description": "Custom message when an unknown binary is blocked.",
+            "property_order": 65
         },
         "BannedBlockMessage": {
             "type": "string",
             "title": "Banned Block Message",
-            "property_order": 50
+            "description": "Custom message when a binary is blocked by a rule.",
+            "property_order": 70
         },
         "ModeNotificationMonitor": {
             "type": "string",
             "title": "Monitor Notification Text",
-            "property_order": 55
+            "description": "Custom message when entering MONITOR mode.",
+            "property_order": 75
         },
         "ModeNotificationLockdown": {
             "type": "string",
             "title": "Lockdown Notification Text",
-            "property_order": 60
+            "description": "Custom message when entering LOCKDOWN mode.",
+            "property_order": 80
         },
         "SyncBaseURL": {
             "type": "string",
             "title": "Sync Server URL",
-            "property_order": 65
+            "property_order": 85
+        },
+        "SyncEnableCleanSyncEventUpload": {
+            "type": "boolean",
+            "title": "Enable Upload Clean Syncs",
+            "default": false,
+            "description": "Upload events to the sync server even if a clean sync is requested.",
+            "property_order": 90
         },
         "ClientAuthCertificateFile": {
             "type": "string",
             "title": "Client Certificate File Path",
             "description": "Location of a PKCS#12 certificate to be used for sync authentication.",
-            "property_order": 70
+            "property_order": 95
         },
         "ClientAuthCertificatePassword": {
             "type": "string",
             "title": "Client Certificate Password",
-            "property_order": 75
+            "property_order": 100
         },
         "ClientAuthCertificateCN": {
             "type": "string",
             "title": "Client Certificate Common Name",
-            "property_order": 80
+            "description": "The Common Name of a certificate in the System keychain to be used for sync authentication.",
+            "property_order": 105
         },
         "ClientAuthCertificateIssuerCN": {
             "type": "string",
             "title": "Client Certificate Issuer Common Name",
             "description": "The Issuer Name of a certificate in the System keychain to be used for sync authentication.",
-            "property_order": 85
+            "property_order": 110
         },
         "ServerAuthRootsFile": {
             "type": "string",
-            "property_order": 90
+            "title": "Server Authentication Certificate Roots (Local)",
+            "description": "Path to an on-disk X.509 certificate (.pem). A valid PEM containing one or more certificates to be used for certificate pinning.",
+            "property_order": 115
         },
         "MachineOwner": {
             "type": "string",
             "title": "Machine Owner",
-            "property_order": 95
+            "property_order": 120
         },
         "MachineID": {
             "type": "string",
             "title": "Machine ID",
-            "property_order": 100
+            "property_order": 125
         },
         "MachineOwnerPlist": {
             "type": "string",
             "title": "Machine Owner Plist",
-            "property_order": 105
+            "description": "The path to a plist that contains the MachineOwnerKey / value pair.",
+            "property_order": 130
         },
         "MachineOwnerKey": {
             "type": "string",
             "title": "Machine Owner Key",
-            "property_order": 110
+            "description": "The key to use on Machine Owner Plist.",
+            "property_order": 135
         },
         "MachineIDPlist": {
             "type": "string",
             "title": "Machine ID Plist",
-            "property_order": 115
+            "description": "The path to a plist that contains the MachineOwnerKey / value pair.",
+            "property_order": 140
         },
         "MachineIDKey": {
             "type": "string",
             "title": "Machine ID Key",
-            "property_order": 120
+            "description": "The key to use on Machine ID Plist.",
+            "property_order": 145
         },
         "EventLogType": {
             "type": "string",
             "title": "Event Log Type",
             "default": "filelog",
+            "description": "syslog: Sent to ASL or ULS (if built with the 10.12 SDK or later); filelog: Sent to a file on disk. Use EventLogPath to specify a path.",
             "enum": [
+                "syslog",
                 "filelog",
-                "syslog"
+                "protobuf",
+                ""
             ],
-            "property_order": 125
+            "options": {
+                "enum_titles": [
+                    "System log",
+                    "File",
+                    "Mail",
+                    "None"
+                ]
+            },
+            "property_order": 150
         },
         "EventLogPath": {
             "type": "string",
             "title": "Event Log Path",
             "default": "/var/db/santa/santa.log",
-            "property_order": 130
+            "property_order": 155
+        },
+        "MailDirectory": {
+            "type": "string",
+            "title": "Mail Directory",
+            "default": "/var/db/santa/mail",
+            "description": "The base directory used to save mail files.",
+            "property_order": 160
+        },
+        "MailDirectoryFileSizeThresholdKB": {
+            "type": "integer",
+            "title": "Mail Max File Size",
+            "default": 100,
+            "description": "Per-file size limit (KB) for files stored in the event log mail directory.",
+            "property_order": 165
+        },
+        "MailDirectorySizeThresholdMB": {
+            "type": "integer",
+            "title": "Mail Max Size",
+            "default": 500,
+            "description": "Total file size limit (MB) for all files stored in the event log mail directory.",
+            "property_order": 170
+        },
+        "MailDirectoryEventMaxFlushTimeSec": {
+            "type": "integer",
+            "title": "Mail Max Event Buffer",
+            "default": 5,
+            "description": "Maximum time (seconds) events will stay buffered in memory before being flushed to disk.",
+            "property_order": 175
         },
         "EnableMachineIDDecoration": {
             "type": "boolean",
             "title": "Enable Machine ID Decoration",
+            "default": false,
             "description": "Appends the MachineID to the end of each log line if enabled.",
-            "property_order": 135
+            "property_order": 180
+        },
+        "MetricFormat": {
+            "type": "string",
+            "title": "Metric Format",
+            "description": "The key to use on Machine ID Plist.",
+            "enum": [
+                "rawjson",
+                "monarchjson",
+                ""
+            ],
+            "options": {
+                "enum_titles": [
+                    "Raw JSON",
+                    "Monarch JSON",
+                    "None"
+                ]
+            },
+            "property_order": 185
+        },
+        "MetricURL": {
+            "type": "string",
+            "title": "Metric URL",
+            "description": "URL describing where monitoring metrics should be exported.",
+            "property_order": 190
+        },
+        "MetricExportInterval": {
+            "type": "integer",
+            "title": "Metric Export Interval",
+            "default": 30,
+            "description": "Time (seconds) between exporting metrics.",
+            "property_order": 195
+        },
+        "MetricExportTimeout": {
+            "type": "integer",
+            "title": "Metric Export Timeout",
+            "default": 30,
+            "description": "Timeout (seconds) for exporting metrics.",
+            "property_order": 200
         }
     }
 }
