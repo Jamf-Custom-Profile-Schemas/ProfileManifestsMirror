@@ -1,0 +1,315 @@
+{
+    "title": "XCreds (com.twocanoes.xcreds)",
+    "description": "XCreds OAuth Settings",
+    "properties": {
+        "clientID": {
+            "type": "string",
+            "title": "Client ID",
+            "description": "The OIDC client id public identifier for the app.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#clientid"
+                }
+            ],
+            "property_order": 5
+        },
+        "clientSecret": {
+            "type": "string",
+            "title": "Client Secret",
+            "description": "Client Secret sometimes required by identity provider.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#clientsecret"
+                }
+            ],
+            "property_order": 10
+        },
+        "CreateAdminUser": {
+            "type": "boolean",
+            "title": "Create User as Admin",
+            "default": false,
+            "description": "When set to true and the user account is created, the user will be a local admin.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#createadminuser"
+                }
+            ],
+            "property_order": 15
+        },
+        "discoveryURL": {
+            "type": "string",
+            "title": "Discovery URL",
+            "default": "https://login.microsoftonline.com/common/.well-known/openid-configuration",
+            "description": "The discovery URL provided by your OIDC / Cloud provider.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#discoveryurl"
+                }
+            ],
+            "property_order": 20
+        },
+        "EnableFDE": {
+            "type": "boolean",
+            "title": "Enable Full Disk Encryption (FDE)",
+            "default": false,
+            "description": "Enabled FDE enabled at first login on APFS disks.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#enablefde"
+                }
+            ],
+            "property_order": 25
+        },
+        "EnableFDERecoveryKey": {
+            "type": "boolean",
+            "title": "Save PRK",
+            "default": false,
+            "description": "Save the Personal Recovery Key (PRK) to disk for the MDM Escrow Service to collect.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#enablefderecoverykey"
+                }
+            ],
+            "property_order": 30
+        },
+        "EnableFDERecoveryKeyPath": {
+            "type": "string",
+            "title": "FDE Recovery Key Path",
+            "description": "Specify a custom path for the recovery key.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#enablefderecoverykeypath"
+                }
+            ],
+            "property_order": 35
+        },
+        "EnableFDERekey": {
+            "type": "boolean",
+            "title": "Enable FDE Rekey",
+            "default": false,
+            "description": "Rotate the Personal Recovery Key (PRK).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#enablefderekey"
+                }
+            ],
+            "property_order": 40
+        },
+        "loginWindowBackgroundImageURL": {
+            "type": "string",
+            "title": "Login Window Background Image URL",
+            "default": "file:///System/Library/Desktop Pictures/Monterey Graphic.heic",
+            "description": "URL to an image to show in the background while logging in.",
+            "pattern": "(https?://|file:///).*",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#loginwindowbackgroundimageurl"
+                }
+            ],
+            "property_order": 45
+        },
+        "passwordChangeURL": {
+            "type": "string",
+            "title": "Password Change URL for Menu",
+            "description": "Add a menu item for changing the password that will open this URL when the menu item is selected.",
+            "pattern": "https?://.*",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#passwordchangeurl"
+                }
+            ],
+            "property_order": 50
+        },
+        "redirectURI": {
+            "type": "string",
+            "title": "Redirect URI",
+            "default": "xcreds://auth/",
+            "description": "URI to redirect to when authentication is complete.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#redirecturi"
+                }
+            ],
+            "property_order": 55
+        },
+        "refreshRateHours": {
+            "type": "integer",
+            "title": "Password Change Check Rate",
+            "default": 3,
+            "description": "Number of hours for checking for password changes. Default is 3 hours. Minimum is 1 hour.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#refreshratehours"
+                }
+            ],
+            "property_order": 60
+        },
+        "scopes": {
+            "type": "string",
+            "title": "Scopes",
+            "default": "profile openid offline_access",
+            "description": "OIDC Scopes",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#scopes"
+                }
+            ],
+            "property_order": 65
+        },
+        "shouldSetGoogleAccessTypeToOffline": {
+            "type": "boolean",
+            "title": "Request Google Refresh Token",
+            "default": false,
+            "description": "When using Google IdP, a refresh token may need be requested in a non-standard way.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldsetgoogleaccesstypetooffline"
+                }
+            ],
+            "property_order": 70
+        },
+        "shouldShowAboutMenu": {
+            "type": "boolean",
+            "title": "Show About Menu",
+            "default": true,
+            "description": "Show the About Menu",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowaboutmenu"
+                }
+            ],
+            "property_order": 75
+        },
+        "shouldShowConfigureWifiButton": {
+            "type": "boolean",
+            "title": "Show Configure WiFi",
+            "default": true,
+            "description": "Show Configure WiFi button in XCreds Login.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowconfigurewifibutton"
+                }
+            ],
+            "property_order": 80
+        },
+        "shouldShowPreferencesOnStart": {
+            "type": "boolean",
+            "title": "Show Preferences on Startup",
+            "default": false,
+            "description": "If no settings are specified, preferences will not be shown on startup.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowpreferencesonstart"
+                }
+            ],
+            "property_order": 85
+        },
+        "shouldShowMacLoginButton": {
+            "type": "boolean",
+            "title": "Show Mac Login Window button",
+            "default": true,
+            "description": "Show the Mac Login Window button in XCreds Login.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowmacloginbutton"
+                }
+            ],
+            "property_order": 90
+        },
+        "shouldShowSupportStatus": {
+            "type": "boolean",
+            "title": "Show Support Status Message",
+            "default": true,
+            "description": "Show message in XCreds Login reminding people to buy support.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowsupportstatus"
+                }
+            ],
+            "property_order": 95
+        },
+        "shouldShowQuitMenu": {
+            "type": "boolean",
+            "title": "Show Quit Menu Item",
+            "default": true,
+            "description": "Show Quit Menu Item in the menu.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowquitmenu"
+                }
+            ],
+            "property_order": 100
+        },
+        "shouldShowVersionInfo": {
+            "type": "boolean",
+            "title": "Show Version and Build Number",
+            "default": true,
+            "description": "Show the version number and build number in the lower left corner of XCreds Login.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowversioninfo"
+                }
+            ],
+            "property_order": 105
+        },
+        "showDebug": {
+            "type": "boolean",
+            "title": "Show Debug Message",
+            "default": false,
+            "description": "Show debug local notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#showdebug"
+                }
+            ],
+            "property_order": 110
+        },
+        "username": {
+            "type": "string",
+            "title": "Local Username",
+            "description": "When a user uses cloud login, XCreds will try and figure out the local username based on the email or other data returned for the IdP. Use this value to force the local username for any cloud login. Provide only the shortname.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#username"
+                }
+            ],
+            "property_order": 115
+        },
+        "verifyPassword": {
+            "type": "boolean",
+            "title": "Verify Cloud Password",
+            "default": true,
+            "description": "Show prompt to verify cloud password before setting keychain and login.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#verifypassword"
+                }
+            ],
+            "property_order": 120
+        }
+    }
+}
