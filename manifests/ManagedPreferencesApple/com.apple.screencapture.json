@@ -6,6 +6,12 @@
             "type": "boolean",
             "title": "Disable Screenshot Drop Shadow",
             "property_order": 5
+        },
+        "location": {
+            "type": "string",
+            "title": "Screenshot Location",
+            "description": "File system path (can start with ~) where screenshots will be saved.",
+            "property_order": 10
         }
     }
 }
