@@ -42,10 +42,10 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "pattern": "^smb:\\/\\/\\S*$"
+                "pattern": "^smb:\\/\\/\\S*\\/.+$"
             },
             "title": "List of Network Shares to Mount",
-            "description": "Array with all network shares. Example: smb://filer.your.domain/share\nNote: %USERNAME% which will be replaced with the login name of the current user.",
+            "description": "Array with all network shares. Example: smb://filer.your.domain/share\nNote: %USERNAME% will be replaced with the login name of the current user.",
             "property_order": 30
         }
     }
