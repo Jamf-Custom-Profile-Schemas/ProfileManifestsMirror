@@ -4838,17 +4838,13 @@
             "property_order": 1525
         },
         "TorDisabled": {
-            "type": "integer",
+            "type": "boolean",
             "title": "Disable Tor",
-            "default": 0,
-            "enum": [
-                0,
-                1
-            ],
+            "default": true,
             "options": {
                 "enum_titles": [
-                    "Tor Enabled",
-                    "Tor Disabled"
+                    "Tor Disabled",
+                    "Tor Enabled"
                 ]
             },
             "property_order": 1530
