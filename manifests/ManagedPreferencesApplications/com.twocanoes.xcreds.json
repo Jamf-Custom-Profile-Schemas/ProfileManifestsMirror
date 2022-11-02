@@ -182,6 +182,19 @@
             ],
             "property_order": 70
         },
+        "shouldShowCloudLoginByDefault": {
+            "type": "boolean",
+            "title": "Show Cloud Login By Default",
+            "default": true,
+            "description": "Determine if the mac login window or the cloud login window is shown by default",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowcloudloginbydefault"
+                }
+            ],
+            "property_order": 75
+        },
         "shouldShowAboutMenu": {
             "type": "boolean",
             "title": "Show About Menu",
@@ -193,7 +206,7 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowaboutmenu"
                 }
             ],
-            "property_order": 75
+            "property_order": 80
         },
         "shouldShowConfigureWifiButton": {
             "type": "boolean",
@@ -206,7 +219,7 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowconfigurewifibutton"
                 }
             ],
-            "property_order": 80
+            "property_order": 85
         },
         "shouldShowPreferencesOnStart": {
             "type": "boolean",
@@ -219,7 +232,7 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowpreferencesonstart"
                 }
             ],
-            "property_order": 85
+            "property_order": 90
         },
         "shouldShowMacLoginButton": {
             "type": "boolean",
@@ -232,7 +245,7 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowmacloginbutton"
                 }
             ],
-            "property_order": 90
+            "property_order": 95
         },
         "shouldShowSupportStatus": {
             "type": "boolean",
@@ -245,7 +258,7 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowsupportstatus"
                 }
             ],
-            "property_order": 95
+            "property_order": 100
         },
         "shouldShowQuitMenu": {
             "type": "boolean",
@@ -258,7 +271,7 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowquitmenu"
                 }
             ],
-            "property_order": 100
+            "property_order": 105
         },
         "shouldShowVersionInfo": {
             "type": "boolean",
@@ -271,7 +284,7 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#shouldshowversioninfo"
                 }
             ],
-            "property_order": 105
+            "property_order": 110
         },
         "showDebug": {
             "type": "boolean",
@@ -284,7 +297,7 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#showdebug"
                 }
             ],
-            "property_order": 110
+            "property_order": 115
         },
         "username": {
             "type": "string",
@@ -296,7 +309,7 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#username"
                 }
             ],
-            "property_order": 115
+            "property_order": 120
         },
         "verifyPassword": {
             "type": "boolean",
@@ -309,7 +322,40 @@
                     "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#verifypassword"
                 }
             ],
-            "property_order": 120
+            "property_order": 125
+        },
+        "idpHostName": {
+            "type": "string",
+            "title": "idpHostName",
+            "description": "hostname of the page that has the password field.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#idphostname"
+                }
+            ],
+            "property_order": 130
+        },
+        "idpHostNames": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "idpHostNames",
+            "description": "array of hostnames of the page that has the password field.",
+            "property_order": 135
+        },
+        "passwordElementID": {
+            "type": "string",
+            "title": "passwordElementID",
+            "description": "password element id of the html element that has the password.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#passwordelementid"
+                }
+            ],
+            "property_order": 140
         }
     }
 }
