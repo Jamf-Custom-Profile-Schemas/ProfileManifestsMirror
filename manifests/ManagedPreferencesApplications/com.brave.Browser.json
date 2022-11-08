@@ -4838,20 +4838,56 @@
             "property_order": 1525
         },
         "TorDisabled": {
-            "type": "integer",
+            "type": "boolean",
             "title": "Disable Tor",
-            "default": 0,
-            "enum": [
-                0,
-                1
+            "default": false,
+            "description": "false = Tor Enabled; true = Tor Disabled",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy"
+                }
             ],
-            "options": {
-                "enum_titles": [
-                    "Tor Enabled",
-                    "Tor Disabled"
-                ]
-            },
             "property_order": 1530
+        },
+        "IPFSEnabled": {
+            "type": "boolean",
+            "title": "Enable IPFS",
+            "default": true,
+            "description": "false = IPFS Disabled; true = IPFS Enabled",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy"
+                }
+            ],
+            "property_order": 1535
+        },
+        "BraveRewardsDisabled": {
+            "type": "boolean",
+            "title": "Disable Brave Rewards",
+            "default": false,
+            "description": "false = Brave Rewards Enabled; true = Brave Rewards Disabled",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy"
+                }
+            ],
+            "property_order": 1540
+        },
+        "BraveWalletDisabled": {
+            "type": "boolean",
+            "title": "Disable Brave Wallet",
+            "default": false,
+            "description": "false = Brave Wallet Enabled; true = Brave Wallet Disabled",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy"
+                }
+            ],
+            "property_order": 1545
         },
         "SUFeedURL": {
             "type": "string",
@@ -4864,7 +4900,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1535
+            "property_order": 1550
         },
         "SUEnableAutomaticChecks": {
             "type": "boolean",
@@ -4877,7 +4913,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1540
+            "property_order": 1555
         },
         "SUScheduledCheckInterval": {
             "type": "integer",
@@ -4890,7 +4926,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1545
+            "property_order": 1560
         },
         "SUAllowsAutomaticUpdates": {
             "type": "boolean",
@@ -4903,7 +4939,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1550
+            "property_order": 1565
         },
         "SUAutomaticallyUpdate": {
             "type": "boolean",
@@ -4916,7 +4952,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1555
+            "property_order": 1570
         }
     }
 }
