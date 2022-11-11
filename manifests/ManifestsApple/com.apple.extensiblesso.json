@@ -89,6 +89,24 @@
                     "default": true,
                     "description": "If false, disables password changes. Available in macOS 10.15 and later."
                 },
+                "usePlatformSSOTGT": {
+                    "type": "boolean",
+                    "title": "Use Platform SSO TGT",
+                    "default": false,
+                    "description": "If true, the configured SSO extension must use a ticket-granting ticket (TGT) from Platform SSO."
+                },
+                "allowPlatformSSOAuthFallback": {
+                    "type": "boolean",
+                    "title": "Allow Platform SSO Authentication Fallback",
+                    "default": true,
+                    "description": "If true, allows manual sign-ins as fallback."
+                },
+                "performKerberosOnly": {
+                    "type": "boolean",
+                    "title": "Perform Kerberos Requests Only",
+                    "default": false,
+                    "description": "If true, the configured extension only handles Kerberos requests and does not check for or show the expiration of the password, does not check external password changes, does not sync passwords, and does not retrieve the user's home directory."
+                },
                 "cacheName": {
                     "type": "string",
                     "title": "Cache Name",
@@ -408,6 +426,28 @@
                 }
             },
             "property_order": 45
+        },
+        "AuthenticationMethod": {
+            "type": "string",
+            "title": "Authentication Method",
+            "description": "Platform SSO authentication method supported and used by the configured SSO extension.",
+            "enum": [
+                "Password",
+                "UserSecureEnclaveKey"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Password",
+                    "User Secure Enclave Key"
+                ]
+            },
+            "property_order": 50
+        },
+        "RegistrationToken": {
+            "type": "string",
+            "title": "Registration Token",
+            "description": "Platform SSO token for use in silent registration.",
+            "property_order": 55
         }
     }
 }

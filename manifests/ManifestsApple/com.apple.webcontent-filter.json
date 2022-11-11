@@ -208,6 +208,12 @@
                 }
             },
             "property_order": 115
+        },
+        "ContentFilterUUID": {
+            "type": "string",
+            "title": "Content Filter UUID",
+            "description": "Global identifier of the content filter configuration in this payload. Used for processing network traffic of managed apps with an identical attribute by the filter.",
+            "property_order": 120
         }
     }
 }

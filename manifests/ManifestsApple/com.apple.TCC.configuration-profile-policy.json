@@ -1294,7 +1294,68 @@
                             }
                         }
                     },
-                    "title": "SystemPolicySysAdminFiles"
+                    "title": "System Policy Sys Admin Files"
+                },
+                "SystemPolicyAppBundles": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Allowed": {
+                                "type": "boolean",
+                                "title": "Allowed",
+                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                                "enum": [
+                                    false,
+                                    true
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Deny",
+                                        "Allow"
+                                    ]
+                                }
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "App Management"
                 }
             },
             "property_order": 5

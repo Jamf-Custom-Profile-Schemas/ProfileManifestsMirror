@@ -109,6 +109,11 @@
                                 "IPv4 and IPv6"
                             ]
                         }
+                    },
+                    "EnableXLAT464": {
+                        "type": "boolean",
+                        "title": "Enable 464XLAT IPv6 and IPv4 Interoperability",
+                        "default": false
                     }
                 }
             },

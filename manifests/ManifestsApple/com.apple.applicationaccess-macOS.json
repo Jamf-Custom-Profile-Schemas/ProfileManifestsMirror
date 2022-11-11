@@ -15,48 +15,61 @@
             ],
             "property_order": 5
         },
+        "allowAirPlayIncomingRequests": {
+            "type": "boolean",
+            "title": "Allow incoming AirPlay requests",
+            "default": true,
+            "property_order": 10
+        },
         "allowPasswordAutoFill": {
             "type": "boolean",
             "title": "Allow password AutoFill",
             "default": true,
-            "property_order": 10
+            "property_order": 15
         },
         "allowAutoUnlock": {
             "type": "boolean",
             "title": "Allow Apple Watch to auto unlock device",
             "default": true,
-            "property_order": 15
+            "property_order": 20
         },
         "allowCamera": {
             "type": "boolean",
             "title": "Allow Camera",
             "default": true,
-            "property_order": 20
+            "property_order": 25
         },
         "allowContentCaching": {
             "type": "boolean",
             "title": "Allow Content Caching",
             "default": true,
             "description": "When false this disallows content caching. Defaults to true. Introduced in macOS 10.13 but moved to the content caching domain in 10.13.4.",
-            "property_order": 25
+            "property_order": 30
         },
         "allowMailPrivacyProtection": {
             "type": "boolean",
             "title": "Allow mail privacy protection",
             "default": true,
-            "property_order": 30
+            "property_order": 35
+        },
+        "allowUniversalControl": {
+            "type": "boolean",
+            "title": "Allow Universal Control",
+            "default": true,
+            "description": "Set to false to prevent sharing mouse and keyboard between a Mac and an iPad",
+            "property_order": 40
         },
         "allowiTunesFileSharing": {
             "type": "boolean",
             "title": "Allow iTunes File Sharing",
             "default": true,
-            "property_order": 35
+            "property_order": 45
         },
         "allowActivityContinuation": {
             "type": "boolean",
             "title": "Allow Handoff",
             "default": true,
-            "property_order": 40
+            "property_order": 50
         },
         "allowDiagnosticSubmission": {
             "type": "boolean",
@@ -69,116 +82,116 @@
                     "href": "https://developer.apple.com/documentation/devicemanagement/restrictions"
                 }
             ],
-            "property_order": 45
+            "property_order": 55
         },
         "allowMusicService": {
             "type": "boolean",
             "title": "Allow Apple Music",
             "default": true,
-            "property_order": 50
+            "property_order": 60
         },
         "allowCloudBTMM": {
             "type": "boolean",
             "title": "Allow iCloud Back to My Mac",
             "default": true,
-            "property_order": 55
+            "property_order": 65
         },
         "allowCloudBookmarks": {
             "type": "boolean",
             "title": "Allow iCloud Bookmarks",
             "default": true,
-            "property_order": 60
+            "property_order": 70
         },
         "allowCloudCalendar": {
             "type": "boolean",
             "title": "Allow iCloud Calendar",
             "default": true,
-            "property_order": 65
+            "property_order": 75
         },
         "allowCloudAddressBook": {
             "type": "boolean",
             "title": "Allow iCloud Contacts",
             "default": true,
-            "property_order": 70
+            "property_order": 80
         },
         "allowCloudDocumentSync": {
             "type": "boolean",
             "title": "Allow iCloud Drive",
             "default": true,
-            "property_order": 75
+            "property_order": 85
         },
         "allowCloudDesktopAndDocuments": {
             "type": "boolean",
             "title": "Allow iCloud Desktop & Documents",
             "default": true,
-            "property_order": 80
+            "property_order": 90
         },
         "allowCloudFMM": {
             "type": "boolean",
             "title": "Allow iCloud Find My Mac",
             "default": true,
-            "property_order": 85
+            "property_order": 95
         },
         "allowCloudKeychainSync": {
             "type": "boolean",
             "title": "Allow iCloud Keychain",
             "default": true,
-            "property_order": 90
+            "property_order": 100
         },
         "allowCloudMail": {
             "type": "boolean",
             "title": "Allow iCloud Mail",
             "default": true,
-            "property_order": 95
+            "property_order": 105
         },
         "allowCloudNotes": {
             "type": "boolean",
             "title": "Allow iCloud Notes",
             "default": true,
-            "property_order": 100
+            "property_order": 110
         },
         "allowCloudPhotoLibrary": {
             "type": "boolean",
             "title": "Allow iCloud Photo Library",
             "default": true,
-            "property_order": 105
+            "property_order": 115
         },
         "allowCloudReminders": {
             "type": "boolean",
             "title": "Allow iCloud Reminders",
             "default": true,
-            "property_order": 110
+            "property_order": 120
         },
         "allowCloudPrivateRelay": {
             "type": "boolean",
             "title": "Allow iCloud Private Relay",
             "default": true,
             "description": "If set to false, prevents the use of iCloud Private Relay.",
-            "property_order": 115
+            "property_order": 125
         },
         "allowSpotlightInternetResults": {
             "type": "boolean",
             "title": "Allow Siri Suggestions",
             "default": true,
-            "property_order": 120
+            "property_order": 130
         },
         "allowEraseContentAndSettings": {
             "type": "boolean",
             "title": "Allow Erase All Content and Settings",
             "default": true,
-            "property_order": 125
+            "property_order": 135
         },
         "allowFingerprintForUnlock": {
             "type": "boolean",
             "title": "Allow Touch ID / Face ID to unlock device",
             "default": true,
-            "property_order": 130
+            "property_order": 140
         },
         "allowDefinitionLookup": {
             "type": "boolean",
             "title": "Allow definition lookup",
             "default": true,
-            "property_order": 135
+            "property_order": 145
         },
         "allowDeprecatedWebKitTLS": {
             "type": "boolean",
@@ -191,135 +204,162 @@
                     "href": "https://docs.jamf.com/10.20.0/jamf-pro/release-notes/What%27s_New.html"
                 }
             ],
-            "property_order": 140
+            "property_order": 150
         },
         "allowGameCenter": {
             "type": "boolean",
             "title": "Allow Game Center",
             "default": true,
-            "property_order": 145
+            "property_order": 155
         },
         "allowAddingGameCenterFriends": {
             "type": "boolean",
             "title": "Allow adding Game Center friends",
             "default": true,
-            "property_order": 150
+            "property_order": 160
         },
         "allowPasswordSharing": {
             "type": "boolean",
             "title": "Allow password sharing",
             "default": true,
-            "property_order": 155
+            "property_order": 165
         },
         "allowAirPrintiBeaconDiscovery": {
             "type": "boolean",
             "title": "Allow discovery of AirPrint printers using iBeacons",
             "default": true,
-            "property_order": 160
+            "property_order": 170
         },
         "forceAirPrintTrustedTLSRequirement": {
             "type": "boolean",
             "title": "Disallow AirPrint to destinations with untrusted certificates",
             "default": false,
-            "property_order": 165
+            "property_order": 175
         },
         "allowScreenShot": {
             "type": "boolean",
             "title": "Allow screenshots and screen recording",
             "default": true,
-            "property_order": 170
+            "property_order": 180
+        },
+        "allowUIConfigurationProfileInstallation": {
+            "type": "boolean",
+            "title": "Allow user installation of configuration profiles",
+            "default": true,
+            "property_order": 185
         },
         "allowRemoteScreenObservation": {
             "type": "boolean",
             "title": "Allow AirPlay and View Screen by Classroom app",
             "default": true,
             "description": "If 'Allow Screenshots and Screen Recording' is set to 'false', it also overrides this preference and prevents the Classroom app from observing remote screens.",
-            "property_order": 175
+            "property_order": 190
         },
         "forceClassroomUnpromptedScreenObservation": {
             "type": "boolean",
             "title": "Allow Classroom app to perform AirPlay and View Screen without prompting",
             "default": false,
             "description": "If Allow screenshots and screen recording is set to 'false' or Allow AirPlay and View Screen by Classroom app, they also override this preference and prevents the Classroom app from unprompted remote AirPlay and view screens.\n\nAdditionally, if set to true and ScreenObservationPermissionModificationAllowed is also true in the Education payload, a student enrolled in a managed course via the Classroom app will automatically give permission to that course's teacher's requests to observe the student's screen without prompting the student.",
-            "property_order": 180
+            "property_order": 195
         },
         "forceClassroomUnpromptedAppAndDeviceLock": {
             "type": "boolean",
             "title": "Allow Classroom to lock apps or the device without prompting",
             "default": false,
-            "property_order": 185
+            "property_order": 200
         },
         "forceClassroomAutomaticallyJoinClasses": {
             "type": "boolean",
             "title": "Automatically join Classroom classes without prompting",
             "default": false,
-            "property_order": 190
+            "property_order": 205
         },
         "forceClassroomRequestPermissionToLeaveClasses": {
             "type": "boolean",
             "title": "Require teacher permission to leave Classroom app unmanaged classes",
             "default": false,
-            "property_order": 195
+            "property_order": 210
         },
         "allowPasswordProximityRequests": {
             "type": "boolean",
             "title": "Allow proximity based password sharing requests",
             "default": true,
-            "property_order": 200
+            "property_order": 215
+        },
+        "allowUSBRestrictedMode": {
+            "type": "boolean",
+            "title": "Allow USB accessories while device is locked",
+            "default": true,
+            "description": "Set to false to allow new USB accessories to connect to a Mac without authorization",
+            "property_order": 220
         },
         "forceDelayedSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer OS Software Updates",
             "default": false,
-            "property_order": 205
+            "property_order": 225
+        },
+        "allowRapidSecurityResponseInstallation": {
+            "type": "boolean",
+            "title": "Allow rapid security response installation",
+            "default": true,
+            "description": "Set to false to prevent the installation of rapid security responses",
+            "property_order": 230
+        },
+        "allowRapidSecurityResponseRemoval": {
+            "type": "boolean",
+            "title": "Allow rapid security response removal",
+            "default": true,
+            "description": "Set to false to prevent the removal of rapid security responses",
+            "property_order": 235
         },
         "enforcedSoftwareUpdateMinorOSDeferredInstallDelay": {
             "type": "integer",
             "title": "Deferred Minor Software Updates Delay",
             "default": 30,
             "description": "Number of days minor software updates will be hidden from the user.",
-            "property_order": 210
+            "property_order": 240
         },
         "forceDelayedAppSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer non-OS Software Updates",
             "default": false,
             "description": "If true, delays user visibility of non-OS Software Updates. Requires a supervised device.",
-            "property_order": 215
+            "property_order": 245
         },
         "enforcedSoftwareUpdateDelay": {
             "type": "integer",
             "title": "Deferred Software Updates Delay",
             "default": 30,
             "description": "Number of days the software updates will be hidden from the user.",
-            "property_order": 220
+            "property_order": 250
         },
         "enforcedSoftwareUpdateNonOSDeferredInstallDelay": {
             "type": "integer",
             "title": "Deferred non-OS Software Updates Delay",
             "default": 30,
             "description": "Number of days non-OS software updates will be hidden from the user.",
-            "property_order": 225
+            "property_order": 255
         },
         "forceDelayedMajorSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer Major OS Software Updates",
             "default": false,
-            "property_order": 230
+            "property_order": 260
         },
         "enforcedSoftwareUpdateMajorOSDeferredInstallDelay": {
             "type": "integer",
             "title": "Deferred Major Software Updates Delay",
             "default": 30,
             "description": "Number of days major software updates will be hidden from the user.",
-            "property_order": 235
+            "property_order": 265
         },
         "enforcedFingerprintTimeout": {
             "type": "integer",
             "title": "Enforced Fingerprint Timeout",
             "default": 172800,
             "description": "Period of time in seconds after which the device will require entry of password or passcode to unlock.",
-            "property_order": 240
+            "property_order": 270
         }
     }
 }

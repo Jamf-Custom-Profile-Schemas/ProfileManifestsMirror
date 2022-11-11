@@ -19,6 +19,12 @@
             "title": "Provider Custom Configuration",
             "description": "A plist formatted dictionary of custom options.",
             "property_order": 15
+        },
+        "DNSProxyUUID": {
+            "type": "string",
+            "title": "DNS Proxy UUID",
+            "description": "Global identifier of the proxy configuration in this payload. Used for processing DNS requests of managed apps with an identical attribute by the proxy.",
+            "property_order": 20
         }
     }
 }

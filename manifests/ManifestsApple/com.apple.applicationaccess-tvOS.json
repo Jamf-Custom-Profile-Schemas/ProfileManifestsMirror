@@ -234,7 +234,7 @@
         },
         "allowAirPlayIncomingRequests": {
             "type": "boolean",
-            "title": "Allow AirPlay",
+            "title": "Allow incoming AirPlay requests",
             "default": true,
             "property_order": 85
         },

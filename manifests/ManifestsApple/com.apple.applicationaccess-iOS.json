@@ -1003,33 +1003,47 @@
             "description": "Number of days the software updates will be hidden from the user.",
             "property_order": 675
         },
+        "allowRapidSecurityResponseInstallation": {
+            "type": "boolean",
+            "title": "Allow rapid security response installation",
+            "default": true,
+            "description": "Set to false to prevent the installation of rapid security responses",
+            "property_order": 680
+        },
+        "allowRapidSecurityResponseRemoval": {
+            "type": "boolean",
+            "title": "Allow rapid security response removal",
+            "default": true,
+            "description": "Set to false to prevent the removal of rapid security responses",
+            "property_order": 685
+        },
         "allowFindMyDevice": {
             "type": "boolean",
             "title": "Allow Find My Devices",
             "default": true,
             "description": "Allows disabling Find My Device in the Find My app",
-            "property_order": 680
+            "property_order": 690
         },
         "allowFindMyFriends": {
             "type": "boolean",
             "title": "Allow Find My Friends",
             "default": true,
             "description": "Allows disabling Find My Friends in the Find My app",
-            "property_order": 685
+            "property_order": 695
         },
         "allowFilesNetworkDriveAccess": {
             "type": "boolean",
             "title": "Allow Files Network Drive Access",
             "default": true,
             "description": "Allows preventing connection to network drives in the Files app",
-            "property_order": 690
+            "property_order": 700
         },
         "enforcedFingerprintTimeout": {
             "type": "integer",
             "title": "Enforced Fingerprint Timeout",
             "default": 172800,
             "description": "Period of time in seconds after which the device will require entry of password or passcode to unlock. The default value is 172800 seconds, which are 48 hours.",
-            "property_order": 695
+            "property_order": 705
         }
     }
 }
