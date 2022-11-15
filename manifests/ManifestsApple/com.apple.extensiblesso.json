@@ -44,6 +44,7 @@
                 "title": "URL",
                 "pattern": "^https?://.*"
             },
+            "title": "URLs",
             "description": "The realm name for Credential payloads. This value should be properly capitalized. This key is ignored for Redirect payloads.",
             "property_order": 30
         },

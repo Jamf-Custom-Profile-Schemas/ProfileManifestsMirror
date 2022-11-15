@@ -141,43 +141,7 @@
             "property_order": 45
         },
         "UserPrinterList": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "title": "Printer",
-                "description": "A printer item in the printer list",
-                "properties": {
-                    "DisplayName": {
-                        "type": "string",
-                        "title": "Display Name",
-                        "description": "The display name."
-                    },
-                    "DeviceURI": {
-                        "type": "string",
-                        "title": "IP / Hostname",
-                        "description": "The device URI."
-                    },
-                    "Location": {
-                        "type": "string",
-                        "description": "The printer's location."
-                    },
-                    "Model": {
-                        "type": "string",
-                        "description": "The printer's model."
-                    },
-                    "PPDURL": {
-                        "type": "string",
-                        "title": "PPD Location",
-                        "description": "The printer's PPDURL."
-                    },
-                    "PrinterLocked": {
-                        "type": "boolean",
-                        "title": "Locked?",
-                        "default": false,
-                        "description": "If true, locks the printer."
-                    }
-                }
-            },
+            "type": "object",
             "title": "User Printer List",
             "description": "The printers available to a user.",
             "links": [
@@ -186,6 +150,44 @@
                     "href": "https://developer.apple.com/documentation/devicemanagement/printing"
                 }
             ],
+            "properties": {
+                "Printer": {
+                    "type": "object",
+                    "title": "Printer",
+                    "description": "A printer item in the printer list",
+                    "properties": {
+                        "DisplayName": {
+                            "type": "string",
+                            "title": "Display Name",
+                            "description": "The display name."
+                        },
+                        "DeviceURI": {
+                            "type": "string",
+                            "title": "IP / Hostname",
+                            "description": "The device URI."
+                        },
+                        "Location": {
+                            "type": "string",
+                            "description": "The printer's location."
+                        },
+                        "Model": {
+                            "type": "string",
+                            "description": "The printer's model."
+                        },
+                        "PPDURL": {
+                            "type": "string",
+                            "title": "PPD Location",
+                            "description": "The printer's PPDURL."
+                        },
+                        "PrinterLocked": {
+                            "type": "boolean",
+                            "title": "Locked?",
+                            "default": false,
+                            "description": "If true, locks the printer."
+                        }
+                    }
+                }
+            },
             "property_order": 50
         }
     }

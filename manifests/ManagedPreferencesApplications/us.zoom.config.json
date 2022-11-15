@@ -44,9 +44,9 @@
         },
         "EnableAppleLogin": {
             "type": "boolean",
-            "title": "Allow Apple Login",
+            "title": "Enable Sign in with Apple",
             "default": true,
-            "description": "Allow access to Apple login option",
+            "description": "Enable the Apple login option",
             "property_order": 35
         },
         "NoSSO": {
