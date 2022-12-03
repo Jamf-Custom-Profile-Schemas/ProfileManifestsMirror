@@ -96,29 +96,36 @@
             "description": "When using Copy to clipboard on MS Office files synced by Drive for desktop, create links that open in the respective Google Docs Editor instead of the read only Google Drive web preview.",
             "property_order": 75
         },
+        "PromptToBackupDevices": {
+            "type": "boolean",
+            "title": "Prompt to back up devices",
+            "default": true,
+            "description": "Enable Prompt me to back up devices setting.",
+            "property_order": 80
+        },
         "DirectConnection": {
             "type": "boolean",
             "title": "Direct Connection",
             "description": "This bypasses proxy configurations. ",
-            "property_order": 80
+            "property_order": 85
         },
         "DisableCRLCheck": {
             "type": "boolean",
             "title": "Disable CRL Check",
             "description": "This disables checking Certificate Revocation Lists (CRLs) provided by certificate authorities. If not explicitly set, this defaults to true if TrustedRootCertsFile is provided, otherwise false.",
-            "property_order": 85
+            "property_order": 90
         },
         "DisableSSLValidation": {
             "type": "boolean",
             "title": "Disable SSL Validation",
             "description": "This disables validating SSL traffic. Traffic will still be encrypted, but we will not validate that the SSL certificates of the upstream servers are all valid.",
-            "property_order": 90
+            "property_order": 95
         },
         "TrustedRootCertsFile": {
             "type": "string",
             "title": "Trusted Root Certs File",
             "description": "This is the full path to an alternate file to use for validating host SSL certificates. It must be in Privacy Enhanced Mail (PEM) format. Set this if your users are on networks with decrypting proxies.",
-            "property_order": 95
+            "property_order": 100
         }
     }
 }
