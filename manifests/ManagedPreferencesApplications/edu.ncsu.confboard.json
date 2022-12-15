@@ -1,0 +1,120 @@
+{
+    "title": "ConfBoard (edu.ncsu.confboard)",
+    "description": "ConfBoard Settings",
+    "properties": {
+        "baseURL": {
+            "type": "string",
+            "title": "URL",
+            "default": "https://storage.googleapis.com/confboard",
+            "description": "The base URL to the folder containing the images.txt file or JSON information. Do NOT include trailing backslash.",
+            "pattern": "^https://.*[^/]$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://go.ncsu.edu/confboard#h.b53vj55iw28d"
+                }
+            ],
+            "property_order": 5
+        },
+        "shouldUseJSON": {
+            "type": "boolean",
+            "title": "Use ConfBoard JSON data file",
+            "default": false,
+            "description": "Base URL is a JSON file or feed not text list of URIs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://go.ncsu.edu/confboard#h.as2mra9pviie"
+                }
+            ],
+            "property_order": 10
+        },
+        "shouldDisplayName": {
+            "type": "boolean",
+            "title": "Display Device Name",
+            "default": false,
+            "description": "Show name of device on screen",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://go.ncsu.edu/confboard#h.8bfb1vc4d0zo"
+                }
+            ],
+            "property_order": 15
+        },
+        "groupLabel": {
+            "type": "string",
+            "title": "Group Label",
+            "description": "String to be added after the baseURL.  Using images.txt this adds after the baseURL and before images.txt.  Using JSON this adds after the baseURL. Can be used to specify a folder on web server with different images.txt or as ? parameter string for JSON feed. ",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://go.ncsu.edu/confboard#h.8tq6r5jg8sne"
+                }
+            ],
+            "property_order": 20
+        },
+        "reloadContentTimer": {
+            "type": "integer",
+            "title": "Reload Image List Time",
+            "default": 720,
+            "description": "Time between reloading the list of image links",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://go.ncsu.edu/confboard#h.97mek2dcu8c"
+                }
+            ],
+            "enum": [
+                30,
+                60,
+                120,
+                240,
+                480,
+                720,
+                1440
+            ],
+            "options": {
+                "enum_titles": [
+                    "30 Minutes",
+                    "1 Hour",
+                    "2 Hours",
+                    "4 Hours",
+                    "8 Hours",
+                    "12 Hours",
+                    "24 Hours"
+                ]
+            },
+            "property_order": 25
+        },
+        "rotateImageTimer": {
+            "type": "integer",
+            "title": "Image Rotation Time",
+            "default": 10,
+            "description": "Time each image will stay on screen.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://go.ncsu.edu/confboard#h.wzrbt7u86mlv"
+                }
+            ],
+            "enum": [
+                10,
+                30,
+                60,
+                120,
+                300
+            ],
+            "options": {
+                "enum_titles": [
+                    "10 Seconds",
+                    "30 Seconds",
+                    "1 Minute",
+                    "2 Minutes",
+                    "5 Minutes"
+                ]
+            },
+            "property_order": 30
+        }
+    }
+}
