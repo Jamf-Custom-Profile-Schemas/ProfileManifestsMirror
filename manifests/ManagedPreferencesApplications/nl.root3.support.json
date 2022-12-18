@@ -4,71 +4,100 @@
     "properties": {
         "Title": {
             "type": "string",
+            "title": "Title",
             "default": "Support",
             "description": "Text shown in the top left corner when the app opens.",
             "property_order": 5
         },
         "Logo": {
             "type": "string",
+            "title": "Light Mode Logo",
             "description": "Path to the logo shown in the top right corner when the app opens. Scales to 48 points maximum height.",
             "property_order": 10
         },
         "LogoDarkMode": {
             "type": "string",
+            "title": "Dark Mode Logo",
             "description": "Path to the logo shown in the top right corner when the app opens for Dark Mode. Scales to 48 points maximum height.",
             "property_order": 15
+        },
+        "NotificationIcon": {
+            "type": "string",
+            "title": "Notification Icon",
+            "description": "Path to a custom square image to be shown in alerts and the about window.",
+            "property_order": 20
         },
         "StatusBarIcon": {
             "type": "string",
             "title": "Status Bar Icon",
             "description": "Path to the status bar icon shown in the menu bar. Recommended: PNG, 16x16 points",
-            "property_order": 20
+            "property_order": 25
         },
         "StatusBarIconSFSymbol": {
             "type": "string",
             "title": "Status Bar SF Symbol Icon",
             "description": "Custom status bar icon using an SF Symbol. Ignored when StatusBarIcon is also set.",
-            "property_order": 25
+            "property_order": 30
         },
         "StatusBarIconNotifierEnabled": {
             "type": "boolean",
             "title": "Enable Status Bar Software Update Notifier",
             "default": false,
             "description": "Shows a small notification badge in the Status Bar icon when there is an Apple Software Update available.",
-            "property_order": 30
+            "property_order": 35
         },
         "CustomColor": {
             "type": "string",
             "title": "macOS Accent Color",
             "description": "Custom color in HEX for all symbols. Leave empty to use macOS Accent Color.",
-            "property_order": 35
+            "property_order": 40
         },
         "CustomColorDarkMode": {
             "type": "string",
             "title": "macOS Dark Mode Accent Color",
             "description": "Custom color in HEX for all symbols in Dark Mode. Leave empty to use macOS Accent Color or CustomColor if specified.",
-            "property_order": 40
+            "property_order": 45
         },
         "HideFirstRow": {
             "type": "boolean",
             "title": "Hide First Row",
             "default": false,
             "description": "Hides the first row of configurable items.",
-            "property_order": 45
+            "property_order": 50
         },
         "HideSecondRow": {
             "type": "boolean",
             "title": "Hide Second Row",
             "default": false,
             "description": "Hides the second row of configurable items.",
-            "property_order": 50
+            "property_order": 55
         },
         "ErrorMessage": {
             "type": "string",
             "title": "Error Message",
             "default": "Please contact IT",
             "description": "Shown when clicking an action that results in an error.",
-            "property_order": 55
+            "property_order": 60
+        },
+        "ShowWelcomeScreen": {
+            "type": "boolean",
+            "title": "Show Welcome Screen",
+            "default": false,
+            "description": "Shows the welcome screen when the Support App is opened for the first time.",
+            "property_order": 65
+        },
+        "FooterText": {
+            "type": "string",
+            "title": "Footer Text",
+            "description": "Text shown at the bottom as footnote",
+            "property_order": 70
+        },
+        "OpenAtLogin": {
+            "type": "boolean",
+            "title": "Open At Login",
+            "default": true,
+            "description": "Launch Support automatically at login and keep it open (macOS 13 and higher). This setting is ignored if a legacy LaunchAgent is installed/active. Disable this if you don't want to open Support at login or use your own LaunchAgent",
+            "property_order": 75
         },
         "InfoItemOne": {
             "type": "string",
@@ -93,7 +122,7 @@
                     "Uptime"
                 ]
             },
-            "property_order": 60
+            "property_order": 80
         },
         "InfoItemTwo": {
             "type": "string",
@@ -118,7 +147,7 @@
                     "Uptime"
                 ]
             },
-            "property_order": 65
+            "property_order": 85
         },
         "InfoItemThree": {
             "type": "string",
@@ -143,7 +172,7 @@
                     "Uptime"
                 ]
             },
-            "property_order": 70
+            "property_order": 90
         },
         "InfoItemFour": {
             "type": "string",
@@ -168,48 +197,98 @@
                     "Uptime"
                 ]
             },
-            "property_order": 75
+            "property_order": 95
+        },
+        "InfoItemFive": {
+            "type": "string",
+            "title": "Info Item 5",
+            "default": "Storage",
+            "description": "Info item shown in the third row left.",
+            "enum": [
+                "ComputerName",
+                "MacOSVersion",
+                "Network",
+                "Password",
+                "Storage",
+                "Uptime"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Computer Name",
+                    "macOS Version",
+                    "Network",
+                    "Password",
+                    "Storage",
+                    "Uptime"
+                ]
+            },
+            "property_order": 100
+        },
+        "InfoItemSix": {
+            "type": "string",
+            "title": "Info Item 6",
+            "default": "Storage",
+            "description": "Info item shown in the third row right.",
+            "enum": [
+                "ComputerName",
+                "MacOSVersion",
+                "Network",
+                "Password",
+                "Storage",
+                "Uptime"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Computer Name",
+                    "macOS Version",
+                    "Network",
+                    "Password",
+                    "Storage",
+                    "Uptime"
+                ]
+            },
+            "property_order": 105
         },
         "UptimeDaysLimit": {
             "type": "integer",
             "title": "Computer Uptime Limit",
             "default": 0,
-            "description": "Info item shown in the second row right.",
-            "property_order": 80
+            "description": "Days of uptime after which a notification badge is shown, disabled by default",
+            "property_order": 110
         },
         "PasswordExpiryLimit": {
             "type": "integer",
             "title": "Password Expiration Limit",
             "default": 0,
-            "description": "Days of uptime after which a notification badge is shown, disabled by default.",
-            "property_order": 85
+            "description": "Days until password expiry after which a notification badge is shown, disabled by default",
+            "property_order": 115
         },
         "PasswordLabel": {
             "type": "string",
             "title": "Password Label",
             "default": "Mac Password",
             "description": "Alternative text label shown in the Password info item.",
-            "property_order": 90
+            "property_order": 120
         },
         "StorageLimit": {
             "type": "integer",
             "title": "Storage Limit",
             "default": 0,
             "description": "Percentage of storage used after which a notification badge is shown, disabled by default.",
-            "property_order": 95
+            "property_order": 125
         },
         "FirstRowTitleLeft": {
             "type": "string",
             "title": "First Row Left Title",
             "default": "Remote Support",
             "description": "The text shown in the button label.",
-            "property_order": 100
+            "property_order": 130
         },
         "FirstRowSubtitleLeft": {
             "type": "string",
             "title": "First Row Left Subtitle",
             "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
-            "property_order": 105
+            "property_order": 135
         },
         "FirstRowTypeLeft": {
             "type": "string",
@@ -220,34 +299,72 @@
                 "Command",
                 "URL"
             ],
-            "property_order": 110
+            "property_order": 140
         },
         "FirstRowLinkLeft": {
             "type": "string",
             "title": "First Row Left Link",
             "default": "com.apple.ScreenSharing",
             "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
-            "property_order": 115
+            "property_order": 145
         },
         "FirstRowSymbolLeft": {
             "type": "string",
             "title": "First Row Left Symbol",
             "default": "cursorarrow",
             "description": "The SF Symbol shown in the button.",
-            "property_order": 120
+            "property_order": 150
+        },
+        "FirstRowTitleMiddle": {
+            "type": "string",
+            "title": "First Row Middle Title",
+            "default": "Company Store",
+            "description": "The text shown in the button label.",
+            "property_order": 155
+        },
+        "FirstRowSubtitleMiddle": {
+            "type": "string",
+            "title": "First Row Middle Subtitle",
+            "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
+            "property_order": 160
+        },
+        "FirstRowTypeMiddle": {
+            "type": "string",
+            "title": "First Row Middle Link Type",
+            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "enum": [
+                "App",
+                "Command",
+                "URL"
+            ],
+            "property_order": 165
+        },
+        "FirstRowLinkMiddle": {
+            "type": "string",
+            "title": "First Row Middle Link",
+            "default": "com.apple.ScreenSharing",
+            "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
+            "property_order": 170
+        },
+        "FirstRowSymbolMiddle": {
+            "type": "string",
+            "title": "First Row Middle Symbol",
+            "default": "cart.fill",
+            "description": "The SF Symbol shown in the button.",
+            "property_order": 175
         },
         "FirstRowTitleRight": {
             "type": "string",
             "title": "First Row Right Title",
             "default": "Company Store",
             "description": "The text shown in the button label.",
-            "property_order": 125
+            "property_order": 180
         },
         "FirstRowSubtitleRight": {
             "type": "string",
             "title": "First Row Right Subtitle",
             "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
-            "property_order": 130
+            "property_order": 185
         },
         "FirstRowTypeRight": {
             "type": "string",
@@ -258,34 +375,34 @@
                 "Command",
                 "URL"
             ],
-            "property_order": 135
+            "property_order": 190
         },
         "FirstRowLinkRight": {
             "type": "string",
             "title": "First Row Right Link",
             "default": "com.apple.ScreenSharing",
             "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
-            "property_order": 140
+            "property_order": 195
         },
         "FirstRowSymbolRight": {
             "type": "string",
             "title": "First Row Right Symbol",
             "default": "cart.fill",
             "description": "The SF Symbol shown in the button.",
-            "property_order": 145
+            "property_order": 200
         },
         "SecondRowTitleLeft": {
             "type": "string",
             "title": "Second Row Left Title",
             "default": "Support Ticket",
             "description": "The text shown in the button label.",
-            "property_order": 150
+            "property_order": 205
         },
         "SecondRowSubtitleLeft": {
             "type": "string",
             "title": "Second Row Left Subtitle",
             "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
-            "property_order": 155
+            "property_order": 210
         },
         "SecondRowTypeLeft": {
             "type": "string",
@@ -296,34 +413,34 @@
                 "Command",
                 "URL"
             ],
-            "property_order": 160
+            "property_order": 215
         },
         "SecondRowLinkLeft": {
             "type": "string",
             "title": "Second Row Left Link",
             "default": "com.apple.ScreenSharing",
             "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
-            "property_order": 165
+            "property_order": 220
         },
         "SecondRowSymbolLeft": {
             "type": "string",
             "title": "Second Row Left Symbol",
             "default": "ticket",
             "description": "The SF Symbol shown in the button.",
-            "property_order": 170
+            "property_order": 225
         },
         "SecondRowTitleMiddle": {
             "type": "string",
             "title": "Second Row Middle Title",
             "default": "Email",
             "description": "The text shown in the button label.",
-            "property_order": 175
+            "property_order": 230
         },
         "SecondRowSubtitleMiddle": {
             "type": "string",
             "title": "Second Row Middle Subtitle",
             "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
-            "property_order": 180
+            "property_order": 235
         },
         "SecondRowTypeMiddle": {
             "type": "string",
@@ -334,34 +451,34 @@
                 "Command",
                 "URL"
             ],
-            "property_order": 185
+            "property_order": 240
         },
         "SecondRowLinkMiddle": {
             "type": "string",
             "title": "Second Row Middle Link",
             "default": "com.apple.ScreenSharing",
             "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
-            "property_order": 190
+            "property_order": 245
         },
         "SecondRowSymbolMiddle": {
             "type": "string",
             "title": "Second Row Middle Symbol",
             "default": "envelope",
             "description": "The SF Symbol shown in the button.",
-            "property_order": 195
+            "property_order": 250
         },
         "SecondRowTitleRight": {
             "type": "string",
             "title": "Second Row Right Title",
             "default": "Phone",
             "description": "The text shown in the button label.",
-            "property_order": 200
+            "property_order": 255
         },
         "SecondRowSubtitleRight": {
             "type": "string",
             "title": "Second Row Right Subtitle",
             "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
-            "property_order": 205
+            "property_order": 260
         },
         "SecondRowTypeRight": {
             "type": "string",
@@ -372,21 +489,21 @@
                 "Command",
                 "URL"
             ],
-            "property_order": 210
+            "property_order": 265
         },
         "SecondRowLinkRight": {
             "type": "string",
             "title": "Second Row Right Link",
             "default": "com.apple.ScreenSharing",
             "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
-            "property_order": 215
+            "property_order": 270
         },
         "SecondRowSymbolRight": {
             "type": "string",
             "title": "Second Row Right Symbol",
             "default": "phone",
             "description": "The SF Symbol shown in the button.",
-            "property_order": 220
+            "property_order": 275
         }
     }
 }
