@@ -12,13 +12,13 @@
         "ZSSOHost": {
             "type": "string",
             "title": "SSO URL",
-            "description": "Preconfigured SSO URL",
+            "description": "Set the default SSO URL for SSO login. If your Zoom login URL were myorg.zoom.us, the value for this preference would be 'myorg'.",
             "property_order": 10
         },
         "ForceSSOURL": {
             "type": "string",
             "title": "Lock SSO URL",
-            "description": "Configures and locks the SSO URL",
+            "description": "Set and lock the default SSO URL for SSO login. If your Zoom login URL were myorg.zoom.us, the value for this preference would be 'myorg'.",
             "property_order": 15
         },
         "DisableAutoLaunchSSO": {
@@ -59,7 +59,8 @@
         "DisableLoginWithEmail": {
             "type": "boolean",
             "title": "Disable Email Login",
-            "default": true,
+            "default": false,
+            "description": "Remove Email login option",
             "property_order": 45
         },
         "DisableKeepSignedInWithFacebook": {
@@ -88,12 +89,13 @@
             "title": "Set Default Web Domain",
             "default": "https://zoom.us",
             "description": "Sets the web domain for logging in or joining a meeting. By default, the value is https://zoom.us or https://zoom.com",
+            "pattern": "^https://.*$",
             "property_order": 65
         },
         "Login_Domain": {
             "type": "string",
             "title": "Login Domain",
-            "description": "Set the email address domain that users can login with",
+            "description": "Set the email address domains that users can login with, each separated by '&'",
             "property_order": 70
         },
         "LastLoginType": {
@@ -110,30 +112,183 @@
             "description": "Client automatically logs in to the last email account used",
             "property_order": 80
         },
+        "AU2_EnableAutoUpdate": {
+            "type": "boolean",
+            "title": "Enable Updates",
+            "default": true,
+            "description": "Enable auto updates through the client",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 85
+        },
+        "AU2_SetUpdateChannel": {
+            "type": "boolean",
+            "title": "Update Channel",
+            "default": false,
+            "description": "Set the cadence of updates applied to the desktop client",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "enum": [
+                false,
+                true
+            ],
+            "options": {
+                "enum_titles": [
+                    "Slow (fewer updates, better stability)",
+                    "Fast (newest features and updates)"
+                ]
+            },
+            "property_order": 90
+        },
+        "AU2_EnableShowZoomUpdates": {
+            "type": "boolean",
+            "title": "Show Zoom Updates",
+            "default": true,
+            "description": "Show the Zoom Updates section of the General tab in client settings",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 95
+        },
+        "AU2_EnableUpdateAvailableBanner": {
+            "type": "boolean",
+            "title": "Display Banner for Available Updates",
+            "default": true,
+            "description": "Show the Update Available banner on the Home tab of the client, when an update is available",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 100
+        },
+        "AU2_EnablePromptUpdateForAU2": {
+            "type": "boolean",
+            "title": "Prompt for Updates on Leave",
+            "default": false,
+            "description": "Prompt users to update when exiting a meeting or webinar, when an update is available",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 105
+        },
+        "AU2_EnableUpdateSuccessNotification": {
+            "type": "boolean",
+            "title": "Notify on Successful Update Install",
+            "default": true,
+            "description": "Show notification indicating an update has been successfully installed",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 110
+        },
+        "AU2_EnableManualUpdate": {
+            "type": "boolean",
+            "title": "Allow Manual Update Checks",
+            "default": true,
+            "description": "Control the visibility of the Check for Updates option in the client",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 115
+        },
+        "AU2_DeploySpecificVersion": {
+            "type": "string",
+            "title": "Deploy Specific Zoom Version",
+            "description": "Download and install the specified version if the currently installed version is below that version. Format should be the official version without spaces or parentheses",
+            "pattern": "^[^\\.][\\d.]+[^\\.]$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 120
+        },
+        "AU2_SetUpdateSchedule": {
+            "type": "string",
+            "title": "Set Update Schedule Window",
+            "description": "Timeframe to download an available update version. Update is then initiated by the user through prompt, or during idle time or the specified safe upgrade period",
+            "pattern": "^\\d{4}-\\d{4}$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 125
+        },
+        "AU2_InstallAtIdleTime": {
+            "type": "boolean",
+            "title": "Auto Install Updates When Idle",
+            "default": false,
+            "description": "Auto install an available update when the device is idle",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 130
+        },
+        "AU2_SafeUpgradePeriod": {
+            "type": "string",
+            "title": "Set Update Install Schedule Window",
+            "description": "Set to install updates within a given time period. Requires AU2_InstallAtIdleTime be enabled",
+            "pattern": "^\\d{4}-\\d{4}$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                }
+            ],
+            "property_order": 135
+        },
         "ZAutoUpdate": {
             "type": "boolean",
             "title": "Enable Updates",
             "default": false,
             "description": "Allow users to check for updates through the Zoom client. If set to 'false', the 'Check for Updates' button is hidden.",
-            "property_order": 85
+            "property_order": 140
         },
         "EnableSilentAutoUpdate": {
             "type": "boolean",
             "title": "Enable Silent Auto Updates",
             "default": true,
             "description": "Allows the Zoom client to silently check for available stable version updates. This option requires zAutoUpdate option to be enabled, and will fail if not enabled.",
-            "property_order": 90
+            "property_order": 145
         },
         "AlwaysCheckLatestVersion": {
             "type": "boolean",
             "title": "Allow Zoom to Check for Updates Automatically",
             "default": false,
             "description": "Allows the desktop client to check for any available updates. This option requires zAutoUpdate option to be enabled, and will fail if not enabled.",
-            "property_order": 95
+            "property_order": 150
         },
         "SetUpdatingChannel": {
             "type": "boolean",
-            "title": "Allow Zoom to Check for Updates Automatically",
+            "title": "Set Zoom Auto Update Cadence",
             "default": false,
             "description": "Configures the cadence of updates available to the Zoom client. If set to 'false', will use the 'Slow' (stable) channel. If set to 'true', will use the 'Fast' channel.",
             "enum": [
@@ -146,44 +301,79 @@
                     "Fast (newest features and updates)"
                 ]
             },
-            "property_order": 100
+            "property_order": 155
+        },
+        "EnableCloudSwitch": {
+            "type": "boolean",
+            "title": "Enable Cloud Switch",
+            "default": false,
+            "description": "Enable the option to switch between Zoom commercial (default) and Zoom for Gov.",
+            "property_order": 160
         },
         "EnableEmbedBrowserForSSO": {
             "type": "boolean",
             "title": "Enable Embedded Zoom Browser for SSO",
             "default": false,
             "description": "Use the embedded browser in the Zoom client for SSO.",
-            "property_order": 105
+            "property_order": 165
+        },
+        "EnablePhoneLogin": {
+            "type": "boolean",
+            "title": "Enable Phone Login",
+            "default": false,
+            "description": "Enables login with phone authentication.",
+            "property_order": 170
+        },
+        "EnableAlipayLogin": {
+            "type": "boolean",
+            "title": "Enable Alipay Login",
+            "default": false,
+            "description": "Enables login with Alipay authentication.",
+            "property_order": 175
+        },
+        "EnableQQLogin": {
+            "type": "boolean",
+            "title": "Enable QQ Login",
+            "default": false,
+            "description": "Enables login with QQ authentication.",
+            "property_order": 180
+        },
+        "EnableWeChatLogin": {
+            "type": "boolean",
+            "title": "Enable WeChat Login",
+            "default": false,
+            "description": "Enables login with WeChat authentication.",
+            "property_order": 185
         },
         "EnforceSignInToJoin": {
             "type": "boolean",
             "title": "Force Sign In To Join Meetings",
             "default": false,
             "description": "Force users to be signed in with a Zoom account before joining a meeting. Users can be signed-in on the web portal when joining via a join URL.",
-            "property_order": 110
+            "property_order": 190
         },
         "EnforceSignInToJoinForWebinar": {
             "type": "boolean",
             "title": "Force Sign In To Join Webinars",
             "default": false,
             "description": "Force users to be signed in with a Zoom account before joining a webinar. Users can be signed-in on the web portal when joining via a join URL.",
-            "property_order": 115
+            "property_order": 195
         },
         "EnforceAppSignInToJoin": {
             "type": "boolean",
             "title": "Force App Sign In To Join Meetings",
             "default": false,
             "description": "Force users to be signed in with a Zoom account in the app before joining any meeting or webinar.",
-            "property_order": 120
+            "property_order": 200
         },
         "EnforceAppSignInToJoinForWebinar": {
             "type": "boolean",
             "title": "Force App Sign In To Join Webinars",
             "default": false,
             "description": "Force users to be signed in with a Zoom account in the app before joining any webinar.",
-            "property_order": 125
+            "property_order": 205
         },
-        "disableDaemonInstall": {
+        "DisableDaemonInstall": {
             "type": "boolean",
             "title": "Disable Zoom Helper Daemon Install",
             "default": false,
@@ -198,21 +388,27 @@
                     "Don't install helper daemon"
                 ]
             },
-            "property_order": 130
+            "property_order": 210
+        },
+        "SetEnrollToken4CloudMDM": {
+            "type": "string",
+            "title": "ZMDM Enrollment Token",
+            "description": "Auto enroll devices to Zoom MDM with a token provided from the Zoom web portal.",
+            "property_order": 215
         },
         "DefaultUsePortraitView": {
             "type": "boolean",
             "title": "Default to Portrait Mode",
             "default": false,
             "description": "Default to Portrait Mode upon opening Zoom",
-            "property_order": 135
+            "property_order": 220
         },
         "DisableDirectShare": {
             "type": "boolean",
             "title": "Disable Direct Share",
             "default": false,
             "description": "Disables direct share with Zoom Rooms",
-            "property_order": 140
+            "property_order": 225
         },
         "PresentInMeetingOption": {
             "type": "boolean",
@@ -229,7 +425,7 @@
                     "Automatically share desktop"
                 ]
             },
-            "property_order": 145
+            "property_order": 230
         },
         "PresentToRoomOption": {
             "type": "boolean",
@@ -246,76 +442,123 @@
                     "Automatically share desktop"
                 ]
             },
-            "property_order": 150
+            "property_order": 235
         },
         "PresentToRoomWithAudio": {
             "type": "boolean",
             "title": "Present to Zoom Room with Audio",
             "default": true,
             "description": "Share sound when screen sharing to a Zoom Room",
-            "property_order": 155
+            "property_order": 240
         },
         "PresentToRoomOptimizeVideo": {
             "type": "boolean",
             "title": "Present to Zoom Room with Optimized Video",
             "default": true,
             "description": "If enabled, will optimize screen sharing for video clip when sharing directly to a Zoom Room.",
-            "property_order": 160
+            "property_order": 245
         },
         "EnableHIDControl": {
             "type": "boolean",
             "title": "Enable HID Control",
             "default": true,
             "description": "Enables HID control of USB audio devices from the Zoom client",
-            "property_order": 165
+            "property_order": 250
         },
         "EnableStartMeetingWithRoomSystem": {
             "type": "boolean",
             "title": "Enable Start Meeting with Room System Button",
             "default": false,
             "description": "Displays the 'Call Room System' button on the home screen of the Zoom client",
-            "property_order": 170
+            "property_order": 255
         },
         "AlwaysShowVideoPreviewDialog": {
             "type": "boolean",
             "title": "Always Show Video Preview Dialog",
             "default": true,
             "description": "If enabled, always show the video preview when joining a meeting.",
-            "property_order": 175
+            "property_order": 260
         },
         "IgnoreBandwidthLimits": {
             "type": "boolean",
             "title": "Ignore Bandwidth Limits",
             "default": false,
             "description": "Ignore bandwidth limited set on web settings.",
-            "property_order": 180
+            "property_order": 265
         },
         "LegacyCaptureMode": {
             "type": "boolean",
             "title": "Legacy Capture Mode",
             "default": false,
             "description": "If enabled, disables GPU acceleration.",
-            "property_order": 185
+            "property_order": 270
         },
         "BlockUntrustedSSLCert": {
             "type": "boolean",
             "title": "Block Untrusted SSL Certs",
             "default": true,
             "description": "Block connections to untrusted SSL certificates.",
-            "property_order": 190
+            "property_order": 275
+        },
+        "DisableCertPin": {
+            "type": "boolean",
+            "title": "Disable Certificate Pinning",
+            "default": false,
+            "property_order": 280
+        },
+        "DisableAudioOverProxy": {
+            "type": "boolean",
+            "title": "Disable Audio Over Proxy",
+            "default": false,
+            "description": "Prevent audio traffic over proxies.",
+            "property_order": 285
+        },
+        "DisableDirectConnection2Web": {
+            "type": "boolean",
+            "title": "Disable Direct Connection to Web",
+            "default": false,
+            "description": "Disable all direct connections to Zoom web service.",
+            "property_order": 290
+        },
+        "DisableSharingOverProxy": {
+            "type": "boolean",
+            "title": "Disable Sharing Over Proxy",
+            "default": false,
+            "description": "Prevent sharing traffic over proxies.",
+            "property_order": 295
+        },
+        "DisableVideoOverProxy": {
+            "type": "boolean",
+            "title": "Disable Video Over Proxy",
+            "default": false,
+            "description": "Prevent video traffic over proxies.",
+            "property_order": 300
         },
         "EmbedUserAgentString": {
             "type": "string",
             "title": "Embed User Agent String",
             "description": "Embed a specified user agent string for all HTTP requests from the Zoom client.",
-            "property_order": 195
+            "property_order": 305
+        },
+        "EmbedDeviceTag": {
+            "type": "string",
+            "title": "Embed Device Tag",
+            "description": "Embed a specified device tag string for all HTTP requests from Zoom client application. This string will be appended to the head of the regular HTTP requests.",
+            "property_order": 310
         },
         "DisableZoomApps": {
             "type": "boolean",
             "title": "Disable Zoom Apps",
             "default": false,
             "description": "If enabled, hides the Zoom Apps quick launch button in the Zoom interface.",
-            "property_order": 200
+            "property_order": 315
+        },
+        "DisableZoomAppsGuestAccess": {
+            "type": "boolean",
+            "title": "Disable Zoom Apps Guest Access",
+            "default": false,
+            "description": "Control the ability for users to utilize a Zoom App in Guest mode.",
+            "property_order": 320
         },
         "Account": {
             "type": "array",
@@ -325,83 +568,104 @@
             },
             "title": "Restrict Meetings to Specified Host Account ID",
             "description": "Restrict the Zoom client to join meetings from the specified account IDs.",
-            "property_order": 205
+            "property_order": 325
         },
         "SetDevicePolicyToken": {
             "type": "string",
             "title": "Device Policy Token",
             "description": "Enforce internal meeting authentication.",
-            "property_order": 210
+            "property_order": 330
         },
         "ZDisableVideo": {
             "type": "boolean",
             "title": "Disable Camera by Default",
             "default": true,
-            "description": "Disable Camera by default",
-            "property_order": 215
+            "description": "Automatically turn off camera when joining a meeting",
+            "property_order": 335
         },
         "zDisableSendVideo": {
             "type": "boolean",
             "title": "Disable Sending Video",
             "default": true,
             "description": "Disable sending video from the Zoom Client",
-            "property_order": 220
+            "property_order": 340
         },
         "zDisableRecvVideo": {
             "type": "boolean",
             "title": "Disable Receiving Video",
             "default": true,
             "description": "Disable receiving video from the Zoom Client",
-            "property_order": 225
+            "property_order": 345
         },
         "DisableComputerAudio": {
             "type": "boolean",
             "title": "Disable Computer Audio",
             "default": true,
             "description": "Disable use of computer audio on the Zoom Client",
-            "property_order": 230
+            "property_order": 350
         },
         "EnableOriginalSound": {
             "type": "boolean",
             "title": "Enable Original Sound",
             "default": false,
             "description": "Enable Orginal Sound for audio",
-            "property_order": 235
+            "property_order": 355
         },
         "ZAutoJoinVoip": {
             "type": "boolean",
             "title": "Automatically Join",
             "default": false,
             "description": "Automatically join VoIP ",
-            "property_order": 240
+            "property_order": 360
         },
         "AudioAutoAdjust": {
             "type": "boolean",
             "title": "Auto Adjust Microphone",
             "default": true,
             "description": "Automatically adjust microphone levels",
-            "property_order": 245
+            "property_order": 365
         },
         "Enable49Video": {
             "type": "boolean",
             "title": "Enable 49 Participant Gallery View",
             "default": false,
             "description": "Sets the max number of participants displayed in Gallery View to 49 participants per screen",
-            "property_order": 250
+            "property_order": 370
+        },
+        "HideSelfView": {
+            "type": "boolean",
+            "title": "Hide Self View",
+            "default": false,
+            "description": "Controls the use of the Hide Self View option",
+            "property_order": 375
+        },
+        "EnableFaceBeauty": {
+            "type": "boolean",
+            "title": "Touch Up Appearance",
+            "default": false,
+            "description": "Enables the 'Touch Up' appearance setting",
+            "property_order": 380
+        },
+        "SetFaceBeautyValue": {
+            "type": "string",
+            "title": "Touch Up Appearence Intensity",
+            "default": "25",
+            "description": "Allows setting the exact intensity of the Touch up my appearance filter",
+            "property_order": 385
         },
         "EnableEchoCancellation": {
             "type": "boolean",
             "title": "Enable Echo Cancellation",
             "default": false,
             "description": "Enables echo cancellation for the microphone audio",
-            "property_order": 255
+            "property_order": 390
         },
         "EnableHardwareOptimizeVideoSharing": {
             "type": "boolean",
             "title": "Enable Hardware Optimized Video Sharing",
             "default": false,
             "description": "Enable to require hardware acceleration to optimize video sharing",
-            "property_order": 260
+            "property_order": 395
         },
         "SetSuppressBackgroundNoiseLevel": {
             "type": "string",
@@ -422,7 +686,7 @@
                     "High (typing, dog barks)"
                 ]
             },
-            "property_order": 265
+            "property_order": 400
         },
         "SetScreenCaptureMode": {
             "type": "string",
@@ -445,245 +709,328 @@
                     "Advanced share without window filtering"
                 ]
             },
-            "property_order": 270
+            "property_order": 405
         },
         "SetUseSystemDefaultSpeakerForVOIP": {
             "type": "boolean",
             "title": "Use System Default for Computer Audio",
             "default": true,
             "description": "Uses the system default speaker when using computer audio",
-            "property_order": 275
+            "property_order": 410
         },
         "SetUseSystemDefaultMicForVOIP": {
             "type": "boolean",
             "title": "Use System Default for Computer Microphone",
             "default": true,
             "description": "Uses the system default speaker when using microphone audio",
-            "property_order": 280
+            "property_order": 415
         },
         "ZDualMonitorOn": {
             "type": "boolean",
             "title": "Auto Enable Dual Monitor",
             "default": false,
             "description": "Automatically enable dual monitor",
-            "property_order": 285
+            "property_order": 420
         },
         "ZAutoFullScreenWhenViewShare": {
             "type": "boolean",
             "title": "Auto Full Screen When Viewing",
             "default": true,
             "description": "Automatically enter full screen when viewing shared content",
-            "property_order": 290
+            "property_order": 425
         },
         "ZAutoFitWhenViewShare": {
             "type": "boolean",
             "title": "Auto Fit to Window When Viewing",
             "default": true,
             "description": "Automatically fit to window when viewing shared content",
-            "property_order": 295
+            "property_order": 430
+        },
+        "ZDisableAnnotation": {
+            "type": "boolean",
+            "title": "Disable Annotation",
+            "default": false,
+            "description": "Disable and remove the ability to annotate over shared screen",
+            "property_order": 435
         },
         "EnableSplitScreen": {
             "type": "boolean",
             "title": "Enable Split Screen",
             "default": false,
             "description": "Enables side-by-side mode by default",
-            "property_order": 300
+            "property_order": 440
         },
         "EnableSpotlightSelf": {
             "type": "boolean",
             "title": "Enable Spotlight Self",
             "default": false,
             "description": "If enabled, shows self as the active speaker when speaking",
-            "property_order": 305
+            "property_order": 445
         },
         "FullScreenWhenJoin": {
             "type": "boolean",
             "title": "Enable Full Screen on Meeting Join",
             "default": false,
             "description": "Full Screen when starting or joining a meeting",
-            "property_order": 310
+            "property_order": 450
         },
         "HidePhoneInComingCallWhileInMeeting": {
             "type": "boolean",
             "title": "Hide Incoming Calls in Meetings",
             "default": false,
             "description": "If enabled, prevents incoming call notifications while in a meeting",
-            "property_order": 315
+            "property_order": 455
+        },
+        "EnableLaunchApp4IncomingCalls": {
+            "type": "boolean",
+            "title": "Enable Launch App for Incoming Calls",
+            "default": false,
+            "description": "Control the Launch an external app or a URL for incoming calls option in the client",
+            "property_order": 460
+        },
+        "SetCommand4IncomingCalls": {
+            "type": "string",
+            "title": "Set Command for Incoming Calls",
+            "description": "Set the URL used when the client receives an incoming call",
+            "property_order": 465
         },
         "AutoHideToolbar": {
             "type": "boolean",
             "title": "Auto Hide Meeting Controls",
             "default": true,
             "description": "If set to 'false', always show meeting controls (enables the always show meeting control setting).",
-            "property_order": 320
+            "property_order": 470
         },
         "ZUse720PByDefault": {
             "type": "boolean",
             "title": "Default to HD Video",
             "default": false,
-            "description": "Enable HD Video by default",
-            "property_order": 325
+            "description": "Enable HD video in meetings",
+            "property_order": 475
         },
         "ZRemoteControllAllApp": {
             "type": "boolean",
             "title": "Enable Full Remote Control",
             "default": true,
             "description": "Remote control all applications",
-            "property_order": 330
+            "property_order": 480
         },
         "ZHideNoVideoUser": {
             "type": "boolean",
             "title": "Hide Non-Video Participants",
             "default": false,
             "description": "Hide non-video participants by default",
-            "property_order": 335
+            "property_order": 485
         },
         "MuteVoipWhenJoin": {
             "type": "boolean",
             "title": "Disable Microphone on Meeting Join",
             "default": false,
             "description": "Always mute microphone when joining a meeting",
-            "property_order": 340
+            "property_order": 490
         },
         "ShowConnectedTime": {
             "type": "boolean",
             "title": "Show Meeting Attendance Length",
             "default": false,
             "description": "Show the length of time that the user has been in a meeting",
-            "property_order": 345
+            "property_order": 495
+        },
+        "MuteWhenLockScreen": {
+            "type": "boolean",
+            "title": "Mute Microphone When Lock Screen Enabled",
+            "default": true,
+            "description": "Automatically mute the microphone and turn off video, when the screen is locked during a meeting.",
+            "property_order": 500
         },
         "ConfirmWhenLeave": {
             "type": "boolean",
             "title": "Prompt User When Leaving Meeting",
             "default": true,
             "description": "Confirm before leaving a meeting",
-            "property_order": 350
+            "property_order": 505
         },
         "DisableScreenShare": {
             "type": "boolean",
             "title": "Auto Disable Screen Sharing",
             "default": false,
             "description": "Disable Screen Share when starting or joining a meeting",
-            "property_order": 355
+            "property_order": 510
+        },
+        "EnableShareAudio": {
+            "type": "boolean",
+            "title": "Enable Audio Sharing",
+            "default": true,
+            "description": "Enable the Share computer audio option when sharing",
+            "property_order": 515
+        },
+        "EnableShareVideo": {
+            "type": "boolean",
+            "title": "Enable Video Sharing Optimization",
+            "default": true,
+            "description": "Enable the Optimize for video clip option when sharing",
+            "property_order": 520
+        },
+        "DisableWhiteBoard": {
+            "type": "boolean",
+            "title": "Disable Whiteboard",
+            "default": false,
+            "description": "Disable Classic Whiteboard feature",
+            "property_order": 525
+        },
+        "DisableInMeetingWhiteBoard": {
+            "type": "boolean",
+            "title": "Disable Meeting / Webinar Whiteboard",
+            "default": false,
+            "description": "Disable the Zoom Whiteboard feature in meetings and webinars",
+            "property_order": 530
+        },
+        "DisableDesktopShare": {
+            "type": "boolean",
+            "title": "Disable Desktop Sharing",
+            "default": false,
+            "description": "Disable the option to share your desktop when screen sharing",
+            "property_order": 535
         },
         "DisableSlideControl": {
             "type": "boolean",
             "title": "Disable Slide Control",
             "default": false,
             "description": "Disable the use of slide control",
-            "property_order": 360
+            "property_order": 540
         },
         "DisableRemoteControl": {
             "type": "boolean",
             "title": "Disable Remote Control During Screen Sharing",
             "default": false,
             "description": "Disables Remote Control when screen sharing",
-            "property_order": 365
+            "property_order": 545
+        },
+        "EnableDoNotDisturbInSharing": {
+            "type": "boolean",
+            "title": "Enable Do Not Disturb in Desktop Sharing",
+            "default": true,
+            "description": "Silence system notifications when sharing desktop",
+            "property_order": 550
         },
         "DisableRemoteSupport": {
             "type": "boolean",
             "title": "Disable 1:1 Remote Support During Screen Sharing",
             "default": true,
             "description": "Disables 1:1 remote support when screen sharing",
-            "property_order": 370
+            "property_order": 555
         },
         "EnableMirrorEffect": {
             "type": "boolean",
             "title": "Enable Video Mirroring",
             "default": true,
             "description": "Enable mirroring of shared video",
-            "property_order": 375
+            "property_order": 560
         },
         "zDisableLocalRecord": {
             "type": "boolean",
             "title": "Disable Local Recording",
             "default": false,
             "description": "Disables Local Recording from the Zoom Client",
-            "property_order": 380
+            "property_order": 565
         },
         "zDisableCMR": {
             "type": "boolean",
             "title": "Disable Cloud Recording",
             "default": false,
             "description": "Disables Cloud Recording from the Zoom Client",
-            "property_order": 385
+            "property_order": 570
         },
         "zDisableChat": {
             "type": "boolean",
             "title": "Disable Chat",
             "default": false,
             "description": "Disable in-meeting chat",
-            "property_order": 390
+            "property_order": 575
         },
         "zDisableFT": {
             "type": "boolean",
             "title": "Disable File Transfer",
             "default": false,
             "description": "Disables in-metting file transfer (sharing and receiving)",
-            "property_order": 395
+            "property_order": 580
         },
         "DisableMeeting3rdPartyFileStorage": {
             "type": "boolean",
             "title": "Disable Meeting Third Party File Storage",
             "default": false,
             "description": "Disable in-meeting 3rd party file transfer",
-            "property_order": 400
+            "property_order": 585
         },
         "DisableQnA": {
             "type": "boolean",
             "title": "Disable Webinar Q&A",
             "default": false,
             "description": "Disable Q&A in webinars",
-            "property_order": 405
+            "property_order": 590
         },
         "DisableVirtualBkgnd": {
             "type": "boolean",
             "title": "Disable Virtual Background",
             "default": false,
             "description": "Disables use of the Virtual Background feature",
-            "property_order": 410
+            "property_order": 595
         },
         "DisableMeetingReactions": {
             "type": "boolean",
             "title": "Disable Meeting Reactions",
             "default": false,
             "description": "Disables use of reactions in meetings",
-            "property_order": 415
+            "property_order": 600
         },
         "DisableNonVerbalFeedback": {
             "type": "boolean",
             "title": "Disable Non-Verbal Feedback",
             "default": false,
             "description": "Disable the use of non-verbal feedback.",
-            "property_order": 420
+            "property_order": 605
+        },
+        "DisableWebinarReactions": {
+            "type": "boolean",
+            "title": "Disable Webinar Recations",
+            "default": false,
+            "description": "Disable the use of Webinar reactions.",
+            "property_order": 610
+        },
+        "DisableBroadcastBOMessage": {
+            "type": "boolean",
+            "title": "Disable Broadcast Messaging",
+            "default": false,
+            "description": "Disable the ability for the host to broadcast a message to all open breakout rooms.",
+            "property_order": 615
         },
         "EnableAutoReverseVirtualBkgnd": {
             "type": "boolean",
             "title": "Enable Auto Reverse of Virtual Background",
             "default": false,
             "description": "Require post-meeting virtual background auto-reversal.",
-            "property_order": 425
+            "property_order": 620
         },
         "DisableVideoFilters": {
             "type": "boolean",
             "title": "Disable Video Filters",
             "default": false,
             "description": "Disables use of video filters",
-            "property_order": 430
+            "property_order": 625
         },
         "EnableIndependentDataPort": {
             "type": "boolean",
             "title": "Enable Split Port Traffic",
             "default": false,
             "description": "Split traffic across different ports for easier identification",
-            "property_order": 435
+            "property_order": 630
         },
         "EnableLightAdaption": {
             "type": "boolean",
             "title": "Enable Light Adaption",
             "default": false,
             "description": "Set use of adjust for low-light video setting",
-            "property_order": 440
+            "property_order": 635
         },
         "EnableAutoLightAdaption": {
             "type": "boolean",
@@ -700,114 +1047,256 @@
                     "Auto"
                 ]
             },
-            "property_order": 445
+            "property_order": 640
+        },
+        "SetLightAdaptionManualValue": {
+            "type": "string",
+            "title": "Set Light Adaption Value",
+            "default": "20",
+            "description": "Set method of adjusting low-light video feature",
+            "property_order": 645
+        },
+        "VideoRenderMethod": {
+            "type": "string",
+            "title": "Video Render Method",
+            "default": "0",
+            "description": "Set the video rendering method",
+            "enum": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Auto",
+                    "Direct3D11 Flip Mode",
+                    "Direct3D11",
+                    "Direct3D9",
+                    "GDI"
+                ]
+            },
+            "property_order": 650
         },
         "EnableRemindMeetingTime": {
             "type": "boolean",
             "title": "Enable Meeting Reminder",
             "default": false,
             "description": "If enabled, sets a reminder for upcoming meetings",
-            "property_order": 450
+            "property_order": 655
         },
         "EnableSSLVerification": {
             "type": "boolean",
             "title": "SSL Verification",
             "default": false,
             "description": "The Zoom Client will verify the server certificate",
-            "property_order": 455
+            "property_order": 660
         },
         "EnableShareClipboardWhenRemoteControl": {
             "type": "boolean",
             "title": "Enable Shared Clipboard in Remote Control",
             "default": false,
             "description": "Allow clipboard access during remote control sessions",
-            "property_order": 460
+            "property_order": 665
         },
         "DisableClosedCaptioning": {
             "type": "boolean",
             "title": "Disable Closed Captioning",
             "default": false,
             "description": "Prevent the use of closed captioning",
-            "property_order": 465
+            "property_order": 670
         },
         "DisableManualClosedCaptioning": {
             "type": "boolean",
             "title": "Disable Manual Closed Captioning",
             "default": false,
             "description": "Prevent the use of manual, user-entered closed captioning",
-            "property_order": 470
+            "property_order": 675
         },
         "BandwidthLimitUp": {
             "type": "string",
             "title": "Maximum Bandwidth",
             "description": "Limit the Maximum amount of bandwidth by the Mac client",
-            "property_order": 475
+            "property_order": 680
         },
         "BandwidthLimitDown": {
             "type": "string",
             "title": "Minimum Bandwidth",
             "description": "Limit the Minimum amount of bandwidth used by the Mac client",
-            "property_order": 480
+            "property_order": 685
         },
         "RecordPath": {
             "type": "string",
             "title": "Local Recording Path",
             "default": "/Users/User Name/Documents/Zoom",
             "description": "Set path for local meeting recording files",
-            "property_order": 485
+            "property_order": 690
         },
         "ProxyBypass": {
             "type": "string",
             "title": "Proxy Bypass Rule",
             "description": "Set proxy bypass rule for the Zoom Client",
-            "property_order": 490
+            "property_order": 695
         },
         "ProxyServer": {
             "type": "string",
             "title": "Proxy Server",
             "description": "Set the proxy server for the Zoom Client",
-            "property_order": 495
+            "property_order": 700
         },
         "ProxyPAC": {
             "type": "string",
             "title": "Proxy PAC",
             "description": "Set proxy server to client with PAC URL for the Zoom Client",
-            "property_order": 500
+            "property_order": 705
         },
         "DisableLinkPreviewInChat": {
             "type": "boolean",
             "title": "Disable Link Preview in Chat",
             "default": false,
             "description": "Disable Link Preview",
-            "property_order": 505
+            "property_order": 710
+        },
+        "SetMessengerDoNotDropThread": {
+            "type": "boolean",
+            "title": "New Replies on Bottom",
+            "default": true,
+            "description": "Move messages with new replies to the bottom of the chat/channel",
+            "property_order": 715
+        },
+        "ShowProfilePhotosInChat": {
+            "type": "boolean",
+            "title": "Show Profile Photos in Chat",
+            "default": true,
+            "description": "Controls if user profile pictures are shown in Zoom Chat",
+            "property_order": 720
         },
         "MuteIMNotificationWhenInMeeting": {
             "type": "boolean",
             "title": "Mute Chat Notifications When in a Meeting",
             "default": true,
             "description": "Control if IM message system notifications are muted when in a meeting",
-            "property_order": 510
+            "property_order": 725
         },
         "PlaySoundForIMMessage": {
             "type": "boolean",
             "title": "Play Notification Sound for Chat Messages",
             "default": true,
             "description": "Control the audio notifications when an IM message is received",
-            "property_order": 515
+            "property_order": 730
         },
         "ShowIMMessagePreview": {
             "type": "boolean",
             "title": "Show Chat Message Previews",
             "default": true,
             "description": "Control if the message previews in system notifications when an IM message is received",
-            "property_order": 520
+            "property_order": 735
         },
         "ShowVoiceMessageButton": {
             "type": "boolean",
             "title": "Display the Voice Message Button",
             "default": true,
             "description": "If enabled, shows the send voice message button",
-            "property_order": 525
+            "property_order": 740
+        },
+        "ShowVideoMessageButton": {
+            "type": "boolean",
+            "title": "Display the Video Message Button",
+            "default": true,
+            "description": "Allow use of the Send video message option",
+            "property_order": 745
+        },
+        "OverrideEnforceSigninIntercloud": {
+            "type": "boolean",
+            "title": "Override Enforce Sign In (ZfG)",
+            "default": false,
+            "description": "Override the EnforceSignInToJoin policy and allows a user to join a Zoom meeting hosted on the ZfG Cloud, without the need to authenticate",
+            "property_order": 750
+        },
+        "Intercloud_DisableAllFeatures": {
+            "type": "boolean",
+            "title": "Disable All Features (ZfG)",
+            "default": false,
+            "description": "Disables all features except for audio and video for meetings hosted on the ZfG cloud",
+            "property_order": 755
+        },
+        "Intercloud_DisableMeetingChat": {
+            "type": "boolean",
+            "title": "Disable Meeting Chat (ZfG)",
+            "default": false,
+            "description": "Disables the use of in-meeting chat on meetings hosted on the ZfG Cloud",
+            "property_order": 760
+        },
+        "Intercloud_DisableShareScreen": {
+            "type": "boolean",
+            "title": "Disable Screen Sharing (ZfG)",
+            "default": false,
+            "description": "Disables the local ability to share screen on meetings hosted on the ZfG Cloud",
+            "property_order": 765
+        },
+        "Intercloud_DisableMeetingReactions": {
+            "type": "boolean",
+            "title": "Disable Meeting Reactions (ZfG)",
+            "default": false,
+            "description": "Disables the use of meeting reactions on meetings hosted on the ZfG Cloud",
+            "property_order": 770
+        },
+        "Intercloud_DisableMeetingFileTransfer": {
+            "type": "boolean",
+            "title": "Disable Meeting File Transfer (ZfG)",
+            "default": false,
+            "description": "Disables the use of file transfers through in-meeting chat on meetings hosted on the ZfG Cloud",
+            "property_order": 775
+        },
+        "Intercloud_DisableAnnotation": {
+            "type": "boolean",
+            "title": "Disable Annotations (ZfG)",
+            "default": false,
+            "description": "Disables the local ability to annotate on shared content in meetings hosted on the ZfG Cloud",
+            "property_order": 780
+        },
+        "Intercloud_DisableWhiteBoard": {
+            "type": "boolean",
+            "title": "Disable Whiteboard (ZfG)",
+            "default": false,
+            "description": "Disables the use of in-meeting whiteboarding on meetings hosted on the ZfG Cloud",
+            "property_order": 785
+        },
+        "Intercloud_DisableLocalRecording": {
+            "type": "boolean",
+            "title": "Disable Local Recording (ZfG)",
+            "default": false,
+            "description": "Disabled by default, this option disables the ability to locally record meetings hosted on the ZfG Cloud",
+            "property_order": 790
+        },
+        "Intercloud_DisableClosedCaptioning": {
+            "type": "boolean",
+            "title": "Disable Closed Captioning (ZfG)",
+            "default": false,
+            "description": "Disabled by default, this option disables the use of captioning features on meetings hosted on the ZfG Cloud",
+            "property_order": 795
+        },
+        "Intercloud_DisableRemoteControl": {
+            "type": "boolean",
+            "title": "Disable Remote Control (ZfG)",
+            "default": false,
+            "description": "Disabled by default, this option disables the remote control of shared screens in meetings hosted on the ZfG Cloud",
+            "property_order": 800
+        },
+        "Intercloud_DisableMeetingPolls": {
+            "type": "boolean",
+            "title": "Disable Meeting Polls (ZfG)",
+            "default": false,
+            "description": "Disabled by default, this option disables the use of polling in meetings hosted on the ZfG Cloud",
+            "property_order": 805
+        },
+        "Intercloud_DisableComputerAudio": {
+            "type": "boolean",
+            "title": "Disable Computer Audio (ZfG)",
+            "default": false,
+            "description": "Disabled by default, this option disables the use of computer audio for connecting to meetings hosted on the ZfG Cloud",
+            "property_order": 810
         }
     }
 }
