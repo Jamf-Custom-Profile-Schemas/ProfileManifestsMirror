@@ -1,0 +1,45 @@
+{
+    "title": "Twingate (com.twingate.macos)",
+    "description": "Twingate macOS Client Settings",
+    "properties": {
+        "network": {
+            "type": "string",
+            "title": "Network Subdomain",
+            "description": "A pre-configured Twingate network subdomain (eg. autoco from autoco.twingate.com). This avoids users needing to enter your Twingate network address on first run.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.twingate.com/docs/macos-and-ios/#twingate-network-pre-configuration"
+                }
+            ],
+            "property_order": 5
+        },
+        "startAtLogin": {
+            "type": "boolean",
+            "title": "Start At Login",
+            "default": false,
+            "description": "Starts the Twingate Client upon user login",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.twingate.com/docs/macos-and-ios/#twingate-network-pre-configuration"
+                }
+            ],
+            "property_order": 10
+        },
+        "PresentedDataPrivacy": {
+            "type": "boolean",
+            "title": "Suppress Data Privacy Screen",
+            "default": false,
+            "description": "Suppresses the first run Data Privacy screen",
+            "property_order": 15
+        },
+        "PresentedEducation": {
+            "type": "boolean",
+            "title": "Suppress Education Screens",
+            "default": false,
+            "description": "Suppresses the first run Education screens",
+            "property_order": 20
+        }
+    }
+}
