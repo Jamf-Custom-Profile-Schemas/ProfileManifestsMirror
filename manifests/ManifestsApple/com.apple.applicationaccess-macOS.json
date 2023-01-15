@@ -280,86 +280,92 @@
             "default": false,
             "property_order": 210
         },
+        "allowBluetoothModification": {
+            "type": "boolean",
+            "title": "Allow modifying Bluetooth settings",
+            "default": true,
+            "property_order": 215
+        },
         "allowPasswordProximityRequests": {
             "type": "boolean",
             "title": "Allow proximity based password sharing requests",
             "default": true,
-            "property_order": 215
+            "property_order": 220
         },
         "allowUSBRestrictedMode": {
             "type": "boolean",
-            "title": "Allow USB accessories while device is locked",
+            "title": "Allow USB Restricted Mode",
             "default": true,
             "description": "Set to false to allow new USB accessories to connect to a Mac without authorization",
-            "property_order": 220
+            "property_order": 225
         },
         "forceDelayedSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer OS Software Updates",
             "default": false,
-            "property_order": 225
+            "property_order": 230
         },
         "allowRapidSecurityResponseInstallation": {
             "type": "boolean",
             "title": "Allow rapid security response installation",
             "default": true,
             "description": "Set to false to prevent the installation of rapid security responses",
-            "property_order": 230
+            "property_order": 235
         },
         "allowRapidSecurityResponseRemoval": {
             "type": "boolean",
             "title": "Allow rapid security response removal",
             "default": true,
             "description": "Set to false to prevent the removal of rapid security responses",
-            "property_order": 235
+            "property_order": 240
         },
         "enforcedSoftwareUpdateMinorOSDeferredInstallDelay": {
             "type": "integer",
             "title": "Deferred Minor Software Updates Delay",
             "default": 30,
             "description": "Number of days minor software updates will be hidden from the user.",
-            "property_order": 240
+            "property_order": 245
         },
         "forceDelayedAppSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer non-OS Software Updates",
             "default": false,
             "description": "If true, delays user visibility of non-OS Software Updates. Requires a supervised device.",
-            "property_order": 245
+            "property_order": 250
         },
         "enforcedSoftwareUpdateDelay": {
             "type": "integer",
             "title": "Deferred Software Updates Delay",
             "default": 30,
             "description": "Number of days the software updates will be hidden from the user.",
-            "property_order": 250
+            "property_order": 255
         },
         "enforcedSoftwareUpdateNonOSDeferredInstallDelay": {
             "type": "integer",
             "title": "Deferred non-OS Software Updates Delay",
             "default": 30,
             "description": "Number of days non-OS software updates will be hidden from the user.",
-            "property_order": 255
+            "property_order": 260
         },
         "forceDelayedMajorSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer Major OS Software Updates",
             "default": false,
-            "property_order": 260
+            "property_order": 265
         },
         "enforcedSoftwareUpdateMajorOSDeferredInstallDelay": {
             "type": "integer",
             "title": "Deferred Major Software Updates Delay",
             "default": 30,
             "description": "Number of days major software updates will be hidden from the user.",
-            "property_order": 265
+            "property_order": 270
         },
         "enforcedFingerprintTimeout": {
             "type": "integer",
             "title": "Enforced Fingerprint Timeout",
             "default": 172800,
             "description": "Period of time in seconds after which the device will require entry of password or passcode to unlock.",
-            "property_order": 270
+            "property_order": 275
         }
     }
 }

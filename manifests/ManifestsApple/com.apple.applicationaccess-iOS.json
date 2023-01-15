@@ -462,7 +462,7 @@
         },
         "allowUSBRestrictedMode": {
             "type": "boolean",
-            "title": "Allow USB accessories while device is locked",
+            "title": "Allow USB Restricted Mode",
             "default": true,
             "property_order": 360
         },
