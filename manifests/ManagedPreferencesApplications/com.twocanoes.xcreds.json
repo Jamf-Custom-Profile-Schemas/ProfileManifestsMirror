@@ -326,7 +326,7 @@
         },
         "idpHostName": {
             "type": "string",
-            "title": "idpHostName",
+            "title": "IDP Host Name",
             "description": "hostname of the page that has the password field.",
             "links": [
                 {
@@ -347,7 +347,7 @@
         },
         "passwordElementID": {
             "type": "string",
-            "title": "passwordElementID",
+            "title": "Password Element ID",
             "description": "password element id of the html element that has the password.",
             "links": [
                 {
