@@ -297,8 +297,17 @@
             "enum": [
                 "App",
                 "Command",
+                "DistributedNotification",
                 "URL"
             ],
+            "options": {
+                "enum_titles": [
+                    "App",
+                    "Command or Script (Run as user)",
+                    "Command or Script (Run with elevated privileges)",
+                    "URL"
+                ]
+            },
             "property_order": 140
         },
         "FirstRowLinkLeft": {
@@ -335,8 +344,17 @@
             "enum": [
                 "App",
                 "Command",
+                "DistributedNotification",
                 "URL"
             ],
+            "options": {
+                "enum_titles": [
+                    "App",
+                    "Command or Script (Run as user)",
+                    "Command or Script (Run with elevated privileges)",
+                    "URL"
+                ]
+            },
             "property_order": 165
         },
         "FirstRowLinkMiddle": {
@@ -373,8 +391,17 @@
             "enum": [
                 "App",
                 "Command",
+                "DistributedNotification",
                 "URL"
             ],
+            "options": {
+                "enum_titles": [
+                    "App",
+                    "Command or Script (Run as user)",
+                    "Command or Script (Run with elevated privileges)",
+                    "URL"
+                ]
+            },
             "property_order": 190
         },
         "FirstRowLinkRight": {
@@ -411,8 +438,17 @@
             "enum": [
                 "App",
                 "Command",
+                "DistributedNotification",
                 "URL"
             ],
+            "options": {
+                "enum_titles": [
+                    "App",
+                    "Command or Script (Run as user)",
+                    "Command or Script (Run with elevated privileges)",
+                    "URL"
+                ]
+            },
             "property_order": 215
         },
         "SecondRowLinkLeft": {
@@ -449,8 +485,17 @@
             "enum": [
                 "App",
                 "Command",
+                "DistributedNotification",
                 "URL"
             ],
+            "options": {
+                "enum_titles": [
+                    "App",
+                    "Command or Script (Run as user)",
+                    "Command or Script (Run with elevated privileges)",
+                    "URL"
+                ]
+            },
             "property_order": 240
         },
         "SecondRowLinkMiddle": {
@@ -487,8 +532,17 @@
             "enum": [
                 "App",
                 "Command",
+                "DistributedNotification",
                 "URL"
             ],
+            "options": {
+                "enum_titles": [
+                    "App",
+                    "Command or Script (Run as user)",
+                    "Command or Script (Run with elevated privileges)",
+                    "URL"
+                ]
+            },
             "property_order": 265
         },
         "SecondRowLinkRight": {
@@ -504,6 +558,91 @@
             "default": "phone",
             "description": "The SF Symbol shown in the button.",
             "property_order": 275
+        },
+        "ExtensionTitleA": {
+            "type": "string",
+            "title": "Support App Extension A: Title",
+            "description": "The title shown in extension A.",
+            "property_order": 280
+        },
+        "ExtensionSymbolA": {
+            "type": "string",
+            "title": "Support App Extension A: Symbol",
+            "description": "The SF Symbol shown in extension A.",
+            "property_order": 285
+        },
+        "ExtensionTypeA": {
+            "type": "string",
+            "title": "Support App Extension A: Type",
+            "default": "App",
+            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "enum": [
+                "App",
+                "Command",
+                "DistributedNotification",
+                "URL"
+            ],
+            "options": {
+                "enum_titles": [
+                    "App",
+                    "Command or Script (Run as user)",
+                    "Command or Script (Run with elevated privileges)",
+                    "URL"
+                ]
+            },
+            "property_order": 290
+        },
+        "ExtensionLinkA": {
+            "type": "string",
+            "title": "Support App Extension A: Link",
+            "description": "The Bundle Identifier of the App, URL or command to open.",
+            "property_order": 295
+        },
+        "ExtensionTitleB": {
+            "type": "string",
+            "title": "Support App Extension B: Title",
+            "description": "The title shown in extension B.",
+            "property_order": 300
+        },
+        "ExtensionSymbolB": {
+            "type": "string",
+            "title": "Support App Extension B: Symbol",
+            "description": "The SF Symbol shown in extension B.",
+            "property_order": 305
+        },
+        "ExtensionTypeB": {
+            "type": "string",
+            "title": "Support App Extension B: Type",
+            "default": "App",
+            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "enum": [
+                "App",
+                "Command",
+                "DistributedNotification",
+                "URL"
+            ],
+            "options": {
+                "enum_titles": [
+                    "App",
+                    "Command or Script (Run as user)",
+                    "Command or Script (Run with elevated privileges)",
+                    "URL"
+                ]
+            },
+            "property_order": 310
+        },
+        "ExtensionLinkB": {
+            "type": "string",
+            "title": "Support App Extension B: Link",
+            "description": "The Bundle Identifier of the App, URL or command to open.",
+            "property_order": 315
+        },
+        "HideMajorUpdates": {
+            "type": "boolean",
+            "title": "Hide Major macOS Updates / Upgrades",
+            "default": false,
+            "description": "Ignore macOS major updates. This will prevent the menu bar icon and the macOS version info item from showing an available major update.",
+            "property_order": 320
         }
     }
 }
