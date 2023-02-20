@@ -1,0 +1,44 @@
+{
+    "title": "Jamf Trust (com.jamf.trust)",
+    "description": "Jamf Trust settings",
+    "properties": {
+        "activationProfileUrl": {
+            "type": "string",
+            "title": "Shareable Activation URL",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.jamf.com/bundle/jamf-security-documentation/page/Threat_Defense_Device_Deployment.html"
+                }
+            ],
+            "property_order": 5
+        },
+        "oktaOrgUrl": {
+            "type": "string",
+            "title": "Okta Org ID",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.jamf.com/bundle/jamf-security-documentation/page/Bootstrapping_App_Activations_via_App_Config.html"
+                }
+            ],
+            "property_order": 10
+        },
+        "requiredEndpointAgents": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "BundleIDs"
+            },
+            "title": "Required Endpoint Agents",
+            "description": "Jamf Trust includes a key that you can enable for additional security. With this key enabled, Jamf Private Access operates on a computer only if your organization's required security software is running. (eg. com.jamf.protect.agent)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.jamf.com/bundle/jamf-security-documentation/page/Creating_a_Configuration_Profile_macOS_JamfPro.html"
+                }
+            ],
+            "property_order": 15
+        }
+    }
+}
