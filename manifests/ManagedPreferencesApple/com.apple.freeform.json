@@ -1,0 +1,13 @@
+{
+    "title": "Freeform (com.apple.freeform)",
+    "description": "Freeform settings",
+    "properties": {
+        "CRLConnectICloudDialogShown": {
+            "type": "integer",
+            "title": "Disable iCloud Sign In Prompt",
+            "default": 99999999,
+            "description": "Enabling this preference and using the default value will suppress a prompt offering to sign in to iCloud.",
+            "property_order": 5
+        }
+    }
+}
