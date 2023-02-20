@@ -150,6 +150,68 @@
                 }
             ],
             "property_order": 55
+        },
+        "PasswordRequirements": {
+            "type": "object",
+            "title": "Password Requirements",
+            "description": "Specifies the password requirements.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/joshua-d-miller/macOSLAPS/wiki/Configuration-Keys"
+                }
+            ],
+            "properties": {
+                "Lowercase": {
+                    "type": "integer",
+                    "title": "Minimum Lowercase Letters",
+                    "default": 0,
+                    "description": "The minimum number of lowercase letters in a generated password.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/joshua-d-miller/macOSLAPS/wiki/Configuration-Keys"
+                        }
+                    ]
+                },
+                "Uppercase": {
+                    "type": "integer",
+                    "title": "Minimum Uppercase Letters",
+                    "default": 0,
+                    "description": "The minimum number of uppercase letters in a generated password.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/joshua-d-miller/macOSLAPS/wiki/Configuration-Keys"
+                        }
+                    ]
+                },
+                "Number": {
+                    "type": "integer",
+                    "title": "Minimum Numeric Characters",
+                    "default": 0,
+                    "description": "The minimum number of numeric characters in a generated password.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/joshua-d-miller/macOSLAPS/wiki/Configuration-Keys"
+                        }
+                    ]
+                },
+                "Symbol": {
+                    "type": "integer",
+                    "title": "Minimum Symbols",
+                    "default": 0,
+                    "description": "The minimum number of non-alphanumeric characters in a generated password.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/joshua-d-miller/macOSLAPS/wiki/Configuration-Keys"
+                        }
+                    ]
+                }
+            },
+            "property_order": 60
         }
     }
 }
