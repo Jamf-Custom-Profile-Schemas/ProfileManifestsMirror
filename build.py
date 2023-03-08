@@ -134,7 +134,6 @@ def process_subkeys(subkeys):
 
     properties = {}
     for idx, subkey in enumerate(subkeys):
-
         # Get subkey name
         name = ""
         try:
