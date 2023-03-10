@@ -356,6 +356,58 @@
                 }
             ],
             "property_order": 140
+        },
+        "map_firstname": {
+            "type": "string",
+            "title": "First Name OIDC Mapping",
+            "default": "given_name",
+            "description": "Local DS to OIDC Mapping for First Name",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#map_firstname"
+                }
+            ],
+            "property_order": 145
+        },
+        "map_lastname": {
+            "type": "string",
+            "title": "Last Name OIDC Mapping",
+            "default": "family_name",
+            "description": "Local DS to OIDC Mapping for Last Name",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#map_lastname"
+                }
+            ],
+            "property_order": 150
+        },
+        "map_fullname": {
+            "type": "string",
+            "title": "Full Name OIDC Mapping",
+            "default": "name",
+            "description": "Local DS to OIDC Mapping for Name",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#map_fullname"
+                }
+            ],
+            "property_order": 155
+        },
+        "map_username": {
+            "type": "string",
+            "title": "Username OIDC Mapping",
+            "default": "name",
+            "description": "Local DS to OIDC Mapping for Name",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#map_username"
+                }
+            ],
+            "property_order": 160
         }
     }
 }
