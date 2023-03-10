@@ -1,0 +1,55 @@
+{
+    "title": "VPN Tracker (com.vpntracker.365mac)",
+    "description": "Manage settings in VPN Tracker for Mac, iPhone or iPad – the multi protocol VPN client for enterprise teams. Visit vpntracker.com/goto/profile to learn more.",
+    "properties": {
+        "Managed_Onboarding_TeamUUID": {
+            "type": "string",
+            "title": "Team UUID",
+            "description": "Have new users automatically join your organization's VPN Tracker team and automatically receive their VPN connection. Find yours at my.vpntracker.com/teamprofile.",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "property_order": 5
+        },
+        "Managed_Onboarding_TeamAPIToken": {
+            "type": "string",
+            "title": "Team API Token",
+            "description": "The team's API Token – find it at my.vpntracker.com/teamprofile.",
+            "property_order": 10
+        },
+        "Managed_Onboarding_Greeting": {
+            "type": "string",
+            "title": "Greeting text",
+            "description": "Greeting text to show instead of the default \"Welcome, {name}\".",
+            "property_order": 15
+        },
+        "Managed_Onboarding_EmailDomains": {
+            "type": "string",
+            "title": "Allowed email domains",
+            "description": "A comma-separated list of email domains that users are allowed to use when joining your team.",
+            "property_order": 20
+        },
+        "Managed_Onboarding_Email": {
+            "type": "string",
+            "title": "Email address",
+            "description": "You can optionally set the email address the user will use to sign in to VPN Tracker, when deploying a personalized profile.",
+            "property_order": 25
+        },
+        "Managed_Onboarding_GivenName": {
+            "type": "string",
+            "title": "Given name",
+            "description": "Used in the onboarding greeting and during VPN Tracker account registration for new users.",
+            "property_order": 30
+        },
+        "Managed_Onboarding_FamilyName": {
+            "type": "string",
+            "title": "Surname",
+            "description": "Used in the onboarding greeting and during VPN Tracker account registration for new users.",
+            "property_order": 35
+        },
+        "Managed_Onboarding_FullName": {
+            "type": "string",
+            "title": "Full name",
+            "description": "Full name of the user displayed during onboarding. If given name and family name are set, this value is ignored.",
+            "property_order": 40
+        }
+    }
+}
