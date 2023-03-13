@@ -1,0 +1,67 @@
+{
+    "title": "PaperCut Print Deploy (com.papercut.printdeploy.client)",
+    "description": "PaperCut Print Deploy Settings",
+    "properties": {
+        "server_host": {
+            "type": "string",
+            "title": "Server Host",
+            "description": "FQDN taken from inside the square brackets in the file name of the client .dmg.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.papercut.com/help/manuals/print-deploy/roll-out-the-client/deploy-queues-using-another-apple-mdm/#the-process"
+                }
+            ],
+            "property_order": 5
+        },
+        "server_port": {
+            "type": "string",
+            "title": "Server Port",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.papercut.com/help/manuals/print-deploy/roll-out-the-client/install-arguments/#available-parameters-and-filename-configurations"
+                }
+            ],
+            "property_order": 10
+        },
+        "server_scheme": {
+            "type": "string",
+            "title": "Server Scheme",
+            "default": "http",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.papercut.com/help/manuals/print-deploy/roll-out-the-client/install-arguments/#available-parameters-and-filename-configurations"
+                }
+            ],
+            "enum": [
+                "http",
+                "https"
+            ],
+            "property_order": 15
+        },
+        "skip_dpm": {
+            "type": "boolean",
+            "title": "Skip Direct Print Monitor Tool",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.papercut.com/help/manuals/print-deploy/roll-out-the-client/deploy-print-queues-wo-monitoring/#server-changes"
+                }
+            ],
+            "property_order": 20
+        },
+        "strict_ssl": {
+            "type": "boolean",
+            "title": "Strict SSL",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.papercut.com/help/manuals/print-deploy/enhance-security/enable-ssl-certificate-checking/#enabling-strict-ssl-checking"
+                }
+            ],
+            "property_order": 25
+        }
+    }
+}
