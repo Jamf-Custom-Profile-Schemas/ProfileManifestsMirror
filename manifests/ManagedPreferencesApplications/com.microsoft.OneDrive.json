@@ -6,11 +6,11 @@
             "type": "boolean",
             "title": "Disable Personal Accounts",
             "default": true,
-            "description": "Prevents users from adding or syncing personal accounts.",
+            "description": "This setting blocks users from signing in and syncing files in personal OneDrive accounts. If this setting has been configured after a user has set up sync with a personal account, the user gets signed out.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#disablepersonalsync"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#disablepersonalsync"
                 }
             ],
             "property_order": 5
@@ -18,17 +18,27 @@
         "DisableTutorial": {
             "type": "boolean",
             "title": "Disable Tutorial Screens",
-            "description": "Disable tutorial screens during first setup.",
+            "description": "This setting prevents the tutorial from being shown to the users after they set up OneDrive.",
+            "default": false,
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#disabletutorial"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#disabletutorial"
                 }
             ],
             "property_order": 10
         },
         "DefaultFolderLocation": {
             "type": "array",
+            "title": "Default Folder Location",
+            "description": "This setting specifies the default location of the OneDrive folder for each organization.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#defaultfolderlocation"
+                }
+            ],
+            "property_order": 15,
             "items": {
                 "type": "object",
                 "properties": {
@@ -39,40 +49,32 @@
                         "links": [
                             {
                                 "rel": "More information",
-                                "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#defaultfolderlocation"
+                                "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#defaultfolderlocation"
                             }
                         ]
                     },
                     "DefaultFolderPath": {
                         "type": "string",
                         "title": "Path",
+                        "description": "The DefaultFolderPath value is a string that specifies the default location of the folder.",
                         "links": [
                             {
                                 "rel": "More information",
-                                "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#defaultfolderlocation"
+                                "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#defaultfolderlocation"
                             }
                         ]
                     }
                 }
-            },
-            "title": "Default Folder Location",
-            "description": "OneDrive folder default location. Specifies the default location of the OneDrive folder for each organization.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#defaultfolderlocation"
-                }
-            ],
-            "property_order": 15
+            }
         },
         "AutomaticUploadBandwidthPercentage": {
             "type": "integer",
             "title": "Automatic upload bandwidth percentage",
-            "description": "Percentage of local upload bandwidth that the sync client can use.",
+            "description": "This setting enables the sync app to automatically set the amount of bandwidth that can be used for uploading files, based on available bandwidth. To enable this setting, you must define a number between 1 and 99 that determines the percentage of bandwidth the sync app can use out of the total available bandwidth.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#automaticuploadbandwidthpercentage"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#automaticuploadbandwidthpercentage"
                 }
             ],
             "property_order": 20
@@ -84,7 +86,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#uploadbandwidthlimited"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#uploadbandwidthlimited"
                 }
             ],
             "property_order": 25
@@ -96,7 +98,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#downloadbandwidthlimited"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#downloadbandwidthlimited"
                 }
             ],
             "property_order": 30
@@ -108,9 +110,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#hidedockicon"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#hidedockicon"
                 }
             ],
+            "default": false,
             "property_order": 35
         },
         "OpenAtLogin": {
@@ -120,43 +123,44 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#openatlogin"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#openatlogin"
                 }
             ],
+            "default": true,
             "property_order": 40
         },
         "SharePointOnPremFrontDoorUrl": {
             "type": "string",
-            "title": "SharePoint Server Front Door URL",
-            "description": "The URL of the on-premises SharePoint Server.",
+            "title": "SharePoint On-Premises Front Door URL",
+            "description": "The URL of the On-Premises SharePoint Server.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#sharepointonpremfrontdoorurl"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#sharepointonpremfrontdoorurl"
                 }
             ],
             "property_order": 45
         },
         "SharePointOnPremTenantName": {
             "type": "string",
-            "title": "SharePoint Server Tenant Name",
-            "description": "The name that will be used when creating a folder to sync the on-premises SharePoint Server files.",
+            "title": "SharePoint On-Premises Tenant Name",
+            "description": "The name that will be used when creating a folder to sync the On-Premises SharePoint Server files.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#sharepointonpremtenantname"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#sharepointonpremtenantname"
                 }
             ],
             "property_order": 50
         },
-        "SharePointOnPremPrioritzationPolicy": {
+        "SharePointOnPremPrioritizationPolicy": {
             "type": "integer",
-            "title": "SharePoint OnPrem Prioritization",
+            "title": "SharePoint On-Premises Prioritization",
             "description": "Determines whether or not the client should set up sync for SharePoint Server or SharePoint Online first during the first-run scenario.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#sharepointonpremprioritizationpolicy"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#sharepointonpremprioritizationpolicy"
                 }
             ],
             "enum": [
@@ -166,63 +170,31 @@
             "options": {
                 "enum_titles": [
                     "SharePoint Online",
-                    "SharePoint Server"
+                    "SharePoint Server (On-Premises)"
                 ]
             },
             "property_order": 55
         },
-        "DefaultToBusinessFRE": {
-            "type": "boolean",
-            "description": "Default to OneDrive Business",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
-                }
-            ],
-            "property_order": 60
-        },
-        "EnableAddAccounts": {
-            "type": "boolean",
-            "description": "Allow users to add accounts to OneDrive",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
-                }
-            ],
-            "property_order": 65
-        },
         "FilesOnDemandEnabled": {
             "type": "boolean",
-            "title": "Enable Files On-Demand",
-            "description": "When set to true, new users who set up the sync app will download online-only files by default. When set to false, Files On-Demand will be disabled and users won't be able to turn it on.",
+            "title": "Enable Files On-Demand for macOS earlier than 12.1",
+            "description": "Beginning in macOS Monterey 12.1, Files On-Demand will be permanently enabled and this setting will no longer have any effect. For earlier versions - when set to true, new users who set up the sync app will download online-only files by default. When set to false, Files On-Demand will be disabled and users won't be able to turn it on.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#filesondemandenabled"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#filesondemandenabled"
                 }
             ],
+            "default": true,
             "property_order": 70
-        },
-        "IsHydrationToastAllowed": {
-            "type": "boolean",
-            "description": "When set to false, toasts will not appear when applications trigger the download of file contents.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
-                }
-            ],
-            "property_order": 75
         },
         "HydrationDisallowedApps": {
             "type": "string",
-            "description": "String in JSON format. AppID can be either the BSD process name or the bundle display name. \nMaxBuildVersion denotes the maximum build version of the application that will be blocked. \nMaxBundleVersion denotes the maximum bundle version of the application that will be blocked.",
+            "description": "This setting prevents apps from automatically downloading online-only files. You can use this setting to lock down apps that don't work correctly with your deployment of Files On-Demand. String in JSON format. See \"More info\" for deatils.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#hydrationdisallowedapps"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#hydrationdisallowedapps"
                 }
             ],
             "property_order": 80
@@ -238,21 +210,22 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#enableodignore"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#enableodignore"
                 }
             ],
             "property_order": 85
         },
         "EnableAllOcsiClients": {
             "type": "boolean",
-            "title": "Enable All Osci Clients",
+            "title": "Enable All OSCI Clients",
             "description": "This setting lets multiple users use the Microsoft 365 Apps for enterprise, Office 2019, or Office 2016 desktop apps to simultaneously edit an Office file stored in OneDrive. It also lets users share files from the Office desktop apps.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#enableallocsiclients"
                 }
             ],
+            "default": true,
             "property_order": 90
         },
         "DisableHydrationToast": {
@@ -262,9 +235,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#hydrationdisallowedapps"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#disablehydrationtoast"
                 }
             ],
+            "default": false,
             "property_order": 95
         },
         "BlockExternalSync": {
@@ -274,9 +248,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#blockexternalsync"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#blockexternalsync"
                 }
             ],
+            "default": false,
             "property_order": 100
         },
         "AllowTenantList": {
@@ -286,7 +261,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#allowtenantlist"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#allowtenantlist"
                 }
             ],
             "properties": {
@@ -308,7 +283,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#blocktenantlist"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#blocktenantlist"
                 }
             ],
             "properties": {
@@ -325,36 +300,68 @@
         },
         "KFMOptInWithWizard": {
             "type": "string",
-            "title": "Prompt Users to Move Known Folders",
+            "title": "Known Folder Move - Present opt-in wizard to users - Tenant ID",
+            "description": "Enter your Tenant ID to present users with Known Folder Move wizard.\n\nThis setting displays a wizard that prompts users to move their Documents and Desktop folders to OneDrive.\n\nIf you enable this setting and provide your tenant ID, users who are syncing their OneDrive will see the Folder Backup wizard window when they're signed in. If they close the window, a reminder notification appears in the Sync Activity Center until they move their Desktop and Documents folders.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#kfmoptinwithwizard"
+                }
+            ],
             "property_order": 115
         },
         "KFMSilentOptIn": {
             "type": "string",
-            "title": "Silently Move Known Folders",
+            "title": "Known Folder Move - Silent Opt-in - Tenant ID",
+            "description": "Enter your Tenant ID to redirect and move your users' Documents and/or Desktop folders to OneDrive without any user interaction.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#kfmsilentoptin"
+                }
+            ],
             "property_order": 120
         },
         "KFMSilentOptInDesktop": {
             "type": "boolean",
-            "title": "Silently Opt in Desktop to Known Folders",
-            "description": "Enable to silently opt-in the user's Desktop folder.",
+            "title": "Known Folder Move - Silent Opt-in - backup Desktop folder",
+            "description": "Sync the user's Desktop folder to OneDrive using Known Folder Move. Requires the tenant ID to be configured in \"Known Folder Move - Silent Opt-in\".",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#kfmsilentoptin"
+                }
+            ],
             "property_order": 125
         },
         "KFMSilentOptInDocuments": {
             "type": "boolean",
-            "title": "Silently Opt in Documents to Known Folders",
-            "description": "Enable to silently opt-in the user's Documents folder.",
+            "title": "Known Folder Move - Silent Opt-in - backup Documents folder",
+            "description": "Sync the user's Documents folder to OneDrive using Known Folder Move. Requires the tenant ID to be configured in \"Known Folder Move - Silent Opt-in\".",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#kfmsilentoptin"
+                }
+            ],
             "property_order": 130
         },
         "KFMSilentOptInWithNotification": {
             "type": "boolean",
-            "title": "Silently Opt in with Notification",
+            "title": "Known Folder Move - Silent Opt-in - Send notification",
             "description": "If enabled, displays a notification to users after their folders have been redirected.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#kfmsilentoptin"
+                }
+            ],
             "property_order": 135
         },
         "KFMBlockOptIn": {
             "type": "integer",
-            "title": "Block Opt-in",
-            "description": "If enabled, will prevent KFM opt-in.",
+            "title": "Known Folder Move - Block Opt-in",
+            "description": "If enabled, prevents users from moving their Documents and Desktop folders to any OneDrive account.\n\nThis setting doesn't take effect if you've enabled KFMOptInWithWizard or KFMSilentOptIn.",
             "enum": [
                 0,
                 1,
@@ -367,13 +374,75 @@
                     "Prevent & Redirect Previous KFM'd Folders to the Device"
                 ]
             },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#kfmblockoptin"
+                }
+            ],
+            "default": 0,
             "property_order": 140
         },
         "KFMBlockOptOut": {
             "type": "boolean",
-            "title": "Block KFM Opt-out",
-            "description": "If enabled, prevents users from redirecting their known folders to the Mac.",
+            "title": "Known Folder Move - Block Opt-out",
+            "description": "This setting forces users to keep their Documents and Desktop folders directed to OneDrive.\n\nIf you enable this setting, the Stop Backup button in the Manage Folder Backup window is disabled, and users receive an error if they try to stop syncing their Desktop or Documents folder.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#kfmblockoptout"
+                }
+            ],
+            "default": false,
             "property_order": 145
+        },
+        "DisableAutoConfig": {
+            "type": "integer",
+            "title": "Automatic Configuration",
+            "description": "This setting determines whether or not the sync app can automatically sign in. If you set this setting's value to 1, the sync app is prevented from automatically signing with an existing Microsoft Azure Active Directory (Azure AD) credential that is made available to Microsoft applications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#disableautoconfig"
+                }
+            ],
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow automatically signing with an existing AzureAD account.",
+                    "Prevent automatically signing with an existing AzureAD account."
+                ]
+            },
+            "default": 0,
+            "property_order": 150
+        },
+        "Tier": {
+            "type": "string",
+            "title": "Update tier",
+            "description": "Specify the sync app update ring for users in your organization.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#disableautoconfig"
+                }
+            ],
+            "enum": [
+                "Insiders",
+                "Production",
+                "Enterprise"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Insiders - preview new features",
+                    "Production - latest features as they become available",
+                    "Enterprise - get new features, bug fixes, and performance improvements last"
+                ]
+            },
+            "default": "Production",
+            "property_order": 150
         }
     }
 }
