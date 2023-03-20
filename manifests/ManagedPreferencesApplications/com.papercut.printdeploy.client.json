@@ -28,7 +28,7 @@
         "server_scheme": {
             "type": "string",
             "title": "Server Scheme",
-            "default": "http",
+            "default": "https",
             "links": [
                 {
                     "rel": "More information",
