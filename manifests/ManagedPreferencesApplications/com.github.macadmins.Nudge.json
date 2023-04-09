@@ -2,38 +2,189 @@
     "title": "Nudge (com.github.macadmins.Nudge)",
     "description": "Nudge settings",
     "properties": {
-        "asyncronousSoftwareUpdate": {
-            "type": "boolean",
-            "title": "Asyncronous Software Update",
-            "default": true,
-            "description": "When enabled Nudge will wait for Software Update to finish downloading (if any) updates before showing the UI.",
+        "optionalFeatures": {
+            "type": "object",
+            "title": "Optional Features",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#asyncronoussoftwareupdate---type-boolean-default-value-true-required-no"
+                    "href": "https://github.com/macadmins/nudge/wiki/Preferences#optionalfeatures---type-hash-default-value-"
                 }
             ],
+            "properties": {
+                "attemptToFetchMajorUpgrade": {
+                    "type": "boolean",
+                    "title": "Attempt to Fetch Major Upgrade",
+                    "default": true,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#attempttofetchmajorupgrade---type-boolean-default-value-true-required-no"
+                        }
+                    ]
+                },
+                "acceptableApplicationBundleIDs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Bundle IDs"
+                    },
+                    "title": "Acceptable Application Bundle IDs",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#acceptableapplicationbundleids---type-array-default-value--required-no"
+                        }
+                    ]
+                },
+                "acceptableAssertionUsage": {
+                    "type": "boolean",
+                    "title": "Acceptable Assertion Usage",
+                    "default": false,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#acceptableassertionusage---type-boolean-default-value-false-required-no"
+                        }
+                    ]
+                },
+                "acceptableAssertionApplicationNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Acceptable Assertion Application Name"
+                    },
+                    "title": "Acceptable Assertion Application Names",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#acceptableassertionapplicationnames---type-array-default-value--required-no"
+                        }
+                    ]
+                },
+                "acceptableCameraUsage": {
+                    "type": "boolean",
+                    "title": "Acceptable Camera Usage",
+                    "default": false,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#acceptablecameraUsage---type-boolean-default-value-false-required-no"
+                        }
+                    ]
+                },
+                "acceptableScreenSharingUsage": {
+                    "type": "boolean",
+                    "title": "Acceptable Screen Sharing Usage",
+                    "default": false,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#acceptablescreensharingusage---type-boolean-default-value-false-required-no"
+                        }
+                    ]
+                },
+                "aggressiveUserExperience": {
+                    "type": "boolean",
+                    "title": "Aggressive User Experience",
+                    "default": true,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#aggressiveuserexperience---type-boolean-default-value-true-required-no"
+                        }
+                    ]
+                },
+                "aggressiveUserFullScreenExperience": {
+                    "type": "boolean",
+                    "title": "Aggressive User Full Screen Experience",
+                    "default": true,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#aggressiveuserfullscreenexperience---type-boolean-default-value-true-required-no"
+                        }
+                    ]
+                },
+                "asynchronousSoftwareUpdate": {
+                    "type": "boolean",
+                    "title": "Asynchronous Software Update",
+                    "default": true,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#asynchronoussoftwareupdate---type-boolean-default-value-true-required-no"
+                        }
+                    ]
+                },
+                "attemptToBlockApplicationLaunches": {
+                    "type": "boolean",
+                    "title": "Attempt To Block Application Launches",
+                    "default": false,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#attemptToBlockApplicationLaunches---type-boolean-default-value-false-required-no"
+                        }
+                    ]
+                },
+                "blockedApplicationBundleIDs": {
+                    "type": "array",
+                    "items": {},
+                    "title": "Blocked Application Bundle IDs",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#blockedApplicationBundleIDs---type-array-default-value--required-no"
+                        }
+                    ]
+                },
+                "disableSoftwareUpdateWorkflow": {
+                    "type": "boolean",
+                    "title": "Disable Software Update Workflow",
+                    "default": false,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#disablesoftwareupdateworkflow---type-boolean-default-value-false-required-no"
+                        }
+                    ]
+                },
+                "enforceMinorUpdates": {
+                    "type": "boolean",
+                    "title": "Enforce Minor Updates",
+                    "default": true,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#enforceminorupdates---type-boolean-default-value-true-required-no"
+                        }
+                    ]
+                },
+                "terminateApplicationsOnLaunch": {
+                    "type": "boolean",
+                    "title": "Terminate Applications On Launch",
+                    "default": false,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#terminateapplicationsonlaunch---type-boolean-default-value-false-required-no"
+                        }
+                    ]
+                }
+            },
             "property_order": 5
-        },
-        "enforceMinorUpdates": {
-            "type": "boolean",
-            "title": "Enforce Minor Updates",
-            "default": true,
-            "description": "When enabled, Nudge will enforce minor updates. This should likely never be disabled.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#enforceminorupdates---type-boolean-default-value-true-required-no"
-                }
-            ],
-            "property_order": 10
         },
         "osVersionRequirements": {
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "osVersionRequirements Dictionary",
                 "properties": {
+                    "aboutUpdateURL": {
+                        "type": "string",
+                        "title": "About Update URL",
+                        "description": "A single URL, enabling the More Info button URL path. Ignored when About Update URLs (in plural) is also present."
+                    },
                     "aboutUpdateURLs": {
                         "type": "array",
                         "items": {
@@ -48,7 +199,7 @@
                                 }
                             }
                         },
-                        "description": "A list of arrays, enabling localization of the More Info button URL path. Please see the aboutUpdateURLs wiki article for more information.",
+                        "title": "About Update URLs",
                         "links": [
                             {
                                 "rel": "More information",
@@ -59,7 +210,6 @@
                     "majorUpgradeAppPath": {
                         "type": "string",
                         "title": "Major macOS Upgrade App Path",
-                        "description": "The app path for a major upgrade.",
                         "links": [
                             {
                                 "rel": "More information",
@@ -70,7 +220,7 @@
                     "requiredInstallationDate": {
                         "type": "date",
                         "title": "Required Installation Date",
-                        "description": "The required installation date for Nudge to enforce the required operating system version.",
+                        "description": "The required installation date for Nudge to enforce the required operating system version. You must follow a standard date string as YYYY-MM-DDTHH:MM:SSZ - Example: \"2021-01-31T00:00:00Z\"",
                         "links": [
                             {
                                 "rel": "More information",
@@ -81,7 +231,6 @@
                     "requiredMinimumOSVersion": {
                         "type": "string",
                         "title": "Required Minimum OS Version",
-                        "description": "The required minimum operating system version. ",
                         "links": [
                             {
                                 "rel": "More information",
@@ -99,7 +248,20 @@
                         "links": [
                             {
                                 "rel": "More information",
-                                "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#targetedosversions---type-array-default-value-"
+                                "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#targetedosversions-deprecated-as-of-v110---type-array-default-value-"
+                            }
+                        ]
+                    },
+                    "targetedOSVersionsRule": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Targeted OS Versions Rule",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#targetedosversionsrule---type-string-default-value--required-no"
                             }
                         ]
                     }
@@ -113,7 +275,7 @@
                     "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#osversionrequirements---type-array-default-value-"
                 }
             ],
-            "property_order": 15
+            "property_order": 10
         },
         "userExperience": {
             "type": "object",
@@ -123,7 +285,6 @@
                     "type": "boolean",
                     "title": "No Timers",
                     "default": false,
-                    "description": "This will disable ALL functionality related to the User Experience preference domain.",
                     "links": [
                         {
                             "rel": "More information",
@@ -135,7 +296,6 @@
                     "type": "integer",
                     "title": "Allowed Deferrals",
                     "default": 1000000,
-                    "description": "The amount of times a user can defer Nudge (change it from the currently active window) in the current user session before the \"aggressive user experience\" is enabled.",
                     "links": [
                         {
                             "rel": "More information",
@@ -143,11 +303,76 @@
                         }
                     ]
                 },
+                "allowGracePeriods": {
+                    "type": "boolean",
+                    "title": "Allow Grace Periods",
+                    "default": false,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#allowGracePeriods---type-boolean-default-value-false"
+                        }
+                    ]
+                },
+                "allowUserQuitDeferrals": {
+                    "type": "boolean",
+                    "title": "Allow User Quit Deferrals",
+                    "default": true,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#allowUserQuitDeferrals---type-boolean-default-value-true"
+                        }
+                    ]
+                },
+                "gracePeriodInstallDelay": {
+                    "type": "integer",
+                    "title": "Grace Period Install Delay",
+                    "default": 23,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#gracePeriodInstallDelay---type-integer-default-value-23"
+                        }
+                    ]
+                },
+                "gracePeriodLaunchDelay": {
+                    "type": "integer",
+                    "title": "Grace Period Launch Delay",
+                    "default": 1,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#gracePeriodLaunchDelay---type-integer-default-value-1"
+                        }
+                    ]
+                },
+                "gracePeriodPath": {
+                    "type": "string",
+                    "title": "Grace Period Path",
+                    "default": "/private/var/db/.AppleSetupDone",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#graceperiodpath---type-string-default-value-privatevardbapplesetupdone"
+                        }
+                    ]
+                },
+                "imminentRefreshCycle": {
+                    "type": "integer",
+                    "title": "Imminent Refresh Cycle",
+                    "default": 600,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userExperience#imminentrefreshcycle---type-integer-default-value-600"
+                        }
+                    ]
+                },
                 "allowedDeferralsUntilForcedSecondaryQuitButton": {
                     "type": "integer",
                     "title": "Allowed Deferrals until Forced Secondary Quit Button",
                     "default": 14,
-                    "description": "The amount of times a user can defer Nudge (change it from the currently active window) in the current user session before the both quit buttons need to be actioned.",
                     "links": [
                         {
                             "rel": "More information",
@@ -159,7 +384,6 @@
                     "type": "integer",
                     "title": "Approaching Refresh Cycle",
                     "default": 6000,
-                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window.",
                     "links": [
                         {
                             "rel": "More information",
@@ -171,7 +395,6 @@
                     "type": "integer",
                     "title": "Approaching Window Time",
                     "default": 72,
-                    "description": "The amount of time in hours Nudge will use to determine that the requiredInstallationDate is \"approaching\".",
                     "links": [
                         {
                             "rel": "More information",
@@ -182,8 +405,7 @@
                 "elapsedRefreshCycle": {
                     "type": "integer",
                     "title": "Elapsed Refresh Cycle",
-                    "default": 6000,
-                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window. This key is triggered once the requiredInstallationDate has expired.",
+                    "default": 300,
                     "links": [
                         {
                             "rel": "More information",
@@ -195,7 +417,6 @@
                     "type": "integer",
                     "title": "Imminent Refresh Cycle",
                     "default": 600,
-                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window.",
                     "links": [
                         {
                             "rel": "More information",
@@ -206,8 +427,7 @@
                 "imminentWindowTime": {
                     "type": "integer",
                     "title": "Imminent Window Time",
-                    "default": 25,
-                    "description": "The amount of time in hours Nudge will use to determine that the requiredInstallationDate is \"imminent\".",
+                    "default": 24,
                     "links": [
                         {
                             "rel": "More information",
@@ -219,7 +439,6 @@
                     "type": "integer",
                     "title": "Initial Refresh Cycle",
                     "default": 18000,
-                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window. This key is triggered for all Nudge launches until the approachingWindowTime has been passed.",
                     "links": [
                         {
                             "rel": "More information",
@@ -231,7 +450,6 @@
                     "type": "integer",
                     "title": "Max Random Delay",
                     "default": 1200,
-                    "description": "The maximum amount of delay Nudge will utilize before launching the UI. This is useful if you do not want your users to all receive the Nudge prompt at the exact time of the LaunchAgent.",
                     "links": [
                         {
                             "rel": "More information",
@@ -243,7 +461,6 @@
                     "type": "integer",
                     "title": "Nudge Refresh Cycle",
                     "default": 60,
-                    "description": "The amount of time in seconds Nudge will use as its core timer to refresh all the core code paths.",
                     "links": [
                         {
                             "rel": "More information",
@@ -255,7 +472,6 @@
                     "type": "boolean",
                     "title": "Random Delay",
                     "default": false,
-                    "description": "Enables an initial delay Nudge before launching the UI. This is useful if you do not want your users to all receive the Nudge prompt at the exact time of the LaunchAgent.",
                     "links": [
                         {
                             "rel": "More information",
@@ -264,7 +480,7 @@
                     ]
                 }
             },
-            "property_order": 20
+            "property_order": 15
         },
         "userInterface": {
             "type": "object",
@@ -274,7 +490,6 @@
                     "type": "boolean",
                     "title": "Simple Mode",
                     "default": false,
-                    "description": "Enables Nudge to launch in the simplified user experience.",
                     "links": [
                         {
                             "rel": "More information",
@@ -284,9 +499,8 @@
                 },
                 "forceScreenShotIcon": {
                     "type": "boolean",
-                    "title": "Force Screen Shot Icon",
+                    "title": "Force Screenshot Icon",
                     "default": false,
-                    "description": "Force the built-in ScreenShot icon to render in the UI if a ScreenShot path is not passed.",
                     "links": [
                         {
                             "rel": "More information",
@@ -294,10 +508,31 @@
                         }
                     ]
                 },
+                "showDeferralCount": {
+                    "type": "boolean",
+                    "title": "Show Deferral Count",
+                    "default": true,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#showdeferralcount---type-boolean-default-value-true"
+                        }
+                    ]
+                },
+                "singleQuitButton": {
+                    "type": "boolean",
+                    "title": "single Quit Button",
+                    "default": false,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#singlequitbutton---type-boolean-default-value-false"
+                        }
+                    ]
+                },
                 "iconDarkPath": {
                     "type": "string",
                     "title": "Dark Icon Path",
-                    "description": "A path to a local jpg, png, icns that contains the icon for dark mode. This will replace the Apple logo on the left side of Nudge.",
                     "pattern": "^.*\\.(icns|jpg|png)",
                     "links": [
                         {
@@ -309,7 +544,6 @@
                 "iconLightPath": {
                     "type": "string",
                     "title": "Light Icon Path",
-                    "description": "A path to a local jpg, png, icns that contains the icon for light mode. This will replace the Apple logo on the left side of Nudge.",
                     "pattern": "^.*\\.(icns|jpg|png)",
                     "links": [
                         {
@@ -320,8 +554,7 @@
                 },
                 "screenShotDarkPath": {
                     "type": "string",
-                    "title": "Dark Screen Shot Path",
-                    "description": "A path to a local jpg, png, icns that contains the screen shot for dark mode. This will replace the Big Sur logo on the lower right side of Nudge.",
+                    "title": "Dark Screenshot Path",
                     "pattern": "^.*\\.(icns|jpg|png)",
                     "links": [
                         {
@@ -332,13 +565,44 @@
                 },
                 "screenShotLightPath": {
                     "type": "string",
-                    "title": "Light Screen Shot Path",
-                    "description": "A path to a local jpg, png, icns that contains the screen shot for light mode. This will replace the Big Sur logo on the lower right side of Nudge.",
+                    "title": "Light Screenshot Path",
                     "pattern": "^.*\\.(icns|jpg|png)",
                     "links": [
                         {
                             "rel": "More information",
                             "href": "https://github.com/macadmins/nudge/wiki/userInterface#screenshotlightpath---type-string-default-value-"
+                        }
+                    ]
+                },
+                "actionButtonPath": {
+                    "type": "string",
+                    "title": "Action Button Path",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#actionbuttonpath---type-string-default-value-nil"
+                        }
+                    ]
+                },
+                "fallbackLanguage": {
+                    "type": "string",
+                    "title": "Fallback Language",
+                    "default": "en",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#fallbacklanguage---type-string-default-value-en"
+                        }
+                    ]
+                },
+                "forceFallbackLanguage": {
+                    "type": "boolean",
+                    "title": "Force Fallback Language",
+                    "default": false,
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/nudge/wiki/userInterface#forcefallbacklanguage---type-boolean-default-value-false"
                         }
                     ]
                 },
@@ -356,6 +620,50 @@
                                     {
                                         "rel": "More information",
                                         "href": "https://github.com/macadmins/nudge/wiki/updateElements#_language---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "customDeferralButtonText": {
+                                "type": "string",
+                                "title": "Custom Deferral Button Text",
+                                "description": "Modifies the customDeferralButtonText, also known as the \"Custom\" button.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#customdeferralbuttontext---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "customDeferralDropdownText": {
+                                "type": "string",
+                                "title": "Custom Deferral Dropdown Text",
+                                "description": "Modifies the customDeferralDropdownText, also known as the \"Defer\" button.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#customdeferraldropdowntext---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "oneDayDeferralButtonText": {
+                                "type": "string",
+                                "title": "One Day Deferral Button Text",
+                                "description": "Modifies the oneDayDeferralButtonText, also known as the \"One Day\" button.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#customdeferraldropdowntext---type-string-default-value-"
+                                    }
+                                ]
+                            },
+                            "oneHourDeferralButtonText": {
+                                "type": "string",
+                                "title": "One Hour Deferral Button Text",
+                                "description": "Modifies the oneHourDeferralButtonText, also known as the \"One Hour\" button.",
+                                "links": [
+                                    {
+                                        "rel": "More information",
+                                        "href": "https://github.com/macadmins/nudge/wiki/updateElements#onehourdeferralbuttontext---type-string-default-value-"
                                     }
                                 ]
                             },
@@ -472,7 +780,7 @@
                         }
                     },
                     "title": "Update Elements",
-                    "description": "A path to a local jpg, png, icns that contains the screen shot for light mode. This will replace the Big Sur logo on the lower right side of Nudge.",
+                    "description": "A list of dictionaries, enabling further customization to the Nudge UI",
                     "links": [
                         {
                             "rel": "More information",
@@ -481,6 +789,13 @@
                     ]
                 }
             },
+            "property_order": 20
+        },
+        "json-url": {
+            "type": "string",
+            "title": "JSON Preference File Location",
+            "description": "When configuring Nudge using a JSON-formatted preferences file located outside of the default location, set this key to the custom location using either a remote (https://) or a local (file://) URL, and leave other keys in this payload unset. Leave this key unset when configuring Nudge using the other keys in this payload.",
+            "pattern": "^(https?|file)://.+$",
             "property_order": 25
         }
     }
