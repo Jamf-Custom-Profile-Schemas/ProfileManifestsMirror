@@ -1,11 +1,134 @@
 {
     "title": "Slack (com.tinyspeck.slackmacgap)",
-    "description": "Slack settings",
+    "description": "Slack Client Management",
     "properties": {
+        "ClientEnvironment": {
+            "type": "integer",
+            "title": "Client Environment",
+            "description": "Configures the client to run in either commercial mode or government compliance mode (GovSlack).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://slack.com/solutions/govslack"
+                }
+            ],
+            "enum": [
+                1000,
+                1001
+            ],
+            "options": {
+                "enum_titles": [
+                    "Commercial",
+                    "GovSlack"
+                ]
+            },
+            "property_order": 5
+        },
+        "HardwareAcceleration": {
+            "type": "boolean",
+            "title": "Hardware Acceleration",
+            "description": "Enable or disable hardware accelerated rendering via GPU.",
+            "property_order": 10
+        },
+        "DownloadPath": {
+            "type": "string",
+            "title": "Download Path",
+            "description": "Defines the download location for documents from Slack. This must be a valid user accessible path.",
+            "pattern": "^/|//|(/[\\w-]+)+$",
+            "property_order": 15
+        },
+        "DefaultSignInTeam": {
+            "type": "string",
+            "title": "Default Team / Workspace",
+            "description": "Sets the default team/workspace for Slack sign-ins.",
+            "pattern": "^(E|T)[A-Z0-9]{8,50}$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://slack.com/help/articles/360041725993-Share-a-default-sign-in-file-with-members"
+                }
+            ],
+            "property_order": 20
+        },
+        "ReleaseChannel": {
+            "type": "string",
+            "title": "Release Channel",
+            "description": "Configure the client to receive updates from either the production or beta channel.",
+            "enum": [
+                "prod",
+                "beta"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Production",
+                    "Beta"
+                ]
+            },
+            "property_order": 25
+        },
+        "AutoUpdate": {
+            "type": "boolean",
+            "title": "Auto Update",
+            "description": "Enable or disable auto updates.",
+            "property_order": 30
+        },
+        "Defaults": {
+            "type": "object",
+            "description": "List of default values.",
+            "properties": {
+                "ClientEnvironment": {
+                    "type": "integer",
+                    "title": "Client Environment (Default)",
+                    "description": "Configures the client to run in either commercial mode or government compliance mode (GovSlack) by default. The user can still change this setting.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://slack.com/solutions/govslack"
+                        }
+                    ],
+                    "enum": [
+                        1000,
+                        1001
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Commercial",
+                            "GovSlack"
+                        ]
+                    }
+                },
+                "HardwareAcceleration": {
+                    "type": "boolean",
+                    "title": "Hardware Acceleration (Default)",
+                    "description": "Enables or disable hardware accelerated rendering via GPU. The user can still change this setting."
+                },
+                "DownloadPath": {
+                    "type": "string",
+                    "title": "Download Path (Default)",
+                    "description": "Defines the download location for documents from Slack. This must be a valid user accesible path. The user can still change this setting.",
+                    "pattern": "^/|//|(/[\\w-]+)+$"
+                },
+                "ReleaseChannel": {
+                    "type": "string",
+                    "title": "Release Channel (Default)",
+                    "description": "Configure the client to receive updates from either the production or beta channel. The user can still change this setting.",
+                    "enum": [
+                        "prod",
+                        "beta"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Production",
+                            "Beta"
+                        ]
+                    }
+                }
+            },
+            "property_order": 35
+        },
         "SlackNoAutoUpdates": {
             "type": "boolean",
             "title": "Disable Automatic Updates",
-            "default": false,
             "description": "When true, disables Slack's built-in automatic update mechanism. Useful if you update Slack using a tool like Munki.",
             "links": [
                 {
@@ -13,7 +136,7 @@
                     "href": "https://slack.com/help/articles/360035635174-Deploy-Slack-for-macOS"
                 }
             ],
-            "property_order": 5
+            "property_order": 40
         },
         "SlackDefaultSignInWorkspace": {
             "type": "string",
@@ -25,7 +148,7 @@
                     "href": "https://slack.com/help/articles/360041725993-Share-a-default-sign-in-file-with-members"
                 }
             ],
-            "property_order": 10
+            "property_order": 45
         }
     }
 }
