@@ -31,6 +31,16 @@
             "title": "Safari Password Domains",
             "description": "User names and passwords entered in websites with Safari can be saved if the domain is listed.",
             "property_order": 15
+        },
+        "CrossSiteTrackingPreventionRelaxedDomains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain"
+            },
+            "title": "Safari Relaxed Cross Site Tracking Domains",
+            "description": "Up to 10 domains can be added for which Cross-Site Tracking Prevention will be relaxed. Domains should be listed as theacmeinc.com which includes any subdomains (without needing to use *theacmeinc.com)",
+            "property_order": 20
         }
     }
 }
