@@ -305,10 +305,10 @@
                         }
                     }
                 },
-                "/Applications/Microsoft Defender ATP.app": {
+                "/Applications/Microsoft Defender.app": {
                     "type": "object",
                     "title": "Microsoft Defender ATP",
-                    "description": "Register /Applications/Microsoft Defender ATP.app.",
+                    "description": "Register /Applications/Microsoft Defender.app.",
                     "properties": {
                         "Application ID": {
                             "type": "string",
