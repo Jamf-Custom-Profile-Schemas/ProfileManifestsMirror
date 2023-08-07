@@ -54,7 +54,7 @@
         "FilterBrowsers": {
             "type": "boolean",
             "title": "Filter WebKit Traffic",
-            "default": true,
+            "default": false,
             "property_order": 25
         },
         "AllowListBookmarks": {

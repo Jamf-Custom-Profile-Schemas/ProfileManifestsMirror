@@ -215,7 +215,7 @@
         "RetriesUntilHint": {
             "type": "integer",
             "title": "Show password hints after failed attempts",
-            "description": "Numer of tries until password hint is shown. (0 = disable password hints)",
+            "description": "Number of tries until password hint is shown (0 = disable password hints).",
             "property_order": 160
         },
         "showInputMenu": {

@@ -16,7 +16,7 @@
         "ProxyServer": {
             "type": "string",
             "title": "Proxy Server",
-            "description": "The IP address or fully qualified domain name (FQDN) of the proxy server.",
+            "description": "The proxy server's network address.",
             "property_order": 10
         },
         "ProxyServerPort": {

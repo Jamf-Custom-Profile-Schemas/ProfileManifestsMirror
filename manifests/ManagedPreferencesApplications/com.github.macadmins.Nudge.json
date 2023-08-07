@@ -796,6 +796,12 @@
             "title": "JSON Preference File Location",
             "description": "When configuring Nudge using a JSON-formatted preferences file located outside of the default location, set this key to the custom location using either a remote (https://) or a local (file://) URL, and leave other keys in this payload unset. Leave this key unset when configuring Nudge using the other keys in this payload.",
             "pattern": "^(https?|file)://.+$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/macadmins/nudge/wiki#setting-the-json-url-in-mobileconfig-profile"
+                }
+            ],
             "property_order": 25
         }
     }
