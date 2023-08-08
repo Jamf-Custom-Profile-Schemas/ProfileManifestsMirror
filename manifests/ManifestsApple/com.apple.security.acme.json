@@ -103,6 +103,20 @@
             "default": false,
             "description": "If 'true', the device provides attestations describing the device and the generated key to the ACME server. The server can use the attestations as strong evidence that the key is bound to the device, and that the device has properties listed in the attestation. The server can use that as part of a trust score to decide whether to issue the requested certificate.\nWhen 'Attest' is 'true', 'HardwareBound' must also be 'true'.",
             "property_order": 50
+        },
+        "KeyIsExtractable": {
+            "type": "boolean",
+            "title": "Key Is Extractable",
+            "default": true,
+            "description": "Whether the private key of the identity obtained via SCEP should be tagged as \"non-extractable\" in the keychain.",
+            "property_order": 55
+        },
+        "AllowAllAppsAccess": {
+            "type": "boolean",
+            "title": "Allow All Apps Access",
+            "default": true,
+            "description": "If true, all apps have access to the private key.",
+            "property_order": 60
         }
     }
 }

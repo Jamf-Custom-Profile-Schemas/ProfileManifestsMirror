@@ -30,6 +30,11 @@
                         "type": "string",
                         "title": "Comment",
                         "description": "An optional description of the rule."
+                    },
+                    "TeamIdentifier": {
+                        "type": "string",
+                        "title": "Team Identifier",
+                        "description": "An additional constraint to limit the scope of the rule that is tested after matching the RuleType/RuleValue."
                     }
                 }
             },
