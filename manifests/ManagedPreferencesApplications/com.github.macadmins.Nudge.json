@@ -130,7 +130,9 @@
                 },
                 "blockedApplicationBundleIDs": {
                     "type": "array",
-                    "items": {},
+                    "items": {
+                        "type": "string"
+                    },
                     "title": "Blocked Application Bundle IDs",
                     "links": [
                         {
@@ -253,10 +255,7 @@
                         ]
                     },
                     "targetedOSVersionsRule": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
+                        "type": "string",
                         "title": "Targeted OS Versions Rule",
                         "links": [
                             {

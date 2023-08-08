@@ -4,8 +4,8 @@
     "properties": {
         "Version": {
             "type": "string",
-            "title": "NoMAD Shares PLIST Version",
-            "description": "Required.",
+            "title": "Configuration Version",
+            "description": "This is the version number of the configuration specification.",
             "links": [
                 {
                     "rel": "More information",

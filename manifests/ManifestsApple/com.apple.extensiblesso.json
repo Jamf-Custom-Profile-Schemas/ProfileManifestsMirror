@@ -6,6 +6,11 @@
             "type": "string",
             "title": "Extension Identifier",
             "description": "The bundle identifier of the app extension that performs single sign-on (SSO) for the specified URLs. Enter com.apple.AppSSOKerberos.KerberosExtension to use Apple's Kerberos SSO extension.",
+            "enum": [
+                "com.apple.AppSSOKerberos.KerberosExtension",
+                "com.microsoft.azureauthenticator.ssoextension",
+                "com.microsoft.CompanyPortalMac.ssoextension"
+            ],
             "property_order": 5
         },
         "Type": {

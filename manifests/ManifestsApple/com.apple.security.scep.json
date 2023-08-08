@@ -25,8 +25,8 @@
                             "type": "array",
                             "items": {
                                 "type": "string",
-                                "title": "OID",
-                                "description": "One item in the array representing a OID"
+                                "title": "SCEP Subject Array Pair Item",
+                                "description": "One item in the array representing a pair of OID and value"
                             },
                             "title": "Subject Array Pair",
                             "description": "An array representing an OID and value pair."
