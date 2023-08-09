@@ -269,7 +269,7 @@
         "autoRefreshLoginTimer": {
             "type": "integer",
             "title": "Automatically Refresh Login Window (seconds)",
-            "default": "0",
+            "default": 0,
             "description": "Timer for automatically refreshing login screen in seconds. If set to 0, does not automatically refresh.",
             "links": [
                 {
