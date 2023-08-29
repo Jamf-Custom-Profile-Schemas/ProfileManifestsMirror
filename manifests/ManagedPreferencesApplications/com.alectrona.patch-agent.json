@@ -1,0 +1,135 @@
+{
+    "title": "Alectrona Patch Agent (com.alectrona.patch-agent)",
+    "description": "Settings for Patch Agent",
+    "properties": {
+        "InstallOrUpdate": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Install Or Update",
+            "description": "The software titles to automatically install or update (even if they are not currently installed) using the Patch Agent.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 5
+        },
+        "UpdateOnly": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Update Only",
+            "description": "The software titles to automatically update if installed and out-of-date using the Patch Agent.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 10
+        },
+        "OtherManagedSoftware": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Other Managed Software",
+            "description": "The software titles to enable the Active Intervals feature for even when not included in the InstallOrUpdate or UpdateOnly preference keys. These software titles might be updated using the patch command line tool in scripted workflows external to the Patch Agent.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 15
+        },
+        "RunInterval": {
+            "type": "integer",
+            "title": "Run Interval",
+            "description": "The Patch Agent runs every 4 hours by default. You can adjust this interval time for your environment. Note: This key is configured in seconds. The minimum setting is 600 seconds (10 minutes) and there is currently no maximum.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 20
+        },
+        "SkipFirstPatchAgentRun": {
+            "type": "boolean",
+            "title": "Skip First Patch Agent Run",
+            "description": "When Alectrona Patch runs for the first time, it performs what is called a \"Patch Agent Run\" where it runs all configured installs/updates. You can skip the first Patch Agent Run by setting this key to true.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 25
+        },
+        "ActiveIntervals": {
+            "type": "boolean",
+            "title": "Active Intervals",
+            "description": "The Patch Agent will attempt to silently update any recently deferred app that exists in the InstallOrUpdate or UpdateOnly keys immediately after that app has been terminated by the user (even during an interval period). You can disable this behavior by setting to false.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 30
+        },
+        "RemovePatchSymlink": {
+            "type": "boolean",
+            "title": "Remove Patch Symlink",
+            "description": "Set to true to remove the symlink located at /usr/local/bin/patch. This will remove patch from the user's $PATH and allows for accessing the built-in BSD patch command (opens new window)without using it's full path. Note: When setting this key to true you will need to access the Patch CLT at it's full path (opens new window)in Terminal or custom scripts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 35
+        },
+        "ReconAfterInstall": {
+            "type": "boolean",
+            "title": "Recon After Installs",
+            "description": "Set to true to perform a Jamf Pro inventory update after a software title is installed or updated using the Patch Agent.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 40
+        },
+        "DeferIfRunning": {
+            "type": "boolean",
+            "title": "Defer If Running",
+            "description": "If an app is running when an update occurs, setting this key to true will suppress the update dialog and automatically perform a deferral.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 45
+        },
+        "UpdateMAS": {
+            "type": "boolean",
+            "title": "Update Mac App Store apps",
+            "description": "Set to true to attempt to update and convert Mac App Store (MAS) apps to their non-MAS counterpart.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences/"
+                }
+            ],
+            "property_order": 50
+        }
+    }
+}

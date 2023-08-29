@@ -1,0 +1,18 @@
+{
+    "title": "Alectrona Patch Command Line Tool (com.alectrona.patch)",
+    "description": "Alectrona Patch Command Line Tool settings",
+    "properties": {
+        "License": {
+            "type": "string",
+            "title": "License Key",
+            "description": "Your license key provided upon subscription to Alectrona Patch.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-clt/#patch-preferences/"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}

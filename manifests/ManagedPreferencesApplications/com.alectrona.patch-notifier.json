@@ -1,0 +1,213 @@
+{
+    "title": "Alectrona Patch Notifier (com.alectrona.patch-notifier)",
+    "description": "Settings for Patch Notifier",
+    "properties": {
+        "DialogDescription": {
+            "type": "string",
+            "title": "Dialog Description",
+            "description": "The main description that appears in the update dialog.\t",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-general-settings/"
+                }
+            ],
+            "property_order": 5
+        },
+        "UpdateButtonLabel": {
+            "type": "string",
+            "title": "Update Button Label",
+            "description": "The label or displayed text in the update button.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-general-settings/"
+                }
+            ],
+            "property_order": 10
+        },
+        "DeferButtonLabel": {
+            "type": "string",
+            "title": "Defer Button Label",
+            "description": "The label or displayed text in the defer button.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-general-settings/"
+                }
+            ],
+            "property_order": 15
+        },
+        "UpdateButtonPrimary": {
+            "type": "boolean",
+            "title": "Update Button Primary",
+            "description": "By default, the Update button is the primary button of the Update Dialog; meaning it responds to the Return key. Set this key to false if you wish to disable this behavior.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-general-settings/"
+                }
+            ],
+            "property_order": 20
+        },
+        "ContentImagePath": {
+            "type": "string",
+            "title": "Content Image Path",
+            "description": "Path to a locally stored image to use as the content image of the update dialog (PNG/JPG/GIF/TIFF).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-general-settings/"
+                }
+            ],
+            "property_order": 25
+        },
+        "DialogTimeout": {
+            "type": "integer",
+            "title": "Dialog Timeout",
+            "description": "The duration, in seconds, that the update dialog will appear on screen before performing a timeout.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-general-settings/"
+                }
+            ],
+            "property_order": 30
+        },
+        "DialogHelpText": {
+            "type": "string",
+            "title": "Dialog Help Text",
+            "description": "Enable the help button and populate the text displayed on screen when clicked.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-general-settings/"
+                }
+            ],
+            "property_order": 35
+        },
+        "DialogHelpToolTip": {
+            "type": "string",
+            "title": "Dialog Help Tool Tip",
+            "description": "Customizes the tooltip of the help button (when enabled).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-general-settings/"
+                }
+            ],
+            "property_order": 40
+        },
+        "DialogTitle": {
+            "type": "string",
+            "title": "Dialog Title",
+            "description": "The title of the update dialog window.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-general-settings/"
+                }
+            ],
+            "property_order": 45
+        },
+        "DeferralLimit": {
+            "type": "integer",
+            "title": "Deferral Limit",
+            "description": "Sets a global Deferral Limit for all software.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-deferral-limits/"
+                }
+            ],
+            "property_order": 50
+        },
+        "DeferralLimitExceptions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "type": "string",
+                        "title": "Key",
+                        "description": "Software ID of the software title to include in the deferral limit exceptions."
+                    },
+                    "Integer": {
+                        "type": "integer",
+                        "title": "Integer",
+                        "description": "Deferral limit for the specified Software ID."
+                    }
+                }
+            },
+            "title": "Deferral Limit Exceptions",
+            "description": "Sets exceptions to the global Deferral Limit, or irrespective of it.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-deferral-limits/"
+                }
+            ],
+            "property_order": 55
+        },
+        "FinalDialogDescription": {
+            "type": "string",
+            "title": "Final Dialog Description",
+            "description": "The main description that appears in the final update dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-deferral-limits/"
+                }
+            ],
+            "property_order": 60
+        },
+        "DialogDeferralText": {
+            "type": "string",
+            "title": "Dialog Deferral Text",
+            "description": "The text that appears below the main description in the update dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-deferral-limits/"
+                }
+            ],
+            "property_order": 65
+        },
+        "IgnoreDeferralText": {
+            "type": "boolean",
+            "title": "Ignore Deferral Text",
+            "description": "Does not include the deferral text in the update dialog’s description.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-deferral-limits/"
+                }
+            ],
+            "property_order": 70
+        },
+        "RecordTimeoutAsDeferral": {
+            "type": "boolean",
+            "title": "Record Timeout as Deferral",
+            "description": "When an update dialog timeout occurs, record a deferral rather than taking no action.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-deferral-limits/"
+                }
+            ],
+            "property_order": 75
+        },
+        "FinalDialogTimeout": {
+            "type": "integer",
+            "title": "Final Dialog Timeout",
+            "description": "The duration, in seconds, that the final update dialog will appear on screen before performing an update.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#preference-keys-for-deferral-limits/"
+                }
+            ],
+            "property_order": 80
+        }
+    }
+}
