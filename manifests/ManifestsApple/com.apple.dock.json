@@ -117,6 +117,27 @@
                                 "title": "Display Name",
                                 "description": "Display name in the profile GUI of a dock item."
                             },
+                            "url": {
+                                "type": "object",
+                                "title": "URL Data",
+                                "description": "Dictionary describing the target url.",
+                                "properties": {
+                                    "_CFURLString": {
+                                        "type": "string",
+                                        "title": "URL",
+                                        "description": "The URL."
+                                    },
+                                    "_CFURLStringType": {
+                                        "type": "integer",
+                                        "title": "URL Type",
+                                        "description": "URL type. 0 = /Path/to/item, 15 = file://Path/to/item",
+                                        "enum": [
+                                            0,
+                                            15
+                                        ]
+                                    }
+                                }
+                            },
                             "file-type": {
                                 "type": "integer",
                                 "title": "Type",
@@ -148,27 +169,6 @@
                                         "type": "integer",
                                         "title": "Path Type",
                                         "description": "Path type. 0 = /Path/to/item, 15 = file://Path/to/item",
-                                        "enum": [
-                                            0,
-                                            15
-                                        ]
-                                    }
-                                }
-                            },
-                            "url": {
-                                "type": "object",
-                                "title": "URL Data",
-                                "description": "Dictionary describing the target url.",
-                                "properties": {
-                                    "_CFURLString": {
-                                        "type": "string",
-                                        "title": "URL",
-                                        "description": "The URL."
-                                    },
-                                    "_CFURLStringType": {
-                                        "type": "integer",
-                                        "title": "URL Type",
-                                        "description": "URL type. 0 = /Path/to/item, 15 = file://Path/to/item",
                                         "enum": [
                                             0,
                                             15
