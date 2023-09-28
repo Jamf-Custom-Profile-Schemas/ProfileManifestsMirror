@@ -148,6 +148,8 @@ def process_subkeys(subkeys):
             continue
         if name.lower().startswith("pfc_"):
             continue
+        if name.lower().startswith("pfmx_"):
+            continue
 
         # Skip specific types
         ignored_types = ("data",)
