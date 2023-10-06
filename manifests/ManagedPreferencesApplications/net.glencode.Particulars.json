@@ -6,14 +6,40 @@
             "type": "boolean",
             "title": "Lab Mode",
             "default": false,
-            "description": "Lab Mode eases deployment of Particulars in a computer lab or data center.",
+            "description": "Lab Mode eases the deployment of Particulars in a computer lab or other mass deployment. See the documentation for more information.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#labMode"
                 }
             ],
             "property_order": 5
+        },
+        "showOnDesktop": {
+            "type": "boolean",
+            "title": "Show Particulars on the Desktop",
+            "default": true,
+            "description": "The default mode of Particulars is to present system information on the desktop. This can be disabled, usually in favor of showing Particulars in the menu bar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#showOnDesktop"
+                }
+            ],
+            "property_order": 10
+        },
+        "showMenuBarExtra": {
+            "type": "boolean",
+            "title": "Show Particulars in the Menu Bar",
+            "default": false,
+            "description": "Adds an item to the macOS menu bar that allows quick access to system information. Secondary-clicking on the menu bar item shows a menu with settings, copying, and other functions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#showMenuBarExtra"
+                }
+            ],
+            "property_order": 15
         },
         "detailLevel": {
             "type": "integer",
@@ -22,31 +48,31 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#detailLevelAdvanced"
                 }
             ],
-            "property_order": 10
+            "property_order": 20
         },
         "preferredDisplay": {
             "type": "integer",
             "title": "Preferred Display",
-            "description": "Sets the display (or monitor) on which Particulars will show system information. If the display is later unavailable, Particulars will default back to the primary display. The value is an integer, taking 2 for the 2nd display, for example.",
+            "description": "Sets the display (or monitor) on which Particulars will show desktop system information. If the display is later unavailable, Particulars will default back to the primary display. The value is an integer, taking 2 for the 2nd display, for example.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#preferredDisplay"
                 }
             ],
-            "property_order": 15
+            "property_order": 25
         },
         "desktopPosition": {
             "type": "integer",
             "title": "Desktop Position",
-            "description": "Sets the relative position of system information on the desktop.",
+            "description": "Sets the relative position of desktop system information.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#desktopPosition"
                 }
             ],
             "enum": [
@@ -73,17 +99,17 @@
                     "Bottom Right"
                 ]
             },
-            "property_order": 20
+            "property_order": 30
         },
         "textTheme": {
             "type": "integer",
             "title": "Text Theme",
-            "default": 0,
-            "description": "Sets the text theme. Each theme has a corresponding number.",
+            "default": 1,
+            "description": "Sets the theme of desktop system information. Each theme has a corresponding number.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#textTheme"
                 }
             ],
             "enum": [
@@ -100,17 +126,17 @@
                     "Custom"
                 ]
             },
-            "property_order": 25
+            "property_order": 35
         },
         "lightDarkText": {
             "type": "integer",
             "title": "Light or Dark Text",
             "default": 1,
-            "description": "Particulars has 3 options for the shade of the output: automatic, light text, or dark text.",
+            "description": "Particulars has 3 options for the shade of the desktop system information: automatic, light text, or dark text. The automatic setting scans the current desktop picture to determine what setting to use. If battery life or performance is a concern, use light or dark.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#lightDarkText"
                 }
             ],
             "enum": [
@@ -125,19 +151,33 @@
                     "Dark text"
                 ]
             },
-            "property_order": 30
+            "property_order": 40
         },
         "textSize": {
             "type": "integer",
             "title": "Text Size",
-            "description": "Sets the text size. The default is 18. Values between 12 and 24 are typical.",
+            "default": 18,
+            "description": "Sets the preferred text size for the desktop system information in points. The default is 18. Values between 12 and 24 are typical. (Value may be scaled down to fit.)",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#textSize"
                 }
             ],
-            "property_order": 35
+            "property_order": 45
+        },
+        "dropShadow": {
+            "type": "boolean",
+            "title": "Drop Shadow",
+            "default": true,
+            "description": "Determines whether the desktop system information has a drop shadow behind it.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#dropShadow"
+                }
+            ],
+            "property_order": 50
         },
         "labelCase": {
             "type": "integer",
@@ -147,7 +187,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#labelCase"
                 }
             ],
             "enum": [
@@ -162,55 +202,85 @@
                     "UPPER"
                 ]
             },
-            "property_order": 40
+            "property_order": 55
         },
-        "dropShadow": {
-            "type": "boolean",
-            "title": "Drop Shadow",
-            "description": "Determines whether the system information on the desktop has a drop shadow behind it.",
+        "menuBarWidgetAppearance": {
+            "type": "integer",
+            "title": "Menu Bar Widget Appearance",
+            "default": 0,
+            "description": "Sets the appearance of the menu bar widget.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#menuBarWidgetAppearance"
                 }
             ],
-            "property_order": 45
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "options": {
+                "enum_titles": [
+                    "System appearance (default)",
+                    "Vibrant Light",
+                    "Vibrant Dark",
+                    "Light",
+                    "Dark"
+                ]
+            },
+            "property_order": 60
+        },
+        "menuBarWidgetTextSize": {
+            "type": "integer",
+            "title": "Menu Bar Widget Text Size",
+            "default": 12,
+            "description": "Sets the preferred text size in the menu bar widget in points. The default is 12. Values below 9 and above 24 are ignored. (Value may be scaled down to fit.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#menuBarWidgetTextSize"
+                }
+            ],
+            "property_order": 65
         },
         "allNetworkInterfaces": {
             "type": "boolean",
-            "title": "Show All Network Interfaces",
+            "title": "Show All Active Network Interfaces",
             "default": false,
-            "description": "By default, Particulars only displays information about the primary active network interface. To show information about all active network interfaces, set allNetworkInterfaces.",
+            "description": "When enabled in the detail level, Particulars displays information about the primary active network interface. This setting expands that to include information about all active network interfaces.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#allNetworkInterfaces"
                 }
             ],
-            "property_order": 50
+            "property_order": 70
         },
         "dhcpLeaseRemaining": {
             "type": "boolean",
             "title": "Show DHCP Lease Time Remaining",
             "default": false,
-            "description": "Particulars shows the DHCP server address and the length of the DHCP lease. Setting this preference will also show the remaining lease time.",
+            "description": "In the default network information, Particulars shows the DHCP server address and the length of the DHCP lease. This setting adds the remaining lease time.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#dhcpLeaseRemaining"
                 }
             ],
-            "property_order": 55
+            "property_order": 75
         },
         "macAddressFormat": {
             "type": "integer",
             "title": "MAC Address Format",
             "default": 1,
-            "description": "By default, MAC (Media Access Control) addresses are formatted with colon separators and in lowercase. Use this preference to select another MAC address format.",
+            "description": "By default, MAC (Media Access Control) addresses are formatted with colon separators and in lowercase. Use this setting to select another MAC address format.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#macAddressFormat"
                 }
             ],
             "enum": [
@@ -227,7 +297,7 @@
                     "Windows/IEEE (example: 01-23-45-67-89-AB)"
                 ]
             },
-            "property_order": 60
+            "property_order": 80
         },
         "networkDetailLevel": {
             "type": "integer",
@@ -236,56 +306,59 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#networkDetailLevel"
                 }
             ],
-            "property_order": 65
+            "property_order": 85
         },
         "networkNotifications": {
             "type": "boolean",
-            "title": "Show Network Notifications",
-            "description": "When enabled, Particulars will post system notifications when it detects a change in the primary IPv4 address or the public IP address. Notifications are also governed by settings in the Notifications preference pane in System Preferences.",
+            "title": "Network Notifications",
+            "default": false,
+            "description": "When enabled, Particulars will post system notifications when it detects a change in the primary IPv4 address or the public IP address. Notifications are also governed by settings in the Notifications pane of System Settings.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#networkNotifications"
                 }
             ],
-            "property_order": 70
+            "property_order": 90
         },
         "subnetMaskCIDRNotation": {
             "type": "boolean",
-            "title": "Subnet Mask CIDR Notation",
-            "description": "Use this preference to have Particulars display subnet masks in the short CIDR (Classless Inter-domain Routing) notation. For example, 255.255.254.0 will show as /23.",
+            "title": "Use CIDR Notation for Subnet Mask",
+            "default": false,
+            "description": "This setting displays subnet masks in the short CIDR (Classless Inter-domain Routing) notation. For example, 255.255.254.0 will show as /23.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#subnetMaskCIDRNotation"
                 }
             ],
-            "property_order": 75
+            "property_order": 95
         },
         "coreCount": {
             "type": "boolean",
-            "title": "Show CPU Core Count",
-            "description": "Adds a count of CPU cores to the CPU item. Changing this preference requires a restart of the application/widget to take effect.",
+            "title": "CPU Core Count",
+            "default": false,
+            "description": "Adds a count of CPU cores to the CPU particular. Changing this setting requires a restart of the application to take effect.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#coreCount"
                 }
             ],
-            "property_order": 80
+            "property_order": 100
         },
         "diskFreeSpace": {
             "type": "integer",
-            "title": "Show Disk Free Space",
+            "title": "Disk Free Space Format",
             "default": 0,
             "description": "Free/available disk space can be displayed in multiple ways. See documentation URL for options.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#diskFreeSpace"
                 }
             ],
             "enum": [
@@ -300,67 +373,96 @@
                     "Free and purgeable"
                 ]
             },
-            "property_order": 85
+            "property_order": 105
         },
-        "firstRunDone": {
+        "diskFreeSpaceNonBootVolumes": {
             "type": "boolean",
-            "title": "First Run Done",
-            "description": "On first run, Particulars displays a welcome window that describes how it runs on the Desktop and then hides all other apps and opens the preferences window. To skip this first run experience, set this preference. (Enabling labMode implies this setting.)",
+            "title": "Show Disk Free Space for Non-Boot Volumes",
+            "default": false,
+            "description": "By default, Particulars only shows disk space for the boot disk. Enable this setting to show disk space for other disks.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#diskFreeSpaceNonBootVolumes"
                 }
             ],
-            "property_order": 90
+            "property_order": 110
+        },
+        "firstRunDone": {
+            "type": "boolean",
+            "title": "Skip the First Run Experience",
+            "default": false,
+            "description": "On first run, Particulars displays a welcome window that describes how it runs on the desktop and then hides all other apps and opens the settings window. To skip this first run experience, enable this setting. (Enabling labMode implies this setting.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#firstRunDone"
+                }
+            ],
+            "property_order": 115
+        },
+        "headerText": {
+            "type": "string",
+            "title": "Header",
+            "description": "Header text is displayed in a separate paragraph above all particulars. Any leading or trailing whitespace is removed when displayed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#headerText"
+                }
+            ],
+            "property_order": 120
+        },
+        "footerText": {
+            "type": "string",
+            "title": "Footer",
+            "description": "Footer text is displayed in a separate paragraph below all particulars. Any leading or trailing whitespace is removed when displayed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#headerText"
+                }
+            ],
+            "property_order": 125
         },
         "hideDockIcon": {
             "type": "boolean",
             "title": "Hide Dock Icon",
-            "description": "Enabling this removes Particulars from the macOS Dock. Enabling or disabling this preference from Terminal will automatically restart Particulars and open the Preferences window.",
+            "default": false,
+            "description": "Enabling this setting removes Particulars from the macOS Dock. Changing this setting while Particulars is running will automatically restart Particulars and open the Settings window.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#hideDockIcon"
                 }
             ],
-            "property_order": 95
+            "property_order": 130
         },
         "ignoreHiding": {
             "type": "boolean",
             "title": "Ignore Hiding",
+            "default": false,
             "description": "When Particulars is running with the Dock icon shown, it will be hidden along with all other apps when you select Hide Others from another application's menu. This preference allows you to keep Particulars visible.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#ignoreHiding"
                 }
             ],
-            "property_order": 100
+            "property_order": 135
         },
         "operatingSystemVersionName": {
             "type": "boolean",
-            "title": "Show Operating System Version Name",
-            "description": "This preference adds the operating system version's marketing name (e.g., Big Sur, Catalina, etc) to the Operating system particular output.",
+            "title": "Operating System Version Name",
+            "default": false,
+            "description": "This setting adds the operating system version's marketing name (e.g., Big Sur, Catalina, etc) to the Operating System particular.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#operatingSystemVersionName"
                 }
             ],
-            "property_order": 105
-        },
-        "showMenuBarExtra": {
-            "type": "boolean",
-            "title": "Show Menu Bar Extra",
-            "description": "Adds an item to the macOS menu bar that allows quick access to preferences, copying, and other functions.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://particulars.app/_help/particularshelp/Lab-Mode.html"
-                }
-            ],
-            "property_order": 110
+            "property_order": 140
         }
     }
 }
