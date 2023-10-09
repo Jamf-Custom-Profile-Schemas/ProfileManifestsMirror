@@ -5,13 +5,13 @@
         "dontAllowPasswordResetUI": {
             "type": "boolean",
             "title": "Allow user to change password",
-            "default": false,
+            "default": true,
             "property_order": 5
         },
         "dontAllowLockMessageUI": {
             "type": "boolean",
             "title": "Allow user to set lock message",
-            "default": false,
+            "default": true,
             "property_order": 10
         }
     }

@@ -186,6 +186,16 @@ def process_subkeys(subkeys):
             # TODO: Support placeholders.
             pass
 
+        # If value is inverted, flip default boolean value
+        if all(
+            (
+                subkey.get("pfm_value_inverted") is True,
+                properties[name]["type"] == "boolean",
+                subkey.get("pfm_default") not in (None, ""),
+            )
+        ):
+            properties[name]["default"] = not properties[name]["default"]
+
         # Convert pre-defined lists of values
         if "pfm_range_list" in subkey:
             properties[name]["enum"] = subkey["pfm_range_list"]

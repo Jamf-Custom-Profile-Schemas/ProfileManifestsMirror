@@ -30,13 +30,13 @@
         "HideLocalUsers": {
             "type": "boolean",
             "title": "Show local users",
-            "default": false,
+            "default": true,
             "property_order": 20
         },
         "HideMobileAccounts": {
             "type": "boolean",
             "title": "Show mobile accounts",
-            "default": false,
+            "default": true,
             "property_order": 25
         },
         "IncludeNetworkUser": {
@@ -48,7 +48,7 @@
         "HideAdminUsers": {
             "type": "boolean",
             "title": "Show Mac computer's administrator accounts",
-            "default": false,
+            "default": true,
             "property_order": 35
         },
         "SHOWOTHERUSERS_MANAGED": {
@@ -60,19 +60,19 @@
         "SleepDisabled": {
             "type": "boolean",
             "title": "Show the Sleep button",
-            "default": false,
+            "default": true,
             "property_order": 45
         },
         "RestartDisabled": {
             "type": "boolean",
             "title": "Show the Restart button",
-            "default": false,
+            "default": true,
             "property_order": 50
         },
         "ShutDownDisabled": {
             "type": "boolean",
             "title": "Show the Shut Down button",
-            "default": false,
+            "default": true,
             "property_order": 55
         },
         "RestartDisabledWhileLoggedIn": {
@@ -122,7 +122,7 @@
         "DisableConsoleAccess": {
             "type": "boolean",
             "title": "Enable >console login",
-            "default": true,
+            "default": false,
             "description": "Allows users to use >console at the login window.",
             "property_order": 95
         },

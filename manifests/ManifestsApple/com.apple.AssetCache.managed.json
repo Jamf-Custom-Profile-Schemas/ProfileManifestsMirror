@@ -64,7 +64,7 @@
         "DenyTetheredCaching": {
             "type": "boolean",
             "title": "Disable Caching Over Shared Internet Connection",
-            "default": false,
+            "default": true,
             "description": "Share this computer's Internet connection and cached content with iOS devices connected using USB.",
             "property_order": 45
         },

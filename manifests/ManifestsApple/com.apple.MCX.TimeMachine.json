@@ -18,7 +18,7 @@
         "BackupSkipSys": {
             "type": "boolean",
             "title": "Back up system files and folders",
-            "default": false,
+            "default": true,
             "description": "System files and folders are skipped by default.",
             "property_order": 15
         },

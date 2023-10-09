@@ -35,7 +35,7 @@
         "ProhibitConnectTo": {
             "type": "boolean",
             "title": "Allow Connect to Server",
-            "default": false,
+            "default": true,
             "description": "Opens a dialog box for finding servers on the network",
             "links": [
                 {
@@ -48,7 +48,7 @@
         "ProhibitEject": {
             "type": "boolean",
             "title": "Allow Eject",
-            "default": false,
+            "default": true,
             "description": "Ejects removable media and mountable volumes",
             "links": [
                 {
@@ -61,7 +61,7 @@
         "ProhibitBurn": {
             "type": "boolean",
             "title": "Allow Burn Disc",
-            "default": false,
+            "default": true,
             "description": "Writes permanent information to a CD or DVD. Disc burning restrictions require both Disc Burning and Finder payloads.",
             "links": [
                 {
@@ -74,7 +74,7 @@
         "ProhibitGoToFolder": {
             "type": "boolean",
             "title": "Allow Go to Folder",
-            "default": false,
+            "default": true,
             "description": "Allows user to open files or folders by typing a pathname",
             "links": [
                 {

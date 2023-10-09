@@ -52,14 +52,14 @@
         "PreventMove": {
             "type": "boolean",
             "title": "Allow user to move messages from this account",
-            "default": false,
+            "default": true,
             "description": "Messages can be moved out of this account into another.",
             "property_order": 35
         },
         "disableMailRecentsSyncing": {
             "type": "boolean",
             "title": "Allow recent addresses to be synced",
-            "default": false,
+            "default": true,
             "description": "Include this account in recent address syncing",
             "property_order": 40
         },

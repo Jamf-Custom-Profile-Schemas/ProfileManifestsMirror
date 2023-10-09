@@ -9,7 +9,7 @@
         "RemovePlist": {
             "type": "boolean",
             "title": "Leave recovery key plist on disk",
-            "default": true,
+            "default": false,
             "description": "By default, the plist at /var/root/crypt_output.plist with the FileVault Key will be removed once it has been escrowed. If this is set to True the key will remain as root read only.",
             "property_order": 10
         },
