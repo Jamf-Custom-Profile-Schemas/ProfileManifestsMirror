@@ -259,6 +259,19 @@
             ],
             "property_order": 90
         },
+        "InstallDefender": {
+            "type": "boolean",
+            "title": "Install Defender",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing Defender. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/deployoffice/mac/preferences-office#app-installation"
+                }
+            ],
+            "property_order": 95
+        },
         "InstallOneDrive": {
             "type": "boolean",
             "title": "Install OneDrive",
@@ -270,7 +283,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
                 }
             ],
-            "property_order": 95
+            "property_order": 100
         },
         "InstallOneNote": {
             "type": "boolean",
@@ -283,7 +296,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
                 }
             ],
-            "property_order": 100
+            "property_order": 105
         },
         "InstallOutlook": {
             "type": "boolean",
@@ -296,7 +309,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
                 }
             ],
-            "property_order": 105
+            "property_order": 110
         },
         "InstallPowerPoint": {
             "type": "boolean",
@@ -309,7 +322,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
                 }
             ],
-            "property_order": 110
+            "property_order": 115
         },
         "InstallTeams": {
             "type": "boolean",
@@ -322,7 +335,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
                 }
             ],
-            "property_order": 115
+            "property_order": 120
         },
         "InstallWord": {
             "type": "boolean",
@@ -335,7 +348,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
                 }
             ],
-            "property_order": 120
+            "property_order": 125
         },
         "VisualBasicEntirelyDisabled": {
             "type": "boolean",
@@ -347,7 +360,7 @@
                     "href": "https://macadmins.software/matrix/"
                 }
             ],
-            "property_order": 125
+            "property_order": 130
         },
         "VisualBasicMacroExecutionState": {
             "type": "string",
@@ -372,7 +385,7 @@
                     "Enabled: Without Warnings"
                 ]
             },
-            "property_order": 130
+            "property_order": 135
         },
         "DisableVisualBasicExternalDylibs": {
             "type": "boolean",
@@ -385,7 +398,7 @@
                     "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
                 }
             ],
-            "property_order": 135
+            "property_order": 140
         },
         "AllowVisualBasicToBindToSystem": {
             "type": "boolean",
@@ -398,7 +411,7 @@
                     "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
                 }
             ],
-            "property_order": 140
+            "property_order": 145
         },
         "DisableVisualBasicToBindToPopen": {
             "type": "boolean",
@@ -411,7 +424,7 @@
                     "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
                 }
             ],
-            "property_order": 145
+            "property_order": 150
         },
         "DisableVisualBasicMacScript": {
             "type": "boolean",
@@ -424,7 +437,7 @@
                     "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
                 }
             ],
-            "property_order": 150
+            "property_order": 155
         },
         "VBAObjectModelIsTrusted": {
             "type": "boolean",
@@ -437,7 +450,7 @@
                     "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
                 }
             ],
-            "property_order": 155
+            "property_order": 160
         }
     }
 }
