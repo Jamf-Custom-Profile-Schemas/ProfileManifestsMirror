@@ -246,19 +246,6 @@
             ],
             "property_order": 85
         },
-        "InstallExcel": {
-            "type": "boolean",
-            "title": "Install Excel",
-            "default": true,
-            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing Excel. (Not needed if you want to use default value of TRUE.)",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
-                }
-            ],
-            "property_order": 90
-        },
         "InstallDefender": {
             "type": "boolean",
             "title": "Install Defender",
@@ -268,6 +255,19 @@
                 {
                     "rel": "More information",
                     "href": "https://learn.microsoft.com/en-us/deployoffice/mac/preferences-office#app-installation"
+                }
+            ],
+            "property_order": 90
+        },
+        "InstallExcel": {
+            "type": "boolean",
+            "title": "Install Excel",
+            "default": true,
+            "description": "Uncheck (FALSE) to prevent the Office suite installer from installing Excel. (Not needed if you want to use default value of TRUE.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1554308409392900"
                 }
             ],
             "property_order": 95
