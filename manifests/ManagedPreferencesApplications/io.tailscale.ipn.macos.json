@@ -1,0 +1,279 @@
+{
+    "title": "Tailscale (MAS) (io.tailscale.ipn.macos)",
+    "description": "Configure settings for the Mac App Store variant of the Tailscale client.",
+    "properties": {
+        "ManagedByOrganizationName": {
+            "type": "string",
+            "title": "Organization Details: Name",
+            "description": "Specifies the name of the organization managing Tailscale, for instance “XYZ Corp, Inc.”. The value will be displayed in the Tailscale client, so that users can easily reach your internal support resources.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-your-organization-name"
+                }
+            ],
+            "property_order": 5
+        },
+        "ManagedByCaption": {
+            "type": "string",
+            "title": "Organization Details: Caption",
+            "description": "Specifies a caption to be displayed in the Managed By view in the Tailscale client. Use this string value to provide your users with information on how to reach support resources for Tailscale in your organization.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-an-info-message"
+                }
+            ],
+            "property_order": 10
+        },
+        "ManagedByURL": {
+            "type": "string",
+            "title": "Organization Details: Support URL",
+            "description": "Specifies a URL pointing to a help desk webpage, or other helpful resources for users in the organization. Clicking the Support button in the Tailscale UI will open this webpage.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-support-url"
+                }
+            ],
+            "property_order": 15
+        },
+        "TailscaleStartOnLogin": {
+            "type": "boolean",
+            "title": "Automatically start Tailscale when the user logs in",
+            "description": "The first time the application is opened on a Mac, Tailscale installs a macOS login helper. This allows Tailscale to start automatically when the user logs into their account. This boolean controls whether the login helper should start Tailscale at login time.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#automatically-start-tailscale-when-the-user-logs-in"
+                }
+            ],
+            "property_order": 20
+        },
+        "ForceEnabled": {
+            "type": "boolean",
+            "title": "Force Tailscale to always be running",
+            "description": "When set to true, this boolean instructs Tailscale to always be connected and actively monitor the tunnel state for disconnections. The Disconnect toggle will be disabled, to prevent users from disabling the VPN themselves. An attempt to disconnect will present a banner informing the user the organization’s policy prevents Tailscale from being disconnected. If the client detects the VPN tunnel is down because the Tailscale VPN process was terminated, Tailscale will automatically restart it and reconnect. You might want to use this policy together with an always-on VPN configuration profile.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#force-tailscale-to-always-be-running"
+                }
+            ],
+            "property_order": 25
+        },
+        "Tailnet": {
+            "type": "string",
+            "title": "Suggested or required tailnet name",
+            "description": "Specify a tailnet, and its identity provider will be used on the login page. If the policy value is prefixed with \"required:\"\", Tailscale will force that identity provider to be used and won’t allow logging in with anything else.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-suggested-or-required-tailnet"
+                }
+            ],
+            "property_order": 30
+        },
+        "LoginURL": {
+            "type": "string",
+            "title": "Custom control server URL",
+            "description": "The LoginURL policy can be used to specify a custom control server URL. This should not be changed unless you are not using the standard Tailscale server. Use this policy if you’re deploying your own server, such as Headscale.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-custom-control-server-url"
+                }
+            ],
+            "property_order": 35
+        },
+        "ExitNodesPicker": {
+            "type": "string",
+            "title": "Show/hide exit nodes picker",
+            "default": "show",
+            "description": "Shows or hides all UI items to choose an exit node in the Tailscale client.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-exit-node-picker"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 40
+        },
+        "ManageTailnetLock": {
+            "type": "string",
+            "title": "Show/hide tailnet lock settings",
+            "default": "show",
+            "description": "Shows or hides the \"Manage Tailnet lock\" menu item.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-tailnet-lock-settings"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 45
+        },
+        "ResetToDefaults": {
+            "type": "string",
+            "title": "Show/hide the \"Reset to Defaults\" menu item",
+            "default": "show",
+            "description": "Shows or hides the \"Reset to Defaults\" menu item.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-reset-to-defaults-menu-item"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 50
+        },
+        "RunExitNode": {
+            "type": "string",
+            "title": "Show/hide \"Run as Exit Node\" menu item",
+            "default": "show",
+            "description": "Shows or hides the \"Run as Exit Node\" menu item, controlling the user's ability to toggle this option.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-run-as-exit-node-menu-item"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 55
+        },
+        "StartOnLoginMenuItem": {
+            "type": "string",
+            "title": "Show/hide \"Start on Login\" menu item",
+            "default": "show",
+            "description": "Shows or hides the \"Start on Login\" menu item, controlling the user's ability to toggle this option.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-start-on-login-menu-item"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 60
+        },
+        "TestMenu": {
+            "type": "string",
+            "title": "Show/hide Debug menu",
+            "default": "show",
+            "description": "Shows or hides the debug menu in the Tailscale client. On macOS, this system policy will also hide any information displayed when holding down the Option key while clicking on the Tailscale menubar item.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-debug-menu"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 65
+        },
+        "Hidden network devices": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "current-user",
+                    "other-users",
+                    "tagged-devices"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Devices belonging to the current user",
+                        "Devices belonging to other users",
+                        "Tagged devices"
+                    ]
+                }
+            },
+            "title": "Hide categories of network devices",
+            "description": "Can be used to hides one or more categories of network devices normally displayed in the Tailscale client. Administrators can choose to hide: devices owned by the current user; devices owned by other users; tagged devices. If all three options are chosen, the \"Network Devices\" menu item disappears entirely and users aren’t able to see any device on the tailnet.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-network-devices"
+                }
+            ],
+            "property_order": 70
+        },
+        "IPAddressCopiedAlertSuppressed": {
+            "type": "boolean",
+            "title": "Suppress IP Address Copied notifications",
+            "description": "When you use the Tailscale menu bar item to copy to the Clipboard the IP address of a device, a notification displaying the IP address is presented. Use this to suppress this Copied IP address to clipboard notification.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#suppress-ip-address-copied-notifications"
+                }
+            ],
+            "property_order": 75
+        },
+        "TailscaleOnboardingSeen": {
+            "type": "boolean",
+            "title": "Suppress the first launch onboarding flow",
+            "description": "When you start Tailscale on your Mac for the first time, an onboarding flow is presented. It explains the Tailscale privacy policy, and guides the user in setting up the VPN configuration on their Mac. You might want to disable this onboarding flow if you are going to automatically set up the VPN configuration on the system by using a configuration profile. In order to do so, this boolean suppresses the onboarding flow when Tailscale launches for the first time and the value is set to true.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#suppress-the-first-launch-onboarding-flow"
+                }
+            ],
+            "property_order": 80
+        }
+    }
+}
