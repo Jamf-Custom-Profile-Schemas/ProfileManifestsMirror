@@ -190,7 +190,7 @@
             "type": "boolean",
             "title": "Undo Selection (Legacy)",
             "default": false,
-            "description": "When performing an Undo or Redo and the selection range changes, the Undo/Redo operation will select the affected text, rather than updating the Undo/Redo state to include the actual current selection range.\n\nSet this preference to 'true' if you prefer the classic behavior.",
+            "description": "When performing an Undo or Redo and the selection range changes, the Undo/Redo operation will select the affected text, rather than updating the Undo/Redo state to include the actual current selection range. If however you prefer the classic behavior (as implemented from the beginning of time up through BBEdit 11.6), you may obtain set this preference to 'true'.",
             "links": [
                 {
                     "rel": "More information",

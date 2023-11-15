@@ -27,8 +27,8 @@
         },
         "IncomingMailServerIMAPPathPrefix": {
             "type": "string",
-            "title": "Incoming Mail Server IMAP Path Prefix",
-            "description": "The path prefix for the IMAP mail server.",
+            "title": "Path Prefix",
+            "description": "Path prefix for IMAP mail server",
             "property_order": 15
         },
         "EmailAccountName": {

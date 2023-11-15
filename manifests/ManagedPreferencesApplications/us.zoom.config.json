@@ -1218,7 +1218,7 @@
             "type": "boolean",
             "title": "Disable All Features (ZfG)",
             "default": false,
-            "description": "Disables all features except for audio and video for meetings hosted on the ZfG cloud",
+            "description": "Disables all features except for audio and video for meetings hosted on the ZfG Cloud",
             "property_order": 755
         },
         "Intercloud_DisableMeetingChat": {

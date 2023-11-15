@@ -1037,13 +1037,6 @@
             "default": true,
             "description": "Allows preventing connection to network drives in the Files app",
             "property_order": 700
-        },
-        "enforcedFingerprintTimeout": {
-            "type": "integer",
-            "title": "Enforced Fingerprint Timeout",
-            "default": 172800,
-            "description": "Period of time in seconds after which the device will require entry of password or passcode to unlock. The default value is 172800 seconds, which are 48 hours.",
-            "property_order": 705
         }
     }
 }

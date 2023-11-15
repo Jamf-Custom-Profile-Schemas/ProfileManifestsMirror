@@ -11,7 +11,7 @@
         "EmailAddress": {
             "type": "string",
             "title": "Account email address",
-            "description": "The email address for the account (e.g. \"john@company.com).",
+            "description": "The email address for the account (e.g. john@company.com).",
             "property_order": 10
         },
         "Password": {

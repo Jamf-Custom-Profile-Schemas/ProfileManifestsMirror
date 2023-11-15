@@ -10,7 +10,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#disablepersonalsync"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#DisablePersonalSync"
                 }
             ],
             "property_order": 5
@@ -22,7 +22,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#disabletutorial"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#DisableTutorial"
                 }
             ],
             "property_order": 10
@@ -39,7 +39,7 @@
                         "links": [
                             {
                                 "rel": "More information",
-                                "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#defaultfolderlocation"
+                                "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#TenantID"
                             }
                         ]
                     },
@@ -49,7 +49,7 @@
                         "links": [
                             {
                                 "rel": "More information",
-                                "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#defaultfolderlocation"
+                                "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#defaultfolderlocation"
                             }
                         ]
                     }
@@ -60,7 +60,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#defaultfolderlocation"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#DefaultFolderLocation"
                 }
             ],
             "property_order": 15
@@ -72,7 +72,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#automaticuploadbandwidthpercentage"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#AutomaticUploadBandwidthPercentage"
                 }
             ],
             "property_order": 20
@@ -84,7 +84,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#uploadbandwidthlimited"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#UploadBandwidthLimited"
                 }
             ],
             "property_order": 25
@@ -96,7 +96,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#downloadbandwidthlimited"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#DownloadBandwidthLimited"
                 }
             ],
             "property_order": 30
@@ -108,7 +108,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#hidedockicon"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#HideDockIcon"
                 }
             ],
             "property_order": 35
@@ -120,7 +120,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#openatlogin"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#OpenAtLogin"
                 }
             ],
             "property_order": 40
@@ -132,7 +132,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#sharepointonpremfrontdoorurl"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#SharePointOnPremFrontDoorUrl"
                 }
             ],
             "property_order": 45
@@ -144,7 +144,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#sharepointonpremtenantname"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#SharePointOnPremTenantName"
                 }
             ],
             "property_order": 50
@@ -156,7 +156,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#sharepointonpremprioritizationpolicy"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#SharePointOnPremPrioritzationPolicy"
                 }
             ],
             "enum": [
@@ -177,7 +177,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#DefaultToBusinessFRE"
                 }
             ],
             "property_order": 60
@@ -188,7 +188,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#EnableAddAccounts"
                 }
             ],
             "property_order": 65
@@ -200,7 +200,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#filesondemandenabled"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#FilesOnDemandEnabled"
                 }
             ],
             "property_order": 70
@@ -211,7 +211,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#IsHydrationToastAllowed"
                 }
             ],
             "property_order": 75
@@ -222,7 +222,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#hydrationdisallowedapps"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#HydrationDisallowedApps"
                 }
             ],
             "property_order": 80
@@ -238,7 +238,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#enableodignore"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#EnableODIgnore"
                 }
             ],
             "property_order": 85
@@ -250,7 +250,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#EnableAllOcsiClients"
                 }
             ],
             "property_order": 90
@@ -262,7 +262,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#hydrationdisallowedapps"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#DisableHydrationToast"
                 }
             ],
             "property_order": 95
@@ -274,7 +274,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#blockexternalsync"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#BlockExternalSync"
                 }
             ],
             "property_order": 100
@@ -286,7 +286,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#allowtenantlist"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#AllowTenantList"
                 }
             ],
             "properties": {
@@ -308,7 +308,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/onedrive/deploy-and-configure-on-macos#blocktenantlist"
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#blocktenantlist"
                 }
             ],
             "properties": {
@@ -326,35 +326,71 @@
         "KFMOptInWithWizard": {
             "type": "string",
             "title": "Prompt Users to Move Known Folders",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMOptInWithWizard"
+                }
+            ],
             "property_order": 115
         },
         "KFMSilentOptIn": {
             "type": "string",
             "title": "Silently Move Known Folders",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMSilentOptIn"
+                }
+            ],
             "property_order": 120
         },
         "KFMSilentOptInDesktop": {
             "type": "boolean",
             "title": "Silently Opt in Desktop to Known Folders",
             "description": "Enable to silently opt-in the user's Desktop folder.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMSilentOptInDesktop"
+                }
+            ],
             "property_order": 125
         },
         "KFMSilentOptInDocuments": {
             "type": "boolean",
             "title": "Silently Opt in Documents to Known Folders",
             "description": "Enable to silently opt-in the user's Documents folder.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMSilentOptInDocuments"
+                }
+            ],
             "property_order": 130
         },
         "KFMSilentOptInWithNotification": {
             "type": "boolean",
             "title": "Silently Opt in with Notification",
             "description": "If enabled, displays a notification to users after their folders have been redirected.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMSilentOptInWithNotification"
+                }
+            ],
             "property_order": 135
         },
         "KFMBlockOptIn": {
             "type": "integer",
             "title": "Block Opt-in",
             "description": "If enabled, will prevent KFM opt-in.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMBlockOptIn"
+                }
+            ],
             "enum": [
                 0,
                 1,
@@ -373,6 +409,12 @@
             "type": "boolean",
             "title": "Block KFM Opt-out",
             "description": "If enabled, prevents users from redirecting their known folders to the Mac.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMBlockOptOut"
+                }
+            ],
             "property_order": 145
         }
     }
