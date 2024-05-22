@@ -224,7 +224,7 @@
             },
             "property_order": 65
         },
-        "Hidden network devices": {
+        "HiddenNetworkDevices": {
             "type": "array",
             "items": {
                 "type": "string",
