@@ -1,6 +1,6 @@
 {
     "title": "Handbrake (fr.handbrake.HandBrake)",
-    "description": "Handbrake settings",
+    "description": "Use this section to define settings for the Handbrake video transcoder",
     "properties": {
         "SUFeedURL": {
             "type": "string",

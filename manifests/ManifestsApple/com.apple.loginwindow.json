@@ -112,47 +112,57 @@
             "description": "A loginwindow password will be required to login.",
             "property_order": 85
         },
+        "AutologinUsername": {
+            "type": "string",
+            "description": "Sets up auto login with the specified short user name.",
+            "property_order": 90
+        },
+        "AutologinPassword": {
+            "type": "string",
+            "description": "Optional user password when setting up auto login.  If this key does not exist, and a user name was specified, auto login will be set up the next time the specified user logs in to the client.",
+            "property_order": 95
+        },
         "DisableFDEAutoLogin": {
             "type": "boolean",
             "title": "Disable automatic login if FileVault is enabled",
             "default": true,
             "description": "Both the EFI Login and loginwindow password will be required to login.",
-            "property_order": 90
+            "property_order": 100
         },
         "DisableConsoleAccess": {
             "type": "boolean",
             "title": "Enable >console login",
             "default": true,
             "description": "Allows users to use >console at the login window.",
-            "property_order": 95
+            "property_order": 105
         },
         "EnableExternalAccounts": {
             "type": "boolean",
             "title": "Enable external accounts",
             "default": true,
             "description": "Allows external accounts to log in.",
-            "property_order": 100
+            "property_order": 110
         },
         "AdminMayDisableMCX": {
             "type": "boolean",
             "title": "Mac computer administrators may refresh content or disable management",
             "default": true,
             "description": "Allows Mac administrators on the computer to refresh or disable the management features.",
-            "property_order": 105
+            "property_order": 115
         },
         "TALLogoutSavesState": {
             "type": "boolean",
             "title": "Reopen windows when logging back in",
             "default": true,
             "description": "Reopens windows that were open at time of logout",
-            "property_order": 110
+            "property_order": 120
         },
         "UseComputerNameForComputerRecordName": {
             "type": "boolean",
             "title": "Set Mac computer name to computer record name",
             "default": true,
             "description": "Forces the name of the Mac to be set as the computer record name.",
-            "property_order": 115
+            "property_order": 125
         },
         "AllowList": {
             "type": "array",
@@ -163,7 +173,7 @@
             },
             "title": "Allowed Users or Groups",
             "description": "User or group GUIDs of users that are allowed to log in. An asterisk '*' string specifies all users or groups.",
-            "property_order": 120
+            "property_order": 130
         },
         "DenyList": {
             "type": "array",
@@ -174,55 +184,55 @@
             },
             "title": "Denied Users or Groups",
             "description": "User or group GUIDs of users that cannot log in. This list takes priority over the list in the AllowList key.",
-            "property_order": 125
+            "property_order": 135
         },
         "LocalUserLoginEnabled": {
             "type": "boolean",
             "title": "Local-only users may log in",
             "description": "Permit only local users to log in. Network users won't be allowed to log in.",
-            "property_order": 130
+            "property_order": 140
         },
         "LocalUsersHaveWorkgroups": {
             "type": "boolean",
             "title": "Local-only users use available workgroup settings",
             "description": "Local users are forced to use any available workgroup settings.",
-            "property_order": 135
+            "property_order": 145
         },
         "FlattenUserWorkgroups": {
             "type": "boolean",
             "title": "Ignore workgroup nesting",
             "description": "If users are part of a nested workgroup, only the settings of the user's workgroup are enforced.",
-            "property_order": 140
+            "property_order": 150
         },
         "CombineUserWorkgroups": {
             "type": "boolean",
             "title": "Combine available workgroup settings",
             "description": "If users are part of a nested workgroup, all nested workgroup settings are enforced.",
-            "property_order": 145
+            "property_order": 155
         },
         "AlwaysShowWorkgroupDialog": {
             "type": "boolean",
             "title": "Always show workgroup dialog during log in",
             "description": "If the workgroup has a specific dialog, that dialog is shown when users log in.",
-            "property_order": 150
+            "property_order": 160
         },
         "ChangePasswordDisabled": {
             "type": "boolean",
             "title": "Allow user to change password",
             "description": "Enable or disable the \"Change Password…\" button in the Users & Groups preference pane.",
-            "property_order": 155
+            "property_order": 165
         },
         "RetriesUntilHint": {
             "type": "integer",
             "title": "Show password hints after failed attempts",
             "description": "Number of tries until password hint is shown (0 = disable password hints).",
-            "property_order": 160
+            "property_order": 170
         },
         "showInputMenu": {
             "type": "boolean",
             "title": "Show input menu in login window",
             "default": false,
-            "property_order": 165
+            "property_order": 175
         },
         "HiddenUsersList": {
             "type": "array",
@@ -233,7 +243,7 @@
             },
             "title": "Hidden Users List",
             "description": "Hides users defined in the list from the login window under the Other button",
-            "property_order": 170
+            "property_order": 180
         }
     }
 }

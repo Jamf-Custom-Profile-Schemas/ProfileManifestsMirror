@@ -1,6 +1,6 @@
 {
     "title": "SAP Privileges (corp.sap.privileges)",
-    "description": "SAP Privileges app settings",
+    "description": "Use this section to define settings for the SAP Privileges app",
     "properties": {
         "EnforcePrivileges": {
             "type": "string",

@@ -60,7 +60,7 @@
             "type": "number",
             "title": "Display Contrast",
             "default": 0.0,
-            "description": "The amount of display contrast enhancement in a decimal value between 0 and 1, where 0 is none and 1 is the maximum",
+            "description": "The contrast value in the Display options.",
             "property_order": 45
         },
         "mouseDriverCursorSize": {

@@ -101,6 +101,67 @@
             },
             "property_order": 30
         },
+        "desktopMargin": {
+            "type": "integer",
+            "title": "Desktop Margin",
+            "default": 21,
+            "description": "When displaying system information on the desktop, Particulars uses all available screen size, inset by a default margin of 21pt. Margins can be adjusted.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#desktopMargin"
+                }
+            ],
+            "property_order": 35
+        },
+        "desktopTopMargin": {
+            "type": "integer",
+            "title": "Desktop Top Margin",
+            "description": "Overrides desktopMargin for the top desktop margin",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#desktopMargin"
+                }
+            ],
+            "property_order": 40
+        },
+        "desktopBottomMargin": {
+            "type": "integer",
+            "title": "Desktop Bottom Margin",
+            "description": "Overrides desktopMargin for the bottom desktop margin",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#desktopMargin"
+                }
+            ],
+            "property_order": 45
+        },
+        "desktopLeftMargin": {
+            "type": "integer",
+            "title": "Desktop Left Margin",
+            "description": "Overrides desktopMargin for the left desktop margin",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#desktopMargin"
+                }
+            ],
+            "property_order": 50
+        },
+        "desktopRightMargin": {
+            "type": "integer",
+            "title": "Desktop Right Margin",
+            "description": "Overrides desktopMargin for the right desktop margin",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#desktopMargin"
+                }
+            ],
+            "property_order": 55
+        },
         "textTheme": {
             "type": "integer",
             "title": "Text Theme",
@@ -113,20 +174,20 @@
                 }
             ],
             "enum": [
-                0,
                 1,
+                0,
                 2,
                 255
             ],
             "options": {
                 "enum_titles": [
-                    "Default (Lato)",
                     "System",
+                    "Classic (Lato)",
                     "Mono",
                     "Custom"
                 ]
             },
-            "property_order": 35
+            "property_order": 60
         },
         "lightDarkText": {
             "type": "integer",
@@ -151,7 +212,7 @@
                     "Dark text"
                 ]
             },
-            "property_order": 40
+            "property_order": 65
         },
         "textSize": {
             "type": "integer",
@@ -164,7 +225,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#textSize"
                 }
             ],
-            "property_order": 45
+            "property_order": 70
         },
         "dropShadow": {
             "type": "boolean",
@@ -177,7 +238,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#dropShadow"
                 }
             ],
-            "property_order": 50
+            "property_order": 75
         },
         "labelCase": {
             "type": "integer",
@@ -202,7 +263,7 @@
                     "UPPER"
                 ]
             },
-            "property_order": 55
+            "property_order": 80
         },
         "menuBarWidgetAppearance": {
             "type": "integer",
@@ -231,7 +292,7 @@
                     "Dark"
                 ]
             },
-            "property_order": 60
+            "property_order": 85
         },
         "menuBarWidgetTextSize": {
             "type": "integer",
@@ -244,7 +305,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#menuBarWidgetTextSize"
                 }
             ],
-            "property_order": 65
+            "property_order": 90
         },
         "allNetworkInterfaces": {
             "type": "boolean",
@@ -257,7 +318,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#allNetworkInterfaces"
                 }
             ],
-            "property_order": 70
+            "property_order": 95
         },
         "dhcpLeaseRemaining": {
             "type": "boolean",
@@ -270,7 +331,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#dhcpLeaseRemaining"
                 }
             ],
-            "property_order": 75
+            "property_order": 100
         },
         "macAddressFormat": {
             "type": "integer",
@@ -297,19 +358,19 @@
                     "Windows/IEEE (example: 01-23-45-67-89-AB)"
                 ]
             },
-            "property_order": 80
+            "property_order": 105
         },
         "networkDetailLevel": {
             "type": "integer",
             "title": "Network Detail Level",
-            "description": "By default, all network information is displayed. It is possible to construct a custom set of network information. Use this preference to create a custom network detail level. See documentation URL for instructions.",
+            "description": "By default, all network information is displayed except the Wi-Fi SSID. It is possible to construct a custom set of network information. Use this preference to create a custom network detail level. See documentation URL for instructions.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#networkDetailLevel"
                 }
             ],
-            "property_order": 85
+            "property_order": 110
         },
         "networkNotifications": {
             "type": "boolean",
@@ -322,7 +383,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#networkNotifications"
                 }
             ],
-            "property_order": 90
+            "property_order": 115
         },
         "subnetMaskCIDRNotation": {
             "type": "boolean",
@@ -335,7 +396,33 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#subnetMaskCIDRNotation"
                 }
             ],
-            "property_order": 95
+            "property_order": 120
+        },
+        "explicitNoNetworkConfiguration": {
+            "type": "boolean",
+            "title": "Explicit No Networks Detected message",
+            "default": false,
+            "description": "Displays an error message if no active network interfaces are found (assuming network is enabled in 'detailLevel').",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#explicitNoNetworkConfiguration"
+                }
+            ],
+            "property_order": 125
+        },
+        "appStoreVersionCheck": {
+            "type": "boolean",
+            "title": "Checking for new version in the Mac App Store",
+            "default": true,
+            "description": "Particulars checks for new Particulars versions in the Mac App Store. This check can be disabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#appStoreVersionCheck"
+                }
+            ],
+            "property_order": 130
         },
         "coreCount": {
             "type": "boolean",
@@ -348,7 +435,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#coreCount"
                 }
             ],
-            "property_order": 100
+            "property_order": 135
         },
         "diskFreeSpace": {
             "type": "integer",
@@ -373,7 +460,7 @@
                     "Free and purgeable"
                 ]
             },
-            "property_order": 105
+            "property_order": 140
         },
         "diskFreeSpaceNonBootVolumes": {
             "type": "boolean",
@@ -386,7 +473,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#diskFreeSpaceNonBootVolumes"
                 }
             ],
-            "property_order": 110
+            "property_order": 145
         },
         "firstRunDone": {
             "type": "boolean",
@@ -399,7 +486,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#firstRunDone"
                 }
             ],
-            "property_order": 115
+            "property_order": 150
         },
         "headerText": {
             "type": "string",
@@ -411,7 +498,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#headerText"
                 }
             ],
-            "property_order": 120
+            "property_order": 155
         },
         "footerText": {
             "type": "string",
@@ -423,7 +510,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#headerText"
                 }
             ],
-            "property_order": 125
+            "property_order": 160
         },
         "hideDockIcon": {
             "type": "boolean",
@@ -436,7 +523,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#hideDockIcon"
                 }
             ],
-            "property_order": 130
+            "property_order": 165
         },
         "ignoreHiding": {
             "type": "boolean",
@@ -449,7 +536,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#ignoreHiding"
                 }
             ],
-            "property_order": 135
+            "property_order": 170
         },
         "operatingSystemVersionName": {
             "type": "boolean",
@@ -462,7 +549,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#operatingSystemVersionName"
                 }
             ],
-            "property_order": 140
+            "property_order": 175
         }
     }
 }

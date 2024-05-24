@@ -142,7 +142,6 @@
         "BlockAboutAddons": {
             "type": "boolean",
             "title": "Block about:addons page",
-            "default": true,
             "description": "Block access to the Add-ons Manager (about:addons).",
             "links": [
                 {
@@ -155,7 +154,6 @@
         "BlockAboutConfig": {
             "type": "boolean",
             "title": "Block about:config page",
-            "default": true,
             "description": "Block access to about:config.",
             "links": [
                 {
@@ -168,7 +166,6 @@
         "BlockAboutProfiles": {
             "type": "boolean",
             "title": "Block about:profiles page",
-            "default": true,
             "description": "Block access to About Profiles (about:profiles).",
             "links": [
                 {
@@ -181,7 +178,6 @@
         "BlockAboutSupport": {
             "type": "boolean",
             "title": "Block about:support page",
-            "default": true,
             "description": "Block access to Troubleshooting Information (about:support).",
             "links": [
                 {
@@ -252,7 +248,6 @@
         "DisableAppUpdate": {
             "type": "boolean",
             "title": "Disable Application Update",
-            "default": true,
             "description": "Turn off application updates.",
             "links": [
                 {
@@ -265,7 +260,6 @@
         "DisableBuiltinPDFViewer": {
             "type": "boolean",
             "title": "Disable Built-in PDF Viewer",
-            "default": true,
             "description": "Disable the built in PDF viewer. PDF files are downloaded and sent externally.",
             "links": [
                 {
@@ -300,7 +294,6 @@
         "DisableDeveloperTools": {
             "type": "boolean",
             "title": "Disable Developer Tools",
-            "default": true,
             "description": "Remove access to all developer tools.",
             "links": [
                 {
@@ -313,7 +306,6 @@
         "DisableFeedbackCommands": {
             "type": "boolean",
             "title": "Disable Feedback Commands",
-            "default": true,
             "description": "Disable the menus for reporting sites (Submit Feedback, Report Deceptive Site).",
             "links": [
                 {
@@ -326,7 +318,6 @@
         "DisableFirefoxAccounts": {
             "type": "boolean",
             "title": "Disable Firefox Accounts / Sync",
-            "default": true,
             "description": "Disable Firefox Accounts integration (Sync).",
             "links": [
                 {
@@ -339,7 +330,6 @@
         "DisableFirefoxScreenshots": {
             "type": "boolean",
             "title": "Disable Firefox Screenshots",
-            "default": true,
             "description": "Remove access to Firefox Screenshots.",
             "links": [
                 {
@@ -352,7 +342,6 @@
         "DisableFirefoxStudies": {
             "type": "boolean",
             "title": "Disable Firefox Studies (Shield)",
-            "default": true,
             "description": "Disable Firefox studies (Shield).",
             "links": [
                 {
@@ -365,7 +354,6 @@
         "DisableForgetButton": {
             "type": "boolean",
             "title": "Disable Forget Button",
-            "default": true,
             "description": "Disable the \"Forget\" button.",
             "links": [
                 {
@@ -378,7 +366,6 @@
         "DisableMasterPasswordCreation": {
             "type": "boolean",
             "title": "Disable Master Password Creation",
-            "default": true,
             "description": "Remove the master password functionality. If this preference is set to true, the master password functionality is removed.",
             "links": [
                 {
@@ -403,7 +390,6 @@
         "DisablePocket": {
             "type": "boolean",
             "title": "Disable Pocket",
-            "default": true,
             "description": "Remove Pocket in the Firefox UI.",
             "links": [
                 {
@@ -416,7 +402,6 @@
         "DisablePrivateBrowsing": {
             "type": "boolean",
             "title": "Disable Private Browsing",
-            "default": true,
             "description": "Remove access to private browsing.",
             "links": [
                 {
@@ -429,7 +414,6 @@
         "DisableProfileImport": {
             "type": "boolean",
             "title": "Disable Profile Import",
-            "default": true,
             "description": "Disables the \"Import data from another browser\" option in the bookmarks window.",
             "links": [
                 {
@@ -442,7 +426,6 @@
         "DisableProfileRefresh": {
             "type": "boolean",
             "title": "Disable Profile Refresh",
-            "default": true,
             "description": "Disable the Refresh Firefox button on about:support and support.mozilla.org, as well as the prompt that displays offering to refresh Firefox when you haven't used it in a while.",
             "links": [
                 {
@@ -455,7 +438,6 @@
         "DisableSafeMode": {
             "type": "boolean",
             "title": "Disable Safe Mode",
-            "default": true,
             "description": "Disable safe mode within the browser.",
             "links": [
                 {
@@ -468,7 +450,6 @@
         "DisableSetDesktopBackground": {
             "type": "boolean",
             "title": "Disable Set Desktop Background",
-            "default": true,
             "description": "This preference removes the \"Set As Desktop Background...\" menu item when right clicking on an image.",
             "links": [
                 {
@@ -481,7 +462,6 @@
         "DisplayMenuBar": {
             "type": "boolean",
             "title": "Display Menu Bar",
-            "default": true,
             "description": "Set the initial state of the menubar. A user can still hide it and it will stay hidden.",
             "links": [
                 {
@@ -494,7 +474,6 @@
         "DisableSystemAddonUpdate": {
             "type": "boolean",
             "title": "Disable System Add-on Update",
-            "default": true,
             "description": "Prevent system add-ons from being installed or update.",
             "links": [
                 {
@@ -507,7 +486,6 @@
         "DisplayBookmarksToolbar": {
             "type": "boolean",
             "title": "Display Bookmarks Toolbar",
-            "default": true,
             "description": "Set the initial state of the bookmarks toolbar. A user can still hide it and it will stay hidden.",
             "links": [
                 {
@@ -520,7 +498,6 @@
         "DontCheckDefaultBrowser": {
             "type": "boolean",
             "title": "Do Not Check Default Browser",
-            "default": true,
             "description": "Don't check if Firefox is the default browser at startup.",
             "links": [
                 {
@@ -679,6 +656,41 @@
             ],
             "property_order": 195
         },
+        "3rdparty": {
+            "type": "object",
+            "title": "3rd Party Configuration",
+            "description": "Configure third party components.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/mozilla/policy-templates/blob/master/docs/index.md#3rdparty"
+                }
+            ],
+            "properties": {
+                "Extensions": {
+                    "type": "object",
+                    "title": "3rd Party Extension Configuration",
+                    "description": "Configure third party extensions. Keys in this dictionary specify IDs of extensions to configure, and values are dictionaries containing each third party extension configuration.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/mozilla/policy-templates/blob/master/docs/index.md#3rdparty"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Extension ID"
+                        },
+                        "{{value}}": {
+                            "type": "object",
+                            "title": "Extension Configuration"
+                        }
+                    }
+                }
+            },
+            "property_order": 200
+        },
         "EncryptedMediaExtensions": {
             "type": "object",
             "title": "Encrypted Media Extensions",
@@ -711,12 +723,11 @@
                     ]
                 }
             },
-            "property_order": 200
+            "property_order": 205
         },
         "HardwareAcceleration": {
             "type": "boolean",
             "title": "Hardware Acceleration",
-            "default": false,
             "description": "Control hardware acceleration.",
             "links": [
                 {
@@ -724,7 +735,7 @@
                     "href": "https://github.com/mozilla/policy-templates#hardwareacceleration"
                 }
             ],
-            "property_order": 205
+            "property_order": 210
         },
         "FirefoxHome": {
             "type": "object",
@@ -778,7 +789,7 @@
                     "default": false
                 }
             },
-            "property_order": 210
+            "property_order": 215
         },
         "Homepage": {
             "type": "object",
@@ -827,11 +838,12 @@
                     "description": "If true, prevents the user from changing homepage preferences."
                 }
             },
-            "property_order": 215
+            "property_order": 220
         },
         "ShowHomeButton": {
             "type": "boolean",
             "title": "Show Home Button",
+            "default": false,
             "description": "Show the home button on the toolbar.",
             "links": [
                 {
@@ -839,7 +851,7 @@
                     "href": "https://github.com/mozilla/policy-templates#showhomebutton"
                 }
             ],
-            "property_order": 220
+            "property_order": 225
         },
         "LocalFileLinks": {
             "type": "array",
@@ -854,12 +866,11 @@
                     "href": "https://github.com/mozilla/policy-templates#localfilelinks"
                 }
             ],
-            "property_order": 225
+            "property_order": 230
         },
         "NewTabPage": {
             "type": "boolean",
             "title": "New Tab Page",
-            "default": false,
             "description": "Enable or disable the New Tab page.",
             "links": [
                 {
@@ -867,12 +878,11 @@
                     "href": "https://github.com/mozilla/policy-templates#newtabpage"
                 }
             ],
-            "property_order": 230
+            "property_order": 235
         },
         "NoDefaultBookmarks": {
             "type": "boolean",
             "title": "No Default Bookmarks",
-            "default": true,
             "description": "Disable the creation of default bookmarks.",
             "links": [
                 {
@@ -880,7 +890,7 @@
                     "href": "https://github.com/mozilla/policy-templates#nodefaultbookmarks"
                 }
             ],
-            "property_order": 235
+            "property_order": 240
         },
         "OverrideFirstRunPage": {
             "type": "string",
@@ -892,7 +902,7 @@
                     "href": "https://github.com/mozilla/policy-templates#overridefirstrunpage"
                 }
             ],
-            "property_order": 240
+            "property_order": 245
         },
         "OverridePostUpdatePage": {
             "type": "string",
@@ -904,7 +914,7 @@
                     "href": "https://github.com/mozilla/policy-templates#overridepostupdatepage"
                 }
             ],
-            "property_order": 245
+            "property_order": 250
         },
         "PictureInPicture": {
             "type": "object",
@@ -924,12 +934,11 @@
                     "type": "boolean"
                 }
             },
-            "property_order": 250
+            "property_order": 255
         },
         "PromptForDownloadLocation": {
             "type": "boolean",
             "title": "Prompt for Download Location",
-            "default": false,
             "description": "Ask where to save each file before downloading.",
             "links": [
                 {
@@ -937,7 +946,7 @@
                     "href": "https://github.com/mozilla/policy-templates#promptfordownloadlocation"
                 }
             ],
-            "property_order": 255
+            "property_order": 260
         },
         "RequestedLocales": {
             "type": "array",
@@ -1158,7 +1167,7 @@
                     "href": "https://github.com/mozilla/policy-templates#requestedlocales"
                 }
             ],
-            "property_order": 260
+            "property_order": 265
         },
         "SanitizeOnShutdown": {
             "type": "object",
@@ -1211,7 +1220,7 @@
                     "default": false
                 }
             },
-            "property_order": 265
+            "property_order": 270
         },
         "SearchBar": {
             "type": "string",
@@ -1234,7 +1243,7 @@
                     "Unified"
                 ]
             },
-            "property_order": 270
+            "property_order": 275
         },
         "SearchEngines": {
             "type": "object",
@@ -1338,7 +1347,7 @@
                     ]
                 }
             },
-            "property_order": 275
+            "property_order": 280
         },
         "SearchSuggestEnabled": {
             "type": "boolean",
@@ -1350,7 +1359,7 @@
                     "href": "https://github.com/mozilla/policy-templates#searchsuggestenabled"
                 }
             ],
-            "property_order": 280
+            "property_order": 285
         },
         "Handlers": {
             "type": "object",
@@ -1511,7 +1520,7 @@
                     }
                 }
             },
-            "property_order": 285
+            "property_order": 290
         },
         "DisabledCiphers": {
             "type": "object",
@@ -1558,7 +1567,7 @@
                     "type": "boolean"
                 }
             },
-            "property_order": 290
+            "property_order": 295
         },
         "DNSOverHTTPS": {
             "type": "object",
@@ -1596,7 +1605,7 @@
                     "description": "List of excluded domains from DNS over HTTPS."
                 }
             },
-            "property_order": 295
+            "property_order": 300
         },
         "Proxy": {
             "type": "object",
@@ -1695,7 +1704,7 @@
                     "description": "Proxy bypass URLs."
                 }
             },
-            "property_order": 300
+            "property_order": 305
         },
         "SSLVersionMin": {
             "type": "string",
@@ -1720,7 +1729,7 @@
                     "TLS 1.3"
                 ]
             },
-            "property_order": 305
+            "property_order": 310
         },
         "SSLVersionMax": {
             "type": "string",
@@ -1745,7 +1754,7 @@
                     "TLS 1.3"
                 ]
             },
-            "property_order": 310
+            "property_order": 315
         },
         "NetworkPrediction": {
             "type": "boolean",
@@ -1757,7 +1766,7 @@
                     "href": "https://github.com/mozilla/policy-templates#networkprediction"
                 }
             ],
-            "property_order": 315
+            "property_order": 320
         },
         "Cookies": {
             "type": "object",
@@ -1860,7 +1869,7 @@
                     "description": "If this is true, cookies preferences cannot be changed."
                 }
             },
-            "property_order": 320
+            "property_order": 325
         },
         "DisableFormHistory": {
             "type": "boolean",
@@ -1873,7 +1882,7 @@
                     "href": "https://github.com/mozilla/policy-templates#disableformhistory"
                 }
             ],
-            "property_order": 325
+            "property_order": 330
         },
         "DisablePasswordReveal": {
             "type": "boolean",
@@ -1886,7 +1895,7 @@
                     "href": "https://github.com/mozilla/policy-templates#disablepasswordreveal"
                 }
             ],
-            "property_order": 330
+            "property_order": 335
         },
         "DisableTelemetry": {
             "type": "boolean",
@@ -1899,7 +1908,7 @@
                     "href": "https://github.com/mozilla/policy-templates#disabletelemetry"
                 }
             ],
-            "property_order": 335
+            "property_order": 340
         },
         "EnableTrackingProtection": {
             "type": "object",
@@ -1937,7 +1946,7 @@
                     "description": "If Fingerprinting is set to true, fingerprinting scripts on websites are blocked."
                 }
             },
-            "property_order": 340
+            "property_order": 345
         },
         "FlashPlugin": {
             "type": "object",
@@ -1979,7 +1988,7 @@
                     "description": "If this is true, Flash preferences cannot be changed."
                 }
             },
-            "property_order": 345
+            "property_order": 350
         },
         "InstallAddonsPermission": {
             "type": "object",
@@ -2006,7 +2015,7 @@
                     "description": "If this is set to false, add-ons cannot be installed by the user."
                 }
             },
-            "property_order": 350
+            "property_order": 355
         },
         "OfferToSaveLogins": {
             "type": "boolean",
@@ -2019,7 +2028,7 @@
                     "href": "https://github.com/mozilla/policy-templates#offertosavelogins"
                 }
             ],
-            "property_order": 355
+            "property_order": 360
         },
         "OfferToSaveLoginsDefault": {
             "type": "boolean",
@@ -2032,7 +2041,7 @@
                     "href": "https://github.com/mozilla/policy-templates#offertosaveloginsdefault"
                 }
             ],
-            "property_order": 360
+            "property_order": 365
         },
         "PasswordManagerEnabled": {
             "type": "boolean",
@@ -2045,7 +2054,7 @@
                     "href": "https://github.com/mozilla/policy-templates#passwordmanagerenabled"
                 }
             ],
-            "property_order": 365
+            "property_order": 370
         },
         "Permissions": {
             "type": "object",
@@ -2262,7 +2271,7 @@
                     }
                 }
             },
-            "property_order": 370
+            "property_order": 375
         },
         "PopupBlocking": {
             "type": "object",
@@ -2294,7 +2303,7 @@
                     "description": "If this is true, pop-up blocking preferences cannot be changed."
                 }
             },
-            "property_order": 375
+            "property_order": 380
         },
         "Certificates": {
             "type": "object",
@@ -2332,7 +2341,7 @@
                     ]
                 }
             },
-            "property_order": 380
+            "property_order": 385
         },
         "DisableSecurityBypass": {
             "type": "object",
@@ -2356,7 +2365,7 @@
                     "description": "Prevents selecting \"ignore the risk\" and visiting a harmful site anyway. If this preference is enabled, a user cannot bypass the warning and visit a harmful site. If this preference is disabled or not configured, a user can choose to visit a harmful site."
                 }
             },
-            "property_order": 385
+            "property_order": 390
         },
         "SecurityDevices": {
             "type": "object",
@@ -2380,7 +2389,7 @@
                     "title": "Library Path"
                 }
             },
-            "property_order": 390
+            "property_order": 395
         },
         "UserMessaging": {
             "type": "object",
@@ -2419,7 +2428,7 @@
                     "description": "If enabled, don't offer Firefox specific suggestions in the URL bar."
                 }
             },
-            "property_order": 395
+            "property_order": 400
         },
         "LegacySameSiteCookieBehaviorEnabled": {
             "type": "boolean",
@@ -2431,7 +2440,7 @@
                     "href": "https://github.com/mozilla/policy-templates#legacysamesitecookiebehaviorenabled"
                 }
             ],
-            "property_order": 400
+            "property_order": 405
         },
         "LegacySameSiteCookieBehaviorEnabledForDomainList": {
             "type": "array",
@@ -2447,7 +2456,7 @@
                     "href": "https://github.com/mozilla/policy-templates#legacysamesitecookiebehaviorenabledfordomainlist"
                 }
             ],
-            "property_order": 405
+            "property_order": 410
         },
         "WebsiteFilter": {
             "type": "object",
@@ -2480,7 +2489,7 @@
                     "description": "If this preference is enabled, and the website filter is enabled, you can specify match patterns for sites you do not want to block. The match patterns are documented at https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. Only http/https addresses are supported at the moment. There is a 1000 entry limit. If this preference is disabled or not configured, there are no exceptions to the website filter."
                 }
             },
-            "property_order": 410
+            "property_order": 415
         },
         "AllowedDomainsForApps": {
             "type": "string",
@@ -2492,11 +2501,30 @@
                     "href": "https://github.com/mozilla/policy-templates#alloweddomainsforapps"
                 }
             ],
-            "property_order": 415
+            "property_order": 420
         },
         "AutoLaunchProtocolsFromOrigins": {
             "type": "array",
-            "items": {},
+            "items": {
+                "type": "object",
+                "properties": {
+                    "protocol": {
+                        "type": "string",
+                        "title": "Protocol",
+                        "description": "The protocol to allow for specified URLs."
+                    },
+                    "allowed_origins": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "URL",
+                            "pattern": "^https?://.*"
+                        },
+                        "title": "Allowed Origins",
+                        "description": "The protocol to allow for specified URLs."
+                    }
+                }
+            },
             "title": "Auto Launch Protocols from Origins",
             "description": "Comma-separated list of domains allowed to access Google Workspace. This policy is based on the Chrome policy of the same name. If this policy is enabled, users can only access Google Workspace using accounts from the specified domains. If you want to allow Gmail, you can add 'consumer_accounts' to the list.",
             "links": [
@@ -2505,7 +2533,7 @@
                     "href": "https://github.com/mozilla/policy-templates#autolaunchprotocolsfromorigins"
                 }
             ],
-            "property_order": 420
+            "property_order": 425
         },
         "CaptivePortal": {
             "type": "boolean",
@@ -2517,7 +2545,7 @@
                     "href": "https://github.com/mozilla/policy-templates#captiveportal"
                 }
             ],
-            "property_order": 425
+            "property_order": 430
         },
         "Preferences": {
             "type": "object",
@@ -2831,7 +2859,7 @@
                     "description": "If set, overrides the GTK theme for widgets."
                 }
             },
-            "property_order": 430
+            "property_order": 435
         },
         "SupportMenu": {
             "type": "object",
@@ -2857,7 +2885,7 @@
                     "title": "AccessKey"
                 }
             },
-            "property_order": 435
+            "property_order": 440
         }
     }
 }

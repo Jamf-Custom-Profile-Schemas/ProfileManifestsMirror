@@ -1,6 +1,6 @@
 {
     "title": "Unity Editor (com.unity3d.UnityEditor5.x)",
-    "description": "Unity Editor settings",
+    "description": "Use this section to define settings for Unity Editor",
     "properties": {
         "EditorUpdateShowAtStartup": {
             "type": "boolean",

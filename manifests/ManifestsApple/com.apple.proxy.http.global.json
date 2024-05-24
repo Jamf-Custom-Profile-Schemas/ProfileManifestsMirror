@@ -16,25 +16,25 @@
         "ProxyServer": {
             "type": "string",
             "title": "Proxy Server",
-            "description": "The proxy server's network address.",
+            "description": "The proxy server's network address. This is required if the ProxyType is set to Manual, and is ignored if the ProxyType is set to Automatic.",
             "property_order": 10
         },
         "ProxyServerPort": {
             "type": "integer",
             "title": "Proxy Server Port",
-            "description": "The port on which to connect to the proxy server.",
+            "description": "The proxy server's port number. This is required if the ProxyType is set to Manual, and is ignored if the ProxyType is set to Automatic.",
             "property_order": 15
         },
         "ProxyUsername": {
             "type": "string",
             "title": "Proxy Username",
-            "description": "The user name for the proxy server.",
+            "description": "The user name used to authenticate to the proxy server. This setting is only used if the ProxyType is set to Manual, and is ignored if the ProxyType is set to Automatic.",
             "property_order": 20
         },
         "ProxyPassword": {
             "type": "string",
             "title": "Proxy Password",
-            "description": "The authentication password for the proxy server.",
+            "description": "The password used to authenticate to the proxy server. This setting is only used if the ProxyType is set to Manual, and is ignored if the ProxyType is set to Automatic.",
             "property_order": 25
         },
         "ProxyPACURL": {

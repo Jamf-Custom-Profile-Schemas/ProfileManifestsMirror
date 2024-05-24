@@ -1,0 +1,13 @@
+{
+    "title": "Declarations (com.apple.declarations)",
+    "description": "Declarations",
+    "properties": {
+        "Declarations": {
+            "type": "array",
+            "items": {},
+            "title": "Declarations",
+            "description": "The set of declarations to apply. The items in this array are <data> (base64-encoded) representations\nof the declaration JSON data.",
+            "property_order": 5
+        }
+    }
+}

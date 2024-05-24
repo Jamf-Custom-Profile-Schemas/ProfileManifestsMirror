@@ -85,6 +85,31 @@
             },
             "property_order": 30
         },
+        "UnstableUpdates": {
+            "type": "string",
+            "title": "Allow updating to unstable builds",
+            "default": "user-decides",
+            "description": "Setting UnstableUpdates to \"never\" means that your users won’t be able to update to unstable versions of the client from the in-app UI. You can deploy this policy to prevent non-tech-savvy users from enrolling in pre-release builds of the client, which might be more prone to issues.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys#manage-unstable-versions-availability"
+                }
+            ],
+            "enum": [
+                "always",
+                "never",
+                "user-decides"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always",
+                    "Never",
+                    "User Decides"
+                ]
+            },
+            "property_order": 35
+        },
         "TailscaleStartOnLogin": {
             "type": "boolean",
             "title": "Automatically start Tailscale when the user logs in",
@@ -95,7 +120,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#automatically-start-tailscale-when-the-user-logs-in"
                 }
             ],
-            "property_order": 35
+            "property_order": 40
         },
         "ForceEnabled": {
             "type": "boolean",
@@ -107,7 +132,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#force-tailscale-to-always-be-running"
                 }
             ],
-            "property_order": 40
+            "property_order": 45
         },
         "Tailnet": {
             "type": "string",
@@ -119,7 +144,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-suggested-or-required-tailnet"
                 }
             ],
-            "property_order": 45
+            "property_order": 50
         },
         "LoginURL": {
             "type": "string",
@@ -131,7 +156,156 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-custom-control-server-url"
                 }
             ],
-            "property_order": 50
+            "property_order": 55
+        },
+        "ExitNodeID": {
+            "type": "string",
+            "title": "Forced Exit Node ID",
+            "description": "Forces the Tailscale client to always use the given exit node. This can be useful if you wish to route all Internet traffic through a node for inspection or logging purposes. Users won't be able to disable or choose another exit node when this policy is active. A message will be displayed in the client UI informing users about this restriction. The value for this key should be the ID of an exit node device. You can find the ID for any device in your tailnet by looking at the Machines page of the admin console, or by using the Tailscale API. Note that if a forced exit node goes offline, Internet connectivity will be unavailable on client devices until the exit node comes back online.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#force-an-exit-node-to-always-be-used"
+                }
+            ],
+            "property_order": 60
+        },
+        "KeyExpirationNotice": {
+            "type": "string",
+            "title": "Key Expiration Notice Interval",
+            "description": "The KeyExpirationNotice policy controls how long before key expiry should a notice be displayed. The default is 24 hours (\"24h\"). Use a Go-style Duration for this policy value, for instance \"24h\" or \"5h25m30s\".",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys#set-the-key-expiration-notice-period"
+                }
+            ],
+            "property_order": 65
+        },
+        "ExitNodeAllowLANAccess": {
+            "type": "string",
+            "title": "Allow Local Network Access when an exit node is in use",
+            "default": "user-decides",
+            "description": "Allow Local Network Access determines whether users can still access devices on the local network while using an exit node.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#toggle-local-network-access-when-an-exit-node-is-in-use"
+                }
+            ],
+            "enum": [
+                "always",
+                "never",
+                "user-decides"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always",
+                    "Never",
+                    "User Decides"
+                ]
+            },
+            "property_order": 70
+        },
+        "UseTailscaleSubnets": {
+            "type": "string",
+            "title": "Use Tailscale Subnets",
+            "default": "user-decides",
+            "description": "Determines whether the client accepts subnets advertised by other nodes in your tailnet.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-whether-the-device-accepts-tailscale-subnets"
+                }
+            ],
+            "enum": [
+                "always",
+                "never",
+                "user-decides"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always",
+                    "Never",
+                    "User Decides"
+                ]
+            },
+            "property_order": 75
+        },
+        "UseTailscaleDNSSettings": {
+            "type": "string",
+            "title": "Use Tailscale DNS Settings",
+            "default": "user-decides",
+            "description": "Determines whether to apply the DNS configuration provided by the coordination server when the tunnel is connected.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-whether-the-device-uses-tailscale-dns-settings"
+                }
+            ],
+            "enum": [
+                "always",
+                "never",
+                "user-decides"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always",
+                    "Never",
+                    "User Decides"
+                ]
+            },
+            "property_order": 80
+        },
+        "AllowIncomingConnections": {
+            "type": "string",
+            "title": "Allow incoming connections",
+            "default": "user-decides",
+            "description": "Determines whether Tailscale should allow incoming connections to the device.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-whether-to-allow-incoming-connections"
+                }
+            ],
+            "enum": [
+                "always",
+                "never",
+                "user-decides"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always",
+                    "Never",
+                    "User Decides"
+                ]
+            },
+            "property_order": 85
+        },
+        "PostureChecking": {
+            "type": "string",
+            "title": "Gather device posture data",
+            "default": "user-decides",
+            "description": "Enables gathering of device posture data.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#enable-gathering-device-posture-data"
+                }
+            ],
+            "enum": [
+                "always",
+                "never",
+                "user-decides"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always",
+                    "Never",
+                    "User Decides"
+                ]
+            },
+            "property_order": 90
         },
         "ExitNodesPicker": {
             "type": "string",
@@ -154,7 +328,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 55
+            "property_order": 95
         },
         "ManageTailnetLock": {
             "type": "string",
@@ -177,7 +351,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 60
+            "property_order": 100
         },
         "ResetToDefaults": {
             "type": "string",
@@ -200,7 +374,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 65
+            "property_order": 105
         },
         "RunExitNode": {
             "type": "string",
@@ -223,7 +397,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 70
+            "property_order": 110
         },
         "StartOnLoginMenuItem": {
             "type": "string",
@@ -246,7 +420,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 75
+            "property_order": 115
         },
         "TestMenu": {
             "type": "string",
@@ -269,9 +443,32 @@
                     "Hide"
                 ]
             },
-            "property_order": 80
+            "property_order": 120
         },
-        "Hidden network devices": {
+        "UpdateMenu": {
+            "type": "string",
+            "title": "Show/hide \"Update Available\" menu item",
+            "default": "show",
+            "description": "Shows or hides the \"Update Available\" menu item which appears when a newer version of Tailscale is available.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-update-menu"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 125
+        },
+        "HiddenNetworkDevices": {
             "type": "array",
             "items": {
                 "type": "string",
@@ -289,14 +486,14 @@
                 }
             },
             "title": "Hide categories of network devices",
-            "description": "Can be used to hides one or more categories of network devices normally displayed in the Tailscale client. Administrators can choose to hide: devices owned by the current user; devices owned by other users; tagged devices. If all three options are chosen, the \"Network Devices\" menu item disappears entirely and users aren’t able to see any device on the tailnet.",
+            "description": "Can be used to hide one or more categories of network devices normally displayed in the Tailscale client. Administrators can choose to hide: devices owned by the current user; devices owned by other users; tagged devices. If all three options are chosen, the \"Network Devices\" menu item disappears entirely and users aren’t able to see any device on the tailnet.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-network-devices"
                 }
             ],
-            "property_order": 85
+            "property_order": 130
         },
         "IPAddressCopiedAlertSuppressed": {
             "type": "boolean",
@@ -308,7 +505,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#suppress-ip-address-copied-notifications"
                 }
             ],
-            "property_order": 90
+            "property_order": 135
         },
         "TailscaleOnboardingSeen": {
             "type": "boolean",
@@ -320,7 +517,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#suppress-the-first-launch-onboarding-flow"
                 }
             ],
-            "property_order": 95
+            "property_order": 140
         }
     }
 }

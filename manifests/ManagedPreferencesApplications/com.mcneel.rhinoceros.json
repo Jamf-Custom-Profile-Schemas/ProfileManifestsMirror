@@ -1,6 +1,6 @@
 {
     "title": "Rhinoceros (com.mcneel.rhinoceros)",
-    "description": "Rhinoceros settings",
+    "description": "Use this section to define settings for Rhinoceros 3D",
     "properties": {
         "SUFeedURL": {
             "type": "string",

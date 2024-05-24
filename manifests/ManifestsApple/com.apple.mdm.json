@@ -24,7 +24,8 @@
                 "type": "string",
                 "enum": [
                     "com.apple.mdm.per-user-connections",
-                    "com.apple.mdm.bootstraptoken"
+                    "com.apple.mdm.bootstraptoken",
+                    "com.apple.mdm.token"
                 ]
             },
             "title": "Server Capabilities",
@@ -47,7 +48,7 @@
         "ManagedAppleID": {
             "type": "string",
             "title": "Managed Apple ID",
-            "description": "The user's managed Apple ID.",
+            "description": "The Managed Apple ID of the user. Available in iOS 13.1 and later, and macOS 10.15 and later. This is only used with the profile-driven BYOD enrollment flow, and must not be present in the BYOD and ADDE account-driven enrollment flows. As of iOS 17 and macOS 14, profile-driven user enrollments are deprecated and will be removed in a future release.",
             "property_order": 30
         },
         "AccessRights": {
@@ -118,7 +119,8 @@
             "title": "EnrollmentMode",
             "description": "The enrollment mode for a user-enrolled (non-supervised) device.",
             "enum": [
-                "BYOD"
+                "BYOD",
+                "ADDE"
             ],
             "property_order": 80
         },

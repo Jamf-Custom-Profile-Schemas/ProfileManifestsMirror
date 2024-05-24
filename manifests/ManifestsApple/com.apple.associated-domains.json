@@ -1,0 +1,32 @@
+{
+    "title": "Associated Domains (com.apple.associated-domains)",
+    "description": "Use this section to define settings for Associated Domains to be used with features such as Extensible AppSSO, universal links and Password AutoFill.",
+    "properties": {
+        "Configuration": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ApplicationIdentifier": {
+                        "type": "string",
+                        "description": "The app identifier to associate the domains with."
+                    },
+                    "AssociatedDomains": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The domains to be associated with the app. Each string is in the form of ''service:domain''. Domains should be fully qualified hostnames, like 'www.example.com'.\nSee Supporting Associated Domains for more information."
+                    },
+                    "EnableDirectDownloads": {
+                        "type": "boolean",
+                        "description": "If 'true', data for this domain should be downloaded directly instead of through a CDN. The entitlement value for this domain must be set to 'service:domain?mode=managed' or this value will be ignored. Available in macOS 11 and later."
+                    }
+                }
+            },
+            "title": "Configuration",
+            "description": "A dictionary that maps apps to their associated domains.",
+            "property_order": 5
+        }
+    }
+}

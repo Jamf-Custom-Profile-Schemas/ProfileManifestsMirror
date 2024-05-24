@@ -1,6 +1,6 @@
 {
     "title": "Network Share Mounter (de.fau.rrze.NetworkShareMounter)",
-    "description": "Network Share Mounter v2 settings",
+    "description": "Network Share Mounter settings",
     "properties": {
         "autostart": {
             "type": "boolean",
@@ -38,15 +38,64 @@
             "description": "Configure a help URL to help users interact with the application.",
             "property_order": 25
         },
+        "managedNetworkShares": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "networkShare": {
+                        "type": "string",
+                        "title": "Server and share",
+                        "description": "Example: smb://filer.your.domain.tld/share. Note: %USERNAME% will be replaced with the current user's login name.",
+                        "pattern": "^(smb|afp|https)://.*$"
+                    },
+                    "authType": {
+                        "type": "string",
+                        "title": "Authentication type",
+                        "default": "krb",
+                        "description": "Authentication type for the share, it can be either through Kerberos (krb) or using a username/password (auth). Default: Kerberos.",
+                        "enum": [
+                            "krb",
+                            "password"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Kerberos",
+                                "Password"
+                            ]
+                        }
+                    },
+                    "username": {
+                        "type": "string",
+                        "title": "Username (Optional)",
+                        "description": "Optional: Predefine a username for authentication using username/password"
+                    },
+                    "mountPoint": {
+                        "type": "string",
+                        "title": "Mount point name (Optional)",
+                        "description": "Optional: Change the mount point name for the network share. Leave blank for the default value (recommended)"
+                    }
+                }
+            },
+            "title": "Managed network shares",
+            "description": "Array with managed network shares.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://gitlab.rrze.fau.de/faumac/networkShareMounter#configuration-preferences"
+                }
+            ],
+            "property_order": 30
+        },
         "networkShares": {
             "type": "array",
             "items": {
                 "type": "string",
-                "pattern": "^smb:\\/\\/\\S*\\/.+$"
+                "pattern": "^smb://\\S*/.+$"
             },
-            "title": "List of Network Shares to Mount",
-            "description": "Array with all network shares. Example: smb://filer.your.domain/share\nNote: %USERNAME% will be replaced with the login name of the current user.",
-            "property_order": 30
+            "title": "Network shares",
+            "description": "Array with all network shares. Example: smb://filer.your.domain/share. Note: %USERNAME% will be replaced with the login name of the current user.",
+            "property_order": 35
         }
     }
 }

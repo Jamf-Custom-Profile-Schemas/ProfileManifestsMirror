@@ -1,6 +1,6 @@
 {
     "title": "Google Drive for desktop (com.google.drivefs.settings)",
-    "description": "Google Drive for desktop settings",
+    "description": "Use this section to define settings for Google Drive for desktop",
     "properties": {
         "AllowedAccountsPattern": {
             "type": "string",

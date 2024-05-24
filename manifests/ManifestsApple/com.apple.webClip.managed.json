@@ -11,8 +11,7 @@
         "URL": {
             "type": "string",
             "title": "URL",
-            "description": "The URL that's displayed when users open the Web Clip. The URL must begin with HTTP or HTTPS",
-            "pattern": "^https?://.*$",
+            "description": "The URL of the web clip.",
             "property_order": 10
         },
         "IsRemovable": {

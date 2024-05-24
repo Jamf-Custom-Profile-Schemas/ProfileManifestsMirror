@@ -1,6 +1,6 @@
 {
     "title": "Microsoft AutoUpdate FBA (com.microsoft.autoupdate.fba)",
-    "description": "Microsoft AutoUpdate FBA settings",
+    "description": "Use this section to define settings for Microsoft AutoUpdate FBA for Mac",
     "properties": {
         "SendAllTelemetryEnabled": {
             "type": "boolean",

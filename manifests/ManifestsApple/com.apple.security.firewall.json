@@ -76,11 +76,13 @@
         "AllowSigned": {
             "type": "boolean",
             "title": "Allow Incoming Connections to macOS-Bundled Software",
+            "default": true,
             "property_order": 35
         },
         "AllowSignedApp": {
             "type": "boolean",
             "title": "Allow Incoming Connections to Downloaded Signed Apps",
+            "default": true,
             "property_order": 40
         }
     }

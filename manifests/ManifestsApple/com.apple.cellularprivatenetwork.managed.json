@@ -1,0 +1,52 @@
+{
+    "title": "Cellular Private Network (com.apple.cellularprivatenetwork.managed)",
+    "description": "Cellular Private Network Settings and Device Configuration",
+    "properties": {
+        "Geofences": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Longitude": {
+                        "type": "number",
+                        "description": "Signed decimal value of longitude from -180 to 180"
+                    },
+                    "Latitude": {
+                        "type": "number",
+                        "description": "Signed decimal value of latitude from -90 to 90"
+                    },
+                    "Radius": {
+                        "type": "number",
+                        "description": "Specifies the radius of the geofence in meters. Should be set slightly greater than the private cellular network coverage area. Supported values 100 to 6500"
+                    },
+                    "GeofenceId": {
+                        "type": "string",
+                        "description": "ID of geofence, must be unique amongst list"
+                    }
+                }
+            },
+            "description": "List of up to 1000 geofences for private networks. Geofencing is only used on iPhones.",
+            "property_order": 5
+        },
+        "DataSetName": {
+            "type": "string",
+            "description": "Name for private network configuration dataset",
+            "property_order": 10
+        },
+        "VersionNumber": {
+            "type": "string",
+            "description": "The version number of this dataset. Used to track updates",
+            "property_order": 15
+        },
+        "CellularDataPreferred": {
+            "type": "boolean",
+            "description": "Set to true if this private network should be preferred over wifi",
+            "property_order": 20
+        },
+        "EnableNRStandalone": {
+            "type": "boolean",
+            "description": "Set to true if this private network is NR Standalone",
+            "property_order": 25
+        }
+    }
+}

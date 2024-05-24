@@ -32,7 +32,8 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "Hostname / Domain name"
+                "title": "Hostname / Domain name",
+                "description": "A host or domain name, with or without a leading dot."
             },
             "description": "An array of host names or domain names that can be authenticated through the app extension. Required for Credential payloads. Ignored for Redirect payloads.",
             "property_order": 20
@@ -47,6 +48,7 @@
             "items": {
                 "type": "string",
                 "title": "URL",
+                "description": "An http or https URL prefix.",
                 "pattern": "^https?://.*"
             },
             "title": "URLs",
@@ -57,7 +59,8 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "Bundle Identifier"
+                "title": "Bundle Identifier",
+                "description": "The bundle identifier of the app."
             },
             "title": "Denied Bundle Identifiers",
             "property_order": 35
@@ -127,7 +130,8 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Bundle ID"
+                        "title": "Bundle ID",
+                        "description": "Bundle IDs allowed to access the TGT.  These values are case sensitive."
                     },
                     "title": "Credential Bundle ID ACL",
                     "description": "A list of bundle IDs allowed to access the ticket-granting ticket (TGT)."
@@ -199,7 +203,8 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Key Distribution Center"
+                        "title": "Key Distribution Center",
+                        "description": "A host or domain name in the format of [protocol/]hostname[:port][/path]"
                     },
                     "title": "Preferred KDCs",
                     "description": "Preferred Key Distribution Centers for Kerberos traffic when the servers cannot be discovered via DNS.",
@@ -280,6 +285,20 @@
                     "title": "Use Site Auto Discovery",
                     "default": true,
                     "description": "If false, the Kerberos extension doesn't automatically use LDAP and DNS to determine its AD site name."
+                },
+                "domainRealmMapping": {
+                    "type": "object",
+                    "description": "A custom domain-realm mapping for Kerberos. This is used when the DNS name of hosts do not match the realm name. Most administrators will not need to customize this.",
+                    "properties": {
+                        "Realm": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "description": "Domains to map to the realm"
+                            },
+                            "description": "The key should be the name of the realm, and the value is an array of DNS suffixes that map to the realm."
+                        }
+                    }
                 },
                 "Enable_SSO_On_All_ManagedApps": {
                     "type": "integer",
@@ -454,6 +473,108 @@
             "title": "Registration Token",
             "description": "Platform SSO token for use in silent registration.",
             "property_order": 55
+        },
+        "PlatformSSO": {
+            "type": "object",
+            "description": "This is the dictionary used to configure PlatformSSO.",
+            "properties": {
+                "AuthenticationMethod": {
+                    "type": "string",
+                    "description": "The Platform SSO authentication method to be used with the extension. Requires that the SSO Extension also support the method.",
+                    "enum": [
+                        "Password",
+                        "UserSecureEnclaveKey",
+                        "SmartCard"
+                    ]
+                },
+                "UseSharedDeviceKeys": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If set to true, Platform SSO will use the same signing and encryption keys for all users."
+                },
+                "AccountDisplayName": {
+                    "type": "string",
+                    "description": "The display name for the account in notifications and authentication requests."
+                },
+                "LoginFrequency": {
+                    "type": "integer",
+                    "default": 64800,
+                    "description": "The frequency where a full login is required instead of a refresh. Default is 18 hours. Must be > 1 hour."
+                },
+                "EnableCreateUserAtLogin": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enables creating new users at the login window with either Passwords or SmartCards. Requires 'UseSharedDeviceKeys' is true."
+                },
+                "EnableAuthorization": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enables using identity provider accounts at authorization prompts. Requires 'UseSharedDeviceKeys' is true. The account will be assigned groups using the 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'."
+                },
+                "TokenToUserMapping": {
+                    "type": "object",
+                    "description": "The attribute mapping used when creating new users or for authorization.",
+                    "properties": {
+                        "AccountName": {
+                            "type": "string",
+                            "description": "The claim name to use for the user's account name."
+                        },
+                        "FullName": {
+                            "type": "string",
+                            "description": "The claim name to use for the user's full name."
+                        }
+                    }
+                },
+                "NewUserAuthorizationMode": {
+                    "type": "string",
+                    "description": "This setting affects the permissions for accounts created at login by Platform SSO. It is only used when the account is created. Use of the following:\n* Standard\n    The account will be a standard user.\n* Admin\n    The account will be added to the local administrators group.\n* Groups\n    The account will be assigned groups using the 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.",
+                    "enum": [
+                        "Standard",
+                        "Admin",
+                        "Groups"
+                    ]
+                },
+                "UserAuthorizationMode": {
+                    "type": "string",
+                    "description": "This setting affects the permissions after authentication by Platform SSO. It is applied each time user authenticates. Use of the following:\n* Standard\n    The account will be a standard user. It will be removed from the 'admin' group.\n* Admin\n    The account will be added to the local administrators group.\n* Groups\n    The account will be assigned groups using the 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.",
+                    "enum": [
+                        "Standard",
+                        "Admin",
+                        "Groups"
+                    ]
+                },
+                "AdministratorGroups": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "The group name."
+                    },
+                    "description": "The list of groups that are used for administrator access. Membership will be requested during authentication."
+                },
+                "AdditionalGroups": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "The group name."
+                    },
+                    "description": "The list of groups that are created and do not have administrator access."
+                },
+                "AuthorizationGroups": {
+                    "type": "object",
+                    "description": "The pairing of Authorization Rights to group names. The Authorization Right will be updated to use the group when used.",
+                    "properties": {
+                        "Authorization Right": {
+                            "type": "string",
+                            "description": "The Authorization Right to update."
+                        },
+                        "Group": {
+                            "type": "string",
+                            "description": "The group to use for the Authorization Right."
+                        }
+                    }
+                }
+            },
+            "property_order": 60
         }
     }
 }

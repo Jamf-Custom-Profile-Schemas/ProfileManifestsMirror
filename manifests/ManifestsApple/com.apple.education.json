@@ -176,7 +176,7 @@
                     "GroupBeaconIDs": {
                         "type": "array",
                         "items": {
-                            "type": "string",
+                            "type": "integer",
                             "title": "Group Beacon ID"
                         },
                         "title": "Group Beacon IDs"

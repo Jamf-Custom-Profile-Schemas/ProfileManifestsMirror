@@ -83,6 +83,12 @@
             "default": false,
             "description": "When using the Defer option, set this key to true to not request enabling FileVault at user logout time.",
             "property_order": 60
+        },
+        "ForceEnableInSetupAssistant": {
+            "type": "boolean",
+            "default": false,
+            "description": "If 'true', and this payload is installed after enrolling with MDM in Setup Assistant, it requests Setup Assistant to enable FileVault at setup time. In this case, the system also ignores all other keys in this payload, except for 'ShowRecoveryKey'.\nTo use this, enable the Await Device Configured DEP configuration option, send this profile with this key set, before sending the DeviceConfiguredCommand.",
+            "property_order": 65
         }
     }
 }

@@ -43,6 +43,13 @@
             "description": "If true, disables MAC address randomization for that Wi-Fi network while associated with the network. This also shows a privacy warning in Settings indicating that the network has reduced privacy protections.",
             "property_order": 30
         },
+        "EnableIPv6": {
+            "type": "boolean",
+            "title": "Enable IPv6",
+            "default": true,
+            "description": "If 'true', enables IPv6 on this interface.",
+            "property_order": 35
+        },
         "ProxyType": {
             "type": "string",
             "title": "Proxy Type",
@@ -53,44 +60,44 @@
                 "Manual",
                 "Auto"
             ],
-            "property_order": 35
+            "property_order": 40
         },
         "ProxyServer": {
             "type": "string",
             "title": "Proxy Server",
             "description": "The hostname of the proxy server.",
-            "property_order": 40
+            "property_order": 45
         },
         "ProxyServerPort": {
             "type": "integer",
             "title": "Proxy Server Port",
             "description": "The port used to connect to the proxy server.",
-            "property_order": 45
+            "property_order": 50
         },
         "ProxyUsername": {
             "type": "string",
             "title": "Proxy Username",
             "description": "The user name for the manual proxy connection.",
-            "property_order": 50
+            "property_order": 55
         },
         "ProxyPassword": {
             "type": "string",
             "title": "Proxy Password",
             "description": "The password for the manual proxy connection.",
-            "property_order": 55
+            "property_order": 60
         },
         "ProxyPACURL": {
             "type": "string",
             "title": "Proxy PAC URL",
             "description": "URL used to receive proxy settings. If no URL is specified, the device uses the web proxy autodiscovery protocol (WPAD) to discover proxies",
-            "property_order": 60
+            "property_order": 65
         },
         "ProxyPACFallbackAllowed": {
             "type": "boolean",
             "title": "Proxy PAC Fallback",
             "default": true,
             "description": "Enable to allow direct connection if PAC is unreachable",
-            "property_order": 65
+            "property_order": 70
         },
         "EncryptionType": {
             "type": "string",
@@ -109,38 +116,38 @@
                 "enum_titles": [
                     "None",
                     "WEP",
-                    "WPA/WPA2",
-                    "WPA2",
+                    "WPA and WPA2",
+                    "WPA2 and WPA3",
                     "WPA3",
                     "Any"
                 ]
             },
-            "property_order": 70
+            "property_order": 75
         },
         "Password": {
             "type": "string",
             "title": "Password",
             "description": "Specifies the password for the access point.",
-            "property_order": 75
+            "property_order": 80
         },
         "DisplayedOperatorName": {
             "type": "string",
             "title": "Provider Display Name",
             "description": "Display name of the Passpoint service provider.",
-            "property_order": 80
+            "property_order": 85
         },
         "DomainName": {
             "type": "string",
             "title": "Domain Name",
             "description": "Domain name of the Passpoint service provider.",
-            "property_order": 85
+            "property_order": 90
         },
         "ServiceProviderRoamingEnabled": {
             "type": "boolean",
             "title": "Connect to roaming partner Passpoint networks",
             "default": false,
             "description": "Specify whether to connect to additional Passpoint networks pre-approved by the service provider.",
-            "property_order": 90
+            "property_order": 95
         },
         "RoamingConsortiumOIs": {
             "type": "array",
@@ -150,7 +157,7 @@
             },
             "title": "Roaming OIs",
             "description": "Enter a series of digits corresponding to one of the service provider's Passpoint network.",
-            "property_order": 95
+            "property_order": 100
         },
         "NAIRealmNames": {
             "type": "array",
@@ -159,7 +166,7 @@
             },
             "title": "Realm Names",
             "description": "Enter the known NAI realm names.",
-            "property_order": 100
+            "property_order": 105
         },
         "MCCAndMNCs": {
             "type": "array",
@@ -169,7 +176,7 @@
             },
             "title": "MCC/MNCs",
             "description": "HotSpot 2.0 MCC/MNCs.",
-            "property_order": 105
+            "property_order": 110
         },
         "SetupModes": {
             "type": "array",
@@ -189,7 +196,7 @@
             },
             "title": "EAP Setup Modes",
             "description": "Select \"Login Window\" to authenticate the Mac to the network when the user logs in.",
-            "property_order": 110
+            "property_order": 115
         },
         "EAPClientConfiguration": {
             "type": "object",
@@ -290,19 +297,23 @@
                 "TLSMinimumVersion": {
                     "type": "string",
                     "title": "TLS Minimum Version",
+                    "default": "1.0",
                     "enum": [
                         "1.0",
                         "1.1",
-                        "1.2"
+                        "1.2",
+                        "1.3"
                     ]
                 },
                 "TLSMaximumVersion": {
                     "type": "string",
                     "title": "TLS Maximum Version",
+                    "default": "1.2",
                     "enum": [
                         "1.0",
                         "1.1",
-                        "1.2"
+                        "1.2",
+                        "1.3"
                     ]
                 },
                 "EAPFASTUsePAC": {
@@ -342,12 +353,26 @@
                     ]
                 },
                 "SystemModeUseOpenDirectoryCredentials": {
-                    "type": "string",
+                    "type": "boolean",
                     "title": "Use OpenDirectory System Profile Credentials",
+                    "default": false,
                     "description": "This indicates if the connection should try to use the OpenDirectory machine credentials."
+                },
+                "TLSTrustedCertificates": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "A certificate identifier."
+                    },
+                    "title": "TLS Trusted Certificates",
+                    "description": "An array of trusted certificates. Each entry in the array must contain certificate data that represents an anchor certificate used for verifying the server certificate."
+                },
+                "TLSCertificateIsRequired": {
+                    "type": "boolean",
+                    "description": "If 'true', allows for two-factor authentication for EAP-TTLS, PEAP, or EAP-FAST. If 'false', allows for zero-factor authentication for EAP-TLS.\nIf you don't specify a value, the default is 'true' for EAP-TLS, and 'false' for other EAP types."
                 }
             },
-            "property_order": 115
+            "property_order": 120
         },
         "QoSMarkingPolicy": {
             "type": "object",
@@ -385,21 +410,21 @@
                     "description": "Add specific apps to an allow list for QoS marking."
                 }
             },
-            "property_order": 120
+            "property_order": 125
         },
         "PayloadCertificateUUID": {
             "type": "string",
             "title": "Certificate UUID",
             "description": "UUID of the certificate payload containing an identity used as the client credential.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
-            "property_order": 125
+            "property_order": 130
         },
         "TLSCertificateRequired": {
             "type": "boolean",
             "title": "Certificate Required",
             "default": false,
             "description": "If set, force a non-default authentication method. (if YES, uses certificate from PayloadCertificateUUID).",
-            "property_order": 130
+            "property_order": 135
         },
         "Interface": {
             "type": "string",
@@ -425,7 +450,7 @@
                     "Third Active Ethernet"
                 ]
             },
-            "property_order": 135
+            "property_order": 140
         }
     }
 }

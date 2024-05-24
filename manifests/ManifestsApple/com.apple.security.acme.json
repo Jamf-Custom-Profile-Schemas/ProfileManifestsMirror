@@ -44,11 +44,11 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "SCEP Subject Array Pair Item"
+                        "title": "ACME Subject Array Pair Item"
                     },
                     "title": "Subject Array Pair"
                 },
-                "title": "Array Inside SCEP Subject Array"
+                "title": "Array Inside ACME Subject Array"
             },
             "title": "Subject",
             "description": "The device requests this subject for the certificate that the ACME server issues. The ACME server may override or ignore this field in the certificate it issues.\nThe representation of a X.500 name represented as an array of OID and value. For example, /C=US/O=Apple Inc./CN=foo/1.2.5.3=bar corresponds to:\n[ [ [”C”, “US”] ], [ [”O”, “Apple Inc.”] ], ..., [ [ “1.2.5.3”, “bar” ] ] ]\nDotted numbers can represent OIDs , with shortcuts for country (C), locality (L), state (ST), organization (O), organizational unit (OU), and common name (CN).",

@@ -72,6 +72,13 @@
             "description": "Skips the accessibility setup window.",
             "property_order": 50
         },
+        "SkipWallpaper": {
+            "type": "boolean",
+            "title": "Skip Wallpaper",
+            "default": false,
+            "description": "If 'true', the system skips the Wallpaper selection window.",
+            "property_order": 55
+        },
         "SkipSetupItems": {
             "type": "array",
             "items": {
@@ -150,7 +157,7 @@
                     "href": "https://developer.apple.com/documentation/devicemanagement/skipkeys"
                 }
             ],
-            "property_order": 55
+            "property_order": 60
         }
     }
 }
