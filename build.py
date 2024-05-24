@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
-# Copyright 2021 Elliot Jordan
+# Copyright 2021-2024 Elliot Jordan
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +19,7 @@ equivalent Jamf JSON schema manifests."""
 
 
 __author__ = "Elliot Jordan"
-__version__ = "1.0.3"
+__version__ = "1.1.0"
 
 import argparse
 import json
@@ -202,12 +201,16 @@ def process_subkeys(subkeys):
             if "items" in properties[name]:
                 # If the parent type was array, we're only expecting a single dict
                 # here, since an array should only contain a single object type.
+                # TODO: Validate this assumption. Some warnings seen in the wild.
                 subprop_keys = list(subprop.keys())
                 if len(subprop_keys) > 1:
                     print(
                         "WARNING: Array type should only have one subproperty "
-                        "key. Multiple found: %s" % subprop_keys
+                        "key. Skipping all but the first: %s" % subprop_keys
                     )
+                elif len(subprop_keys) == 0:
+                    print("WARNING: No subproperty keys found in %s key." % name)
+                    continue
                 array_props = subprop[subprop_keys[0]]
                 properties[name]["items"] = array_props
             else:
@@ -225,7 +228,7 @@ def convert_to_jamf_manifest(data, property_order_increment=5):
     # Create schema object
     try:
         schema = {
-            "title": "%s (%s)" % (data["pfm_title"], data["pfm_domain"]),
+            "title": "{} ({})".format(data["pfm_title"], data["pfm_domain"]),
             "description": data["pfm_description"],
             "properties": process_subkeys(data["pfm_subkeys"]),
         }
@@ -252,7 +255,7 @@ def write_to_file(path, data):
         os.makedirs(path_head)
 
     # Write file
-    with open(os.path.join(path_head, path_tail), "w") as openfile:
+    with open(os.path.join(path_head, path_tail), "w", encoding="utf-8") as openfile:
         openfile.write(
             json.dumps(
                 data,
@@ -267,7 +270,7 @@ def write_to_file(path, data):
 def update_readme(count):
     """Updates README.md file with latest manifest count."""
 
-    with open("README.md", "r") as f:
+    with open("README.md", encoding="utf-8") as f:
         readme = f.readlines()
     for idx, line in enumerate(readme):
         if line.startswith("![Manifest Count]("):
@@ -276,7 +279,7 @@ def update_readme(count):
                 % count
             )
             break
-    with open("README.md", "w") as f:
+    with open("README.md", "w", encoding="utf-8") as f:
         f.write("".join(readme))
     print("Updated README.md")
 
