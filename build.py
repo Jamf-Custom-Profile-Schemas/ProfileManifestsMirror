@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
-# Copyright 2021 Elliot Jordan
+# Copyright 2021-2024 Elliot Jordan
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +19,7 @@ equivalent Jamf JSON schema manifests."""
 
 
 __author__ = "Elliot Jordan"
-__version__ = "1.0.3"
+__version__ = "1.1.0"
 
 import argparse
 import json
@@ -225,7 +224,7 @@ def convert_to_jamf_manifest(data, property_order_increment=5):
     # Create schema object
     try:
         schema = {
-            "title": "%s (%s)" % (data["pfm_title"], data["pfm_domain"]),
+            "title": "{} ({})".format(data["pfm_title"], data["pfm_domain"]),
             "description": data["pfm_description"],
             "properties": process_subkeys(data["pfm_subkeys"]),
         }
@@ -252,7 +251,7 @@ def write_to_file(path, data):
         os.makedirs(path_head)
 
     # Write file
-    with open(os.path.join(path_head, path_tail), "w") as openfile:
+    with open(os.path.join(path_head, path_tail), "w", encoding="utf-8") as openfile:
         openfile.write(
             json.dumps(
                 data,
@@ -267,7 +266,7 @@ def write_to_file(path, data):
 def update_readme(count):
     """Updates README.md file with latest manifest count."""
 
-    with open("README.md", "r") as f:
+    with open("README.md", encoding="utf-8") as f:
         readme = f.readlines()
     for idx, line in enumerate(readme):
         if line.startswith("![Manifest Count]("):
@@ -276,7 +275,7 @@ def update_readme(count):
                 % count
             )
             break
-    with open("README.md", "w") as f:
+    with open("README.md", "w", encoding="utf-8") as f:
         f.write("".join(readme))
     print("Updated README.md")
 
