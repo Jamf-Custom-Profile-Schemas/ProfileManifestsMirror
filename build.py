@@ -201,12 +201,16 @@ def process_subkeys(subkeys):
             if "items" in properties[name]:
                 # If the parent type was array, we're only expecting a single dict
                 # here, since an array should only contain a single object type.
+                # TODO: Validate this assumption. Some warnings seen in the wild.
                 subprop_keys = list(subprop.keys())
                 if len(subprop_keys) > 1:
                     print(
                         "WARNING: Array type should only have one subproperty "
-                        "key. Multiple found: %s" % subprop_keys
+                        "key. Skipping all but the first: %s" % subprop_keys
                     )
+                elif len(subprop_keys) == 0:
+                    print("WARNING: No subproperty keys found in %s key." % name)
+                    continue
                 array_props = subprop[subprop_keys[0]]
                 properties[name]["items"] = array_props
             else:
