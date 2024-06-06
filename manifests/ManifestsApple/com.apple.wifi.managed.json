@@ -178,6 +178,12 @@
             "description": "HotSpot 2.0 MCC/MNCs.",
             "property_order": 110
         },
+        "HESSID": {
+            "type": "string",
+            "title": "Homogenous Extended Service Set Identifier (HESSID)",
+            "description": "The HESSID used for Wi-Fi Hotspot 2.0 negotiation.",
+            "property_order": 115
+        },
         "SetupModes": {
             "type": "array",
             "items": {
@@ -196,7 +202,7 @@
             },
             "title": "EAP Setup Modes",
             "description": "Select \"Login Window\" to authenticate the Mac to the network when the user logs in.",
-            "property_order": 115
+            "property_order": 120
         },
         "EAPClientConfiguration": {
             "type": "object",
@@ -372,7 +378,7 @@
                     "description": "If 'true', allows for two-factor authentication for EAP-TTLS, PEAP, or EAP-FAST. If 'false', allows for zero-factor authentication for EAP-TLS.\nIf you don't specify a value, the default is 'true' for EAP-TLS, and 'false' for other EAP types."
                 }
             },
-            "property_order": 120
+            "property_order": 125
         },
         "QoSMarkingPolicy": {
             "type": "object",
@@ -410,21 +416,21 @@
                     "description": "Add specific apps to an allow list for QoS marking."
                 }
             },
-            "property_order": 125
+            "property_order": 130
         },
         "PayloadCertificateUUID": {
             "type": "string",
             "title": "Certificate UUID",
             "description": "UUID of the certificate payload containing an identity used as the client credential.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
-            "property_order": 130
+            "property_order": 135
         },
         "TLSCertificateRequired": {
             "type": "boolean",
             "title": "Certificate Required",
             "default": false,
             "description": "If set, force a non-default authentication method. (if YES, uses certificate from PayloadCertificateUUID).",
-            "property_order": 135
+            "property_order": 140
         },
         "Interface": {
             "type": "string",
@@ -450,7 +456,7 @@
                     "Third Active Ethernet"
                 ]
             },
-            "property_order": 140
+            "property_order": 145
         }
     }
 }

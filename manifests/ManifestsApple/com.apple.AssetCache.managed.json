@@ -5,7 +5,7 @@
         "AutoActivation": {
             "type": "boolean",
             "title": "Automatically activate content caching",
-            "default": true,
+            "default": false,
             "description": "Users can't turn off the content caching service.",
             "property_order": 5
         },

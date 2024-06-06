@@ -154,6 +154,61 @@
                     },
                     "title": "AppleEvents"
                 },
+                "BluetoothAlways": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "title": "Services",
+                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of Identifier value.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "The designated requirement describing the code signature of this executable."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Authorization": {
+                                "type": "string",
+                                "description": "The 'Authorization' key is an optional replacement for the 'Allowed' key. Every payload must specify either 'Authorization' or 'Allowed', but not both.\n'Allow': Equivalent to a 'true' value for the 'Allowed' key.\n'Deny': Equivalent to a 'false' value for the 'Allowed' key.",
+                                "enum": [
+                                    "Allow",
+                                    "Deny"
+                                ]
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not Used"
+                            }
+                        }
+                    },
+                    "title": "Bluetooth Always",
+                    "description": "Specifies the policies for the app to access Bluetooth devices."
+                },
                 "Calendar": {
                     "type": "array",
                     "items": {

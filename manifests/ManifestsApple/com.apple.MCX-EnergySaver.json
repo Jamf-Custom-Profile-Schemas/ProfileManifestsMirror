@@ -277,7 +277,7 @@
         "SleepDisabled": {
             "type": "boolean",
             "title": "Sleep Disabled",
-            "default": true,
+            "default": false,
             "property_order": 25
         }
     }

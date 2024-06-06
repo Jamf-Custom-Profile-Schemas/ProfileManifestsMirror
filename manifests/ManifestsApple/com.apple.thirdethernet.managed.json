@@ -59,16 +59,13 @@
                 },
                 "UserName": {
                     "type": "string",
-                    "title": "Username"
+                    "title": "Username",
+                    "description": "Username. If not provided, the user may be prompted during login."
                 },
                 "UserPassword": {
                     "type": "string",
-                    "title": "Password"
-                },
-                "OneTimePassword": {
-                    "type": "boolean",
-                    "title": "One Time Password",
-                    "default": false
+                    "title": "Password",
+                    "description": "Password. If not provided, the user may be prompted during login."
                 },
                 "OneTimeUserPassword": {
                     "type": "boolean",
@@ -101,12 +98,7 @@
                     "type": "boolean",
                     "title": "Allow Trust Exceptions",
                     "default": true,
-                    "description": "Allows a dynamic trust decision by the user. If false, the authentication fails if the certificate isn't already trusted."
-                },
-                "TLSCertificateIsRequired": {
-                    "type": "boolean",
-                    "title": "TLS Certificate is Required",
-                    "default": false
+                    "description": "Allows a dynamic trust decision by the user."
                 },
                 "TTLSInnerAuthentication": {
                     "type": "string",
@@ -133,7 +125,8 @@
                     "enum": [
                         "1.0",
                         "1.1",
-                        "1.2"
+                        "1.2",
+                        "1.3"
                     ]
                 },
                 "TLSMaximumVersion": {
@@ -143,13 +136,15 @@
                     "enum": [
                         "1.0",
                         "1.1",
-                        "1.2"
+                        "1.2",
+                        "1.3"
                     ]
                 },
                 "EAPFASTUsePAC": {
                     "type": "boolean",
                     "title": "Use PAC",
-                    "default": false
+                    "default": false,
+                    "description": "If set, the device will use an existing PAC if it's present. Otherwise the server must present its identity using a certificate."
                 },
                 "EAPFASTProvisionPAC": {
                     "type": "boolean",
@@ -160,7 +155,8 @@
                 "EAPFASTProvisionPACAnonymously": {
                     "type": "boolean",
                     "title": "Provision PAC Anonymously",
-                    "default": false
+                    "default": false,
+                    "description": "If set, provisions the device anonymously. Note that there are known man-in-the-middle attacks for anonymous provisioning."
                 },
                 "EAPSIMNumberOfRANDs": {
                     "type": "integer",
@@ -178,17 +174,26 @@
                     "description": "Use an alternate set of credentials when in System mode (AKA not a loginwindow profile). This can be used to tell EAPOLClient to use the computer password in a bound active directory scenario for authentication.",
                     "enum": [
                         "ActiveDirectory"
-                    ],
-                    "options": {
-                        "enum_titles": [
-                            "Active Directory"
-                        ]
-                    }
+                    ]
                 },
                 "SystemModeUseOpenDirectoryCredentials": {
-                    "type": "string",
+                    "type": "boolean",
                     "title": "Use OpenDirectory System Profile Credentials",
+                    "default": false,
                     "description": "This indicates if the connection should try to use the OpenDirectory machine credentials."
+                },
+                "TLSTrustedCertificates": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "A certificate identifier."
+                    },
+                    "title": "TLS Trusted Certificates",
+                    "description": "An array of trusted certificates. Each entry in the array must contain certificate data that represents an anchor certificate used for verifying the server certificate."
+                },
+                "TLSCertificateIsRequired": {
+                    "type": "boolean",
+                    "description": "If 'true', allows for two-factor authentication for EAP-TTLS, PEAP, or EAP-FAST. If 'false', allows for zero-factor authentication for EAP-TLS.\nIf you don't specify a value, the default is 'true' for EAP-TLS, and 'false' for other EAP types."
                 }
             },
             "property_order": 10
