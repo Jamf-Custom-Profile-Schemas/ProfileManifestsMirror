@@ -23,7 +23,7 @@
         "BrandLogo": {
             "type": "string",
             "title": "Brand Logo",
-            "description": "Configures the brand logo shown in the apps side menu. Specify a local path.",
+            "description": "Configures the brand logo shown in the apps side menu. Specify a local path or Base64 string.",
             "property_order": 15
         },
         "SupportUrl": {
@@ -68,6 +68,13 @@
             "description": "Configures the phone number shown when the user clicks on the Support Info button.",
             "property_order": 40
         },
+        "ShowMenuToggle": {
+            "type": "boolean",
+            "title": "Show Menu Toggle",
+            "default": false,
+            "description": "Configures whether to show the menu toggle button in the apps side menu.",
+            "property_order": 45
+        },
         "HiddenWidgets": {
             "type": "array",
             "items": {
@@ -75,7 +82,7 @@
             },
             "title": "Hidden Widgets",
             "description": "Configures which widgets to hide, available widgets are: DeviceInfo, MunkiPendingApps, MunkiUpdates, IntunePendingApps, IntuneUpdates, Storage, MdmStatus, Actions, Battery, EvergreenInfo.",
-            "property_order": 45
+            "property_order": 50
         },
         "HiddenActions": {
             "type": "array",
@@ -84,49 +91,49 @@
             },
             "title": "Hidden Actions",
             "description": "Configures which actions to hide, available actions are: Support, ManagedSoftwareCenter, ChangePassword, Reboot, KillAgent, SoftwareUpdates, GatherLogs.",
-            "property_order": 50
+            "property_order": 55
         },
         "NotificationInterval": {
             "type": "integer",
             "title": "Notification Interval",
             "description": "Configures the interval for notifications in hours for Application Updates and Software Updates notifications.",
-            "property_order": 55
+            "property_order": 60
         },
         "NotificationTitle": {
             "type": "string",
             "title": "Notification Title",
             "description": "Configures the title for notifications for notifications. Defaults to Support Companion if not configured.",
-            "property_order": 60
+            "property_order": 65
         },
         "NotificationImage": {
             "type": "string",
             "title": "Notification Image",
             "description": "Configures an image to add to notifications. Local path should be specified.",
-            "property_order": 65
+            "property_order": 70
         },
         "SoftwareUpdateNotificationMessage": {
             "type": "string",
             "title": "Software Update Notification Message",
             "description": "Configures the message for notifications for Software Updates notifications. Defaults to \"You have software updates available. Take action now! \\ud83c\\udf89\" if not configured.",
-            "property_order": 70
+            "property_order": 75
         },
         "SoftwareUpdateNotificationButtonText": {
             "type": "string",
             "title": "Software Update Notification Button Text",
             "description": "Configures the button text for notifications for Software Updates notifications. Defaults to \"Details \\ud83d\\udc40\" if not configured.",
-            "property_order": 75
+            "property_order": 80
         },
         "AppUpdateNotificationMessage": {
             "type": "string",
             "title": "App Update Notification Message",
             "description": "Configures the message for notifications for App Updates notifications. Defaults to \"You have app updates available. Take action now! \\ud83c\\udf89\" if not configured.",
-            "property_order": 80
+            "property_order": 85
         },
         "AppUpdateNotificationButtonText": {
             "type": "string",
             "title": "App Update Notification Button Text",
             "description": "Configures the button text for notifications for App Updates notifications. Defaults to \"Details \\ud83d\\udc40\" if not configured.",
-            "property_order": 85
+            "property_order": 90
         },
         "CustomColors": {
             "type": "array",
@@ -147,13 +154,14 @@
             },
             "title": "Custom Colors",
             "description": "Configures custom colors for the app, should be specified in hex format, see example below. Do not use BrandColor in conjunction with this key.",
-            "property_order": 90
+            "property_order": 95
         },
         "IntuneMode": {
             "type": "boolean",
             "title": "Intune Mode",
+            "default": false,
             "description": "Configures the app to use Intune for application information. Only supports PKG and DMG type apps, not LOB.",
-            "property_order": 95
+            "property_order": 100
         },
         "LogFolders": {
             "type": "array",
@@ -162,7 +170,7 @@
             },
             "title": "Log Folders",
             "description": "Configures the log folders to gather logs from. Only used when gathering logs. Defaults to \"/Library/Logs/Microsoft\" if not configured.",
-            "property_order": 100
+            "property_order": 105
         },
         "Actions": {
             "type": "array",
@@ -183,7 +191,7 @@
             },
             "title": "Actions",
             "description": "Configures custom actions to add to the tray menu. See example below.",
-            "property_order": 105
+            "property_order": 110
         }
     }
 }
