@@ -253,6 +253,114 @@
             ],
             "property_order": 80
         },
+        "OptionalUpdatesDeferralsDays": {
+            "type": "integer",
+            "title": "Global Deferral Days",
+            "description": "Global number of days after a release for which updates and offers to update will be postponed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deferred-updates#global-deferral-days-setting"
+                }
+            ],
+            "property_order": 85
+        },
+        "OptionalUpdatesDeferrals": {
+            "type": "object",
+            "title": "App Specific Deferral",
+            "description": "Number of days after a release for which updates and offers to update will be postponed, per individual app. This setting takes precedence over the global setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deferred-updates#app-specific-deferral-days-setting"
+                }
+            ],
+            "properties": {
+                "DeferralDays": {
+                    "type": "object",
+                    "title": "App Specific Deferral Days",
+                    "description": "Number of days after a release for which updates and offers to update will be postponed, per individual app. This setting takes precedence over the global setting.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deferred-updates#app-specific-deferral-days-setting"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Application Identifier",
+                            "enum": [
+                                "XCEL2019",
+                                "IMCP01",
+                                "OLIC02",
+                                "MSau04",
+                                "WDAVCONSUMER",
+                                "WDAV00",
+                                "WDAVSHIM",
+                                "ONDR18",
+                                "ONMC2019",
+                                "OPIM2019",
+                                "PPT32019",
+                                "MSQA01",
+                                "MSRD10",
+                                "MSRH01",
+                                "MSFB16",
+                                "TEAMS10",
+                                "TEAMS21",
+                                "MSWD2019"
+                            ]
+                        },
+                        "{{value}}": {
+                            "type": "integer",
+                            "title": "Number of Days"
+                        }
+                    }
+                },
+                "DeferralVersions": {
+                    "type": "object",
+                    "title": "App Specific Deferral Versions",
+                    "description": "Upper limits to the update version, per individual app. Discovered updates are offered/applied to and including the specified version.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deferred-updates#deferral-version"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Application Identifier",
+                            "enum": [
+                                "XCEL2019",
+                                "IMCP01",
+                                "OLIC02",
+                                "MSau04",
+                                "WDAVCONSUMER",
+                                "WDAV00",
+                                "WDAVSHIM",
+                                "ONDR18",
+                                "ONMC2019",
+                                "OPIM2019",
+                                "PPT32019",
+                                "MSQA01",
+                                "MSRD10",
+                                "MSRH01",
+                                "MSFB16",
+                                "TEAMS10",
+                                "TEAMS21",
+                                "MSWD2019"
+                            ]
+                        },
+                        "{{value}}": {
+                            "type": "integer",
+                            "title": "Version"
+                        }
+                    }
+                }
+            },
+            "property_order": 90
+        },
         "Applications": {
             "type": "object",
             "title": "Applications",
@@ -749,7 +857,7 @@
                     }
                 }
             },
-            "property_order": 85
+            "property_order": 95
         },
         "UpdateDeadline.ApplicationsForcedUpdateSchedule": {
             "type": "object",
@@ -1208,7 +1316,7 @@
                     }
                 }
             },
-            "property_order": 90
+            "property_order": 100
         }
     }
 }
