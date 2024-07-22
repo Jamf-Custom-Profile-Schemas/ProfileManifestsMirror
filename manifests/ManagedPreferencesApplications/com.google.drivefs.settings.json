@@ -47,85 +47,109 @@
             "description": "Set the mounted drive path. You can include tilde (~) or environment variables in the path.",
             "property_order": 35
         },
+        "DisableExternalMediaSync": {
+            "type": "boolean",
+            "title": "Disable External Media Sync",
+            "description": "Disables backing up files and folders from external media, such as USB drives, cameras, and phones, to Google Drive or Google Photos.",
+            "property_order": 40
+        },
         "DisableLocalizedVirtualFolders": {
             "type": "boolean",
             "title": "Disable Localized Virtual Folders",
             "description": "Disables localized names for My Drive, Shared drives, and Computers. Names remain in en-US instead of being localized to the OS system language.",
-            "property_order": 40
+            "property_order": 45
         },
         "DisableMeetOutlookPlugin": {
             "type": "boolean",
-            "title": "Disable Meet Outlook Plugin",
+            "title": "Disable Outlook Meet Plugin",
             "description": "Disables the Microsoft Outlook Meet plugin that's bundled with Drive for desktop.",
-            "property_order": 45
+            "property_order": 50
+        },
+        "DisableMirroredFolders": {
+            "type": "boolean",
+            "title": "Disable Mirrored Folders",
+            "description": "Disables mirroring of arbitrary folders (such as \"Documents\") to Google Drive.",
+            "property_order": 55
+        },
+        "DisableMirroredMyDrive": {
+            "type": "boolean",
+            "title": "Disable Mirrored My Drive",
+            "description": "Disables mirroring of the entire My Drive folder.",
+            "property_order": 60
         },
         "DisableOnboardingDialog": {
             "type": "boolean",
             "title": "Disable Onboarding Dialog",
             "description": "Disables the welcome window for new users.",
-            "property_order": 50
+            "property_order": 65
         },
         "DisableOutlookPlugin": {
             "type": "boolean",
             "title": "Disable Outlook Plugin",
             "description": "Disables the Microsoft Outlook Google Drive attachment plugin that's bundled with Drive for desktop.",
-            "property_order": 55
+            "property_order": 70
+        },
+        "DisablePhotosSync": {
+            "type": "boolean",
+            "title": "Disable Photos Sync",
+            "description": "Disables backing up photos and videos to Google Photos.",
+            "property_order": 75
         },
         "DisableRealTimePresence": {
             "type": "boolean",
             "title": "Disable Real Time Presence",
             "description": "Disables real-time presence in Microsoft Office (https://support.google.com/drive/answer/7329379#realtime)",
-            "property_order": 60
+            "property_order": 80
         },
         "ForceBrowserAuth": {
             "type": "boolean",
             "title": "Force Browser Authentication",
             "description": "Use browser authentication.",
-            "property_order": 65
+            "property_order": 85
         },
         "MinFreeDiskSpaceKBytes": {
             "type": "integer",
             "title": "Minimum Free Disk Space",
             "description": "Controls the amount of local space used by Drive for desktop's cache. Stops writing content to the disk when free disk space gets below this threshold, in kilobytes.",
-            "property_order": 70
+            "property_order": 90
         },
         "OpenOfficeFilesInDocs": {
             "type": "boolean",
             "title": "Open Office Files In Docs",
             "default": true,
             "description": "When using Copy to clipboard on MS Office files synced by Drive for desktop, create links that open in the respective Google Docs Editor instead of the read only Google Drive web preview.",
-            "property_order": 75
+            "property_order": 95
         },
         "PromptToBackupDevices": {
             "type": "boolean",
             "title": "Prompt to back up devices",
             "default": true,
             "description": "Enable Prompt me to back up devices setting.",
-            "property_order": 80
+            "property_order": 100
         },
         "DirectConnection": {
             "type": "boolean",
             "title": "Direct Connection",
             "description": "This bypasses proxy configurations. ",
-            "property_order": 85
+            "property_order": 105
         },
         "DisableCRLCheck": {
             "type": "boolean",
             "title": "Disable CRL Check",
             "description": "This disables checking Certificate Revocation Lists (CRLs) provided by certificate authorities. If not explicitly set, this defaults to true if TrustedRootCertsFile is provided, otherwise false.",
-            "property_order": 90
+            "property_order": 110
         },
         "DisableSSLValidation": {
             "type": "boolean",
             "title": "Disable SSL Validation",
             "description": "This disables validating SSL traffic. Traffic will still be encrypted, but we will not validate that the SSL certificates of the upstream servers are all valid.",
-            "property_order": 95
+            "property_order": 115
         },
         "TrustedRootCertsFile": {
             "type": "string",
             "title": "Trusted Root Certs File",
             "description": "This is the full path to an alternate file to use for validating host SSL certificates. It must be in Privacy Enhanced Mail (PEM) format. Set this if your users are on networks with decrypting proxies.",
-            "property_order": 100
+            "property_order": 120
         }
     }
 }
