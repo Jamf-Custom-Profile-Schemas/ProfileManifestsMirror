@@ -86,6 +86,7 @@
                 "title": "Items to Skip",
                 "enum": [
                     "Accessibility",
+                    "ActionButton",
                     "Android",
                     "Appearance",
                     "AppleID",
@@ -99,6 +100,7 @@
                     "iCloudDiagnostics",
                     "iCloudStorage",
                     "iMessageAndFaceTime",
+                    "Intelligence",
                     "Location",
                     "MessagingActivationUsingPhoneNumber",
                     "OnBoarding",
@@ -116,6 +118,7 @@
                     "TOS",
                     "UnlockWithWatch",
                     "UpdateCompleted",
+                    "Wallpaper",
                     "WatchMigration",
                     "Welcome",
                     "Zoom"
@@ -123,6 +126,7 @@
                 "options": {
                     "enum_titles": [
                         "Accessibility",
+                        "Action Button",
                         "Android",
                         "Appearance",
                         "Apple ID",
@@ -136,6 +140,7 @@
                         "iCloud Diagnostics",
                         "iCloud Documents and Desktop",
                         "iMessage and FaceTime",
+                        "Intelligence",
                         "Location",
                         "Messaging Activation Using Phone Number",
                         "OnBoarding",
@@ -153,13 +158,14 @@
                         "Terms of Service",
                         "Unlock with Apple Watch",
                         "Update Completed",
+                        "Wallpaper",
                         "Watch Migration",
                         "Welcome",
                         "Zoom"
                     ]
                 }
             },
-            "title": "iOS Skip Items",
+            "title": "Setup Items to Skip",
             "description": "List of setup items to skip",
             "links": [
                 {
