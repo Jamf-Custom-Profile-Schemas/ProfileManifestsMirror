@@ -1,5 +1,5 @@
 {
-    "title": "Support Companion (com.almenscorner.supportcompanion)",
+    "title": "Support Companion (SupportCompanion)",
     "description": "Support Companion settings",
     "properties": {
         "BrandName": {
@@ -192,6 +192,114 @@
             "title": "Actions",
             "description": "Configures custom actions to add to the tray menu. See example below.",
             "property_order": 110
+        },
+        "ShowDesktopInfo": {
+            "type": "boolean",
+            "title": "Show Desktop Info",
+            "default": false,
+            "description": "Configures the desktop info widget.",
+            "property_order": 115
+        },
+        "DesktopPosition": {
+            "type": "string",
+            "title": "Desktop Position",
+            "default": "TopRight",
+            "description": "Configures the position of the desktop info. Defaults to TopRight.",
+            "enum": [
+                "TopLeft",
+                "TopRight",
+                "BottomLeft",
+                "BottomRight"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Top Left",
+                    "Top Right",
+                    "Bottom Left",
+                    "Bottom Right"
+                ]
+            },
+            "property_order": 120
+        },
+        "DesktopInfoLevel": {
+            "type": "string",
+            "title": "Desktop Info Level",
+            "description": "Configures the level of information to show on the desktop. Defaults to Full.",
+            "enum": [
+                "Full",
+                "Minimal",
+                "Hardware",
+                "Custom"
+            ],
+            "property_order": 125
+        },
+        "DesktopInfoCustomItems": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Desktop Info Custom Items",
+            "description": "If DesktopInfoLevel is set to Custom, use this array to determine which information to show. Available info are: HostName, Model, SerialNumber, Processor, IpAddress, MemSize, OsBuild, OsVersion, LastBootTime, StorageInfo, SupportPhone, SupportEmail, Separator.",
+            "property_order": 130
+        },
+        "DesktopInfoBackgroundColor": {
+            "type": "string",
+            "title": "Desktop Info Background Color",
+            "description": "Configures the background color for the desktop info. Configure using Hex format. Defaults to Transparent",
+            "property_order": 135
+        },
+        "DesktopInfoBackgroundOpacity": {
+            "type": "number",
+            "title": "Desktop Info Background Opacity",
+            "default": 1.0,
+            "description": "Configures the position of the desktop info. Defaults to 100%.",
+            "enum": [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6,
+                0.7,
+                0.8,
+                0.9,
+                1.0
+            ],
+            "options": {
+                "enum_titles": [
+                    "10%",
+                    "20%",
+                    "30%",
+                    "40%",
+                    "50%",
+                    "60%",
+                    "70%",
+                    "80%",
+                    "90%",
+                    "100%"
+                ]
+            },
+            "property_order": 140
+        },
+        "DesktopInfoColorHighlight": {
+            "type": "boolean",
+            "title": "Desktop Info Color Highlight",
+            "default": true,
+            "description": "Configures whether to highlight the text in the desktop info. Defaults to true.",
+            "property_order": 145
+        },
+        "DesktopInfoFontSize": {
+            "type": "integer",
+            "title": "Desktop Info Font Size",
+            "default": 17,
+            "description": "Configures the font size for the desktop info. Defaults to 17.",
+            "property_order": 150
+        },
+        "CustomWidgetsPath": {
+            "type": "string",
+            "title": "Custom Widgets Path",
+            "description": "Configures a path to a JSON file containing custom widgets to show on the Home view.",
+            "property_order": 155
         }
     }
 }
