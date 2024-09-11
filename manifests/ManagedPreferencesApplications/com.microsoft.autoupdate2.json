@@ -19,8 +19,8 @@
             ],
             "options": {
                 "enum_titles": [
-                    "RequiredDataOnly",
-                    "RequiredAndOptionalData"
+                    "Required Data Only",
+                    "Required And Optional Data (removed in version 4.70)"
                 ]
             },
             "property_order": 5

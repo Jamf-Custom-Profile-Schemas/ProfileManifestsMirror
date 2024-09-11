@@ -1,23 +1,23 @@
 {
-    "title": "Exchange (macOS) (com.apple.ews.account)",
+    "title": "Exchange Web Services (com.apple.ews.account)",
     "description": "Exchange Web Services settings",
     "properties": {
         "UserName": {
             "type": "string",
             "title": "Account user name",
-            "description": "The user name with the optional domain (e.g \"user\" or \"domain\\user\").",
+            "description": "The user name for this Exchange account. Required for noninteractive installation, such as through MDM. If missing, the system prompts the user for it during interactive profile installation.",
             "property_order": 5
         },
         "EmailAddress": {
             "type": "string",
             "title": "Account email address",
-            "description": "The email address for the account (e.g. john@company.com).",
+            "description": "The full email address for the account. If the email address string isn't present in the payload, the device prompts for it during profile installation.",
             "property_order": 10
         },
         "Password": {
             "type": "string",
             "title": "Account password",
-            "description": "The password of the user account.",
+            "description": "The password of the account. Use only with encrypted profiles.",
             "property_order": 15
         },
         "IdentificationUUID": {
@@ -29,65 +29,84 @@
         "Host": {
             "type": "string",
             "title": "Internal Exchange Host",
-            "description": "The IP address or fully qualified domain name (FQDN) of the internal Exchange host.",
+            "description": "The Exchange server host name or IP address. Ignored if using OAuth.",
             "property_order": 25
         },
         "Port": {
             "type": "integer",
             "title": "Internal Exchange Host Port",
-            "description": "The port on which to connect to the internal Exchange host.",
+            "description": "The server port number.",
             "property_order": 30
         },
         "Path": {
             "type": "string",
             "title": "Internal server path",
-            "description": "The server path for the internal Exchange host.",
+            "description": "The server path.",
             "property_order": 35
         },
         "SSL": {
             "type": "boolean",
             "title": "Use SSL for Internal Exchange Host",
             "default": true,
-            "description": "Send all communication through Secure Socket Layer.",
+            "description": "If 'true', the system enables SSL.",
             "property_order": 40
         },
         "ExternalHost": {
             "type": "string",
             "title": "External Exchange Host",
-            "description": "The IP address or fully qualified domain name (FQDN) of the external Exchange host.",
+            "description": "The external server address.",
             "property_order": 45
         },
         "ExternalPort": {
             "type": "integer",
             "title": "External Exchange Host Port",
-            "description": "The port on which to connect to the external Exchange host.",
+            "description": "The external server port number.",
             "property_order": 50
         },
         "ExternalPath": {
             "type": "string",
             "title": "External server path",
-            "description": "The server path for the external Exchange host.",
+            "description": "The external server path.",
             "property_order": 55
         },
         "ExternalSSL": {
             "type": "boolean",
             "title": "Use SSL for External Exchange Host",
             "default": true,
-            "description": "Send all communication through Secure Socket Layer.",
+            "description": "If 'true', the system enables SSL for connections to the external server.",
             "property_order": 60
         },
         "OAuth": {
             "type": "boolean",
             "title": "Use OAuth",
             "default": false,
-            "description": "Specifies whether the connection should use OAuth for authentication.",
+            "description": "If 'true', the system enables OAuth for authentication. Don't specify a password if 'OAuth' is 'true'. Available in macOS 10.14 and later",
             "property_order": 65
         },
         "OAuthSignInURL": {
             "type": "string",
-            "title": "OAuth Sign-In URL",
-            "description": "URL to load into a webview for authentication via OAuth when auto-discovery is not used.",
+            "title": "URL for OAuth sign-in",
+            "description": "The URL to load into a web view for authentication through OAuth when autodiscovery isn't used. This setting requires a 'Host' value.",
             "property_order": 70
+        },
+        "PayloadCertificateUUID": {
+            "type": "string",
+            "title": "Payload Certificate UUID",
+            "description": "The UUID of the certificate payload within the same profile to use for the identity credential. Supported on macOS 10.12 or later.",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "property_order": 75
+        },
+        "AuthenticationCertificateUUID": {
+            "type": "string",
+            "description": "The UUID of the certificate payload within the same profile to use for the identity credential. Supported on macOS 10.11 or later. On macOS 10.12 or later use the PayloadCertificateUUID.",
+            "property_order": 80
+        },
+        "allowMailDrop": {
+            "type": "boolean",
+            "title": "Allow Mail Drop",
+            "default": false,
+            "description": "If 'true', the system enables Mail Drop.",
+            "property_order": 85
         }
     }
 }

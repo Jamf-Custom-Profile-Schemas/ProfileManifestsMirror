@@ -468,12 +468,6 @@
             },
             "property_order": 50
         },
-        "RegistrationToken": {
-            "type": "string",
-            "title": "Registration Token",
-            "description": "Platform SSO token for use in silent registration.",
-            "property_order": 55
-        },
         "PlatformSSO": {
             "type": "object",
             "description": "This is the dictionary used to configure PlatformSSO.",
@@ -563,17 +557,23 @@
                     "type": "object",
                     "description": "The pairing of Authorization Rights to group names. The Authorization Right will be updated to use the group when used.",
                     "properties": {
-                        "Authorization Right": {
+                        "{{key}}": {
                             "type": "string",
                             "description": "The Authorization Right to update."
                         },
-                        "Group": {
+                        "{{value}}": {
                             "type": "string",
                             "description": "The group to use for the Authorization Right."
                         }
                     }
                 }
             },
+            "property_order": 55
+        },
+        "RegistrationToken": {
+            "type": "string",
+            "title": "Registration Token",
+            "description": "Platform SSO token for use in silent registration.",
             "property_order": 60
         }
     }

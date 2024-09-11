@@ -5,6 +5,7 @@
         "optionalFeatures": {
             "type": "object",
             "title": "Optional Features",
+            "description": "All optional features to enhance and customize the Nudge experience for your employer's needs.",
             "links": [
                 {
                     "rel": "More information",
@@ -16,6 +17,7 @@
                     "type": "boolean",
                     "title": "Attempt to Fetch Major Upgrade",
                     "default": true,
+                    "description": "When a major upgrade is required, Nudge will attempt to download it through the softwareupdate binary.",
                     "links": [
                         {
                             "rel": "More information",
@@ -27,9 +29,10 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Bundle IDs"
+                        "title": "acceptableApplicationBundleIDs"
                     },
                     "title": "Acceptable Application Bundle IDs",
+                    "description": "The application Bundle ID which Nudge allows without taking focus. (You can specify one or more Bundle ID.)",
                     "links": [
                         {
                             "rel": "More information",
@@ -41,6 +44,7 @@
                     "type": "boolean",
                     "title": "Acceptable Assertion Usage",
                     "default": false,
+                    "description": "When enabled, Nudge will not activate or re-activate when assertions are currently set.",
                     "links": [
                         {
                             "rel": "More information",
@@ -52,9 +56,10 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Acceptable Assertion Application Name"
+                        "title": "acceptableAssertionApplicationNames"
                     },
                     "title": "Acceptable Assertion Application Names",
+                    "description": "The application names using assertions which Nudge allows without taking focus. (You can specify one or more applications. To find the names please run /usr/bin/pmset -g assertions in terminal while the application is open and running)",
                     "links": [
                         {
                             "rel": "More information",
@@ -66,6 +71,7 @@
                     "type": "boolean",
                     "title": "Acceptable Camera Usage",
                     "default": false,
+                    "description": "When enabled, Nudge will not activate or re-activate when the camera is on.",
                     "links": [
                         {
                             "rel": "More information",
@@ -77,6 +83,7 @@
                     "type": "boolean",
                     "title": "Acceptable Screen Sharing Usage",
                     "default": false,
+                    "description": "When enabled, Nudge will not activate or re-activate when screen sharing is active.",
                     "links": [
                         {
                             "rel": "More information",
@@ -88,6 +95,7 @@
                     "type": "boolean",
                     "title": "Aggressive User Experience",
                     "default": true,
+                    "description": "When disabled, Nudge will not hide all non-acceptableApplicationBundleIDs after the requiredInstallationDate or allowedDeferrals.",
                     "links": [
                         {
                             "rel": "More information",
@@ -99,6 +107,7 @@
                     "type": "boolean",
                     "title": "Aggressive User Full Screen Experience",
                     "default": true,
+                    "description": "When disabled, Nudge will not create a blurred background when the user is past the deferral window.",
                     "links": [
                         {
                             "rel": "More information",
@@ -110,6 +119,7 @@
                     "type": "boolean",
                     "title": "Asynchronous Software Update",
                     "default": true,
+                    "description": "When disabled, Nudge will wait for Software Update to finish downloading (if any) updates before showing the UI.",
                     "links": [
                         {
                             "rel": "More information",
@@ -121,6 +131,7 @@
                     "type": "boolean",
                     "title": "Attempt To Block Application Launches",
                     "default": false,
+                    "description": "When enabled, Nudge will attempt to block application launches after the required installation date. This key must be used in conjunction with blockedApplicationBundleIDs",
                     "links": [
                         {
                             "rel": "More information",
@@ -131,9 +142,11 @@
                 "blockedApplicationBundleIDs": {
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": "string",
+                        "title": "blockedApplicationBundleIDs"
                     },
                     "title": "Blocked Application Bundle IDs",
+                    "description": "The application Bundle ID which Nudge disallows from launching after the required installation date. (You can specify one or more Bundle ID.)",
                     "links": [
                         {
                             "rel": "More information",
@@ -141,10 +154,16 @@
                         }
                     ]
                 },
+                "disableNudgeForStandardInstalls": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "When utilizing a SOFA feed and disableNudgeForStandardInstalls is true, Nudge will only enforce updates with published CVEs. Defaults to false."
+                },
                 "disableSoftwareUpdateWorkflow": {
                     "type": "boolean",
                     "title": "Disable Software Update Workflow",
                     "default": false,
+                    "description": "When disableSoftwareUpdateWorkflow is true, Nudge will not attempt to run the softwareupdate process. Defaults to false.",
                     "links": [
                         {
                             "rel": "More information",
@@ -156,6 +175,7 @@
                     "type": "boolean",
                     "title": "Enforce Minor Updates",
                     "default": true,
+                    "description": "When enabled, Nudge will enforce minor updates. This should likely never be disabled.",
                     "links": [
                         {
                             "rel": "More information",
@@ -167,12 +187,47 @@
                     "type": "boolean",
                     "title": "Terminate Applications On Launch",
                     "default": false,
+                    "description": "When enabled, Nudge will terminate the applications listed in blockedApplicationBundleIDs upon initial launch.",
                     "links": [
                         {
                             "rel": "More information",
                             "href": "https://github.com/macadmins/nudge/wiki/optionalFeatures#terminateapplicationsonlaunch---type-boolean-default-value-false-required-no"
                         }
                     ]
+                },
+                "acceptableUpdatePreparingUsage": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "When enabled, Nudge will not activate or re-activate when an update is being downloaded, prepared or staged."
+                },
+                "attemptToCheckForSupportedDevice": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "When disabled, Nudge will no longer compare the current device against the SOFA feed for the required update. If the device cannot install this update, Nudge will not present the Unsupported UI"
+                },
+                "customSOFAFeedURL": {
+                    "type": "string",
+                    "description": "A url path to use a custom SOFA feed."
+                },
+                "honorFocusModes": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "When enabled, Nudge will not activate or re-activate when a user is in DoNotDisturb/Focus status. This feature is expiremental and may not work in all user settings."
+                },
+                "honorCycleTimersOnExit": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "When enabled, Nudge will honor the current cycle timers when user's press the `Quit` button."
+                },
+                "refreshSOFAFeedTime": {
+                    "type": "integer",
+                    "default": 86400,
+                    "description": "The maximum age the cached SOFA feed file can be on disk. When this file age expires, Nudge will re-assess the SOFA feed for updates. Please be mindful of changing this value as there is an associated cost for maintaining the SOFA service."
+                },
+                "utilizeSOFAFeed": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "When enabled, Nudge will utilize the SOFA feed url for update data."
                 }
             },
             "property_order": 5
@@ -181,27 +236,31 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "title": "osVersionRequirement",
                 "properties": {
                     "aboutUpdateURL": {
                         "type": "string",
                         "title": "About Update URL",
-                        "description": "A single URL, enabling the More Info button URL path. Ignored when About Update URLs (in plural) is also present."
+                        "description": "A single URL, enabling the More Info button URL path. While this accepts a string, it must be a valid URL (http://, https://, file://). Note: If this value is passed with aboutUpdateURLs, the aboutUpdateURLs key will be ignored."
                     },
                     "aboutUpdateURLs": {
                         "type": "array",
                         "items": {
                             "type": "object",
-                            "title": "aboutUpdateURLs dictionary",
+                            "title": "aboutUpdateURL - Dictionary",
                             "properties": {
                                 "_language": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "description": "The targeted language locale for the user interface. Note: For a list of locales, please run the following command in Terminal: /usr/bin/locale -a"
                                 },
                                 "aboutUpdateURL": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "description": "The URL for the More Info button. While this accepts a string, it must be a valid URL (http://, https://, file://)."
                                 }
                             }
                         },
                         "title": "About Update URLs",
+                        "description": "The aboutUpdateURL - per country localization.",
                         "links": [
                             {
                                 "rel": "More information",
@@ -212,6 +271,7 @@
                     "majorUpgradeAppPath": {
                         "type": "string",
                         "title": "Major macOS Upgrade App Path",
+                        "description": "The app path for a major upgrade.",
                         "links": [
                             {
                                 "rel": "More information",
@@ -220,9 +280,9 @@
                         ]
                     },
                     "requiredInstallationDate": {
-                        "type": "date",
+                        "type": "string",
                         "title": "Required Installation Date",
-                        "description": "The required installation date for Nudge to enforce the required operating system version. You must follow a standard date string as YYYY-MM-DDTHH:MM:SSZ - Example: \"2021-01-31T00:00:00Z\"",
+                        "description": "The required installation date for Nudge to enforce the required operating system version. You must follow a standard date string as YYYY-MM-DDTHH:MM:SSZ - Example: 2021-09-15T00:00:00Z. Required for Nudge versions 1.1.16 and below.",
                         "links": [
                             {
                                 "rel": "More information",
@@ -233,6 +293,7 @@
                     "requiredMinimumOSVersion": {
                         "type": "string",
                         "title": "Required Minimum OS Version",
+                        "description": "The required minimum operating system version. Note: When passing versions such as `11.2.0`, it will be normalized to `11.2`. It is recommended to remove the trailing zero from the version number.",
                         "links": [
                             {
                                 "rel": "More information",
@@ -257,17 +318,80 @@
                     "targetedOSVersionsRule": {
                         "type": "string",
                         "title": "Targeted OS Versions Rule",
+                        "description": "The OS string rule for targeting Nudge events. You can target with \"default\", the full OS version (example: \"11.5.1\"). or the major OS version (example: \"11\").",
                         "links": [
                             {
                                 "rel": "More information",
                                 "href": "https://github.com/macadmins/nudge/wiki/osVersionRequirements#targetedosversionsrule---type-string-default-value--required-no"
                             }
                         ]
+                    },
+                    "actionButtonPath": {
+                        "type": "string",
+                        "description": "A path to a URI for opening alternative actions, like Jamf self service items."
+                    },
+                    "activelyExploitedCVEsMajorUpgradeSLA": {
+                        "type": "integer",
+                        "default": 14,
+                        "description": "When a major upgrade is under active exploit, this is the amount of days a user has to install the update."
+                    },
+                    "activelyExploitedCVEsMinorUpdateSLA": {
+                        "type": "integer",
+                        "default": 14,
+                        "description": "When a minor update is under active exploit, this is the amount of days a user has to install the update."
+                    },
+                    "nonActivelyExploitedCVEsMajorUpgradeSLA": {
+                        "type": "integer",
+                        "default": 21,
+                        "description": "When a major upgrade is not under active exploit but contains CVEs, this is the amount of days a user has to install the update."
+                    },
+                    "nonActivelyExploitedCVEsMinorUpdateSLA": {
+                        "type": "integer",
+                        "default": 21,
+                        "description": "When a minor update is not under active exploit but contains CVEs, this is the amount of days a user has to install the update."
+                    },
+                    "standardMajorUpgradeSLA": {
+                        "type": "integer",
+                        "default": 28,
+                        "description": "When a major upgrade has no known CVEs, this is the amount of days a user has to install the update."
+                    },
+                    "standardMinorUpdateSLA": {
+                        "type": "integer",
+                        "default": 28,
+                        "description": "When a minor update has no known CVEs, this is the amount of days a user has to install the update."
+                    },
+                    "unsupportedURL": {
+                        "type": "string",
+                        "description": "A single URL, enabling the More Info button URL path when using the unsupported UI. While this accepts a string, it must be a valid URL (http://, https://, file://). Note: If this value is passed with aboutUpdateURLs, the aboutUpdateURLs key will be ignored."
+                    },
+                    "unsupportedURLs": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "title": "unsupportedURL - Dictionary",
+                            "properties": {
+                                "_language": {
+                                    "type": "string",
+                                    "description": "The targeted language locale for the user interface. Note: For a list of locales, please run the following command in Terminal: /usr/bin/locale -a"
+                                },
+                                "unsupportedURL": {
+                                    "type": "string",
+                                    "description": "A single URL, enabling the More Info button URL path when using the unsupported UI. While this accepts a string, it must be a valid URL (http://, https://, file://). Note: If this value is passed with aboutUpdateURLs, the aboutUpdateURLs key will be ignored."
+                                }
+                            }
+                        },
+                        "title": "unsupportedURLs",
+                        "description": "The unsupportedURL - per country localization."
+                    },
+                    "minorVersionRecalculationThreshold": {
+                        "type": "integer",
+                        "default": 0,
+                        "description": "The amount of minor versions a device can be behind before the requiredInstallationDate is recalculated against a previous update."
                     }
                 }
             },
             "title": "OS Version Requirements",
-            "description": "The required components necessary to enforce an Operating System version through Nudge.\n\nSpecify one array to enforce a single Operating System version across all machines or specify multiple arrays for specific enforcements.",
+            "description": "The required components necessary to enforce an Operating System version through Nudge. Specify one array to enforce a single Operating System version across all machines or specify multiple arrays for specific enforcements.",
             "links": [
                 {
                     "rel": "More information",
@@ -279,11 +403,13 @@
         "userExperience": {
             "type": "object",
             "title": "User Experience",
+            "description": "All features related to how Nudge refreshes and defines the user experience",
             "properties": {
                 "noTimers": {
                     "type": "boolean",
                     "title": "No Timers",
                     "default": false,
+                    "description": "This will disable all functionality related to the `userExperience` preference domain.",
                     "links": [
                         {
                             "rel": "More information",
@@ -295,6 +421,7 @@
                     "type": "integer",
                     "title": "Allowed Deferrals",
                     "default": 1000000,
+                    "description": "The number of times a user can defer Nudge (change it from the currently active window) before the \"aggressive user experience\" is enabled.",
                     "links": [
                         {
                             "rel": "More information",
@@ -306,6 +433,7 @@
                     "type": "boolean",
                     "title": "Allow Grace Periods",
                     "default": false,
+                    "description": "Allows a device to modify the requiredInstallationDate logic and launch behavior. Useful for new device provisioning.",
                     "links": [
                         {
                             "rel": "More information",
@@ -317,6 +445,7 @@
                     "type": "boolean",
                     "title": "Allow User Quit Deferrals",
                     "default": true,
+                    "description": "Allows the user to specify when they will next be prompted by Nudge. (Set to `False` to maintain v1.0.0 behavior.) When using this feature, Nudge will no longer adhere to your LaunchAgent logic as the user is specifying their own execution time for the next Nudge event.(See: `~/Library/Preferences/com.github.macadmins.Nudge.plist`.)",
                     "links": [
                         {
                             "rel": "More information",
@@ -328,6 +457,7 @@
                     "type": "integer",
                     "title": "Grace Period Install Delay",
                     "default": 23,
+                    "description": "The amount of time in hours Nudge will extend the requiredInstallationDate for newly provisioned devices.",
                     "links": [
                         {
                             "rel": "More information",
@@ -339,6 +469,7 @@
                     "type": "integer",
                     "title": "Grace Period Launch Delay",
                     "default": 1,
+                    "description": "The amount of time in hours Nudge will bypass launching for newly provided devices.",
                     "links": [
                         {
                             "rel": "More information",
@@ -350,6 +481,7 @@
                     "type": "string",
                     "title": "Grace Period Path",
                     "default": "/private/var/db/.AppleSetupDone",
+                    "description": "The path of the file Nudge will read and assess for allowGracePeriods.",
                     "links": [
                         {
                             "rel": "More information",
@@ -361,6 +493,7 @@
                     "type": "integer",
                     "title": "Imminent Refresh Cycle",
                     "default": 600,
+                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window. This key is directly tied to its partner key `imminentWindowTime` to know when to trigger this timer.",
                     "links": [
                         {
                             "rel": "More information",
@@ -372,6 +505,7 @@
                     "type": "integer",
                     "title": "Allowed Deferrals until Forced Secondary Quit Button",
                     "default": 14,
+                    "description": "The number of times a user can defer Nudge (change it from the currently active window) before both quit buttons need to be actioned.",
                     "links": [
                         {
                             "rel": "More information",
@@ -383,6 +517,7 @@
                     "type": "integer",
                     "title": "Approaching Refresh Cycle",
                     "default": 6000,
+                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window. This key is directly tied to its partner key `approachingWindowTime` to know when to trigger this timer.",
                     "links": [
                         {
                             "rel": "More information",
@@ -394,6 +529,7 @@
                     "type": "integer",
                     "title": "Approaching Window Time",
                     "default": 72,
+                    "description": "The amount of time in hours Nudge will use to determine that the `requiredInstallationDate` is \"approaching\".",
                     "links": [
                         {
                             "rel": "More information",
@@ -405,6 +541,7 @@
                     "type": "integer",
                     "title": "Elapsed Refresh Cycle",
                     "default": 300,
+                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window. This key is triggered once the `requiredInstallationDate` has expired.",
                     "links": [
                         {
                             "rel": "More information",
@@ -427,6 +564,7 @@
                     "type": "integer",
                     "title": "Imminent Window Time",
                     "default": 24,
+                    "description": "The amount of time in hours Nudge will use to determine that the `requiredInstallationDate` is \"imminent\".",
                     "links": [
                         {
                             "rel": "More information",
@@ -438,6 +576,7 @@
                     "type": "integer",
                     "title": "Initial Refresh Cycle",
                     "default": 18000,
+                    "description": "The amount of time in seconds Nudge will use as a timer to refresh the user interface if it is not the currently active window. This key is triggered for all Nudge launches until the `approachingWindowTime` has been passed.",
                     "links": [
                         {
                             "rel": "More information",
@@ -449,6 +588,7 @@
                     "type": "integer",
                     "title": "Max Random Delay",
                     "default": 1200,
+                    "description": "The maximum amount of delay Nudge will utilize before launching the UI. This is useful if you do not want your users to all receive the Nudge prompt at the exact time of the LaunchAgent. Note: This functionality only applies when also enabling `randomDelay`.",
                     "links": [
                         {
                             "rel": "More information",
@@ -460,6 +600,7 @@
                     "type": "integer",
                     "title": "Nudge Refresh Cycle",
                     "default": 60,
+                    "description": "The amount of time in seconds Nudge will use as its core timer to refresh all the core code paths. Note: While you can lower this setting, it could make Nudge too aggressive. Be mindful of decreasing this value.",
                     "links": [
                         {
                             "rel": "More information",
@@ -471,12 +612,47 @@
                     "type": "boolean",
                     "title": "Random Delay",
                     "default": false,
+                    "description": "Enables an initial delay Nudge before launching the UI. This is useful if you do not want your users to all receive the Nudge prompt at the exact time of the LaunchAgent.",
                     "links": [
                         {
                             "rel": "More information",
                             "href": "https://github.com/macadmins/nudge/wiki/userExperience#nudgerefreshcycle---type-integer-default-value-60"
                         }
                     ]
+                },
+                "allowLaterDeferralButton": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Allows the user to press the `Later` button through the custom deferrals UI"
+                },
+                "allowMovableWindow": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Allows the user to move the Nudge window."
+                },
+                "calendarDeferralUnit": {
+                    "type": "string",
+                    "default": "imminentWindowTime",
+                    "description": "Utilize the approachingWindowTime or imminentWindowTime for calendar deferrals."
+                },
+                "launchAgentIdentifier": {
+                    "type": "string",
+                    "description": "The identifier of the Nudge LaunchAgent. Only set this if you use a custom identifier"
+                },
+                "loadLaunchAgent": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Loads the Nudge LaunchAgent using macOS Ventura's SMAppService API (macOS 13+ required)."
+                },
+                "nudgeMajorUpgradeEventLaunchDelay": {
+                    "type": "integer",
+                    "default": 0,
+                    "description": "When a new major upgrade is posted to the SOFA feed, this can artificially delay the SOFA nudge events by x amount of days."
+                },
+                "nudgeMinorUpdateEventLaunchDelay": {
+                    "type": "integer",
+                    "default": 0,
+                    "description": "When a new minor update is posted to the SOFA feed, this can artificially delay the SOFA nudge events by x amount of days."
                 }
             },
             "property_order": 15
@@ -484,11 +660,13 @@
         "userInterface": {
             "type": "object",
             "title": "User Interface",
+            "description": "All features related to how Nudge defines the user interface.",
             "properties": {
                 "simpleMode": {
                     "type": "boolean",
                     "title": "Simple Mode",
                     "default": false,
+                    "description": "Enables Nudge to launch in the simplified user experience.",
                     "links": [
                         {
                             "rel": "More information",
@@ -500,6 +678,7 @@
                     "type": "boolean",
                     "title": "Force Screenshot Icon",
                     "default": false,
+                    "description": "Force the built-in ScreenShot icon to render in the UI if a ScreenShot path is not passed.",
                     "links": [
                         {
                             "rel": "More information",
@@ -511,6 +690,7 @@
                     "type": "boolean",
                     "title": "Show Deferral Count",
                     "default": true,
+                    "description": "Enables or disables the deferral count of the current Nudge event.",
                     "links": [
                         {
                             "rel": "More information",
@@ -522,6 +702,7 @@
                     "type": "boolean",
                     "title": "single Quit Button",
                     "default": false,
+                    "description": "Only display one quit button regardless of proximity to the due date.",
                     "links": [
                         {
                             "rel": "More information",
@@ -532,6 +713,7 @@
                 "iconDarkPath": {
                     "type": "string",
                     "title": "Dark Icon Path",
+                    "description": "A path to a local jpg, png, icns that contains the icon for dark mode. This will replace the Apple logo on the left side of Nudge.",
                     "pattern": "^.*\\.(icns|jpg|png)",
                     "links": [
                         {
@@ -543,6 +725,7 @@
                 "iconLightPath": {
                     "type": "string",
                     "title": "Light Icon Path",
+                    "description": "A path to a local jpg, png, icns that contains the icon for light mode. This will replace the Apple logo on the left side of Nudge.",
                     "pattern": "^.*\\.(icns|jpg|png)",
                     "links": [
                         {
@@ -554,6 +737,7 @@
                 "screenShotDarkPath": {
                     "type": "string",
                     "title": "Dark Screenshot Path",
+                    "description": "A path to a local jpg, png, icns that contains the screen shot for dark mode. This will replace the Big Sur logo on the lower right side of Nudge.",
                     "pattern": "^.*\\.(icns|jpg|png)",
                     "links": [
                         {
@@ -565,6 +749,7 @@
                 "screenShotLightPath": {
                     "type": "string",
                     "title": "Light Screenshot Path",
+                    "description": "A path to a local jpg, png, icns that contains the screen shot for light mode. This will replace the Big Sur logo on the lower right side of Nudge.",
                     "pattern": "^.*\\.(icns|jpg|png)",
                     "links": [
                         {
@@ -576,6 +761,7 @@
                 "actionButtonPath": {
                     "type": "string",
                     "title": "Action Button Path",
+                    "description": "A path to a URI for opening alternative actions, like Jamf self service items.",
                     "links": [
                         {
                             "rel": "More information",
@@ -587,6 +773,7 @@
                     "type": "string",
                     "title": "Fallback Language",
                     "default": "en",
+                    "description": "The language to revert to if no localizations are available for the device's current language.",
                     "links": [
                         {
                             "rel": "More information",
@@ -598,6 +785,7 @@
                     "type": "boolean",
                     "title": "Force Fallback Language",
                     "default": false,
+                    "description": "Force the custom localizations to the value of `fallbackLanguage`.",
                     "links": [
                         {
                             "rel": "More information",
@@ -609,12 +797,12 @@
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "updateElements Dictionary",
+                        "title": "updateElement - Dictionary",
                         "properties": {
                             "_language": {
                                 "type": "string",
                                 "title": "Language",
-                                "description": "The targeted language locale for the user interface.",
+                                "description": "The targeted language locale for the user interface. Note: For a list of locales, please run the following command in Terminal: /usr/bin/locale -a",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -636,7 +824,7 @@
                             "customDeferralDropdownText": {
                                 "type": "string",
                                 "title": "Custom Deferral Dropdown Text",
-                                "description": "Modifies the customDeferralDropdownText, also known as the \"Defer\" button.",
+                                "description": "customDeferralDropdownText, also known as the \"Defer\" button.",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -669,7 +857,7 @@
                             "informationButtonText": {
                                 "type": "string",
                                 "title": "Information Button Text",
-                                "description": "Modifies the informationButton, also known as the 'More Info' button.",
+                                "description": "Modifies the informationButton, also known as the \"More Info\" button.",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -680,7 +868,7 @@
                             "mainContentHeader": {
                                 "type": "string",
                                 "title": "Main Content Header",
-                                "description": "Modifies the mainContentHeader. This is the 'Your device will restart during this update' text.",
+                                "description": "Modifies the mainContentHeader. This is the \"Your device will restart during this update\" text.",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -691,7 +879,7 @@
                             "mainContentSubHeader": {
                                 "type": "string",
                                 "title": "Main Content Sub Header",
-                                "description": "Modifies the mainContentSubHeader. This is the 'Updates can take around 30 minutes to complete' text.",
+                                "description": "Modifies the mainContentSubHeader. This is the \"Updates can take around 30 minutes to complete\" text.",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -702,7 +890,7 @@
                             "mainContentText": {
                                 "type": "string",
                                 "title": "Main Content Text",
-                                "description": "Modifies the mainContentText. This is the 'A fully up-to-date device is required to ensure that IT can your accurately protect your device.\\n\\nIf you do not update your device, you may lose access to some items necessary for your day-to-day tasks.\\n\\nTo begin the update, simply click on the button below and follow the provided steps.' text.",
+                                "description": "Modifies the `mainContentText`. This is the \"A fully up-to-date device is required to ensure that IT can your accurately protect your device.\" text. (See the Wiki for information on adding line breaks.)",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -713,7 +901,7 @@
                             "mainContentNote": {
                                 "type": "string",
                                 "title": "Main Content Note",
-                                "description": "Modifies the mainContentNote. This is the 'Important Notes' text.",
+                                "description": "Modifies the mainContentNote. This is the \"Important Notes\" text.",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -724,7 +912,7 @@
                             "mainHeader": {
                                 "type": "string",
                                 "title": "Main Header",
-                                "description": "Modifies the mainHeader. This is the 'Your device requires a security update' text.",
+                                "description": "Modifies the `mainHeader`. This is the \"Your device requires a security update\" text.",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -735,7 +923,7 @@
                             "actionButtonText": {
                                 "type": "string",
                                 "title": "Action Button Text",
-                                "description": "Modifies the actionButton, also known as the 'Update Device' button.",
+                                "description": "Modifies the actionButton, also known as the \"Update Device\" button.",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -746,7 +934,7 @@
                             "primaryQuitButtonText": {
                                 "type": "string",
                                 "title": "Primary Quit Button Text",
-                                "description": "Modifies the primaryQuitButton, also known as the 'Later' button.",
+                                "description": "Modifies the `primaryQuitButton`, also known as the \"Later\" button.",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -757,7 +945,7 @@
                             "secondaryQuitButtonText": {
                                 "type": "string",
                                 "title": "Secondary Quit Button Text",
-                                "description": "Modifies the secondaryQuitButton, also known as the 'I understand' button.",
+                                "description": "Modifies the `secondaryQuitButton`, also known as the \"I understand\" button.",
                                 "links": [
                                     {
                                         "rel": "More information",
@@ -768,24 +956,87 @@
                             "subHeader": {
                                 "type": "string",
                                 "title": "Sub Header",
-                                "description": "Modifies the subHeader. This is the 'A friendly reminder from your local IT team' text.",
+                                "description": "Modifies the `subHeader`. This is the \"A friendly reminder from your local IT team\" text.",
                                 "links": [
                                     {
                                         "rel": "More information",
                                         "href": "https://github.com/macadmins/nudge/wiki/updateElements#subheader---type-string-default-value-"
                                     }
                                 ]
+                            },
+                            "actionButtonTextUnsupported": {
+                                "type": "string",
+                                "description": "Modifies the primaryQuitButton, also known as the \"Update Device\" button when using the Unsupported UI."
+                            },
+                            "applicationTerminatedTitleText": {
+                                "type": "string",
+                                "description": "Modifies the terminated application notification title."
+                            },
+                            "applicationTerminatedBodyText": {
+                                "type": "string",
+                                "description": "Modifies the terminated application notification body."
+                            },
+                            "mainContentHeaderUnsupported": {
+                                "type": "string",
+                                "description": "Modifies the mainContentHeader. This is the \"Your device is no longer capable of receiving critical security updates\" text when using the Unsupported UI."
+                            },
+                            "mainContentNoteUnsupported": {
+                                "type": "string",
+                                "description": "Modifies the mainContentNote. This is the \"Important Notes\" text when using the Unsupported UI."
+                            },
+                            "mainContentSubHeaderUnsupported": {
+                                "type": "string",
+                                "description": "Modifies the mainContentSubHeader. This is the \"Please work with your local IT team to obtain a replacement device\" text when using the Unsupported UI."
+                            },
+                            "mainContentTextUnsupported": {
+                                "type": "string",
+                                "description": "Modifies the `mainContentText`. This is the \"A fully up-to-date device is required to ensure that IT can your accurately protect your device.\" text when using the Unsupported UI. See the Wiki for information on adding line breaks."
+                            },
+                            "mainHeaderUnsupported": {
+                                "type": "string",
+                                "description": "Modifies the `mainHeader`. This is the \"Your device requires a security update\" text when using the Unsupported UI."
+                            },
+                            "screenShotAltText": {
+                                "type": "string",
+                                "description": "Modifies the accessible hover over on screen shots."
+                            },
+                            "subHeaderUnsupported": {
+                                "type": "string",
+                                "description": "Modifies the `subHeader`. This is the \"A friendly reminder from your local IT team\" text when using the Unsupported UI."
                             }
                         }
                     },
                     "title": "Update Elements",
-                    "description": "A list of dictionaries, enabling further customization to the Nudge UI",
+                    "description": "The individual buttons and text elements that can be customized for your employer's needs. This includes per country localization.",
                     "links": [
                         {
                             "rel": "More information",
                             "href": "https://github.com/macadmins/nudge/wiki/updateElements"
                         }
                     ]
+                },
+                "applicationTerminatedNotificationImagePath": {
+                    "type": "string",
+                    "description": "A local image path for the notification event when Nudge terminates and application."
+                },
+                "requiredInstallationDisplayFormat": {
+                    "type": "string",
+                    "description": "When utilizing showRequiredDate, set a custom display format. Be aware that the format you desire may not look good on the UI."
+                },
+                "showActivelyExploitedCVEs": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "When disabled, Nudge will not show the Actively Exploited CVEs in the left sidebar."
+                },
+                "showDaysRemainingToUpdate": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "When disabled, Nudge will not show the `Days Remaining To Update:` item on the left side of the UI."
+                },
+                "showRequiredDate": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "When enabled, Nudge will also show the requiredInstallationDate as string formatted date."
                 }
             },
             "property_order": 20

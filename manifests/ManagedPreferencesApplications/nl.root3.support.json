@@ -6,56 +6,56 @@
             "type": "string",
             "title": "Title",
             "default": "Support",
-            "description": "Text shown in the top left corner when the app opens.",
+            "description": "Text shown in the top left corner when the app opens",
             "property_order": 5
         },
         "Logo": {
             "type": "string",
-            "title": "Light Mode Logo",
-            "description": "Path to the logo shown in the top right corner when the app opens. Scales to 48 points maximum height.",
+            "title": "Custom Logo",
+            "description": "Path to the logo shown in the top right corner when the app opens. Scales to 48 points maximum height",
             "property_order": 10
         },
         "LogoDarkMode": {
             "type": "string",
-            "title": "Dark Mode Logo",
-            "description": "Path to the logo shown in the top right corner when the app opens for Dark Mode. Scales to 48 points maximum height.",
+            "title": "Custom Logo Dark Mode",
+            "description": "Path to the logo shown in the top right corner when the app opens for Dark Mode. Scales to 48 points maximum height",
             "property_order": 15
         },
         "NotificationIcon": {
             "type": "string",
-            "title": "Notification Icon",
-            "description": "Path to a custom square image to be shown in alerts and the about window.",
+            "title": "Custom Notification Icon",
+            "description": "Path to the notification icon",
             "property_order": 20
         },
         "StatusBarIcon": {
             "type": "string",
-            "title": "Status Bar Icon",
+            "title": "Custom Status Bar Icon",
             "description": "Path to the status bar icon shown in the menu bar. Recommended: PNG, 16x16 points",
             "property_order": 25
         },
         "StatusBarIconSFSymbol": {
             "type": "string",
-            "title": "Status Bar SF Symbol Icon",
-            "description": "Custom status bar icon using an SF Symbol. Ignored when StatusBarIcon is also set.",
+            "title": "Custom Status Bar Icon using SF Symbols",
+            "description": "Custom status bar icon using an SF Symbol. Ignored when StatusBarIcon is also set",
             "property_order": 30
         },
         "StatusBarIconNotifierEnabled": {
             "type": "boolean",
-            "title": "Enable Status Bar Software Update Notifier",
+            "title": "Notification badge in Status Bar Icon",
             "default": false,
-            "description": "Shows a small notification badge in the Status Bar icon when there is an Apple Software Update available.",
+            "description": "Shows a small notification badge in the Status Bar Icon when there is an Apple Software Update available or when the UptimeDaysLimit or PasswordExpiryLimit is reached",
             "property_order": 35
         },
         "CustomColor": {
             "type": "string",
-            "title": "macOS Accent Color",
-            "description": "Custom color in HEX for all symbols. Leave empty to use macOS Accent Color.",
+            "title": "Custom Color",
+            "description": "HEX color in RGB format. Example: #8cc63f. Leave empty to use macOS Accent Color",
             "property_order": 40
         },
         "CustomColorDarkMode": {
             "type": "string",
-            "title": "macOS Dark Mode Accent Color",
-            "description": "Custom color in HEX for all symbols in Dark Mode. Leave empty to use macOS Accent Color or CustomColor if specified.",
+            "title": "Custom Color Dark Mode",
+            "description": "HEX color in RGB format for Dark Mode. Example: #8cc63f. CustomColor is used when CustomColorDarkMode is not specified",
             "property_order": 45
         },
         "HideFirstRow": {
@@ -74,43 +74,46 @@
         },
         "ErrorMessage": {
             "type": "string",
-            "title": "Error Message",
+            "title": "Custom error message",
             "default": "Please contact IT",
-            "description": "Shown when clicking an action that results in an error.",
+            "description": "Shown when clicking an action results in an error",
             "property_order": 60
         },
         "ShowWelcomeScreen": {
             "type": "boolean",
-            "title": "Show Welcome Screen",
+            "title": "Welcome Screen",
             "default": false,
-            "description": "Shows the welcome screen when the Support App is opened for the first time.",
+            "description": "A welcome screen and feature explanation to show when the app is first opened",
             "property_order": 65
         },
         "FooterText": {
             "type": "string",
-            "title": "Footer Text",
-            "description": "Text shown at the bottom as footnote",
+            "title": "Footer text",
+            "description": "Shown at the bottom as footnote. Supports both text and Emoji. Markdown is supported for macOS Monterey and higher",
             "property_order": 70
         },
         "OpenAtLogin": {
             "type": "boolean",
-            "title": "Open At Login",
+            "title": "Automatically Support (non-PKG) at login",
             "default": true,
-            "description": "Launch Support automatically at login and keep it open (macOS 13 and higher). This setting is ignored if a legacy LaunchAgent is installed/active. Disable this if you don't want to open Support at login or use your own LaunchAgent",
+            "description": "Disabled by default. Launch Support (non-PKG) automatically at login and keep it open (macOS 13 and higher). This setting is ignored if a legacy LaunchAgent is installed/active. Keep disabled if you don't want to open Support at login or use your own LaunchAgent",
             "property_order": 75
         },
         "InfoItemOne": {
             "type": "string",
-            "title": "Info Item 1",
+            "title": "Info item 1st tile",
             "default": "ComputerName",
-            "description": "Info item shown in the upper left corner.",
+            "description": "Info item shown in the upper left corner",
             "enum": [
                 "ComputerName",
                 "MacOSVersion",
                 "Network",
                 "Password",
                 "Storage",
-                "Uptime"
+                "Uptime",
+                "ExtensionA",
+                "ExtensionB",
+                "AppCatalog"
             ],
             "options": {
                 "enum_titles": [
@@ -119,23 +122,29 @@
                     "Network",
                     "Password",
                     "Storage",
-                    "Uptime"
+                    "Uptime",
+                    "Extension A",
+                    "Extension B",
+                    "App Catalog"
                 ]
             },
             "property_order": 80
         },
         "InfoItemTwo": {
             "type": "string",
-            "title": "Info Item 2",
+            "title": "Info item 2nd tile",
             "default": "MacOSVersion",
-            "description": "Info item shown in the upper right corner.",
+            "description": "Info item shown in the upper right corner",
             "enum": [
                 "ComputerName",
                 "MacOSVersion",
                 "Network",
                 "Password",
                 "Storage",
-                "Uptime"
+                "Uptime",
+                "ExtensionA",
+                "ExtensionB",
+                "AppCatalog"
             ],
             "options": {
                 "enum_titles": [
@@ -144,23 +153,29 @@
                     "Network",
                     "Password",
                     "Storage",
-                    "Uptime"
+                    "Uptime",
+                    "Extension A",
+                    "Extension B",
+                    "App Catalog"
                 ]
             },
             "property_order": 85
         },
         "InfoItemThree": {
             "type": "string",
-            "title": "Info Item 3",
+            "title": "Info item 3rd tile",
             "default": "Uptime",
-            "description": "Info item shown in the second row left.",
+            "description": "Info item shown in the second row left",
             "enum": [
                 "ComputerName",
                 "MacOSVersion",
                 "Network",
                 "Password",
                 "Storage",
-                "Uptime"
+                "Uptime",
+                "ExtensionA",
+                "ExtensionB",
+                "AppCatalog"
             ],
             "options": {
                 "enum_titles": [
@@ -169,23 +184,29 @@
                     "Network",
                     "Password",
                     "Storage",
-                    "Uptime"
+                    "Uptime",
+                    "Extension A",
+                    "Extension B",
+                    "App Catalog"
                 ]
             },
             "property_order": 90
         },
         "InfoItemFour": {
             "type": "string",
-            "title": "Info Item 4",
+            "title": "Info item 4th tile",
             "default": "Storage",
-            "description": "Info item shown in the second row right.",
+            "description": "Info item shown in the second row right",
             "enum": [
                 "ComputerName",
                 "MacOSVersion",
                 "Network",
                 "Password",
                 "Storage",
-                "Uptime"
+                "Uptime",
+                "ExtensionA",
+                "ExtensionB",
+                "AppCatalog"
             ],
             "options": {
                 "enum_titles": [
@@ -194,23 +215,29 @@
                     "Network",
                     "Password",
                     "Storage",
-                    "Uptime"
+                    "Uptime",
+                    "Extension A",
+                    "Extension B",
+                    "App Catalog"
                 ]
             },
             "property_order": 95
         },
         "InfoItemFive": {
             "type": "string",
-            "title": "Info Item 5",
+            "title": "Info item 5th tile",
             "default": "Storage",
-            "description": "Info item shown in the third row left.",
+            "description": "Info item shown in the third row left",
             "enum": [
                 "ComputerName",
                 "MacOSVersion",
                 "Network",
                 "Password",
                 "Storage",
-                "Uptime"
+                "Uptime",
+                "ExtensionA",
+                "ExtensionB",
+                "AppCatalog"
             ],
             "options": {
                 "enum_titles": [
@@ -219,23 +246,29 @@
                     "Network",
                     "Password",
                     "Storage",
-                    "Uptime"
+                    "Uptime",
+                    "Extension A",
+                    "Extension B",
+                    "App Catalog"
                 ]
             },
             "property_order": 100
         },
         "InfoItemSix": {
             "type": "string",
-            "title": "Info Item 6",
+            "title": "Info item 6th tile",
             "default": "Storage",
-            "description": "Info item shown in the third row right.",
+            "description": "Info item shown in the third row right",
             "enum": [
                 "ComputerName",
                 "MacOSVersion",
                 "Network",
                 "Password",
                 "Storage",
-                "Uptime"
+                "Uptime",
+                "ExtensionA",
+                "ExtensionB",
+                "AppCatalog"
             ],
             "options": {
                 "enum_titles": [
@@ -244,397 +277,416 @@
                     "Network",
                     "Password",
                     "Storage",
-                    "Uptime"
+                    "Uptime",
+                    "Extension A",
+                    "Extension B",
+                    "App Catalog"
                 ]
             },
             "property_order": 105
         },
         "UptimeDaysLimit": {
             "type": "integer",
-            "title": "Computer Uptime Limit",
+            "title": "Maximum uptime in days",
             "default": 0,
-            "description": "Days of uptime after which a notification badge is shown, disabled by default",
+            "description": "Days of uptime after which a notification badge is shown",
             "property_order": 110
         },
         "PasswordExpiryLimit": {
             "type": "integer",
-            "title": "Password Expiration Limit",
+            "title": "Maximum password expiry in days",
             "default": 0,
-            "description": "Days until password expiry after which a notification badge is shown, disabled by default",
+            "description": "Days until password expiry after which a notification badge is shown",
             "property_order": 115
         },
         "PasswordLabel": {
             "type": "string",
-            "title": "Password Label",
+            "title": "Password item label",
             "default": "Mac Password",
-            "description": "Alternative text label shown in the Password info item.",
+            "description": "Alternative text label shown in the Password info item",
             "property_order": 120
         },
         "StorageLimit": {
             "type": "integer",
-            "title": "Storage Limit",
+            "title": "Maximum used storage percentage",
             "default": 0,
-            "description": "Percentage of storage used after which a notification badge is shown, disabled by default.",
+            "description": "Percentage of storage after which a notification badge is shown",
             "property_order": 125
         },
         "FirstRowTitleLeft": {
             "type": "string",
-            "title": "First Row Left Title",
+            "title": "First Row Left: Title",
             "default": "Remote Support",
-            "description": "The text shown in the button label.",
+            "description": "The text shown in the button label",
             "property_order": 130
         },
         "FirstRowSubtitleLeft": {
             "type": "string",
-            "title": "First Row Left Subtitle",
+            "title": "First Row Left: Subtitle",
             "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
             "property_order": 135
         },
         "FirstRowTypeLeft": {
             "type": "string",
-            "title": "First Row Left Link Type",
-            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "title": "First Row Left: Type",
+            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization. App by default.",
             "enum": [
                 "App",
+                "URL",
                 "Command",
-                "DistributedNotification",
-                "URL"
+                "PrivilegedScript",
+                "DistributedNotification"
             ],
             "options": {
                 "enum_titles": [
                     "App",
-                    "Command or Script (Run as user)",
-                    "Command or Script (Run with elevated privileges)",
-                    "URL"
+                    "URL",
+                    "User Command",
+                    "Privileged Script",
+                    "Command or Script (deprecated as of v2.6, use Privileged Script)"
                 ]
             },
             "property_order": 140
         },
         "FirstRowLinkLeft": {
             "type": "string",
-            "title": "First Row Left Link",
+            "title": "First Row Left: Link",
             "default": "com.apple.ScreenSharing",
-            "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
+            "description": "The Bundle Identifier of the app, link, command or path to script",
             "property_order": 145
         },
         "FirstRowSymbolLeft": {
             "type": "string",
-            "title": "First Row Left Symbol",
+            "title": "First Row Left: SF Symbol name",
             "default": "cursorarrow",
-            "description": "The SF Symbol shown in the button.",
+            "description": "The SF Symbol shown in the button",
             "property_order": 150
         },
         "FirstRowTitleMiddle": {
             "type": "string",
-            "title": "First Row Middle Title",
+            "title": "First Row Middle: Title",
             "default": "Company Store",
-            "description": "The text shown in the button label.",
+            "description": "The text shown in the button label",
             "property_order": 155
         },
         "FirstRowSubtitleMiddle": {
             "type": "string",
-            "title": "First Row Middle Subtitle",
+            "title": "First Row Middle: Subtitle",
             "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
             "property_order": 160
         },
         "FirstRowTypeMiddle": {
             "type": "string",
-            "title": "First Row Middle Link Type",
-            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "title": "First Row Middle: Type",
+            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization. App by default.",
             "enum": [
                 "App",
+                "URL",
                 "Command",
-                "DistributedNotification",
-                "URL"
+                "PrivilegedScript",
+                "DistributedNotification"
             ],
             "options": {
                 "enum_titles": [
                     "App",
-                    "Command or Script (Run as user)",
-                    "Command or Script (Run with elevated privileges)",
-                    "URL"
+                    "URL",
+                    "User Command",
+                    "Privileged Script",
+                    "Command or Script (deprecated as of v2.6, use Privileged Script)"
                 ]
             },
             "property_order": 165
         },
         "FirstRowLinkMiddle": {
             "type": "string",
-            "title": "First Row Middle Link",
+            "title": "First Row Middle: Link",
             "default": "com.apple.ScreenSharing",
-            "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
+            "description": "The Bundle Identifier of the app, link, command or path to script",
             "property_order": 170
         },
         "FirstRowSymbolMiddle": {
             "type": "string",
-            "title": "First Row Middle Symbol",
+            "title": "First Row Middle: SF Symbol name",
             "default": "cart.fill",
-            "description": "The SF Symbol shown in the button.",
+            "description": "The SF Symbol shown in the button",
             "property_order": 175
         },
         "FirstRowTitleRight": {
             "type": "string",
-            "title": "First Row Right Title",
+            "title": "First Row Right: Title",
             "default": "Company Store",
             "description": "The text shown in the button label.",
             "property_order": 180
         },
         "FirstRowSubtitleRight": {
             "type": "string",
-            "title": "First Row Right Subtitle",
+            "title": "First Row Right: Subtitle",
             "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
             "property_order": 185
         },
         "FirstRowTypeRight": {
             "type": "string",
-            "title": "First Row Right Link Type",
-            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "title": "First Row Right: Type",
+            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization. App by default.",
             "enum": [
                 "App",
+                "URL",
                 "Command",
-                "DistributedNotification",
-                "URL"
+                "PrivilegedScript",
+                "DistributedNotification"
             ],
             "options": {
                 "enum_titles": [
                     "App",
-                    "Command or Script (Run as user)",
-                    "Command or Script (Run with elevated privileges)",
-                    "URL"
+                    "URL",
+                    "User Command",
+                    "Privileged Script",
+                    "Command or Script (deprecated as of v2.6, use Privileged Script)"
                 ]
             },
             "property_order": 190
         },
         "FirstRowLinkRight": {
             "type": "string",
-            "title": "First Row Right Link",
+            "title": "First Row Right: Link",
             "default": "com.apple.ScreenSharing",
-            "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
+            "description": "The Bundle Identifier of the app, link, command or path to script",
             "property_order": 195
         },
         "FirstRowSymbolRight": {
             "type": "string",
-            "title": "First Row Right Symbol",
+            "title": "First Row Right: SF Symbol name",
             "default": "cart.fill",
             "description": "The SF Symbol shown in the button.",
             "property_order": 200
         },
         "SecondRowTitleLeft": {
             "type": "string",
-            "title": "Second Row Left Title",
+            "title": "Second Row Left: Title",
             "default": "Support Ticket",
             "description": "The text shown in the button label.",
             "property_order": 205
         },
         "SecondRowSubtitleLeft": {
             "type": "string",
-            "title": "Second Row Left Subtitle",
-            "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
+            "title": "Second Row Left: Subtitle",
+            "description": "Subtitle text will replace the title when the user hovers over the button. Ignored if left empty.",
             "property_order": 210
         },
         "SecondRowTypeLeft": {
             "type": "string",
-            "title": "Second Row Left Link Type",
-            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "title": "Second Row Left: Type",
+            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization. URL by default.",
             "enum": [
                 "App",
+                "URL",
                 "Command",
-                "DistributedNotification",
-                "URL"
+                "PrivilegedScript",
+                "DistributedNotification"
             ],
             "options": {
                 "enum_titles": [
                     "App",
-                    "Command or Script (Run as user)",
-                    "Command or Script (Run with elevated privileges)",
-                    "URL"
+                    "URL",
+                    "User Command",
+                    "Privileged Script",
+                    "Command or Script (deprecated as of v2.6, use Privileged Script)"
                 ]
             },
             "property_order": 215
         },
         "SecondRowLinkLeft": {
             "type": "string",
-            "title": "Second Row Left Link",
+            "title": "Second Row Left: Link",
             "default": "com.apple.ScreenSharing",
-            "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
+            "description": "The Bundle Identifier of the app, link, command or path to script.",
             "property_order": 220
         },
         "SecondRowSymbolLeft": {
             "type": "string",
-            "title": "Second Row Left Symbol",
+            "title": "Second Row Left: SF Symbol name",
             "default": "ticket",
             "description": "The SF Symbol shown in the button.",
             "property_order": 225
         },
         "SecondRowTitleMiddle": {
             "type": "string",
-            "title": "Second Row Middle Title",
+            "title": "Second Row Middle: Title",
             "default": "Email",
             "description": "The text shown in the button label.",
             "property_order": 230
         },
         "SecondRowSubtitleMiddle": {
             "type": "string",
-            "title": "Second Row Middle Subtitle",
-            "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
+            "title": "Second Row Middle: Subtitle",
+            "description": "Subtitle text will replace the title when the user hovers over the button. Ignored if left empty.",
             "property_order": 235
         },
         "SecondRowTypeMiddle": {
             "type": "string",
-            "title": "Second Row Middle Link Type",
-            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "title": "Second Row Middle: Type",
+            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization. URL by default.",
             "enum": [
                 "App",
+                "URL",
                 "Command",
-                "DistributedNotification",
-                "URL"
+                "PrivilegedScript",
+                "DistributedNotification"
             ],
             "options": {
                 "enum_titles": [
                     "App",
-                    "Command or Script (Run as user)",
-                    "Command or Script (Run with elevated privileges)",
-                    "URL"
+                    "URL",
+                    "User Command",
+                    "Privileged Script",
+                    "Command or Script (deprecated as of v2.6, use Privileged Script)"
                 ]
             },
             "property_order": 240
         },
         "SecondRowLinkMiddle": {
             "type": "string",
-            "title": "Second Row Middle Link",
+            "title": "Second Row Middle: Link",
             "default": "com.apple.ScreenSharing",
-            "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
+            "description": "The Bundle Identifier of the app, link, command or path to script.",
             "property_order": 245
         },
         "SecondRowSymbolMiddle": {
             "type": "string",
-            "title": "Second Row Middle Symbol",
+            "title": "Second Row Middle: SF Symbol name",
             "default": "envelope",
             "description": "The SF Symbol shown in the button.",
             "property_order": 250
         },
         "SecondRowTitleRight": {
             "type": "string",
-            "title": "Second Row Right Title",
+            "title": "Second Row Right: Title",
             "default": "Phone",
             "description": "The text shown in the button label.",
             "property_order": 255
         },
         "SecondRowSubtitleRight": {
             "type": "string",
-            "title": "Second Row Right Subtitle",
-            "description": "Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.",
+            "title": "Second Row Right: Subtitle",
+            "description": "Subtitle text will replace the title when the user hovers over the button. Ignored if left empty.",
             "property_order": 260
         },
         "SecondRowTypeRight": {
             "type": "string",
-            "title": "Second Row Right Link Type",
-            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "title": "Second Row Right: Type",
+            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization. URL by default.",
             "enum": [
                 "App",
+                "URL",
                 "Command",
-                "DistributedNotification",
-                "URL"
+                "PrivilegedScript",
+                "DistributedNotification"
             ],
             "options": {
                 "enum_titles": [
                     "App",
-                    "Command or Script (Run as user)",
-                    "Command or Script (Run with elevated privileges)",
-                    "URL"
+                    "URL",
+                    "User Command",
+                    "Privileged Script",
+                    "Command or Script (deprecated as of v2.6, use Privileged Script)"
                 ]
             },
             "property_order": 265
         },
         "SecondRowLinkRight": {
             "type": "string",
-            "title": "Second Row Right Link",
+            "title": "Second Row Right: Link",
             "default": "com.apple.ScreenSharing",
-            "description": "The Bundle Identifier of the App or URL that should be opened, command or script to be run.",
+            "description": "The Bundle Identifier of the app, link, command or path to script.",
             "property_order": 270
         },
         "SecondRowSymbolRight": {
             "type": "string",
-            "title": "Second Row Right Symbol",
+            "title": "Second Row Right: SF Symbol name",
             "default": "phone",
             "description": "The SF Symbol shown in the button.",
             "property_order": 275
         },
         "ExtensionTitleA": {
             "type": "string",
-            "title": "Support App Extension A: Title",
-            "description": "The title shown in extension A.",
+            "title": "Extension Title A",
+            "description": "The text shown in the Extension.",
             "property_order": 280
         },
         "ExtensionSymbolA": {
             "type": "string",
-            "title": "Support App Extension A: Symbol",
-            "description": "The SF Symbol shown in extension A.",
+            "title": "Extension SF Symbol A",
+            "description": "The SF Symbol shown in the Extension.",
             "property_order": 285
         },
         "ExtensionTypeA": {
             "type": "string",
-            "title": "Support App Extension A: Type",
+            "title": "Extension Link Type A",
             "default": "App",
-            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "description": "Type of link the Extension should open.",
             "enum": [
                 "App",
+                "URL",
                 "Command",
-                "DistributedNotification",
-                "URL"
+                "PrivilegedScript",
+                "DistributedNotification"
             ],
             "options": {
                 "enum_titles": [
                     "App",
-                    "Command or Script (Run as user)",
-                    "Command or Script (Run with elevated privileges)",
-                    "URL"
+                    "URL",
+                    "User Command",
+                    "Privileged Script",
+                    "Command or Script (deprecated as of v2.6, use Privileged Script)"
                 ]
             },
             "property_order": 290
         },
         "ExtensionLinkA": {
             "type": "string",
-            "title": "Support App Extension A: Link",
-            "description": "The Bundle Identifier of the App, URL or command to open.",
+            "title": "Extension Link A",
+            "description": "The Bundle Identifier of the app, link, command or path to script.",
             "property_order": 295
         },
         "ExtensionTitleB": {
             "type": "string",
-            "title": "Support App Extension B: Title",
-            "description": "The title shown in extension B.",
+            "title": "Extension Title B",
+            "description": "The text shown in the Extension.",
             "property_order": 300
         },
         "ExtensionSymbolB": {
             "type": "string",
-            "title": "Support App Extension B: Symbol",
-            "description": "The SF Symbol shown in extension B.",
+            "title": "Extension SF Symbol B",
+            "description": "The SF Symbol shown in the Extension.",
             "property_order": 305
         },
         "ExtensionTypeB": {
             "type": "string",
-            "title": "Support App Extension B: Type",
+            "title": "Extension Link Type B",
             "default": "App",
-            "description": "Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.",
+            "description": "Type of link the Extension should open",
             "enum": [
                 "App",
+                "URL",
                 "Command",
-                "DistributedNotification",
-                "URL"
+                "PrivilegedScript",
+                "DistributedNotification"
             ],
             "options": {
                 "enum_titles": [
                     "App",
-                    "Command or Script (Run as user)",
-                    "Command or Script (Run with elevated privileges)",
-                    "URL"
+                    "URL",
+                    "User Command",
+                    "Privileged Script",
+                    "Command or Script (deprecated as of v2.6, use Privileged Script)"
                 ]
             },
             "property_order": 310
         },
         "ExtensionLinkB": {
             "type": "string",
-            "title": "Support App Extension B: Link",
-            "description": "The Bundle Identifier of the App, URL or command to open.",
+            "title": "Extension Link B",
+            "description": "The Bundle Identifier of the app, link, command or path to script.",
             "property_order": 315
         },
         "HideMajorUpdates": {
@@ -643,6 +695,74 @@
             "default": false,
             "description": "Ignore macOS major updates. This will prevent the menu bar icon and the macOS version info item from showing an available major update.",
             "property_order": 320
+        },
+        "UpdateText": {
+            "type": "string",
+            "title": "Update Text",
+            "description": "Optional text to shown in the macOS Managed Updates popover to tell users about the updates",
+            "property_order": 325
+        },
+        "HideFirstRowInfoItems": {
+            "type": "boolean",
+            "title": "Hide first row Info Items",
+            "description": "Hide the first row with Info Items",
+            "property_order": 330
+        },
+        "HideSecondRowInfoItems": {
+            "type": "boolean",
+            "title": "Hide second row Info Items",
+            "description": "Hide the second row with Info Items",
+            "property_order": 335
+        },
+        "HideThirdRowInfoItems": {
+            "type": "boolean",
+            "title": "Hide third row Info Items",
+            "description": "Hide the third row with Info Items",
+            "property_order": 340
+        },
+        "HideFirstRowButtons": {
+            "type": "boolean",
+            "title": "Hide first row configurable buttons",
+            "description": "Hide the first row with configurable items",
+            "property_order": 345
+        },
+        "HideSecondRowButtons": {
+            "type": "boolean",
+            "title": "Hide second row configurable buttons",
+            "description": "Hide the second row with configurable items",
+            "property_order": 350
+        },
+        "PasswordType": {
+            "type": "string",
+            "title": "Password type",
+            "description": "Password expiry information source: Apple (local account or AD), Jamf Connect or Kerberos SSO Extension",
+            "enum": [
+                "Apple",
+                "JamfConnect",
+                "KerberosSSO",
+                "Nomad"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Apple",
+                    " Jamf Connect",
+                    "Kerberos SSO Extension",
+                    "NoMAD"
+                ]
+            },
+            "property_order": 355
+        },
+        "OnAppearAction": {
+            "type": "string",
+            "title": "On Appear Script/Command",
+            "description": "Path to script script or command to be executed when the Support App is opened by clicking on the menu bar item.",
+            "property_order": 360
+        },
+        "DisablePrivilegedHelperTool": {
+            "type": "boolean",
+            "title": "Enable or Disable Privileged Helper Tool",
+            "description": "Option to enable or disable the Privileged Helper Tool. Re-enabling requires the reinstallation of the Support App.",
+            "property_order": 365
         }
     }
 }
