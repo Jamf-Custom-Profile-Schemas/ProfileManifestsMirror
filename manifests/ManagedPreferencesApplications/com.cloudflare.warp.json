@@ -1,0 +1,189 @@
+{
+    "title": "Cloudflare WARP Client (com.cloudflare.warp)",
+    "description": "Use this section to define settings for Cloudflare WARP",
+    "properties": {
+        "display_name": {
+            "type": "string",
+            "title": "Display Name",
+            "description": "When WARP is deployed with multiple organizations or configurations, this parameter is used to identify each configuration in the GUI.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#display_name"
+                }
+            ],
+            "property_order": 5
+        },
+        "organization": {
+            "type": "string",
+            "title": "Organization",
+            "description": "Required for full Cloudflare Zero Trust features. Instructs the client to register the device with your organization. Registration requires authentication via an IdP or Service Auth.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#organization"
+                }
+            ],
+            "property_order": 10
+        },
+        "gateway_unique_id": {
+            "type": "string",
+            "title": "Gateway Unique ID",
+            "description": "Instructs the client to direct all DNS queries to a specific Gateway DNS location. This value is only necessary if deploying without a team name or in an organization with multiple DNS locations. If you do not supply a DoH subdomain, we will automatically use the default Gateway DNS location for your organization.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#gateway_unique_id"
+                }
+            ],
+            "property_order": 15
+        },
+        "service_mode": {
+            "type": "string",
+            "title": "Service Mode",
+            "default": "warp",
+            "description": "Allows you to choose the operational mode of the client.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#service_mode"
+                }
+            ],
+            "enum": [
+                "1dot1",
+                "warp"
+            ],
+            "options": {
+                "enum_titles": [
+                    "DoH Only",
+                    "WARP"
+                ]
+            },
+            "property_order": 20
+        },
+        "onboarding": {
+            "type": "boolean",
+            "title": "Onboarding",
+            "default": true,
+            "description": "Controls the visibility of the onboarding screens that ask the user to review the privacy policy during an application's first launch.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#onboarding"
+                }
+            ],
+            "property_order": 25
+        },
+        "switch_locked": {
+            "type": "boolean",
+            "title": "Switch Locked",
+            "default": false,
+            "description": "Allows the user to turn off the WARP switch and disconnect the client.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#switch_locked"
+                }
+            ],
+            "property_order": 30
+        },
+        "auto_connect": {
+            "type": "integer",
+            "title": "Auto Connect",
+            "description": "If switch has been turned off by user, the client will automatically turn itself back on after the specified number of minutes. We recommend keeping this set to a very low value - usually just enough time for a user to log in to hotel or airport Wi-Fi. If any value is specified for auto_connect the default state of the WARP client will always be Connected (for example, after the initial install or a reboot).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#auto_connect"
+                }
+            ],
+            "property_order": 35
+        },
+        "support_url": {
+            "type": "string",
+            "title": "Support URL",
+            "description": "When the WARP client is deployed via MDM, the in-app Send Feedback button is disabled by default. This parameter allows you to re-enable the button and direct feedback towards your organization.",
+            "pattern": "^(https://|mailto:).*$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#support_url"
+                }
+            ],
+            "property_order": 40
+        },
+        "override_api_endpoint": {
+            "type": "string",
+            "title": "Override API Endpoint",
+            "description": "Overrides the IP address used by the WARP client to communicate with the client orchestration API. If you set this parameter, be sure to update your organization's firewall to ensure the new IP is allowed through.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#override_api_endpoint"
+                }
+            ],
+            "property_order": 45
+        },
+        "override_doh_endpoint": {
+            "type": "string",
+            "title": "Override DoH Endpoint",
+            "description": "Overrides the IP address used by the WARP client to resolve DNS queries via DNS over HTTPS (DoH). If you set this parameter, be sure to update your organization's firewall to ensure the new IP is allowed through.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#override_doh_endpoint"
+                }
+            ],
+            "property_order": 50
+        },
+        "override_warp_endpoint": {
+            "type": "string",
+            "title": "Override WARP Endpoint",
+            "description": "Overrides the IP address and UDP port used by the WARP client to send traffic to Cloudflare's edge. If you set this parameter, be sure to update your organization's firewall to ensure the new IP is allowed through.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#override_warp_endpoint"
+                }
+            ],
+            "property_order": 55
+        },
+        "unique_client_id": {
+            "type": "string",
+            "title": "Unique Client ID",
+            "description": "Assigns a unique identifier to the device for the device UUID posture check.",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#unique_client_id"
+                }
+            ],
+            "property_order": 60
+        },
+        "auth_client_id": {
+            "type": "string",
+            "title": "Auth Client ID",
+            "description": "Enrolls the device in your Zero Trust organization using a service token. Requires the auth_client_secret parameter.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#auth_client_id"
+                }
+            ],
+            "property_order": 65
+        },
+        "auth_client_secret": {
+            "type": "string",
+            "title": "Auth Client Secret",
+            "description": "Enrolls the device in your Zero Trust organization using a service token. Requires the auth_client_id parameter.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/parameters/#auth_client_secret"
+                }
+            ],
+            "property_order": 70
+        }
+    }
+}
