@@ -6,7 +6,7 @@
             "type": "boolean",
             "title": "Enable Autostart",
             "default": false,
-            "description": "Optional. If set to true, the app will be launched on user-login.",
+            "description": "If set to true, the app will be launched on user-login.",
             "property_order": 5
         },
         "canChangeAutostart": {
@@ -24,19 +24,57 @@
             "pattern": "^http[s]?:\\/\\/\\S*$",
             "property_order": 15
         },
-        "canQuit": {
-            "type": "boolean",
-            "title": "Allow to Quit App",
-            "default": true,
-            "description": "Optional. If set to true, the user can quit the app",
-            "property_order": 20
-        },
         "unmountOnExit": {
             "type": "boolean",
             "title": "Unmount Shares on Exit",
             "default": true,
             "description": "Configure a help URL to help users interact with the application.",
+            "property_order": 20
+        },
+        "useNewDefaultLocation": {
+            "type": "boolean",
+            "title": "Use the new default mount location",
+            "default": false,
+            "description": "With version 3 the old default mount path (~/Netzlaufwerke/) is deprecated. New default is (/Volumes). This key allows administrators to adopt this default value ahead of the official release. This option is provided to ease the transition for administrators.",
             "property_order": 25
+        },
+        "location": {
+            "type": "string",
+            "title": "Mount path",
+            "description": "Path where network shares will be mounted. Leave blank for the default value (highly recommended).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://gitlab.rrze.fau.de/faumac/networkShareMounter#important-note-for-the-location-cleanuplocationdirectory-and-usenewdefaultlocation-values"
+                }
+            ],
+            "property_order": 30
+        },
+        "cleanupLocationDirectory": {
+            "type": "boolean",
+            "title": "Clean up obstructing files and directories",
+            "default": false,
+            "description": "If set to true, the mount location will be cleaned up from obstructing files and directories. Please read the wiki before enabling this option and use it with caution!",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://gitlab.rrze.fau.de/faumac/networkShareMounter#important-note-for-the-location-cleanuplocationdirectory-and-usenewdefaultlocation-values"
+                }
+            ],
+            "property_order": 35
+        },
+        "canQuit": {
+            "type": "boolean",
+            "title": "Show Exit",
+            "default": true,
+            "description": "Show exit button in the menu bar.",
+            "property_order": 40
+        },
+        "kerberosRealm": {
+            "type": "string",
+            "title": "Kerberos Realm",
+            "description": "Kerberos/AD Domain for user authentication. If set, automatic AD/Kerberos authentication and ticket renewal will be enabled.",
+            "property_order": 45
         },
         "managedNetworkShares": {
             "type": "array",
@@ -56,12 +94,14 @@
                         "description": "Authentication type for the share, it can be either through Kerberos (krb) or using a username/password (auth). Default: Kerberos.",
                         "enum": [
                             "krb",
-                            "password"
+                            "password",
+                            "guest"
                         ],
                         "options": {
                             "enum_titles": [
                                 "Kerberos",
-                                "Password"
+                                "Password",
+                                "Guest"
                             ]
                         }
                     },
@@ -85,7 +125,7 @@
                     "href": "https://gitlab.rrze.fau.de/faumac/networkShareMounter#configuration-preferences"
                 }
             ],
-            "property_order": 30
+            "property_order": 50
         },
         "networkShares": {
             "type": "array",
@@ -95,7 +135,13 @@
             },
             "title": "Network shares",
             "description": "Array with all network shares. Example: smb://filer.your.domain/share. Note: %USERNAME% will be replaced with the login name of the current user.",
-            "property_order": 35
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://gitlab.rrze.fau.de/faumac/networkShareMounter"
+                }
+            ],
+            "property_order": 55
         }
     }
 }
