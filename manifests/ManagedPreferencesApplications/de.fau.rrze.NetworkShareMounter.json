@@ -16,27 +16,34 @@
             "description": "Optional. If set to false, the user can not change the Autostart option.",
             "property_order": 10
         },
+        "enableAutoUpdater": {
+            "type": "boolean",
+            "title": "Enable AutoUpdater Framework",
+            "default": true,
+            "description": "Turns the auto update framework on or off, so the App can update itself.",
+            "property_order": 15
+        },
         "helpURL": {
             "type": "string",
             "title": "Help URL",
             "default": "https://www.anleitungen.rrze.fau.de/betriebssysteme/apple-macos-und-ios/macos/#networksharemounter",
             "description": "Configure a help URL to help users interact with the application.",
             "pattern": "^http[s]?:\\/\\/\\S*$",
-            "property_order": 15
+            "property_order": 20
         },
         "unmountOnExit": {
             "type": "boolean",
             "title": "Unmount Shares on Exit",
             "default": true,
             "description": "Configure a help URL to help users interact with the application.",
-            "property_order": 20
+            "property_order": 25
         },
         "useNewDefaultLocation": {
             "type": "boolean",
             "title": "Use the new default mount location",
             "default": false,
             "description": "With version 3 the old default mount path (~/Netzlaufwerke/) is deprecated. New default is (/Volumes). This key allows administrators to adopt this default value ahead of the official release. This option is provided to ease the transition for administrators.",
-            "property_order": 25
+            "property_order": 30
         },
         "location": {
             "type": "string",
@@ -48,7 +55,7 @@
                     "href": "https://gitlab.rrze.fau.de/faumac/networkShareMounter#important-note-for-the-location-cleanuplocationdirectory-and-usenewdefaultlocation-values"
                 }
             ],
-            "property_order": 30
+            "property_order": 35
         },
         "cleanupLocationDirectory": {
             "type": "boolean",
@@ -61,20 +68,20 @@
                     "href": "https://gitlab.rrze.fau.de/faumac/networkShareMounter#important-note-for-the-location-cleanuplocationdirectory-and-usenewdefaultlocation-values"
                 }
             ],
-            "property_order": 35
+            "property_order": 40
         },
         "canQuit": {
             "type": "boolean",
             "title": "Show Exit",
             "default": true,
             "description": "Show exit button in the menu bar.",
-            "property_order": 40
+            "property_order": 45
         },
         "kerberosRealm": {
             "type": "string",
             "title": "Kerberos Realm",
             "description": "Kerberos/AD Domain for user authentication. If set, automatic AD/Kerberos authentication and ticket renewal will be enabled.",
-            "property_order": 45
+            "property_order": 50
         },
         "managedNetworkShares": {
             "type": "array",
@@ -125,7 +132,7 @@
                     "href": "https://gitlab.rrze.fau.de/faumac/networkShareMounter#configuration-preferences"
                 }
             ],
-            "property_order": 50
+            "property_order": 55
         },
         "networkShares": {
             "type": "array",
@@ -141,7 +148,7 @@
                     "href": "https://gitlab.rrze.fau.de/faumac/networkShareMounter"
                 }
             ],
-            "property_order": 55
+            "property_order": 60
         }
     }
 }
