@@ -1,6 +1,6 @@
 {
     "title": "Dock (com.apple.dock)",
-    "description": "Dock settings",
+    "description": "Use this section to manage the Dock.",
     "properties": {
         "static-apps": {
             "type": "array",
@@ -11,7 +11,7 @@
                         "type": "string",
                         "title": "Type",
                         "default": "file-tile",
-                        "description": "The type of the tile. Values may be file-tile, directory-tile, or url-tile. If you are unsure whether the file item is a file or a directory, set this key to file-tile.",
+                        "description": "The type of tile.",
                         "enum": [
                             "file-tile"
                         ],
@@ -24,12 +24,12 @@
                     "tile-data": {
                         "type": "object",
                         "title": "Information",
-                        "description": "Information about a dock item.",
+                        "description": "The information about the dock item.",
                         "properties": {
                             "label": {
                                 "type": "string",
                                 "title": "Label",
-                                "description": "Label of a dock item."
+                                "description": "The label of the dock item."
                             },
                             "file-label": {
                                 "type": "string",
@@ -39,7 +39,7 @@
                             "file-type": {
                                 "type": "integer",
                                 "title": "Type",
-                                "description": "The type of the tile expressed as a number.",
+                                "description": "The type of tile.",
                                 "enum": [
                                     1
                                 ],
@@ -52,7 +52,7 @@
                             "file-data": {
                                 "type": "object",
                                 "title": "File Data",
-                                "description": "Dictionary describing the target file.",
+                                "description": "The data in a file. For Apple use only.",
                                 "properties": {
                                     "_CFURLString": {
                                         "type": "string",
@@ -66,16 +66,26 @@
                                         "enum": [
                                             0,
                                             15
-                                        ]
+                                        ],
+                                        "options": {
+                                            "enum_titles": [
+                                                "Path",
+                                                "File URL"
+                                            ]
+                                        }
                                     }
                                 }
+                            },
+                            "url": {
+                                "type": "string",
+                                "description": "The URL string."
                             }
                         }
                     }
                 }
             },
             "title": "Static Apps",
-            "description": "Dock items in the Applications side that cannot be removed from the dock.",
+            "description": "An array of items located on the Applications side of the Dock and cannot be removed from that location.",
             "property_order": 5
         },
         "static-others": {
@@ -88,7 +98,7 @@
                         "type": "string",
                         "title": "Type",
                         "default": "file-tile",
-                        "description": "The type of the tile. Values may be file-tile, directory-tile, or url-tile. If you are unsure whether the file item is a file or a directory, set this key to file-tile.",
+                        "description": "The type of tile.",
                         "enum": [
                             "file-tile",
                             "directory-tile",
@@ -105,12 +115,12 @@
                     "tile-data": {
                         "type": "object",
                         "title": "Information",
-                        "description": "Information about a dock item.",
+                        "description": "The information about the dock item.",
                         "properties": {
                             "label": {
                                 "type": "string",
                                 "title": "Label",
-                                "description": "Label of a dock item."
+                                "description": "The label of the dock item."
                             },
                             "file-label": {
                                 "type": "string",
@@ -120,29 +130,29 @@
                             "url": {
                                 "type": "string",
                                 "title": "URL",
-                                "description": "For URL tiles, the URL string."
+                                "description": "The URL string."
                             },
                             "file-type": {
                                 "type": "integer",
                                 "title": "Type",
-                                "description": "The type of the tile expressed as a number.",
+                                "description": "The type of tile:\n* '0': URL\n* '1': File\n* '3': Directory",
                                 "enum": [
+                                    0,
                                     1,
-                                    3,
-                                    2
+                                    3
                                 ],
                                 "options": {
                                     "enum_titles": [
+                                        "URL",
                                         "File",
-                                        "Directory",
-                                        "URL"
+                                        "Directory"
                                     ]
                                 }
                             },
                             "file-data": {
                                 "type": "object",
                                 "title": "File Data",
-                                "description": "Dictionary describing the target file.",
+                                "description": "The data in a file. For Apple use only.",
                                 "properties": {
                                     "_CFURLString": {
                                         "type": "string",
@@ -156,7 +166,13 @@
                                         "enum": [
                                             0,
                                             15
-                                        ]
+                                        ],
+                                        "options": {
+                                            "enum_titles": [
+                                                "Path",
+                                                "File URL"
+                                            ]
+                                        }
                                     }
                                 }
                             },
@@ -228,170 +244,421 @@
                 }
             },
             "title": "Static Others",
-            "description": "Dock items in the Documents side that cannot be removed from the dock.",
+            "description": "An array of items located on the Documents side of the Dock and cannot be removed from that location.",
             "property_order": 10
+        },
+        "persistent-apps": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "tile-type": {
+                        "type": "string",
+                        "title": "Type",
+                        "default": "file-tile",
+                        "description": "The type of tile.",
+                        "enum": [
+                            "file-tile"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "File"
+                            ]
+                        }
+                    },
+                    "tile-data": {
+                        "type": "object",
+                        "title": "Information",
+                        "description": "The information about the dock item.",
+                        "properties": {
+                            "label": {
+                                "type": "string",
+                                "title": "Label",
+                                "description": "The label of the dock item."
+                            },
+                            "file-label": {
+                                "type": "string",
+                                "title": "Display Name",
+                                "description": "Display name in the profile GUI of a dock item."
+                            },
+                            "file-type": {
+                                "type": "integer",
+                                "title": "Type",
+                                "description": "The type of tile.",
+                                "enum": [
+                                    1
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "File"
+                                    ]
+                                }
+                            },
+                            "file-data": {
+                                "type": "object",
+                                "title": "File Data",
+                                "description": "The data in a file. For Apple use only.",
+                                "properties": {
+                                    "_CFURLString": {
+                                        "type": "string",
+                                        "title": "Path",
+                                        "description": "Path to the application."
+                                    },
+                                    "_CFURLStringType": {
+                                        "type": "integer",
+                                        "title": "Path Type",
+                                        "description": "Path type. 0 = /Path/to/item, 15 = file://Path/to/item",
+                                        "enum": [
+                                            0,
+                                            15
+                                        ],
+                                        "options": {
+                                            "enum_titles": [
+                                                "Path",
+                                                "File URL"
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "url": {
+                                "type": "string",
+                                "description": "The URL string."
+                            }
+                        }
+                    }
+                }
+            },
+            "title": "Persistent Apps",
+            "description": "An array of items located on the Applications side of the Dock that can be removed from the dock.",
+            "property_order": 15
+        },
+        "persistent-others": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Static Other",
+                "properties": {
+                    "tile-type": {
+                        "type": "string",
+                        "title": "Type",
+                        "default": "file-tile",
+                        "description": "The type of tile.",
+                        "enum": [
+                            "file-tile",
+                            "directory-tile",
+                            "url-tile"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "File",
+                                "Directory",
+                                "URL"
+                            ]
+                        }
+                    },
+                    "tile-data": {
+                        "type": "object",
+                        "title": "Information",
+                        "description": "The information about the dock item.",
+                        "properties": {
+                            "label": {
+                                "type": "string",
+                                "title": "Label",
+                                "description": "The label of the dock item."
+                            },
+                            "file-label": {
+                                "type": "string",
+                                "title": "Display Name",
+                                "description": "Display name in the profile GUI of a dock item."
+                            },
+                            "url": {
+                                "type": "string",
+                                "title": "URL",
+                                "description": "The URL string."
+                            },
+                            "file-type": {
+                                "type": "integer",
+                                "title": "Type",
+                                "description": "The type of tile:\n* '0': URL\n* '1': File\n* '3': Directory",
+                                "enum": [
+                                    0,
+                                    1,
+                                    3
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "URL",
+                                        "File",
+                                        "Directory"
+                                    ]
+                                }
+                            },
+                            "file-data": {
+                                "type": "object",
+                                "title": "File Data",
+                                "description": "The data in a file. For Apple use only.",
+                                "properties": {
+                                    "_CFURLString": {
+                                        "type": "string",
+                                        "title": "Path",
+                                        "description": "Path to the file."
+                                    },
+                                    "_CFURLStringType": {
+                                        "type": "integer",
+                                        "title": "Path Type",
+                                        "description": "Path type. 0 = /Path/to/item, 15 = file://Path/to/item",
+                                        "enum": [
+                                            0,
+                                            15
+                                        ],
+                                        "options": {
+                                            "enum_titles": [
+                                                "Path",
+                                                "File URL"
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "home directory relative": {
+                                "type": "string",
+                                "title": "Home Directory Relative",
+                                "description": "Path to item relative to the current user's home directory."
+                            },
+                            "arrangement": {
+                                "type": "integer",
+                                "title": "Arrangement",
+                                "default": 1,
+                                "description": "Arrangement (sorting) of the directory contents.",
+                                "enum": [
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Name",
+                                        "Date Added",
+                                        "Date Modified",
+                                        "Date Created",
+                                        "Kind"
+                                    ]
+                                }
+                            },
+                            "displayas": {
+                                "type": "integer",
+                                "title": "Display As",
+                                "default": 2,
+                                "description": "Display directory as either a Folder or a Stack.",
+                                "enum": [
+                                    1,
+                                    2
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Folder",
+                                        "Stack"
+                                    ]
+                                }
+                            },
+                            "showas": {
+                                "type": "integer",
+                                "title": "Show As",
+                                "default": 4,
+                                "description": "How to show directory contents.",
+                                "enum": [
+                                    1,
+                                    2,
+                                    3,
+                                    4
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Fan",
+                                        "Grid",
+                                        "List",
+                                        "Automatic"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "title": "Persistent Others",
+            "description": "An array of items located on the Documents side of the Dock that can be removed from the dock.",
+            "property_order": 20
         },
         "tilesize": {
             "type": "integer",
             "title": "Size",
             "default": 64,
-            "description": "The tile size in pixels.",
-            "property_order": 15
+            "description": "The tile size. Values must be in the range from 16 to 128.",
+            "property_order": 25
         },
         "size-immutable": {
             "type": "boolean",
             "title": "Size slider disabled",
             "default": false,
-            "description": "Prevent user from changing tile size.",
-            "property_order": 20
+            "description": "If 'true', locks the size slider.",
+            "property_order": 30
         },
         "magnification": {
             "type": "boolean",
             "title": "Enable magnification",
             "default": false,
-            "description": "Set to true to turn on magnification.",
-            "property_order": 25
+            "description": "If 'true', enables magnification.",
+            "property_order": 35
         },
         "magnify-immutable": {
             "type": "boolean",
             "title": "Enable magnification checkbox disabled",
             "default": false,
-            "description": "Prevent user from changing the enable magnification setting.",
-            "property_order": 30
+            "description": "If 'true', locks magnification.",
+            "property_order": 40
         },
         "largesize": {
             "type": "integer",
             "title": "Magnification",
             "default": 128,
-            "description": "Largest magnification tile size in pixels.",
-            "property_order": 35
+            "description": "The size of the largest magnification.",
+            "property_order": 45
         },
         "magsize-immutable": {
             "type": "boolean",
             "title": "Magnification slider disabled",
             "default": false,
-            "description": "Prevent user from changing magnification size.",
-            "property_order": 40
+            "description": "If 'true', locks the magnification slider.",
+            "property_order": 50
         },
         "orientation": {
             "type": "string",
             "title": "Position on screen",
-            "description": "Orientation of the dock.",
+            "description": "The orientation of the dock.",
             "enum": [
-                "left",
                 "bottom",
+                "left",
                 "right"
             ],
             "options": {
                 "enum_titles": [
-                    "Left",
                     "Bottom",
+                    "Left",
                     "Right"
                 ]
             },
-            "property_order": 45
+            "property_order": 55
         },
         "position-immutable": {
             "type": "boolean",
             "title": "Position on screen buttons disabled",
             "default": false,
-            "description": "Prevent user from changing position.",
-            "property_order": 50
+            "description": "If 'true', locks the position.",
+            "property_order": 60
         },
         "mineffect": {
             "type": "string",
             "title": "Minimize window effect",
             "default": "genie",
-            "description": "Transition effect to use when minimizing applications to the Dock.",
+            "description": "The minimize effect.",
             "enum": [
-                "Genie Effect",
-                "Scale Effect"
+                "genie",
+                "scale"
             ],
-            "property_order": 55
+            "options": {
+                "enum_titles": [
+                    "Genie Effect",
+                    "Scale Effect"
+                ]
+            },
+            "property_order": 65
         },
         "mineffect-immutable": {
             "type": "boolean",
             "title": "Minimize window effect button disabled",
             "default": false,
-            "description": "Prevent user from changing the minimization setting.",
-            "property_order": 60
+            "description": "If 'true', locks 'Minimize windows using.'",
+            "property_order": 70
         },
         "minimize-to-application": {
             "type": "boolean",
             "title": "Minimize windows into application icon",
             "default": false,
-            "description": "Set to true to minimize windows into application icons.",
-            "property_order": 65
+            "description": "If 'true', enables 'Minimize windows into application icon.'",
+            "property_order": 75
         },
         "minintoapp-immutable": {
             "type": "boolean",
             "title": "Minimize windows into application icon Checkbox Disable",
             "default": false,
-            "description": "Prevent user from changing the minimize windows into application icon setting.",
-            "property_order": 70
+            "description": "If 'true', disables the 'Minimize windows into application icon' checkbox.",
+            "property_order": 80
         },
         "launchanim": {
             "type": "boolean",
             "title": "Animate opening applications",
-            "default": true,
-            "description": "Set to true to use launch animation.",
-            "property_order": 75
+            "default": false,
+            "description": "If 'true', enables 'Animate opening applications.'",
+            "property_order": 85
         },
         "launchanim-immutable": {
             "type": "boolean",
             "title": "Animate opening applications checkbox disabled",
             "default": false,
-            "description": "Prevent user from changing the animate opening applications setting.",
-            "property_order": 80
+            "description": "If 'true', locks 'Animate opening applications.'",
+            "property_order": 90
         },
         "autohide": {
             "type": "boolean",
             "title": "Automatically hide and show the Dock",
             "default": false,
-            "description": "Set to true to automatically hide and show the dock.",
-            "property_order": 85
+            "description": "If 'true', enables 'Automatically hide and show the dock.'",
+            "property_order": 95
         },
         "autohide-immutable": {
             "type": "boolean",
             "title": "Automatically hide and show the Dock checkbox disabled",
             "default": false,
-            "description": "Prevent user from changing the automatically hide and show the dock setting.",
-            "property_order": 90
+            "description": "If 'true', locks 'Automatically hide.'",
+            "property_order": 100
         },
         "show-process-indicators": {
             "type": "boolean",
             "title": "Show indicators for open applications",
-            "default": true,
-            "description": "Set to true to show an indicator below the application icon when an application is running.",
-            "property_order": 95
+            "default": false,
+            "description": "If true, shows the process indicator.",
+            "property_order": 105
         },
         "show-recents": {
             "type": "boolean",
             "title": "Show recent applications in Dock",
-            "default": true,
-            "description": "Set to true to show recent applications in the Dock.",
-            "property_order": 100
+            "default": false,
+            "description": "If 'true', enables 'Show recent items.'",
+            "property_order": 110
         },
         "static-only": {
             "type": "boolean",
             "title": "Remove non-static apps and documents from Dock",
             "default": false,
-            "description": "Whether these settings will merge with the user's existing Dock settings.",
-            "property_order": 105
+            "description": "If 'true', uses the 'static-apps' and 'static-others' dictionaries for the dock and ignores any items in the 'persistent-apps' and 'persistent-others' dictionaries. If 'false', the contents are merged with the static items listed first.",
+            "property_order": 115
         },
         "contents-immutable": {
             "type": "boolean",
             "title": "Prevent modifying items in Dock",
             "default": false,
-            "description": "Prevent user from removing any item from or adding any item to the dock.",
-            "property_order": 110
+            "description": "If 'true', disables changes to the dock.",
+            "property_order": 120
         },
         "AllowDockFixupOverride": {
             "type": "boolean",
             "title": "Allow DockFixup override",
             "default": false,
-            "description": "If true, use the file in /Library/Preferences/com.apple.dockfixup.plist when a new user or migrated user logs in. The format of this file currently has no documentation. This option has no effect for existing users.",
-            "property_order": 115
+            "description": "If 'true', use the file in '/Library/Preferences/com.apple.dockfixup.plist' when a new user or migrated user logs in. This option has no effect for existing users. Available in macOS 10.12 and later. Only available on the device channel.",
+            "property_order": 125
         },
         "MCXDockSpecialFolders": {
             "type": "array",
@@ -415,8 +682,8 @@
                 }
             },
             "title": "Managed Client Special Folders",
-            "description": "Folders added by Managed Client.",
-            "property_order": 120
+            "description": "One or more special folders that may be created at user login time and placed in the dock.\n\nThe 'My Applications' item is only used for Simple Finder environments. The 'Original Network Home' item is only used for mobile account users.",
+            "property_order": 130
         },
         "wvous-tl-corner": {
             "type": "integer",
@@ -453,7 +720,7 @@
                     "No Action"
                 ]
             },
-            "property_order": 125
+            "property_order": 135
         },
         "wvous-tl-modifier": {
             "type": "integer",
@@ -498,7 +765,7 @@
                     "Shift"
                 ]
             },
-            "property_order": 130
+            "property_order": 140
         },
         "wvous-tr-corner": {
             "type": "integer",
@@ -535,7 +802,7 @@
                     "No Action"
                 ]
             },
-            "property_order": 135
+            "property_order": 145
         },
         "wvous-tr-modifier": {
             "type": "integer",
@@ -580,7 +847,7 @@
                     "Shift"
                 ]
             },
-            "property_order": 140
+            "property_order": 150
         },
         "wvous-bl-corner": {
             "type": "integer",
@@ -617,7 +884,7 @@
                     "No Action"
                 ]
             },
-            "property_order": 145
+            "property_order": 155
         },
         "wvous-bl-modifier": {
             "type": "integer",
@@ -662,7 +929,7 @@
                     "Shift"
                 ]
             },
-            "property_order": 150
+            "property_order": 160
         },
         "wvous-br-corner": {
             "type": "integer",
@@ -699,7 +966,7 @@
                     "No Action"
                 ]
             },
-            "property_order": 155
+            "property_order": 165
         },
         "wvous-br-modifier": {
             "type": "integer",
@@ -744,7 +1011,71 @@
                     "Shift"
                 ]
             },
-            "property_order": 160
+            "property_order": 170
+        },
+        "windowtabbing": {
+            "type": "string",
+            "title": "Prefer tabs when opening documents",
+            "description": "Set the 'Prefer tabs when opening documents' to the provided value.",
+            "enum": [
+                "manual",
+                "always",
+                "fullscreen"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Manual",
+                    "Always",
+                    "Fullscreen"
+                ]
+            },
+            "property_order": 175
+        },
+        "windowtabbing-immutable": {
+            "type": "boolean",
+            "title": "Prevent changing tabs preference",
+            "default": false,
+            "description": "If 'true', disables 'Prefer tabs when opening documents' checkbox.",
+            "property_order": 180
+        },
+        "dblclickbehavior": {
+            "type": "string",
+            "title": "Doubleclick behavior",
+            "description": "The behavior when the window's title bar is double-clicked.",
+            "enum": [
+                "minimize",
+                "maximize",
+                "none"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Minimize",
+                    "Maximize",
+                    "None"
+                ]
+            },
+            "property_order": 185
+        },
+        "dblclickbehavior-immutable": {
+            "type": "boolean",
+            "title": "Prevent changing doubleclick behavior",
+            "default": false,
+            "description": "If 'true', locks 'Double-click a window's title bar.'",
+            "property_order": 190
+        },
+        "showindicators-immutable": {
+            "type": "boolean",
+            "title": "Prevent changing indicators display",
+            "default": false,
+            "description": "If 'true', locks 'Show indicators.'",
+            "property_order": 195
+        },
+        "showrecents-immutable": {
+            "type": "boolean",
+            "title": "Prevent shanging recents display",
+            "default": false,
+            "description": "If 'true', disables 'Show recent applications' checkbox.",
+            "property_order": 200
         }
     }
 }
