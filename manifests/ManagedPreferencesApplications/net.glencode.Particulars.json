@@ -307,6 +307,32 @@
             ],
             "property_order": 90
         },
+        "detachableMenuBarWidget": {
+            "type": "boolean",
+            "title": "Detachable Menu Bar Widget",
+            "default": true,
+            "description": "Allows the menu bar widget to be drug away from the menu bar and appear in a floating window.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#detachableMenuBarWidget"
+                }
+            ],
+            "property_order": 95
+        },
+        "menuBarIcon": {
+            "type": "string",
+            "title": "Menu Bar Icon",
+            "default": "classic",
+            "description": "Specifies an alternative menu bar icon. Valid values are: classic, quatrefoil, quatrefoil.fill, and any valid SF Symbol.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#menuBarIcon"
+                }
+            ],
+            "property_order": 100
+        },
         "allNetworkInterfaces": {
             "type": "boolean",
             "title": "Show All Active Network Interfaces",
@@ -318,7 +344,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#allNetworkInterfaces"
                 }
             ],
-            "property_order": 95
+            "property_order": 105
         },
         "dhcpLeaseRemaining": {
             "type": "boolean",
@@ -331,7 +357,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#dhcpLeaseRemaining"
                 }
             ],
-            "property_order": 100
+            "property_order": 110
         },
         "macAddressFormat": {
             "type": "integer",
@@ -358,7 +384,7 @@
                     "Windows/IEEE (example: 01-23-45-67-89-AB)"
                 ]
             },
-            "property_order": 105
+            "property_order": 115
         },
         "networkDetailLevel": {
             "type": "integer",
@@ -370,7 +396,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#networkDetailLevel"
                 }
             ],
-            "property_order": 110
+            "property_order": 120
         },
         "networkNotifications": {
             "type": "boolean",
@@ -383,7 +409,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#networkNotifications"
                 }
             ],
-            "property_order": 115
+            "property_order": 125
         },
         "subnetMaskCIDRNotation": {
             "type": "boolean",
@@ -396,7 +422,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#subnetMaskCIDRNotation"
                 }
             ],
-            "property_order": 120
+            "property_order": 130
         },
         "explicitNoNetworkConfiguration": {
             "type": "boolean",
@@ -409,7 +435,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#explicitNoNetworkConfiguration"
                 }
             ],
-            "property_order": 125
+            "property_order": 135
         },
         "appStoreVersionCheck": {
             "type": "boolean",
@@ -422,7 +448,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#appStoreVersionCheck"
                 }
             ],
-            "property_order": 130
+            "property_order": 140
         },
         "coreCount": {
             "type": "boolean",
@@ -435,7 +461,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#coreCount"
                 }
             ],
-            "property_order": 135
+            "property_order": 145
         },
         "diskFreeSpace": {
             "type": "integer",
@@ -460,7 +486,7 @@
                     "Free and purgeable"
                 ]
             },
-            "property_order": 140
+            "property_order": 150
         },
         "diskFreeSpaceNonBootVolumes": {
             "type": "boolean",
@@ -473,7 +499,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#diskFreeSpaceNonBootVolumes"
                 }
             ],
-            "property_order": 145
+            "property_order": 155
         },
         "firstRunDone": {
             "type": "boolean",
@@ -486,7 +512,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#firstRunDone"
                 }
             ],
-            "property_order": 150
+            "property_order": 160
         },
         "headerText": {
             "type": "string",
@@ -498,7 +524,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#headerText"
                 }
             ],
-            "property_order": 155
+            "property_order": 165
         },
         "footerText": {
             "type": "string",
@@ -510,7 +536,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#headerText"
                 }
             ],
-            "property_order": 160
+            "property_order": 170
         },
         "hideDockIcon": {
             "type": "boolean",
@@ -523,7 +549,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#hideDockIcon"
                 }
             ],
-            "property_order": 165
+            "property_order": 175
         },
         "ignoreHiding": {
             "type": "boolean",
@@ -536,7 +562,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#ignoreHiding"
                 }
             ],
-            "property_order": 170
+            "property_order": 180
         },
         "operatingSystemVersionName": {
             "type": "boolean",
@@ -549,7 +575,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#operatingSystemVersionName"
                 }
             ],
-            "property_order": 175
+            "property_order": 185
         }
     }
 }
