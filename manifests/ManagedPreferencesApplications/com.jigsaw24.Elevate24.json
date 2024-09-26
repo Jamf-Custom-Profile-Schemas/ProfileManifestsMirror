@@ -1,0 +1,487 @@
+{
+    "title": "Elevate24 (com.jigsaw24.Elevate24)",
+    "description": "macOS privilege access management tool from Jigsaw24",
+    "properties": {
+        "LicenseKey": {
+            "type": "string",
+            "title": "License Key (Premium)",
+            "description": "Enter your Elevate24 license key. Mandatory key for Premium customers only.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#license-configuration"
+                }
+            ],
+            "property_order": 5
+        },
+        "LicenseAPIKey": {
+            "type": "string",
+            "title": "License API Key (Premium)",
+            "description": "Enter your Elevate24 license api key. Mandatory key for Premium customers only.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#license-configuration"
+                }
+            ],
+            "property_order": 10
+        },
+        "message": {
+            "type": "string",
+            "title": "Message",
+            "default": "Use of admin accounts is recorded for security compliance. Select why you require admin privileges and select how long for.",
+            "description": "Change the standard application message in the application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                }
+            ],
+            "property_order": 15
+        },
+        "iconPath": {
+            "type": "string",
+            "title": "Icon (Premium)",
+            "default": "Main Jigsaw24 Logo",
+            "description": "Prodvide the file path to a JPEG or PNG to use as the icon in the Elevate24 application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                }
+            ],
+            "property_order": 20
+        },
+        "heading": {
+            "type": "string",
+            "title": "Heading (Premium)",
+            "default": "Elevate24",
+            "description": "Change the standard header from Elevate24 in the application. Always displays in bold.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                }
+            ],
+            "property_order": 25
+        },
+        "mainbutton": {
+            "type": "string",
+            "title": "Main Button Text (Premium)",
+            "default": "Elevate24",
+            "description": "Change the standard button text from Elevate in the application. ",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                }
+            ],
+            "property_order": 30
+        },
+        "HideLogo": {
+            "type": "boolean",
+            "title": "Hide Powered By Jigsaw24 Logo (Premium)",
+            "default": false,
+            "description": "Hide the “Powered by Jigsaw24” logo in the application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                }
+            ],
+            "property_order": 35
+        },
+        "Enabletimelist": {
+            "type": "boolean",
+            "title": "Enable Choice of Session Times",
+            "default": false,
+            "description": "Enables the option for the application to display a choice of times. To be used in conjuction with Session Times list.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                }
+            ],
+            "property_order": 40
+        },
+        "enableReason": {
+            "type": "boolean",
+            "title": "Enable free text reason",
+            "default": false,
+            "description": "Will replace reasons drop down list with a free text entry box. ",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                }
+            ],
+            "property_order": 45
+        },
+        "Sessiontime": {
+            "type": "string",
+            "title": "Session Time",
+            "default": "3600",
+            "description": "Change the length of time (in seconds) the user will be elevated for. Do not use this key if you want to present a list of times to choose from.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                }
+            ],
+            "property_order": 50
+        },
+        "times": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Session Times",
+            "default": [
+                "1800",
+                "3600",
+                "7200"
+            ],
+            "description": "List of available times to chose from in the Application. Enter time below in seconds.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                }
+            ],
+            "property_order": 55
+        },
+        "reasons": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Reasons",
+            "description": "The reasons to choose for needing elevated rights in dropbox within the application.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                }
+            ],
+            "property_order": 60
+        },
+        "DisableDefaultLog": {
+            "type": "boolean",
+            "title": "Disable Default Log (Premium)",
+            "default": false,
+            "description": "To disable sending of premium reporting data to Jigsaw24. If you are a basic customer, no data is sent from the device, it is all stored locally.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#disable-sending-data-to-jigsaw24"
+                }
+            ],
+            "property_order": 65
+        },
+        "siemURL": {
+            "type": "string",
+            "title": "SIEM URL (Premium)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 70
+        },
+        "siemAuthHeader": {
+            "type": "string",
+            "title": "SIEM Auth Header (Premium)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 75
+        },
+        "siemAuthToken": {
+            "type": "string",
+            "title": "SIEM Auth Token (Premium)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 80
+        },
+        "microsoftsentinel": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "SentinelClientId": {
+                        "type": "string",
+                        "title": "Client ID"
+                    },
+                    "SentinelTennantId": {
+                        "type": "string",
+                        "title": "Tennant ID"
+                    },
+                    "SentinelClientsecret": {
+                        "type": "string",
+                        "title": "Client Secret"
+                    },
+                    "SentinelUploadURL": {
+                        "type": "string",
+                        "title": "Upload URL"
+                    }
+                }
+            },
+            "title": "Microsoft Sentinel",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#microsoft-sentinel"
+                }
+            ],
+            "property_order": 85
+        },
+        "teamswebhook": {
+            "type": "string",
+            "title": "Teams Webhook (Premium)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 90
+        },
+        "slack-webhook": {
+            "type": "string",
+            "title": "Slack Webhook (Premium)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 95
+        },
+        "EnableSessionMonitoring": {
+            "type": "boolean",
+            "title": "Enable Session Monitoring (Premium)",
+            "default": false,
+            "description": "To enable monitoring of administrator activities whilst in an elevated state.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Configuration%20Keys.md#configuration-keys-for-elevate24-session-reporting"
+                }
+            ],
+            "property_order": 100
+        },
+        "enableAppleAuth": {
+            "type": "boolean",
+            "title": "Apple Auth (Premium)",
+            "default": false,
+            "description": "Prompts the user for their local Apple credentials or TouchID (if enabled on device) before allowing elevation.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                }
+            ],
+            "property_order": 105
+        },
+        "GoogleAuth": {
+            "type": "boolean",
+            "title": "OTP Auth (Premium)",
+            "default": false,
+            "description": "Enables the use of authenticator applications such as Google Auth or Microsoft Auth, prompting for a valid session token before Elevating to admin.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                }
+            ],
+            "property_order": 110
+        },
+        "standardAtLoad": {
+            "type": "boolean",
+            "title": "Standard At Load",
+            "default": false,
+            "description": "Will remove admin rights when the application first launches.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                }
+            ],
+            "property_order": 115
+        },
+        "demoteAllAdmin": {
+            "type": "boolean",
+            "title": "Demote All Admin",
+            "default": false,
+            "description": "Enables all admin users being demoted to standard users when the current elevation period ends. If you have any accounts on the device you'd like to remain admin please configure Demote Exclusions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                }
+            ],
+            "property_order": 120
+        },
+        "demoteAllAdminQuit": {
+            "type": "boolean",
+            "title": "Demote All Admin Quit",
+            "default": false,
+            "description": "Will demote all admin accounts from admin when the application quits or the laptop is restarted.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                }
+            ],
+            "property_order": 125
+        },
+        "demoteExclusions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Demote Exclusions",
+            "description": "Will exclude accounts on device from being demoted.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                }
+            ],
+            "property_order": 130
+        },
+        "killterminalsessions": {
+            "type": "boolean",
+            "title": "Kill Terminal Sessions",
+            "default": false,
+            "description": "Will demote the current terminal session from sudo session to standard.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                }
+            ],
+            "property_order": 135
+        },
+        "userElevateAdmin": {
+            "type": "boolean",
+            "title": "User Elevate Admin (Premium)",
+            "default": false,
+            "description": "Will create a temporary secondary account instead of Elevating the primary account. A temporary password will also be supplied upon elevation.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                }
+            ],
+            "property_order": 140
+        },
+        "useCurrentUserAsAdmin": {
+            "type": "boolean",
+            "title": "Use Current User As Admin (Premium)",
+            "default": false,
+            "description": "If User Elevate Admin Key is enabled and this key is also enabled, the temporary account will use the current logged in users username as part of the account naming. For example, Joe.Bloggs-adm",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                }
+            ],
+            "property_order": 145
+        },
+        "adminUserName": {
+            "type": "string",
+            "title": "Admin User Name (Premium)",
+            "description": "If ‘Use Current User As Admin’ is not enabled, this key allows the ability to create a temporary admin account with a standard name. Such as \"Temp Admin\"",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                }
+            ],
+            "property_order": 150
+        },
+        "ComplexPassword": {
+            "type": "boolean",
+            "title": "Complex Password (Premium)",
+            "default": false,
+            "description": "Enables the use of a custom complex password when 'User Elevate Admin' is enabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                }
+            ],
+            "property_order": 155
+        },
+        "PasswordUppercase": {
+            "type": "string",
+            "title": "Password Uppercase (Premium)",
+            "description": "Enter the amount of uppercase Letters required for the password.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                }
+            ],
+            "property_order": 160
+        },
+        "PasswordLowercase": {
+            "type": "string",
+            "title": "Password Lowercase (Premium)",
+            "description": "Enter the amount of lowercase Letters required for the password.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                }
+            ],
+            "property_order": 165
+        },
+        "PasswordNumbers": {
+            "type": "string",
+            "title": "Password Numbers (Premium)",
+            "description": "Enter the amount of numbers required for the password.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                }
+            ],
+            "property_order": 170
+        },
+        "PasswordSymbols": {
+            "type": "string",
+            "title": "Password Symbols (Premium)",
+            "description": "Enter the amount of symbols required for the password.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                }
+            ],
+            "property_order": 175
+        },
+        "showAdminPasswordGrace": {
+            "type": "integer",
+            "title": "Show Admin Password Grace (Premium)",
+            "default": 0,
+            "description": "Set the number of seconds after elevation or last showing the password that the password will be shown (Max 45 seconds). This only works if 'User Elevate Admin' is enabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                }
+            ],
+            "property_order": 180
+        }
+    }
+}
