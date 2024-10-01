@@ -163,6 +163,13 @@
             "description": "Configures the app to use Intune for application information. Only supports PKG and DMG type apps, not LOB.",
             "property_order": 100
         },
+        "SystemProfilerApps": {
+            "type": "boolean",
+            "title": "System Profiler",
+            "default": false,
+            "description": "Configures the app to list all applications installed under /Applications and their versions. Useful if Munki or Intune is not used.",
+            "property_order": 105
+        },
         "LogFolders": {
             "type": "array",
             "items": {
@@ -170,7 +177,7 @@
             },
             "title": "Log Folders",
             "description": "Configures the log folders to gather logs from. Only used when gathering logs. Defaults to \"/Library/Logs/Microsoft\" if not configured.",
-            "property_order": 105
+            "property_order": 110
         },
         "Actions": {
             "type": "array",
@@ -186,19 +193,24 @@
                         "type": "string",
                         "title": "Command",
                         "description": "Command to run when to item is clicked."
+                    },
+                    "Icon": {
+                        "type": "string",
+                        "title": "Icon",
+                        "description": "Icon to show in the Self Service page in the UI."
                     }
                 }
             },
             "title": "Actions",
             "description": "Configures custom actions to add to the tray menu. See example below.",
-            "property_order": 110
+            "property_order": 115
         },
         "ShowDesktopInfo": {
             "type": "boolean",
             "title": "Show Desktop Info",
             "default": false,
             "description": "Configures the desktop info widget.",
-            "property_order": 115
+            "property_order": 120
         },
         "DesktopPosition": {
             "type": "string",
@@ -219,7 +231,7 @@
                     "Bottom Right"
                 ]
             },
-            "property_order": 120
+            "property_order": 125
         },
         "DesktopInfoLevel": {
             "type": "string",
@@ -231,7 +243,7 @@
                 "Hardware",
                 "Custom"
             ],
-            "property_order": 125
+            "property_order": 130
         },
         "DesktopInfoCustomItems": {
             "type": "array",
@@ -240,13 +252,13 @@
             },
             "title": "Desktop Info Custom Items",
             "description": "If DesktopInfoLevel is set to Custom, use this array to determine which information to show. Available info are: HostName, Model, SerialNumber, Processor, IpAddress, MemSize, OsBuild, OsVersion, LastBootTime, StorageInfo, SupportPhone, SupportEmail, Separator.",
-            "property_order": 130
+            "property_order": 135
         },
         "DesktopInfoBackgroundColor": {
             "type": "string",
             "title": "Desktop Info Background Color",
             "description": "Configures the background color for the desktop info. Configure using Hex format. Defaults to Transparent",
-            "property_order": 135
+            "property_order": 140
         },
         "DesktopInfoBackgroundOpacity": {
             "type": "number",
@@ -279,27 +291,27 @@
                     "100%"
                 ]
             },
-            "property_order": 140
+            "property_order": 145
         },
         "DesktopInfoColorHighlight": {
             "type": "boolean",
             "title": "Desktop Info Color Highlight",
             "default": true,
             "description": "Configures whether to highlight the text in the desktop info. Defaults to true.",
-            "property_order": 145
+            "property_order": 150
         },
         "DesktopInfoFontSize": {
             "type": "integer",
             "title": "Desktop Info Font Size",
             "default": 17,
             "description": "Configures the font size for the desktop info. Defaults to 17.",
-            "property_order": 150
+            "property_order": 155
         },
         "CustomWidgetsPath": {
             "type": "string",
             "title": "Custom Widgets Path",
             "description": "Configures a path to a JSON file containing custom widgets to show on the Home view.",
-            "property_order": 155
+            "property_order": 160
         }
     }
 }
