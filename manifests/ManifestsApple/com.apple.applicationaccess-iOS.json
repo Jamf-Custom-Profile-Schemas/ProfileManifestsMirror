@@ -1,6 +1,6 @@
 {
     "title": "Restrictions (iOS) (com.apple.applicationaccess)",
-    "description": "iOS Restrictions preferences",
+    "description": "Use this section to define restrictions settings",
     "properties": {
         "allowCamera": {
             "type": "boolean",
@@ -207,7 +207,7 @@
         "forceAssistantProfanityFilter": {
             "type": "boolean",
             "title": "Enable Siri profanity filter",
-            "default": true,
+            "default": false,
             "description": "If Allow Siri is set to 'false', it also overrides this preference. This preference is ignored if the device does not have a passcode set.",
             "property_order": 160
         },
@@ -573,7 +573,7 @@
         "forceAuthenticationBeforeAutoFill": {
             "type": "boolean",
             "title": "Require Touch ID / Face ID authentication before Autofill",
-            "default": true,
+            "default": false,
             "property_order": 445
         },
         "allowPairedWatch": {
@@ -866,6 +866,16 @@
             "description": "If enabled, cannot use the denylist to restrict app usage.",
             "property_order": 650
         },
+        "autonomousSingleAppModePermittedAppIDs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Apps allow list for Autonomous Single App Mode"
+            },
+            "title": "Autonomous Single App Mode Permitted App IDs",
+            "description": "If present, the system allows apps identified by the bundle IDs listed in the array to autonomously enter Single App Mode. Requires a supervised device. Available in iOS 7 and later.",
+            "property_order": 655
+        },
         "ratingRegion": {
             "type": "string",
             "title": "Ratings region",
@@ -894,7 +904,7 @@
                     "United States"
                 ]
             },
-            "property_order": 655
+            "property_order": 660
         },
         "ratingApps": {
             "type": "integer",
@@ -929,7 +939,7 @@
                     "Don't Allow Apps"
                 ]
             },
-            "property_order": 660
+            "property_order": 665
         },
         "ratingMovies": {
             "type": "integer",
@@ -964,7 +974,7 @@
                     "Don't Allow Movies"
                 ]
             },
-            "property_order": 665
+            "property_order": 670
         },
         "ratingTVShows": {
             "type": "integer",
@@ -999,86 +1009,86 @@
                     "Don't Allow TV Shows"
                 ]
             },
-            "property_order": 670
+            "property_order": 675
         },
         "allowExplicitContent": {
             "type": "boolean",
             "title": "Allow playback of explicit music, podcasts, and iTunes U",
             "default": true,
-            "property_order": 675
+            "property_order": 680
         },
         "allowFilesUSBDriveAccess": {
             "type": "boolean",
             "title": "Allow Files USB Drive Access",
             "default": true,
             "description": "Allow connecting to and browsing any USB storage device in the Files App",
-            "property_order": 680
+            "property_order": 685
         },
         "allowBookstoreErotica": {
             "type": "boolean",
             "title": "Allow explicit sexual content in iBooks Store",
             "default": true,
-            "property_order": 685
+            "property_order": 690
         },
         "allowPasswordSharing": {
             "type": "boolean",
             "title": "Allow password sharing",
             "default": true,
-            "property_order": 690
+            "property_order": 695
         },
         "allowPasswordProximityRequests": {
             "type": "boolean",
             "title": "Allow proximity based password sharing requests",
             "default": true,
-            "property_order": 695
+            "property_order": 700
         },
         "forceDelayedSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer Software Updates",
             "default": false,
-            "property_order": 700
+            "property_order": 705
         },
         "enforcedSoftwareUpdateDelay": {
             "type": "integer",
             "title": "Deferred Software Updates Delay",
             "default": 30,
             "description": "Number of days the software updates will be hidden from the user.",
-            "property_order": 705
+            "property_order": 710
         },
         "allowRapidSecurityResponseInstallation": {
             "type": "boolean",
             "title": "Allow rapid security response installation",
             "default": true,
             "description": "Set to false to prevent the installation of rapid security responses",
-            "property_order": 710
+            "property_order": 715
         },
         "allowRapidSecurityResponseRemoval": {
             "type": "boolean",
             "title": "Allow rapid security response removal",
             "default": true,
             "description": "Set to false to prevent the removal of rapid security responses",
-            "property_order": 715
+            "property_order": 720
         },
         "allowFindMyDevice": {
             "type": "boolean",
             "title": "Allow Find My Devices",
             "default": true,
             "description": "Allows disabling Find My Device in the Find My app",
-            "property_order": 720
+            "property_order": 725
         },
         "allowFindMyFriends": {
             "type": "boolean",
             "title": "Allow Find My Friends",
             "default": true,
             "description": "Allows disabling Find My Friends in the Find My app",
-            "property_order": 725
+            "property_order": 730
         },
         "allowFilesNetworkDriveAccess": {
             "type": "boolean",
             "title": "Allow Files Network Drive Access",
             "default": true,
             "description": "Allows preventing connection to network drives in the Files app",
-            "property_order": 730
+            "property_order": 735
         }
     }
 }

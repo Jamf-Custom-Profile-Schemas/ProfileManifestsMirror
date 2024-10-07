@@ -1,6 +1,6 @@
 {
     "title": "Restrictions (tvOS) (com.apple.applicationaccess)",
-    "description": "tvOS Restrictions preferences",
+    "description": "Use this section to define restrictions settings",
     "properties": {
         "allowDeviceNameModification": {
             "type": "boolean",
@@ -248,7 +248,7 @@
         "forceAirPlayIncomingRequestsPairingPassword": {
             "type": "boolean",
             "title": "Require passcode on first AirPlay pairing",
-            "default": true,
+            "default": false,
             "description": "It is recommended to use the AirPlay Security Payload.",
             "property_order": 95
         },
@@ -279,6 +279,13 @@
             "default": 30,
             "description": "Number of days the software updates will be hidden from the user.",
             "property_order": 115
+        },
+        "allowDeviceSleep": {
+            "type": "boolean",
+            "title": "Allow Device Sleep",
+            "default": true,
+            "description": "If 'false', the system prevents the device from automatically sleeping. Requires a supervised device. Available in tvOS 13 and later.",
+            "property_order": 120
         }
     }
 }

@@ -366,7 +366,7 @@
             "type": "string",
             "title": "VisualBasic macro security level",
             "default": "DisabledWithWarnings",
-            "description": "The VisualBasicMacroExecutionState1 setting controls whether macros are ever allowed to execute, and what the user experience is when opening\na file that contains a macro. By default, macros will only run after the user is presented with an alert when opening a file that contains a macro. The\nuser must make a choice whether to allow or deny macros for each individual file, each time that file is opened.",
+            "description": "The VisualBasicMacroExecutionState1 setting controls whether macros are ever allowed to execute, and what the user experience is when opening a file that contains a macro. By default, macros will only run after the user is presented with an alert when opening a file that contains a macro. The user must make a choice whether to allow or deny macros for each individual file, each time that file is opened.",
             "links": [
                 {
                     "rel": "More information",

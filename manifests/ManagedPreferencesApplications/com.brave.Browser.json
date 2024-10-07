@@ -4964,13 +4964,15 @@
             "enum": [
                 5,
                 1,
-                4
+                4,
+                6
             ],
             "options": {
                 "enum_titles": [
                     "Open New Tab Page",
                     "Restore the last session",
-                    "Open a list of URLs"
+                    "Open a list of URLs",
+                    "Open a list of URLs and restore the last session"
                 ]
             },
             "property_order": 1540
@@ -5151,6 +5153,28 @@
             },
             "property_order": 1600
         },
+        "BraveAIChatEnabled": {
+            "type": "integer",
+            "title": "Enable Brave AI Chat",
+            "default": 1,
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy"
+                }
+            ],
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disable",
+                    "Enable"
+                ]
+            },
+            "property_order": 1605
+        },
         "SUFeedURL": {
             "type": "string",
             "title": "Sparkle Feed URL",
@@ -5162,7 +5186,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1605
+            "property_order": 1610
         },
         "SUEnableAutomaticChecks": {
             "type": "boolean",
@@ -5175,7 +5199,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1610
+            "property_order": 1615
         },
         "SUScheduledCheckInterval": {
             "type": "integer",
@@ -5188,7 +5212,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1615
+            "property_order": 1620
         },
         "SUAllowsAutomaticUpdates": {
             "type": "boolean",
@@ -5201,7 +5225,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1620
+            "property_order": 1625
         },
         "SUAutomaticallyUpdate": {
             "type": "boolean",
@@ -5214,7 +5238,7 @@
                     "href": "https://sparkle-project.org/documentation/customization/"
                 }
             ],
-            "property_order": 1625
+            "property_order": 1630
         }
     }
 }

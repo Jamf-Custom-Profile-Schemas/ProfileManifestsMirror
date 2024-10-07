@@ -56,6 +56,42 @@
             "title": "Expiration Date",
             "description": "If provided, will show an OTA-delivered profile as \"expired\" on a specific date. Users will be offered an \"Update\" button when the profile has expired.",
             "property_order": 30
+        },
+        "PayloadScope": {
+            "type": "string",
+            "title": "Payload Scope",
+            "default": "User",
+            "description": "Defines whether the profile should be installed system-wide or only for the installing user",
+            "enum": [
+                "System",
+                "User"
+            ],
+            "property_order": 35
+        },
+        "TargetDeviceType": {
+            "type": "integer",
+            "title": "Target Device Type",
+            "default": 0,
+            "description": "The type of platform of the target device for this profile",
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "options": {
+                "enum_titles": [
+                    "Any or Unspecified",
+                    "iPhone/iPad/iPod Touch",
+                    "Apple Watch",
+                    "HomePod",
+                    "Apple TV",
+                    "Mac"
+                ]
+            },
+            "property_order": 40
         }
     }
 }

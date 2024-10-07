@@ -356,7 +356,12 @@
                     "description": "Use an alternate set of credentials when in System mode (AKA not a loginwindow profile). This can be used to tell EAPOLClient to use the computer password in a bound active directory scenario for authentication.",
                     "enum": [
                         "ActiveDirectory"
-                    ]
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Active Directory"
+                        ]
+                    }
                 },
                 "SystemModeUseOpenDirectoryCredentials": {
                     "type": "boolean",
@@ -431,32 +436,6 @@
             "default": false,
             "description": "If set, force a non-default authentication method. (if YES, uses certificate from PayloadCertificateUUID).",
             "property_order": 140
-        },
-        "Interface": {
-            "type": "string",
-            "title": "Interface",
-            "description": "The wireless interface to use",
-            "enum": [
-                "AnyEthernet",
-                "FirstEthernet",
-                "FirstActiveEthernet",
-                "SecondEthernet",
-                "SecondActiveEthernet",
-                "ThirdEthernet",
-                "ThirdActiveEthernet"
-            ],
-            "options": {
-                "enum_titles": [
-                    "Any Ethernet",
-                    "First Ethernet",
-                    "First Active Ethernet",
-                    "Second Ethernet",
-                    "Second Active Ethernet",
-                    "Third Ethernet",
-                    "Third Active Ethernet"
-                ]
-            },
-            "property_order": 145
         }
     }
 }

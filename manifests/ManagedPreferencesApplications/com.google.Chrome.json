@@ -4964,13 +4964,15 @@
             "enum": [
                 5,
                 1,
-                4
+                4,
+                6
             ],
             "options": {
                 "enum_titles": [
                     "Open New Tab Page",
                     "Restore the last session",
-                    "Open a list of URLs"
+                    "Open a list of URLs",
+                    "Open a list of URLs and restore the last session"
                 ]
             },
             "property_order": 1540

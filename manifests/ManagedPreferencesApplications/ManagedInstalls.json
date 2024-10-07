@@ -421,6 +421,19 @@
             ],
             "property_order": 235
         },
+        "IgnoreMiddleware": {
+            "type": "boolean",
+            "title": "Ignore Middleware",
+            "default": false,
+            "description": "If true, Munki will ignore installed middleware. Useful for when moving away from middleware.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#details"
+                }
+            ],
+            "property_order": 240
+        },
         "AggressiveUpdateNotificationDays": {
             "type": "integer",
             "title": "Aggressive Update Notification Days",
@@ -432,7 +445,7 @@
                     "href": "https://github.com/munki/munki/wiki/aggressive-update-notifications-in-munki-5"
                 }
             ],
-            "property_order": 240
+            "property_order": 245
         }
     }
 }

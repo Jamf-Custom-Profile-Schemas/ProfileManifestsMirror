@@ -137,6 +137,19 @@
             ],
             "property_order": 45
         },
+        "SharePointOnPremPrioritizationPolicy": {
+            "type": "integer",
+            "title": "Prioritize SharePoint Server on-premise",
+            "default": 0,
+            "description": "Determines whether or not the sync app should set up sync for SharePoint Server on-premises or SharePoint in Microsoft 365 first during the first-run scenario when the account is the same for both SharePoint Server and SharePoint in Microsoft 365 in a hybrid scenario.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#sharepointonpremprioritizationpolicy"
+                }
+            ],
+            "property_order": 50
+        },
         "SharePointOnPremTenantName": {
             "type": "string",
             "title": "SharePoint Server Tenant Name",
@@ -147,7 +160,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#SharePointOnPremTenantName"
                 }
             ],
-            "property_order": 50
+            "property_order": 55
         },
         "SharePointOnPremPrioritzationPolicy": {
             "type": "integer",
@@ -169,7 +182,7 @@
                     "SharePoint Server"
                 ]
             },
-            "property_order": 55
+            "property_order": 60
         },
         "DefaultToBusinessFRE": {
             "type": "boolean",
@@ -180,7 +193,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#DefaultToBusinessFRE"
                 }
             ],
-            "property_order": 60
+            "property_order": 65
         },
         "EnableAddAccounts": {
             "type": "boolean",
@@ -191,7 +204,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#EnableAddAccounts"
                 }
             ],
-            "property_order": 65
+            "property_order": 70
         },
         "FilesOnDemandEnabled": {
             "type": "boolean",
@@ -203,7 +216,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#FilesOnDemandEnabled"
                 }
             ],
-            "property_order": 70
+            "property_order": 75
         },
         "IsHydrationToastAllowed": {
             "type": "boolean",
@@ -214,7 +227,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#IsHydrationToastAllowed"
                 }
             ],
-            "property_order": 75
+            "property_order": 80
         },
         "HydrationDisallowedApps": {
             "type": "string",
@@ -225,7 +238,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#HydrationDisallowedApps"
                 }
             ],
-            "property_order": 80
+            "property_order": 85
         },
         "EnableODIgnore": {
             "type": "array",
@@ -241,7 +254,20 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#EnableODIgnore"
                 }
             ],
-            "property_order": 85
+            "property_order": 90
+        },
+        "EnableSyncAdminReports": {
+            "type": "integer",
+            "title": "Enable Sync Admin Reports",
+            "default": 0,
+            "description": "This setting lets the OneDrive sync app report device and health data that's to be included in sync admin reports. You must enable this setting on the devices you want to get reports from.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#enablesyncadminreports"
+                }
+            ],
+            "property_order": 95
         },
         "EnableAllOcsiClients": {
             "type": "boolean",
@@ -253,7 +279,20 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#EnableAllOcsiClients"
                 }
             ],
-            "property_order": 90
+            "property_order": 100
+        },
+        "DisableAutoConfig": {
+            "type": "integer",
+            "title": "Disable Auto Config",
+            "default": 0,
+            "description": "Determines whether or not the sync app can automatically sign in.\n\nIf you enable this setting, the sync app is prevented from automatically signing with an existing Microsoft Entra credential that is made available to Microsoft applications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#disableautoconfig"
+                }
+            ],
+            "property_order": 105
         },
         "DisableHydrationToast": {
             "type": "boolean",
@@ -265,7 +304,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#DisableHydrationToast"
                 }
             ],
-            "property_order": 95
+            "property_order": 110
         },
         "BlockExternalSync": {
             "type": "boolean",
@@ -277,7 +316,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#BlockExternalSync"
                 }
             ],
-            "property_order": 100
+            "property_order": 115
         },
         "AllowTenantList": {
             "type": "object",
@@ -299,7 +338,7 @@
                     "title": "Check to Allow"
                 }
             },
-            "property_order": 105
+            "property_order": 120
         },
         "BlockTenantList": {
             "type": "object",
@@ -321,7 +360,7 @@
                     "title": "Check to Block"
                 }
             },
-            "property_order": 110
+            "property_order": 125
         },
         "KFMOptInWithWizard": {
             "type": "string",
@@ -332,7 +371,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMOptInWithWizard"
                 }
             ],
-            "property_order": 115
+            "property_order": 130
         },
         "KFMSilentOptIn": {
             "type": "string",
@@ -343,7 +382,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMSilentOptIn"
                 }
             ],
-            "property_order": 120
+            "property_order": 135
         },
         "KFMSilentOptInDesktop": {
             "type": "boolean",
@@ -355,7 +394,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMSilentOptInDesktop"
                 }
             ],
-            "property_order": 125
+            "property_order": 140
         },
         "KFMSilentOptInDocuments": {
             "type": "boolean",
@@ -367,7 +406,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMSilentOptInDocuments"
                 }
             ],
-            "property_order": 130
+            "property_order": 145
         },
         "KFMSilentOptInWithNotification": {
             "type": "boolean",
@@ -379,7 +418,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMSilentOptInWithNotification"
                 }
             ],
-            "property_order": 135
+            "property_order": 150
         },
         "KFMBlockOptIn": {
             "type": "integer",
@@ -403,7 +442,7 @@
                     "Prevent & Redirect Previous KFM'd Folders to the Device"
                 ]
             },
-            "property_order": 140
+            "property_order": 155
         },
         "KFMBlockOptOut": {
             "type": "boolean",
@@ -415,7 +454,7 @@
                     "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos#KFMBlockOptOut"
                 }
             ],
-            "property_order": 145
+            "property_order": 160
         }
     }
 }
