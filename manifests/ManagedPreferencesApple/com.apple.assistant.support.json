@@ -23,6 +23,21 @@
                 ]
             },
             "property_order": 10
+        },
+        "Search Queries Data Sharing Status": {
+            "type": "integer",
+            "title": "Improve Search",
+            "enum": [
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Enabled",
+                    "Disabled"
+                ]
+            },
+            "property_order": 15
         }
     }
 }
