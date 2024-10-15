@@ -150,6 +150,13 @@
             "title": "Trusted Root Certs File",
             "description": "This is the full path to an alternate file to use for validating host SSL certificates. It must be in Privacy Enhanced Mail (PEM) format. Set this if your users are on networks with decrypting proxies.",
             "property_order": 120
+        },
+        "AutomaticErrorReporting": {
+            "type": "boolean",
+            "title": "Help improve Drive for desktop",
+            "default": true,
+            "description": "Automatically send diagnostic logs to Google when Drive for desktop encounters a problem.",
+            "property_order": 125
         }
     }
 }
