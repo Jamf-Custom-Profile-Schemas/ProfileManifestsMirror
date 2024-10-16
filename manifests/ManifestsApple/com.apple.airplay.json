@@ -11,31 +11,41 @@
                     "DeviceID": {
                         "type": "string",
                         "title": "Device ID",
-                        "description": "The AirPlay destination's MAC address",
+                        "description": "The device ID of the AirPlay destination in the format 'xx:xx:xx:xx:xx:xx'. This field isn't case-sensitive.\nThe list of visible AirPlay destinations will be limited to devices that are present in the `AllowList` field of all installed AirPlay payloads.\nSpecifying the same MACAddress more than once, whether in the same payload across different payloads, will result in undefined behavior.\nAs of iOS 18 and macOS 15, `DeviceID` isn't supported, as tvOS 18 AirPlay destinations do not support it.",
                         "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
+                    },
+                    "DeviceName": {
+                        "type": "string",
+                        "title": "Device Name",
+                        "description": "The name of the AirPlay device.\nThe list of visible AirPlay destinations will be limited to devices that are present in the AllowList field of all installed AirPlay payloads."
                     }
                 }
             },
             "title": "Allow List",
-            "description": "List of MAC addresses of AirPlay destinations that the device is restricted to. If this list is empty, the device can connect to any device.",
+            "description": "If present, only AirPlay destinations in this list are available to the device. This allow list applies to supervised devices.",
             "property_order": 5
         },
         "Whitelist": {
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "Allowlist Content Item",
+                "title": "AllowList Content Item",
                 "properties": {
                     "DeviceID": {
                         "type": "string",
                         "title": "Device ID",
-                        "description": "The AirPlay destination's MAC address",
+                        "description": "The device ID of the AirPlay destination in the format 'xx:xx:xx:xx:xx:xx'. This field isn't case-sensitive.\nThe list of visible AirPlay destinations will be limited to devices that are present in the `AllowList` field of all installed AirPlay payloads.\nSpecifying the same MACAddress more than once, whether in the same payload across different payloads, will result in undefined behavior.\nAs of iOS 18 and macOS 15, `DeviceID` isn't supported, as tvOS 18 AirPlay destinations do not support it.",
                         "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
+                    },
+                    "DeviceName": {
+                        "type": "string",
+                        "title": "Device Name",
+                        "description": "The name of the AirPlay device.\nThe list of visible AirPlay destinations will be limited to devices that are present in the AllowList field of all installed AirPlay payloads."
                     }
                 }
             },
-            "title": "Allowlist",
-            "description": "List of MAC addresses of AirPlay destinations that the device is restricted to. If this list is empty, the device can connect to any device.",
+            "title": "Allow List (legacy)",
+            "description": "Use 'AllowList' instead. This key is deprecated in iOS 14.5 and macOS 11.3.",
             "property_order": 10
         },
         "Passwords": {
@@ -48,23 +58,23 @@
                     "DeviceName": {
                         "type": "string",
                         "title": "Device Name",
-                        "description": "The AirPlay destination's name"
+                        "description": "The name of the AirPlay destination; used in iOS, and available in macOS 15 and later."
                     },
                     "DeviceID": {
                         "type": "string",
                         "title": "Device ID",
-                        "description": "The AirPlay destination's MAC address",
+                        "description": "The device ID of the AirPlay destination; used in macOS.\nIn macOS 15 and later, 'DeviceID' is deprecated as tvOS 18 AirPlay destinations do not support it; use 'DeviceName' instead.",
                         "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
                     },
                     "Password": {
                         "type": "string",
                         "title": "Password",
-                        "description": "The password for the AirPlay destination"
+                        "description": "The password for the AirPlay destination."
                     }
                 }
             },
             "title": "Passwords",
-            "description": "Sets passwords for known AirPlay destinations",
+            "description": "If present, sets passwords for known AirPlay destinations. Using multiple entries for the same destination, whether within the same payload or across multiple installed payloads, is an error and results in undefined behavior.",
             "property_order": 15
         }
     }

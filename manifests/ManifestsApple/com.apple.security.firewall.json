@@ -5,21 +5,21 @@
         "EnableFirewall": {
             "type": "boolean",
             "title": "Enable Firewall",
-            "description": "Enables the firewall on managed Mac computers.",
+            "description": "If 'true', the system enables the firewall.",
             "property_order": 5
         },
         "BlockAllIncoming": {
             "type": "boolean",
             "title": "Block All Incoming Connections",
             "default": false,
-            "description": "Blocks all incoming connections except those required for basic Internet services, such as DHCP, Bonjour and IPSec.",
+            "description": "If 'true', the system enables blocking all incoming connections.",
             "property_order": 10
         },
         "EnableStealthMode": {
             "type": "boolean",
             "title": "Enable Stealth Mode",
             "default": false,
-            "description": "Don't respond to or acknowledge attempts to access this computer from the network by test applications using ICMP, such as Ping.",
+            "description": "If 'true', the system enables stealth mode.",
             "property_order": 15
         },
         "Applications": {
@@ -31,8 +31,8 @@
                 "properties": {
                     "BundleID": {
                         "type": "string",
-                        "title": "Bundle ID",
-                        "description": "Identifies the application"
+                        "title": "Application Identifier",
+                        "description": "The bundle identifier for the app."
                     },
                     "Name": {
                         "type": "string",
@@ -41,24 +41,26 @@
                     },
                     "Allowed": {
                         "type": "boolean",
-                        "title": "Allowed",
-                        "description": "Specifies whether or not incoming connections are allowed."
+                        "title": "Allow connections",
+                        "description": "If 'true', the system allows connections for the app."
                     }
                 }
             },
             "title": "Applications",
-            "description": "Add applications to either allow or block them from connecting to your network and the Internet.",
+            "description": "The list of apps with connections that the firewall controls.",
             "property_order": 20
         },
         "EnableLogging": {
             "type": "boolean",
             "title": "Enable Logging",
             "default": false,
+            "description": "If 'true', the system enables logging. Available in macOS 12 and later. Removed in macOS 15.",
             "property_order": 25
         },
         "LoggingOption": {
             "type": "string",
             "title": "Logging Option",
+            "description": "The type of logging. Available in macOS 12 and later. Removed in macOS 15.",
             "enum": [
                 "throttled",
                 "brief",
@@ -77,12 +79,14 @@
             "type": "boolean",
             "title": "Allow Incoming Connections to macOS-Bundled Software",
             "default": true,
+            "description": "If 'true', the system allows built-in software to receive incoming connections. Available in macOS 12.3 and later.\nThe system ensures that 'AllowSigned' always has a value. If missing from the payload, the system sets it to 'true'.",
             "property_order": 35
         },
         "AllowSignedApp": {
             "type": "boolean",
             "title": "Allow Incoming Connections to Downloaded Signed Apps",
             "default": true,
+            "description": "If 'true', the system allows downloaded signed software to receive incoming connections. Available in macOS 12.3 and later.\nThe system ensures that 'AllowSignedApp' always has a value. If missing from the payload, the system sets it to 'true'.",
             "property_order": 40
         }
     }

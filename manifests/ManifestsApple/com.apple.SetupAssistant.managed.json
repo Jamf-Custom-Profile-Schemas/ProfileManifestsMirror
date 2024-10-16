@@ -1,84 +1,7 @@
 {
     "title": "Setup Assistant (com.apple.SetupAssistant.managed)",
-    "description": "Setup Assistant settings",
+    "description": "Use this section to define which Setup Assistant items should be skipped.",
     "properties": {
-        "SkipAppearance": {
-            "type": "boolean",
-            "title": "Skip Appearance window",
-            "default": false,
-            "description": "Skips the Choose Your Look window.",
-            "property_order": 5
-        },
-        "SkipCloudSetup": {
-            "type": "boolean",
-            "title": "Skip iCloud",
-            "default": false,
-            "description": "Skips the Apple ID setup window.",
-            "property_order": 10
-        },
-        "SkipiCloudStorageSetup": {
-            "type": "boolean",
-            "title": "Skip iCloud Storage window",
-            "default": false,
-            "description": "Skips the iCloud Storage window.",
-            "property_order": 15
-        },
-        "SkipPrivacySetup": {
-            "type": "boolean",
-            "title": "Skip Privacy consent window",
-            "default": false,
-            "description": "Skips the Privacy consent window.",
-            "property_order": 20
-        },
-        "SkipSiriSetup": {
-            "type": "boolean",
-            "title": "Skip Siri",
-            "default": false,
-            "description": "Skips the Siri setup window.",
-            "property_order": 25
-        },
-        "SkipTrueTone": {
-            "type": "boolean",
-            "title": "Skip True Tone Display window",
-            "default": false,
-            "description": "Skips the True Tone Display window.",
-            "property_order": 30
-        },
-        "SkipScreenTime": {
-            "type": "boolean",
-            "title": "Skip Screen Time window",
-            "default": false,
-            "description": "Skips the Screen Time window.",
-            "property_order": 35
-        },
-        "SkipTouchIDSetup": {
-            "type": "boolean",
-            "title": "Skip TouchID",
-            "default": false,
-            "description": "Skips the TouchID setup window.",
-            "property_order": 40
-        },
-        "SkipUnlockWithWatch": {
-            "type": "boolean",
-            "title": "Skip Unlock with Apple Watch",
-            "default": false,
-            "description": "Skips the Unlock with Apple Watch setup window.",
-            "property_order": 45
-        },
-        "SkipAccessibility": {
-            "type": "boolean",
-            "title": "Skip Accessibility",
-            "default": false,
-            "description": "Skips the accessibility setup window.",
-            "property_order": 50
-        },
-        "SkipWallpaper": {
-            "type": "boolean",
-            "title": "Skip Wallpaper",
-            "default": false,
-            "description": "If 'true', the system skips the Wallpaper selection window.",
-            "property_order": 55
-        },
         "SkipSetupItems": {
             "type": "array",
             "items": {
@@ -95,12 +18,14 @@
                     "DeviceToDeviceMigration",
                     "Diagnostics",
                     "DisplayTone",
+                    "EnableLockdownMode",
                     "FileVault",
                     "HomeButtonSensitivity",
                     "iCloudDiagnostics",
                     "iCloudStorage",
                     "iMessageAndFaceTime",
                     "Intelligence",
+                    "Keyboard",
                     "Location",
                     "MessagingActivationUsingPhoneNumber",
                     "OnBoarding",
@@ -113,6 +38,7 @@
                     "ScreenTime",
                     "SIMSetup",
                     "Siri",
+                    "SpokenLanguage",
                     "SoftwareUpdate",
                     "TermsOfAddress",
                     "TOS",
@@ -135,12 +61,14 @@
                         "Device to Device Migration",
                         "Diagnostics",
                         "Display Tone",
+                        "Enable Lockdown Mode",
                         "FileVault",
                         "Home Button Sensitivity",
                         "iCloud Diagnostics",
                         "iCloud Documents and Desktop",
                         "iMessage and FaceTime",
                         "Intelligence",
+                        "Keyboard",
                         "Location",
                         "Messaging Activation Using Phone Number",
                         "OnBoarding",
@@ -153,6 +81,7 @@
                         "ScreenTime",
                         "SIM Setup",
                         "Siri",
+                        "Spoken Language",
                         "Software Update",
                         "Terms of Address",
                         "Terms of Service",
@@ -165,14 +94,91 @@
                     ]
                 }
             },
-            "title": "Setup Items to Skip",
-            "description": "List of setup items to skip",
+            "title": "Skip Setup Items",
+            "description": "An array strings that describe the setup items to skip. SkipKeys provides a list of valid strings and their meanings. Available in iOS 14, macOS 15 and later.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://developer.apple.com/documentation/devicemanagement/skipkeys"
                 }
             ],
+            "property_order": 5
+        },
+        "SkipAppearance": {
+            "type": "boolean",
+            "title": "Skip Appearance window",
+            "default": false,
+            "description": "If 'true', the system skips the Choose Your Look pane.",
+            "property_order": 10
+        },
+        "SkipCloudSetup": {
+            "type": "boolean",
+            "title": "Skip iCloud",
+            "default": false,
+            "description": "If 'true', the system skips the Apple Account setup pane.",
+            "property_order": 15
+        },
+        "SkipiCloudStorageSetup": {
+            "type": "boolean",
+            "title": "Skip iCloud Storage window",
+            "default": false,
+            "description": "If 'true', the system skips the iCloud Storage pane.",
+            "property_order": 20
+        },
+        "SkipPrivacySetup": {
+            "type": "boolean",
+            "title": "Skip Privacy consent window",
+            "default": false,
+            "description": "If 'true', the system skips the Privacy consent pane.",
+            "property_order": 25
+        },
+        "SkipSiriSetup": {
+            "type": "boolean",
+            "title": "Skip Siri",
+            "default": false,
+            "description": "If 'true', the system skips the Siri setup pane.",
+            "property_order": 30
+        },
+        "SkipTrueTone": {
+            "type": "boolean",
+            "title": "Skip True Tone Display window",
+            "default": false,
+            "description": "If 'true', the system skips the True Tone Display pane.",
+            "property_order": 35
+        },
+        "SkipScreenTime": {
+            "type": "boolean",
+            "title": "Skip Screen Time window",
+            "default": false,
+            "description": "If 'true', the system skips the Screen Time pane.",
+            "property_order": 40
+        },
+        "SkipTouchIDSetup": {
+            "type": "boolean",
+            "title": "Skip TouchID",
+            "default": false,
+            "description": "If 'true', the system skips the Touch ID setup pane.",
+            "property_order": 45
+        },
+        "SkipUnlockWithWatch": {
+            "type": "boolean",
+            "title": "Skip Unlock with Apple Watch",
+            "default": false,
+            "description": "If 'true', the system skips the Unlock With Apple Watch pane.",
+            "property_order": 50
+        },
+        "SkipAccessibility": {
+            "type": "boolean",
+            "title": "Skip Accessibility",
+            "default": false,
+            "description": "If 'true', the system skips the Accessibility pane.",
+            "property_order": 55
+        },
+        "SkipWallpaper": {
+            "type": "boolean",
+            "title": "Skip Wallpaper",
+            "default": false,
+            "description": "If 'true', the system skips the Wallpaper selection window.",
             "property_order": 60
         }
     }

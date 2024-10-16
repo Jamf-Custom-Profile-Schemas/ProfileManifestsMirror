@@ -6,25 +6,25 @@
             "type": "boolean",
             "title": "Prevent users from removing this profile",
             "default": false,
-            "description": "Prevent manual removal of profiles installed through an MDM. Profiles installed manually can be removed manually, but only by using administrative authority.",
+            "description": "If present and set to 'true', the user can't delete the profile unless the profile has a removal password and the user provides it.\nOn macOS 10.15 and later, this key only affects removal of manually installed profiles. If set to 'true' and no profile removal payload is present, removing the profile requires admin auth.\nOn macOS versions prior to 10.15, this key prevents admins from removing MDM installed profiles. However, as of macOS 10.15, users can never remove MDM profiles, not even the admin.\nOn iOS users can't remove a MDM profile.\nRequires a supervised device.",
             "property_order": 5
         },
         "RemovalDate": {
             "type": "date",
             "title": "Removal Date",
-            "description": "The date on which the profile will be automatically removed.",
+            "description": "The date when the system automatically removes the profile.",
             "property_order": 10
         },
         "DurationUntilRemoval": {
             "type": "number",
             "title": "Duration Until Removal",
-            "description": "Number of seconds until the profile is automatically removed. If RemovalDate key is present, its value is used instead.",
+            "description": "The number of seconds until the profile is automatically removed. If the 'RemovalDate' key is present, the system uses whichever field yields the earliest date.",
             "property_order": 15
         },
         "ConsentText": {
             "type": "object",
             "title": "Consent Text",
-            "description": "Dictionary specifying localized consent text that will be displayed as a warning during profile installation.",
+            "description": "A dictionary that includes:\n* A key that contains the IETF BCP 47 identifier for a language, such as en or jp\n* A value that contains the agreement localized to language specified by the key\nThe dictionary can also contain an optional key, 'default', with its value consisting of the unlocalized (usually in en) agreement.\nThe system always displays the agreement in a dialog, and the user needs to agree before the system can install the profile.\nThe system chooses a localized version in the order of preference that the user specifies in macOS, or based on the user's current language setting in iOS. If there's no exact match, the system uses the default localization. If there's no default localization, the system uses the en localization. If there's no en localization, the system uses the first available localization.\nProvide a default value, if possible. The system won't display a warning if the user's locale doesn't match any localization in the 'ConsentText' dictionary.",
             "properties": {
                 "{{key}}": {
                     "type": "string",
@@ -48,20 +48,20 @@
             "type": "boolean",
             "title": "Has removal passcode",
             "default": false,
-            "description": "Specifes if there is a removal passcode for the profile.",
+            "description": "Set to 'true' if there's a removal passcode.",
             "property_order": 25
         },
         "PayloadExpirationDate": {
             "type": "date",
             "title": "Expiration Date",
-            "description": "If provided, will show an OTA-delivered profile as \"expired\" on a specific date. Users will be offered an \"Update\" button when the profile has expired.",
+            "description": "The date when a profile is no longer valid and the system presents an update button to the user.",
             "property_order": 30
         },
         "PayloadScope": {
             "type": "string",
             "title": "Payload Scope",
             "default": "User",
-            "description": "Defines whether the profile should be installed system-wide or only for the installing user",
+            "description": "A string that defines whether to install the profile for the system or the user. In many cases, it determines the location of certificate items, such as keychains. Though it's not possible to declare different payload scopes, payloads like VPN can automatically install their items in both scopes, if needed.",
             "enum": [
                 "System",
                 "User"
@@ -79,7 +79,8 @@
                 2,
                 3,
                 4,
-                5
+                5,
+                6
             ],
             "options": {
                 "enum_titles": [
@@ -88,7 +89,8 @@
                     "Apple Watch",
                     "HomePod",
                     "Apple TV",
-                    "Mac"
+                    "Mac",
+                    "Vision Pro"
                 ]
             },
             "property_order": 40

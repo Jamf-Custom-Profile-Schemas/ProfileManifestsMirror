@@ -6,10 +6,11 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "Domain"
+                "title": "Domain",
+                "description": "An email address."
             },
             "title": "Unmarked Email Domains",
-            "description": "Mail messages that are addressed to domains not in the approved list are marked in red.",
+            "description": "An array of domains. The system considers email addresses that lack a suffix matching any of these strings out of domain and marked in Mail.\nAvailable in iOS 8 and later and macOS 10.10 and later.",
             "property_order": 5
         },
         "WebDomains": {
@@ -19,7 +20,7 @@
                 "title": "Domain"
             },
             "title": "Managed Safari Web Domains",
-            "description": "Downloads from Safari will be considered managed documents if they originate from a managed domain.",
+            "description": "An array of domains. The system considers URLs matching the patterns listed in this property managed.\nAvailable in iOS 9.3 and later.",
             "property_order": 10
         },
         "SafariPasswordAutoFillDomains": {
@@ -29,7 +30,7 @@
                 "title": "Domain"
             },
             "title": "Safari Password Domains",
-            "description": "User names and passwords entered in websites with Safari can be saved if the domain is listed.",
+            "description": "An array of domains. Users can only save passwords in Safari from URLs matching the patterns listed here. This property doesn't disable the autofill feature itself.\nSupervised devices or Shared iPads need this property to enable saving passwords in Safari.\nAvailable in iOS 9.3 and later.",
             "property_order": 15
         },
         "CrossSiteTrackingPreventionRelaxedDomains": {
@@ -39,7 +40,7 @@
                 "title": "Domain"
             },
             "title": "Safari Relaxed Cross Site Tracking Domains",
-            "description": "Up to 10 domains can be added for which Cross-Site Tracking Prevention will be relaxed. Domains should be listed as theacmeinc.com which includes any subdomains (without needing to use *theacmeinc.com)",
+            "description": "An array of up to 10 strings. URLs matching the patterns listed here have relaxed enforcement of cross-site tracking prevention.\nAvailable in iOS 16.2 and later and macOS 13.1 and later.",
             "property_order": 20
         }
     }

@@ -1,18 +1,23 @@
 {
-    "title": "System Policy: Control (com.apple.systempolicy.control)",
+    "title": "System Policy Control (com.apple.systempolicy.control)",
     "description": "System Policy: Control settings",
     "properties": {
         "EnableAssessment": {
             "type": "boolean",
             "title": "Enable Gatekeeper",
-            "description": "If the key is present and has a value of YES, Gatekeeper is enabled. If the key is present and has a value of NO, Gatekeeper is disabled.",
+            "description": "If 'true', enables Gatekeeper.",
             "property_order": 5
         },
         "AllowIdentifiedDevelopers": {
             "type": "boolean",
             "title": "Allow Identified Developers",
-            "description": "If the key is present and has a value of YES, Gatekeeper's \"Mac App Store and identified developers” option is chosen. If the key is present and has a value of NO, Gatekeeper's \"Mac App Store” option is chosen. If EnableAssessment is not true, this key has no effect.",
+            "description": "If 'true', enables Gatekeeper's 'Mac App Store and identified developers' option.\nIf 'false', enables Gatekeeper's 'Mac App Store' option.\nIf the value of 'EnableAssessment' isn't set to 'true', this key has no effect.",
             "property_order": 10
+        },
+        "EnableXProtectMalwareUpload": {
+            "type": "boolean",
+            "description": "If 'false', prevents Gatekeeper from prompting the user to upload blocked malware to Apple for purposes of improving malware detection.",
+            "property_order": 15
         }
     }
 }

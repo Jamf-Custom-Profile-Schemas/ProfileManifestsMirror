@@ -1,11 +1,11 @@
 {
-    "title": "Parental Controls: Application Access (com.apple.applicationaccess.new)",
-    "description": "Configures Parental Controls: Application Access settings",
+    "title": "Parental Controls: Application Restrictions (com.apple.applicationaccess.new)",
+    "description": "Configures Parental Controls: Application Restrictions settings",
     "properties": {
         "familyControlsEnabled": {
             "type": "boolean",
             "title": "Enable application access restrictions",
-            "description": "Set to true to enable application access restrictions.",
+            "description": "If 'true', enables app access restrictions.",
             "property_order": 5
         },
         "whiteList": {
@@ -18,12 +18,12 @@
                     "bundleID": {
                         "type": "string",
                         "title": "Bundle Identifier",
-                        "description": "Bundle ID of application."
+                        "description": "The bundle ID of the app."
                     },
                     "displayName": {
                         "type": "string",
                         "title": "Display Name",
-                        "description": "Display name of the application."
+                        "description": "The name used for display purposes."
                     },
                     "subApps": {
                         "type": "array",
@@ -33,7 +33,7 @@
                             "description": "Bundle ID of application."
                         },
                         "title": "Sub Apps",
-                        "description": "For applications that include nested helper applications, describes the signatures of embedded applications."
+                        "description": "An array of nested helper applications."
                     },
                     "appStore": {
                         "type": "boolean",
@@ -42,12 +42,13 @@
                     "disabled": {
                         "type": "boolean",
                         "title": "Disabled",
-                        "description": "Specifies whether this application information is to be included in the allowlist or not."
+                        "default": false,
+                        "description": "If 'true', this app isn't added to the allow list."
                     }
                 }
             },
             "title": "Allowlisted Applications by Code Signature",
-            "description": "List of code signatures for applications that are allowed to run.",
+            "description": "The allow list of app item dictionaries.",
             "property_order": 10
         },
         "pathWhiteList": {
@@ -55,10 +56,10 @@
             "items": {
                 "type": "string",
                 "title": "Folder Path",
-                "description": "The absolute path to a folder to allowlist."
+                "description": "A path."
             },
             "title": "Allowlisted Application Folders",
-            "description": "The user can always launch applications in these folders.",
+            "description": "The paths to apps in the allow list. This property is deprecated in macOS 10.15 and later.",
             "property_order": 15
         },
         "pathBlackList": {
@@ -66,10 +67,10 @@
             "items": {
                 "type": "string",
                 "title": "Folder Path",
-                "description": "The absolute path to a folder to denylist."
+                "description": "A path."
             },
             "title": "Denylisted Application Folders",
-            "description": "The user can never launch applications in these folders.",
+            "description": "The paths to apps in the deny list. This property is deprecated in macOS 10.15 and later.",
             "property_order": 20
         }
     }

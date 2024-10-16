@@ -1,11 +1,12 @@
 {
     "title": "Web Content Filter (com.apple.webcontent-filter)",
-    "description": "Web Content Filter settings",
+    "description": "Use this section to define managed email and web domains.",
     "properties": {
         "FilterType": {
             "type": "string",
             "title": "Filter Type",
             "default": "BuiltIn",
+            "description": "The type of filter, built-in or plug-in. In macOS, the system only supports the plug-in value.",
             "enum": [
                 "BuiltIn",
                 "Plugin"
@@ -22,6 +23,7 @@
             "type": "string",
             "title": "Filter Grade",
             "default": "firewall",
+            "description": "The system uses this value to derive the relative order of content filters. Filters with a grade of 'firewall' see network traffic before filters with a grade of 'inspector'. However, the system doesn't define the order of filters within a grade.",
             "enum": [
                 "firewall",
                 "inspector"
@@ -38,7 +40,7 @@
             "type": "boolean",
             "title": "Limit adult content automatically",
             "default": false,
-            "description": "Optional. If true, automatic filtering is enabled. This function evaluates each web page as it is loaded and attempts to identify and block content not suitable for children.\n\nThe search algorithm is complex and may vary from release to release, but it is basically looking for adult language, i.e. swearing and sexually explicit language. The default value is false.",
+            "description": "If 'true', the system enables automatic filtering. Use when 'FilterType' is 'BuiltIn'.",
             "property_order": 15
         },
         "PermittedURLs": {
@@ -49,12 +51,14 @@
                 "pattern": "^https?://.*$"
             },
             "title": "Permitted URLs",
+            "description": "An array or URLs that are accessible whether or not the automatic filter allows access. Use when 'FilterType' is 'BuiltIn'. Requires that 'AutoFilterEnabled' is 'true'.",
             "property_order": 20
         },
         "FilterBrowsers": {
             "type": "boolean",
             "title": "Filter WebKit Traffic",
             "default": false,
+            "description": "If 'true', the system enables filtering WebKit traffic. Use when 'FilterType' is 'Plugin'.\nAt least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
             "property_order": 25
         },
         "AllowListBookmarks": {
@@ -66,7 +70,7 @@
                     "URL": {
                         "type": "string",
                         "title": "URL",
-                        "description": "URL of the allow list bookmark.",
+                        "description": "The URL of the bookmark in the allow list.",
                         "pattern": "^https?:\\/\\/.*$"
                     },
                     "Title": {
@@ -77,7 +81,7 @@
                 }
             },
             "title": "Allow List Bookmarks",
-            "description": "If present, these URLs are added to the browser's bookmarks, and the user is not allowed to visit any sites other than these. The number of these URLs should be limited to about 500.",
+            "description": "An array of dictionaries that define the pages that the user can bookmark or visit. Use when 'FilterType' is 'BuiltIn'.",
             "property_order": 30
         },
         "WhitelistedBookmarks": {
@@ -89,7 +93,7 @@
                     "URL": {
                         "type": "string",
                         "title": "URL",
-                        "description": "URL of the allowlisted bookmark.",
+                        "description": "The URL of the bookmark in the allow list.",
                         "pattern": "^https?:\\/\\/.*$"
                     },
                     "Title": {
@@ -100,7 +104,7 @@
                 }
             },
             "title": "Allowlisted Bookmarks",
-            "description": "If present, these URLs are added to the browser's bookmarks, and the user is not allowed to visit any sites other than these. The number of these URLs should be limited to about 500.",
+            "description": "Use 'AllowListBookmarks' instead.",
             "property_order": 35
         },
         "DenyListURLs": {
@@ -110,6 +114,7 @@
                 "title": "Deny List URL"
             },
             "title": "Deny List URLs",
+            "description": "An array of URLs that are inaccessible. Use when 'FilterType' is 'BuiltIn'. Limit the number of these URLs to about 500.",
             "property_order": 40
         },
         "BlacklistedURLs": {
@@ -119,84 +124,94 @@
                 "title": "Denylisted URL"
             },
             "title": "Denylisted URLs",
+            "description": "Use 'DenyListURLs' instead.",
             "property_order": 45
         },
         "UserDefinedName": {
             "type": "string",
             "title": "Filter Configuration Display Name",
-            "description": "A string which will be displayed for this filtering configuration.",
+            "description": "The display name for this filtering configuration. Required when 'FilterType' is 'Plugin'.",
             "property_order": 50
         },
         "PluginBundleID": {
             "type": "string",
             "title": "Plug-In Bundle ID",
+            "description": "The bundle ID of the plug-in that provides filtering service. Required when 'FilterType' is 'Plugin'. Otherwise, it ignores this value. Consult your filtering solution vendor to determine what to specify for this value. Required when 'FilterType' is 'Plugin'.",
             "property_order": 55
         },
         "ServerAddress": {
             "type": "string",
             "title": "Server Address",
+            "description": "The server address, which may be the IP address, hostname, or URL. Use when 'FilterType' is 'Plugin'.",
             "property_order": 60
         },
         "UserName": {
             "type": "string",
             "title": "Username",
+            "description": "The user name for the service. Use when 'FilterType' is 'Plugin'.",
             "property_order": 65
         },
         "Password": {
             "type": "string",
+            "title": "Password",
+            "description": "The password for the service. Use when 'FilterType' is 'Plugin'.",
             "property_order": 70
         },
         "PayloadCertificateUUID": {
             "type": "string",
             "title": "Certificate UUID",
+            "description": "The UUID of the certificate payload within the same profile that the system uses to authenticate the user. Use when 'FilterType' is 'Plugin'.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 75
         },
         "Organization": {
             "type": "string",
-            "description": "An Organization string that will be passed to the 3rd party plugin.",
+            "title": "Organization",
+            "description": "The organization string to pass to the third-party plug-in. Use when 'FilterType' is 'Plugin'.",
             "property_order": 80
         },
         "FilterSockets": {
             "type": "boolean",
             "title": "Enable Socket Filtering",
             "default": false,
+            "description": "If 'true', enables the filtering of socket traffic. Use when 'FilterType' is 'Plugin'.\nAt least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
             "property_order": 85
         },
         "FilterDataProviderBundleIdentifier": {
             "type": "string",
-            "title": "Filter Data Provider System Extension Bundle ID",
-            "description": "The bundle identifier string of the Filter Data Provider System Extension. This string identifies the Filter Data Provider when the filter starts running.",
+            "title": "Filter Data Provider Bundle Identifier",
+            "description": "The bundle identifier string of the filter data provider system extension. This string identifies the filter data provider when the filter starts running. Required if 'FilterSockets' is 'true'.",
             "property_order": 90
         },
         "FilterDataProviderDesignatedRequirement": {
             "type": "string",
             "title": "Filter Data Provider Designated Requirement",
-            "description": "The designated requirement string that is embedded in the code signature of the Filter Data Provider System Extension. This string identifies the Filter Data Provider when the filter starts running.",
+            "description": "The designated requirement string that the system embeds in the code signature of the filter data provider system extension. This string identifies the filter data provider when the filter starts running. Required if 'FilterSockets' is 'true'.",
             "property_order": 95
         },
         "FilterPackets": {
             "type": "boolean",
             "title": "Enable Packet Filtering",
             "default": false,
+            "description": "If 'true' and 'FilterType' is 'Plugin', the system enables filtering network packets. Use when 'FilterType' is 'Plugin'.\nAt least one of 'FilterPackets' or 'FilterSockets' needs to be 'true'.",
             "property_order": 100
         },
         "FilterPacketProviderBundleIdentifier": {
             "type": "string",
             "title": "Filter Packet Provider Bundle ID",
-            "description": "The bundle identifier string of the Filter Packet Provider System Extension. This string identifies the Filter Packet Provider when the filter starts running.",
+            "description": "The bundle identifier string of the filter packet provider system extension. This string identifies the filter packet provider when the filter starts running. Required if 'FilterPackets' is 'true'.",
             "property_order": 105
         },
         "FilterPacketProviderDesignatedRequirement": {
             "type": "string",
             "title": "Filter Packet Provider Designated Requirement",
-            "description": "The designated requirement string that is embedded in the code signature of the Filter Packet Provider System Extension. This string identifies the Filter Packet Provider when the filter starts running.",
+            "description": "The designated requirement string that the system embeds in the code signature of the filter packet provider system extension. This string identifies the filter packet provider when the filter starts running. Required if 'FilterPackets' is 'true'.",
             "property_order": 110
         },
         "VendorConfig": {
             "type": "object",
             "title": "Vendor Configuration",
-            "description": "Custom key/value pairs for the filtering service plugin",
+            "description": "The custom dictionary that the filtering service plug-in needs. Use when 'FilterType' is 'Plugin'.",
             "properties": {
                 "{{key}}": {
                     "type": "string",
@@ -204,7 +219,8 @@
                 },
                 "{{value}}": {
                     "type": "string",
-                    "title": "Vendor Custom Key Value"
+                    "title": "Vendor Custom Key Value",
+                    "description": "The custom key/value pairs for the filtering service."
                 }
             },
             "property_order": 115
@@ -212,8 +228,15 @@
         "ContentFilterUUID": {
             "type": "string",
             "title": "Content Filter UUID",
-            "description": "Global identifier of the content filter configuration in this payload. Used for processing network traffic of managed apps with an identical attribute by the filter.",
+            "description": "A globally unique identifier for this content filter configuration. The content filter processes network traffic for managed apps with the same 'ContentFilterUUID' in their app attributes. Use when 'FilterType' is 'Plugin'. This key must be present for unsupervised devices and user enrollments.",
             "property_order": 120
+        },
+        "HideDenyListURLs": {
+            "type": "boolean",
+            "title": "HideDenyListURLs",
+            "default": false,
+            "description": "Hide the DenyListURLs in profiles UI in Settings > General > VPN & Device Management > profiles details.",
+            "property_order": 125
         }
     }
 }

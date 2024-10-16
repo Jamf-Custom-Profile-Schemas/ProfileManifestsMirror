@@ -5,7 +5,7 @@
         "Enable": {
             "type": "string",
             "title": "Enable FileVault 2",
-            "description": "Set to 'On' to enable FileVault. Set to 'Off' to disable FileVault.",
+            "description": "Set to 'On' to enable FileVault and set to 'Off' to disable FileVault. Payloads set to 'On' sent through MDM need to either include full authentication information in the payload or have the 'Defer' option set to 'true'. When 'Defer' is 'true', the system prompts for the authentication information when the user enables FileVault.",
             "enum": [
                 "On",
                 "Off"
@@ -16,78 +16,78 @@
             "type": "boolean",
             "title": "Defer enabling until logout",
             "default": false,
-            "description": "Defer enabling FileVault until the designated user logs out. For details, see fdesetup(8). The person enabling FileVault must be either a local user or a mobile account user.",
+            "description": "If 'true', the system defers enabling FileVault until the designated user logs out. For details, see 'fdesetup(8)'. Only a local user or a mobile account user can enable FileVault.",
             "property_order": 10
         },
         "UserEntersMissingInfo": {
             "type": "boolean",
             "title": "User enters username and password",
-            "default": true,
-            "description": "Set to true for manual profile installs to prompt for missing user name or password fields.",
+            "default": false,
+            "description": "If 'true', the system enables a prompt for missing user name or password fields.",
             "property_order": 15
         },
         "UseRecoveryKey": {
             "type": "boolean",
             "title": "Create a personal recovery key",
             "default": true,
-            "description": "Set to true to create a personal recovery key.",
+            "description": "If 'true', the system creates a personal recovery key and displays it to the user.",
             "property_order": 20
         },
         "ShowRecoveryKey": {
             "type": "boolean",
             "title": "Show the personal recovery key",
             "default": true,
-            "description": "Set to false to not display the personal recovery key to the user after FileVault is enabled.",
+            "description": "If 'false', the system prevents display of the personal recovery key to the user after the system enables FileVault.",
             "property_order": 25
         },
         "OutputPath": {
             "type": "string",
             "title": "Recovery key path",
-            "description": "Path to the location where the recovery key and computer information plist will be stored.",
+            "description": "The path to the location of the recovery key and computer information property list.",
             "property_order": 30
         },
         "PayloadCertificateUUID": {
             "type": "string",
             "title": "Recovery Key Certificate Payload",
-            "description": "UUID of the payload containing the asymmetric recovery key certificate payload.",
+            "description": "The UUID of the payload within the same profile containing the asymmetric recovery key certificate payload.",
             "property_order": 35
         },
         "Username": {
             "type": "string",
             "title": "Username",
-            "description": "User name of the Open Directory user that will be added to FileVault.",
+            "description": "The user name of the Open Directory user to add to FileVault.",
             "property_order": 40
         },
         "Password": {
             "type": "string",
             "title": "Password",
-            "description": "User password of the Open Directory user that will be added to FileVault. Use the UserEntersMissingInfo key if you want to prompt for this information.",
+            "description": "The password of the Open Directory user to add to FileVault. Use the 'UserEntersMissingInfo' key to prompt for this information.",
             "property_order": 45
         },
         "UseKeychain": {
             "type": "boolean",
             "title": "Add institutional recovery key to keychain",
             "default": false,
-            "description": "If set to true and no certificate information is provided in this payload, the keychain already created at /Library/Keychains/FileVaultMaster.keychain will be used when the institutional recovery key is added.",
+            "description": "If 'true' and you don't include certificate information in this payload, the system uses the keychain created at '/Library/Keychains/FileVaultMaster.keychain' when it adds the institutional recovery key.",
             "property_order": 50
         },
         "DeferForceAtUserLoginMaxBypassAttempts": {
             "type": "integer",
             "title": "Maximum number of times FileVault can be skipped",
-            "description": "When using the Defer option you can optionally set this key to the maximum number of times the user can bypass enabling FileVault before it will require that it be enabled before the user can log in. If set to 0, it will always prompt to enable FileVault until it is enabled, though it will allow you to bypass enabling it. Setting this key to –1 will disable this feature.",
+            "description": "The maximum number of times users can bypass enabling FileVault before the system requires the user to enable it to log in. If the value is '0', the system requires the user to enable FileVault the next time they attempt to log in. Set this key to '–1' to disable this feature.",
             "property_order": 55
         },
         "DeferDontAskAtUserLogout": {
             "type": "boolean",
             "title": "Dont ask at logout",
             "default": false,
-            "description": "When using the Defer option, set this key to true to not request enabling FileVault at user logout time.",
+            "description": "If 'true', the system prevents requests to enable FileVault at user logout time.",
             "property_order": 60
         },
         "ForceEnableInSetupAssistant": {
             "type": "boolean",
             "default": false,
-            "description": "If 'true', and this payload is installed after enrolling with MDM in Setup Assistant, it requests Setup Assistant to enable FileVault at setup time. In this case, the system also ignores all other keys in this payload, except for 'ShowRecoveryKey'.\nTo use this, enable the Await Device Configured DEP configuration option, send this profile with this key set, before sending the DeviceConfiguredCommand.",
+            "description": "If 'true', and installation of this payload occurs after enrolling with MDM in Setup Assistant, the system requests Setup Assistant to enable FileVault at setup time.\nTo use this, enable the Await Device Configured DEP configuration option and send this profile with this key set, before sending the DeviceConfiguredCommand.\nAn admin SecureToken user is required, otherwise the FileVault pane does not appear.",
             "property_order": 65
         }
     }

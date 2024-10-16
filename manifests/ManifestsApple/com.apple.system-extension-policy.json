@@ -6,7 +6,7 @@
             "type": "boolean",
             "title": "Allow users to approve system extensions",
             "default": true,
-            "description": "Set this property to false to prevent users from approving system extensions not explicitly allowed by configuration profiles.",
+            "description": "If 'false', restricts users from approving additional system extensions that configuration profiles don't explicitly allow.",
             "property_order": 5
         },
         "AllowedTeamIdentifiers": {
@@ -16,14 +16,14 @@
                 "title": "Team Identifier"
             },
             "title": "Allowed Team Identifiers",
-            "description": "List of team identifiers that define which validly signed system extensions will be allowed to load.",
+            "description": "An array of team identifiers that defines valid, signed system extensions that are allowable to load. Approved system extensions are those signed with any of the specified team identifiers.\nTo avoid requiring an administrator to authorize the operation, you can activate system extensions that this key specifies using activationRequest(forExtensionWithIdentifier:queue:).\nIt's an error for the same team identifier to appear in both this array and as a key in the 'AllowedSystemExtensions' dictionary.",
             "pattern": "^[A-Z0-9]{10}$",
             "property_order": 10
         },
         "AllowedSystemExtensions": {
             "type": "object",
             "title": "Allowed System Extensions",
-            "description": "Dictionary of system extensions that will be allowed. Extensions are represented in the dictionary using a team identifier string as key and an array of allowed extension bundle identifier strings as the associated value.",
+            "description": "A dictionary of approved system extensions on the computer. The dictionary maps the team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension to install.\nTo avoid requiring an administrator to authorize the operation, you can activate system extensions that this key specifies using activationRequest(forExtensionWithIdentifier:queue:).\nIt's an error for the same team identifier to appear in both the 'AllowedTeamIdentifiers' array and as a key in this dictionary.",
             "properties": {
                 "{{key}}": {
                     "type": "string",
@@ -34,9 +34,11 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Bundle Identifier"
+                        "title": "Bundle Identifier",
+                        "description": "Allowed system extension bundle ID"
                     },
-                    "title": "Bundle Identifier"
+                    "title": "Bundle Identifier",
+                    "description": "The mapping of team identifiers to arrays of bundle identifiers, where the bundle identifier is that of the system extension to be installed."
                 }
             },
             "property_order": 15
@@ -44,7 +46,7 @@
         "AllowedSystemExtensionTypes": {
             "type": "object",
             "title": "Allowed System Extension Types",
-            "description": "Dictionary of developer teams and their allowed system extension types. Entries use the team identifier as the key and an array of the allowed extension type strings as the associated value.",
+            "description": "A dictionary that maps a team identifier to an array of strings, where each string is a type of system extension that you can install for that team identifier. The allowed extension types are 'DriverExtension', 'NetworkExtension', and 'EndpointSecurityExtension'.\nIf there's no entry for a specified team identifier in the dictionary, the system allows all extension types.",
             "properties": {
                 "{{key}}": {
                     "type": "string",
@@ -56,6 +58,7 @@
                     "items": {
                         "type": "string",
                         "title": "System Extension Type",
+                        "description": "Permitted System Extension Type",
                         "enum": [
                             "DriverExtension",
                             "NetworkExtension",
@@ -69,7 +72,8 @@
                             ]
                         }
                     },
-                    "title": "System Extension Types"
+                    "title": "System Extension Types",
+                    "description": "The mapping of team identifier to an array of strings, where each string is a type of system extension that may be installed for that team identifier."
                 }
             },
             "property_order": 20
@@ -77,7 +81,7 @@
         "RemovableSystemExtensions": {
             "type": "object",
             "title": "Removable System Extensions",
-            "description": "Dictionary of system extensions that can be removed by their own app without requiring an admin password. Extensions are represented in the dictionary using a team identifier string as key and an array of removable extension bundle identifier strings as the associated value.",
+            "description": "A dictionary of system extensions that are allowed to remove themselves from the machine. The dictionary maps team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension. An application using the 'OSSystemExtensionDeactivationRequest' API can deactivate the specified system extensions without requiring an administrator to authorize the operation.\nAvailable in macOS 12 and later.",
             "properties": {
                 "{{key}}": {
                     "type": "string",
@@ -88,12 +92,50 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Bundle Identifier"
+                        "title": "Bundle Identifier",
+                        "description": "Removed system extension bundle ID"
                     },
-                    "title": "Bundle Identifier"
+                    "title": "Bundle Identifier",
+                    "description": "The dictionary maps team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension."
                 }
             },
             "property_order": 25
+        },
+        "NonRemovableSystemExtensions": {
+            "type": "object",
+            "description": "A dictionary of system extensions on the computer. The dictionary maps the team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension which cannot be disabled or uninstalled when SIP is enabled. It's an error for the same mapping to appear in the dictionary values corresponding to 'RemovableSystemExtensions' and 'NonRemovableSystemExtensions' keys.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string"
+                },
+                "{{value}}": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Non Removable system extension bundle ID"
+                    },
+                    "description": "System extension bundle identifiers"
+                }
+            },
+            "property_order": 30
+        },
+        "NonRemovableFromUISystemExtensions": {
+            "type": "object",
+            "description": "A dictionary of system extensions on the computer. The dictionary maps the team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension which cannot be disabled or uninstalled from System Settings or Finder. The set of system extensions between 'RemovableSystemExtensions' and 'NonRemovableFromUISystemExtensions' are allowed to overlap.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string"
+                },
+                "{{value}}": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Non Removable from UI system extension bundle ID"
+                    },
+                    "description": "System extension bundle identifiers"
+                }
+            },
+            "property_order": 35
         }
     }
 }

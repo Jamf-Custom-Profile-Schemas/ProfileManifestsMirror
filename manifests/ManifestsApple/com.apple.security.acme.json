@@ -11,7 +11,7 @@
         "ClientIdentifier": {
             "type": "string",
             "title": "Client identifier",
-            "description": "A unique string identifying a specific device. The server may use this as a nonce to prevent issuing multiple certificates. This identifier also indicates to the ACME server that the device has access to a valid client identifier issued by the enterprise infrastructure. This can help the ACME server determine whether to trust the device. Though this is a relatively weak indication because of the risk that an attacker can intercept the client identifier.",
+            "description": "A unique string identifying a specific device. The server may use this as an anti-replay code to prevent issuing multiple certificates. This identifier also indicates to the ACME server that the device has access to a valid client identifier issued by the enterprise infrastructure. This can help the ACME server determine whether to trust the device. Though this is a relatively weak indication because of the risk that an attacker can intercept the client identifier.",
             "property_order": 10
         },
         "KeySize": {
@@ -23,7 +23,7 @@
         "KeyType": {
             "type": "string",
             "title": "Key Type",
-            "description": "The type of key pair to generate.\n* 'RSA': Specifies an RSA key pair. RSA key pairs must have a KeySize in the range [1024..4096] inclusive and a multiple of 8, and 'HardwareBound' must be false.\n* 'ECSECPrimeRandom': Specifies a key pair on the P-192, P-256, P-384 or P-521 curves as defined in FIPS Pub 186-4. KeySize defines the particular curve, which must be 192, 256, 384 or 521. Hardware bound keys only support values of 256 and 384. Note that the key size is 521, not 512, even though the other key sizes are multiples of 64.",
+            "description": "The type of key pair to generate. Allowed values:\n\n* 'RSA': Specifies an RSA key pair. RSA key pairs need to have a 'KeySize' that's a multiple of 8 in the range of 1024 through 4096 (inclusive), and 'HardwareBound' needs to be 'false'.\n* 'ECSECPrimeRandom': Specifies a key pair on the P-192, P-256, P-384, or P-521 curves as defined in FIPS Pub 186-4. 'KeySize' defines the particular curve, which needs to be '192', '256', '384', or '521'. Hardware bound keys only support values of '256' and '384'.\nNote that the key size is '521', not '512', even though the other key sizes are multiples of 64.",
             "enum": [
                 "RSA",
                 "ECSECPrimeRandom"
@@ -33,7 +33,7 @@
         "HardwareBound": {
             "type": "boolean",
             "title": "Hardware Bound",
-            "description": "If 'false', the private key isn't bound to the device.\nIf 'true', the private key is bound to the device. The Secure Enclave generates the key pair, and the private key is cryptographically entangled with a system key. This prevents the system from exporting the private key.\nIf 'true', 'KeyType' must be 'ECSECPrimeRandom' and 'KeySize' must be 256 or 384.",
+            "description": "If 'false', the private key isn't bound to the device.\nIf 'true', the private key is bound to the device. The Secure Enclave generates the key pair, and the private key is cryptographically entangled with a system key. This prevents the system from exporting the private key.\nIf 'true', 'KeyType' must be 'ECSECPrimeRandom' and 'KeySize' must be 256 or 384.\nSetting this key to 'true' is supported as of macOS 14 on Apple Silicon and Intel devices that have a T2 chip. Older macOS versions or other Mac devices require this key but it must have a value of 'false'.",
             "property_order": 25
         },
         "Subject": {
@@ -51,7 +51,7 @@
                 "title": "Array Inside ACME Subject Array"
             },
             "title": "Subject",
-            "description": "The device requests this subject for the certificate that the ACME server issues. The ACME server may override or ignore this field in the certificate it issues.\nThe representation of a X.500 name represented as an array of OID and value. For example, /C=US/O=Apple Inc./CN=foo/1.2.5.3=bar corresponds to:\n[ [ [”C”, “US”] ], [ [”O”, “Apple Inc.”] ], ..., [ [ “1.2.5.3”, “bar” ] ] ]\nDotted numbers can represent OIDs , with shortcuts for country (C), locality (L), state (ST), organization (O), organizational unit (OU), and common name (CN).",
+            "description": "The device requests this subject for the certificate that the ACME server issues. The ACME server may override or ignore this field in the certificate it issues.\nThe representation of a X.500 name represented as an array of OID and value. For example, '/C=US/O=Apple Inc./CN=foo/1.2.5.3=bar' corresponds to:\n'[ [ [”C”, “US”] ], [ [”O”, “Apple Inc.”] ], ..., [ [ “1.2.5.3”, “bar” ] ] ]'\nDotted numbers can represent OIDs , with shortcuts for country (C), locality (L), state (ST), organization (O), organizational unit (OU), and common name (CN).",
             "property_order": 30
         },
         "SubjectAltName": {
@@ -85,7 +85,7 @@
         "UsageFlags": {
             "type": "integer",
             "title": "Key Usage",
-            "description": "This value is a bit field.\n* Bit '0x01' indicates digital signature.\n* Bit '0x10' indicates key agreement.\nThe device requests this key for the certificate that the ACME server issues. The ACME server may override or ignore this field in the certificate it issues.",
+            "description": "This value is a bit field.\n* Bit '0x01' indicates digital signature.\n* Bit '0x04' indicates encryption.\nThe device requests this key for the certificate that the ACME server issues. The ACME server may override or ignore this field in the certificate it issues.",
             "property_order": 40
         },
         "ExtendedKeyUsage": {
@@ -94,28 +94,28 @@
                 "type": "string"
             },
             "title": "Extended Key Usage",
-            "description": "The value is an array of strings. Each string is an OID in dotted notation. For instance, [”1.3.6.1.5.5.7.3.2”, “1.3.6.1.5.5.7.3.4”] indicates client authentication and email protection.\nThe device requests this field for the certificate that the ACME server issues. The ACME server may override or ignore this field in the certificate it issues.",
+            "description": "The value is an array of strings. Each string is an OID in dotted notation. For instance, '[”1.3.6.1.5.5.7.3.2”, “1.3.6.1.5.5.7.3.4”]' indicates client authentication and email protection.\nThe device requests this field for the certificate that the ACME server issues. The ACME server may override or ignore this field in the certificate it issues.",
             "property_order": 45
         },
         "Attest": {
             "type": "boolean",
             "title": "Attest",
             "default": false,
-            "description": "If 'true', the device provides attestations describing the device and the generated key to the ACME server. The server can use the attestations as strong evidence that the key is bound to the device, and that the device has properties listed in the attestation. The server can use that as part of a trust score to decide whether to issue the requested certificate.\nWhen 'Attest' is 'true', 'HardwareBound' must also be 'true'.",
+            "description": "If 'true', the device provides attestations that describe the device and the generated key to the ACME server. The server can use the attestations as strong evidence that the key is bound to the device, and that the device has properties listed in the attestation. The server can use that as part of a trust score to decide whether to issue the requested certificate.\nWhen 'Attest' is 'true', 'HardwareBound' also needs to be 'true'.\nSetting this key to 'true' is supported as of macOS 14. Older macOS versions require this key but it must have a value of 'false'.\\nSee the ACME attestation hardware support note for hardware requirements.",
             "property_order": 50
         },
         "KeyIsExtractable": {
             "type": "boolean",
             "title": "Key Is Extractable",
             "default": true,
-            "description": "Whether the private key of the identity obtained via SCEP should be tagged as \"non-extractable\" in the keychain.",
+            "description": "If 'true', the private key of the identity obtained through Simple Certificate Enrollment Protocol (SCEP) needs to be tagged as “non-extractable” in the keychain.",
             "property_order": 55
         },
         "AllowAllAppsAccess": {
             "type": "boolean",
             "title": "Allow All Apps Access",
-            "default": true,
-            "description": "If true, all apps have access to the private key.",
+            "default": false,
+            "description": "If 'true', all apps have access to the private key.",
             "property_order": 60
         }
     }

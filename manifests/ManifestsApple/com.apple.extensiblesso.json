@@ -1,11 +1,11 @@
 {
-    "title": "Single Sign-On Extensions (com.apple.extensiblesso)",
-    "description": "Single Sign-On Extension settings. User-level payload support for macOS 11.x and later.",
+    "title": "Extensible Single Sign-On (com.apple.extensiblesso)",
+    "description": "Configures an app extension to handle SSO.",
     "properties": {
         "ExtensionIdentifier": {
             "type": "string",
             "title": "Extension Identifier",
-            "description": "The bundle identifier of the app extension that performs single sign-on (SSO) for the specified URLs. Enter com.apple.AppSSOKerberos.KerberosExtension to use Apple's Kerberos SSO extension.",
+            "description": "The bundle identifier of the app extension that performs SSO for the specified URLs.",
             "enum": [
                 "com.apple.AppSSOKerberos.KerberosExtension",
                 "com.microsoft.azureauthenticator.ssoextension",
@@ -35,12 +35,12 @@
                 "title": "Hostname / Domain name",
                 "description": "A host or domain name, with or without a leading dot."
             },
-            "description": "An array of host names or domain names that can be authenticated through the app extension. Required for Credential payloads. Ignored for Redirect payloads.",
+            "description": "An array of host or domain names that apps can authenticate through the app extension.\nRequired for 'Credential' payloads. Ignored for 'Redirect' payloads.\nThe system:\n* Matches host or domain names case-insensitively\n* Requires that all the host and domain names of all installed Extensible SSO payloads are unique\nHost names that begin with a “.” are wildcard suffixes that match all subdomains; otherwise the host name needs be an exact match.",
             "property_order": 20
         },
         "Realm": {
             "type": "string",
-            "description": "The realm name for Credential payloads. This value should be properly capitalized. This key is ignored for Redirect payloads.",
+            "description": "The realm name for 'Credential' payloads. Use proper capitalization for this value. Ignored for 'Redirect' payloads.",
             "property_order": 25
         },
         "URLs": {
@@ -52,7 +52,7 @@
                 "pattern": "^https?://.*"
             },
             "title": "URLs",
-            "description": "The realm name for Credential payloads. This value should be properly capitalized. This key is ignored for Redirect payloads.",
+            "description": "An array of URL prefixes of identity providers where the app extension performs SSO.\nRequired for 'Redirect' payloads. Ignored for 'Credential' payloads.\nThe URLs need to begin with 'http://' or 'https://'.\nThe system:\n* Matches scheme and host name case-insensitively\n* Doesn't allow query parameters and URL fragments\n* Requires that the URLs of all installed Extensible SSO payloads are unique",
             "property_order": 30
         },
         "DeniedBundleIdentifiers": {
@@ -63,12 +63,14 @@
                 "description": "The bundle identifier of the app."
             },
             "title": "Denied Bundle Identifiers",
+            "description": "An array of bundle identifiers of apps that don't use SSO provided by this extension. Available in iOS 15 and later, and macOS 12 and later.",
             "property_order": 35
         },
         "ScreenLockedBehavior": {
             "type": "string",
             "title": "Screen Locked Behavior",
             "default": "Cancel",
+            "description": "If set to 'Cancel', the system cancels authentication requests when the screen is locked. If set to 'DoNotHandle', the request continues without SSO instead. This doesn't apply to requests where 'userInterfaceEnabled' is 'false', or for background NSURLSession requests. Available in iOS 15 and later, and macOS 12 and later.",
             "enum": [
                 "Cancel",
                 "DoNotHandle"
@@ -84,37 +86,37 @@
         "ExtensionData": {
             "type": "object",
             "title": "Kerberos Extension Data",
-            "description": "Used by the Apple built-in Kerberos extension.",
+            "description": "A dictionary of arbitrary data passed through to the app extension.",
             "properties": {
                 "allowAutomaticLogin": {
                     "type": "boolean",
                     "title": "Allow Automatic Login",
                     "default": true,
-                    "description": "If false, passwords are not allowed to be saved to the keychain."
+                    "description": "If 'false', the system doesn't allow saving passwords in the keychain."
                 },
                 "allowPasswordChange": {
                     "type": "boolean",
                     "title": "Allow Password Change",
                     "default": true,
-                    "description": "If false, disables password changes. Available in macOS 10.15 and later."
+                    "description": "If 'false', the system disables password changes. Available in macOS 10.15 and later."
                 },
                 "usePlatformSSOTGT": {
                     "type": "boolean",
                     "title": "Use Platform SSO TGT",
                     "default": false,
-                    "description": "If true, the configured SSO extension must use a ticket-granting ticket (TGT) from Platform SSO."
+                    "description": "If 'true', the system requires this configuration uses a TGT from Platform SSO instead of requesting a new one. Available in macOS 13 and later."
                 },
                 "allowPlatformSSOAuthFallback": {
                     "type": "boolean",
                     "title": "Allow Platform SSO Authentication Fallback",
                     "default": true,
-                    "description": "If true, allows manual sign-ins as fallback."
+                    "description": "If 'true' and 'usePlatformSSOTGT' is 'true', the system allows the user to manually sign in. Available in macOS 13 and later."
                 },
                 "performKerberosOnly": {
                     "type": "boolean",
                     "title": "Perform Kerberos Requests Only",
                     "default": false,
-                    "description": "If true, the configured extension only handles Kerberos requests and does not check for or show the expiration of the password, does not check external password changes, does not sync passwords, and does not retrieve the user's home directory."
+                    "description": "If 'true', the Kerberos Extension handles Kerberos requests only. It doesn't check for password expiration, show the password expiration in the menu, check for external password changes, perform password sync, or retrieve the home directory. Available in macOS 13 and later."
                 },
                 "cacheName": {
                     "type": "string",
@@ -131,7 +133,7 @@
                     "items": {
                         "type": "string",
                         "title": "Bundle ID",
-                        "description": "Bundle IDs allowed to access the TGT.  These values are case sensitive."
+                        "description": "Bundle IDs allowed to access the TGT. These values are case sensitive."
                     },
                     "title": "Credential Bundle ID ACL",
                     "description": "A list of bundle IDs allowed to access the ticket-granting ticket (TGT)."
@@ -140,64 +142,64 @@
                     "type": "string",
                     "title": "Credential Use Mode",
                     "default": "always",
-                    "description": "This setting affects how the Kerberos Extension credential is used by other processes. Available in macOS 11 and later.",
+                    "description": "This setting affects how other processes use the Kerberos Extension credential. Allowed values:\n\n* 'always': The system always uses the credential if the SPN matches the Kerberos Extension 'Hosts' array and the caller hasn't specified another credential. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n* 'whenNotSpecified': The system only uses the extension credential if the SPN matches the Kerberos Extension 'Hosts' array. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n* 'kerberosDefault': The system uses the default Kerberos processes to select credentials, and normally uses the default Kerberos credential. This is the same as turning off this capability.\n\nAvailable in macOS 11 and later.",
                     "enum": [
                         "always",
-                        "kerberosDefault",
-                        "whenNotSpecified"
+                        "whenNotSpecified",
+                        "kerberosDefault"
                     ],
                     "options": {
                         "enum_titles": [
                             "Always",
-                            "Kerberos Default",
-                            "When Not Specified"
+                            "When Not Specified",
+                            "Kerberos Default"
                         ]
                     }
                 },
                 "customUsernameLabel": {
                     "type": "string",
                     "title": "Custom Username Label",
-                    "description": "The custom user name label used in the Kerberos extension instead of \"Username\". For example, \"Company ID\". Available on macOS 11 and later."
+                    "description": "The custom user name label used in the Kerberos extension instead of “Username,” such as “Company ID”. Available in macOS 11 and later."
                 },
                 "delayUserSetup": {
                     "type": "boolean",
                     "title": "Delay User Setup",
                     "default": false,
-                    "description": "If true, doesn't prompt the user to setup the Kerberos extension until either the administrator enables it with the app-sso tool or a Kerberos challenge is received. Available in macOS 11 and later."
+                    "description": "If 'true', the system doesn't prompt the user to setup the Kerberos extension until either the administrator enables it with the 'app-sso' tool or the system receives a Kerberos challenge. Available in macOS 11 and later."
                 },
                 "helpText": {
                     "type": "string",
                     "title": "Help Text",
-                    "description": "The text to be displayed to the user at the bottom of the Kerberos login window. It can be used to display help information or disclaimer text. Available in iOS 14 and later and macOS 11 and later."
+                    "description": "The text to display to the user at the bottom of the Kerberos login window. You can also use this to display help information or disclaimer text. Available in iOS 14 and later, and macOS 11 and later."
                 },
                 "isDefaultRealm": {
                     "type": "boolean",
                     "title": "Is Default Realm",
                     "default": false,
-                    "description": "This property specifies it is the default realm if there is more than one Kerberos extension configuration."
+                    "description": "Specifies whether this is the default realm if there's more than one Kerberos extension configuration."
                 },
                 "includeManagedAppsInBundleIdACL": {
                     "type": "boolean",
                     "title": "Include Managed Apps in Bundle ID ACL",
                     "default": false,
-                    "description": "If true, the Kerberos extension will allow only managed apps to access and use the credential. This is in addition to the credentialBundleIDACL, if it is specified. Available in iOS 14 and later."
+                    "description": "If 'true', the Kerberos extension allows only managed apps to access and use the credential. This is in addition to the 'credentialBundleIDACL', if you specify that value. Available in iOS 14 and later, and macOS 12 and later."
                 },
                 "includeKerberosAppsInBundleIdACL": {
                     "type": "boolean",
                     "title": "Include Kerberos Apps in Bundle ID ACL",
                     "default": false,
-                    "description": "If true, the Kerberos extension will allow standard Kerberos utilities such as TicketViewer and klist to access and use the credential. This is in addition to either includeManagedAppsInBundleIdACL or credentialBundleIDACL, if any are specified."
+                    "description": "If 'true', the Kerberos extension allows the standard Kerberos utilities including 'TicketViewer' and 'klist' to access and use the credential. This is in addition to 'includeManagedAppsInBundleIdACL' or the 'credentialBundleIdACL', if you specify those values. Available in macOS 12 and later."
                 },
                 "monitorCredentialsCache": {
                     "type": "boolean",
                     "title": "Monitor Credential Cache",
                     "default": true,
-                    "description": "If false, the credential is requested on the next matching Kerberos challenge or network state change. If the credential is expired or missing, a new one will be created. Available in macOS 11 and later."
+                    "description": "If 'false', the system requests the credential on the next matching Kerberos challenge or network state change. If the credential is expired or missing, the system creates a new one. Available in macOS 11 and later."
                 },
                 "principalName": {
                     "type": "string",
                     "title": "Principal Name",
-                    "description": "The principal (aka username) to use. You do not need to include the realm."
+                    "description": "The principal (username) to use. You don't need to include the realm."
                 },
                 "preferredKDCs": {
                     "type": "array",
@@ -207,7 +209,7 @@
                         "description": "A host or domain name in the format of [protocol/]hostname[:port][/path]"
                     },
                     "title": "Preferred KDCs",
-                    "description": "Preferred Key Distribution Centers for Kerberos traffic when the servers cannot be discovered via DNS.",
+                    "description": "The ordered list of preferred Key Distribution Centers (KDCs) to use for Kerberos traffic. Use this if the servers aren't discoverable through DNS. If the servers are specified, then the system uses them for both connectivity checks and attempts to use them first for Kerberos traffic. If the servers don't respond, the device falls back to DNS discovery. Format each entry the same as it would be in a 'krb5.conf' file, for example:\n* 'adserver1.example.com'\n* 'tcp/adserver1.example.com:88'\n* 'kkdcp://kerberosproxy.example.com:443/kkdcp'",
                     "pattern": "^((kkdcp:\\/\\/)|(tcp\\/))?[^:\\/]+(:\\d+)?(\\/[^:]*)?$"
                 },
                 "pwChangeURL": {
@@ -219,76 +221,77 @@
                     "type": "integer",
                     "title": "Password Notification Days",
                     "default": 15,
-                    "description": "The number of days prior to password expiration when a notification of password expiration will be sent to the user. Available in macOS 10.15 and later."
+                    "description": "The number of days prior to password expiration when the system sends a notification of password expiration to the user. Available in macOS 10.15 and later."
                 },
                 "pwExpireOverride": {
                     "type": "integer",
                     "title": "Password Expiration Override",
-                    "description": "The number of days that passwords can be used on this domain. For most domains, this can be calculated automatically. Available in macOS 10.15 and later."
+                    "description": "The number of days that the system allows using passwords on this domain. For most domains, this calculation is automatic. Available in macOS 10.15 and later."
                 },
                 "pwReqComplexity": {
                     "type": "boolean",
                     "title": "Password Requirement Complexity",
                     "default": false,
-                    "description": "If true, passwords must meet Active Directory's definition of \"complex\". Available in macOS 10.15 and later."
+                    "description": "If 'true', the system requires passwords to meet Active Directory's definition of 'complex'. Available in macOS 10.15 and later."
                 },
                 "pwReqHistory": {
                     "type": "integer",
                     "title": "Password Requirement History",
-                    "description": "The number of prior passwords that cannot be re-used on this domain. Available in macOS 10.15 and later."
+                    "description": "The number of prior passwords that the system disallows reuse on this domain. Available in macOS 10.15 and later."
                 },
                 "pwReqLength": {
                     "type": "integer",
                     "title": "Password Requirement Length",
-                    "description": "The minimum length of passwords on the domain. Available in macOS 10.15 and later."
+                    "description": "The minimum length of passwords on the domain.Available in macOS 10.15 and later."
                 },
                 "pwReqMinAge": {
                     "type": "integer",
                     "title": "Password Requirement Minimum Age",
-                    "description": "The minimum age of passwords before they can be changed on this domain. Available in macOS 10.15 and later."
+                    "description": "The minimum age of passwords before the system allows changing them on this domain. Available in macOS 10.15 and later."
                 },
                 "pwReqText": {
                     "type": "string",
                     "title": "Password Requirement Text",
-                    "description": "The text version of the domain's password requirements. Only for use if pwReqComplexity or pwReqLength aren't specified. Available in macOS 10.15 and later."
+                    "description": "The text version of the domain's password requirements. Only for use if 'pwReqComplexity' or 'pwReqLength' aren't specified. Available in macOS 10.15 and later."
                 },
                 "replicationTime": {
                     "type": "integer",
                     "title": "Replication Time",
                     "default": 900,
-                    "description": "The time, in seconds, required to replicate changes in the Active Directory domain. The Kerberos extension will use this when checking password age after a change. Available in macOS 11 and later."
+                    "description": "The time, in seconds, required to replicate changes in the Active Directory domain. The Kerberos extension uses this when checking password age after a change. Available in macOS 11 and later."
                 },
                 "requireTLSForLDAP": {
                     "type": "boolean",
                     "title": "Require TLS for LDAP",
+                    "default": false,
                     "description": "Require that LDAP connections use TLS. Available in macOS 11 and later."
                 },
                 "requireUserPresence": {
                     "type": "boolean",
                     "title": "Require User Presence",
                     "default": false,
-                    "description": "If true, requires the user to provide Touch ID, Face ID or their passcode to access the keychain entry."
+                    "description": "If 'true', the system requires the user to provide Touch ID, Face ID or their passcode to access the keychain entry."
                 },
                 "siteCode": {
                     "type": "string",
                     "title": "Site Code",
-                    "description": "The name of the Active Directory site the Kerberos extension should use. Most administrators will never need to modify this value, as the Kerberos extension can normally find the site automatically."
+                    "description": "The name of the Active Directory site the Kerberos extension should use. Most administrators don't need to modify this value, as the Kerberos extension can normally find the site automatically."
                 },
                 "syncLocalPassword": {
                     "type": "boolean",
                     "title": "Sync Local Password",
                     "default": false,
-                    "description": "If false, disables password sync. Note that this will not work if the user is logged in with a mobile account. Available in macOS 10.15 and later."
+                    "description": "If 'false', the system disables password sync. Note that this will not work if the user is logged in with a mobile account. Available in macOS 10.15 and later."
                 },
                 "useSiteAutoDiscovery": {
                     "type": "boolean",
                     "title": "Use Site Auto Discovery",
                     "default": true,
-                    "description": "If false, the Kerberos extension doesn't automatically use LDAP and DNS to determine its AD site name."
+                    "description": "If 'false', the Kerberos extension doesn't automatically use LDAP and DNS to determine its AD site name."
                 },
                 "domainRealmMapping": {
                     "type": "object",
-                    "description": "A custom domain-realm mapping for Kerberos. This is used when the DNS name of hosts do not match the realm name. Most administrators will not need to customize this.",
+                    "description": "A custom domain-realm mapping for Kerberos. The system uses this when the DNS name of hosts doesn't match the realm name. Most administrators don't need to customize this.",
                     "properties": {
                         "Realm": {
                             "type": "array",
@@ -448,6 +451,25 @@
                             "Disable"
                         ]
                     }
+                },
+                "identityIssuerAutoSelectFilter": {
+                    "type": "string",
+                    "description": "A string with wildcards that can use used to filter the list of available SmartCards by issuer. e.g “*My CA2*”. If there is one remaining, it will be auto-selected. If there more than one remaining, then the list is shorter. Available in macOS 15 and later."
+                },
+                "allowSmartCard": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If 'true', allow the user to switch the user interface to SmartCard mode. Available in macOS 15 and later."
+                },
+                "allowPassword": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If 'true', allow the user to switch the user interface to Password mode. Available in macOS 15 and later."
+                },
+                "startInSmartCardMode": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If 'true', the user interface will start in SmartCard mode. Available in macOS 15 and later."
                 }
             },
             "property_order": 45
@@ -455,7 +477,7 @@
         "AuthenticationMethod": {
             "type": "string",
             "title": "Authentication Method",
-            "description": "Platform SSO authentication method supported and used by the configured SSO extension.",
+            "description": "The Platform SSO authentication method the extension uses. Requires that the SSO Extension also supports the method. Available in macOS 13 and later, and deprecated in macOS 14.",
             "enum": [
                 "Password",
                 "UserSecureEnclaveKey"
@@ -470,11 +492,11 @@
         },
         "PlatformSSO": {
             "type": "object",
-            "description": "This is the dictionary used to configure PlatformSSO.",
+            "description": "The dictionary to configure Platform SSO.",
             "properties": {
                 "AuthenticationMethod": {
                     "type": "string",
-                    "description": "The Platform SSO authentication method to be used with the extension. Requires that the SSO Extension also support the method.",
+                    "description": "The Platform SSO authentication method to use with the extension. Requires that the SSO Extension also support the method.",
                     "enum": [
                         "Password",
                         "UserSecureEnclaveKey",
@@ -484,7 +506,7 @@
                 "UseSharedDeviceKeys": {
                     "type": "boolean",
                     "default": false,
-                    "description": "If set to true, Platform SSO will use the same signing and encryption keys for all users."
+                    "description": "If 'true', the system uses the same signing and encryption keys for all users. Only supported on the device channel."
                 },
                 "AccountDisplayName": {
                     "type": "string",
@@ -493,21 +515,21 @@
                 "LoginFrequency": {
                     "type": "integer",
                     "default": 64800,
-                    "description": "The frequency where a full login is required instead of a refresh. Default is 18 hours. Must be > 1 hour."
+                    "description": "The duration, in seconds, until the system requires a full login instead of a refresh. The default value is 64,800 (18 hours). The minimum value is 3600 (1 hour)."
                 },
                 "EnableCreateUserAtLogin": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Enables creating new users at the login window with either Passwords or SmartCards. Requires 'UseSharedDeviceKeys' is true."
+                    "description": "Enables creating new users at the login window with an 'AuthenticationMethod' of either 'Password' or 'SmartCard'. Requires that 'UseSharedDeviceKeys' is 'true'."
                 },
                 "EnableAuthorization": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Enables using identity provider accounts at authorization prompts. Requires 'UseSharedDeviceKeys' is true. The account will be assigned groups using the 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'."
+                    "description": "Enables using identity provider accounts at authorization prompts. Requires that 'UseSharedDeviceKeys' is 'true'. The system assigns groups using 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'."
                 },
                 "TokenToUserMapping": {
                     "type": "object",
-                    "description": "The attribute mapping used when creating new users or for authorization.",
+                    "description": "The attribute mapping to use when creating new users or for authorization.",
                     "properties": {
                         "AccountName": {
                             "type": "string",
@@ -521,7 +543,7 @@
                 },
                 "NewUserAuthorizationMode": {
                     "type": "string",
-                    "description": "This setting affects the permissions for accounts created at login by Platform SSO. It is only used when the account is created. Use of the following:\n* Standard\n    The account will be a standard user.\n* Admin\n    The account will be added to the local administrators group.\n* Groups\n    The account will be assigned groups using the 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.",
+                    "description": "The permission to apply to newly created accounts at login. Allowed values:\n\n* 'Standard': The account is a standard user.\n* 'Admin': The system adds the account to the local administrators group.\n* 'Groups': The system assigns group to the account using 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.",
                     "enum": [
                         "Standard",
                         "Admin",
@@ -530,7 +552,7 @@
                 },
                 "UserAuthorizationMode": {
                     "type": "string",
-                    "description": "This setting affects the permissions after authentication by Platform SSO. It is applied each time user authenticates. Use of the following:\n* Standard\n    The account will be a standard user. It will be removed from the 'admin' group.\n* Admin\n    The account will be added to the local administrators group.\n* Groups\n    The account will be assigned groups using the 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.",
+                    "description": "The permission to apply to an account each time the user authenticates. Allowed values:\n\n* 'Standard': The account is a standard user.\n* 'Admin': The system adds the account to the local administrators group.\n* 'Groups': The system assigns group to the account using 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.",
                     "enum": [
                         "Standard",
                         "Admin",
@@ -543,7 +565,7 @@
                         "type": "string",
                         "description": "The group name."
                     },
-                    "description": "The list of groups that are used for administrator access. Membership will be requested during authentication."
+                    "description": "The list of groups to use for administrator access. The system requests membership during authentication."
                 },
                 "AdditionalGroups": {
                     "type": "array",
@@ -551,21 +573,79 @@
                         "type": "string",
                         "description": "The group name."
                     },
-                    "description": "The list of groups that are created and do not have administrator access."
+                    "description": "The list of created groups that don't have administrator access."
                 },
                 "AuthorizationGroups": {
                     "type": "object",
-                    "description": "The pairing of Authorization Rights to group names. The Authorization Right will be updated to use the group when used.",
+                    "description": "The pairing of Authorization Rights to group names. The system updates the Authorization Right to use the group when used.",
                     "properties": {
                         "{{key}}": {
-                            "type": "string",
-                            "description": "The Authorization Right to update."
+                            "type": "string"
                         },
                         "{{value}}": {
                             "type": "string",
-                            "description": "The group to use for the Authorization Right."
+                            "description": "The key is an access right value, the value is the group to be associated with that access right."
                         }
                     }
+                },
+                "FileVaultPolicy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "* AttemptAuthentication\n    Platform SSO authentication is attempted before proceeding. If offline, unlock will continue\n    if the local account password matches. If online and the credential is incorrect, then a\n    successful Platform SSO authentication is required to proceed, even if taken offline.\n* RequireAuthentication\n    Platform SSO authentication is required before proceeding.  If the device is offline and\n    `AllowOfflineGracePeriod` is enabled, then the offline `OfflineGracePeriod` is used to determine\n    if the user can proceed or not. If online and the credential is incorrect, then a valid Platform\n    SSO authentication is required to proceed regardless of the `OfflineGracePeriod`. If the account\n    is not registered for Platform SSO and `AllowAuthenticationGracePeriod` is enabled, then the\n    `AuthenticationGracePeriod` is used to determine if the user can proceed or not.\n* AllowOfflineGracePeriod\n    Allow the use of the `OfflineGracePeriod` when `RequireAuthentication` is enabled.  If\n    `AllowOfflineGracePeriod` is not set, then offline access is denied.\n* AllowAuthenticationGracePeriod\n    Allow the use of the `AuthenticationGracePeriod` for other local accounts when `RequireAuthentication`\n    is enabled. The `AuthenticationGracePeriod` starts when any of the policies have been updated. If\n    `AllowAuthenticationGracePeriod` is not set, then unregistered account access is denied.",
+                        "enum": [
+                            "AttemptAuthentication",
+                            "RequireAuthentication",
+                            "AllowOfflineGracePeriod",
+                            "AllowAuthenticationGracePeriod"
+                        ]
+                    },
+                    "description": "The policy to apply when using Platform SSO at FileVault unlock on Apple Silicon Macs. Applies when 'AuthenticationMethod' is 'Password'. Available in macOS 15 and later."
+                },
+                "LoginPolicy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "* AttemptAuthentication\n    Platform SSO authentication is attempted before proceeding. If offline, unlock will continue\n    if the local account password matches. If online and the credential is incorrect, then a\n    successful Platform SSO authentication is required to proceed, even if taken offline.\n* RequireAuthentication\n    Platform SSO authentication is required before proceeding.  If the device is offline and\n    `AllowOfflineGracePeriod` is enabled, then the offline `OfflineGracePeriod` is used to determine\n    if the user can proceed or not. If online and the credential is incorrect, then a valid Platform\n    SSO authentication is required to proceed regardless of the `OfflineGracePeriod`. If the account\n    is not registered for Platform SSO and `AllowAuthenticationGracePeriod` is enabled, then the\n    `AuthenticationGracePeriod` is used to determine if the user can proceed or not.\n* AllowOfflineGracePeriod\n    Allow the use of the `OfflineGracePeriod` when `RequireAuthentication` is enabled.  If\n    `AllowOfflineGracePeriod` is not set, then offline access is denied.\n* AllowAuthenticationGracePeriod\n    Allow the use of the `AuthenticationGracePeriod` for other local accounts when `RequireAuthentication`\n    is enabled. The `AuthenticationGracePeriod` starts when any of the policies have been updated. If\n    `AllowAuthenticationGracePeriod` is not set, then unregistered account access is denied.",
+                        "enum": [
+                            "AttemptAuthentication",
+                            "RequireAuthentication",
+                            "AllowOfflineGracePeriod",
+                            "AllowAuthenticationGracePeriod"
+                        ]
+                    },
+                    "description": "The policy to apply when using Platform SSO at the login window. Applies when 'AuthenticationMethod' is 'Password'. Available in macOS 15 and later."
+                },
+                "UnlockPolicy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "* AttemptAuthentication\n    Platform SSO authentication is attempted before proceeding. If offline, unlock will continue\n    if the local account password matches. If online and the credential is incorrect, then a\n    successful Platform SSO authentication is required to proceed, even if taken offline.\n* RequireAuthentication\n    Platform SSO authentication is required before proceeding.  If the device is offline and\n    `AllowOfflineGracePeriod` is enabled, then the offline `OfflineGracePeriod` is used to determine\n    if the user can proceed or not. If online and the credential is incorrect, then a valid Platform\n    SSO authentication is required to proceed regardless of the `OfflineGracePeriod`. If the account\n    is not registered for Platform SSO and `AllowAuthenticationGracePeriod` is enabled, then the\n    `AuthenticationGracePeriod` is used to determine if the user can proceed or not.\n* AllowOfflineGracePeriod\n    Allow the use of the `OfflineGracePeriod` when `RequireAuthentication` is enabled.  If\n    `AllowOfflineGracePeriod` is not set, then offline access is denied.\n* AllowAuthenticationGracePeriod\n    Allow the use of the `AuthenticationGracePeriod` for other local accounts when `RequireAuthentication`\n    is enabled. The `AuthenticationGracePeriod` starts when any of the policies have been updated. If\n    `AllowAuthenticationGracePeriod` is not set, then unregistered account access is denied.\n* AllowTouchIDOrWatchForUnlock\n    Allow TouchID or Watch to unlock the screensaver instead of Platform SSO authentication when\n    `RequireAuthentication` is enabled.",
+                        "enum": [
+                            "AttemptAuthentication",
+                            "RequireAuthentication",
+                            "AllowOfflineGracePeriod",
+                            "AllowAuthenticationGracePeriod",
+                            "AllowTouchIDOrWatchForUnlock"
+                        ]
+                    },
+                    "description": "The policy to apply when using Platform SSO at screensaver unlock. Applies when 'AuthenticationMethod' is 'Password'. Available in macOS 15 and later."
+                },
+                "OfflineGracePeriod": {
+                    "type": "integer",
+                    "description": "The amount of time after the last successful Platform SSO login a local account password can be used offline. Required when 'AllowOfflineGracePeriod' is set. Available in macOS 15 and later."
+                },
+                "AuthenticationGracePeriod": {
+                    "type": "integer",
+                    "description": "The amount of time after a 'FileVaultPolicy', 'LoginPolicy', or 'UnlockPolicy' is received or updated that unregistered local accounts can be used. Required when 'AllowAuthenticationGracePeriod' is set. Available in macOS 15 and later."
+                },
+                "NonPlatformSSOAccounts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "A local account username."
+                    },
+                    "description": "The list of local accounts that aren't subject to the 'FileVaultPolicy', 'LoginPolicy', or 'UnlockPolicy'. The accounts aren't prompted to register for Platform SSO. Available in macOS 15 and later."
                 }
             },
             "property_order": 55
@@ -573,7 +653,7 @@
         "RegistrationToken": {
             "type": "string",
             "title": "Registration Token",
-            "description": "Platform SSO token for use in silent registration.",
+            "description": "The token this device uses for registration with Platform SSO. Use it for silent registration with the Identity Provider. Requires that 'PlatformSSO.AuthenticationMethod' isn't empty. Available in macOS 13 and later.",
             "property_order": 60
         }
     }

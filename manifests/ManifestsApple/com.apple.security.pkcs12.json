@@ -1,31 +1,31 @@
 {
-    "title": "Certificate PKCS12 (com.apple.security.pkcs12)",
+    "title": "Certificate (PKCS #12) (com.apple.security.pkcs12)",
     "description": "Use this section to define settings for a pkcs12 certificate.",
     "properties": {
         "PayloadCertificateFileName": {
             "type": "string",
-            "title": "Certificate Name",
-            "description": "Name or description of the certificate credential.",
+            "title": "Payload Certificate Filename",
+            "description": "The file name of the enclosed certificate.",
             "property_order": 5
         },
         "Password": {
             "type": "string",
             "title": "Password",
-            "description": "Password protecting the PKCS12 file.",
+            "description": "The password to the identity.",
             "property_order": 10
         },
         "AllowAllAppsAccess": {
             "type": "boolean",
-            "title": "Allow Private Key Access to All Apps",
+            "title": "Allow All Apps Access",
             "default": false,
-            "description": "Allows all apps on the device to access the private key of this certificate",
+            "description": "If 'true', the system allows apps access to the private key. Available in macOS 10.10 and later.",
             "property_order": 15
         },
         "KeyIsExtractable": {
             "type": "boolean",
             "title": "Key is Extractable",
             "default": true,
-            "description": "Allows exporting the private key from the keychain",
+            "description": "If 'false', the system doesn't tag the private key data as extractable in the keychain.",
             "property_order": 20
         }
     }

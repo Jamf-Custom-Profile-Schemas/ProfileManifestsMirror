@@ -6,7 +6,7 @@
             "type": "string",
             "title": "Proxy Type",
             "default": "Manual",
-            "description": "Use Manual for proxies that require authentication.",
+            "description": "The proxy type. For a manual proxy type, the profile contains the proxy server address, including its port, and optionally a user name and password. For an auto proxy type, you can enter a PAC URL.",
             "enum": [
                 "Manual",
                 "Auto"
@@ -40,22 +40,22 @@
         "ProxyPACURL": {
             "type": "string",
             "title": "Proxy PAC URL",
-            "description": "The URL of the PAC file that defines the proxy configuration.",
+            "description": "The URL of the PAC file that defines the proxy configuration. Starting in iOS 13 and macOS 10.15, only URLs that begin with 'http://' or 'https://' are allowed. This setting is only used if the ProxyType is set to Automatic, and is ignored if the ProxyType is set to Manual.",
             "pattern": "^https?://.*",
             "property_order": 30
         },
         "ProxyPACFallbackAllowed": {
             "type": "boolean",
-            "title": "Allow Proxy PAC Fallback",
+            "title": "Proxy PAC Fallback Allowed",
             "default": false,
-            "description": "Proxy PAC Fallback Allowed",
+            "description": "If 'true', allows connecting directly to the destination if the proxy autoconfiguration (PAC) file is unreachable.",
             "property_order": 35
         },
         "ProxyCaptiveLoginAllowed": {
             "type": "boolean",
             "title": "Allow Proxy Bypass for Captive Portal Logins",
             "default": false,
-            "description": "Allow the device to bypass the proxy server to display the login page for captive networks.",
+            "description": "If 'true', allows the device to bypass the proxy server to display the login page for captive networks.",
             "property_order": 40
         }
     }

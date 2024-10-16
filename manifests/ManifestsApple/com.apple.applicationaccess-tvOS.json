@@ -4,28 +4,30 @@
     "properties": {
         "allowDeviceNameModification": {
             "type": "boolean",
-            "title": "Allow modifying device name",
+            "title": "Allow Modifying Device Name",
             "default": true,
-            "description": "If set to false, prevents device name from being changed.",
+            "description": "If 'false', the system prevents the user from changing the device name. Available in iOS 9 and later, macOS 14 and later, and tvOS 11.0 and later. Requires a supervised device in iOS and tvOS.",
             "property_order": 5
         },
         "forceAutomaticDateAndTime": {
             "type": "boolean",
             "title": "Force automatic date and time",
             "default": false,
+            "description": "If 'true', the system enables the Set Automatically feature in Date & Time and the user can't disable it. The system updates the device's time zone only when the device can determine its location using a cellular connection or Wi-Fi with location services enabled. Requires a supervised device. Available in iOS 12 and later, and tvOS 12.2 and later.",
             "property_order": 10
         },
         "allowAutomaticScreenSaver": {
             "type": "boolean",
             "title": "Allow Automatic Screen Saver",
             "default": true,
+            "description": "If 'false', the system disables Apple TV's automatic screen saver. Available in tvOS 15.4 and later.",
             "property_order": 15
         },
         "allowCamera": {
             "type": "boolean",
-            "title": "Allow Camera",
+            "title": "Allow Camera Use",
             "default": true,
-            "description": "If 'false', disables the camera, and its icon is removed from the Home screen. Users are unable to take photographs. This restriction is deprecated on unsupervised devices and will be supervised only in a future release.  Available in iOS 4 and later, and macOS 10.11 and later.",
+            "description": "If 'false', the system disables the camera and removes its icon from the Home screen, and users are unable to take photographs. Available in iOS 4 and later, macOS 10.11 and later, and tvOS 17 and later. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 20
         },
         "allowCloudPrivateRelay": {
@@ -42,7 +44,7 @@
                 "title": "Bundle ID"
             },
             "title": "Blocked Apps",
-            "description": "When populated, prevents displaying or launching listed apps. Disabled when using the Allowed Apps preference.",
+            "description": "If present, the system prevents showing or launching apps with bundle IDs in the array. Include the value 'com.apple.webapp' to restrict all webclips. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, etc).\nRequires a supervised device. Available in iOS 15 and later, and tvOS 15 and later.\nDenying system apps may disable other functionality. For example, denying the App Store app may prevent users from accepting the terms and conditions for the user-based Volume Purchase Program (VPP).",
             "property_order": 30
         },
         "blacklistedAppBundleIDs": {
@@ -51,8 +53,8 @@
                 "type": "string",
                 "title": "iOS / tvOS Bundle ID"
             },
-            "title": "Restrict App Usage - Denylist",
-            "description": "If enabled, cannot use the allowlist to restrict app usage.",
+            "title": "Blacklisted Apps",
+            "description": "Use 'blockedAppBundleIDs' instead.",
             "property_order": 35
         },
         "allowListedAppBundleIDs": {
@@ -61,8 +63,8 @@
                 "type": "string",
                 "title": "Bundle ID"
             },
-            "title": "Allowed Apps",
-            "description": "When populated, prevents displaying or launching apps other than the listed ones. Disabled when using the Blocked Apps preference.",
+            "title": "Allow Listed Apps",
+            "description": "If present, the system only shows or can launch apps with bundle IDs in the array. Include the value 'com.apple.webapp' to allow all webclips. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, etc).\nRequires a supervised device. Available in iOS 15 and later, and tvOS 15 and later.",
             "property_order": 40
         },
         "whitelistedAppBundleIDs": {
@@ -71,8 +73,8 @@
                 "type": "string",
                 "title": "iOS / tvOS Bundle ID"
             },
-            "title": "Restrict App Usage - Allowlist",
-            "description": "If enabled, cannot use the denylist to restrict app usage.",
+            "title": "Whitelisted Apps",
+            "description": "Use 'allowListedAppBundleIDs' instead.",
             "property_order": 45
         },
         "forceAssistantProfanityFilter": {
@@ -93,29 +95,29 @@
             "type": "string",
             "title": "Ratings region",
             "default": "us",
-            "description": "This 2-letter key is used by profile tools to display the proper ratings for given region. It is not recognized or reported by the client.",
+            "description": "The two-letter key that profile tools use to display the proper ratings for the given region. The client doesn't recognize or report this data.",
             "enum": [
+                "us",
                 "au",
                 "ca",
-                "fr",
                 "de",
+                "fr",
                 "ie",
                 "jp",
                 "nz",
-                "gb",
-                "us"
+                "gb"
             ],
             "options": {
                 "enum_titles": [
+                    "United States",
                     "Australia",
                     "Canada",
-                    "France",
                     "Germany",
+                    "France",
                     "Ireland",
                     "Japan",
                     "New Zealand",
-                    "United Kingdom",
-                    "United States"
+                    "United Kingdom"
                 ]
             },
             "property_order": 60
@@ -124,7 +126,7 @@
             "type": "integer",
             "title": "Allowed content ratings - Apps",
             "default": 1000,
-            "description": "This value defines the maximum level of app content that is allowed on the device. Not all integer values are used in each region. Apple's Configuration Profile documentation includes the values for the US, so you may need to do some sleuthing here.",
+            "description": "The maximum level of app content allowed on the device. Preinstalled (first party) apps ignore this restriction. Available in iOS 4 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': 17+\n* '300': 12+\n* '200': 9+\n* '100': 4+\n* '0': None",
             "enum": [
                 1000,
                 900,
@@ -159,7 +161,7 @@
             "type": "integer",
             "title": "Allowed content ratings - Movies",
             "default": 1000,
-            "description": "This value defines the maximum level of movie content that is allowed on the device. Not all integer values are used in each region. Apple's Configuration Profile documentation includes the values for the US, so you may need to do some sleuthing here.",
+            "description": "The maximum level of movie content allowed on the device. Available in iOS 4 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '500': NC-17\n* '400': R\n* '300': PG-13\n* '200': PG\n* '100': G\n* '0': None",
             "enum": [
                 1000,
                 900,
@@ -194,7 +196,7 @@
             "type": "integer",
             "title": "Allowed content ratings - TV Shows",
             "default": 1000,
-            "description": "This value defines the maximum level of TV content that is allowed on the device. Not all integer values are used in each region. Apple's Configuration Profile documentation includes the values for the US, so you may need to do some sleuthing here.",
+            "description": "The maximum level of TV content allowed on the device. Available in iOS 4 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': TV-MA\n* '500': TV-14\n* '400': TV-PG\n* '300': TV-G\n* '200': TV-Y7\n* '100': TV-Y\n* '0': None",
             "enum": [
                 1000,
                 900,
@@ -229,55 +231,56 @@
             "type": "boolean",
             "title": "Allow playback of explicit music, podcasts, and iTunes U",
             "default": true,
-            "description": "When false, explicit music or video content purchased from the iTunes Store is hidden. Explicit content is marked as such by content providers, such as record labels, when sold through the iTunes Store. This key is deprecated on unsupervised devices.",
+            "description": "If 'false', the system hides explicit music or video content purchased from the iTunes Store. The system marks explicit content as such by content providers, such as record labels, when sold through the iTunes Store. Available in iOS 4 and later, and tvOS 11.3 and later. Requires a supervised device in iOS 13 and later. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 80
         },
         "allowBookstoreErotica": {
             "type": "boolean",
             "title": "Allow explicit sexual content in iBooks Store",
             "default": true,
-            "description": "If set to false, the user will not be able to download media from Apple Books that has been tagged as erotica.",
+            "description": "If 'false', the system prevents the user from downloading Apple Books media that's tagged as erotica. Available in iOS 6 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 85
         },
         "allowAirPlayIncomingRequests": {
             "type": "boolean",
             "title": "Allow incoming AirPlay requests",
             "default": true,
+            "description": "If 'false', the system disables incoming AirPlay requests. Available in macOS 12.3 and later, and tvOS 10.2 and later. Requires a supervised device in tvOS.",
             "property_order": 90
         },
         "forceAirPlayIncomingRequestsPairingPassword": {
             "type": "boolean",
             "title": "Require passcode on first AirPlay pairing",
             "default": false,
-            "description": "It is recommended to use the AirPlay Security Payload.",
+            "description": "If 'true', the system forces all devices sending AirPlay requests to this device to use a pairing password. Available in tvOS 6.2 and later. This key isn't supported in tvOS 10.2 and later. Use the AirPlay Security Payload instead.",
             "property_order": 95
         },
         "allowRemoteAppPairing": {
             "type": "boolean",
             "title": "Allow pairing with Remote app",
             "default": true,
-            "description": "If set to false, the Apple TV cannot be paired for use with the Remote app or Control Center widget.",
+            "description": "If 'false', the system disables pairing Apple TV for use with the Control Center widget. Requires a supervised device. Available in tvOS 10.2 and later.",
             "property_order": 100
         },
         "allowPasswordProximityRequests": {
             "type": "boolean",
             "title": "Allow proximity based password sharing requests",
             "default": true,
-            "description": "If set to false, a user's device will not request passwords from nearby devices.",
+            "description": "If 'false', the system disables requesting passwords from nearby devices. Available in iOS 12 and later, macOS 10.14 and later, and tvOS 12 and later. Requires a supervised device in iOS and tvOS.",
             "property_order": 105
         },
         "forceDelayedSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer Software Updates",
             "default": false,
-            "description": "If set to true, delays user visibility of Software Updates.",
+            "description": "If 'true', the system delays user visibility of software updates. In macOS, the system allows seed build updates without delay. The delay is 30 days unless you set 'enforcedSoftwareUpdateDelay' to another value. Available in iOS 11.3 and later, macOS 10.13 and later, and tvOS 12.2 and later. Requires a supervised device in iOS and tvOS.",
             "property_order": 110
         },
         "enforcedSoftwareUpdateDelay": {
             "type": "integer",
             "title": "Deferred Software Updates Delay",
             "default": 30,
-            "description": "Number of days the software updates will be hidden from the user.",
+            "description": "How many days to delay a software update on the device. With this restriction in place, the user doesn't see a software update until the specified number of days after the software update release date. The restrictions 'forceDelayedAppSoftwareUpdates' and 'forceDelayedSoftwareUpdates' use this value. Available in iOS 11.3 and later, macOS 10.13.4 and later, and tvOS 12.2 and later. Requires a supervised device in iOS and tvOS.",
             "property_order": 115
         },
         "allowDeviceSleep": {

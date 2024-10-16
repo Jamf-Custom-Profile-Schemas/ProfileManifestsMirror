@@ -1,6 +1,6 @@
 {
     "title": "DNS Settings (com.apple.dnsSettings.managed)",
-    "description": "DNS Settings",
+    "description": "Use this section to configure DNS settings.",
     "properties": {
         "DNSSettings": {
             "type": "object",
@@ -9,7 +9,7 @@
             "properties": {
                 "DNSProtocol": {
                     "type": "string",
-                    "title": "Protocol",
+                    "title": "DNS Protocol",
                     "description": "The encrypted transport protocol used to communicate with the DNS server.",
                     "enum": [
                         "HTTPS",
@@ -20,30 +20,30 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "IP Address"
+                        "title": "Server Address Element"
                     },
-                    "title": "Server IP Addresses",
+                    "title": "DNS Server Addresses",
                     "description": "An unordered list of DNS server IP address strings. These IP addresses can be a mixture of IPv4 and IPv6 addresses."
                 },
                 "ServerName": {
                     "type": "string",
                     "title": "Server Name",
-                    "description": "The hostname of a DNS-over-TLS server used to validate the server certificate, as defined in RFC 7858. If no ServerAddresses are provided, the hostname will be used to determine the server addresses."
+                    "description": "The hostname of a DNS-over-TLS server used to validate the server certificate, as defined in RFC 7858. If no 'ServerAddresses' are provided, the system uses the hostname to determine the server addresses. This key must be present only if the DNSProtocol is 'TLS'."
                 },
                 "ServerURL": {
                     "type": "string",
                     "title": "Server URL",
-                    "description": "The URI template of a DNS-over-HTTPS server, as defined in RFC 8484. This URL must use the https:// scheme, and the hostname or address in the URL will be used to validate the server certificate",
+                    "description": "The URI template of a DNS-over-HTTPS server, as defined in RFC 8484. This URL needs to use the 'https://' scheme, and the system uses the hostname or address in the URL to validate the server certificate. If no 'ServerAddresses' are provided, the system uses the hostname or address in the URL to determine the server addresses. Required if 'DNSProtocol' is 'HTTPS'.",
                     "pattern": "^https://.*"
                 },
                 "SupplementalMatchDomains": {
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Domain"
+                        "title": "Supplemental Match Domains Element"
                     },
                     "title": "Supplemental Match Domains",
-                    "description": "A list of domain strings used to determine which DNS queries will use the DNS server. If this array is not provided, all domains will use the DNS server. A single wildcard * prefix is supported, but is not required."
+                    "description": "A list of domain strings used to determine which DNS queries use the DNS server. If not set, all domains use the DNS server.\nThe system supports a single wildcard ('*') prefix, but it's not required. For example, both '*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
                 }
             },
             "property_order": 5
@@ -56,7 +56,8 @@
                 "properties": {
                     "Action": {
                         "type": "string",
-                        "description": "The action to take if this dictionary matches the current network. Options:\nConnect: Apply DNS Settings when the dictionary matches.\nDisconnect: Do not apply DNS Settings when the dictionary matches.\nEvaluateConnection: Apply DNS Settings with per-domain exceptions when the dictionary matches.",
+                        "title": "On Demand Action",
+                        "description": "The action to take if this dictionary matches the current network. Allowed values:\n\n* 'Connect': Apply DNS Settings when the dictionary matches.\n* 'Disconnect': Don't apply DNS Settings when the dictionary matches.\n* 'EvaluateConnection': Apply DNS Settings with per-domain exceptions when the dictionary matches.",
                         "enum": [
                             "Connect",
                             "Disconnect",
@@ -75,11 +76,12 @@
                         "items": {
                             "type": "object",
                             "title": "Action Parameter",
+                            "description": "A dictionary that provides per-connection rules.\nThe keys allowed in each dictionary are described below. Note: This array is used only for dictionaries in which EvaluateConnection is the Action value.",
                             "properties": {
                                 "DomainAction": {
                                     "type": "string",
                                     "title": "Domain Action",
-                                    "description": "The DNS settings behavior for the specified domains. Options:\n\t\tNeverConnect: Do not use the DNS Settings for the specified domains.\n\t\tConnectIfNeeded: Allow using the DNS Settings for the specified domains.",
+                                    "description": "The DNS settings behavior for the specified domains. Allowed values:\n\n* 'NeverConnect': Don't use the DNS Settings for the specified domains.\n* 'ConnectIfNeeded': Allow using the DNS Settings for the specified domains.",
                                     "enum": [
                                         "NeverConnect",
                                         "ConnectIfNeeded"
@@ -95,73 +97,76 @@
                                     "type": "array",
                                     "items": {
                                         "type": "string",
-                                        "title": "Domain"
+                                        "title": "Domains Element"
                                     },
+                                    "title": "Domains",
                                     "description": "The domains for which this evaluation applies."
                                 }
                             }
                         },
                         "title": "Action Parameters",
-                        "description": "A dictionary that provides per-connection rules. This array is used only for settings where the Action value is EvaluateConnection."
+                        "description": "An array of dictionaries that provide per-connection rules. The system uses this array only for settings where the 'Action' value is 'EvaluateConnection'."
                     },
                     "DNSDomainMatch": {
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "title": "Domain"
+                            "title": "DNS Domain Match Element"
                         },
-                        "title": "Domain Match",
-                        "description": "An array of domain names. This rule matches if any of the domain names in the specified list matches any domain in the device's search domains list. A single wildcard * prefix is supported, but is not required."
+                        "title": "DNS Domain Match",
+                        "description": "An array of domain names. This rule matches if any of the domain names in the specified list matches any domain in the device's search domains list.\nThe system supports a single wildcard ('*') prefix, but it's not required. For example, both '*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
                     },
                     "DNSServerAddressMatch": {
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "title": "IP Address"
+                            "title": "DNS Server Address Match Element"
                         },
-                        "title": "Server Address Match",
-                        "description": "An array of IP addresses. This rule matches if any of the network's specified DNS servers match any entry in the array. Matching with a single wildcard is supported."
+                        "title": "DNS Server Address Match",
+                        "description": "An array of IP addresses. This rule matches if any of the network's specified DNS servers match any entry in the array.\nThe system supports matching with a single wildcard. For example, '17.*' matches any DNS server in the 17.0.0.0/8 subnet."
                     },
                     "InterfaceTypeMatch": {
                         "type": "string",
-                        "title": "Interface Type",
+                        "title": "Interface Type Match",
                         "description": "An interface type. If specified, this rule matches only if the primary network interface hardware matches the specified type.",
                         "enum": [
-                            "Cellular",
                             "Ethernet",
-                            "WiFi"
+                            "WiFi",
+                            "Cellular"
                         ]
                     },
                     "SSIDMatch": {
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "title": "SSID"
+                            "title": "SSID Match Element"
                         },
                         "title": "SSID Match",
-                        "description": "An array of SSIDs to match against the current network. If the network is not a Wi-Fi network or if the SSID does not appear in this array, the match fails. Omit this key and the corresponding array to match against any SSID."
+                        "description": "An array of SSIDs to match against the current network. If the network isn't a Wi-Fi network or if the SSID doesn't appear in this array, the match fails. Omit this key and the corresponding array to match against any SSID."
                     },
                     "URLStringProbe": {
                         "type": "string",
                         "title": "URL String Probe",
-                        "description": "A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches."
+                        "description": "A URL to probe. This rule matches if this URL is successfully fetched and returns a 200 HTTP status code without redirection."
                     }
                 }
             },
             "title": "On Demand Rules",
-            "description": "An array of rules defining the DNS settings. If rules are not present, the system always applies the DNS settings. These rules are identical to the OnDemandRules array in VPN payloads.",
+            "description": "An array of rules that define the DNS settings. If not set, the system always applies the DNS settings. These rules are identical to the 'OnDemandRules' array in VPN payloads.",
             "property_order": 10
         },
         "ProhibitDisablement": {
             "type": "boolean",
             "title": "Prohibit Disablement",
-            "description": "If true, prohibits users from disabling DNS settings. This key is only available on supervised devices.",
+            "default": false,
+            "description": "If 'true', the system prohibits users from disabling DNS settings. This key is only available on supervised devices.",
             "property_order": 15
         },
         "PayloadCertificateUUID": {
             "type": "string",
             "title": "Certificate UUID",
-            "description": "UUID pointing to an identity certificate payload. This identity will be used to authenticate the user to the DNS resolver.",
+            "description": "The UUID that points to an identity certificate payload. The system uses this identity to authenticate the user to the DNS resolver.",
+            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 20
         }
     }

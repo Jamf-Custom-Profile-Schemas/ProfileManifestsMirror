@@ -1,11 +1,11 @@
 {
-    "title": "Certificate Root (com.apple.security.root)",
-    "description": "Certificate Root settings",
+    "title": "Certificate (Root) (com.apple.security.root)",
+    "description": "Use this section to define settings for a root certificate.",
     "properties": {
         "PayloadCertificateFileName": {
             "type": "string",
-            "title": "Certificate Name",
-            "description": "Name or description of the certificate credential.",
+            "title": "Payload Certificate Filename",
+            "description": "The file name of the enclosed certificate.",
             "property_order": 5
         }
     }

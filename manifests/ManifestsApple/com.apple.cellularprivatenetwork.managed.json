@@ -9,44 +9,56 @@
                 "properties": {
                     "Longitude": {
                         "type": "number",
-                        "description": "Signed decimal value of longitude from -180 to 180"
+                        "description": "The longitude of the geofence."
                     },
                     "Latitude": {
                         "type": "number",
-                        "description": "Signed decimal value of latitude from -90 to 90"
+                        "description": "The latitude of the geofence."
                     },
                     "Radius": {
                         "type": "number",
-                        "description": "Specifies the radius of the geofence in meters. Should be set slightly greater than the private cellular network coverage area. Supported values 100 to 6500"
+                        "description": "Specifies the radius of the geofence in meters. Set this value slightly greater than the private cellular network coverage area."
                     },
                     "GeofenceId": {
                         "type": "string",
-                        "description": "ID of geofence, must be unique amongst list"
+                        "description": "A geofence identifier that's unique within a list of geofences."
                     }
                 }
             },
-            "description": "List of up to 1000 geofences for private networks. Geofencing is only used on iPhones.",
+            "description": "A list of up to 1000 geofences for private networks. Geofencing is only used on iPhone.",
             "property_order": 5
         },
         "DataSetName": {
             "type": "string",
-            "description": "Name for private network configuration dataset",
+            "description": "The name of the private network configuration data set.",
             "property_order": 10
         },
         "VersionNumber": {
             "type": "string",
-            "description": "The version number of this dataset. Used to track updates",
+            "description": "The version number of this dataset that the system uses to track updates.",
             "property_order": 15
         },
         "CellularDataPreferred": {
             "type": "boolean",
-            "description": "Set to true if this private network should be preferred over wifi",
+            "default": false,
+            "description": "Set to 'true' to prefer this private network over Wi-Fi.",
             "property_order": 20
         },
         "EnableNRStandalone": {
             "type": "boolean",
-            "description": "Set to true if this private network is NR Standalone",
+            "default": false,
+            "description": "Set to 'true' if this private network is NR Standalone.",
             "property_order": 25
+        },
+        "NetworkIdentifier": {
+            "type": "string",
+            "description": "String formatted in accordance with the definition of a \"Coordinated NID\" (option 1 or option 2) in 3GPP 31.102 §12.7.1. Used to match this profile to a SIM present on the device. All combinations of NetworkIdentifier and CsgNetworkIdentifier must be unique between profiles installed on the device.",
+            "property_order": 30
+        },
+        "CsgNetworkIdentifier": {
+            "type": "string",
+            "description": "String formatted in accordance with the definition of \"CSG_ID\" in 3GPP 23.003 §4.7. Used to match this profile to a SIM present on the device. All combinations of NetworkIdentifier and CsgNetworkIdentifier must be unique between profiles installed on the device.",
+            "property_order": 35
         }
     }
 }

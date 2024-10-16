@@ -1,6 +1,6 @@
 {
     "title": "AirPrint (com.apple.airprint)",
-    "description": "AirPrint settings",
+    "description": "Use this section to define settings for AirPrint.",
     "properties": {
         "AirPrint": {
             "type": "array",
@@ -12,28 +12,28 @@
                     "IPAddress": {
                         "type": "string",
                         "title": "IP Address or Hostname",
-                        "description": "The AirPrint printer's IP address or hostname"
+                        "description": "The IP address or hostname of the AirPrint destination."
                     },
                     "Port": {
                         "type": "integer",
-                        "title": "Port",
-                        "description": "The AirPrint printer's listening port number"
+                        "title": "Port Number",
+                        "description": "The listening port of the AirPrint destination. Available only in iOS 11 and later."
                     },
                     "ResourcePath": {
                         "type": "string",
                         "title": "Resource Path",
-                        "description": "The AirPrint printer's resource path"
+                        "description": "The resource path associated with the printer. This path corresponds to the 'rp' parameter of the '_ipps.tcp' Bonjour record. For example:\n* 'printers/Canon_MG5300_series'\n* 'printers/Xerox_Phaser_7600'\n* 'ipp/print'\n* 'Epson_IPP_Printer'"
                     },
                     "ForceTLS": {
                         "type": "boolean",
                         "title": "Force TLS",
                         "default": false,
-                        "description": "Enable and force TLS for AirPrint connections"
+                        "description": "If 'true', AirPrint connections are secured by Transport Layer Security (TLS). Available only in iOS 11 and later."
                     }
                 }
             },
             "title": "Air print",
-            "description": "List of printers",
+            "description": "An array of AirPrint printers that are presented to the user.",
             "property_order": 5
         }
     }
