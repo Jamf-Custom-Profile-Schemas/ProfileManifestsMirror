@@ -1,5 +1,5 @@
 {
-    "title": "Restrictions (com.apple.applicationaccess)",
+    "title": "Restrictions (macOS) (com.apple.applicationaccess)",
     "description": "Use this section to define restrictions settings",
     "properties": {
         "allowAirDrop": {
@@ -494,7 +494,7 @@
             "type": "boolean",
             "title": "Enable Siri Profanity Filter",
             "default": false,
-            "description": "If 'true', the system forces the use of the profanity filter assistant. Available in iOS 11 and later, and macOS 10.13 and later. Requires a supervised device in iOS.",
+            "description": "If 'true', the system forces the use of the profanity filter for Siri and dictation. Available in iOS 11 and later, and macOS 10.13 and later. Requires a supervised device in iOS.",
             "property_order": 330
         },
         "forceDelayedSoftwareUpdates": {
@@ -606,29 +606,48 @@
             "type": "boolean",
             "title": "Allow Genmoji",
             "default": true,
-            "description": "If 'false', prohibits creating new Genmoji. Available in iOS 18 and later.",
+            "description": "If 'false', prohibits creating new Genmoji. Requires a supervised device. Available in iOS 18 and later.",
             "property_order": 410
         },
         "allowImagePlayground": {
             "type": "boolean",
             "title": "Allow Image Playground",
             "default": true,
-            "description": "If 'false', prohibits the use of image generation. Available in iOS 18 and later and macOS 15 and later.",
+            "description": "If 'false', prohibits the use of image generation. Requires a supervised device. Available in iOS 18 and later and macOS 15 and later.",
             "property_order": 415
         },
         "allowiPhoneMirroring": {
             "type": "boolean",
             "title": "Allow iPhone mirroring",
             "default": true,
-            "description": "If 'false', prohibits the use of iPhone Mirroring. When used on macOS, this prevents the Mac from mirroring any iPhone. When used on iOS, this prevents the iPhone from mirroring to any Mac. Available in iOS 18 and later and macOS 15 and later.",
+            "description": "If 'false', prohibits the use of iPhone Mirroring. When used on macOS, this prevents the Mac from mirroring any iPhone. When used on iOS, this prevents the iPhone from mirroring to any Mac. Requires a supervised device. Available in iOS 18 and later and macOS 15 and later.",
             "property_order": 420
         },
         "allowWritingTools": {
             "type": "boolean",
             "title": "Allow writing tools",
             "default": true,
-            "description": "If 'false', disables Apple Intelligence writing tools. Available in iOS 18 and later and macOS 15 and later.",
+            "description": "If 'false', disables Apple Intelligence writing tools. Requires a supervised device. Available in iOS 18 and later and macOS 15 and later.",
             "property_order": 425
+        },
+        "allowMailSummary": {
+            "type": "boolean",
+            "default": true,
+            "description": "If false, disables the ability to create summaries of email messages manually. This does not affect automatic summary generation.",
+            "property_order": 430
+        },
+        "allowMediaSharingModification": {
+            "type": "boolean",
+            "title": "Allow modifying Media Sharing setting",
+            "default": true,
+            "description": "If false, prevents modification of Media Sharing settings.",
+            "property_order": 435
+        },
+        "forceBypassScreenCaptureAlert": {
+            "type": "boolean",
+            "default": false,
+            "description": "If set to true, then the presentation of a screen capture alert will be bypassed.",
+            "property_order": 440
         }
     }
 }
