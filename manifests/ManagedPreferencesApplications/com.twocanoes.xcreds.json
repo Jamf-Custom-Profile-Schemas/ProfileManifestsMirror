@@ -1,6 +1,6 @@
 {
     "title": "XCreds (com.twocanoes.xcreds)",
-    "description": "XCreds 5.0 (7176) OAuth Settings",
+    "description": "XCreds 5.1 (7264) OAuth Settings",
     "properties": {
         "ADDomain": {
             "type": "string",
@@ -112,6 +112,15 @@
             "description": "List of claims that should be added to the user local account. Will be prefixed with _xcreds_oidc_. Set as an Array of Strings of the claim.",
             "property_order": 50
         },
+        "systemInfoAdditionsArray": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "System Info Additions",
+            "description": "Items to be added to the System Info Popover at login. Can be made dynamic by using the override script override to provide this setting",
+            "property_order": 55
+        },
         "shouldSwitchToLoginWindowWhenLocked": {
             "type": "boolean",
             "title": "Should Switch To Login Window When Locked",
@@ -123,7 +132,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 55
+            "property_order": 60
         },
         "LocalFallback": {
             "type": "boolean",
@@ -136,7 +145,20 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 60
+            "property_order": 65
+        },
+        "shouldActivateSystemInfoButton": {
+            "type": "boolean",
+            "title": "Should Activate System Info Button",
+            "default": true,
+            "description": "Show the system info popover as active when first starting",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
+                }
+            ],
+            "property_order": 70
         },
         "discoveryURL": {
             "type": "string",
@@ -149,7 +171,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 65
+            "property_order": 75
         },
         "EnableFDE": {
             "type": "boolean",
@@ -162,7 +184,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 70
+            "property_order": 80
         },
         "EnableFDERecoveryKey": {
             "type": "boolean",
@@ -175,7 +197,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 75
+            "property_order": 85
         },
         "EnableFDERecoveryKeyPath": {
             "type": "string",
@@ -187,7 +209,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 80
+            "property_order": 90
         },
         "EnableFDERekey": {
             "type": "boolean",
@@ -200,7 +222,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 85
+            "property_order": 95
         },
         "loginWindowWidth": {
             "type": "integer",
@@ -212,7 +234,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 90
+            "property_order": 100
         },
         "loginWindowHeight": {
             "type": "integer",
@@ -224,7 +246,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 95
+            "property_order": 105
         },
         "loadPageTitle": {
             "type": "string",
@@ -237,7 +259,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 100
+            "property_order": 110
         },
         "loadPageInfo": {
             "type": "string",
@@ -250,7 +272,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 105
+            "property_order": 115
         },
         "loginWindowBackgroundImageURL": {
             "type": "string",
@@ -264,7 +286,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 110
+            "property_order": 120
         },
         "menuItemWindowBackgroundImageURL": {
             "type": "string",
@@ -277,7 +299,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 115
+            "property_order": 125
         },
         "shouldLoginWindowBackgroundImageFillScreen": {
             "type": "boolean",
@@ -290,7 +312,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 120
+            "property_order": 130
         },
         "passwordChangeURL": {
             "type": "string",
@@ -303,7 +325,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 125
+            "property_order": 135
         },
         "redirectURI": {
             "type": "string",
@@ -316,7 +338,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 130
+            "property_order": 140
         },
         "shouldShowCloudLoginByDefault": {
             "type": "boolean",
@@ -329,7 +351,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 135
+            "property_order": 145
         },
         "refreshRateHours": {
             "type": "integer",
@@ -342,7 +364,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 140
+            "property_order": 150
         },
         "refreshRateMinutes": {
             "type": "integer",
@@ -355,7 +377,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 145
+            "property_order": 155
         },
         "scopes": {
             "type": "string",
@@ -368,7 +390,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 150
+            "property_order": 160
         },
         "shouldSetGoogleAccessTypeToOffline": {
             "type": "boolean",
@@ -381,7 +403,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 155
+            "property_order": 165
         },
         "shouldPromptForADPasswordChange": {
             "type": "boolean",
@@ -394,7 +416,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 160
+            "property_order": 170
         },
         "shouldShowSignInMenuItem": {
             "type": "boolean",
@@ -407,7 +429,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 165
+            "property_order": 175
         },
         "shouldPreferLocalLoginInsteadOfCloudLogin": {
             "type": "boolean",
@@ -420,7 +442,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 170
+            "property_order": 180
         },
         "shouldVerifyPasswordWithRopg": {
             "type": "boolean",
@@ -433,7 +455,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 175
+            "property_order": 185
         },
         "ropgClientID": {
             "type": "string",
@@ -445,7 +467,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 180
+            "property_order": 190
         },
         "ropgClientSecret": {
             "type": "string",
@@ -457,7 +479,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 185
+            "property_order": 195
         },
         "shouldUseROPGForLoginWindowLogin": {
             "type": "boolean",
@@ -470,7 +492,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 190
+            "property_order": 200
         },
         "shouldUseROPGForMenuLogin": {
             "type": "boolean",
@@ -483,7 +505,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 195
+            "property_order": 205
         },
         "shouldUseROPGForPasswordChangeChecking": {
             "type": "boolean",
@@ -496,7 +518,32 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 200
+            "property_order": 210
+        },
+        "resource": {
+            "type": "string",
+            "title": "ROPG Resource",
+            "description": "Resource URL when using ROPG. Typically needed only for Azure. Common value is https://graph.microsoft.com",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
+                }
+            ],
+            "property_order": 215
+        },
+        "ropgResponseValue": {
+            "type": "string",
+            "title": "ROPG Response Value",
+            "default": "interaction_required",
+            "description": "When a ROPG request is completed succesfully to verify password, it may return an error that two factor is required. Add the response string that is returned in the JSON response. For Azure, it is typically interaction_required.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
+                }
+            ],
+            "property_order": 220
         },
         "hideIfPathExists": {
             "type": "string",
@@ -508,7 +555,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 205
+            "property_order": 225
         },
         "aliasName": {
             "type": "string",
@@ -520,7 +567,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 210
+            "property_order": 230
         },
         "autoRefreshLoginTimer": {
             "type": "integer",
@@ -533,7 +580,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 215
+            "property_order": 235
         },
         "cloudLoginText": {
             "type": "string",
@@ -546,7 +593,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 220
+            "property_order": 240
         },
         "shouldShowAboutMenu": {
             "type": "boolean",
@@ -559,7 +606,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 225
+            "property_order": 245
         },
         "shouldShowMenuBarSignInWithoutLoginWindowSignIn": {
             "type": "boolean",
@@ -572,7 +619,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 230
+            "property_order": 250
         },
         "refreshBannerText": {
             "type": "string",
@@ -585,7 +632,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 235
+            "property_order": 255
         },
         "shouldShowRefreshBanner": {
             "type": "boolean",
@@ -598,7 +645,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 240
+            "property_order": 260
         },
         "shouldShowConfigureWifiButton": {
             "type": "boolean",
@@ -611,7 +658,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 245
+            "property_order": 265
         },
         "shouldShowShutdownButton": {
             "type": "boolean",
@@ -624,7 +671,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 250
+            "property_order": 270
         },
         "shouldShowRestartButton": {
             "type": "boolean",
@@ -637,7 +684,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 255
+            "property_order": 275
         },
         "shouldShowSystemInfoButton": {
             "type": "boolean",
@@ -650,7 +697,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 260
+            "property_order": 280
         },
         "shouldShowPreferencesOnStart": {
             "type": "boolean",
@@ -663,7 +710,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 265
+            "property_order": 285
         },
         "shouldPromptForMigration": {
             "type": "boolean",
@@ -676,7 +723,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 270
+            "property_order": 290
         },
         "shouldAllowKeyComboForMacLoginWindow": {
             "type": "boolean",
@@ -689,7 +736,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 275
+            "property_order": 295
         },
         "keyCodeForLoginWindowChange": {
             "type": "integer",
@@ -701,7 +748,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 280
+            "property_order": 300
         },
         "shouldShowMacLoginButton": {
             "type": "boolean",
@@ -714,7 +761,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 285
+            "property_order": 305
         },
         "shouldShowLocalOnlyCheckbox": {
             "type": "boolean",
@@ -727,7 +774,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 290
+            "property_order": 310
         },
         "usernamePlaceholder": {
             "type": "string",
@@ -739,7 +786,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 295
+            "property_order": 315
         },
         "passwordPlaceholder": {
             "type": "string",
@@ -751,7 +798,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 300
+            "property_order": 320
         },
         "shouldShowSupportStatus": {
             "type": "boolean",
@@ -764,7 +811,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 305
+            "property_order": 325
         },
         "shouldShowQuitMenu": {
             "type": "boolean",
@@ -777,7 +824,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 310
+            "property_order": 330
         },
         "shouldShowVersionInfo": {
             "type": "boolean",
@@ -790,7 +837,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 315
+            "property_order": 335
         },
         "showDebug": {
             "type": "boolean",
@@ -803,7 +850,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 320
+            "property_order": 340
         },
         "username": {
             "type": "string",
@@ -815,7 +862,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 325
+            "property_order": 345
         },
         "KeychainReset": {
             "type": "boolean",
@@ -828,7 +875,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 330
+            "property_order": 350
         },
         "PasswordOverwriteSilent": {
             "type": "boolean",
@@ -841,7 +888,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 335
+            "property_order": 355
         },
         "HideExpiration": {
             "type": "boolean",
@@ -854,7 +901,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 340
+            "property_order": 360
         },
         "localAdminUserName": {
             "type": "string",
@@ -866,7 +913,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 345
+            "property_order": 365
         },
         "localAdminPassword": {
             "type": "string",
@@ -878,7 +925,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 350
+            "property_order": 370
         },
         "resetPasswordDialogTitle": {
             "type": "string",
@@ -891,7 +938,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 355
+            "property_order": 375
         },
         "systemInfoButtonTitle": {
             "type": "string",
@@ -904,7 +951,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 360
+            "property_order": 380
         },
         "verifyPassword": {
             "type": "boolean",
@@ -917,7 +964,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 365
+            "property_order": 385
         },
         "shouldDetectNetworkToDetermineLoginWindow": {
             "type": "boolean",
@@ -930,7 +977,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 370
+            "property_order": 390
         },
         "idpHostName": {
             "type": "string",
@@ -942,7 +989,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 375
+            "property_order": 395
         },
         "idpHostNames": {
             "type": "array",
@@ -951,7 +998,7 @@
             },
             "title": "IDP Host Names",
             "description": "array of hostnames of the page that has the password field.",
-            "property_order": 380
+            "property_order": 400
         },
         "adUserAttributesToAddToLocalUserAccount": {
             "type": "array",
@@ -960,7 +1007,7 @@
             },
             "title": "AD User Attributes To Add To Local User Account",
             "description": "array of AD user attributes to add to local directory user account",
-            "property_order": 385
+            "property_order": 405
         },
         "passwordElementID": {
             "type": "string",
@@ -972,7 +1019,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 390
+            "property_order": 410
         },
         "map_firstname": {
             "type": "string",
@@ -985,7 +1032,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 395
+            "property_order": 415
         },
         "map_lastname": {
             "type": "string",
@@ -998,7 +1045,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 400
+            "property_order": 420
         },
         "map_fullname": {
             "type": "string",
@@ -1011,7 +1058,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 405
+            "property_order": 425
         },
         "map_username": {
             "type": "string",
@@ -1024,7 +1071,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 410
+            "property_order": 430
         },
         "map_fullusername": {
             "type": "string",
@@ -1037,7 +1084,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 415
+            "property_order": 435
         },
         "map_uid": {
             "type": "string",
@@ -1049,7 +1096,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 420
+            "property_order": 440
         },
         "map_password_expiry": {
             "type": "string",
@@ -1062,7 +1109,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 425
+            "property_order": 445
         },
         "settingsOverrideScriptPath": {
             "type": "string",
@@ -1075,7 +1122,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 430
+            "property_order": 450
         },
         "menuItems": {
             "type": "array",
@@ -1110,7 +1157,7 @@
             },
             "title": "Menu Items",
             "description": "Menu Items",
-            "property_order": 435
+            "property_order": 455
         },
         "Shares": {
             "type": "array",
@@ -1146,19 +1193,19 @@
             },
             "title": "Shares",
             "description": "Add menu item and mount/automount shares",
-            "property_order": 440
+            "property_order": 460
         },
         "HomeMountEnabled": {
             "type": "boolean",
             "title": "Home Mount Enabled",
             "description": "Show and mount home directory from AD profile if defined.",
-            "property_order": 445
+            "property_order": 465
         },
         "HomeAppendDomain": {
             "type": "boolean",
             "title": "Home Append Domain",
             "description": "Append the domain name to the share defined in the profile.",
-            "property_order": 450
+            "property_order": 470
         },
         "shareMenuItemName": {
             "type": "string",
@@ -1170,7 +1217,7 @@
                     "href": "https://twocanoes.com/knowledge-base/xcreds-admin-guide/#preferences"
                 }
             ],
-            "property_order": 455
+            "property_order": 475
         }
     }
 }
