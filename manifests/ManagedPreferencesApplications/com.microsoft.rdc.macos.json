@@ -1,6 +1,6 @@
 {
-    "title": "Microsoft Remote Desktop (com.microsoft.rdc.macos)",
-    "description": "Microsoft Remote Desktop settings",
+    "title": "Windows App (com.microsoft.rdc.macos)",
+    "description": "Settings for Windows App, previously Microsoft Remote Desktop",
     "properties": {
         "ClientSettings.FirstRunExperienceLaunchedVersion": {
             "type": "string",
@@ -42,7 +42,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/mac-whatsnew#updates-for-version-1022"
+                    "href": "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/mac-whatsnew#updates-for-version-1022"
                 }
             ],
             "enum": [

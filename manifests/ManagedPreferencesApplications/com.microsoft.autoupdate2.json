@@ -645,6 +645,40 @@
                         }
                     }
                 },
+                "/Applications/Windows App.app": {
+                    "type": "object",
+                    "title": "Windows App",
+                    "description": "Register /Applications/Windows App.app.",
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSRD10",
+                            "enum": [
+                                "MSRD10"
+                            ]
+                        },
+                        "LCID": {
+                            "type": "integer",
+                            "title": "Language Code ID",
+                            "default": 1033,
+                            "enum": [
+                                1033
+                            ]
+                        },
+                        "UpdateDeadline.DaysBeforeForcedQuit": {
+                            "type": "integer",
+                            "title": "Update Deadline: Days Before Forced Quit",
+                            "description": "Force quit this application and update X number of days after MAU first detects the update on each computer. Can be used in conjunction with the higher level option of the same setting for more restrictive per-application updating.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
+                                }
+                            ]
+                        }
+                    }
+                },
                 "/Applications/Microsoft Remote Desktop.app": {
                     "type": "object",
                     "title": "Microsoft Remote Desktop",
@@ -1109,6 +1143,37 @@
                                     "2019 Volume License/Office 365"
                                 ]
                             }
+                        },
+                        "ForcedUpdateDate": {
+                            "type": "date",
+                            "title": "Forced Update Date",
+                            "description": "The date and time to force the update."
+                        },
+                        "ForcedUpdateVersion": {
+                            "type": "string",
+                            "title": "Forced Update Version",
+                            "description": "The version of the update."
+                        }
+                    }
+                },
+                "/Applications/Windows App.app": {
+                    "type": "object",
+                    "title": "Windows App",
+                    "description": "Schedule an update for Windows App.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-specific-date-and-time"
+                        }
+                    ],
+                    "properties": {
+                        "Application ID": {
+                            "type": "string",
+                            "title": "Application ID",
+                            "default": "MSRD10",
+                            "enum": [
+                                "MSRD10"
+                            ]
                         },
                         "ForcedUpdateDate": {
                             "type": "date",
