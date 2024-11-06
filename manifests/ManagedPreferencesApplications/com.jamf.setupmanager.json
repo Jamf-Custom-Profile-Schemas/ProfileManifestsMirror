@@ -1,0 +1,812 @@
+{
+    "title": "Jamf Setup Manager (com.jamf.setupmanager)",
+    "description": "Jamf Setup Manager settings",
+    "properties": {
+        "DEBUG": {
+            "type": "boolean",
+            "title": "Debug Mode",
+            "description": "Enables debug mode. See documentation for behavior changes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#debug"
+                }
+            ],
+            "property_order": 5
+        },
+        "title": {
+            "type": "string",
+            "title": "Title",
+            "default": "Welcome to Setup Manager",
+            "description": "The main title over the window.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#title"
+                }
+            ],
+            "property_order": 10
+        },
+        "icon": {
+            "type": "string",
+            "title": "Icon",
+            "default": "name:AppIcon",
+            "description": "The icon shown at the top center of the window. There are many options to define icons, as described in the documentation.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#icon"
+                }
+            ],
+            "property_order": 15
+        },
+        "message": {
+            "type": "string",
+            "title": "Message",
+            "default": "Setup Manager is configuring your Mac…",
+            "description": "The message shown below the title.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#message"
+                }
+            ],
+            "property_order": 20
+        },
+        "background": {
+            "type": "string",
+            "title": "Background Image",
+            "description": "When set, Setup Manager displays the image full screen as a background behind the main window. Supports the same sources as Icon.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#background"
+                }
+            ],
+            "property_order": 25
+        },
+        "runAt": {
+            "type": "string",
+            "title": "Run At",
+            "default": "enrollment",
+            "description": "This value determines when Setup Manager should launch.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#runat"
+                }
+            ],
+            "enum": [
+                "enrollment",
+                "loginwindow"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Enrollment",
+                    "Login Window"
+                ]
+            },
+            "property_order": 30
+        },
+        "accentColor": {
+            "type": "string",
+            "title": "Accent Color",
+            "description": "Sets the accent color for buttons, progress bar, SF Symbol icons, and other UI elements. Use this to match branding. Color is encoded as a six digit hex code, e.g. #FF0088.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#accentcolor"
+                }
+            ],
+            "property_order": 35
+        },
+        "finalCountdown": {
+            "type": "integer",
+            "title": "Final Countdown",
+            "default": 60,
+            "description": "Changes the duration (in seconds) of the \"final countdown\" before the app automatically performs the finalAction. Set to -1 (or any negative number) to disable automated execution.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#finalcountdown"
+                }
+            ],
+            "property_order": 40
+        },
+        "finalAction": {
+            "type": "string",
+            "title": "Final Action",
+            "default": "continue",
+            "description": "Sets the action and label for the button shown when Setup Manger has completed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#finalaction"
+                }
+            ],
+            "enum": [
+                "continue",
+                "shutdown"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Continue",
+                    "Shut Down"
+                ]
+            },
+            "property_order": 45
+        },
+        "totalDownloadBytes": {
+            "type": "integer",
+            "title": "Total Download Bytes",
+            "description": "Use this value to provide an estimate for the total size of all items that will be downloaded.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#totaldownloadbytes"
+                }
+            ],
+            "property_order": 50
+        },
+        "jssID": {
+            "type": "string",
+            "title": "Jamf Pro ID",
+            "description": "When using JSM with Jamf Pro, set this to $JSSID in a Jamf Pro configuration profile and Setup Manager will be aware of its computer's id in Jamf Pro.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#jssid"
+                }
+            ],
+            "enum": [
+                "$JSSID"
+            ],
+            "property_order": 55
+        },
+        "userID": {
+            "type": "string",
+            "title": "Jamf Pro User ID",
+            "description": "Set this to $EMAIL in the configuration profile. This communicates the user who logged in to customized enrollment to Setup Manager. This can be used together with the userEntry.showForUserIDs key to control which users see the user entry UI.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#userid"
+                }
+            ],
+            "enum": [
+                "$EMAIL",
+                "$USERNAME"
+            ],
+            "property_order": 60
+        },
+        "computerNameTemplate": {
+            "type": "string",
+            "title": "Computer Name Template",
+            "description": "Setup Manager will generate the computer name from this template and set it automatically. See the documentation for substitutions that can used in the template. (Setting this overrides the Computer Name field in user entry.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#computernametemplate"
+                }
+            ],
+            "property_order": 65
+        },
+        "overrideSerialNumber": {
+            "type": "string",
+            "title": "Demonstration Serial Number",
+            "description": "When set, the \"About this Mac\" info window will show this value instead of the real serial number.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#overrideserialnumber"
+                }
+            ],
+            "property_order": 70
+        },
+        "hideActionLabels": {
+            "type": "boolean",
+            "title": "Hide Action Labels",
+            "description": "Hides the individual labels under each action's icon.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#hideactionlabels"
+                }
+            ],
+            "property_order": 75
+        },
+        "hideDebugLabel": {
+            "type": "boolean",
+            "title": "Hide Debug Label",
+            "description": "Suppresses display of the red 'DEBUG' label in debug mode.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#hidedebuglabel"
+                }
+            ],
+            "property_order": 80
+        },
+        "simulateMDM": {
+            "type": "string",
+            "title": "Simulate an MDM",
+            "description": "When debug mode is enabled, you can set this to Jamf Pro or Jamf School. This allows you to do test runs on un-enrolled Macs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#simulatemdm"
+                }
+            ],
+            "enum": [
+                "Jamf Pro",
+                "Jamf School"
+            ],
+            "property_order": 85
+        },
+        "help": {
+            "type": "object",
+            "title": "Help",
+            "description": "When you provide help, a help button (with a circled question mark) will be shown in the lower right corner (for left-to-right localizations). When you click on the help button a window with information will be shown.",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "title": "Help Title",
+                    "description": "The title for the help message.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#title-1"
+                        }
+                    ]
+                },
+                "message": {
+                    "type": "string",
+                    "title": "Help Message",
+                    "description": "The help message.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#message-1"
+                        }
+                    ]
+                },
+                "url": {
+                    "type": "string",
+                    "title": "Help URL",
+                    "description": "The URL will be translated into a QR code and displayed next to the help message.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#url"
+                        }
+                    ]
+                }
+            },
+            "property_order": 90
+        },
+        "userEntry": {
+            "type": "object",
+            "title": "User Entry",
+            "description": "When any of these are defined, Setup Manager will prompt for user data while the enrollment actions are running.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#user-entry"
+                }
+            ],
+            "properties": {
+                "userID": {
+                    "type": "object",
+                    "title": "User ID",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "User ID Default",
+                            "description": "A pre-populated value for the User ID field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "User ID Placeholder",
+                            "description": "A placeholder value for User ID. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for User ID"
+                            },
+                            "title": "User ID Options",
+                            "description": "Options displayed in a dropdown menu for User ID.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "User ID Validation",
+                            "description": "A regular expression used to validate the value of User ID.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "User ID Validation Message",
+                            "description": "A message displayed to the user when User ID fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "department": {
+                    "type": "object",
+                    "title": "Department",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Department Default",
+                            "description": "A pre-populated value for the Department field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Department Placeholder",
+                            "description": "A placeholder value for Department. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Department"
+                            },
+                            "title": "Department Options",
+                            "description": "Options displayed in a dropdown menu for Department.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Department Validation",
+                            "description": "A regular expression used to validate the value of Department.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Department Validation Message",
+                            "description": "A message displayed to the user when Department fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "building": {
+                    "type": "object",
+                    "title": "Building",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Building Default",
+                            "description": "A pre-populated value for the Building field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Building Placeholder",
+                            "description": "A placeholder value for Building. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Building"
+                            },
+                            "title": "Building Options",
+                            "description": "Options displayed in a dropdown menu for Building.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Building Validation",
+                            "description": "A regular expression used to validate the value of Building.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Building Validation Message",
+                            "description": "A message displayed to the user when Building fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "room": {
+                    "type": "object",
+                    "title": "Room",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Room Default",
+                            "description": "A pre-populated value for the Room field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Room Placeholder",
+                            "description": "A placeholder value for Room. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Room"
+                            },
+                            "title": "Room Options",
+                            "description": "Options displayed in a dropdown menu for Room.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Room Validation",
+                            "description": "A regular expression used to validate the value of Room.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Room Validation Message",
+                            "description": "A message displayed to the user when Room fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "assetTag": {
+                    "type": "object",
+                    "title": "Asset Tag",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Asset Tag Default",
+                            "description": "A pre-populated value for the Asset Tag field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Asset Tag Placeholder",
+                            "description": "A placeholder value for Asset Tag. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Asset Tag"
+                            },
+                            "title": "Asset Tag Options",
+                            "description": "Options displayed in a dropdown menu for Asset Tag.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Asset Tag Validation",
+                            "description": "A regular expression used to validate the value of Asset Tag.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Asset Tag Validation Message",
+                            "description": "A message displayed to the user when Asset Tag fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "computerName": {
+                    "type": "object",
+                    "title": "Computer Name",
+                    "description": "If computerNameTemplate is set, any data entry for computer name is ignored.",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Computer Name Default",
+                            "description": "A pre-populated value for the Computer Name field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Computer Name Placeholder",
+                            "description": "A placeholder value for Computer Name. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Computer Name"
+                            },
+                            "title": "Computer Name Options",
+                            "description": "Options displayed in a dropdown menu for Computer Name.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Computer Name Validation",
+                            "description": "A regular expression used to validate the value of Computer Name.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Computer Name Validation Message",
+                            "description": "A message displayed to the user when Computer Name fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "showForUserIDs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "User ID"
+                    },
+                    "title": "Show User Entry for User IDs",
+                    "description": "You can configure Setup Manager to only show the user entry section when specified users have authenticated in enrollment customization.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#conditionally-show-the-user-entry-for-certain-users"
+                        }
+                    ]
+                }
+            },
+            "property_order": 95
+        },
+        "enrollmentActions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "type": "string",
+                        "title": "Label",
+                        "description": "The label is used as the name of the action in display."
+                    },
+                    "icon": {
+                        "type": "string",
+                        "title": "Icon",
+                        "description": "The label is used as the name of the action in display."
+                    },
+                    "shell": {
+                        "type": "string",
+                        "title": "Shell: command",
+                        "description": "The absolute path to the command or script that should be run for this action."
+                    },
+                    "requiresRoot": {
+                        "type": "boolean",
+                        "title": "Shell: run as root",
+                        "enum": [
+                            true
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Yes"
+                            ]
+                        }
+                    },
+                    "policy": {
+                        "type": "string",
+                        "title": "Jamf Pro Policy Trigger",
+                        "description": "The absolute path to the command or script that should be run for this action."
+                    },
+                    "watchPath": {
+                        "type": "string",
+                        "title": "Watch Path",
+                        "description": "This action will wait until a file at the given path exists or is removed."
+                    },
+                    "timeout": {
+                        "type": "integer",
+                        "title": "Watch Path: Timeout",
+                        "default": 600,
+                        "description": "The watchPath action will fail after this timeout."
+                    },
+                    "wait": {
+                        "type": "integer",
+                        "title": "Wait (in seconds)",
+                        "description": "Wait for a given time."
+                    },
+                    "waitForUserEntry": {
+                        "type": "string",
+                        "title": "Wait For User Entry",
+                        "description": "If Setup Manager reaches this action before the user entry has been completed, it will wait until the user entry is completed and the user has clicked 'Save.'",
+                        "enum": [
+                            ""
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Wait For User Entry"
+                            ]
+                        }
+                    },
+                    "recon": {
+                        "type": "string",
+                        "title": "Jamf Pro Recon",
+                        "description": "This will run a Jamf Inventory update.",
+                        "enum": [
+                            ""
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Jamf Pro Recon"
+                            ]
+                        }
+                    },
+                    "installomator": {
+                        "type": "string",
+                        "title": "Installomator Label",
+                        "description": "The installomator label to run. Can also use Arguments."
+                    },
+                    "arguments": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "Argument"
+                        },
+                        "title": "Arguments"
+                    }
+                }
+            },
+            "title": "Enrollment Actions",
+            "description": "Describes the individual actions to be performed by Setup Manager. For each row, complete the Label, Icon, and then one of the following: Shell command, Jamf Pro Policy Trigger, Watch Path, Wait, Wait For User Entry, Jamf Pro Recon, or Installomator Label.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#actions"
+                }
+            ],
+            "property_order": 100
+        }
+    }
+}
