@@ -1,0 +1,18 @@
+{
+    "title": "SentinelOne (com.sentinelone.registration-token)",
+    "description": "SentinelOne Site / Group Token",
+    "properties": {
+        "S1InstallRegistrationToken": {
+            "type": "string",
+            "title": "Your Site or Group Token",
+            "description": "The Site or Group Token registers the SentinelOne installation to your instance.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://community.sentinelone.com/s/article/000004904"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
