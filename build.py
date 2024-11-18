@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Given a path to a folder containing ProfileCreator manifests, this script aims to produce
+"""Given a path to a folder containing profile manifests, this script aims to produce
 equivalent Jamf JSON schema manifests."""
 
 
@@ -39,7 +39,7 @@ def build_argument_parser():
     parser.add_argument(
         "input_dir",
         action="store",
-        help="path to a directory containing ProfileCreator manifests to be converted",
+        help="path to a directory containing profile manifests to be converted",
     )
     parser.add_argument(
         "-o",
@@ -100,7 +100,7 @@ def validate_args(args):
 
 
 def read_manifest_plist(path):
-    """Given a path to a ProfileCreator manifest plist, return the contents of
+    """Given a path to a profile manifest plist, return the contents of
     the plist."""
     with open(path, "rb") as openfile:
         try:
@@ -220,7 +220,7 @@ def process_subkeys(subkeys):
 
 
 def convert_to_jamf_manifest(data, property_order_increment=5):
-    """Convert a ProfileCreator plist object to a Jamf JSON schema manifest.
+    """Convert a profile manifest plist object to a Jamf JSON schema manifest.
 
     Reference: https://docs.jamf.com/technical-papers/jamf-pro/json-schema/10.19.0/Understanding_the_Structure_of_a_JSON_Schema_Manifest.html
     """
