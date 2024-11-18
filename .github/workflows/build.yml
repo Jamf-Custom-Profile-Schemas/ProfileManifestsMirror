@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone profilecreator-schemas repository
+      - name: Clone profilemanifests-schemas repository
         uses: actions/checkout@v2
         with:
           ref: main
@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: master
-          repository: ProfileCreator/ProfileManifests
+          repository: ProfileManifests/ProfileManifests
           path: ProfileManifests
 
       - name: Regenerate manifests and commit changes
@@ -37,5 +37,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -A
-          git commit -anm "Regenerate manifests" -m "Upstream diff: https://github.com/ProfileCreator/ProfileManifests/compare/$PREV..$HASH" || true
+          git commit -anm "Regenerate manifests" -m "Upstream diff: https://github.com/ProfileManifests/ProfileManifests/compare/$PREV..$HASH" || true
           git push --set-upstream origin main || true
