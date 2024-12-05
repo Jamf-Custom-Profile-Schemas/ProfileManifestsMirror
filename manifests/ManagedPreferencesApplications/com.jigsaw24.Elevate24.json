@@ -280,7 +280,7 @@
         },
         "enableAppleAuth": {
             "type": "boolean",
-            "title": "Apple Auth (Premium)",
+            "title": "Apple Auth",
             "default": false,
             "description": "Prompts the user for their local Apple credentials or TouchID (if enabled on device) before allowing elevation.",
             "links": [

@@ -1,0 +1,388 @@
+{
+    "title": "Elevate24 Security Logging (com.jigsaw24.Elevate24SecurityExtension)",
+    "description": "Monitoring Extension for Elevate24 by Jigsaw24",
+    "properties": {
+        "siemUploadURL": {
+            "type": "string",
+            "title": "Upload URL",
+            "description": "Events will be uploaded to the supplied url via HTTP POST. Note that events can be uploaded to the supplied URL or to sentinel not both.",
+            "property_order": 5
+        },
+        "siemUploadHeaders": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Request Headers",
+                "description": "Headers to be included in the HTTP request.",
+                "properties": {
+                    "Header": {
+                        "type": "string",
+                        "title": "Header"
+                    },
+                    "Value": {
+                        "type": "string",
+                        "title": "Value"
+                    }
+                }
+            },
+            "title": "Request Headers",
+            "description": "Headers to be included in the HTTP request.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 10
+        },
+        "siemNewLineSeperated": {
+            "type": "boolean",
+            "title": "Seperate Events with New Line",
+            "default": false,
+            "description": "By default events are uploaded in JSON format as an array of events. Some systems require events to be seperated with a new line.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 15
+        },
+        "SentinelTennantId": {
+            "type": "string",
+            "title": "Sentinel Tennant ID",
+            "description": "Tennant ID",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 20
+        },
+        "SentinelClientId": {
+            "type": "string",
+            "title": "Sentinel Client ID",
+            "description": "Client ID",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 25
+        },
+        "SentinelClientSecret": {
+            "type": "string",
+            "title": "Sentinel Client Secret",
+            "description": "Client Secret",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 30
+        },
+        "SentinelUploadURL": {
+            "type": "string",
+            "title": "Sentinel Upload URL",
+            "description": "URL to upload events to Microsoft Sentinel",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                }
+            ],
+            "property_order": 35
+        },
+        "MaxDataUploadSize": {
+            "type": "integer",
+            "title": "Max HTTP Request Size",
+            "default": 1000000,
+            "description": "Max size of single HTTP request uploading data. (Uncompressed size in bytes default size is 1,000,000 bytes)",
+            "property_order": 40
+        },
+        "DefaultFilterRules": {
+            "type": "boolean",
+            "title": "Add Default Filter Rules",
+            "default": false,
+            "description": "Deploys default rules to discard some events which can be considered noise.",
+            "property_order": 45
+        },
+        "SelfProtectionRules": {
+            "type": "boolean",
+            "title": "Add Self Protection Auth Rules",
+            "default": false,
+            "description": "Deploys authorisation rules to attempt to stop the user making changes to Elevate24 Monitoring.",
+            "property_order": 50
+        },
+        "DisableAll": {
+            "type": "boolean",
+            "title": "Disable all operations performed by the daemon",
+            "default": false,
+            "description": "Stops all blocking/logging operations. Effectively a switch to disable this tool.",
+            "property_order": 55
+        },
+        "EnableArchive": {
+            "type": "boolean",
+            "title": "Enable Local Retention of Events",
+            "default": false,
+            "description": "Enables the local retention of Events after they have been uploaded to Jigsaw24/SIEM.",
+            "property_order": 60
+        },
+        "MaxArchiveAge": {
+            "type": "integer",
+            "title": "Maximum Age of Retained Events (Days)",
+            "default": 7,
+            "description": "Sets maximum age of events retained locally.",
+            "property_order": 65
+        },
+        "UploadOnHotspot": {
+            "type": "boolean",
+            "title": "Allow Upload Data on Hotspot connection",
+            "default": false,
+            "description": "Upload Events when connected to iPhone personal hotspot.",
+            "property_order": 70
+        },
+        "FileOperationRules": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "File Operation Rules",
+                "properties": {
+                    "fileOperation": {
+                        "type": "string",
+                        "title": "File Operation",
+                        "enum": [
+                            "file:open",
+                            "file:unlink"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "File Open",
+                                "File Delete"
+                            ]
+                        }
+                    },
+                    "action": {
+                        "type": "string",
+                        "title": "Action",
+                        "default": "block",
+                        "enum": [
+                            "allow",
+                            "block",
+                            "readOnly"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Allow",
+                                "Block",
+                                "Read Only (File Open Only)"
+                            ]
+                        }
+                    },
+                    "fileTargetPath": {
+                        "type": "string",
+                        "title": "File Target Path"
+                    },
+                    "signingID": {
+                        "type": "string",
+                        "title": "Signing ID of Process"
+                    },
+                    "username": {
+                        "type": "string",
+                        "title": "Username"
+                    },
+                    "alwaysActive": {
+                        "type": "boolean",
+                        "title": "Always Active"
+                    }
+                }
+            },
+            "title": "File Operation Rules",
+            "description": "Rules to restrict file operations. Allow rules can be used in conjunction with block rules to allow a process to execute under the specified conditions. \\nFile open operations can be restricted to read only access where required.",
+            "property_order": 75
+        },
+        "ExecuteProcessRules": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Execute Process Rules",
+                "properties": {
+                    "action": {
+                        "type": "string",
+                        "title": "Action",
+                        "default": "block",
+                        "enum": [
+                            "allow",
+                            "block"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Allow",
+                                "Block"
+                            ]
+                        }
+                    },
+                    "processPath": {
+                        "type": "string",
+                        "title": "Process Path"
+                    },
+                    "signingID": {
+                        "type": "string",
+                        "title": "Signing Id of the Process"
+                    },
+                    "singingID": {
+                        "type": "string",
+                        "title": "SigningID"
+                    },
+                    "matchingArgumentsContaining": {
+                        "type": "string",
+                        "title": "Match Arguments Containing"
+                    },
+                    "alwaysActive": {
+                        "type": "boolean",
+                        "title": "Always Active"
+                    }
+                }
+            },
+            "title": "Execute Process Rules",
+            "default": [
+                {}
+            ],
+            "description": "Rules to restrict execution of processes. Allow rules can be used in conjunction with block rules to allow a process to execute under the specified conditions. \\nMultiple arguments can be specified by seperating them with a comma.",
+            "property_order": 80
+        },
+        "logAllEventTypes": {
+            "type": "boolean",
+            "title": "Log All Event Types",
+            "default": false,
+            "description": "Set all event types to be logged. Use with caution, as this could produce a lot of data entries.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Configuration%20Keys.md#event-types"
+                }
+            ],
+            "property_order": 85
+        },
+        "EventsToLog": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Event Type",
+                "properties": {
+                    "eventType": {
+                        "type": "string",
+                        "title": "Event Type",
+                        "default": "All",
+                        "enum": [
+                            "File:Write",
+                            "File:Unlink",
+                            "File:Clone",
+                            "File:CopyFile",
+                            "File:Create",
+                            "File:Rename",
+                            "User:Create",
+                            "User:Delete",
+                            "Profile:Add",
+                            "Profile:Remove",
+                            "LaunchItem:Add",
+                            "LaunchItem:Remove",
+                            "Sudo",
+                            "Process:Exec"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "File Write",
+                                "File Delete",
+                                "File Clone",
+                                "File Copy",
+                                "File Create",
+                                "File Rename",
+                                "User Create",
+                                "User Delete",
+                                "Profile Add",
+                                "Profile Remove",
+                                "Launch Item Add",
+                                "Launch Item Remove",
+                                "Sudo Command",
+                                "Execute Process"
+                            ]
+                        }
+                    }
+                }
+            },
+            "title": "Event Types to Log",
+            "default": [
+                {}
+            ],
+            "description": "Define which event types to log.",
+            "property_order": 90
+        },
+        "filterRules": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Filter Rules",
+                "properties": {
+                    "eventType": {
+                        "type": "string",
+                        "title": "Event Type",
+                        "enum": [
+                            "All",
+                            "File:Write",
+                            "File:Unlink",
+                            "File:Clone",
+                            "File:CopyFile",
+                            "File:Create",
+                            "File:Rename",
+                            "User:Create",
+                            "User:Delete",
+                            "Profile:Add",
+                            "Profile:Remove",
+                            "LaunchItem:Add",
+                            "LaunchItem:Remove",
+                            "Sudo",
+                            "Process:Exec"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "All",
+                                "File Write",
+                                "File Delete",
+                                "File Clone",
+                                "File Copy",
+                                "File Create",
+                                "File Rename",
+                                "User Create",
+                                "User Delete",
+                                "Profile Add",
+                                "Profile Remove",
+                                "Launch Item Add",
+                                "Launch Item Remove",
+                                "Sudo Command",
+                                "Execute Process"
+                            ]
+                        }
+                    },
+                    "path": {
+                        "type": "string",
+                        "title": "File Path"
+                    },
+                    "signingId": {
+                        "type": "string",
+                        "title": "Signing Id"
+                    }
+                }
+            },
+            "title": "Filter Rules",
+            "default": [
+                {}
+            ],
+            "description": "Define rules to not store events matching the following rules.",
+            "property_order": 95
+        }
+    }
+}
