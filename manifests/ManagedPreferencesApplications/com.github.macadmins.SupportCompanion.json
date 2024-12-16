@@ -1,0 +1,375 @@
+{
+    "title": "Support Companion (com.github.macadmins.SupportCompanion)",
+    "description": "Support Companion settings",
+    "properties": {
+        "KnowledgeBaseUrl": {
+            "type": "string",
+            "title": "Knowledge Base Url",
+            "description": "If configured, a menu item \"Knowledge base\" will show up where the user can browse the page from the UI.",
+            "property_order": 5
+        },
+        "MenuShowIdentity": {
+            "type": "boolean",
+            "title": "Show Identity Menu Item",
+            "default": true,
+            "description": "Configures whether to show the Identity menu item. Defaults to true",
+            "property_order": 10
+        },
+        "MenuShowApps": {
+            "type": "boolean",
+            "title": "Show Apps Menu Item",
+            "default": true,
+            "description": "Configures whether to show the Apps menu item. Defaults to true",
+            "property_order": 15
+        },
+        "MenuShowSelfService": {
+            "type": "boolean",
+            "title": "Show Self Service Menu Item",
+            "default": true,
+            "description": "Configures whether to show the Self Service menu item. Defaults to true",
+            "property_order": 20
+        },
+        "MenuShowCompanyPortal": {
+            "type": "boolean",
+            "title": "Show Company Portal Menu Item",
+            "default": true,
+            "description": "Configures whether to show the Company Portal menu item. Defaults to true",
+            "property_order": 25
+        },
+        "MenuShowKnowledgeBase": {
+            "type": "boolean",
+            "title": "Show Knowledge Base Menu Item",
+            "default": true,
+            "description": "Configures whether to show the Knowledge Base menu item. Defaults to true",
+            "property_order": 30
+        },
+        "BrandName": {
+            "type": "string",
+            "title": "Brand Name",
+            "description": "Configures the name shown in the navigation menu.",
+            "property_order": 35
+        },
+        "AccentColor": {
+            "type": "string",
+            "title": "Accent Color",
+            "description": "Configures the brand color shown in the app, specify in hex format.",
+            "property_order": 40
+        },
+        "BrandLogo": {
+            "type": "string",
+            "title": "Brand Logo",
+            "description": "Configures the brand logo shown in the apps side menu. Specify a Base64 string.",
+            "property_order": 45
+        },
+        "BrandLogoLight": {
+            "type": "string",
+            "title": "Brand Logo Light",
+            "description": "Configures the brand logo shown in the apps side menu when light theme is used. Specify a base64 string",
+            "property_order": 50
+        },
+        "SupportPageUrl": {
+            "type": "string",
+            "title": "Support Page URL",
+            "description": "Configures the URL to open when the user clicks on the Get Support button.",
+            "property_order": 55
+        },
+        "ChangePasswordUrl": {
+            "type": "string",
+            "title": "Change Password URL",
+            "description": "Configures the URL to open when the user clicks on the Change Password button.",
+            "property_order": 60
+        },
+        "ChangePasswordMode": {
+            "type": "string",
+            "title": "Change Password Mode",
+            "description": "Configures the mode for the Change Password button, available modes are: local, SSOExtension, url. Defaults to local if not configured.",
+            "enum": [
+                "local",
+                "SSOExtension",
+                "url"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Local",
+                    "SSO Extension",
+                    "URL"
+                ]
+            },
+            "property_order": 65
+        },
+        "SupportEmail": {
+            "type": "string",
+            "title": "Support Email",
+            "description": "Configures the email address shown when the user clicks on the Support Info button.",
+            "property_order": 70
+        },
+        "SupportPhone": {
+            "type": "string",
+            "title": "Support Phone",
+            "description": "Configures the phone number shown when the user clicks on the Support Info button.",
+            "property_order": 75
+        },
+        "HiddenCards": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Hidden Cards",
+            "description": "Configures which cards to hide, available cards are: DeviceInformation, Evergreen, Battery, Actions, ApplicationInstallProgress, Storage, DeviceManagement, PendingAppUpdates.",
+            "property_order": 80
+        },
+        "HiddenActions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Hidden Actions",
+            "description": "Configures which actions to hide, available actions are: ChangePassword, Reboot, OpenManagementApp, GetSupport, GatherLogs, SoftwareUpdates, RestartIntuneAgent.",
+            "property_order": 85
+        },
+        "NotificationInterval": {
+            "type": "integer",
+            "title": "Notification Interval",
+            "description": "Configures the interval for notifications in hours for Application Updates and Software Updates notifications.",
+            "property_order": 90
+        },
+        "NotificationTitle": {
+            "type": "string",
+            "title": "Notification Title",
+            "description": "Configures the title for notifications for notifications. Defaults to Support Companion if not configured.",
+            "property_order": 95
+        },
+        "NotificationImage": {
+            "type": "string",
+            "title": "Notification Image",
+            "description": "Configures an image to add to notifications. Local path should be specified.",
+            "property_order": 100
+        },
+        "SoftwareUpdateNotificationMessage": {
+            "type": "string",
+            "title": "Software Update Notification Message",
+            "default": "Software Updates Available. Please update your device to the latest version.",
+            "description": "Configures the message for notifications for Software Updates notifications. Defaults to \"Software Updates Available. Please update your device to the latest version.\" if not configured.",
+            "property_order": 105
+        },
+        "SoftwareUpdateNotificationButtonText": {
+            "type": "string",
+            "title": "Software Update Notification Button Text",
+            "default": "Update Now 🚀",
+            "description": "Configures the button text for notifications for Software Updates notifications. Defaults to \"Update Now 🚀\" if not configured.",
+            "property_order": 110
+        },
+        "AppUpdateNotificationMessage": {
+            "type": "string",
+            "title": "App Update Notification Message",
+            "default": "App Updates Available. Please update your apps to the latest version.",
+            "description": "Configures the message for notifications for App Updates notifications. Defaults to \"App Updates Available. Please update your apps to the latest version.\" if not configured.",
+            "property_order": 115
+        },
+        "AppUpdateNotificationButtonText": {
+            "type": "string",
+            "title": "App Update Notification Button Text",
+            "default": "Update Now 🚀",
+            "description": "Configures the button text for notifications for App Updates notifications. Defaults to \"Update Now 🚀\" if not configured.",
+            "property_order": 120
+        },
+        "Mode": {
+            "type": "string",
+            "title": "Mode",
+            "description": "Configures the app to show application info for either Munki, Intune or to use System profiler for app info. The app tries to dynamically detect which mode to use.",
+            "enum": [
+                "Munki",
+                "Intune",
+                "SystemProfiler"
+            ],
+            "property_order": 125
+        },
+        "LogFolders": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Log Folders",
+            "description": "Configures the log folders to gather logs from. Only used when gathering logs. Defaults to \"/Library/Logs/Microsoft\" if not configured.",
+            "property_order": 130
+        },
+        "Actions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "title": "Name",
+                        "description": "Name of the action to show in the menu."
+                    },
+                    "Command": {
+                        "type": "string",
+                        "title": "Command",
+                        "description": "Command to run when to item is clicked."
+                    },
+                    "Icon": {
+                        "type": "string",
+                        "title": "Icon",
+                        "description": "SF Symbol to show in the Self Service page in the UI."
+                    },
+                    "IsPrivileged": {
+                        "type": "boolean",
+                        "title": "Is Privileged",
+                        "description": "SF Symbol to show in the Self Service page in the UI."
+                    },
+                    "Description": {
+                        "type": "string",
+                        "title": "Description",
+                        "description": "Description to show in the Self Service page in the UI."
+                    }
+                }
+            },
+            "title": "Actions",
+            "description": "Configures custom actions to add to the tray menu. See example below.",
+            "property_order": 135
+        },
+        "ShowDesktopInfo": {
+            "type": "boolean",
+            "title": "Show Desktop Info",
+            "default": false,
+            "description": "Configures the desktop info widget.",
+            "property_order": 140
+        },
+        "DesktopInfoWindowPosition": {
+            "type": "string",
+            "title": "Desktop Position",
+            "default": "LowerRight",
+            "description": "Configures the position of the desktop info. Defaults to Lower Right.",
+            "enum": [
+                "UpperLeft",
+                "UpperRight",
+                "LowerLeft",
+                "LowerRight"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Upper Left",
+                    "Upper Right",
+                    "Lower Left",
+                    "Lower Right"
+                ]
+            },
+            "property_order": 145
+        },
+        "DesktopInfoLevel": {
+            "type": "integer",
+            "title": "Desktop Info Level",
+            "description": "Configures the level of information to show on the desktop. Defaults to 4.",
+            "enum": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "property_order": 150
+        },
+        "DesktopInfoHideItems": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "HostName",
+                    "Model",
+                    "SerialNumber",
+                    "Processor",
+                    "IPAddress",
+                    "Memory",
+                    "OSBuild",
+                    "OSVersion",
+                    "LastRestart",
+                    "FileVault",
+                    "StorageName",
+                    "SupportPhone",
+                    "SupportEmail",
+                    "Hardware Specifications",
+                    "System Information",
+                    "Network Information",
+                    "Storage",
+                    "Support",
+                    "Category",
+                    "Divider"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Host Name",
+                        "Model",
+                        "Serial Number",
+                        "Processor",
+                        "IP Address",
+                        "Memory",
+                        "OS Build",
+                        "OS Version",
+                        "Last Restart",
+                        "FileVault",
+                        "Storage Name",
+                        "Support Phone",
+                        "Support Email",
+                        "Hardware Specifications",
+                        "System Information",
+                        "Network Information",
+                        "Storage",
+                        "Support",
+                        "Category",
+                        "Divider"
+                    ]
+                }
+            },
+            "title": "Desktop Info Hide Items",
+            "description": "Use this array to determine which information to hide. Available items are: HostName, Model, SerialNumber, Processor, IPAddress, Memory, OSBuild, OSVersion, LastRestart, FileVault, StorageName, SupportPhone, SupportEmail. It is also possible to hide entire sections: Hardware Specifications, System Information, Network Information, Storage, Support.",
+            "property_order": 155
+        },
+        "DesktopInfoBackgroundOpacity": {
+            "type": "number",
+            "title": "Desktop Info Background Opacity",
+            "default": 1.0,
+            "description": "Configures the opacity of the desktop info. Defaults to 0%.",
+            "enum": [
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6,
+                0.7,
+                0.8,
+                0.9,
+                1.0
+            ],
+            "options": {
+                "enum_titles": [
+                    "10%",
+                    "20%",
+                    "30%",
+                    "40%",
+                    "50%",
+                    "60%",
+                    "70%",
+                    "80%",
+                    "90%",
+                    "100%"
+                ]
+            },
+            "property_order": 160
+        },
+        "DesktopInfoFontSize": {
+            "type": "integer",
+            "title": "Desktop Info Font Size",
+            "default": 14,
+            "description": "Configures the font size for the desktop info. Defaults to 14.",
+            "property_order": 165
+        },
+        "CustomCardPath": {
+            "type": "string",
+            "title": "Custom Card Path",
+            "description": "Configures a path to a JSON file containing custom widgets to show on the Home view.",
+            "property_order": 170
+        }
+    }
+}
