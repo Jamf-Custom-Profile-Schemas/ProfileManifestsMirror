@@ -185,6 +185,19 @@
             ],
             "property_order": 55
         },
+        "UpdateCheckInterval": {
+            "type": "integer",
+            "title": "Update Check Interval",
+            "default": 780,
+            "description": "Specifies the number of minutes between checking for updates. Default is set to check every 13 hours.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/mau-preferences#updatecheckinterval"
+                }
+            ],
+            "property_order": 60
+        },
         "UpdateCheckFrequency": {
             "type": "integer",
             "title": "Update Check Frequency",
@@ -196,7 +209,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1493835630209456"
                 }
             ],
-            "property_order": 60
+            "property_order": 65
         },
         "UpdateDeadline.DaysBeforeForcedQuit": {
             "type": "integer",
@@ -208,7 +221,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
                 }
             ],
-            "property_order": 65
+            "property_order": 70
         },
         "UpdateDeadline.FinalCountDown": {
             "type": "integer",
@@ -221,7 +234,7 @@
                     "href": "https://docs.microsoft.com/en-us/officeupdates/release-history-microsoft-autoupdate#june-2022-release"
                 }
             ],
-            "property_order": 70
+            "property_order": 75
         },
         "UpdateDeadline.StartAutomaticUpdates": {
             "type": "integer",
@@ -234,7 +247,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-automatic-download-and-install-mode"
                 }
             ],
-            "property_order": 75
+            "property_order": 80
         },
         "UpdaterOptimization": {
             "type": "string",
@@ -251,7 +264,7 @@
                 "Size",
                 "CPU"
             ],
-            "property_order": 80
+            "property_order": 85
         },
         "OptionalUpdatesDeferralsDays": {
             "type": "integer",
@@ -263,7 +276,7 @@
                     "href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deferred-updates#global-deferral-days-setting"
                 }
             ],
-            "property_order": 85
+            "property_order": 90
         },
         "OptionalUpdatesDeferrals": {
             "type": "object",
@@ -359,7 +372,7 @@
                     }
                 }
             },
-            "property_order": 90
+            "property_order": 95
         },
         "Applications": {
             "type": "object",
@@ -723,8 +736,15 @@
                             "title": "Application ID",
                             "default": "TEAMS10",
                             "enum": [
-                                "TEAMS10"
-                            ]
+                                "TEAMS10",
+                                "TEAMS21"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Teams 1.0 classic",
+                                    "Teams 2.1"
+                                ]
+                            }
                         },
                         "LCID": {
                             "type": "integer",
@@ -891,7 +911,7 @@
                     }
                 }
             },
-            "property_order": 95
+            "property_order": 100
         },
         "UpdateDeadline.ApplicationsForcedUpdateSchedule": {
             "type": "object",
@@ -1381,7 +1401,7 @@
                     }
                 }
             },
-            "property_order": 100
+            "property_order": 105
         }
     }
 }
