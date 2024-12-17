@@ -93,9 +93,9 @@
         },
         "ratingRegion": {
             "type": "string",
-            "title": "Ratings region",
+            "title": "Region Code",
             "default": "us",
-            "description": "The two-letter key that profile tools use to display the proper ratings for the given region. The client doesn't recognize or report this data.",
+            "description": "The two-letter key that profile tools use to display the proper ratings for the given region. The client doesn't recognize or report this data. Available in iOS 4.0 and later, macOS 10.7 and later, and tvOS 9 and later.",
             "enum": [
                 "us",
                 "au",
@@ -126,7 +126,7 @@
             "type": "integer",
             "title": "Allowed content ratings - Apps",
             "default": 1000,
-            "description": "The maximum level of app content allowed on the device. Preinstalled (first party) apps ignore this restriction. Available in iOS 4 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': 17+\n* '300': 12+\n* '200': 9+\n* '100': 4+\n* '0': None",
+            "description": "The maximum level of app content allowed on the device. Preinstalled (first party) apps ignore this restriction. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': 17+\n* '300': 12+\n* '200': 9+\n* '100': 4+\n* '0': None",
             "enum": [
                 1000,
                 900,
@@ -161,7 +161,7 @@
             "type": "integer",
             "title": "Allowed content ratings - Movies",
             "default": 1000,
-            "description": "The maximum level of movie content allowed on the device. Available in iOS 4 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '500': NC-17\n* '400': R\n* '300': PG-13\n* '200': PG\n* '100': G\n* '0': None",
+            "description": "The maximum level of movie content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '500': NC-17\n* '400': R\n* '300': PG-13\n* '200': PG\n* '100': G\n* '0': None",
             "enum": [
                 1000,
                 900,
@@ -196,7 +196,7 @@
             "type": "integer",
             "title": "Allowed content ratings - TV Shows",
             "default": 1000,
-            "description": "The maximum level of TV content allowed on the device. Available in iOS 4 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': TV-MA\n* '500': TV-14\n* '400': TV-PG\n* '300': TV-G\n* '200': TV-Y7\n* '100': TV-Y\n* '0': None",
+            "description": "The maximum level of TV content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': TV-MA\n* '500': TV-14\n* '400': TV-PG\n* '300': TV-G\n* '200': TV-Y7\n* '100': TV-Y\n* '0': None",
             "enum": [
                 1000,
                 900,
@@ -231,14 +231,14 @@
             "type": "boolean",
             "title": "Allow playback of explicit music, podcasts, and iTunes U",
             "default": true,
-            "description": "If 'false', the system hides explicit music or video content purchased from the iTunes Store. The system marks explicit content as such by content providers, such as record labels, when sold through the iTunes Store. Available in iOS 4 and later, and tvOS 11.3 and later. Requires a supervised device in iOS 13 and later. Support for this restriction on unsupervised devices is deprecated.",
+            "description": "If 'false', the system hides explicit music or video content purchased from the iTunes Store. The system marks explicit content as such by content providers, such as record labels, when sold through the iTunes Store. Explicit content in the News and Podcast apps is also hidden.\nAvailable in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later. Requires a supervised device in iOS 13 and later. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 80
         },
         "allowBookstoreErotica": {
             "type": "boolean",
             "title": "Allow explicit sexual content in iBooks Store",
             "default": true,
-            "description": "If 'false', the system prevents the user from downloading Apple Books media that's tagged as erotica. Available in iOS 6 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.",
+            "description": "If 'false', the system prevents the user from downloading Apple Books media that's tagged as erotica. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 17 and later. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 85
         },
         "allowAirPlayIncomingRequests": {

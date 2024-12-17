@@ -54,13 +54,13 @@
             "type": "boolean",
             "title": "Enable Logging",
             "default": false,
-            "description": "If 'true', the system enables logging. Available in macOS 12 and later. Removed in macOS 15.",
+            "description": "If 'true', the system enables logging. Available in macOS 12 through macOS 14.6.",
             "property_order": 25
         },
         "LoggingOption": {
             "type": "string",
             "title": "Logging Option",
-            "description": "The type of logging. Available in macOS 12 and later. Removed in macOS 15.",
+            "description": "The type of logging. Available in macOS 12 and through macOS 14.6.",
             "enum": [
                 "throttled",
                 "brief",

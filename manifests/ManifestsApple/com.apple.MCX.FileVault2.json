@@ -1,5 +1,5 @@
 {
-    "title": "FileVault 2 (com.apple.MCX.FileVault2)",
+    "title": "FDE FileVault (com.apple.MCX.FileVault2)",
     "description": "Use this section to define settings for FileVault 2",
     "properties": {
         "Enable": {

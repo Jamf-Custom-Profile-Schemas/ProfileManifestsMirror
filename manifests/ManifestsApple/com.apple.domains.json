@@ -9,7 +9,7 @@
                 "title": "Domain",
                 "description": "An email address."
             },
-            "title": "Unmarked Email Domains",
+            "title": "Email Domains",
             "description": "An array of domains. The system considers email addresses that lack a suffix matching any of these strings out of domain and marked in Mail.\nAvailable in iOS 8 and later and macOS 10.10 and later.",
             "property_order": 5
         },
@@ -39,9 +39,18 @@
                 "type": "string",
                 "title": "Domain"
             },
-            "title": "Safari Relaxed Cross Site Tracking Domains",
+            "title": "Cross-Site Tracking Prevention Relaxed Domains",
             "description": "An array of up to 10 strings. URLs matching the patterns listed here have relaxed enforcement of cross-site tracking prevention.\nAvailable in iOS 16.2 and later and macOS 13.1 and later.",
             "property_order": 20
+        },
+        "CrossSiteTrackingPreventionRelaxedApps": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Cross-Site Tracking Prevention Relaxed Apps",
+            "description": "An array of up to 10 strings representing app bundle-ids. Apps matching the bundle-ids listed here will have relaxed enforcement of cross-site tracking prevention for the domains listed in the 'CrossSiteTrackingPreventionRelaxedDomains' key.",
+            "property_order": 25
         }
     }
 }

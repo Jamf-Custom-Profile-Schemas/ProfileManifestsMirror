@@ -5,13 +5,13 @@
         "EnableAssessment": {
             "type": "boolean",
             "title": "Enable Gatekeeper",
-            "description": "If 'true', enables Gatekeeper.",
+            "description": "If 'true', enables Gatekeeper. If 'false', disables Gatekeeper.",
             "property_order": 5
         },
         "AllowIdentifiedDevelopers": {
             "type": "boolean",
             "title": "Allow Identified Developers",
-            "description": "If 'true', enables Gatekeeper's 'Mac App Store and identified developers' option.\nIf 'false', enables Gatekeeper's 'Mac App Store' option.\nIf the value of 'EnableAssessment' isn't set to 'true', this key has no effect.",
+            "description": "If 'true', enables Gatekeeper's “Mac App Store and identified developers” option.\nIf 'false', enables Gatekeeper's “Mac App Store” option.\nIf the value of 'EnableAssessment' isn't set to 'true', this key has no effect.",
             "property_order": 10
         },
         "EnableXProtectMalwareUpload": {

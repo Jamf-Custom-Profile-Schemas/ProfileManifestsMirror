@@ -69,7 +69,7 @@
             "type": "boolean",
             "title": "Allow Bookstore",
             "default": true,
-            "description": "If 'false', the system removes the Book Store tab from the Books app. Requires a supervised device. Available in iOS 6 and later.",
+            "description": "If 'false', the system removes the Book Store tab from the Books app. Requires a supervised device. Available in iOS 6 and later and macOS 15 and later.",
             "property_order": 50
         },
         "allowChat": {
@@ -125,14 +125,14 @@
             "type": "boolean",
             "title": "Allow Hiding Apps",
             "default": true,
-            "description": "If false, disables the ability for the user to hide apps. It does not affect the user's ability to leave it in the App Library, while removing it from the home screen.",
+            "description": "If 'false', disables the ability for the user to hide apps. It doesn't affect the user's ability to leave it in the App Library, while removing it from the home screen. Available in iOS 18 and later.",
             "property_order": 90
         },
         "allowAppsToBeLocked": {
             "type": "boolean",
             "title": "Allow Locking Apps",
             "default": true,
-            "description": "If false, disables the ability for the user to lock apps. Because hiding apps also requires locking them, disallowing locking also disallows hiding.",
+            "description": "If 'false', disables the ability for the user to lock apps. Because hiding apps also requires locking them, disallowing locking also disallows hiding. Available in iOS 18 and later.",
             "property_order": 95
         },
         "allowCloudDocumentSync": {
@@ -395,7 +395,7 @@
             "type": "boolean",
             "title": "Force Preserve ESIM on Erase",
             "default": false,
-            "description": "If 'true', the system preserves eSIM when it erases the device due to too many failed password attempts or the Erase All Content and Settings option in Settings > General > Reset. Available in iOS 17.2 and later.\nThe system doesn't preserve eSIM if Find My initiates erasing the device.",
+            "description": "If 'true', the system preserves eSIM when it erases the device due to too many failed password attempts or the Erase All Content and Settings option in Settings > General > Reset. Requires a supervised device. Available in iOS 17.2 and later.\nThe system doesn't preserve eSIM if Find My initiates erasing the device.",
             "property_order": 275
         },
         "allowUntrustedTLSPrompt": {
@@ -977,7 +977,7 @@
             "type": "string",
             "title": "Ratings region",
             "default": "us",
-            "description": "The two-letter key that profile tools use to display the proper ratings for the given region. The client doesn't recognize or report this data.",
+            "description": "The two-letter key that profile tools use to display the proper ratings for the given region. The client doesn't recognize or report this data. Available in iOS 4.0 and later, macOS 10.7 and later, and tvOS 9 and later.",
             "enum": [
                 "us",
                 "au",
@@ -1008,7 +1008,7 @@
             "type": "integer",
             "title": "Apps Ranking Number",
             "default": 1000,
-            "description": "The maximum level of app content allowed on the device. Preinstalled (first party) apps ignore this restriction. Available in iOS 4 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': 17+\n* '300': 12+\n* '200': 9+\n* '100': 4+\n* '0': None",
+            "description": "The maximum level of app content allowed on the device. Preinstalled (first party) apps ignore this restriction. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': 17+\n* '300': 12+\n* '200': 9+\n* '100': 4+\n* '0': None",
             "enum": [
                 1000,
                 900,
@@ -1043,7 +1043,7 @@
             "type": "integer",
             "title": "Allowed content ratings - Movies",
             "default": 1000,
-            "description": "The maximum level of movie content allowed on the device. Available in iOS 4 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '500': NC-17\n* '400': R\n* '300': PG-13\n* '200': PG\n* '100': G\n* '0': None",
+            "description": "The maximum level of movie content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '500': NC-17\n* '400': R\n* '300': PG-13\n* '200': PG\n* '100': G\n* '0': None",
             "enum": [
                 1000,
                 900,
@@ -1078,7 +1078,7 @@
             "type": "integer",
             "title": "Allowed content ratings - TV Shows",
             "default": 1000,
-            "description": "The maximum level of TV content allowed on the device. Available in iOS 4 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': TV-MA\n* '500': TV-14\n* '400': TV-PG\n* '300': TV-G\n* '200': TV-Y7\n* '100': TV-Y\n* '0': None",
+            "description": "The maximum level of TV content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': TV-MA\n* '500': TV-14\n* '400': TV-PG\n* '300': TV-G\n* '200': TV-Y7\n* '100': TV-Y\n* '0': None",
             "enum": [
                 1000,
                 900,
@@ -1127,7 +1127,7 @@
             "type": "boolean",
             "title": "Allow Bookstore Erotica",
             "default": true,
-            "description": "If 'false', the system prevents the user from downloading Apple Books media that's tagged as erotica. Available in iOS 6 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.",
+            "description": "If 'false', the system prevents the user from downloading Apple Books media that's tagged as erotica. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 17 and later. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 700
         },
         "allowPasswordSharing": {
@@ -1246,20 +1246,48 @@
             "type": "boolean",
             "title": "Allow Call Recording",
             "default": true,
-            "description": "If false, call recording is disabled.",
+            "description": "If 'false', disables call recording. Available in iOS 18 and later.",
             "property_order": 785
         },
         "allowMailSummary": {
             "type": "boolean",
             "default": true,
-            "description": "If false, disables the ability to create summaries of email messages manually. This does not affect automatic summary generation.",
+            "description": "If 'false', disables the ability to create summaries of email messages manually. This doesn't affect automatic summary generation. Available in iOS 18.1 and later.",
             "property_order": 790
         },
         "allowRCSMessaging": {
             "type": "boolean",
             "default": true,
-            "description": "If false, prevents the use of RCS messaging.",
+            "description": "If 'false', prevents the use of RCS messaging. Available in iOS 18.1 and later.",
             "property_order": 795
+        },
+        "allowDefaultBrowserModification": {
+            "type": "boolean",
+            "title": "Allow default browser modification",
+            "default": true,
+            "description": "If 'false', disables default browser preference modification. The MDM Settings command to set the default browser preference will still work when this is applied. Available in iOS 18.2 and later, and visionOS 2.2 and later.",
+            "property_order": 800
+        },
+        "allowExternalIntelligenceIntegrations": {
+            "type": "boolean",
+            "title": "Allow external intelligence integrations",
+            "default": true,
+            "description": "If 'false', disables the use of external, cloud-based intelligence services with Siri. On iOS, this restriction is temporarily allowed on unsupervised and user enrollments. In a future release, this restriction will require supervision, and will be ignored on non-supervised devices. Available in iOS 18.2 and later, and macOS 15.2 and later.",
+            "property_order": 805
+        },
+        "allowExternalIntelligenceIntegrationsSignIn": {
+            "type": "boolean",
+            "title": "Allow external intelligence integrations sign-in",
+            "default": true,
+            "description": "If 'false', forces external intelligence providers into anonymous mode. If a user is already signed in to an external intelligence provider, applying this restriction will cause them to be signed out when the next request is attempted. Available in iOS 18.2 and later, and macOS 15.2 and later.",
+            "property_order": 810
+        },
+        "allowSatelliteConnection": {
+            "type": "boolean",
+            "title": "Allow use of satellite connectivity",
+            "default": true,
+            "description": "If false, the connection to and use of satellite services is prohibited.",
+            "property_order": 815
         }
     }
 }
