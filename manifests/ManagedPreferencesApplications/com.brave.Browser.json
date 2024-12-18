@@ -5051,7 +5051,7 @@
             "type": "boolean",
             "title": "Disable Tor",
             "default": false,
-            "description": "false = Tor Enabled; true = Tor Disabled",
+            "description": "If 'true', Tor is disabled.",
             "links": [
                 {
                     "rel": "More information",
@@ -5064,7 +5064,7 @@
             "type": "boolean",
             "title": "Enable IPFS",
             "default": true,
-            "description": "false = IPFS Disabled; true = IPFS Enabled",
+            "description": "If 'false', IPFS is disabled.",
             "links": [
                 {
                     "rel": "More information",
@@ -5077,7 +5077,7 @@
             "type": "boolean",
             "title": "Disable Brave Rewards",
             "default": false,
-            "description": "false = Brave Rewards Enabled; true = Brave Rewards Disabled",
+            "description": "If 'true', Brave Rewards are disabled.",
             "links": [
                 {
                     "rel": "More information",
@@ -5090,7 +5090,7 @@
             "type": "boolean",
             "title": "Disable Brave Wallet",
             "default": false,
-            "description": "false = Brave Wallet Enabled; true = Brave Wallet Disabled",
+            "description": "If 'true', Brave Wallet is disabled.",
             "links": [
                 {
                     "rel": "More information",
@@ -5132,47 +5132,29 @@
             "property_order": 1595
         },
         "BraveVPNDisabled": {
-            "type": "integer",
+            "type": "boolean",
             "title": "Disable Brave VPN",
-            "default": 0,
+            "default": false,
+            "description": "If 'true', Brave VPN is disabled.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy"
                 }
             ],
-            "enum": [
-                0,
-                1
-            ],
-            "options": {
-                "enum_titles": [
-                    "Enable",
-                    "Disable"
-                ]
-            },
             "property_order": 1600
         },
         "BraveAIChatEnabled": {
-            "type": "integer",
+            "type": "boolean",
             "title": "Enable Brave AI Chat",
-            "default": 1,
+            "default": true,
+            "description": "If 'false', Brave AI Chat is disabled.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy"
                 }
             ],
-            "enum": [
-                0,
-                1
-            ],
-            "options": {
-                "enum_titles": [
-                    "Disable",
-                    "Enable"
-                ]
-            },
             "property_order": 1605
         },
         "SUFeedURL": {
