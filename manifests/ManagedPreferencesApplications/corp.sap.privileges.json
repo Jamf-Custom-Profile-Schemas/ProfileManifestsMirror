@@ -2,11 +2,105 @@
     "title": "SAP Privileges (corp.sap.privileges)",
     "description": "Use this section to define settings for the SAP Privileges app",
     "properties": {
+        "ExpirationInterval": {
+            "type": "integer",
+            "title": "Expiration Interval",
+            "description": "Set a fixed time interval after which administrator privileges expire and revert to standard user rights",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 5
+        },
+        "ExpirationIntervalMax": {
+            "type": "integer",
+            "title": "Expiration Interval Max",
+            "description": "Set a maximum time interval for a user to request administrative privileges",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 10
+        },
+        "AllowCLIBiometricAuthentication": {
+            "type": "boolean",
+            "title": "Allow CLI Biometric Authenication",
+            "default": false,
+            "description": "Specifies whether to allow biometric authentication in the PrivilegesCLI to obtain administrator privileges",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 15
+        },
+        "PostChangeExecutablePath": {
+            "type": "string",
+            "title": "Post Change Executable Path",
+            "description": "If set, the PrivilegesAgent executes the given application or script and provides the current user's user name ($1) and its privileges (admin or user, $2) as launch arguments",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 20
+        },
+        "PostChangeActionOnGrantOnly": {
+            "type": "boolean",
+            "title": "Post Change Action On Grant Only",
+            "default": false,
+            "description": "If set to true, the application or script, specified in PostChangeExecutablePath, will only be executed if administrator privileges are granted to a user, but not the privileges are revoked.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 25
+        },
+        "RevokePrivilegesAtLogin": {
+            "type": "boolean",
+            "title": "Revoke Privileges at Login",
+            "default": false,
+            "description": "If set to true, the user's administrator privileges are revoked at login",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 30
+        },
+        "HideOtherWindows": {
+            "type": "boolean",
+            "title": "Hide Other Windows",
+            "default": false,
+            "description": "By default, Privileges hides open windows to show the desktop and ensure that only the Privileges window is visible on the screen",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 35
+        },
         "EnforcePrivileges": {
             "type": "string",
             "title": "Enforce Privileges",
             "default": "admin",
             "description": "Enforces certain privileges. Whenever Privileges.app or the PrivilegesCLI command line tool are launched, the corresponding privileges are set.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
             "enum": [
                 "admin",
                 "user",
@@ -19,55 +113,197 @@
                     "None"
                 ]
             },
-            "property_order": 5
+            "property_order": 40
         },
         "DockToggleTimeout": {
             "type": "integer",
             "title": "Dock Toggle Timeout",
             "description": "Sets a fixed timeout for the Dock tile's Toggle Privileges command. After this time, the admin rights are removed and set back to standard user rights. A value of 0 disables the timeout and allows the user to permanently toggle privileges.",
-            "property_order": 10
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 45
         },
         "DockToggleMaxTimeout": {
             "type": "integer",
             "title": "Dock Toggle Max Timeout",
             "description": "Set a maximum timeout for the Dock tile's Toggle Privileges command. This generally works the same way as the DockToggleTimeout but allows the user to choose every timeout value up to the one specified. If set to 20 min. for example, the user may decide to set it to a value below 20 instead of being forced to use the 20 minute timeout.",
-            "property_order": 15
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 50
         },
         "LimitToGroup": {
             "type": "string",
             "title": "Limit to Group",
             "description": "Limits the usage of Privileges.app to the given user group.",
-            "property_order": 20
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 55
         },
         "LimitToUser": {
             "type": "string",
             "title": "Limit to User",
             "description": "Limits the usage of Privileges.app to the given user account.",
-            "property_order": 25
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 60
         },
         "ReasonRequired": {
             "type": "boolean",
             "title": "Reason Required",
             "description": "If ReasonRequired is set to true, the user must provide a reason for needing admin rights.",
-            "property_order": 30
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 65
+        },
+        "ReasonMaxLength": {
+            "type": "integer",
+            "title": "Reason Maximum Length",
+            "default": 250,
+            "description": "Specifies the maximum number of characters the user can enter as the reason for becoming an admin",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 70
         },
         "ReasonMinLength": {
             "type": "integer",
             "title": "Reason Minimum Length",
             "default": 10,
             "description": "Specifies the minimum number of characters the user has to enter as the reason for becoming an admin.",
-            "property_order": 35
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 75
+        },
+        "ReasonPresetList": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "de": {
+                        "type": "string",
+                        "title": "Localization",
+                        "description": "Localization (de)"
+                    },
+                    "en": {
+                        "type": "string",
+                        "title": "Localization",
+                        "description": "Localization (en)"
+                    },
+                    "es": {
+                        "type": "string",
+                        "title": "Localization",
+                        "description": "Localization (es)"
+                    },
+                    "it": {
+                        "type": "string",
+                        "title": "Localization",
+                        "description": "Localization (it)"
+                    },
+                    "default": {
+                        "type": "string",
+                        "title": "Unlocalized",
+                        "description": "Unlocalization"
+                    }
+                }
+            },
+            "title": "Reason Preset List",
+            "description": "If ReasonRequired is set to true, this key allows to pre-define a list of possible reasons (for becoming an admin) the user can choose from",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 80
+        },
+        "ReasonCheckingEnabled": {
+            "type": "boolean",
+            "title": "Reason Checking",
+            "default": false,
+            "description": "If set to true, the text the user enters for a reason is roughly parsed for valid words",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 85
+        },
+        "HideSettingsButton": {
+            "type": "boolean",
+            "title": "Hide Settings Button",
+            "default": false,
+            "description": "If set to true, the Settings button is no longer displayed in the app",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 90
+        },
+        "HideSettingsFromDockMenu": {
+            "type": "boolean",
+            "title": "Hide Settings From Dock Menu",
+            "default": false,
+            "description": "If set to true, the Settings menu item is no longer displayed in the Dock tile's menu",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 95
         },
         "RequireAuthentication": {
             "type": "boolean",
             "title": "Require User Authentication",
             "description": "Requires authentication before using Privileges.app. If set to true, the logged-in user is prompted to authenticate via Touch ID or by entering their account password.",
-            "property_order": 40
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
+            "property_order": 100
         },
         "RemoteLogging": {
             "type": "object",
             "title": "Remote Logging Settings",
             "description": "Remote logging settings",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
+                }
+            ],
             "properties": {
                 "ServerType": {
                     "type": "string",
@@ -212,7 +448,7 @@
                     }
                 }
             },
-            "property_order": 45
+            "property_order": 105
         }
     }
 }
