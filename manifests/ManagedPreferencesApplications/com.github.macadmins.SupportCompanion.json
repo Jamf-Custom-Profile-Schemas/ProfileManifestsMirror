@@ -222,6 +222,11 @@
                         "type": "string",
                         "title": "Description",
                         "description": "Description to show in the Self Service page in the UI."
+                    },
+                    "ButtonLabel": {
+                        "type": "string",
+                        "title": "Button Label",
+                        "description": "Configures the button label for the action."
                     }
                 }
             },
@@ -358,18 +363,109 @@
             },
             "property_order": 160
         },
+        "DesktopInfoBackgroundFrosted": {
+            "type": "boolean",
+            "title": "Desktop Info Background Frosted",
+            "description": "Enables a frosted glass look on the desktop info when set to true.",
+            "property_order": 165
+        },
         "DesktopInfoFontSize": {
             "type": "integer",
             "title": "Desktop Info Font Size",
             "default": 14,
             "description": "Configures the font size for the desktop info. Defaults to 14.",
-            "property_order": 165
+            "property_order": 170
         },
         "CustomCardPath": {
             "type": "string",
             "title": "Custom Card Path",
             "description": "Configures a path to a JSON file containing custom widgets to show on the Home view.",
-            "property_order": 170
+            "property_order": 175
+        },
+        "EnableElevation": {
+            "type": "boolean",
+            "title": "Enable Elevation",
+            "default": false,
+            "description": "When set to true allows the user to elevate to admin during a set time frame. Defaults to false.",
+            "property_order": 180
+        },
+        "RequireResonForElevation": {
+            "type": "boolean",
+            "title": "Require Reason For Elevation",
+            "default": false,
+            "description": "Requires the user to enter a reason for the elevation. Defaults to false.",
+            "property_order": 185
+        },
+        "ReasonMinLength": {
+            "type": "integer",
+            "title": "Reason Min Length",
+            "default": 10,
+            "description": "Set a minimum amount of characters the user must enter as the reason. Defaults to 10.",
+            "property_order": 190
+        },
+        "MaxElevationTime": {
+            "type": "integer",
+            "title": "Max Elevation Time",
+            "default": 5,
+            "description": "The amount of time (in minutes) the user is elevated. Defaults to 5.",
+            "property_order": 195
+        },
+        "ElevationWebhookUrl": {
+            "type": "string",
+            "title": "Elevation Webhook Url",
+            "description": "When configured, sends the entered elevation reason to a webhook instead of saving to disk.",
+            "property_order": 200
+        },
+        "ShowElevateTrayCard": {
+            "type": "boolean",
+            "title": "Show Elevate Tray Card",
+            "default": false,
+            "description": "Configure wether to show the elevate button in the tray menu or not. Defaults to false.",
+            "property_order": 205
+        },
+        "ElevationSeverity": {
+            "type": "integer",
+            "title": "Elevation Severity",
+            "default": 6,
+            "description": "Configure the elevation severity. Defaults to 6 (Informational).",
+            "property_order": 210
+        },
+        "MarkdownFilePath": {
+            "type": "string",
+            "title": "Markdown File Path",
+            "description": "Configure a path to a Markdown file to show in the menu.",
+            "property_order": 215
+        },
+        "MarkdownMenuLabel": {
+            "type": "string",
+            "title": "Markdown Menu Label",
+            "description": "Configure the menu label for the custom Markdown view.",
+            "property_order": 220
+        },
+        "MarkdownMenuIcon": {
+            "type": "string",
+            "title": "Markdown Menu Icon",
+            "description": "Configure the icon for the custom Markdown menu item.",
+            "property_order": 225
+        },
+        "CustomCardsMenuLabel": {
+            "type": "string",
+            "title": "Custom Cards Menu Label",
+            "description": "Configure the menu label for the custom cards view.",
+            "property_order": 230
+        },
+        "CustomCardsMenuIcon": {
+            "type": "string",
+            "title": "Custom Cards Menu Icon",
+            "description": "Configure the icon for the custom cards menu item.",
+            "property_order": 235
+        },
+        "RequirePrivilegedActionAuthentication": {
+            "type": "boolean",
+            "title": "Require Privileged Action Authentication",
+            "default": true,
+            "description": "Disables the requirement for the user to enter their credentials when running privileged actions via the CLI.",
+            "property_order": 240
         }
     }
 }
