@@ -309,11 +309,13 @@
                     "type": "string",
                     "title": "Server Type",
                     "enum": [
-                        "syslog"
+                        "syslog",
+                        "webhook"
                     ],
                     "options": {
                         "enum_titles": [
-                            "Syslog"
+                            "Syslog",
+                            "Webhook"
                         ]
                     }
                 },
