@@ -1,0 +1,18 @@
+{
+    "title": "Grammarly (com.grammarly.ProjectLlama)",
+    "description": "Use this section to define settings for Grammarly Desktop",
+    "properties": {
+        "GrammarlyEnrollmentToken": {
+            "type": "string",
+            "title": "Managed Mode",
+            "description": "Ensures that only the users who belong to your organization's Grammarly Business subscription can sign in to Grammarly's product offerings",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.grammarly.com/hc/en-us/articles/8341171286541-Configure-Managed-Mode"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
