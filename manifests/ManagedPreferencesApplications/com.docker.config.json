@@ -1,0 +1,18 @@
+{
+    "title": "Docker Desktop (com.docker.config)",
+    "description": "Use this section to define settings for Docker Desktop",
+    "properties": {
+        "allowedOrgs": {
+            "type": "string",
+            "title": "Allowed Organizations",
+            "description": "Add your organization(s) name",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.docker.com/security/for-admins/enforce-sign-in/methods/#configuration-profiles-method-mac-only"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
