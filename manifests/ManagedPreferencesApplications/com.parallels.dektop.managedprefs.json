@@ -1,0 +1,36 @@
+{
+    "title": "Parallels Desktop for Mac (com.parallels.desktop.managedprefs)",
+    "description": "Parallels Desktop Settings",
+    "properties": {
+        "ActivationExperience": {
+            "type": "string",
+            "title": "Activation Experience",
+            "default": "SSO",
+            "description": "Select a method for activating Parallels Desktop for Mac",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.parallels.com/parallels-desktop-enterprise-administrators-guide/mass-deployment-of-parallels-desktop-and-virtual-machines/deploying-parallels-desktop-via-mdm-app-catalogs-using-configuration-profiles"
+                }
+            ],
+            "enum": [
+                "License Key",
+                "SSO"
+            ],
+            "property_order": 5
+        },
+        "LicenseKey": {
+            "type": "string",
+            "title": "License Key",
+            "description": "Enter your 30-character license key:",
+            "pattern": "^[0-9A-Za-z]{6}-[0-9A-Za-z]{6}-[0-9A-Za-z]{6}-[0-9A-Za-z]{6}-[0-9A-Za-z]{6}$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.parallels.com/parallels-desktop-licensing-guide/managing-subscriptions-licences-and-seats/viewing-subscriptions-and-subscription-details"
+                }
+            ],
+            "property_order": 10
+        }
+    }
+}
