@@ -1,0 +1,131 @@
+{
+    "title": "Zscaler Client Connector (com.zscaler.installparams)",
+    "description": "Use this section to define settings for Zscaler Client Connector",
+    "properties": {
+        "installation-parameters": {
+            "type": "object",
+            "description": "Install Paramters",
+            "properties": {
+                "cloudName": {
+                    "type": "string",
+                    "title": "Cloud Name",
+                    "description": "The name of the cloud on which your organization is provisioned",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://help.zscaler.com/zscaler-client-connector/deploying-zscaler-client-connector-jamf-pro-macos#configure-custom-settings"
+                        }
+                    ]
+                },
+                "deviceToken": {
+                    "type": "string",
+                    "title": "Device Token",
+                    "description": "The appropriate device token from the Zscaler Client Connector Portal",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://help.zscaler.com/zscaler-client-connector/deploying-zscaler-client-connector-jamf-pro-macos#configure-custom-settings"
+                        }
+                    ]
+                },
+                "hideAppUIOnLaunch": {
+                    "type": "string",
+                    "title": "Hide App UI On Launch",
+                    "description": "Forces the app window to stay hidden before users enroll",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://help.zscaler.com/zscaler-client-connector/deploying-zscaler-client-connector-jamf-pro-macos#configure-custom-settings"
+                        }
+                    ],
+                    "enum": [
+                        "0",
+                        "1"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Not Hidden",
+                            "Hidden"
+                        ]
+                    }
+                },
+                "launchTray": {
+                    "type": "string",
+                    "title": "Launch Tray",
+                    "description": "Prevents Zscaler Client Connector from automatically starting after installation",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://help.zscaler.com/zscaler-client-connector/deploying-zscaler-client-connector-jamf-pro-macos#configure-custom-settings"
+                        }
+                    ],
+                    "enum": [
+                        "0",
+                        "1"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Not Starting After Installation",
+                            "Starting After Installation"
+                        ]
+                    }
+                },
+                "policyToken": {
+                    "type": "string",
+                    "title": "Policy Token",
+                    "description": "Allows you to specify which app profile policy you want to enforce for the app before the user enrolls",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://help.zscaler.com/zscaler-client-connector/deploying-zscaler-client-connector-jamf-pro-macos#configure-custom-settings"
+                        }
+                    ]
+                },
+                "strictEnforcement": {
+                    "type": "string",
+                    "title": "Strict Enforcement",
+                    "description": "Allows you to block internet traffic before the user enrolls in Zscaler Client Connector",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://help.zscaler.com/zscaler-client-connector/deploying-zscaler-client-connector-jamf-pro-macos#configure-custom-settings"
+                        }
+                    ],
+                    "enum": [
+                        "0",
+                        "1"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Denies Internet Traffic before Enrollment",
+                            "Allows Internet Traffic before Enrollment"
+                        ]
+                    }
+                },
+                "userDomain": {
+                    "type": "string",
+                    "title": "User Domain",
+                    "description": "Allows you to configure the user domain so that the users skip the Zscaler Client Connector enrollment page and directly go to the SSO login page",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://help.zscaler.com/zscaler-client-connector/deploying-zscaler-client-connector-jamf-pro-macos#configure-custom-settings"
+                        }
+                    ]
+                },
+                "externalRedirect": {
+                    "type": "string",
+                    "title": "External Redirect",
+                    "description": "Allows you to redirect authentication to your organization's SAML IdP through the Safari browser",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://help.zscaler.com/zscaler-client-connector/deploying-zscaler-client-connector-jamf-pro-macos#configure-custom-settings"
+                        }
+                    ]
+                }
+            },
+            "property_order": 5
+        }
+    }
+}
