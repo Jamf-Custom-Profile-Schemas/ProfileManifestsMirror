@@ -7,6 +7,18 @@
             "title": "Show Develop Menu",
             "description": "If enabled, displays the 'Develop' menu bar item (Preferences > Advanced > Show Develop).",
             "property_order": 5
+        },
+        "AlwaysPromptForDownloadFolder": {
+            "type": "boolean",
+            "title": "Always Prompt For Download Folder",
+            "description": "If enabled, sets 'File download location' to 'Ask for each download' (Settings > General).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://derflounder.wordpress.com/2024/10/17/setting-safari-to-always-prompt-for-download-location-on-macos-sequoia/"
+                }
+            ],
+            "property_order": 10
         }
     }
 }
