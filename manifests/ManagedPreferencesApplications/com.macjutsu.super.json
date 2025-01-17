@@ -1,0 +1,887 @@
+{
+    "title": "S.U.P.E.R.M.A.N (com.macjutsu.super)",
+    "description": "Use this section to define settings for S.U.P.E.R.M.A.N (super)",
+    "properties": {
+        "AuthAskUserToSavePassword": {
+            "type": "boolean",
+            "title": "Auth Ask User To Save Password",
+            "default": false,
+            "description": "Prompt the end user to save their password which can then be used to authenticate the local softwareupdate command",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Apple-Silicon-Local-Credentials#authenticate-via-end-users-account"
+                }
+            ],
+            "property_order": 5
+        },
+        "AuthCredentialFailoverToUser": {
+            "type": "boolean",
+            "title": "Auth Credential Failover To User",
+            "default": true,
+            "description": "If any managed automatic authentication method fails validation, then failover to local end user authentication",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Apple-Silicon-Local-Credentials#user-authentication-credential-failover"
+                }
+            ],
+            "property_order": 10
+        },
+        "AuthJamfComputerID": {
+            "type": "string",
+            "title": "Auth Jamf Computer ID",
+            "description": "Use this when using super with Jamf Pro API account",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Apple-Silicon-Jamf-Pro-API-Credentials#jamf-pro-id-via-mdm-configuration-profile"
+                }
+            ],
+            "property_order": 15
+        },
+        "AuthJamfCustomURL": {
+            "type": "string",
+            "title": "Jamf Custom URL Override",
+            "description": "Allows you to override the default Jamf Pro management URL for a custom Jamf Pro API URL",
+            "pattern": "^https?://.*",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Apple-Silicon-Jamf-Pro-API-Credentials#custom-jamf-pro-api-url"
+                }
+            ],
+            "property_order": 20
+        },
+        "AuthMDMFailoverToUser": {
+            "type": "string",
+            "title": "User Authentication MDM Failover",
+            "description": "The MDM workflow can be unreliable due to its complexity, and super will automatically try again upon failure, however this settings allows super to try other options",
+            "pattern": "^https?://.*",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Apple-Silicon-Jamf-Pro-API-Credentials#user-authentication-mdm-failover"
+                }
+            ],
+            "property_order": 25
+        },
+        "DeadlineCountFocus": {
+            "type": "string",
+            "title": "Focus Count Deadline",
+            "description": "The maximum number of automatic deferrals allowed if the system is in user-enabled Focus/Do Not Disturb or when a process has requested that the display not go to sleep",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Count-Deadlines#focus-count-deadline"
+                }
+            ],
+            "property_order": 30
+        },
+        "DeadlineCountHard": {
+            "type": "string",
+            "title": "Hard Count Deadline",
+            "description": "The maximum number of user selected deferrals allowed before the computer automatically restarts for updates without asking the user for approval",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Count-Deadlines#hard-count-deadline"
+                }
+            ],
+            "property_order": 35
+        },
+        "DeadlineCountSoft": {
+            "type": "string",
+            "title": "Soft Count Deadline",
+            "description": "The maximum number of user selected deferrals allowed before showing a soft deadline dialog",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Count-Deadlines#soft-count-deadline"
+                }
+            ],
+            "property_order": 40
+        },
+        "DeadlineDateFocus": {
+            "type": "string",
+            "title": "Focus Date Deadline",
+            "description": "This is the last date and time when automatic deferrals are allowed if the system is in user-enabled Focus/Do Not Disturb or when a process has requested that the display not go to sleep (for example, during an active meeting)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Date-Deadlines#focus-date-deadline"
+                }
+            ],
+            "property_order": 45
+        },
+        "DeadlineDateHard": {
+            "type": "string",
+            "title": "Hard Date Deadline",
+            "description": "If this date has passed, the computer restarts and udpates without asking the user for approval",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Date-Deadlines#hard-date-deadline"
+                }
+            ],
+            "property_order": 50
+        },
+        "DeadlineDateSoft": {
+            "type": "string",
+            "title": "Soft Date Deadline",
+            "description": "If this date and time have passed, an interactive update restart dialog appears indicating that no more user deferrals are allowed",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Date-Deadlines#soft-date-deadline"
+                }
+            ],
+            "property_order": 55
+        },
+        "DeadlineDaysFocus": {
+            "type": "string",
+            "title": "Focus Days Deadline",
+            "description": "The maximum number of days that automatic deferrals are allowed if the system is in user-enabled Focus/Do Not Disturb or when a process has requested that the display not go to sleep (for example, during an active meeting).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Days-Deadlines#focus-days-deadline"
+                }
+            ],
+            "property_order": 60
+        },
+        "DeadlineDaysHard": {
+            "type": "string",
+            "title": "Hard Days Deadline",
+            "description": "The maximum number of days allowed before the computer automatically restarts for updates without asking the user for approval",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Days-Deadlines#hard-days-deadline"
+                }
+            ],
+            "property_order": 65
+        },
+        "DeadlineDaysSoft": {
+            "type": "string",
+            "title": "Soft Days Deadline",
+            "description": "The maximum number of days allowed before the soft deadline dialog. The soft deadline is an interactive update restart dialog indicating that no more deferrals are allowed",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Days-Deadlines#soft-days-deadline"
+                }
+            ],
+            "property_order": 70
+        },
+        "DialogTimeoutRestartOrDefer": {
+            "type": "string",
+            "title": "Dialog Timeout Restart Or Defer",
+            "description": "Sets an automatic timeout for the restart or defer dialog in seconds",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Dialog-Timeouts/3d44b40dc47dd940f5edda8bbabedfacbb79970b#restart-or-defer-dialog-timeout"
+                }
+            ],
+            "property_order": 75
+        },
+        "WorkflowJamfPolicyTriggers": {
+            "type": "string",
+            "title": "Workflow Jamf Policy Triggers",
+            "description": "Make the super workflow run one or more Jamf Pro Policy Triggers that are comma separated with no spaces",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Alternate-Workflows/3d44b40dc47dd940f5edda8bbabedfacbb79970b#run-jamf-pro-policies"
+                }
+            ],
+            "property_order": 80
+        },
+        "DisplayAccessoryUserAuthFile": {
+            "type": "string",
+            "title": "Display Accessory User Auth File",
+            "description": "Specifies a local path or web URL to a file with the content to be shown in dialogs only when showing the Apple silicon user authentication dialog",
+            "property_order": 85
+        },
+        "DisplayAccessoryUpdateFile": {
+            "type": "string",
+            "title": "Display Accessory Update File",
+            "description": "Specifies a local path or web URL to a file with the content to be shown in dialogs only when performing macOS updates",
+            "property_order": 90
+        },
+        "DisplayAccessoryUpgradeFile": {
+            "type": "string",
+            "title": "Display Accessory Upgrade File",
+            "description": "Specifies a local path or web URL to a file with the content to be shown in dialogs only when performing macOS upgrades",
+            "property_order": 95
+        },
+        "WorkflowZeroDateManual": {
+            "type": "string",
+            "title": "Workflow Zero Date Manual",
+            "description": "Instead of having super automatically select the beginning date and time of the super workflow (aka. day zero), this option sets a specific date and time as day zero",
+            "property_order": 100
+        },
+        "DeferralTimerFocus": {
+            "type": "string",
+            "title": "Focus Defer Timer",
+            "description": "The number of minutes to defer the update restart dialog automatically if a process has prevented display sleep (for example, during an active meeting) or the user has Focus or Do Not Disturb enabled",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Deferral-Behavior#focus-deferral-timer"
+                }
+            ],
+            "property_order": 105
+        },
+        "DialogTimeoutDefault": {
+            "type": "string",
+            "title": "Default Dialog Timeout",
+            "description": "Sets the default timeout for any dialog that doesn't have a specific timeout setting",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Dialog-Timeouts#default-dialog-timeout"
+                }
+            ],
+            "property_order": 110
+        },
+        "DialogTimeoutInsufficientStorage": {
+            "type": "string",
+            "title": "Free Space Timeout",
+            "description": "Timeout for computers with not enough free space",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Dialog-Timeouts#insufficient-storage-dialog-timeout"
+                }
+            ],
+            "property_order": 115
+        },
+        "DialogTimeoutPowerRequired": {
+            "type": "string",
+            "title": "Battery Timeout",
+            "description": "Timeout for computers where power is required",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Dialog-Timeouts#power-required-dialog-timeout"
+                }
+            ],
+            "property_order": 120
+        },
+        "DialogTimeoutSoftDeadline": {
+            "type": "string",
+            "title": "Soft Display Timeout",
+            "description": "Sets an automatic timeout for interactive update restart dialogs in seconds",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Dialog-Timeouts#soft-deadline-dialog-timeout"
+                }
+            ],
+            "property_order": 125
+        },
+        "DialogTimeoutUserAuth": {
+            "type": "string",
+            "title": "User Authentication Timeout",
+            "description": "On Mac computers with Apple Silicon, the number of seconds to wait for the user to successfully authenticate when presented with the user authenticated dialog",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Dialog-Timeouts#user-authentication-dialog-timeout"
+                }
+            ],
+            "property_order": 130
+        },
+        "DialogTimeoutUserChoice": {
+            "type": "string",
+            "title": "User Choice Dialog Timeout",
+            "description": "Sets an automatic timeout for the user choice (restart/install or defer) dialog in seconds",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Dialog-Timeouts#user-choice-dialog-timeout"
+                }
+            ],
+            "property_order": 135
+        },
+        "DialogTimeoutUserSchedule": {
+            "type": "string",
+            "title": "User Scheduled Install User Choice Dialog Timeout",
+            "description": "Sets an automatic timeout for the scheduled install user choice dialog in seconds",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Dialog-Timeouts#user-scheduled-install-user-choice-dialog-timeout"
+                }
+            ],
+            "property_order": 140
+        },
+        "DisplayAccessoryDefaultFile": {
+            "type": "string",
+            "title": "Default Accessory File",
+            "description": "Local path or http(s) URL to a file that is the default accessory",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Customization#display-accessory-contents"
+                }
+            ],
+            "property_order": 145
+        },
+        "DisplayAccessoryJamfPolicyTriggersFile": {
+            "type": "string",
+            "title": "Jamf Policy Accessory File",
+            "description": "Local path or http(s) URL to a file that is the accessory to display when the InstallJamfPolicyTriggers payload option is also enabled and the workflow target is only Jamf Pro Policy Triggers",
+            "property_order": 150
+        },
+        "DisplayAccessoryMacOSMajorUpgradeFile": {
+            "type": "string",
+            "title": "Major Upgrades Accessory File",
+            "description": "Local path or http(s) URL to a file that is the accessory to display when performing macOS upgrades",
+            "property_order": 155
+        },
+        "DisplayAccessoryMacOSMinorUpdateFile": {
+            "type": "string",
+            "title": "Minor Updates Updates Accessory File",
+            "description": "Local path or http(s) URL to a file that is the accessory to display when performing macOS updates",
+            "property_order": 160
+        },
+        "DisplayAccessoryNonSystemUpdatesFile": {
+            "type": "string",
+            "title": "Non-System Updates Accessory File",
+            "description": "Local path or http(s) URL to a file that is the accessory to display when the InstallNonSystemUpdatesWithoutRestarting payload option is also enabled and the workflow target is only non-system updates",
+            "property_order": 165
+        },
+        "DisplayAccessoryRestartWithoutUpdatesFile": {
+            "type": "string",
+            "title": "Restart Without Updates Accessory File",
+            "description": "Local path or http(s) URL to a file that is the accessory to display when the WorkflowRestartWithoutUpdates payload option is also enabled and the workflow target is only a forced restart without any updates",
+            "property_order": 170
+        },
+        "DisplayAccessoryType": {
+            "type": "string",
+            "title": "Custom Display Accessory",
+            "description": "Interactive dialogs (but not notifications) generated by IBM Notifier can be easily customized via several display accessory options",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Customization#display-accessory-types"
+                }
+            ],
+            "enum": [
+                "TEXTBOX",
+                "HTMLBOX",
+                "HTML",
+                "IMAGE",
+                "VIDEO",
+                "VIDEOAUTO"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Textbox",
+                    "HTML (White Bounding Box)",
+                    "HTML (Blank Background)",
+                    "Image",
+                    "Video",
+                    "Video (Auto-Play)"
+                ]
+            },
+            "property_order": 175
+        },
+        "DisplayHelpButtonString": {
+            "type": "string",
+            "title": "Help Button",
+            "description": "Plain text to display or http(s) URL link to follow for the Help Button",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Customization#display-help-andor-warning-buttons"
+                }
+            ],
+            "property_order": 180
+        },
+        "DisplayHideProgressBar": {
+            "type": "string",
+            "title": "Display Hide Progress Bar",
+            "description": "This option hides the animated progress bar (as opposed showing it) for notifications and alerts",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Behavior#hide-notification-progress-bars"
+                }
+            ],
+            "property_order": 185
+        },
+        "DisplayIconDarkFile": {
+            "type": "string",
+            "title": "Dark Display Icon",
+            "description": "Local path or http(s) URL to a file that is the picture to display in notifications or dialogs when in dark mode. Failover to DisplayIconFile payload if configured",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Customization#custom-dark-mode-display-icon"
+                }
+            ],
+            "property_order": 190
+        },
+        "DisplayIconLightFile": {
+            "type": "string",
+            "title": "Light Display Icon",
+            "description": "Local path or http(s) URL to a file that is the picture to display in notifications or dialogs when in light mode. Failover to DisplayIconFile payload if configured",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Customization#custom-light-mode-display-icon"
+                }
+            ],
+            "property_order": 195
+        },
+        "DisplayIconFile": {
+            "type": "string",
+            "title": "Display Icon",
+            "description": "Local path or http(s) URL to a file that is the picture to display in notifications or dialogs",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Customization#custom-display-icon-default"
+                }
+            ],
+            "property_order": 200
+        },
+        "DisplayIconSize": {
+            "type": "string",
+            "title": "Display Icon Size",
+            "description": "Number of pixels for the DisplayIcon in IBM Notifier dialogs",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Customization#display-icon-size"
+                }
+            ],
+            "property_order": 205
+        },
+        "InstallJamfPolicyTriggers": {
+            "type": "string",
+            "title": "Install Jamf Policy Triggers",
+            "description": "If a restart is required for system updates or forced via RestartWithoutUpdates, this list of Jamf Policy Triggers runs before any available updates install and the computer restarts",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Install-Non-System-Items#runinstall-jamf-pro-policies"
+                }
+            ],
+            "property_order": 210
+        },
+        "InstallJamfPolicyTriggersWithoutRestarting": {
+            "type": "boolean",
+            "title": "Install Jamf Policies Without A Restart",
+            "default": false,
+            "description": "Allows for installation of Jamf Pro Policies even if there are no available macOS updates/upgrades",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Install-Non-System-Items#runinstall-jamf-pro-policies-without-restarting"
+                }
+            ],
+            "property_order": 215
+        },
+        "ScheduleZeroDateRelease": {
+            "type": "boolean",
+            "title": "Apple Zero Day Workflow Date",
+            "default": true,
+            "description": "Leverages the public MacAdmin's SOFA macOS machine readable JSON feed to discover release dates for use in workflows with deadline day options",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Workflow-Schedule-Behavior#schedule-zero-date-macos-release"
+                }
+            ],
+            "property_order": 220
+        },
+        "ScheduledInstallUserChoice": {
+            "type": "boolean",
+            "title": "Scheduled Install User Choice",
+            "default": true,
+            "description": "Adds a Schedule button to the standard deferral dialog",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Scheduled-Install#scheduled-install-user-choice"
+                }
+            ],
+            "property_order": 225
+        },
+        "TestMode": {
+            "type": "boolean",
+            "title": "Test Mode",
+            "default": true,
+            "description": "Mode to validate parameters, credentials, notifications, dialogs, deferrals, and deadline logic",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Testing-And-Validation#test-mode"
+                }
+            ],
+            "property_order": 230
+        },
+        "WorkflowInstallNow": {
+            "type": "boolean",
+            "title": "Start Workflow Immediately",
+            "default": false,
+            "description": "Kicks off the super workflow immediately, prompting user that an update has begun",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/User-Initiated-Workflows#install-now"
+                }
+            ],
+            "property_order": 235
+        },
+        "ScheduleWorkflowActive": {
+            "type": "string",
+            "title": "Schedule Workflow Active",
+            "description": "Allows you to define multiple weekday time frames that specify when the super workflow is allowed to be active (aka maintenance windows)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Workflow-Schedule-Behavior#schedule-workflow-active"
+                }
+            ],
+            "property_order": 240
+        },
+        "TestBatteryLevel": {
+            "type": "string",
+            "title": "Test Battery Level",
+            "description": "Minmum Battery Percentage",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Testing-And-Validation#battery-level-testing-override"
+                }
+            ],
+            "property_order": 245
+        },
+        "TestModeTimeout": {
+            "type": "string",
+            "title": "Test Mode Timeout",
+            "description": "The amount of time in seconds to leave test notifications and dialogs open before moving on in the workflow",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Testing-And-Validation#custom-test-mode-timeout"
+                }
+            ],
+            "property_order": 250
+        },
+        "TestStorageUpdate": {
+            "type": "string",
+            "title": "Free Space Update",
+            "description": "Free space required for updates",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Testing-And-Validation#free-storage-space-testing-overrides"
+                }
+            ],
+            "property_order": 255
+        },
+        "TestStorageUpgrade": {
+            "type": "string",
+            "title": "Test Free Space Upgrade",
+            "description": "Free space required for upgrades",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Testing-And-Validation#free-storage-space-testing-overrides"
+                }
+            ],
+            "property_order": 260
+        },
+        "ScheduleZeroDateManual": {
+            "type": "string",
+            "title": "Manual Zero Day Workflow Date",
+            "description": "Instead of having the days deadline counter, automatically select the day zero date",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Workflow-Schedule-Behavior#schedule-zero-date-manual-override"
+                }
+            ],
+            "property_order": 265
+        },
+        "ScheduleZeroDateSOFACustomURL": {
+            "type": "string",
+            "title": "Apple Zero Day Custom URL",
+            "description": "Allows for a custom self-hosted MacAdmin's SOFA macOS machine readable JSON feed",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Workflow-Schedule-Behavior#schedule-zero-date-custom-sofa-url"
+                }
+            ],
+            "property_order": 270
+        },
+        "ScheduledInstallDate": {
+            "type": "string",
+            "title": "Scheduled Install Date",
+            "description": "Allows you to specify a date and time that a scheduled installation takes place",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Scheduled-Install#scheduled-install-date"
+                }
+            ],
+            "property_order": 275
+        },
+        "ScheduledInstallDays": {
+            "type": "string",
+            "title": "Scheduled Install Days",
+            "description": "Allows you to specify the number of days after the zero date that a scheduled installation takes place",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Scheduled-Install#scheduled-install-days"
+                }
+            ],
+            "property_order": 280
+        },
+        "ScheduledInstallReminder": {
+            "type": "string",
+            "title": "Scheduled Install Reminder",
+            "description": "Allows you to specify a list of minutes separated by commas (no spaces) that define how often a scheduled installation reminder dialog appears prior to a scheduled installation",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Scheduled-Install#scheduled-install-reminders"
+                }
+            ],
+            "property_order": 285
+        },
+        "DeferralTimerDefault": {
+            "type": "string",
+            "title": "Deferral Timer Default",
+            "description": "The number of minutes to defer until the next update workflow attempt if a user choses not restart",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Deferral-Behavior#default-deferral-timer"
+                }
+            ],
+            "property_order": 290
+        },
+        "DeferralTimerError": {
+            "type": "string",
+            "title": "Deferral Timer Error",
+            "description": "The number of minutes to defer if super detects an error in the workflow (for example, network or MDM connectivity issues)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Deferral-Behavior#error-deferral-timer"
+                }
+            ],
+            "property_order": 295
+        },
+        "DeferralTimerMenu": {
+            "type": "string",
+            "title": "Deferral Timer Menu",
+            "description": "Display a deferral time pop-up menu in the non-deadline restart dialog that allows the user to override the Deferral Timer Default timer",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Deferral-Behavior#menu-deferral-timer"
+                }
+            ],
+            "property_order": 300
+        },
+        "DeferralTimerWorkflowRelaunch": {
+            "type": "string",
+            "title": "Deferral Timer Workflow Relaunch",
+            "description": "The number of minutes to defer if no software updates are available or allowed. Enabling this option results in super acting as a permanent agent that checks for software updates on a regular basis",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Deferral-Behavior#workflow-relaunch-deferral-timer"
+                }
+            ],
+            "property_order": 305
+        },
+        "DisplayHideBackground": {
+            "type": "string",
+            "title": "Display Hide Background",
+            "description": "Hide the background while displaying super dialogs and notifications",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Behavior#display-hide-background"
+                }
+            ],
+            "property_order": 310
+        },
+        "DisplayNotificationsCentered": {
+            "type": "string",
+            "title": "Display Notifications Centered",
+            "description": "Display super notifications in the center of the screen",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Behavior#display-notifications-centered"
+                }
+            ],
+            "property_order": 315
+        },
+        "DisplaySilently": {
+            "type": "string",
+            "title": "Display Silently",
+            "description": "Do not play the system alert sound when opening super dialogs and notifications",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Behavior#display-dialogs-and-notifications-silently"
+                }
+            ],
+            "property_order": 320
+        },
+        "DisplayUnmovable": {
+            "type": "string",
+            "title": "Display Unmovable",
+            "description": "Disable the users ability to move super dialogs and notifications",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Behavior#display-unmovable-dialogs-and-notifications"
+                }
+            ],
+            "property_order": 325
+        },
+        "DisplayWarningButtonString": {
+            "type": "string",
+            "title": "Display Warning Button String",
+            "description": "A plain text string or URL to open when the user clicks the warning button (exclamation mark icon) in all interactive dialogs (but not notifications)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Display-Customization#display-help-andor-warning-buttons"
+                }
+            ],
+            "property_order": 330
+        },
+        "InstallMacOSMajorUpgrades": {
+            "type": "boolean",
+            "title": "Install MacOS Major Upgrades",
+            "default": false,
+            "description": "With this option enabled super leverages built-in commands and the mist command to find compatible macOS major upgrade versions. If a newer macOS major upgrade is available then the super workflow attempts to download and install the upgrade. The default super workflow always selects the newest compatible macOS major upgrade version",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/macOS-Updates-and-Upgrades#install-macos-major-upgrades"
+                }
+            ],
+            "property_order": 335
+        },
+        "WorkflowRestartWithoutUpdates": {
+            "type": "boolean",
+            "title": "Restart Without Updates",
+            "default": false,
+            "description": "Force a restart even if Apple software updates do not need it",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Alternate-Workflows#restart-without-updates"
+                }
+            ],
+            "property_order": 340
+        },
+        "InstallMacOSMajorVersionTarget": {
+            "type": "string",
+            "title": "Install MacOS Major Version Target",
+            "description": "Limit the installation of macOS major upgrade versions to the major (whole number) version specified in this option. This option requires that you have also specified the InstallMacOSMajorUpgrades option",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/macOS-Updates-and-Upgrades#target-macos-major-upgrade-version"
+                }
+            ],
+            "property_order": 345
+        },
+        "InstallNonSystemUpdatesWithoutRestarting": {
+            "type": "boolean",
+            "title": "Install Non System Updates Without Restarting",
+            "default": true,
+            "description": "If there are no pending restart-required macOS updates or upgrades, make the super workflow install non-system Apple software updates as soon as they become available",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Install-Non-System-Items#install-non-system-apple-software-updates-without-restarting"
+                }
+            ],
+            "property_order": 350
+        },
+        "InstallRapidSecurityResponses": {
+            "type": "boolean",
+            "title": "Install Rapid Security Responses",
+            "default": true,
+            "description": "Allow the super workflow to install macOS Rapid Security Response (RSR) updates",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/macOS-Updates-and-Upgrades#install-macos-rapid-security-responses"
+                }
+            ],
+            "property_order": 355
+        },
+        "WorkflowDisableRelaunch": {
+            "type": "boolean",
+            "title": "Workflow Disable Relaunch",
+            "default": false,
+            "description": "Disable the automatic relaunch of the super workflow when no macOS updates or upgrades are available or allowed",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Alternate-Workflows#disable-automatic-relaunch"
+                }
+            ],
+            "property_order": 360
+        },
+        "WorkflowDisableUpdateCheck": {
+            "type": "boolean",
+            "title": "Workflow Disable Update Check",
+            "default": false,
+            "description": "Disable the super workflow from checking for, downloading, or installing any Apple software updates or upgrades, even if they are available",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Alternate-Workflows#disable-software-update-check"
+                }
+            ],
+            "property_order": 365
+        },
+        "WorkflowOnlyDownload": {
+            "type": "boolean",
+            "title": "Workflow Only Download",
+            "default": false,
+            "description": "Download and prepare macOS updates or upgrades but do not start any installation workflow",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/User-Initiated-Workflows#only-download"
+                }
+            ],
+            "property_order": 370
+        },
+        "VerboseMode": {
+            "type": "boolean",
+            "title": "Verbose Mode",
+            "default": false,
+            "description": "Mode to generate additional log output",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/wiki/Troubleshooting#use-super-verbose-mode"
+                }
+            ],
+            "property_order": 375
+        }
+    }
+}
