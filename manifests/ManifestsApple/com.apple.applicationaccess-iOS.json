@@ -1282,12 +1282,35 @@
             "description": "If 'false', forces external intelligence providers into anonymous mode. If a user is already signed in to an external intelligence provider, applying this restriction will cause them to be signed out when the next request is attempted. Available in iOS 18.2 and later, and macOS 15.2 and later.",
             "property_order": 810
         },
+        "allowedExternalIntelligenceWorkspaceIDs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Allowed Workspace ID"
+            },
+            "title": "Allowed External Intelligence Workspace IDs",
+            "description": "Array of strings, but currently restricted to a single element. If present, Apple Intelligence will only allow the given external integration workspace ID to be used, and will require a sign-in in order to make requests; the user will be required to sign in to integrations that support signing in. Multiple payloads will combine using an intersect operation. This means the allowed set of workspace IDs can become the empty set if conflicting values are specified in multiple payloads.",
+            "property_order": 815
+        },
+        "allowNotesTranscriptionSummary": {
+            "type": "boolean",
+            "default": true,
+            "description": "If false, disables transcription summarization in Notes.",
+            "property_order": 820
+        },
+        "allowVisualIntelligenceSummary": {
+            "type": "boolean",
+            "title": "Allow Visual Intelligence Summary",
+            "default": true,
+            "description": "When false, disables visual intelligence summarization.",
+            "property_order": 825
+        },
         "allowSatelliteConnection": {
             "type": "boolean",
             "title": "Allow use of satellite connectivity",
             "default": true,
             "description": "If false, the connection to and use of satellite services is prohibited.",
-            "property_order": 815
+            "property_order": 830
         }
     }
 }
