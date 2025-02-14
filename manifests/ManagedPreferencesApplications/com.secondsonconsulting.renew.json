@@ -71,6 +71,12 @@
                 }
             ],
             "properties": {
+                "NotificationActionEnabled": {
+                    "type": "boolean",
+                    "title": "Notification Action Enabled",
+                    "default": true,
+                    "description": "If enabled, interacting with the notification will initiate a restart. Defaults to true."
+                },
                 "Title": {
                     "type": "string",
                     "title": "Title",
@@ -276,6 +282,21 @@
                         {
                             "rel": "More information",
                             "href": "https://github.com/SecondSonConsulting/Renew/wiki/OptionalArguments#additionalnotificationoptions"
+                        }
+                    ]
+                },
+                "IgnoreAssertions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Applications"
+                    },
+                    "title": "Applications to Ignore",
+                    "description": "The applications which Renew ignores when checking for display assertions. (You can specify one or more, EX: zoom.us firefox).",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/SecondSonConsulting/Renew/wiki/OptionalArguments#ignoreassertions"
                         }
                     ]
                 },
