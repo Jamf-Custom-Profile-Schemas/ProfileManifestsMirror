@@ -611,7 +611,7 @@
                 "randomDelay": {
                     "type": "boolean",
                     "title": "Random Delay",
-                    "default": false,
+                    "default": true,
                     "description": "Enables an initial delay Nudge before launching the UI. This is useful if you do not want your users to all receive the Nudge prompt at the exact time of the LaunchAgent.",
                     "links": [
                         {
