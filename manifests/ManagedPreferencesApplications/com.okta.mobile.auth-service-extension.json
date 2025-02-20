@@ -1,0 +1,124 @@
+{
+    "title": "Okta Verify (SSO Extension) (com.okta.mobile.auth-service-extension)",
+    "description": "Use this section to define settings for Okta Verify (SSO Extension)",
+    "properties": {
+        "OktaVerify.DeviceHealthOptions": {
+            "type": "string",
+            "title": "Device Health Options",
+            "description": "Hide the Device Health page, or hide specific health checks in Okta Verify on user devices",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri"
+                }
+            ],
+            "property_order": 5
+        },
+        "OktaVerify.EnrollmentOptions": {
+            "type": "string",
+            "title": "Enrollment Options",
+            "default": "SilentEnrollmentDisabled",
+            "description": "Configure whether users are prompted to enroll in Okta Verify",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri2"
+                }
+            ],
+            "enum": [
+                "SilentEnrollmentDisabled",
+                "Enabled",
+                "Disabled"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Silent Enrollment Disabled",
+                    "Enabled",
+                    "Disabled"
+                ]
+            },
+            "property_order": 10
+        },
+        "OktaVerify.OrgUrl": {
+            "type": "string",
+            "title": "Okta Org Url",
+            "description": "Pre-populate the org URL so that users don't have to enter this value on the first enter your sign-in URL page",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri3"
+                }
+            ],
+            "property_order": 15
+        },
+        "PlatformSSO.ProtocolVersion": {
+            "type": "string",
+            "title": "Platform SSO Protocol Version",
+            "description": "Sets Platform SSO Protocol Version",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/oda/macos-pw-sync/configure-macos-password-sync-policies.htm"
+                }
+            ],
+            "property_order": 20
+        },
+        "OktaVerify.PasswordSyncClientID": {
+            "type": "string",
+            "title": "Okta Client ID",
+            "description": "Used for Platform Single Sign-on (Okta Admin Console > Applications > Catalog)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/oda/macos-pw-sync/configure-macos-password-sync-policies.htm"
+                }
+            ],
+            "property_order": 25
+        },
+        "OktaVerify.ReportDiagnostics": {
+            "type": "boolean",
+            "title": "Report Diagnostics",
+            "default": false,
+            "description": "Configure whether Okta Verify diagnostic and crash information is shared with Okta",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri5"
+                }
+            ],
+            "property_order": 30
+        },
+        "OktaVerify.LaunchOptions": {
+            "type": "string",
+            "title": "Set Launch Options",
+            "description": "Configure whether Okta Verify shows the accounts list upon launch",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri6"
+                }
+            ],
+            "enum": [
+                "HideMainWindow"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Hide Main Window"
+                ]
+            },
+            "property_order": 35
+        },
+        "OktaVerify.UserPrincipalName": {
+            "type": "string",
+            "title": "Okta User Principle Name",
+            "description": "Automatically populates the username in the Sign-In Widget",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/oda/macos-pw-sync/configure-macos-password-sync-policies.htm"
+                }
+            ],
+            "property_order": 40
+        }
+    }
+}
