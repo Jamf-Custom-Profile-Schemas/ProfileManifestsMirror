@@ -2797,6 +2797,12 @@
                     "default": false,
                     "description": "If true, display the punycode version of internationalized domain names."
                 },
+                "MicrosoftEntraSSO": {
+                    "type": "boolean",
+                    "title": "Allow single sign-on for Microsoft Entra accounts on macOS",
+                    "default": false,
+                    "description": "If this policy is set to true, Firefox will use credentials stored in the Company Portal to sign in to Microsoft Entra accounts. Affects `network.http.microsoft-entra-sso.enabled`."
+                },
                 "places.history.enabled": {
                     "type": "boolean",
                     "title": "places.history.enabled",
