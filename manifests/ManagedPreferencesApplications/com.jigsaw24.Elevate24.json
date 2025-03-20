@@ -26,6 +26,19 @@
             ],
             "property_order": 10
         },
+        "newUI": {
+            "type": "boolean",
+            "title": "New UI",
+            "default": false,
+            "description": "Change Elevate24 to show to the new UI. The new UI will be default in a later version of Elevate24.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                }
+            ],
+            "property_order": 15
+        },
         "message": {
             "type": "string",
             "title": "Message",
@@ -37,7 +50,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
                 }
             ],
-            "property_order": 15
+            "property_order": 20
         },
         "iconPath": {
             "type": "string",
@@ -50,7 +63,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
                 }
             ],
-            "property_order": 20
+            "property_order": 25
         },
         "heading": {
             "type": "string",
@@ -63,7 +76,20 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
                 }
             ],
-            "property_order": 25
+            "property_order": 30
+        },
+        "subheading": {
+            "type": "string",
+            "title": "Sub Header (Premium)",
+            "default": "Privilege Access Management",
+            "description": "Change the standard text \"Privilege Access Management\" under the Elevate24 header. New UI V2.2.0+ Only.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                }
+            ],
+            "property_order": 35
         },
         "mainbutton": {
             "type": "string",
@@ -76,7 +102,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
                 }
             ],
-            "property_order": 30
+            "property_order": 40
         },
         "HideLogo": {
             "type": "boolean",
@@ -89,7 +115,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
                 }
             ],
-            "property_order": 35
+            "property_order": 45
         },
         "Enabletimelist": {
             "type": "boolean",
@@ -102,7 +128,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
                 }
             ],
-            "property_order": 40
+            "property_order": 50
         },
         "enableReason": {
             "type": "boolean",
@@ -115,7 +141,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
                 }
             ],
-            "property_order": 45
+            "property_order": 55
         },
         "Sessiontime": {
             "type": "string",
@@ -128,7 +154,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
                 }
             ],
-            "property_order": 50
+            "property_order": 60
         },
         "times": {
             "type": "array",
@@ -148,7 +174,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
                 }
             ],
-            "property_order": 55
+            "property_order": 65
         },
         "reasons": {
             "type": "array",
@@ -163,7 +189,20 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
                 }
             ],
-            "property_order": 60
+            "property_order": 70
+        },
+        "sessionExpiryReminder": {
+            "type": "integer",
+            "title": "Set Session Expiry Notification (Premium)",
+            "default": 0,
+            "description": "Set the number of minutes before the application notifies the user that the session is expiring",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                }
+            ],
+            "property_order": 75
         },
         "DisableDefaultLog": {
             "type": "boolean",
@@ -176,7 +215,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#disable-sending-data-to-jigsaw24"
                 }
             ],
-            "property_order": 65
+            "property_order": 80
         },
         "siemURL": {
             "type": "string",
@@ -187,7 +226,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
                 }
             ],
-            "property_order": 70
+            "property_order": 85
         },
         "siemAuthHeader": {
             "type": "string",
@@ -198,7 +237,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
                 }
             ],
-            "property_order": 75
+            "property_order": 90
         },
         "siemAuthToken": {
             "type": "string",
@@ -209,7 +248,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
                 }
             ],
-            "property_order": 80
+            "property_order": 95
         },
         "microsoftsentinel": {
             "type": "array",
@@ -241,7 +280,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#microsoft-sentinel"
                 }
             ],
-            "property_order": 85
+            "property_order": 100
         },
         "teamswebhook": {
             "type": "string",
@@ -252,7 +291,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
                 }
             ],
-            "property_order": 90
+            "property_order": 105
         },
         "slack-webhook": {
             "type": "string",
@@ -263,7 +302,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
                 }
             ],
-            "property_order": 95
+            "property_order": 110
         },
         "EnableSessionMonitoring": {
             "type": "boolean",
@@ -276,7 +315,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Configuration%20Keys.md#configuration-keys-for-elevate24-session-reporting"
                 }
             ],
-            "property_order": 100
+            "property_order": 115
         },
         "enableAppleAuth": {
             "type": "boolean",
@@ -289,7 +328,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
                 }
             ],
-            "property_order": 105
+            "property_order": 120
         },
         "GoogleAuth": {
             "type": "boolean",
@@ -302,7 +341,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
                 }
             ],
-            "property_order": 110
+            "property_order": 125
         },
         "standardAtLoad": {
             "type": "boolean",
@@ -315,7 +354,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
                 }
             ],
-            "property_order": 115
+            "property_order": 130
         },
         "demoteAllAdmin": {
             "type": "boolean",
@@ -328,7 +367,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
                 }
             ],
-            "property_order": 120
+            "property_order": 135
         },
         "demoteAllAdminQuit": {
             "type": "boolean",
@@ -341,7 +380,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
                 }
             ],
-            "property_order": 125
+            "property_order": 140
         },
         "demoteExclusions": {
             "type": "array",
@@ -356,7 +395,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
                 }
             ],
-            "property_order": 130
+            "property_order": 145
         },
         "killterminalsessions": {
             "type": "boolean",
@@ -369,7 +408,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
                 }
             ],
-            "property_order": 135
+            "property_order": 150
         },
         "userElevateAdmin": {
             "type": "boolean",
@@ -382,7 +421,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
                 }
             ],
-            "property_order": 140
+            "property_order": 155
         },
         "useCurrentUserAsAdmin": {
             "type": "boolean",
@@ -395,7 +434,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
                 }
             ],
-            "property_order": 145
+            "property_order": 160
         },
         "adminUserName": {
             "type": "string",
@@ -407,7 +446,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
                 }
             ],
-            "property_order": 150
+            "property_order": 165
         },
         "ComplexPassword": {
             "type": "boolean",
@@ -420,7 +459,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
                 }
             ],
-            "property_order": 155
+            "property_order": 170
         },
         "PasswordUppercase": {
             "type": "string",
@@ -432,7 +471,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
                 }
             ],
-            "property_order": 160
+            "property_order": 175
         },
         "PasswordLowercase": {
             "type": "string",
@@ -444,7 +483,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
                 }
             ],
-            "property_order": 165
+            "property_order": 180
         },
         "PasswordNumbers": {
             "type": "string",
@@ -456,7 +495,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
                 }
             ],
-            "property_order": 170
+            "property_order": 185
         },
         "PasswordSymbols": {
             "type": "string",
@@ -468,7 +507,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
                 }
             ],
-            "property_order": 175
+            "property_order": 190
         },
         "showAdminPasswordGrace": {
             "type": "integer",
@@ -481,7 +520,7 @@
                     "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
                 }
             ],
-            "property_order": 180
+            "property_order": 195
         }
     }
 }

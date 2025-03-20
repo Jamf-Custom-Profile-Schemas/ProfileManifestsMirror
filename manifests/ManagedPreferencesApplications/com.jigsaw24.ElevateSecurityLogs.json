@@ -188,7 +188,7 @@
                     },
                     "signingID": {
                         "type": "string",
-                        "title": "Signing ID of Process"
+                        "title": "Signing ID"
                     },
                     "username": {
                         "type": "string",
@@ -231,11 +231,7 @@
                     },
                     "signingID": {
                         "type": "string",
-                        "title": "Signing Id of the Process"
-                    },
-                    "singingID": {
-                        "type": "string",
-                        "title": "SigningID"
+                        "title": "Signing ID"
                     },
                     "matchingArgumentsContaining": {
                         "type": "string",
@@ -373,7 +369,7 @@
                     },
                     "signingId": {
                         "type": "string",
-                        "title": "Signing Id"
+                        "title": "Signing ID"
                     }
                 }
             },
