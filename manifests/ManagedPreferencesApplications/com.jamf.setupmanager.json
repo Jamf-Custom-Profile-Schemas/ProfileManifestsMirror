@@ -126,11 +126,13 @@
             ],
             "enum": [
                 "continue",
+                "restart",
                 "shutdown"
             ],
             "options": {
                 "enum_titles": [
                     "Continue",
+                    "Restart",
                     "Shut Down"
                 ]
             },
@@ -357,6 +359,403 @@
                                     "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "User ID Label",
+                            "default": "User ID",
+                            "description": "Override the default label for the User ID field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "email": {
+                    "type": "object",
+                    "title": "Email",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Email Default",
+                            "description": "A pre-populated value for the Email field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Email Placeholder",
+                            "description": "A placeholder value for Email. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Email"
+                            },
+                            "title": "Email Options",
+                            "description": "Options displayed in a dropdown menu for Email.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Email Validation",
+                            "description": "A regular expression used to validate the value of Email.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Email Validation Message",
+                            "description": "A message displayed to the user when Email fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Email Label",
+                            "default": "Email",
+                            "description": "Override the default label for the Email field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "endUsername": {
+                    "type": "object",
+                    "title": "Account Name",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Account Name Default",
+                            "description": "A pre-populated value for the Account Name field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Account Name Placeholder",
+                            "description": "A placeholder value for Account Name. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Account Name"
+                            },
+                            "title": "Account Name Options",
+                            "description": "Options displayed in a dropdown menu for Account Name.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Account Name Validation",
+                            "description": "A regular expression used to validate the value of Account Name.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Account Name Validation Message",
+                            "description": "A message displayed to the user when Account Name fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Account Name Label",
+                            "default": "Account Name",
+                            "description": "Override the default label for the Account Name field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "realname": {
+                    "type": "object",
+                    "title": "Full Name",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Full Name Default",
+                            "description": "A pre-populated value for the Full Name field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Full Name Placeholder",
+                            "description": "A placeholder value for Full Name. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Full Name"
+                            },
+                            "title": "Full Name Options",
+                            "description": "Options displayed in a dropdown menu for Full Name.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Full Name Validation",
+                            "description": "A regular expression used to validate the value of Full Name.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Full Name Validation Message",
+                            "description": "A message displayed to the user when Full Name fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Full Name Label",
+                            "default": "Full Name",
+                            "description": "Override the default label for the Full Name field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "position": {
+                    "type": "object",
+                    "title": "Position",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Position Default",
+                            "description": "A pre-populated value for the Position field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Position Placeholder",
+                            "description": "A placeholder value for Position. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Position"
+                            },
+                            "title": "Position Options",
+                            "description": "Options displayed in a dropdown menu for Position.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Position Validation",
+                            "description": "A regular expression used to validate the value of Position.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Position Validation Message",
+                            "description": "A message displayed to the user when Position fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Position Label",
+                            "default": "Position",
+                            "description": "Override the default label for the Position field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "phone": {
+                    "type": "object",
+                    "title": "Phone",
+                    "properties": {
+                        "default": {
+                            "type": "string",
+                            "title": "Phone Default",
+                            "description": "A pre-populated value for the Phone field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                }
+                            ]
+                        },
+                        "placeholder": {
+                            "type": "string",
+                            "title": "Phone Placeholder",
+                            "description": "A placeholder value for Phone. This is displayed in gray when no value has been entered.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                }
+                            ]
+                        },
+                        "options": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Preset Options for Phone"
+                            },
+                            "title": "Phone Options",
+                            "description": "Options displayed in a dropdown menu for Phone.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                }
+                            ]
+                        },
+                        "validation": {
+                            "type": "string",
+                            "title": "Phone Validation",
+                            "description": "A regular expression used to validate the value of Phone.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                }
+                            ]
+                        },
+                        "validationMessage": {
+                            "type": "string",
+                            "title": "Phone Validation Message",
+                            "description": "A message displayed to the user when Phone fails to match the regular expression.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Phone Label",
+                            "default": "Phone",
+                            "description": "Override the default label for the Phone field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                }
+                            ]
                         }
                     }
                 },
@@ -420,6 +819,18 @@
                                 {
                                     "rel": "More information",
                                     "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Department Label",
+                            "default": "Department",
+                            "description": "Override the default label for the Department field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -487,6 +898,18 @@
                                     "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Building Label",
+                            "default": "Building",
+                            "description": "Override the default label for the Building field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                }
+                            ]
                         }
                     }
                 },
@@ -550,6 +973,18 @@
                                 {
                                     "rel": "More information",
                                     "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Room Label",
+                            "default": "Room",
+                            "description": "Override the default label for the Room field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -617,6 +1052,18 @@
                                     "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Asset Tag Label",
+                            "default": "Asset Tag",
+                            "description": "Override the default label for the Asset Tag field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                }
+                            ]
                         }
                     }
                 },
@@ -681,6 +1128,18 @@
                                 {
                                     "rel": "More information",
                                     "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                }
+                            ]
+                        },
+                        "label": {
+                            "type": "string",
+                            "title": "Computer Name Label",
+                            "default": "Computer Name",
+                            "description": "Override the default label for the Computer Name field.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -807,6 +1266,45 @@
                 }
             ],
             "property_order": 100
+        },
+        "webhooks": {
+            "type": "object",
+            "title": "Webhooks",
+            "properties": {
+                "started": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Webhook URLs",
+                        "pattern": "^https://.*$"
+                    },
+                    "title": "Started Webhooks",
+                    "description": "Webhooks called when Setup Manager starts its workflow.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/Docs/Webhooks.md"
+                        }
+                    ]
+                },
+                "finished": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Webhook URLs",
+                        "pattern": "^https://.*$"
+                    },
+                    "title": "Finished Webhooks",
+                    "description": "Webhooks called when Setup Manager finishes its workflow.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/Docs/Webhooks.md"
+                        }
+                    ]
+                }
+            },
+            "property_order": 105
         }
     }
 }
