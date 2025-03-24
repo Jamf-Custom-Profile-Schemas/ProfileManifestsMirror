@@ -463,6 +463,19 @@
             ],
             "property_order": 145
         },
+        "disableCrashManager": {
+            "type": "boolean",
+            "title": "Disable Crash Manager",
+            "default": false,
+            "description": "Organizations can disable all reporting of crashes to the developer by setting this to true using Managed Preferences.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://particulars.app/_help/particularshelp/Advanced.html#disableCrashManager"
+                }
+            ],
+            "property_order": 150
+        },
         "diskFreeSpace": {
             "type": "integer",
             "title": "Disk Free Space Format",
@@ -486,7 +499,7 @@
                     "Free and purgeable"
                 ]
             },
-            "property_order": 150
+            "property_order": 155
         },
         "diskFreeSpaceNonBootVolumes": {
             "type": "boolean",
@@ -499,7 +512,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#diskFreeSpaceNonBootVolumes"
                 }
             ],
-            "property_order": 155
+            "property_order": 160
         },
         "firstRunDone": {
             "type": "boolean",
@@ -512,7 +525,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#firstRunDone"
                 }
             ],
-            "property_order": 160
+            "property_order": 165
         },
         "headerText": {
             "type": "string",
@@ -524,7 +537,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#headerText"
                 }
             ],
-            "property_order": 165
+            "property_order": 170
         },
         "footerText": {
             "type": "string",
@@ -536,7 +549,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#headerText"
                 }
             ],
-            "property_order": 170
+            "property_order": 175
         },
         "hideDockIcon": {
             "type": "boolean",
@@ -549,7 +562,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#hideDockIcon"
                 }
             ],
-            "property_order": 175
+            "property_order": 180
         },
         "ignoreHiding": {
             "type": "boolean",
@@ -562,7 +575,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#ignoreHiding"
                 }
             ],
-            "property_order": 180
+            "property_order": 185
         },
         "operatingSystemVersionName": {
             "type": "boolean",
@@ -575,7 +588,7 @@
                     "href": "https://particulars.app/_help/particularshelp/Advanced.html#operatingSystemVersionName"
                 }
             ],
-            "property_order": 185
+            "property_order": 190
         }
     }
 }
