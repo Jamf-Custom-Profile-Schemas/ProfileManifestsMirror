@@ -149,12 +149,94 @@
             "description": "Automatically open downloaded files that are of certain well-known safe types.",
             "property_order": 55
         },
+        "ShowOverlayStatusBar": {
+            "type": "boolean",
+            "title": "Show Status Bar",
+            "default": false,
+            "description": "Controls whether mousing over a link displays the full URL that the link will follow",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.tenable.com/audits/items/CIS_MacOS_Safari_Benchmark_v2.0.0_L1.audit:c75b2abc30f5dce21100b31cc4d4d8a3"
+                }
+            ],
+            "property_order": 60
+        },
+        "ShowFullURLInSmartSearchField": {
+            "type": "boolean",
+            "title": "Show Full Website Address",
+            "default": false,
+            "description": "Full URL Path is Shown in Search Bar",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.tenable.com/audits/items/CIS_MacOS_Safari_Benchmark_v2.0.0_L1.audit:2e00db7777604dd2a0cb9b462f668da3"
+                }
+            ],
+            "property_order": 65
+        },
+        "WarnAboutFraudulentWebsites": {
+            "type": "boolean",
+            "title": "Warn about Fraudulent Websites",
+            "default": false,
+            "description": "Alert the user that the site they are visiting is known to be malicious",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.tenable.com/audits/items/CIS_MacOS_Safari_Benchmark_v2.0.0_L1.audit:37f26137d5f0bda38c403263dc1279dc"
+                }
+            ],
+            "property_order": 70
+        },
+        "WebKitPreferences.privateClickMeasurementEnabled": {
+            "type": "boolean",
+            "title": "Advertising Privacy Protection",
+            "default": false,
+            "description": "Manage advertising settings",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_13.0_Ventura_v3.0.0_L1.audit:9ba72640dddb6f0f8cccba555ef23517"
+                }
+            ],
+            "property_order": 75
+        },
+        "WebKitPreferences.storageBlockingPolicy": {
+            "type": "integer",
+            "title": "Prevent Cross-Site Tracking (WebKitPreferences)",
+            "description": "Manage cross-site tracking and resistance from data brokers",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v4.0.0_L1.audit:a8c4cacd799fdac0038421f89b0d1c6e"
+                }
+            ],
+            "enum": [
+                1
+            ],
+            "property_order": 80
+        },
+        "WebKitStorageBlockingPolicy": {
+            "type": "integer",
+            "title": "Prevent Cross-Site Tracking",
+            "description": "Manage cross-site tracking and resistance from data brokers",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.tenable.com/audits/items/CIS_Apple_macOS_12.0_Monterey_v4.0.0_L1.audit:a8c4cacd799fdac0038421f89b0d1c6e"
+                }
+            ],
+            "enum": [
+                1
+            ],
+            "property_order": 85
+        },
         "ConfirmClosingMultiplePages": {
             "type": "boolean",
             "title": "Confirm Closing Multiple Pages",
             "default": true,
             "description": "Display a confirmation alert when multiple pages are closed at once.",
-            "property_order": 60
+            "property_order": 90
         },
         "DefaultBrowserPromptingState2": {
             "type": "integer",
@@ -168,7 +250,7 @@
                     "Suppress"
                 ]
             },
-            "property_order": 65
+            "property_order": 95
         },
         "DefaultBrowserPromptingState3": {
             "type": "integer",
@@ -182,108 +264,108 @@
                     "Suppress"
                 ]
             },
-            "property_order": 70
+            "property_order": 100
         },
         "BookmarksMenuIncludesBookmarksToolbar": {
             "type": "boolean",
             "title": "Bookmarks Menu Includes Bookmarks Bar",
             "default": true,
             "description": "Include the Bookmarks Bar bookmarks in the bookmarks menu.",
-            "property_order": 75
+            "property_order": 105
         },
         "BookmarksMenuIncludesAddressBook": {
             "type": "boolean",
             "title": "Bookmarks Menu Includes Contacts",
             "default": false,
             "description": "Include the Contacts bookmarks in the bookmarks menu.",
-            "property_order": 80
+            "property_order": 110
         },
         "BookmarksMenuIncludesRendezvous": {
             "type": "boolean",
             "title": "Bookmarks Menu Includes Bonjour",
             "default": false,
             "description": "Include the Bonjour bookmarks in the bookmarks menu.",
-            "property_order": 85
+            "property_order": 115
         },
         "BookmarksCollectionsIncludeAddressBook": {
             "type": "boolean",
             "title": "Bookmarks Collections Include Contacts",
             "default": true,
             "description": "Include the Contacts bookmarks in the Collections column of the bookmarks view.",
-            "property_order": 90
+            "property_order": 120
         },
         "BookmarksCollectionsIncludeRendezvous": {
             "type": "boolean",
             "title": "Bookmarks Collections Include Bonjour",
             "default": true,
             "description": "Include the Bonjour bookmarks in the Collections column of the bookmarks view.",
-            "property_order": 95
+            "property_order": 125
         },
         "AutoFillFromAddressBook": {
             "type": "boolean",
             "title": "AutoFill web forms from contacts",
             "default": true,
             "description": "Autofill web forms using info from Contacts.",
-            "property_order": 100
+            "property_order": 130
         },
         "AutoFillPasswords": {
             "type": "boolean",
             "title": "AutoFill Passwords",
             "default": false,
             "description": "Autofill user names and passwords in web forms.",
-            "property_order": 105
+            "property_order": 135
         },
         "AutoFillCreditCardData": {
             "type": "boolean",
             "title": "AutoFill Credit Cards",
             "default": false,
             "description": "Autofill credit cards in web forms.",
-            "property_order": 110
+            "property_order": 140
         },
         "AutoFillMiscellaneousForms": {
             "type": "boolean",
             "title": "AutoFill Miscellaneous Forms",
             "default": true,
             "description": "Autofill web forms using previously-typed text.",
-            "property_order": 115
+            "property_order": 145
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled": {
             "type": "boolean",
             "title": "Enable Plug-ins",
             "default": true,
-            "property_order": 120
+            "property_order": 150
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled": {
             "type": "boolean",
             "title": "Enable Java",
             "default": true,
-            "property_order": 125
+            "property_order": 155
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptEnabled": {
             "type": "boolean",
             "title": "Enable JavaScript",
             "default": true,
-            "property_order": 130
+            "property_order": 160
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically": {
             "type": "boolean",
             "title": "Allow JavaScript to Open Windows Automatically",
             "default": false,
-            "property_order": 135
+            "property_order": 165
         },
         "AskBeforeSubmittingInsecureForms": {
             "type": "boolean",
             "title": "Ask Before Submitting Insecure Forms",
             "default": true,
             "description": "Display a confirmation alert when an insecure form is submitted from a secure site",
-            "property_order": 140
+            "property_order": 170
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2PrivateBrowsingEnabled": {
             "type": "boolean",
             "title": "Private Browsing",
             "default": false,
             "description": "Prevent Safari from keeping track of most user activities.",
-            "property_order": 145
+            "property_order": 175
         },
         "BlockStoragePolicy": {
             "type": "integer",
@@ -301,101 +383,101 @@
                     "Always",
                     "Never",
                     "Third Parties except sites you visited",
-                    "Thrid Parties"
+                    "Third Parties"
                 ]
             },
-            "property_order": 150
+            "property_order": 180
         },
         "SendDoNotTrackHTTPHeader": {
             "type": "boolean",
             "title": "Do Not Track",
             "default": true,
             "description": "Send \"Do Not Track\" HTTP Header",
-            "property_order": 155
+            "property_order": 185
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2LoadsImagesAutomatically": {
             "type": "boolean",
             "title": "Display Images",
             "default": true,
             "description": "Load and display images when a webpage is loaded.",
-            "property_order": 160
+            "property_order": 190
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks": {
             "type": "boolean",
             "title": "Press Tab to highlight each item on a webpage",
             "default": false,
             "description": "Highlight links and form controls as you press the Tab key.",
-            "property_order": 165
+            "property_order": 195
         },
         "IncludeDevelopMenu": {
             "type": "boolean",
             "title": "Show Develop menu in menu bar",
             "default": false,
             "description": "Include the Develop menu in the menu bar.",
-            "property_order": 170
+            "property_order": 200
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultTextEncodingName": {
             "type": "string",
             "title": "Default Text Encoding",
             "default": "ISO-8859-1",
             "description": "The name of the text encoding to use for webpages that don't specify a text encoding. See http://www.iana.org/assignments/character-sets",
-            "property_order": 175
+            "property_order": 205
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2MinimumFontSize": {
             "type": "integer",
             "title": "Minimum Font Size",
             "default": 9,
             "description": "Minimum font size used for any webpage text.",
-            "property_order": 180
+            "property_order": 210
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2StandardFontFamily": {
             "type": "string",
             "title": "Default Font",
             "default": "Times",
             "description": "The font family used when a webpage does not specify a font.",
-            "property_order": 185
+            "property_order": 215
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultFontSize": {
             "type": "integer",
             "title": "Default Font Size",
             "default": 16,
             "description": "The font size used when a webpage does not specify a font size.",
-            "property_order": 190
+            "property_order": 220
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2FixedFontFamily": {
             "type": "string",
             "title": "Default Fixed-width Font",
             "default": "Courier",
             "description": "The font family used when a webpage specifies a fixed-width font.",
-            "property_order": 195
+            "property_order": 225
         },
         "ExtensionsEnabled": {
             "type": "boolean",
             "title": "Enable Extensions",
             "default": true,
             "description": "Allow extensions from the App Store to be enabled/disabled. This will only apply after Safari's first launch unless the \"Disable Extensions Immediately\" key is also set",
-            "property_order": 200
+            "property_order": 230
         },
         "DidDisableIndividualExtensionsAfterRemovingOnOffSwitchIfNecessary": {
             "type": "boolean",
             "title": "Disable Extensions Immediately",
             "default": false,
             "description": "Necessary for extensions to be disabled from first launch",
-            "property_order": 205
+            "property_order": 235
         },
         "CanPromptForPushNotifications": {
             "type": "boolean",
             "title": "Allow Notifications",
             "default": true,
             "description": "Allow websites to request permission to send notifications",
-            "property_order": 210
+            "property_order": 240
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultFixedFontSize": {
             "type": "integer",
             "title": "Default Fixed-width Font Size",
             "default": 13,
             "description": "The font size used when a webpage specifies a fixed-width font.",
-            "property_order": 215
+            "property_order": 245
         },
         "DefaultDatabaseQuota": {
             "type": "integer",
@@ -422,21 +504,21 @@
                     "500 MB"
                 ]
             },
-            "property_order": 220
+            "property_order": 250
         },
         "com.apple.Safari.ContentPageGroupIdentifier.WebKit2ShouldPrintBackgrounds": {
             "type": "boolean",
             "title": "Print Backgrounds",
             "default": false,
             "description": "Print background images and colors.",
-            "property_order": 225
+            "property_order": 255
         },
         "PrintHeadersAndFooters": {
             "type": "boolean",
             "title": "Print Headers and Footers",
             "default": true,
             "description": "Print the URL, date, page title, and page number in headers and footers.",
-            "property_order": 230
+            "property_order": 260
         }
     }
 }
