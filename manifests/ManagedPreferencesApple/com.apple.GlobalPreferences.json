@@ -83,6 +83,19 @@
             "default": false,
             "description": "Enable to forcibly show all file extensions in Finder.",
             "property_order": 30
+        },
+        "TSMLanguageIndicatorEnabled": {
+            "type": "integer",
+            "title": "Enable Language Indicator",
+            "default": 1,
+            "description": "If enabled, a language indicator pops up next to the text cursor throughout the system when the user is editing text.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://gist.github.com/stephancasas/236f543b0f9f6509f5fe5878de01e38a?permalink_comment_id=4748936#gistcomment-4748936"
+                }
+            ],
+            "property_order": 35
         }
     }
 }
