@@ -62,6 +62,18 @@
             ],
             "property_order": 25
         },
+        "HideDHCP121Warnings": {
+            "type": "boolean",
+            "title": "Suppress DHCP Option 121 warnings",
+            "description": "By default, Tailscale v1.68 and later detect when DHCP Option 121 is being used, and the client will display a warning to the user in the UI when usage of this option is detected. You may set the HideDHCP121Warnings system policy to true to hide such warnings if you have a legitimate need to use Option 121.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys#suppress-dhcp-option-121-warnings"
+                }
+            ],
+            "property_order": 30
+        },
         "Tailnet": {
             "type": "string",
             "title": "Suggested or required tailnet name",
@@ -72,7 +84,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-suggested-or-required-tailnet"
                 }
             ],
-            "property_order": 30
+            "property_order": 35
         },
         "LoginURL": {
             "type": "string",
@@ -84,7 +96,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-custom-control-server-url"
                 }
             ],
-            "property_order": 35
+            "property_order": 40
         },
         "ExitNodeID": {
             "type": "string",
@@ -96,7 +108,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#force-an-exit-node-to-always-be-used"
                 }
             ],
-            "property_order": 40
+            "property_order": 45
         },
         "KeyExpirationNotice": {
             "type": "string",
@@ -108,7 +120,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys#set-the-key-expiration-notice-period"
                 }
             ],
-            "property_order": 45
+            "property_order": 50
         },
         "ExitNodeAllowLANAccess": {
             "type": "string",
@@ -133,7 +145,7 @@
                     "User Decides"
                 ]
             },
-            "property_order": 50
+            "property_order": 55
         },
         "UseTailscaleSubnets": {
             "type": "string",
@@ -158,7 +170,19 @@
                     "User Decides"
                 ]
             },
-            "property_order": 55
+            "property_order": 60
+        },
+        "Hostname": {
+            "type": "string",
+            "title": "Set whether device hostnames can be modified",
+            "description": "The Hostname policy allows IT administrators to override the hostname configured in the operating system and reported to the coordination server. This can be particularly useful on mobile devices, where the hostname provided by the operating system usually only contains the device's manufacturer name and model.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys#set-whether-device-hostnames-can-be-modified"
+                }
+            ],
+            "property_order": 65
         },
         "UseTailscaleDNSSettings": {
             "type": "string",
@@ -183,7 +207,7 @@
                     "User Decides"
                 ]
             },
-            "property_order": 60
+            "property_order": 70
         },
         "AllowIncomingConnections": {
             "type": "string",
@@ -208,7 +232,7 @@
                     "User Decides"
                 ]
             },
-            "property_order": 65
+            "property_order": 75
         },
         "PostureChecking": {
             "type": "string",
@@ -233,7 +257,7 @@
                     "User Decides"
                 ]
             },
-            "property_order": 70
+            "property_order": 80
         },
         "ExitNodesPicker": {
             "type": "string",
@@ -256,7 +280,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 75
+            "property_order": 85
         },
         "ManageTailnetLock": {
             "type": "string",
@@ -279,7 +303,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 80
+            "property_order": 90
         },
         "ResetToDefaults": {
             "type": "string",
@@ -302,7 +326,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 85
+            "property_order": 95
         },
         "RunExitNode": {
             "type": "string",
@@ -325,7 +349,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 90
+            "property_order": 100
         },
         "StartOnLoginMenuItem": {
             "type": "string",
@@ -348,7 +372,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 95
+            "property_order": 105
         },
         "TestMenu": {
             "type": "string",
@@ -371,7 +395,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 100
+            "property_order": 110
         },
         "UpdateMenu": {
             "type": "string",
@@ -394,7 +418,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 105
+            "property_order": 115
         },
         "HiddenNetworkDevices": {
             "type": "array",
@@ -421,7 +445,7 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-network-devices"
                 }
             ],
-            "property_order": 110
+            "property_order": 120
         },
         "IPAddressCopiedAlertSuppressed": {
             "type": "boolean",
@@ -433,7 +457,30 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#suppress-ip-address-copied-notifications"
                 }
             ],
-            "property_order": 115
+            "property_order": 125
+        },
+        "CLIIntegration": {
+            "type": "string",
+            "title": "Hide the CLI integration installer",
+            "default": "hide",
+            "description": "When set to hide, the user will not be able to install the CLI helper, and will instead be told to container their administrator.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys#hide-the-cli-integration-installer"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 130
         },
         "TailscaleOnboardingSeen": {
             "type": "boolean",
@@ -445,7 +492,30 @@
                     "href": "https://tailscale.com/kb/1315/mdm-keys/#suppress-the-first-launch-onboarding-flow"
                 }
             ],
-            "property_order": 120
+            "property_order": 135
+        },
+        "VPNOnDemandSettings": {
+            "type": "string",
+            "title": "Hide the VPN On Demand menu item",
+            "default": "show",
+            "description": "The VPNOnDemandSettings policy can be used to show or hide the VPN On Demand menu item. You might want to use this setting if you're deploying your own VPN configuration profile for Tailscale, and you don't want your users to interact with the on-demand VPN configuration you set up for them.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/kb/1315/mdm-keys#hide-the-vpn-on-demand-menu-item"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 140
         }
     }
 }
