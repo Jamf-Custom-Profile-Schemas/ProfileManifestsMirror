@@ -74,6 +74,26 @@
             "type": "string",
             "description": "A globally-unique identifier for this relay configuration. The system uses this UUID to route managed apps through the servers in 'Relays'. This key is required for user enrollments.",
             "property_order": 20
+        },
+        "MatchFQDNs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Match FQDNs Element"
+            },
+            "title": "Match FQDNs",
+            "description": "A list of Fully Qualified Domain Names (FQDNs), also known as hostnames, that should be routed through the servers contained in Relays. Any connection that matches this exact FQDN or hostname will use the relays. If no FQDNs and no 'MatchDomains' are listed, traffic to all domains, except those matching an excluded domain or excluded FQDN, will be routed to the relay servers.",
+            "property_order": 25
+        },
+        "Excluded FQDNs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Excluded FQDNs Element"
+            },
+            "title": "Excluded FQDNs",
+            "description": "A list of Fully Qualified Domain Names (FQDNs), also known as hostnames, that should not be routed through the servers contained in Relays. Any connection that matches the FQDN exactly will not use the relay server. When 'MatchDomains' are also specified any FQDN listed here in 'ExcludedFQDNs' should be a subdomain of at least one MatchDomain otherwise it will not have any effect.",
+            "property_order": 30
         }
     }
 }

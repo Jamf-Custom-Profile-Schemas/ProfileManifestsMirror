@@ -74,7 +74,7 @@
         "DeferForceAtUserLoginMaxBypassAttempts": {
             "type": "integer",
             "title": "Maximum number of times FileVault can be skipped",
-            "description": "The maximum number of times users can bypass enabling FileVault before the system requires the user to enable it to log in. If the value is '0', the system requires the user to enable FileVault the next time they attempt to log in. Set this key to '–1' to disable this feature.",
+            "description": "The maximum number of times users can bypass enabling FileVault before the system requires the user to enable it to log in. If the value is '0', the system requires the user to enable FileVault the next time they attempt to log in. Set this key to '-1' to disable this feature.",
             "property_order": 55
         },
         "DeferDontAskAtUserLogout": {

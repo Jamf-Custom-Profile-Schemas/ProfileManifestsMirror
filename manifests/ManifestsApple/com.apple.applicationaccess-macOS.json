@@ -1,5 +1,5 @@
 {
-    "title": "Restrictions (macOS) (com.apple.applicationaccess)",
+    "title": "Restrictions (com.apple.applicationaccess)",
     "description": "Use this section to define restrictions settings",
     "properties": {
         "allowAirDrop": {
@@ -356,21 +356,21 @@
             "type": "integer",
             "title": "Apps Ranking Number",
             "default": 1000,
-            "description": "The maximum level of app content allowed on the device. Preinstalled (first party) apps ignore this restriction. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': 17+\n* '300': 12+\n* '200': 9+\n* '100': 4+\n* '0': None",
+            "description": "The maximum level of app content allowed on the device. Preinstalled (first party) apps ignore this restriction. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n* '1000': All\n* '600': 17+\n* '300': 12+\n* '200': 9+\n* '100': 4+\n* '0': None",
             "property_order": 230
         },
         "ratingMovies": {
             "type": "integer",
             "title": "Movies Ranking Number",
             "default": 1000,
-            "description": "The maximum level of movie content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '500': NC-17\n* '400': R\n* '300': PG-13\n* '200': PG\n* '100': G\n* '0': None",
+            "description": "The maximum level of movie content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n* '1000': All\n* '500': NC-17\n* '400': R\n* '300': PG-13\n* '200': PG\n* '100': G\n* '0': None",
             "property_order": 235
         },
         "ratingTVShows": {
             "type": "integer",
             "title": "TV Shows Ranking Number",
             "default": 1000,
-            "description": "The maximum level of TV content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': TV-MA\n* '500': TV-14\n* '400': TV-PG\n* '300': TV-G\n* '200': TV-Y7\n* '100': TV-Y\n* '0': None",
+            "description": "The maximum level of TV content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n* '1000': All\n* '600': TV-MA\n* '500': TV-14\n* '400': TV-PG\n* '300': TV-G\n* '200': TV-Y7\n* '100': TV-Y\n* '0': None",
             "property_order": 240
         },
         "allowExplicitContent": {
@@ -501,7 +501,7 @@
             "type": "boolean",
             "title": "Allow proximity based password sharing requests",
             "default": true,
-            "description": "If 'false', the system disables requesting passwords from nearby devices. Available in iOS 12 and later, macOS 10.14 and later, and tvOS 12 and later. Requires a supervised device in iOS and tvOS.",
+            "description": "If 'false', the system disables requesting passwords from nearby devices. Available in iOS 12 and later, macOS 10.14 and later, and tvOS 12 and later. Requires a supervised device in iOS and tvOS. Deprecated on tvOS 17.4 or later as guest password sharing is no longer supported.",
             "property_order": 335
         },
         "allowPasscodeModification": {
@@ -678,32 +678,38 @@
             "description": "If 'false', disables the ability to create summaries of email messages manually. This doesn't affect automatic summary generation. Available in iOS 18.1 and later.",
             "property_order": 460
         },
+        "allowMailSmartReplies": {
+            "type": "boolean",
+            "default": true,
+            "description": "If 'false', disables smart replies in Mail. Available in iOS 18.2 and later, and macOS 15.2 and later.",
+            "property_order": 465
+        },
         "allowMediaSharingModification": {
             "type": "boolean",
             "title": "Allow modifying Media Sharing setting",
             "default": true,
             "description": "If 'false', prevents modification of Media Sharing settings. Available in macOS 15.1 and later.",
-            "property_order": 465
+            "property_order": 470
         },
         "forceBypassScreenCaptureAlert": {
             "type": "boolean",
             "default": false,
             "description": "If 'true', then the system bypasses the presentation of a screen capture alert. Available in macOS 15.1 and later.",
-            "property_order": 470
+            "property_order": 475
         },
         "allowExternalIntelligenceIntegrations": {
             "type": "boolean",
             "title": "Allow external intelligence integrations",
             "default": true,
             "description": "If 'false', disables the use of external, cloud-based intelligence services with Siri. On iOS, this restriction is temporarily allowed on unsupervised and user enrollments. In a future release, this restriction will require supervision, and will be ignored on non-supervised devices. Available in iOS 18.2 and later, and macOS 15.2 and later.",
-            "property_order": 475
+            "property_order": 480
         },
         "allowExternalIntelligenceIntegrationsSignIn": {
             "type": "boolean",
             "title": "Allow external intelligence integrations sign-in",
             "default": true,
             "description": "If 'false', forces external intelligence providers into anonymous mode. If a user is already signed in to an external intelligence provider, applying this restriction will cause them to be signed out when the next request is attempted. Available in iOS 18.2 and later, and macOS 15.2 and later.",
-            "property_order": 480
+            "property_order": 485
         },
         "allowedExternalIntelligenceWorkspaceIDs": {
             "type": "array",
@@ -712,14 +718,33 @@
                 "title": "Allowed Workspace ID"
             },
             "title": "Allowed External Intelligence Workspace IDs",
-            "description": "Array of strings, but currently restricted to a single element. If present, Apple Intelligence will only allow the given external integration workspace ID to be used, and will require a sign-in in order to make requests; the user will be required to sign in to integrations that support signing in. Multiple payloads will combine using an intersect operation. This means the allowed set of workspace IDs can become the empty set if conflicting values are specified in multiple payloads.",
-            "property_order": 485
+            "description": "An array of strings, but currently restricted to a single element. If present, Apple Intelligence only allows the given external integration workspace ID to be used, and requires a sign-in to make requests; the user will be required to sign in to integrations that support signing in. Multiple payloads combine using an intersect operation. This means the allowed set of workspace IDs can become the empty set if conflicting values are specified in multiple payloads.",
+            "property_order": 490
         },
         "allowNotesTranscriptionSummary": {
             "type": "boolean",
             "default": true,
-            "description": "If false, disables transcription summarization in Notes.",
-            "property_order": 490
+            "description": "If 'false', disables transcription summarization in Notes. Available in iOS 18.3 and later, and macOS 15.3 and later.",
+            "property_order": 495
+        },
+        "allowNotesTranscription": {
+            "type": "boolean",
+            "default": true,
+            "description": "If 'false', disables transcription in Notes. Available in iOS 18.2 and later, and macOS 15.2 and later.",
+            "property_order": 500
+        },
+        "allowAppleIntelligenceReport": {
+            "type": "boolean",
+            "title": "Allow Apple Intelligence Report",
+            "default": true,
+            "description": "If 'false', the system disables Apple Intelligence reports. Available in iOS 18.4 and later, and macOS 15.4 and later.",
+            "property_order": 505
+        },
+        "allowSafariSummary": {
+            "type": "boolean",
+            "default": true,
+            "description": "If 'false', the system disables the ability to summarize content in Safari. Available in iOS 18.2 and later, and macOS 15.2 and later.",
+            "property_order": 510
         }
     }
 }

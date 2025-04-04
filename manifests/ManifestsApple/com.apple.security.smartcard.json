@@ -6,7 +6,7 @@
             "type": "boolean",
             "title": "Allow SmartCard",
             "default": true,
-            "description": "If false, disables the SmartCard for logins, authorizations, and screen saver unlocking. It is still allowed for other functions, such as signing emails and accessing the web.",
+            "description": "If 'false', the system disables the SmartCard for logins, authorizations, and screen saver unlocking. It is still allowed for other functions, such as signing emails and accessing the web. A restart is required for a setting change to take effect.",
             "property_order": 5
         },
         "allowUnmappedUsers": {
@@ -35,21 +35,21 @@
             "type": "boolean",
             "title": "User Pairing",
             "default": true,
-            "description": "If false, users don't get the pairing dialog, although existing pairings still work.",
+            "description": "If 'false', users don't get the pairing dialog, although existing pairings still work.",
             "property_order": 15
         },
         "oneCardPerUser": {
             "type": "boolean",
             "title": "Restrict One Card Per User",
             "default": false,
-            "description": "If true, a user can pair with only one SmartCard, although existing pairings are allowed if already set up.",
+            "description": "If 'true', a user can pair with only one SmartCard, although existing pairings are allowed if already set up.",
             "property_order": 20
         },
         "checkCertificateTrust": {
             "type": "integer",
             "title": "Certificate Trust Validation",
             "default": 0,
-            "description": "Require unexpired, system trusted certificates for smart cards to work.",
+            "description": "Configures the certificate trust check and has one of the following possible values:\n* '0': Turns off certificate trust check.\n* '1': Turns on certificate trust check. A standard validity check is performed but doesn't include additional revocation checks.\n* '2': Turns on certificate trust check. A soft revocation check is also performed. Until the certificate is explicitly rejected by CRL/OCSP, it's considered valid. This setting means that unavailable or unreachable CRL/OCSP allow this check to succeed.\n* '3': Turns on certificate trust check. A hard revocation check is also performed. Unless CRL/OCSP explicitly says “This certificate is OK,” it's considered invalid. This option is the most secure.",
             "enum": [
                 0,
                 1,
@@ -70,14 +70,14 @@
             "type": "boolean",
             "title": "Require SmartCard",
             "default": false,
-            "description": "If true, a user can only log in or authenticate with a SmartCard.",
+            "description": "If 'true', a user can only log in or authenticate with a SmartCard. Available in macOS 10.13.2 and later.",
             "property_order": 30
         },
         "tokenRemovalAction": {
             "type": "integer",
             "title": "Enable Screen Saver on Removal",
-            "default": 1,
-            "description": "If enabled, enables the screen saver when the SmartCard is removed.",
+            "default": 0,
+            "description": "If '1', the system enables the screen saver when the SmartCard is removed. Available in macOS 10.13.4 and later.",
             "enum": [
                 0,
                 1

@@ -5,7 +5,7 @@
         "sanName": {
             "type": "string",
             "title": "Xsan name",
-            "description": "The name of the Xsan network.",
+            "description": "The name of the SAN. This key is required for all Xsan SANs. The name must exactly match the name of the SAN defined in the metadata server.",
             "property_order": 5
         },
         "fsnameservers": {
@@ -13,15 +13,16 @@
             "items": {
                 "type": "string",
                 "title": "File system name server",
-                "description": "The IP address or fully qualified domain name (FQDN) of an Xsan file server."
+                "description": "A name server."
             },
             "title": "File system name servers",
-            "description": "The IP address or fully qualified domain name (FQDN) of each Xsan file server.",
+            "description": "This key is required for StorNext SANs. This array contains one string value for each of the SAN's File System Name Server coordinators. The list should contain the same addresses in the same order as the MDC's /Library/Preferences/Xsan/fsnameservers file.",
             "property_order": 10
         },
         "sanAuthMethod": {
             "type": "string",
             "title": "Authentication method",
+            "description": "The authentication method for the SAN. This key is required for all Xsan SANs. It's optional for StorNext SANs but should be set if the StorNext SAN uses an 'auth_secret' file.\nOnly one value is accepted: 'auth_secret'",
             "enum": [
                 "auth_secret"
             ],
@@ -35,8 +36,17 @@
         "sharedSecret": {
             "type": "string",
             "title": "Authentication secret",
-            "description": "The secret credential used to join the Xsan network.",
+            "description": "The shared secret used for Xsan network authentication. This key is required when the 'sanAuthMethod' key is present. The value should equal the content of the MDC's '/Library/Preferences/Xsan/.auth_secret' file.",
             "property_order": 20
+        },
+        "sanConfigURLs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "A URL."
+            },
+            "description": "This key is required for all Xsan SANs. Each string in this array contains an LDAP URL where Xsan systems can obtain SAN configuration updates. There should be one entry for each Xsan MDC.\nExample URL: 'ldaps://mdc1.example.com:389'.",
+            "property_order": 25
         }
     }
 }

@@ -35,7 +35,7 @@
                         "description": "This array holds another array which holds an OID value pair"
                     },
                     "title": "Subject",
-                    "description": "The representation of an X.500 name as an array of OID and value.\nFor example, '/C=US/O=Apple Inc./CN=foo/1.2.5.3=bar' translates to '[ [ [“C”, “US”] ], [ [“O”, “Apple Inc.'] ], …, [ [ “1.2.5.3”, “bar” ] ] ]'.\nOIDs can be represented as dotted numbers, with shortcuts for country (C), locality (L), state (ST), organization (O), organizational unit (OU), and common name (CN).",
+                    "description": "The representation of an X.500 name as an array of OID and value.\nFor example, '/C=US/O=Apple Inc./CN=foo/1.2.5.3=bar' translates to '[ [ ['C', 'US'] ], [ ['O', 'Apple Inc.'] ], …, [ [ '1.2.5.3', 'bar' ] ] ]'.\nOIDs can be represented as dotted numbers, with shortcuts for country (C), locality (L), state (ST), organization (O), organizational unit (OU), and common name (CN).",
                     "pattern": "(,?[^=,]+=[^=,]+(,|$))"
                 },
                 "Challenge": {
@@ -67,7 +67,7 @@
                     "type": "integer",
                     "title": "Key Usage",
                     "default": 0,
-                    "description": "A bitmask indicating the use of the key. Possible values:\n\n* 1: Signing\n* 4: Encryption\n\nSome certificate authorities, such as Windows CA, support only encryption or signing, but not both at the same time.",
+                    "description": "A bitmask indicating the use of the key. Possible values:\n* '1': Signing\n* '4': Encryption\nSome certificate authorities, such as Windows CA, support only encryption or signing, but not both at the same time.",
                     "enum": [
                         0,
                         1,

@@ -5,16 +5,17 @@
         "PayloadIdentification": {
             "type": "object",
             "title": "PayloadIdentification",
+            "description": "The dictionary that contains details about the user.",
             "properties": {
                 "FullName": {
                     "type": "string",
                     "title": "Full Name",
-                    "description": "The full name of the designated accounts."
+                    "description": "The full name of the account."
                 },
                 "EmailAddress": {
                     "type": "string",
                     "title": "E-mail address",
-                    "description": "The address for the accounts."
+                    "description": "The address for the account."
                 },
                 "UserName": {
                     "type": "string",
@@ -24,13 +25,13 @@
                 "Password": {
                     "type": "string",
                     "title": "Password",
-                    "description": "You can provide the password or choose to have the user provide it when he or she installs the profile."
+                    "description": "The password for the account. Required when the 'AuthMethod' is 'Password'."
                 },
                 "AuthMethod": {
                     "type": "string",
                     "title": "Authentication Method",
                     "default": "UserEnteredPassword",
-                    "description": "Allow the user to enter the password upon installation instead of being supplied in the payload",
+                    "description": "The authorization method. Either the profile contains the password or the user provides it.",
                     "enum": [
                         "Password",
                         "UserEnteredPassword"
@@ -39,12 +40,12 @@
                 "Prompt": {
                     "type": "string",
                     "title": "Prompt",
-                    "description": "Short prompt text"
+                    "description": "The custom instructions for the user, if needed."
                 },
                 "PromptMessage": {
                     "type": "string",
                     "title": "Prompt Message",
-                    "description": "Additional prompt description."
+                    "description": "The additional descriptive text for the user prompt."
                 }
             },
             "property_order": 5

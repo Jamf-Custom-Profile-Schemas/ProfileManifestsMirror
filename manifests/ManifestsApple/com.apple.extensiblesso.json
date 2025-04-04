@@ -33,7 +33,7 @@
             "items": {
                 "type": "string",
                 "title": "Hostname / Domain name",
-                "description": "A host or domain name, with or without a leading dot."
+                "description": "A host or domain name. Values that begin with a \".\" will be used as domain names."
             },
             "description": "An array of host or domain names that apps can authenticate through the app extension.\nRequired for 'Credential' payloads. Ignored for 'Redirect' payloads.\nThe system:\n* Matches host or domain names case-insensitively\n* Requires that all the host and domain names of all installed Extensible SSO payloads are unique\nHost names that begin with a “.” are wildcard suffixes that match all subdomains; otherwise the host name needs be an exact match.",
             "property_order": 20
@@ -70,7 +70,7 @@
             "type": "string",
             "title": "Screen Locked Behavior",
             "default": "Cancel",
-            "description": "If set to 'Cancel', the system cancels authentication requests when the screen is locked. If set to 'DoNotHandle', the request continues without SSO instead. This doesn't apply to requests where 'userInterfaceEnabled' is 'false', or for background NSURLSession requests. Available in iOS 15 and later, and macOS 12 and later.",
+            "description": "If set to 'Cancel', the system cancels authentication requests when the screen is locked. If set to 'DoNotHandle', the request continues without SSO instead. This doesn't apply to requests where 'userInterfaceEnabled' is 'false', or for background URLSession requests. Available in iOS 15 and later, and macOS 12 and later.",
             "enum": [
                 "Cancel",
                 "DoNotHandle"
@@ -142,7 +142,7 @@
                     "type": "string",
                     "title": "Credential Use Mode",
                     "default": "always",
-                    "description": "This setting affects how other processes use the Kerberos Extension credential. Allowed values:\n\n* 'always': The system always uses the credential if the SPN matches the Kerberos Extension 'Hosts' array and the caller hasn't specified another credential. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n* 'whenNotSpecified': The system only uses the extension credential if the SPN matches the Kerberos Extension 'Hosts' array. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n* 'kerberosDefault': The system uses the default Kerberos processes to select credentials, and normally uses the default Kerberos credential. This is the same as turning off this capability.\n\nAvailable in macOS 11 and later.",
+                    "description": "This setting affects how other processes use the Kerberos Extension credential. Allowed values:\n\n* 'always': The system always uses the credential if the SPN matches the Kerberos Extension 'Hosts' array and the caller hasn't specified another credential. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n* 'whenNotSpecified': The system only uses the extension credential if the SPN matches the Kerberos Extension 'Hosts' array. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n* 'kerberosDefault': The system uses the default Kerberos processes to select credentials, and normally uses the default Kerberos credential. This is the same as turning off this capabiliity.\nAvailable in macOS 11 and later.",
                     "enum": [
                         "always",
                         "whenNotSpecified",
@@ -232,7 +232,7 @@
                     "type": "boolean",
                     "title": "Password Requirement Complexity",
                     "default": false,
-                    "description": "If 'true', the system requires passwords to meet Active Directory's definition of 'complex'. Available in macOS 10.15 and later."
+                    "description": "If 'true', the system requires passwords to meet Active Directory's definition of “complex”. Available in macOS 10.15 and later."
                 },
                 "pwReqHistory": {
                     "type": "integer",
@@ -646,6 +646,11 @@
                         "description": "A local account username."
                     },
                     "description": "The list of local accounts that aren't subject to the 'FileVaultPolicy', 'LoginPolicy', or 'UnlockPolicy'. The accounts aren't prompted to register for Platform SSO. Available in macOS 15 and later."
+                },
+                "AllowDeviceIdentifiersInAttestation": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If set to true, the device UDID and serial number will be included in Platform SSO attestations."
                 }
             },
             "property_order": 55

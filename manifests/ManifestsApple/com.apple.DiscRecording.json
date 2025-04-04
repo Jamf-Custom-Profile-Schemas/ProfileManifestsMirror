@@ -1,21 +1,21 @@
 {
-    "title": "Disc Recording (com.apple.DiscRecording)",
+    "title": "Media Management: Disc Burning (com.apple.DiscRecording)",
     "description": "Disc Burning settings",
     "properties": {
         "BurnSupport": {
             "type": "string",
             "title": "Enable Disc Burning",
-            "description": "• Set to off to disable disc burning.\\n• Set to on for normal default operation.\\n• Set to authenticate to require authentication.\\nSetting this key to on will not enable disc burn support if it has already been disabled by other mechanisms or preferences.",
+            "description": "Configure disc-burn. Allowed values:\n\n* 'off': The system disables disc burning.\n* 'on': The system allows normal default operation. Setting this key to 'on' doesn't enable disc burn support if other mechanisms or preferences disabled it. Needs to be enabled with the Finder profile.\n* 'authenticate': The system requires authentication.",
             "enum": [
-                "on",
                 "off",
-                "authenticate"
+                "authenticate",
+                "on"
             ],
             "options": {
                 "enum_titles": [
-                    "On",
                     "Off",
-                    "Authenticate"
+                    "Authenticate",
+                    "On"
                 ]
             },
             "property_order": 5

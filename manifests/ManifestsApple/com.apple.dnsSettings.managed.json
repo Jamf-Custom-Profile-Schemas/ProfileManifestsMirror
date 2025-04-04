@@ -57,7 +57,7 @@
                     "Action": {
                         "type": "string",
                         "title": "On Demand Action",
-                        "description": "The action to take if this dictionary matches the current network. Allowed values:\n\n* 'Connect': Apply DNS Settings when the dictionary matches.\n* 'Disconnect': Don't apply DNS Settings when the dictionary matches.\n* 'EvaluateConnection': Apply DNS Settings with per-domain exceptions when the dictionary matches.",
+                        "description": "The action to take if this dictionary matches the current network. Allowed values:\n* 'Connect': Apply DNS Settings when the dictionary matches.\n* 'Disconnect': Don't apply DNS Settings when the dictionary matches.\n* 'EvaluateConnection': Apply DNS Settings with per-domain exceptions when the dictionary matches.",
                         "enum": [
                             "Connect",
                             "Disconnect",

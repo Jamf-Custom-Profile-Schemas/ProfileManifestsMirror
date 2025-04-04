@@ -18,8 +18,8 @@
                         "default": "PAP",
                         "description": "Authentication type to use for the connection.",
                         "enum": [
-                            "PAP",
-                            "CHAP"
+                            "CHAP",
+                            "PAP"
                         ]
                     },
                     "Username": {
@@ -45,7 +45,7 @@
                     "DefaultProtocolMask": {
                         "type": "integer",
                         "title": "Data APN default IP versions",
-                        "description": "Default Internet Protocol versions for connections. Set to the same value as AllowedProtocolMask.",
+                        "description": "The default Internet Protocol versions. Available in iOS 10.3 but no longer used in iOS 11 and later. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
                         "enum": [
                             1,
                             2,
@@ -62,7 +62,7 @@
                     "AllowedProtocolMask": {
                         "type": "integer",
                         "title": "Data APN supported IP versions",
-                        "description": "Supported Internet Protocol versions for connections",
+                        "description": "The Internet Protocol versions that the system supports. Available in iOS 10.3 and later. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
                         "enum": [
                             1,
                             2,
@@ -79,7 +79,7 @@
                     "AllowedProtocolMaskInRoaming": {
                         "type": "integer",
                         "title": "Data APN supported roaming IP versions",
-                        "description": "Supported Internet Protocol versions while roaming.",
+                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
                         "enum": [
                             1,
                             2,
@@ -96,7 +96,7 @@
                     "AllowedProtocolMaskInDomesticRoaming": {
                         "type": "integer",
                         "title": "Data APN supported domestic roaming IP versions",
-                        "description": "Supported Internet Protocol versions while domestic roaming.",
+                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
                         "enum": [
                             1,
                             2,
@@ -113,12 +113,13 @@
                     "EnableXLAT464": {
                         "type": "boolean",
                         "title": "Enable 464XLAT IPv6 and IPv4 Interoperability",
-                        "default": false
+                        "default": false,
+                        "description": "If 'true', the system enables XLAT464. Available in iOS 16 and later and watchOS 9 and later."
                     }
                 }
             },
             "title": "Data APN",
-            "description": "List of Data APNs to configure",
+            "description": "An array of access point name (APN) dictionaries.",
             "property_order": 5
         },
         "AttachAPN": {
@@ -138,8 +139,8 @@
                     "default": "PAP",
                     "description": "Authentication type to use for the connection.",
                     "enum": [
-                        "PAP",
-                        "CHAP"
+                        "CHAP",
+                        "PAP"
                     ]
                 },
                 "Username": {
@@ -155,7 +156,7 @@
                 "AllowedProtocolMask": {
                     "type": "integer",
                     "title": "Default APN supported IP versions",
-                    "description": "Supported Internet Protocol versions for connections",
+                    "description": "The Internet Protocol versions that the system supports. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
                     "enum": [
                         1,
                         2,
