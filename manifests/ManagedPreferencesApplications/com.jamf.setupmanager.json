@@ -1274,9 +1274,31 @@
                 "started": {
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "title": "Webhook URLs",
-                        "pattern": "^https://.*$"
+                        "type": "object",
+                        "properties": {
+                            "kind": {
+                                "type": "string",
+                                "title": "Kind",
+                                "default": "generic",
+                                "description": "Kind of webhook",
+                                "enum": [
+                                    "generic",
+                                    "teams"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Generic",
+                                        "Microsoft Teams"
+                                    ]
+                                }
+                            },
+                            "url": {
+                                "type": "string",
+                                "title": "URL",
+                                "description": "Webhook URL",
+                                "pattern": "^https://.*$"
+                            }
+                        }
                     },
                     "title": "Started Webhooks",
                     "description": "Webhooks called when Setup Manager starts its workflow.",
@@ -1290,9 +1312,31 @@
                 "finished": {
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "title": "Webhook URLs",
-                        "pattern": "^https://.*$"
+                        "type": "object",
+                        "properties": {
+                            "kind": {
+                                "type": "string",
+                                "title": "Kind",
+                                "default": "generic",
+                                "description": "Kind of webhook",
+                                "enum": [
+                                    "generic",
+                                    "teams"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Generic",
+                                        "Microsoft Teams"
+                                    ]
+                                }
+                            },
+                            "url": {
+                                "type": "string",
+                                "title": "URL",
+                                "description": "Webhook URL",
+                                "pattern": "^https://.*$"
+                            }
+                        }
                     },
                     "title": "Finished Webhooks",
                     "description": "Webhooks called when Setup Manager finishes its workflow.",
