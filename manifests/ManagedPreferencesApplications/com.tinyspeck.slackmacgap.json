@@ -69,6 +69,7 @@
         "AutoUpdate": {
             "type": "boolean",
             "title": "Auto Update",
+            "default": true,
             "description": "Enable or disable auto updates.",
             "property_order": 30
         },
@@ -79,6 +80,7 @@
                 "ClientEnvironment": {
                     "type": "integer",
                     "title": "Client Environment (Default)",
+                    "default": 1000,
                     "description": "Configures the client to run in either commercial mode or government compliance mode (GovSlack) by default. The user can still change this setting.",
                     "links": [
                         {
@@ -100,6 +102,7 @@
                 "HardwareAcceleration": {
                     "type": "boolean",
                     "title": "Hardware Acceleration (Default)",
+                    "default": true,
                     "description": "Enables or disable hardware accelerated rendering via GPU. The user can still change this setting."
                 },
                 "DownloadPath": {
@@ -111,6 +114,7 @@
                 "ReleaseChannel": {
                     "type": "string",
                     "title": "Release Channel (Default)",
+                    "default": "prod",
                     "description": "Configure the client to receive updates from either the production or beta channel. The user can still change this setting.",
                     "enum": [
                         "prod",
