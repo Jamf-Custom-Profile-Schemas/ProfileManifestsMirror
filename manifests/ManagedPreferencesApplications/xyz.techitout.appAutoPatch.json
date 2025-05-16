@@ -369,7 +369,7 @@
         "InteractiveMode": {
             "type": "integer",
             "title": "Interactive Mode",
-            "default": "2",
+            "default": 2,
             "description": "0 (Completely Silent) | 1 (Silent Discovery, Interactive Patching) | 2 (Full Interactive) (default)",
             "enum": [
                 0,
