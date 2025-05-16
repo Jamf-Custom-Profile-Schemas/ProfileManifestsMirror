@@ -714,7 +714,7 @@
                     "type": "string",
                     "title": "Dark Icon Path",
                     "description": "A path to a local jpg, png, icns that contains the icon for dark mode. This will replace the Apple logo on the left side of Nudge.",
-                    "pattern": "^.*\\.(icns|jpg|png)",
+                    "pattern": "^(.*\\.(icns|jpg|png)|data:image\\/png;base64,.*)$",
                     "links": [
                         {
                             "rel": "More information",
@@ -726,7 +726,7 @@
                     "type": "string",
                     "title": "Light Icon Path",
                     "description": "A path to a local jpg, png, icns that contains the icon for light mode. This will replace the Apple logo on the left side of Nudge.",
-                    "pattern": "^.*\\.(icns|jpg|png)",
+                    "pattern": "^(.*\\.(icns|jpg|png)|data:image\\/png;base64,.*)$",
                     "links": [
                         {
                             "rel": "More information",
@@ -738,7 +738,7 @@
                     "type": "string",
                     "title": "Dark Screenshot Path",
                     "description": "A path to a local jpg, png, icns that contains the screen shot for dark mode. This will replace the Big Sur logo on the lower right side of Nudge.",
-                    "pattern": "^.*\\.(icns|jpg|png)",
+                    "pattern": "^(.*\\.(icns|jpg|png)|data:image\\/png;base64,.*)$",
                     "links": [
                         {
                             "rel": "More information",
@@ -750,7 +750,7 @@
                     "type": "string",
                     "title": "Light Screenshot Path",
                     "description": "A path to a local jpg, png, icns that contains the screen shot for light mode. This will replace the Big Sur logo on the lower right side of Nudge.",
-                    "pattern": "^.*\\.(icns|jpg|png)",
+                    "pattern": "^(.*\\.(icns|jpg|png)|data:image\\/png;base64,.*)$",
                     "links": [
                         {
                             "rel": "More information",
