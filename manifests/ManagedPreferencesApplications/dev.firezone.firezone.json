@@ -39,7 +39,7 @@
         "connectOnStart": {
             "type": "boolean",
             "title": "Connect on start",
-            "default": true,
+            "default": false,
             "description": "Try to connect to Firezone using the saved token and configuration when the client application starts. If the authentication token is expired, the client will start in a disconnected state.",
             "property_order": 30
         },
