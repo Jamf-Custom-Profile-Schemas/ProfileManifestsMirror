@@ -110,7 +110,7 @@
         },
         "OktaVerify.UserPrincipalName": {
             "type": "string",
-            "title": "Okta User Principle Name",
+            "title": "Okta User Principal Name",
             "description": "Automatically populates the username in the Sign-In Widget",
             "links": [
                 {
