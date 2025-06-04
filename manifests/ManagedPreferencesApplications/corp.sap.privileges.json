@@ -282,6 +282,32 @@
             ],
             "property_order": 95
         },
+        "HideSettingsFromStatusItem": {
+            "type": "boolean",
+            "title": "Hide Settings From Menu Bar",
+            "default": false,
+            "description": "If set to true, the Settings menu item is no longer displayed in the status item's menu.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#HideSettingsFromStatusItem"
+                }
+            ],
+            "property_order": 100
+        },
+        "ShowInMenuBar": {
+            "type": "boolean",
+            "title": "Show in Menu Bar",
+            "default": false,
+            "description": "If set to true, a Privileges status item is displayed in the Menu Bar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#ShowInMenuBar"
+                }
+            ],
+            "property_order": 105
+        },
         "RequireAuthentication": {
             "type": "boolean",
             "title": "Require User Authentication",
@@ -292,7 +318,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 100
+            "property_order": 110
         },
         "RemoteLogging": {
             "type": "object",
@@ -450,7 +476,7 @@
                     }
                 }
             },
-            "property_order": 105
+            "property_order": 115
         }
     }
 }
