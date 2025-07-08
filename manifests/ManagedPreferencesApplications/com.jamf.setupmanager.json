@@ -104,7 +104,7 @@
             "type": "integer",
             "title": "Final Countdown",
             "default": 60,
-            "description": "Changes the duration (in seconds) of the \"final countdown\" before the app automatically performs the finalAction. Set to -1 (or any negative number) to disable automated execution.",
+            "description": "Changes the duration (in seconds) of the \"final countdown\" before the app automatically performs the finalAction. Set to -1 (or any negative number) to disable automated execution. This setting is ignored if finalAction is set to 'none'.",
             "links": [
                 {
                     "rel": "More information",
@@ -127,13 +127,15 @@
             "enum": [
                 "continue",
                 "restart",
-                "shutdown"
+                "shutdown",
+                "none"
             ],
             "options": {
                 "enum_titles": [
                     "Continue",
                     "Restart",
-                    "Shut Down"
+                    "Shut Down",
+                    "None"
                 ]
             },
             "property_order": 45
@@ -217,6 +219,31 @@
             ],
             "property_order": 75
         },
+        "actionOutputLogging": {
+            "type": "string",
+            "title": "Action Output Logging",
+            "default": "error",
+            "description": "Controls whether the output of actions is written to the Setup Manager log file.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#actionoutputlogging"
+                }
+            ],
+            "enum": [
+                "always",
+                "error",
+                "never"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always",
+                    "Error",
+                    "Never"
+                ]
+            },
+            "property_order": 80
+        },
         "hideDebugLabel": {
             "type": "boolean",
             "title": "Hide Debug Label",
@@ -227,7 +254,7 @@
                     "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#hidedebuglabel"
                 }
             ],
-            "property_order": 80
+            "property_order": 85
         },
         "simulateMDM": {
             "type": "string",
@@ -243,7 +270,7 @@
                 "Jamf Pro",
                 "Jamf School"
             ],
-            "property_order": 85
+            "property_order": 90
         },
         "help": {
             "type": "object",
@@ -284,7 +311,7 @@
                     ]
                 }
             },
-            "property_order": 90
+            "property_order": 95
         },
         "userEntry": {
             "type": "object",
@@ -1161,7 +1188,7 @@
                     ]
                 }
             },
-            "property_order": 95
+            "property_order": 100
         },
         "enrollmentActions": {
             "type": "array",
@@ -1265,7 +1292,31 @@
                     "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#actions"
                 }
             ],
-            "property_order": 100
+            "property_order": 105
+        },
+        "finishedScript": {
+            "type": "string",
+            "title": "Finished Script",
+            "description": "A full path to a script file which will be executed after Setup Manager has finished its workflow. This process runs independently of Setup Manager, so it can run installers or scripts that affect Setup Manager.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#finishedscript"
+                }
+            ],
+            "property_order": 110
+        },
+        "finishedTrigger": {
+            "type": "string",
+            "title": "Finished Jamf Pro Policy Trigger",
+            "description": "A custom Jamf Pro policy trigger which will be executed after Setup Manager has finished its workflow. This process runs independently of Setup Manager, so it can run installers or scripts that affect Setup Manager.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#finishedtrigger"
+                }
+            ],
+            "property_order": 115
         },
         "webhooks": {
             "type": "object",
@@ -1283,12 +1334,14 @@
                                 "description": "Kind of webhook",
                                 "enum": [
                                     "generic",
-                                    "teams"
+                                    "teams",
+                                    "slack"
                                 ],
                                 "options": {
                                     "enum_titles": [
                                         "Generic",
-                                        "Microsoft Teams"
+                                        "Microsoft Teams",
+                                        "Slack"
                                     ]
                                 }
                             },
@@ -1348,7 +1401,7 @@
                     ]
                 }
             },
-            "property_order": 105
+            "property_order": 120
         }
     }
 }
