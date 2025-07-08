@@ -674,12 +674,14 @@
         },
         "allowMailSummary": {
             "type": "boolean",
+            "title": "Allow Mail Summary",
             "default": true,
             "description": "If 'false', disables the ability to create summaries of email messages manually. This doesn't affect automatic summary generation. Available in iOS 18.1 and later.",
             "property_order": 460
         },
         "allowMailSmartReplies": {
             "type": "boolean",
+            "title": "Allow Mail Smart Replies",
             "default": true,
             "description": "If 'false', disables smart replies in Mail. Available in iOS 18.2 and later, and macOS 15.2 and later.",
             "property_order": 465
@@ -723,6 +725,7 @@
         },
         "allowNotesTranscriptionSummary": {
             "type": "boolean",
+            "title": "Allow Notes Transcript Summary",
             "default": true,
             "description": "If 'false', disables transcription summarization in Notes. Available in iOS 18.3 and later, and macOS 15.3 and later.",
             "property_order": 495
@@ -742,6 +745,7 @@
         },
         "allowSafariSummary": {
             "type": "boolean",
+            "title": "Allow Content Summary in Safari",
             "default": true,
             "description": "If 'false', the system disables the ability to summarize content in Safari. Available in iOS 18.2 and later, and macOS 15.2 and later.",
             "property_order": 510
