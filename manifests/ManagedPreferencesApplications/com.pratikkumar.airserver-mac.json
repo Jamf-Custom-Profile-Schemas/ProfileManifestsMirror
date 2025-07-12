@@ -69,32 +69,38 @@
         },
         "SUSendProfileInfo": {
             "type": "boolean",
+            "title": "Send Anonymous Profile Information",
             "description": "When running software update checks, submit anonymous computer profile data to AirServer.",
             "property_order": 30
         },
         "UseLionStyleFullscreen": {
             "type": "boolean",
+            "title": "Use Lion-Style Full Screen",
             "description": "Enable this setting if you want to use the native macOS fullscreen mode - slower.",
             "property_order": 35
         },
         "UserDeviceName": {
             "type": "string",
+            "title": "User-Visible Device Name",
             "description": "Use this field to override the name of the computer that appears on the AirPlay network.",
             "property_order": 40
         },
         "UserLosslessAudioReceiverName": {
             "type": "string",
+            "title": "User-Visible Lossless Recevier Device Name",
             "description": "Only enable this preference when you wish to set a custom name for the device running AirServer in the AirPlay device list.",
             "property_order": 45
         },
         "autoLaunch": {
             "type": "boolean",
+            "title": "Launch at System Startup",
             "default": true,
             "description": "Have AirServer launch on system startup.",
             "property_order": 50
         },
         "com.airserverapp.audioBufferSize2": {
             "type": "number",
+            "title": "Audio Buffer Size",
             "default": 0.5,
             "description": "Use this setting to tweak multi-room audio sync when streaming music from iTunes.",
             "enum": [
@@ -149,6 +155,7 @@
         },
         "com.airserverapp.PasswordType": {
             "type": "string",
+            "title": "Password Type",
             "description": "Choose authentication method when connecting to AirServer. While a Fixed Password is an available setting, it's not possible to define this password via profile.",
             "enum": [
                 "Fixed Password",
@@ -159,6 +166,7 @@
         },
         "com.airserverapp.alwaysOnTop": {
             "type": "boolean",
+            "title": "Always on Top",
             "description": "Enable this setting if you want AirServer windows to be on top of all other windows.",
             "property_order": 65
         },
@@ -170,12 +178,14 @@
         },
         "com.airserverapp.linkMasterVolume": {
             "type": "boolean",
+            "title": "Link iOS Device Volume",
             "default": true,
             "description": "If enabled, changing the volume on your iOS device will change the volume of your preferred output sound device; otherwise AirServer will lower the streaming music volume.",
             "property_order": 75
         },
         "com.airserverapp.mirroringOptimizedFor2": {
             "type": "string",
+            "title": "Optimize Mirroring for Device Type",
             "default": "1080p",
             "description": "Here you can set the mirroring resolution AirServer provides to your iOS device. 'Retina' is recommended for all users, but if you are having connection problems, try the 1080p option. Do not enable this preference if you wish use the default 'Retina - High Quality' resolution setting.",
             "enum": [
@@ -198,16 +208,19 @@
         },
         "com.airserverapp.slowNetwork": {
             "type": "boolean",
+            "title": "Use Slow Network Mode",
             "description": "Enabling this setting will lower the mirroring quality by half but uses four times less bandwidth.",
             "property_order": 85
         },
         "com.airserverapp.SoftwareDecoderOnly": {
             "type": "boolean",
+            "title": "Use Software Decoder Only",
             "description": "Enable this setting if your AirPlay device regularly freezes or if you notice green artifacts when using AirPlay mirroring. This is common on older Macs that do not properly support hardware-accelerated video encoding.",
             "property_order": 90
         },
         "showInDock": {
             "type": "boolean",
+            "title": "Show in Dock",
             "description": "Use this setting to toggle between running AirServer in the Dock and in the menu bar.",
             "property_order": 95
         }
