@@ -2194,7 +2194,7 @@
         },
         "AlwaysWrapToPrintedPage": {
             "type": "integer",
-            "title": "Time stamp",
+            "title": "Wrap Text to Printed Page",
             "default": 1,
             "description": "Choose whether a document’s contents should always be soft-wrapped upon printing, or only if soft wrapping is enabled for that document.",
             "links": [
