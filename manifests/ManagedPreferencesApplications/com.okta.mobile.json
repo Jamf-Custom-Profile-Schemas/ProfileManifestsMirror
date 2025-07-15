@@ -95,6 +95,31 @@
                 }
             ],
             "property_order": 30
+        },
+        "OktaVerify.EnableOSQueryCustomChecks": {
+            "type": "boolean",
+            "title": "Enable OS Query Custom Checks",
+            "default": false,
+            "description": "Specifies whether custom OSQuery checks can be run on this device.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri7"
+                }
+            ],
+            "property_order": 35
+        },
+        "OktaVerify.OSQueryAllowedDomains": {
+            "type": "string",
+            "title": "OS Query Allowed Domains",
+            "description": "Defines the organizations that can run custom OSQuery checks on this device.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri8"
+                }
+            ],
+            "property_order": 40
         }
     }
 }
