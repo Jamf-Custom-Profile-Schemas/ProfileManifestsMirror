@@ -1,0 +1,194 @@
+{
+    "title": "Outset (io.macadmins.Outset)",
+    "description": "Outset settings",
+    "properties": {
+        "ignored_users": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Username"
+            },
+            "title": "Ignored Users",
+            "description": "An array of usernames to add to the ignored users list",
+            "property_order": 5
+        },
+        "wait_for_network": {
+            "type": "boolean",
+            "title": "Wait for network",
+            "default": false,
+            "description": "Enable or disable wait for network",
+            "property_order": 10
+        },
+        "network_timeout": {
+            "type": "integer",
+            "title": "Network Timeout",
+            "default": 180,
+            "description": "Specify how long Outset waits for network activity",
+            "property_order": 15
+        },
+        "sha256sum": {
+            "type": "object",
+            "title": "SHA256 Sum",
+            "description": "Manage file verification checksums",
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Script Path"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "SHA256"
+                }
+            },
+            "property_order": 20
+        },
+        "verbose_logging": {
+            "type": "boolean",
+            "title": "Verbose Logging",
+            "default": false,
+            "description": "Enable or disable verbose logging",
+            "property_order": 25
+        },
+        "script_payloads": {
+            "type": "object",
+            "title": "Script Payloads",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/macadmins/outset/wiki/Payloads"
+                }
+            ],
+            "properties": {
+                "boot-every": {
+                    "type": "object",
+                    "title": "Boot-Every Action Scripts",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/outset/wiki/Payloads"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Script Name"
+                        }
+                    }
+                },
+                "boot-once": {
+                    "type": "object",
+                    "title": "Boot-Once Action Scripts",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/outset/wiki/Payloads"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Script Name"
+                        }
+                    }
+                },
+                "login-every": {
+                    "type": "object",
+                    "title": "Login-Every Action Scripts",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/outset/wiki/Payloads"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Script Name"
+                        }
+                    }
+                },
+                "login-once": {
+                    "type": "object",
+                    "title": "Login-Once Action Scripts",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/outset/wiki/Payloads"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Script Name"
+                        }
+                    }
+                },
+                "login-privileged-every": {
+                    "type": "object",
+                    "title": "Login-Privileged-Every Action Scripts",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/outset/wiki/Payloads"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Script Name"
+                        }
+                    }
+                },
+                "login-privileged-once": {
+                    "type": "object",
+                    "title": "Login-Privileged-Once Action Scripts",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/outset/wiki/Payloads"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Script Name"
+                        }
+                    }
+                },
+                "login-window": {
+                    "type": "object",
+                    "title": "Login-Window Action Scripts",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/outset/wiki/Payloads"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Script Name"
+                        }
+                    }
+                },
+                "on-demand": {
+                    "type": "object",
+                    "title": "On-Demand Action Scripts",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/macadmins/outset/wiki/Payloads"
+                        }
+                    ],
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string",
+                            "title": "Script Name"
+                        }
+                    }
+                }
+            },
+            "property_order": 30
+        }
+    }
+}
