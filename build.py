@@ -19,15 +19,35 @@ equivalent Jamf JSON schema manifests."""
 
 
 __author__ = "Elliot Jordan"
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 import argparse
 import json
+import logging
 import os
 import plistlib
 import shutil
 import sys
 import xml
+
+
+def setup_logging(verbosity=0):
+    """Set up logging configuration based on verbosity level."""
+    if verbosity == 0:
+        level = logging.WARNING
+    elif verbosity == 1:
+        level = logging.INFO
+    else:
+        level = logging.DEBUG
+
+    # Configure logging format
+    log_format = "%(levelname)s: %(message)s"
+    if verbosity >= 2:
+        log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+    logging.basicConfig(level=level, format=log_format, datefmt="%Y-%m-%d %H:%M:%S")
+
+    return logging.getLogger(__name__)
 
 
 def build_argument_parser():
@@ -80,12 +100,13 @@ def build_argument_parser():
 
 def validate_args(args):
     """Do sanity checking and validation on provided input arguments."""
+    logger = logging.getLogger(__name__)
 
     if not os.path.isdir(os.path.expanduser(args.input_dir)):
         sys.exit("Input path provided is not a directory: %s" % args.input_dir)
     if os.path.exists(os.path.expanduser(args.output_dir)):
         if args.overwrite:
-            print("WARNING: Will overwrite output dir: %s" % args.output_dir)
+            logger.warning("Will overwrite output dir: %s", args.output_dir)
         else:
             sys.exit(
                 "Output path already exists: %s\nUse --overwrite to replace contents "
@@ -102,15 +123,18 @@ def validate_args(args):
 def read_manifest_plist(path):
     """Given a path to a profile manifest plist, return the contents of
     the plist."""
+    logger = logging.getLogger(__name__)
+
     with open(path, "rb") as openfile:
         try:
             return plistlib.load(openfile)
         except xml.parsers.expat.ExpatError:
-            print("Error reading %s" % path)
+            logger.error("Error reading %s", path)
 
 
 def process_subkeys(subkeys):
     """Given a list of subkeys, return equivalent JSON schema manifest properties."""
+    logger = logging.getLogger(__name__)
 
     # Skip keys that describe the payload instead of the setting
     meta_keys = (
@@ -132,14 +156,14 @@ def process_subkeys(subkeys):
     )
 
     properties = {}
-    for idx, subkey in enumerate(subkeys):
+    for subkey in subkeys:
         # Get subkey name
         name = ""
         try:
             if subkey.get("pfm_name", "") != "":
                 name = subkey["pfm_name"]
         except AttributeError:
-            print("WARNING: Syntax error. Skipping.")
+            logger.warning("Syntax error. Skipping.")
             return
 
         # Skip specific names
@@ -195,7 +219,7 @@ def process_subkeys(subkeys):
 
         # Recurse into sub-sub-keys
         if "pfm_subkeys" in subkey and not isinstance(subkey["pfm_subkeys"], list):
-            print("WARNING: Not a list: %s" % subkey["pfm_subkeys"])
+            logger.warning("Not a list: %s", subkey["pfm_subkeys"])
         if isinstance(subkey.get("pfm_subkeys"), list):
             subprop = process_subkeys(subkey["pfm_subkeys"])
             if "items" in properties[name]:
@@ -204,12 +228,13 @@ def process_subkeys(subkeys):
                 # TODO: Validate this assumption. Some warnings seen in the wild.
                 subprop_keys = list(subprop.keys())
                 if len(subprop_keys) > 1:
-                    print(
-                        "WARNING: Array type should only have one subproperty "
-                        "key. Skipping all but the first: %s" % subprop_keys
+                    logger.warning(
+                        "Array type should only have one subproperty "
+                        "key. Skipping all but the first: %s",
+                        subprop_keys,
                     )
                 elif len(subprop_keys) == 0:
-                    print("WARNING: No subproperty keys found in %s key." % name)
+                    logger.warning("No subproperty keys found in %s key.", name)
                     continue
                 array_props = subprop[subprop_keys[0]]
                 properties[name]["items"] = array_props
@@ -224,6 +249,7 @@ def convert_to_jamf_manifest(data, property_order_increment=5):
 
     Reference: https://docs.jamf.com/technical-papers/jamf-pro/json-schema/10.19.0/Understanding_the_Structure_of_a_JSON_Schema_Manifest.html
     """
+    logger = logging.getLogger(__name__)
 
     # Create schema object
     try:
@@ -233,14 +259,14 @@ def convert_to_jamf_manifest(data, property_order_increment=5):
             "properties": process_subkeys(data["pfm_subkeys"]),
         }
     except KeyError:
-        print("ERROR: Manifest is missing a title, domain, or description.")
+        logger.error("Manifest is missing a title, domain, or description.")
         return
 
     # Lock property order
     if property_order_increment > 0:
         order = property_order_increment
-        for property in schema["properties"]:
-            schema["properties"][property]["property_order"] = order
+        for prop_name in schema["properties"]:
+            schema["properties"][prop_name]["property_order"] = order
             order += property_order_increment
 
     return schema
@@ -269,6 +295,7 @@ def write_to_file(path, data):
 
 def update_readme(count):
     """Updates README.md file with latest manifest count."""
+    logger = logging.getLogger(__name__)
 
     with open("README.md", encoding="utf-8") as f:
         readme = f.readlines()
@@ -281,7 +308,7 @@ def update_readme(count):
             break
     with open("README.md", "w", encoding="utf-8") as f:
         f.write("".join(readme))
-    print("Updated README.md")
+    logger.info("Updated README.md")
 
 
 def main():
@@ -290,6 +317,9 @@ def main():
     # Parse command line arguments.
     argparser = build_argument_parser()
     args = validate_args(argparser.parse_args())
+
+    # Set up logging based on verbosity
+    logger = setup_logging(args.verbose)
 
     # Expand to full paths
     input_dir = os.path.expanduser(args.input_dir)
@@ -303,14 +333,14 @@ def main():
 
     # Iterate through manifests in the input path
     count = {"done": 0, "skipped": 0}
-    for root, dirs, files in os.walk(input_dir):
+    for root, _dirs, files in os.walk(input_dir):
         for name in files:
             if name.endswith(".plist"):
                 relpath = os.path.relpath(os.path.join(root, name), start=input_dir)
 
                 # Output filename if in verbose mode
                 if args.verbose > 0:
-                    print("Processing %s" % relpath)
+                    logger.info("Processing %s", relpath)
 
                 # Load manifest
                 pfm_data = read_manifest_plist(os.path.join(root, name))
@@ -333,7 +363,9 @@ def main():
                 write_to_file(output_path, manifest)
                 count["done"] += 1
 
-    print("Converted %d files. Skipped %d files." % (count["done"], count["skipped"]))
+    logger.info(
+        "Converted %d files. Skipped %d files.", count["done"], count["skipped"]
+    )
     update_readme(count["done"])
 
 
