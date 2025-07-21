@@ -20,7 +20,7 @@ repos:
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
   - repo: https://github.com/python/black
-    rev: 24.10.0
+    rev: 25.1.0
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/mirrors-isort
@@ -28,11 +28,11 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/pycqa/flake8
-    rev: 7.1.1
+    rev: 7.3.0
     hooks:
       - id: flake8
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.19.0
+    rev: v3.20.0
     hooks:
       - id: pyupgrade
         args: ['--py36-plus']
@@ -40,7 +40,7 @@ repos:
     rev: 1.19.1
     hooks:
       - id: blacken-docs
-        additional_dependencies: [black==24.4.2]
+        additional_dependencies: [black>=25.1.0]
   # - repo: https://github.com/homebysix/pre-commit-macadmin
   #   rev: profile-manifests
   #   exclude: "last_build\.json"
