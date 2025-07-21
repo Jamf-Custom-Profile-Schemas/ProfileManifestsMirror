@@ -29,9 +29,10 @@ import plistlib
 import shutil
 import sys
 import xml
+from typing import Any, Dict, List, Optional
 
 
-def setup_logging(verbosity=0):
+def setup_logging(verbosity: int = 0) -> logging.Logger:
     """Set up logging configuration based on verbosity level."""
     if verbosity == 0:
         level = logging.WARNING
@@ -50,7 +51,7 @@ def setup_logging(verbosity=0):
     return logging.getLogger(__name__)
 
 
-def build_argument_parser():
+def build_argument_parser() -> argparse.ArgumentParser:
     """Build and return the argument parser."""
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -98,7 +99,7 @@ def build_argument_parser():
     return parser
 
 
-def validate_args(args):
+def validate_args(args: argparse.Namespace) -> argparse.Namespace:
     """Do sanity checking and validation on provided input arguments."""
     logger = logging.getLogger(__name__)
 
@@ -120,7 +121,7 @@ def validate_args(args):
     return args
 
 
-def read_manifest_plist(path):
+def read_manifest_plist(path: str) -> Optional[Dict[str, Any]]:
     """Given a path to a profile manifest plist, return the contents of
     the plist."""
     logger = logging.getLogger(__name__)
@@ -132,7 +133,7 @@ def read_manifest_plist(path):
             logger.error("Error reading %s", path)
 
 
-def process_subkeys(subkeys):
+def process_subkeys(subkeys: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
     """Given a list of subkeys, return equivalent JSON schema manifest properties."""
     logger = logging.getLogger(__name__)
 
@@ -244,7 +245,9 @@ def process_subkeys(subkeys):
     return properties
 
 
-def convert_to_jamf_manifest(data, property_order_increment=5):
+def convert_to_jamf_manifest(
+    data: Dict[str, Any], property_order_increment: int = 5
+) -> Optional[Dict[str, Any]]:
     """Convert a profile manifest plist object to a Jamf JSON schema manifest.
 
     Reference: https://docs.jamf.com/technical-papers/jamf-pro/json-schema/10.19.0/Understanding_the_Structure_of_a_JSON_Schema_Manifest.html
@@ -272,7 +275,7 @@ def convert_to_jamf_manifest(data, property_order_increment=5):
     return schema
 
 
-def write_to_file(path, data):
+def write_to_file(path: str, data: Dict[str, Any]) -> None:
     """Given a path to a file and JSON data, write the file."""
     path_head, path_tail = os.path.split(path)
 
@@ -293,7 +296,7 @@ def write_to_file(path, data):
         )
 
 
-def update_readme(count):
+def update_readme(count: int) -> None:
     """Updates README.md file with latest manifest count."""
     logger = logging.getLogger(__name__)
 
@@ -311,7 +314,7 @@ def update_readme(count):
     logger.info("Updated README.md")
 
 
-def main():
+def main() -> None:
     """Main process."""
 
     # Parse command line arguments.
