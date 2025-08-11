@@ -131,6 +131,32 @@
                             "title": "Chrome Update Version Pin",
                             "description": "Pin an application to a single version. This stops your devices from updating to versions of the app beyond the number you specify. This should be done only temporarily, such as while testing a new version.",
                             "pattern": "^[\\d]+\\.$"
+                        },
+                        "TargetChannel": {
+                            "type": "string",
+                            "title": "Chrome Update Release Channel",
+                            "default": "stable",
+                            "description": "Choose the Stable, Extended stable, Beta, or Dev Chrome browser update channel for Chrome version 90 or above.\nGoogle Software Update will not downgrade Chrome to a lower version when switching channels.\nChrome continues to follow the last channel on which it received an update if the TargetChannel policy is cleared.",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://support.google.com/chrome/a/answer/7591084#zippy=%2Cset-chrome-browser-to-a-specific-release-channel"
+                                }
+                            ],
+                            "enum": [
+                                "stable",
+                                "extended",
+                                "beta",
+                                "dev"
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Stable",
+                                    "Extended Stable",
+                                    "Beta",
+                                    "Dev"
+                                ]
+                            }
                         }
                     }
                 },
