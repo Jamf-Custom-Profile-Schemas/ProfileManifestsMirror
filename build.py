@@ -28,8 +28,8 @@ import os
 import plistlib
 import shutil
 import sys
-import xml
-from typing import Any, Dict, List, Optional
+import xml.parsers.expat
+from typing import Any
 
 
 def setup_logging(verbosity: int = 0) -> logging.Logger:
@@ -121,19 +121,20 @@ def validate_args(args: argparse.Namespace) -> argparse.Namespace:
     return args
 
 
-def read_manifest_plist(path: str) -> Optional[Dict[str, Any]]:
+def read_manifest_plist(path: str) -> dict[str, Any]:
     """Given a path to a profile manifest plist, return the contents of
     the plist."""
     logger = logging.getLogger(__name__)
-
+    plist = {}
     with open(path, "rb") as openfile:
         try:
-            return plistlib.load(openfile)
+            plist = plistlib.load(openfile)
         except xml.parsers.expat.ExpatError:
             logger.error("Error reading %s", path)
+    return plist
 
 
-def process_subkeys(subkeys: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+def process_subkeys(subkeys: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     """Given a list of subkeys, return equivalent JSON schema manifest properties."""
     logger = logging.getLogger(__name__)
 
@@ -165,7 +166,7 @@ def process_subkeys(subkeys: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
                 name = subkey["pfm_name"]
         except AttributeError:
             logger.warning("Syntax error. Skipping.")
-            return
+            return {}
 
         # Skip specific names
         if name in meta_keys:
@@ -246,8 +247,8 @@ def process_subkeys(subkeys: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
 
 
 def convert_to_jamf_manifest(
-    data: Dict[str, Any], property_order_increment: int = 5
-) -> Optional[Dict[str, Any]]:
+    data: dict[str, Any], property_order_increment: int = 5
+) -> dict[str, Any] | None:
     """Convert a profile manifest plist object to a Jamf JSON schema manifest.
 
     Reference: https://docs.jamf.com/technical-papers/jamf-pro/json-schema/10.19.0/Understanding_the_Structure_of_a_JSON_Schema_Manifest.html
@@ -263,7 +264,7 @@ def convert_to_jamf_manifest(
         }
     except KeyError:
         logger.error("Manifest is missing a title, domain, or description.")
-        return
+        return None
 
     # Lock property order
     if property_order_increment > 0:
@@ -275,7 +276,7 @@ def convert_to_jamf_manifest(
     return schema
 
 
-def write_to_file(path: str, data: Dict[str, Any]) -> None:
+def write_to_file(path: str, data: dict[str, Any]) -> None:
     """Given a path to a file and JSON data, write the file."""
     path_head, path_tail = os.path.split(path)
 
