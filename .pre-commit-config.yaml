@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
         args: [--maxkb=100]
@@ -35,12 +35,16 @@ repos:
     rev: v3.20.0
     hooks:
       - id: pyupgrade
-        args: ['--py36-plus']
+        args: ['--py311-plus']
   - repo: https://github.com/asottile/blacken-docs
     rev: 1.19.1
     hooks:
       - id: blacken-docs
         additional_dependencies: [black>=25.1.0]
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.17.1
+    hooks:
+      - id: mypy
   # - repo: https://github.com/homebysix/pre-commit-macadmin
   #   rev: profile-manifests
   #   exclude: "last_build\.json"
