@@ -11,10 +11,23 @@
         },
         "IDEProhibitRemoteModelInteraction": {
             "type": "boolean",
-            "title": "Disable Swift Assist in Xcode",
+            "title": "Disable Swift Assist",
             "default": false,
             "description": "Controls whether Swift Assist is allowed.",
             "property_order": 10
+        },
+        "AssistantAllowExternalIntegrations": {
+            "type": "boolean",
+            "title": "Allow Coding Assistant",
+            "default": true,
+            "description": "Controls whether the coding assistant is allowed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes"
+                }
+            ],
+            "property_order": 15
         }
     }
 }
