@@ -350,12 +350,6 @@
                     "title": "Server Address",
                     "description": "This will usually be an IP address, unless the syslog server is set up to respond using a DNS hostname."
                 },
-                "ServerPort": {
-                    "type": "integer",
-                    "title": "Server Port",
-                    "default": 514,
-                    "description": "The port of the logging server."
-                },
                 "EnableTCP": {
                     "type": "boolean",
                     "title": "Enable TCP",
@@ -466,6 +460,12 @@
                                     "Debug"
                                 ]
                             }
+                        },
+                        "ServerPort": {
+                            "type": "integer",
+                            "title": "Server Port",
+                            "default": 514,
+                            "description": "The port of the logging server."
                         },
                         "MaximumMessageSize": {
                             "type": "integer",
