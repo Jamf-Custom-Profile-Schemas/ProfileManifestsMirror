@@ -16,7 +16,7 @@
             "description": "Controls whether Swift Assist is allowed.",
             "property_order": 10
         },
-        "AssistantAllowExternalIntegrations": {
+        "CodingAssistantAllowExternalIntegrations": {
             "type": "boolean",
             "title": "Allow Coding Assistant",
             "default": true,
