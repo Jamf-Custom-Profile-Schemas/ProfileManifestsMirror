@@ -30,7 +30,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
                 }
             ],
             "property_order": 10
@@ -43,7 +43,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
             "property_order": 15
@@ -55,7 +55,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
             "property_order": 20
@@ -67,7 +67,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
             "property_order": 25
@@ -79,7 +79,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
             "property_order": 30
@@ -91,7 +91,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
             "property_order": 35
@@ -101,6 +101,12 @@
             "title": "Max HTTP Request Size",
             "default": 1000000,
             "description": "Max size of single HTTP request uploading data. (Uncompressed size in bytes default size is 1,000,000 bytes)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
+                }
+            ],
             "property_order": 40
         },
         "DefaultFilterRules": {
@@ -108,13 +114,25 @@
             "title": "Add Default Filter Rules",
             "default": false,
             "description": "Deploys default rules to discard some events which can be considered noise.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
+                }
+            ],
             "property_order": 45
         },
         "SelfProtectionRules": {
             "type": "boolean",
             "title": "Add Self Protection Auth Rules",
             "default": false,
-            "description": "Deploys authorisation rules to attempt to stop the user making changes to Elevate24 Monitoring.",
+            "description": "Deploys authorisation rules to attempt to stop the user making changes to Elevate24 database.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
+                }
+            ],
             "property_order": 50
         },
         "DisableAll": {
@@ -122,6 +140,12 @@
             "title": "Disable all operations performed by the daemon",
             "default": false,
             "description": "Stops all blocking/logging operations. Effectively a switch to disable this tool.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
+                }
+            ],
             "property_order": 55
         },
         "EnableArchive": {
@@ -129,6 +153,12 @@
             "title": "Enable Local Retention of Events",
             "default": false,
             "description": "Enables the local retention of Events after they have been uploaded to Jigsaw24/SIEM.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
+                }
+            ],
             "property_order": 60
         },
         "MaxArchiveAge": {
@@ -136,6 +166,12 @@
             "title": "Maximum Age of Retained Events (Days)",
             "default": 7,
             "description": "Sets maximum age of events retained locally.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
+                }
+            ],
             "property_order": 65
         },
         "UploadOnHotspot": {
@@ -143,6 +179,12 @@
             "title": "Allow Upload Data on Hotspot connection",
             "default": false,
             "description": "Upload Events when connected to iPhone personal hotspot.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
+                }
+            ],
             "property_order": 70
         },
         "FileOperationRules": {
@@ -202,6 +244,12 @@
             },
             "title": "File Operation Rules",
             "description": "Rules to restrict file operations. Allow rules can be used in conjunction with block rules to allow a process to execute under the specified conditions. \\nFile open operations can be restricted to read only access where required.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/5%20Elevate24%20Session%20Monitoring%20-%20Authorisation%20Rules.html#monitoring-authorisation-rules"
+                }
+            ],
             "property_order": 75
         },
         "ExecuteProcessRules": {
@@ -248,6 +296,12 @@
                 {}
             ],
             "description": "Rules to restrict execution of processes. Allow rules can be used in conjunction with block rules to allow a process to execute under the specified conditions. \\nMultiple arguments can be specified by seperating them with a comma.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/5%20Elevate24%20Session%20Monitoring%20-%20Authorisation%20Rules.html#monitoring-authorisation-rules"
+                }
+            ],
             "property_order": 80
         },
         "logAllEventTypes": {
@@ -258,7 +312,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Configuration%20Keys.md#event-types"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
                 }
             ],
             "property_order": 85
@@ -315,6 +369,12 @@
                 {}
             ],
             "description": "Define which event types to log.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
+                }
+            ],
             "property_order": 90
         },
         "filterRules": {
@@ -378,6 +438,12 @@
                 {}
             ],
             "description": "Define rules to not store events matching the following rules.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
+                }
+            ],
             "property_order": 95
         }
     }

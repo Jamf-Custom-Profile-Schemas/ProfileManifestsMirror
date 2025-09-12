@@ -9,7 +9,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#license-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/2%20Elevate24%20-%20Licensing.html#licensing"
                 }
             ],
             "property_order": 5
@@ -21,7 +21,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#license-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/2%20Elevate24%20-%20Licensing.html#licensing"
                 }
             ],
             "property_order": 10
@@ -30,11 +30,11 @@
             "type": "boolean",
             "title": "New UI",
             "default": false,
-            "description": "Change Elevate24 to show to the new UI. The new UI will be default in a later version of Elevate24.",
+            "description": "Change Elevate24 to show to the new UI. Not required for Elevate24 2.3+ as this is now default.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/3%20Elevate24%20-%20Branding.html#branding"
                 }
             ],
             "property_order": 15
@@ -47,7 +47,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/3%20Elevate24%20-%20Branding.html#branding"
                 }
             ],
             "property_order": 20
@@ -60,7 +60,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/3%20Elevate24%20-%20Branding.html#branding"
                 }
             ],
             "property_order": 25
@@ -73,7 +73,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/3%20Elevate24%20-%20Branding.html#branding"
                 }
             ],
             "property_order": 30
@@ -86,7 +86,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/3%20Elevate24%20-%20Branding.html#branding"
                 }
             ],
             "property_order": 35
@@ -99,7 +99,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/3%20Elevate24%20-%20Branding.html#branding"
                 }
             ],
             "property_order": 40
@@ -112,7 +112,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#branding"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/3%20Elevate24%20-%20Branding.html#branding"
                 }
             ],
             "property_order": 45
@@ -125,7 +125,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/4%20Elevate24%20-%20Customisation.html#session-customisation"
                 }
             ],
             "property_order": 50
@@ -138,7 +138,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/4%20Elevate24%20-%20Customisation.html#session-customisation"
                 }
             ],
             "property_order": 55
@@ -151,7 +151,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/4%20Elevate24%20-%20Customisation.html#session-customisation"
                 }
             ],
             "property_order": 60
@@ -171,7 +171,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/4%20Elevate24%20-%20Customisation.html#session-customisation"
                 }
             ],
             "property_order": 65
@@ -186,7 +186,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/4%20Elevate24%20-%20Customisation.html#session-customisation"
                 }
             ],
             "property_order": 70
@@ -199,7 +199,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#elevated-session-customisation"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/4%20Elevate24%20-%20Customisation.html#session-customisation"
                 }
             ],
             "property_order": 75
@@ -212,7 +212,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#disable-sending-data-to-jigsaw24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#disable-sending-data-to-jigsaw24"
                 }
             ],
             "property_order": 80
@@ -223,7 +223,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#elevate24-application-level-reporting-configuration-keys"
                 }
             ],
             "property_order": 85
@@ -234,7 +234,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#elevate24-application-level-reporting-configuration-keys"
                 }
             ],
             "property_order": 90
@@ -245,7 +245,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#elevate24-application-level-reporting-configuration-keys"
                 }
             ],
             "property_order": 95
@@ -277,32 +277,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#microsoft-sentinel"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#elevate24-application-level-reporting-configuration-keys"
                 }
             ],
             "property_order": 100
-        },
-        "teamswebhook": {
-            "type": "string",
-            "title": "Teams Webhook (Premium)",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
-                }
-            ],
-            "property_order": 105
-        },
-        "slack-webhook": {
-            "type": "string",
-            "title": "Slack Webhook (Premium)",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Reporting%20Configuration%20Keys.md#reporting-configuration-keys-for-elevate24"
-                }
-            ],
-            "property_order": 110
         },
         "EnableSessionMonitoring": {
             "type": "boolean",
@@ -312,10 +290,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20Session%20Reporting%20-%20Configuration%20Keys.md#configuration-keys-for-elevate24-session-reporting"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html"
                 }
             ],
-            "property_order": 115
+            "property_order": 105
         },
         "enableAppleAuth": {
             "type": "boolean",
@@ -325,10 +303,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html"
                 }
             ],
-            "property_order": 120
+            "property_order": 110
         },
         "GoogleAuth": {
             "type": "boolean",
@@ -338,10 +316,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html"
                 }
             ],
-            "property_order": 125
+            "property_order": 115
         },
         "standardAtLoad": {
             "type": "boolean",
@@ -351,10 +329,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 130
+            "property_order": 120
         },
         "demoteAllAdmin": {
             "type": "boolean",
@@ -364,10 +342,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 135
+            "property_order": 125
         },
         "demoteAllAdminQuit": {
             "type": "boolean",
@@ -377,10 +355,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 140
+            "property_order": 130
         },
         "demoteExclusions": {
             "type": "array",
@@ -392,10 +370,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 145
+            "property_order": 135
         },
         "killterminalsessions": {
             "type": "boolean",
@@ -405,10 +383,23 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 150
+            "property_order": 140
+        },
+        "UseSystemExtension": {
+            "type": "boolean",
+            "title": "System Extension",
+            "default": false,
+            "description": "Elevate24 v2.3+ Only. To ensure the Application is protected by the on-device system extension, to prevent misuse and tampering.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
+                }
+            ],
+            "property_order": 145
         },
         "userElevateAdmin": {
             "type": "boolean",
@@ -418,10 +409,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#security-settings"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html"
                 }
             ],
-            "property_order": 155
+            "property_order": 150
         },
         "useCurrentUserAsAdmin": {
             "type": "boolean",
@@ -431,10 +422,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 160
+            "property_order": 155
         },
         "adminUserName": {
             "type": "string",
@@ -443,10 +434,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 165
+            "property_order": 160
         },
         "ComplexPassword": {
             "type": "boolean",
@@ -456,10 +447,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 170
+            "property_order": 165
         },
         "PasswordUppercase": {
             "type": "string",
@@ -468,10 +459,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 175
+            "property_order": 170
         },
         "PasswordLowercase": {
             "type": "string",
@@ -480,10 +471,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 180
+            "property_order": 175
         },
         "PasswordNumbers": {
             "type": "string",
@@ -492,10 +483,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 185
+            "property_order": 180
         },
         "PasswordSymbols": {
             "type": "string",
@@ -504,10 +495,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 190
+            "property_order": 185
         },
         "showAdminPasswordGrace": {
             "type": "integer",
@@ -517,10 +508,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jigsaw24/Elevate24/blob/main/Documentation/Elevate24%20-%20Configuration%20Keys.md#secondary-account-configuration"
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 195
+            "property_order": 190
         }
     }
 }
