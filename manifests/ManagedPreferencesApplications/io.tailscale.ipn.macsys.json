@@ -535,7 +535,7 @@
             "type": "string",
             "title": "Hide the CLI integration installer",
             "default": "hide",
-            "description": "When set to hide, the user will not be able to install the CLI helper, and will instead be told to container their administrator.",
+            "description": "When set to hide, the user will not be able to install the CLI helper, and will instead be told to contact their administrator.",
             "links": [
                 {
                     "rel": "More information",
