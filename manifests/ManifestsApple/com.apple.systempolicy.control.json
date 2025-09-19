@@ -1,6 +1,6 @@
 {
     "title": "System Policy Control (com.apple.systempolicy.control)",
-    "description": "System Policy: Control settings",
+    "description": "The payload that configures the system policy for assessments.",
     "properties": {
         "EnableAssessment": {
             "type": "boolean",
@@ -11,7 +11,7 @@
         "AllowIdentifiedDevelopers": {
             "type": "boolean",
             "title": "Allow Identified Developers",
-            "description": "If 'true', enables Gatekeeper's “Mac App Store and identified developers” option.\nIf 'false', enables Gatekeeper's “Mac App Store” option.\nIf the value of 'EnableAssessment' isn't set to 'true', this key has no effect.",
+            "description": "If 'true', enables Gatekeeper's \"Mac App Store and identified developers\" option.\n\nIf 'false', enables Gatekeeper's \"Mac App Store\" option.\n\nIf the value of 'EnableAssessment' isn't set to 'true', this key has no effect.",
             "property_order": 10
         },
         "EnableXProtectMalwareUpload": {

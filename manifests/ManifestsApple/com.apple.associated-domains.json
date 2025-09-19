@@ -1,11 +1,12 @@
 {
     "title": "Associated Domains (com.apple.associated-domains)",
-    "description": "Use this section to define settings for Associated Domains to be used with features such as Extensible AppSSO, universal links and Password AutoFill.",
+    "description": "The payload that configures associated domains.",
     "properties": {
         "Configuration": {
             "type": "array",
             "items": {
                 "type": "object",
+                "description": "A dictionary that maps apps to their associated domains.",
                 "properties": {
                     "ApplicationIdentifier": {
                         "type": "string",
@@ -16,11 +17,12 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "The domains to be associated with the app. Each string is in the form of ''service:domain''. Domains should be fully qualified hostnames, like 'www.example.com'.\nSee Supporting Associated Domains for more information."
+                        "description": "The domains to associate with the app. Each string is in the form of 'service:domain'. Use fully qualified hostnames, such as 'www.example.com'. See 'Supporting associated domains' for more information."
                     },
                     "EnableDirectDownloads": {
                         "type": "boolean",
-                        "description": "If 'true', data for this domain should be downloaded directly instead of through a CDN. The entitlement value for this domain must be set to 'service:domain?mode=managed' or this value will be ignored. Available in macOS 11 and later."
+                        "default": false,
+                        "description": "If 'true', the system enables direct download of data for this domain instead of through a CDN. Set the entitlement value for this domain to 'service:domain?mode=managed'; otherwise, the system ignores this value. Available in macOS 11 and later."
                     }
                 }
             },

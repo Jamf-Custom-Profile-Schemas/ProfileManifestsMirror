@@ -1,12 +1,12 @@
 {
     "title": "Guest Account (com.apple.MCX)",
-    "description": "Use this section to define guest account settings",
+    "description": "The payload that configures guest accounts.",
     "properties": {
         "EnableGuestAccount": {
             "type": "boolean",
             "title": "Enable Guest Account",
             "default": false,
-            "description": "Enables the guest account. Overrides DisableGuestAccount.",
+            "description": "If 'true', the system enables the guest account.",
             "links": [
                 {
                     "rel": "More information",
@@ -19,7 +19,7 @@
             "type": "boolean",
             "title": "Disable Guest Account",
             "default": false,
-            "description": "Disables the guest account. Overridden by EnableGuestAccount.",
+            "description": "If 'true', the system disables the guest account. This property has no effect if 'EnableGuestAccount' is 'true'.",
             "links": [
                 {
                     "rel": "More information",

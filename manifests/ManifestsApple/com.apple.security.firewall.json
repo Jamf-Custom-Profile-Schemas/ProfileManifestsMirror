@@ -1,6 +1,6 @@
 {
     "title": "Firewall (com.apple.security.firewall)",
-    "description": "Firewall settings",
+    "description": "The payload that configures the firewall.",
     "properties": {
         "EnableFirewall": {
             "type": "boolean",
@@ -26,7 +26,7 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "Application Item",
+                "title": "Applications",
                 "description": "A firewall application item-",
                 "properties": {
                     "BundleID": {
@@ -79,14 +79,14 @@
             "type": "boolean",
             "title": "Allow Incoming Connections to macOS-Bundled Software",
             "default": true,
-            "description": "If 'true', the system allows built-in software to receive incoming connections. Available in macOS 12.3 and later.\nThe system ensures that 'AllowSigned' always has a value. If missing from the payload, the system sets it to 'true'.",
+            "description": "If 'true', the system allows built-in software to receive incoming connections. Available in macOS 12.3 and later.\n\nNote:\nThe system ensures that 'AllowSigned' always has a value. If missing from the payload, the system sets it to 'true'.",
             "property_order": 35
         },
         "AllowSignedApp": {
             "type": "boolean",
             "title": "Allow Incoming Connections to Downloaded Signed Apps",
             "default": true,
-            "description": "If 'true', the system allows downloaded signed software to receive incoming connections. Available in macOS 12.3 and later.\nThe system ensures that 'AllowSignedApp' always has a value. If missing from the payload, the system sets it to 'true'.",
+            "description": "If 'true', the system allows downloaded signed software to receive incoming connections. Available in macOS 12.3 and later.\n\nNote:\nThe system ensures that 'AllowSignedApp' always has a value. If missing from the payload, the system sets it to 'true'.",
             "property_order": 40
         }
     }

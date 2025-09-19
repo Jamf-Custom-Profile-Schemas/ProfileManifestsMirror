@@ -1,23 +1,23 @@
 {
     "title": "Lock Screen Message (com.apple.shareddeviceconfiguration)",
-    "description": "Lock Screen Message settings",
+    "description": "The payload that configures a Lock Screen message.",
     "properties": {
         "IfLostReturnToMessage": {
             "type": "string",
             "title": "\"If lost, return to\"",
-            "description": "Displays a name, address, or phone number on the Login window and Lock screen. Deprecated. Use LockScreenFootnote instead.",
+            "description": "Deprecated. Use 'LockScreenFootnote' instead.",
             "property_order": 5
         },
         "LockScreenFootnote": {
             "type": "string",
             "title": "Lock Screen Footnote",
-            "description": "Displays a name, address, or phone number on the Login window and Lock screen.",
+            "description": "The footnote displayed in the Login Window and Lock Screen.",
             "property_order": 10
         },
         "AssetTagInformation": {
             "type": "string",
-            "title": "Asset tag",
-            "description": "Displays the asset tag information in the Login window and on the Lock screen.",
+            "title": "Asset Tag",
+            "description": "The asset tag information for the device, displayed in the Login Window and Lock Screen.",
             "property_order": 15
         }
     }

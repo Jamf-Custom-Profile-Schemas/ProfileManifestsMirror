@@ -1,22 +1,23 @@
 {
     "title": "Cellular (com.apple.cellular)",
-    "description": "Use this section to define custom APNs for cellular data access.",
+    "description": "The payload that configures cellular settings.",
     "properties": {
         "APNs": {
             "type": "array",
             "items": {
                 "type": "object",
+                "description": "A dictionary that contains details about an access point name (APN) configuration.",
                 "properties": {
                     "Name": {
                         "type": "string",
                         "title": "Data APN name",
-                        "description": "The name of the data APN."
+                        "description": "The name for this configuration."
                     },
                     "AuthenticationType": {
                         "type": "string",
                         "title": "Data APN authentication type",
                         "default": "PAP",
-                        "description": "Authentication type to use for the connection.",
+                        "description": "The authentication type for logging in.",
                         "enum": [
                             "CHAP",
                             "PAP"
@@ -25,27 +26,27 @@
                     "Username": {
                         "type": "string",
                         "title": "Data APN user name",
-                        "description": "The user name for the data APN account."
+                        "description": "The user name for the APN."
                     },
                     "Password": {
                         "type": "string",
                         "title": "Data APN password",
-                        "description": "The password for the data APN account."
+                        "description": "The user's password for the APN."
                     },
                     "ProxyServer": {
                         "type": "string",
                         "title": "Data APN proxy server",
-                        "description": "The IP address or fully qualified domain name (FQDN) of the data APN proxy server."
+                        "description": "The proxy server's address."
                     },
                     "ProxyPort": {
                         "type": "integer",
                         "title": "Data APN proxy port",
-                        "description": "The port number of the data APN proxy server."
+                        "description": "The proxy server's port number."
                     },
                     "DefaultProtocolMask": {
                         "type": "integer",
                         "title": "Data APN default IP versions",
-                        "description": "The default Internet Protocol versions. Available in iOS 10.3 but no longer used in iOS 11 and later. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
+                        "description": "The default Internet Protocol versions. Available in iOS 10.3 but no longer used in iOS 11 and later. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
                         "enum": [
                             1,
                             2,
@@ -62,7 +63,7 @@
                     "AllowedProtocolMask": {
                         "type": "integer",
                         "title": "Data APN supported IP versions",
-                        "description": "The Internet Protocol versions that the system supports. Available in iOS 10.3 and later. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
+                        "description": "The Internet Protocol versions that the system supports. Available in iOS 10.3 and later. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
                         "enum": [
                             1,
                             2,
@@ -79,7 +80,7 @@
                     "AllowedProtocolMaskInRoaming": {
                         "type": "integer",
                         "title": "Data APN supported roaming IP versions",
-                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
+                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
                         "enum": [
                             1,
                             2,
@@ -96,7 +97,7 @@
                     "AllowedProtocolMaskInDomesticRoaming": {
                         "type": "integer",
                         "title": "Data APN supported domestic roaming IP versions",
-                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
+                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
                         "enum": [
                             1,
                             2,
@@ -126,18 +127,18 @@
             "type": "object",
             "title": "Default APN",
             "default": {},
-            "description": "Default APN configuration",
+            "description": "A configuration dictionary.",
             "properties": {
                 "Name": {
                     "type": "string",
                     "title": "Default APN name",
-                    "description": "The name of the default APN."
+                    "description": "The name for this configuration."
                 },
                 "AuthenticationType": {
                     "type": "string",
                     "title": "Default APN authentication type",
                     "default": "PAP",
-                    "description": "Authentication type to use for the connection.",
+                    "description": "The authentication type.",
                     "enum": [
                         "CHAP",
                         "PAP"
@@ -146,17 +147,17 @@
                 "Username": {
                     "type": "string",
                     "title": "Default APN user name",
-                    "description": "The user name for the default APN account."
+                    "description": "The user name."
                 },
                 "Password": {
                     "type": "string",
                     "title": "Default APN password",
-                    "description": "The password for the default APN account."
+                    "description": "The password for the user."
                 },
                 "AllowedProtocolMask": {
                     "type": "integer",
                     "title": "Default APN supported IP versions",
-                    "description": "The Internet Protocol versions that the system supports. Allowed values:\n* '1': IPv4\n* '2': IPv6\n* '3': Both",
+                    "description": "The Internet Protocol versions that the system supports. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
                     "enum": [
                         1,
                         2,

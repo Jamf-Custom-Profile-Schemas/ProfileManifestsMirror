@@ -1,6 +1,6 @@
 {
     "title": "Exchange Web Services (com.apple.ews.account)",
-    "description": "Exchange Web Services settings",
+    "description": "The payload that configures an Exchange Web Services accounts.",
     "properties": {
         "UserName": {
             "type": "string",

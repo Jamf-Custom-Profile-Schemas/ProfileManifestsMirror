@@ -1,29 +1,30 @@
 {
     "title": "Login Window: Scripts (com.apple.mcxloginscripts)",
-    "description": "Login Window: Scripts settings",
+    "description": "The payload that configures scripts to run at login and logout.",
     "properties": {
         "loginscripts": {
             "type": "array",
             "items": {
                 "type": "object",
                 "title": "Login Script",
+                "description": "A dictionary of login scripts.",
                 "properties": {
                     "filename": {
                         "type": "string",
                         "title": "Name",
-                        "description": "Name of the script"
+                        "description": "The filename for display purposes."
                     }
                 }
             },
             "title": "Login script",
-            "description": "Select the script that runs when users log in",
+            "description": "An array of one or more dictionaries of scripts to run at user login time.",
             "property_order": 5
         },
         "skipLoginHook": {
             "type": "boolean",
             "title": "Execute the Mac computer's LoginHook script",
             "default": false,
-            "description": "Run any LoginHook script in addition to the Login script",
+            "description": "If 'true', the system doesn't execute the login scripts during login.",
             "property_order": 10
         },
         "logoutscripts": {
@@ -31,23 +32,24 @@
             "items": {
                 "type": "object",
                 "title": "Logout Script",
+                "description": "A dictionary of login scripts.",
                 "properties": {
                     "filename": {
                         "type": "string",
                         "title": "Name",
-                        "description": "Name of the script"
+                        "description": "The filename for display purposes."
                     }
                 }
             },
             "title": "Logout script",
-            "description": "Select the script that runs when users log out",
+            "description": "An array of one or more dictionaries of scripts to run at user logout time.",
             "property_order": 15
         },
         "skipLogoutHook": {
             "type": "boolean",
             "title": "Execute the Mac computer's LogoutHook script",
             "default": false,
-            "description": "Run any LogoutHook script in addition to the Logout script",
+            "description": "If 'true', the system doesn't execute the logout scripts during logout.",
             "property_order": 20
         }
     }

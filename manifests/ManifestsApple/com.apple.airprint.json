@@ -1,6 +1,6 @@
 {
     "title": "AirPrint (com.apple.airprint)",
-    "description": "Use this section to define settings for AirPrint.",
+    "description": "The payload that configures AirPrint printer discoverability in the user's printer list.",
     "properties": {
         "AirPrint": {
             "type": "array",
@@ -22,7 +22,7 @@
                     "ResourcePath": {
                         "type": "string",
                         "title": "Resource Path",
-                        "description": "The resource path associated with the printer. This path corresponds to the 'rp' parameter of the '_ipps.tcp' Bonjour record. For example:\n* 'printers/Canon_MG5300_series'\n* 'printers/Xerox_Phaser_7600'\n* 'ipp/print'\n* 'Epson_IPP_Printer'"
+                        "description": "The resource path associated with the printer. This path corresponds to the 'rp' parameter of the '_ipps.tcp' Bonjour record. For example:\n\n- 'printers/Canon_MG5300_series'\n- 'printers/Xerox_Phaser_7600'\n- 'ipp/print'\n- 'Epson_IPP_Printer'"
                     },
                     "ForceTLS": {
                         "type": "boolean",

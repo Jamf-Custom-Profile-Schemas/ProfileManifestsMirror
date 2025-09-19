@@ -1,23 +1,26 @@
 {
-    "title": "FileVault Options (com.apple.MCX)",
-    "description": "FileVault Options settings",
+    "title": "FDE FileVault Options (com.apple.MCX)",
+    "description": "The payload that configures FileVault options.",
     "properties": {
         "dontAllowFDEDisable": {
             "type": "boolean",
             "title": "Prevent Disabling FileVault",
             "default": false,
+            "description": "If 'true', the system won't disable FileVault.",
             "property_order": 5
         },
         "dontAllowFDEEnable": {
             "type": "boolean",
             "title": "Prevent Enabling FileVault",
             "default": false,
+            "description": "If 'true', the system won't enable FileVault.",
             "property_order": 10
         },
         "DestroyFVKeyOnStandby": {
             "type": "boolean",
             "title": "Prevent Storing Temporary FileVault Key for Standby",
             "default": false,
+            "description": "If 'true', the system won't store th FileVault key across restarts.",
             "links": [
                 {
                     "rel": "More information",

@@ -1,18 +1,18 @@
 {
     "title": "Parental Controls: Web Content Filter (com.apple.familycontrols.contentfilter)",
-    "description": "Parental Controls: Web Content Filter settings",
+    "description": "The payload that configures the parental control web content filters.",
     "properties": {
         "restrictWeb": {
             "type": "boolean",
             "title": "Limit access to websites",
-            "description": "Set to true to enable Web content filters.",
+            "description": "If 'true', enables web content filters.",
             "property_order": 5
         },
         "whitelistEnabled": {
             "type": "boolean",
             "title": "Enable site allowlist",
             "default": false,
-            "description": "Set to true to use the filterWhiteList and filterBlackList lists.",
+            "description": "Use 'allowlistEnabled' instead.",
             "property_order": 10
         },
         "siteWhitelist": {
@@ -20,49 +20,95 @@
             "items": {
                 "type": "object",
                 "title": "Site Allowlist Item",
+                "description": "A dictionary defining a site for the allow list.",
                 "properties": {
                     "address": {
                         "type": "string",
                         "title": "Site address prefix",
-                        "description": "Site prefix, including http(s) scheme."
+                        "description": "The site prefix, including http(s) scheme."
                     },
                     "pageTitle": {
                         "type": "string",
                         "title": "Page Title",
-                        "description": "Optional Page Title"
+                        "description": "The site page title."
                     }
                 }
             },
             "title": "Site Allowlist",
-            "description": "If specified, this key contains an array of dictionaries that define additional allowed sites besides those in the automated list of allowed and unallowed sites, including disallowed adult sites.",
+            "description": "Use 'siteAllowlist' instead.",
             "property_order": 15
         },
         "useContentFilter": {
             "type": "boolean",
             "title": "Use built in content filter",
             "default": false,
-            "description": "Set to true to try to automatically filter content.",
+            "description": "If 'true', filters content automatically.",
             "property_order": 20
         },
         "filterWhitelist": {
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "Allowlist URL"
+                "title": "Allowlist URL",
+                "description": "An allowed site."
             },
             "title": "Content Filter Allowlist",
-            "description": "If specified and restrictWeb is true, an array of URLs designating the only allowed Websites.",
+            "description": "Use 'filterAllowlist' instead.",
             "property_order": 25
         },
         "filterBlacklist": {
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "Blacklist URL"
+                "title": "Blacklist URL",
+                "description": "A disallowed site."
             },
             "title": "Content Filter Backlist",
-            "description": "If specified and restrictWeb is true, an array of URLs of Websites never to be allowed.",
+            "description": "Use 'filterDenylist' instead.",
             "property_order": 30
+        },
+        "allowlistEnabled": {
+            "type": "boolean",
+            "default": false,
+            "description": "If 'true', enables web content filters.",
+            "property_order": 35
+        },
+        "siteAllowlist": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "A dictionary defining a site for the allow list.",
+                "properties": {
+                    "address": {
+                        "type": "string",
+                        "description": "The site prefix, including the 'http(s)' scheme."
+                    },
+                    "pageTitle": {
+                        "type": "string",
+                        "description": "The site page title."
+                    }
+                }
+            },
+            "description": "An array of sites that defines an allow list. If specified, this defines additional allowed sites besides those in the automated allow list and deny list, including disallowed adult sites.\n\nThis key is required if 'allowlistEnabled' is 'true'.",
+            "property_order": 40
+        },
+        "filterAllowlist": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "An allowed site."
+            },
+            "description": "The array of URLs that defines an allow list. When 'restrictWeb' and 'useContentFilter' are enabled, only URLs in the allow list are available to the user.",
+            "property_order": 45
+        },
+        "filterDenylist": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "A disallowed site."
+            },
+            "description": "The array of URLs that defines a deny list. When 'restrictWeb' and 'useContentFilter' are enabled, no URLs in the deny list are available to the user.",
+            "property_order": 50
         }
     }
 }

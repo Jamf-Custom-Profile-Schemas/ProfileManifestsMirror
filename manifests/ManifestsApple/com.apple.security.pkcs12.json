@@ -1,6 +1,6 @@
 {
     "title": "Certificate (PKCS #12) (com.apple.security.pkcs12)",
-    "description": "Use this section to define settings for a pkcs12 certificate.",
+    "description": "The payload that configures a PKCS #12-formatted certificate.",
     "properties": {
         "PayloadCertificateFileName": {
             "type": "string",

@@ -1,16 +1,16 @@
 {
     "title": "DNS Proxy (com.apple.dnsProxy.managed)",
-    "description": "Use this section to configure a DNS proxy network extension",
+    "description": "The payload that configures DNS proxies.",
     "properties": {
         "AppBundleIdentifier": {
             "type": "string",
-            "title": "App Bundle ID",
+            "title": "App Bundle Identifier",
             "description": "The bundle identifier of the app containing the DNS proxy network extension.",
             "property_order": 5
         },
         "ProviderBundleIdentifier": {
             "type": "string",
-            "title": "Provider Bundle ID",
+            "title": "Provider Bundle Identifier",
             "description": "The bundle identifier of the DNS proxy network extension to use. Declaring the bundle identifier is useful for apps that contain more than one DNS proxy extension.",
             "property_order": 10
         },
@@ -23,7 +23,7 @@
         "DNSProxyUUID": {
             "type": "string",
             "title": "DNS Proxy UUID",
-            "description": "A globally-unique identifier for this DNS proxy configuration. Managed apps with the same 'DNSProxyUUID' in their app attributes have their DNS lookups traffic processed by the proxy. This key is required for user enrollments.",
+            "description": "A globally unique identifier for this DNS proxy configuration. The proxy processes DNS lookups traffic for managed apps with the same 'DNSProxyUUID' in their app attributes. This key is required for user enrollment.",
             "property_order": 20
         }
     }

@@ -1,6 +1,6 @@
 {
     "title": "System Preferences (com.apple.systempreferences)",
-    "description": "Use this section to define enabled or disabled Preference Panes in System Preferences.",
+    "description": "The payload that configures the preference panes.",
     "properties": {
         "DisabledSystemSettings": {
             "type": "array",
@@ -103,7 +103,7 @@
                     ]
                 }
             },
-            "description": "The list of disabled System Settings extensions. All other items will be enabled. When DisabledSystemSettings is specified, DisabledPreferencePanes and EnabledPreferencePanes are ignored. Note that a given System Settings extension may supply more than one section in System Settings; disabling such an extension will disable all sections it supplies.",
+            "description": "The list of disabled System Settings extensions. All other items will be enabled. When 'DisabledSystemSettings' is specified, the device ignores 'DisabledPreferencePanes' and 'EnabledPreferencePanes'.\n\nNote:\nA given System Settings extension can supply more than one section in System Settings; disabling such an extension disables all sections it supplies.",
             "property_order": 5
         },
         "EnabledPreferencePanes": {

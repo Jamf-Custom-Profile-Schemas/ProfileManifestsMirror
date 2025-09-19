@@ -1,6 +1,6 @@
 {
     "title": "Setup Assistant (com.apple.SetupAssistant.managed)",
-    "description": "Use this section to define which Setup Assistant items should be skipped.",
+    "description": "The payload that configures Setup Assistant settings.",
     "properties": {
         "SkipSetupItems": {
             "type": "array",
@@ -10,6 +10,7 @@
                 "enum": [
                     "Accessibility",
                     "ActionButton",
+                    "AdditionalPrivacySettings",
                     "Android",
                     "Appearance",
                     "AppleID",
@@ -29,7 +30,9 @@
                     "Keyboard",
                     "Location",
                     "MessagingActivationUsingPhoneNumber",
+                    "Multitasking",
                     "OnBoarding",
+                    "OSShowcase",
                     "Passcode",
                     "Payment",
                     "Privacy",
@@ -44,6 +47,7 @@
                     "SoftwareUpdate",
                     "TermsOfAddress",
                     "TOS",
+                    "Tips",
                     "UnlockWithWatch",
                     "UpdateCompleted",
                     "Wallpaper",
@@ -55,6 +59,7 @@
                     "enum_titles": [
                         "Accessibility",
                         "Action Button",
+                        "Additional Privacy Settings",
                         "Android",
                         "Appearance",
                         "Apple ID",
@@ -74,7 +79,9 @@
                         "Keyboard",
                         "Location",
                         "Messaging Activation Using Phone Number",
+                        "Multitasking",
                         "OnBoarding",
+                        "OS Showcase",
                         "Passcode",
                         "Payment",
                         "Privacy",
@@ -89,6 +96,7 @@
                         "Software Update",
                         "Terms of Address",
                         "Terms of Service",
+                        "Tips",
                         "Unlock with Apple Watch",
                         "Update Completed",
                         "Wallpaper",
@@ -99,7 +107,7 @@
                 }
             },
             "title": "Skip Setup Items",
-            "description": "An array strings that describe the setup items to skip. SkipKeys provides a list of valid strings and their meanings. Available in iOS 14, macOS 15 and later.",
+            "description": "An array of strings that describe the setup items to skip. 'SkipKeys' provides a list of valid strings and their meanings. Available in iOS 14 and later, and macOS 15 and later.",
             "links": [
                 {
                     "rel": "More information",

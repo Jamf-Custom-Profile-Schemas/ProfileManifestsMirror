@@ -1,29 +1,29 @@
 {
-    "title": "Messages: Jabber (com.apple.jabber.account)",
-    "description": "Messages: Jabber settings",
+    "title": "Jabber Account (com.apple.jabber.account)",
+    "description": "The payload that configures a Jabber account.",
     "properties": {
         "JabberAccountDescription": {
             "type": "string",
-            "title": "Account description",
-            "description": "The display name for the account.",
+            "title": "Account Description",
+            "description": "The description of the account.",
             "property_order": 5
         },
         "JabberUserName": {
             "type": "string",
-            "title": "Account name",
-            "description": "The chat name of the user.",
+            "title": "Account Username",
+            "description": "The user's user name.",
             "property_order": 10
         },
         "JabberPassword": {
             "type": "string",
-            "title": "Password",
-            "description": "The password for the account.",
+            "title": "Account Password",
+            "description": "The user's password.",
             "property_order": 15
         },
         "JabberAuthentication": {
             "type": "string",
-            "title": "Authentication Type",
-            "description": "The authentication method for the server.",
+            "title": "Jabber Authentication",
+            "description": "The authentication method for the account.",
             "enum": [
                 "JabberAuthPassword",
                 "JabberAuthKerberos"
@@ -38,22 +38,22 @@
         },
         "JabberHostName": {
             "type": "string",
-            "title": "Hostname",
-            "description": "The IP address or fully qualified domain name (FQDN) of the server.",
+            "title": "Account Hostname",
+            "description": "The server's address.",
             "property_order": 25
         },
         "JabberPort": {
             "type": "integer",
-            "title": "Port",
-            "default": 5223,
-            "description": "The port on which to connect to the server.",
+            "title": "Port Number",
+            "default": 5222,
+            "description": "The server's port.",
             "property_order": 30
         },
         "JabberUseSSL": {
             "type": "boolean",
             "title": "Use SSL",
-            "default": true,
-            "description": "Enable Secure Socket Layer for this connection.",
+            "default": false,
+            "description": "If 'true', enables SSL.",
             "property_order": 35
         }
     }

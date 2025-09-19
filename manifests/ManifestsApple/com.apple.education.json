@@ -1,6 +1,6 @@
 {
     "title": "Education Configuration (com.apple.education)",
-    "description": "Education Configuration settings",
+    "description": "The payload that configures the users, groups, and departments within an educational organization.",
     "properties": {
         "OrganizationName": {
             "type": "string",
@@ -17,7 +17,7 @@
         "PayloadCertificateUUID": {
             "type": "string",
             "title": "Payload Certificate UUID",
-            "description": "The UUID of an identity certificate payload within the same profile to use for performing client authentication with other devices. This property supports PKCS12 certificates.\nRequired to configure Classroom. Has no effect on the configuration of the Shared iPad login screen.",
+            "description": "The UUID of an identity certificate payload within the same profile to use for performing client authentication with other devices. This property supports PKCS12 certificates.\n\nRequired to configure Classroom. Has no effect on the configuration of the Shared iPad login screen.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 15
         },
@@ -26,6 +26,7 @@
             "items": {
                 "type": "object",
                 "title": "GroupsDictionary",
+                "description": "An array of dictionaries defining groups.",
                 "properties": {
                     "BeaconID": {
                         "type": "integer",
@@ -80,12 +81,12 @@
                             "description": "A device group identifier."
                         },
                         "title": "Device Group Identifiers",
-                        "description": "The identifiers that refer to entries in the 'DeviceGroups' array to which the instructor can assign users from this class.\nHas no effect on the configuration of the Shared iPad login screen."
+                        "description": "The identifiers that refer to entries in the 'DeviceGroups' array to which the instructor can assign users from this class.\n\nHas no effect on the configuration of the Shared iPad login screen."
                     }
                 }
             },
             "title": "Groups",
-            "description": "For shared iPad profiles: The array of dictionaries that defines which groups the user can select in the login window.\nFor leader/teacher profiles: The array of dictionaries that defines the groups that the user can control.\nFor member/student profiles: The array of dictionaries that defines the groups where the user is a member.",
+            "description": "_For Shared iPad profiles:_ The array of dictionaries that defines which groups the user can select in the Login Window.\n\n_For leader/teacher profiles:_ The array of dictionaries that defines the groups that the user can control.\n\n_For member/student profiles:_ The array of dictionaries that defines the groups where the user is a member.",
             "property_order": 20
         },
         "Users": {
@@ -93,6 +94,7 @@
             "items": {
                 "type": "object",
                 "title": "UsersDictionary",
+                "description": "A user in the organization.",
                 "properties": {
                     "Identifier": {
                         "type": "string",
@@ -122,7 +124,7 @@
                     "PhoneticFamilyName": {
                         "type": "string",
                         "title": "Phonetic Family Name",
-                        "description": "The user's phonetic family name. The system uses this name to sort users in the Classroom app and the shared iPad login screen."
+                        "description": "The user's phonetic family name. The system uses this name to sort users in the Classroom app and the Shared iPad login screen."
                     },
                     "ImageURL": {
                         "type": "string",
@@ -137,12 +139,12 @@
                     "AppleID": {
                         "type": "string",
                         "title": "Apple ID",
-                        "description": "The Managed Apple Account for this user.\nNot required to configure Classroom, but if set the system uses it.\nRequired to configure the Shared iPad login screen."
+                        "description": "The Managed Apple Account for this user.\n\nNot required to configure Classroom, but if set the system uses it.\n\nRequired to configure the Shared iPad login screen."
                     },
                     "PasscodeType": {
                         "type": "string",
                         "title": "Passcode Type",
-                        "description": "The type of passcode UI to show when the user is at the login window.",
+                        "description": "The type of passcode UI to show when the user is at the Login Window.",
                         "enum": [
                             "complex",
                             "four",
@@ -152,7 +154,7 @@
                 }
             },
             "title": "Users",
-            "description": "For shared iPad profiles: The array of dictionaries that define the users that the system displays in the iOS login window.\nFor leader/teacher profiles: The array of dictionaries that define users that are members of the teacher's groups.\nFor member/student profiles: The array of dictionaries that needs to contain the definition of the user specified in the 'UserIdentifier' key. With one-to-one member devices, this key should include only the device user and the teacher but not other class members.",
+            "description": "For Shared iPad profiles: The array of dictionaries that define the users that the system displays in the iOS Login Window.\n\n_For leader/teacher profiles:_ The array of dictionaries that define users that are members of the teacher's groups.\n\n_For member/student profiles:_ The array of dictionaries that needs to contain the definition of the user specified in the 'UserIdentifier' key. With one-to-one member devices, this key should include only the device user and the teacher but not other class members.",
             "property_order": 25
         },
         "LeaderPayloadCertificateAnchorUUID": {
@@ -163,7 +165,7 @@
                 "description": "A certificate payload UUID."
             },
             "title": "Leader Payload Certificate Anchor UUIDs",
-            "description": "The array of UUIDs referring to certificate payloads within the same profile that the system uses to authorize leader peer certificate identities. This array needs to contain all necessary certificates to validate the entire chain of trust. Leader certificates needs to have the common name prefix leader, which is case insensitive.\nThis property doesn't support identity payloads or PKCS12 certificates.\nRequired when configuring a student device for Classroom, and ignored when configuring an instructor device. Has no effect on the configuration of the Shared iPad login screen.",
+            "description": "The array of UUIDs referring to certificate payloads within the same profile that the system uses to authorize leader peer certificate identities. This array needs to contain all necessary certificates to validate the entire chain of trust. Leader certificates needs to have the common name prefix leader, which is case insensitive.\n\nThis property doesn't support identity payloads or PKCS12 certificates.\n\nRequired when configuring a student device for Classroom, and ignored when configuring an instructor device. Has no effect on the configuration of the Shared iPad login screen.",
             "property_order": 30
         },
         "MemberPayloadCertificateAnchorUUID": {
@@ -174,19 +176,19 @@
                 "description": "A certificate payload UUID."
             },
             "title": "Member Payload Certificate Anchor UUIDs",
-            "description": "The array of UUIDs referring to certificate payloads within the same profile that the system uses to authorize group member peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Member certificates must have the common name prefix member (case insensitive).\nThis property doesn't support identity payloads or PKCS12 certificates.\nRequired when configuring a student device for Classroom, and ignored when configuring an instructor device. Has no effect on the configuration of the Shared iPad login screen.",
+            "description": "The array of UUIDs referring to certificate payloads within the same profile that the system uses to authorize group member peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Member certificates must have the common name prefix member (case insensitive).\n\nThis property doesn't support identity payloads or PKCS12 certificates.\n\nRequired when configuring a student device for Classroom, and ignored when configuring an instructor device. Has no effect on the configuration of the Shared iPad login screen.",
             "property_order": 35
         },
         "ResourcePayloadCertificateUUID": {
             "type": "string",
             "title": "Resource Payload Certificate UUID",
-            "description": "The UUID of an identity certificate payload within the same profile that the system uses to perform client authentication when fetching additional resources, such as student images.\nIf set, the system uses this key to configure both Classroom and the Shared iPad login screen. If not set, the system uses MDM client identity.",
+            "description": "The UUID of an identity certificate payload within the same profile that the system uses to perform client authentication when fetching additional resources, such as student images.\n\nIf set, the system uses this key to configure both Classroom and the Shared iPad login screen. If not set, the system uses MDM client identity.",
             "property_order": 40
         },
         "UserIdentifier": {
             "type": "string",
             "title": "User Identifier",
-            "description": "The unique string that identifies the user of this device within the organization.\nDon't set this value in payloads intended to configure the Shared iPad login screen.",
+            "description": "The unique string that identifies the user of this device within the organization.\n\nDon't set this value in payloads intended to configure the Shared iPad login screen.",
             "property_order": 45
         },
         "Departments": {
@@ -194,6 +196,7 @@
             "items": {
                 "type": "object",
                 "title": "DepartmentsDictionary",
+                "description": "A department in the organization.",
                 "properties": {
                     "Name": {
                         "type": "string",
@@ -213,7 +216,7 @@
                 }
             },
             "title": "Departments",
-            "description": "For shared iPad profiles: The array of dictionaries that defines which departments the system displays in the Shared iPad login screen. If set, the system uses this key to configure both Classroom and the Shared iPad login screen.",
+            "description": "_For Shared iPad profiles:_ The array of dictionaries that defines which departments the system displays in the Shared iPad login screen. If set, the system uses this key to configure both Classroom and the Shared iPad login screen.",
             "property_order": 50
         },
         "DeviceGroups": {
@@ -221,6 +224,7 @@
             "items": {
                 "type": "object",
                 "title": "DeviceGroupsDictionary",
+                "description": "A device group in the organization.",
                 "properties": {
                     "Identifier": {
                         "type": "string",
@@ -245,7 +249,7 @@
                 }
             },
             "title": "Device Groups",
-            "description": "For leader/teacher profiles: The array of dictionaries that defines which device groups the leader can assign devices to. Not included in member payloads.",
+            "description": "_For leader/teacher profiles:_ The array of dictionaries that defines which device groups the leader can assign devices to. Not included in member payloads.",
             "property_order": 55
         },
         "ScreenObservationPermissionModificationAllowed": {

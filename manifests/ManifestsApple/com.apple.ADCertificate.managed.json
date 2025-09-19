@@ -1,36 +1,36 @@
 {
-    "title": "AD Certificate (com.apple.ADCertificate.managed)",
-    "description": "Active Directory Certificate settings",
+    "title": "Active Directory Certificate (com.apple.ADCertificate.managed)",
+    "description": "The payload that configures Active Directory Certificate settings.",
     "properties": {
         "Description": {
             "type": "string",
             "title": "Description",
-            "description": "The description of the certificate request as shown in the certificate selector of other payloads such as VPN and Network",
+            "description": "A user-friendly description of the certification identity.",
             "property_order": 5
         },
         "CertServer": {
             "type": "string",
             "title": "Certificate Server",
-            "description": "Fully qualified host name of the Active Directory issuing CA.",
+            "description": "The fully qualified host name of the CA.",
             "property_order": 10
         },
         "CertificateAuthority": {
             "type": "string",
             "title": "Certificate Authority",
-            "description": "Name of the CA. This value is determined from the Common Name (CN) of the Active Directory entry: CN=(your CA name), CN='Certification Authorities', CN='Public Key Services', CN='Services', or CN='Configuration', (your base Domain Name).",
+            "description": "The name of the certificate authority (CA), which is determined from the common name (CN) of the Active Directory entry. Available in macOS 10.8 and later. Valid values:\n\n- CN=<your CA Name>\n- CN='Certification Authorities'\n- CN='Public Key Services'\n- CN='Services'\n- CN='Configuration'\n- CN=<your base Domain Name>",
             "property_order": 15
         },
         "CertTemplate": {
             "type": "string",
             "title": "Certificate Template",
             "default": "User",
-            "description": "The name of the certificate template as it appears in the General tab of the template's object in the Certificate Templates' Microsoft Management Console snap-in component. Usually Machine or User",
+            "description": "The certificate template for your environment. The default user certificate value is \\'User\\'. The default computer certificate value is \\'Machine\\'.",
             "property_order": 20
         },
         "CertificateAcquisitionMechanism": {
             "type": "string",
-            "title": "Acquisition Mechanism",
-            "description": "Most commonly RPC. If using Web enrollment, HTTP.",
+            "title": "Certificate Acquisition Mechanism",
+            "description": "This value is most commonly 'RPC'; if using web enrollment, use 'HTTP'. Available in macOS 10.8 and later.",
             "enum": [
                 "RPC",
                 "HTTP"
@@ -39,23 +39,23 @@
         },
         "CertificateRenewalTimeInterval": {
             "type": "integer",
-            "title": "Certificate Expiration Notification Threshold",
+            "title": "Certificate Renewal Time Interval",
             "default": 14,
-            "description": "The number of days before the certificate expires at which to start showing the expiration notification",
+            "description": "The number of days in advance of certificate expiration that the notification center notifies the user.",
             "property_order": 30
         },
         "Keysize": {
             "type": "integer",
-            "title": "RSA Key Size",
+            "title": "Key Size",
             "default": 2048,
-            "description": "The RSA key size for the Certificate Signing Request (CSR).",
+            "description": "The RSA key size for the certificate signing request (CSR). Available in macOS 10.11 and later.",
             "property_order": 35
         },
         "PromptForCredentials": {
             "type": "boolean",
-            "title": "Prompt for credentials",
+            "title": "Prompt for Credentials",
             "default": false,
-            "description": "Prompt the user for credentials.  This setting is not supported for pushed profiles",
+            "description": "If 'true', the system prompts the user for credentials when is installs the profile. This key applies only to user certificates with the Manual Download profile delivery method. Omit this key for computer certificates. Available in macOS 10.8 and later.",
             "property_order": 40
         },
         "UserName": {
@@ -72,23 +72,23 @@
         },
         "AllowAllAppsAccess": {
             "type": "boolean",
-            "title": "Allow access to all apps",
+            "title": "Allow All Apps Access",
             "default": false,
-            "description": "Allow all apps to access the certificate in the keychain",
+            "description": "If 'true', gives apps access to the private key. Available in macOS 10.10 and later.",
             "property_order": 55
         },
         "KeyIsExtractable": {
             "type": "boolean",
-            "title": "Allow export from keychain",
+            "title": "Key Is Extractable",
             "default": false,
-            "description": "Allow admin to export private key from the keychain",
+            "description": "If 'true', the system allows exporting the private key. Available in macOS 10.10 and later.",
             "property_order": 60
         },
         "EnableAutoRenewal": {
             "type": "boolean",
-            "title": "Enable auto-renewal",
+            "title": "Enable Auto Renewal",
             "default": false,
-            "description": "Allows the certificate to attempt an auto-renewal from the server.",
+            "description": "If 'true', the certificate obtained with this payload attempts auto-renewal. Auto-renewal can only be used with device Active Directory certificate payloads. Available in macOS 10.13.4 and later.",
             "property_order": 65
         }
     }

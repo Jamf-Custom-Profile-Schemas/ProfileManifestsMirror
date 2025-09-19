@@ -1,6 +1,6 @@
 {
     "title": "Extensible Single Sign-On (com.apple.extensiblesso)",
-    "description": "Configures an app extension to handle SSO.",
+    "description": "The payload that configures an app extension that performs single sign-on (SSO).",
     "properties": {
         "ExtensionIdentifier": {
             "type": "string",
@@ -33,9 +33,9 @@
             "items": {
                 "type": "string",
                 "title": "Hostname / Domain name",
-                "description": "A host or domain name. Values that begin with a \".\" will be used as domain names."
+                "description": "A host or domain name, with or without a leading dot."
             },
-            "description": "An array of host or domain names that apps can authenticate through the app extension.\nRequired for 'Credential' payloads. Ignored for 'Redirect' payloads.\nThe system:\n* Matches host or domain names case-insensitively\n* Requires that all the host and domain names of all installed Extensible SSO payloads are unique\nHost names that begin with a “.” are wildcard suffixes that match all subdomains; otherwise the host name needs be an exact match.",
+            "description": "An array of host or domain names that apps can authenticate through the app extension.\n\nRequired for 'Credential' payloads. Ignored for 'Redirect' payloads.\n\nThe system:\n\n- Matches host or domain names case-insensitively\n- Requires that all the host and domain names of all installed Extensible SSO payloads are unique\n\nNote:\nHost names that begin with a \".\" are wildcard suffixes that match all subdomains; otherwise the host name needs be an exact match.",
             "property_order": 20
         },
         "Realm": {
@@ -52,7 +52,7 @@
                 "pattern": "^https?://.*"
             },
             "title": "URLs",
-            "description": "An array of URL prefixes of identity providers where the app extension performs SSO.\nRequired for 'Redirect' payloads. Ignored for 'Credential' payloads.\nThe URLs need to begin with 'http://' or 'https://'.\nThe system:\n* Matches scheme and host name case-insensitively\n* Doesn't allow query parameters and URL fragments\n* Requires that the URLs of all installed Extensible SSO payloads are unique",
+            "description": "An array of URL prefixes of identity providers where the app extension performs SSO.\n\nRequired for 'Redirect' payloads. Ignored for 'Credential' payloads.\n\nThe URLs need to begin with 'http://' or 'https://'.\n\nThe system:\n\n- Matches scheme and host name case-insensitively\n- Doesn't allow query parameters and URL fragments\n- Requires that the URLs of all installed Extensible SSO payloads are unique",
             "property_order": 30
         },
         "DeniedBundleIdentifiers": {
@@ -70,7 +70,7 @@
             "type": "string",
             "title": "Screen Locked Behavior",
             "default": "Cancel",
-            "description": "If set to 'Cancel', the system cancels authentication requests when the screen is locked. If set to 'DoNotHandle', the request continues without SSO instead. This doesn't apply to requests where 'userInterfaceEnabled' is 'false', or for background URLSession requests. Available in iOS 15 and later, and macOS 12 and later.",
+            "description": "If set to 'Cancel', the system cancels authentication requests when the screen is locked. If set to 'DoNotHandle', the request continues without SSO instead. This doesn't apply to requests where 'userInterfaceEnabled' is 'false', or for background 'URLSession' requests. Available in iOS 15 and later, and macOS 12 and later.",
             "enum": [
                 "Cancel",
                 "DoNotHandle"
@@ -142,7 +142,7 @@
                     "type": "string",
                     "title": "Credential Use Mode",
                     "default": "always",
-                    "description": "This setting affects how other processes use the Kerberos Extension credential. Allowed values:\n\n* 'always': The system always uses the credential if the SPN matches the Kerberos Extension 'Hosts' array and the caller hasn't specified another credential. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n* 'whenNotSpecified': The system only uses the extension credential if the SPN matches the Kerberos Extension 'Hosts' array. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n* 'kerberosDefault': The system uses the default Kerberos processes to select credentials, and normally uses the default Kerberos credential. This is the same as turning off this capabiliity.\nAvailable in macOS 11 and later.",
+                    "description": "This setting affects how other processes use the Kerberos Extension credential. Allowed values:\n\n- 'always': The system always uses the credential if the SPN matches the Kerberos Extension 'Hosts' array and the caller hasn't specified another credential. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n- 'whenNotSpecified': The system only uses the extension credential if the SPN matches the Kerberos Extension 'Hosts' array. However, the system won't use the credential if the calling app isn't in the 'credentialBundleIDACL'.\n- 'kerberosDefault': The system uses the default Kerberos processes to select credentials, and normally uses the default Kerberos credential. This is the same as turning off this capability.\n\nAvailable in macOS 11 and later.",
                     "enum": [
                         "always",
                         "whenNotSpecified",
@@ -159,7 +159,7 @@
                 "customUsernameLabel": {
                     "type": "string",
                     "title": "Custom Username Label",
-                    "description": "The custom user name label used in the Kerberos extension instead of “Username,” such as “Company ID”. Available in macOS 11 and later."
+                    "description": "The custom user name label used in the Kerberos extension instead of \"Username,\" such as \"Company ID\". Available in macOS 11 and later."
                 },
                 "delayUserSetup": {
                     "type": "boolean",
@@ -170,7 +170,7 @@
                 "helpText": {
                     "type": "string",
                     "title": "Help Text",
-                    "description": "The text to display to the user at the bottom of the Kerberos login window. You can also use this to display help information or disclaimer text. Available in iOS 14 and later, and macOS 11 and later."
+                    "description": "The text to display to the user at the bottom of the Kerberos Login Window. You can also use this to display help information or disclaimer text. Available in iOS 14 and later, and macOS 11 and later."
                 },
                 "isDefaultRealm": {
                     "type": "boolean",
@@ -209,7 +209,7 @@
                         "description": "A host or domain name in the format of [protocol/]hostname[:port][/path]"
                     },
                     "title": "Preferred KDCs",
-                    "description": "The ordered list of preferred Key Distribution Centers (KDCs) to use for Kerberos traffic. Use this if the servers aren't discoverable through DNS. If the servers are specified, then the system uses them for both connectivity checks and attempts to use them first for Kerberos traffic. If the servers don't respond, the device falls back to DNS discovery. Format each entry the same as it would be in a 'krb5.conf' file, for example:\n* 'adserver1.example.com'\n* 'tcp/adserver1.example.com:88'\n* 'kkdcp://kerberosproxy.example.com:443/kkdcp'",
+                    "description": "The ordered list of preferred Key Distribution Centers (KDCs) to use for Kerberos traffic. Use this if the servers aren't discoverable through DNS. If the servers are specified, then the system uses them for both connectivity checks and attempts to use them first for Kerberos traffic. If the servers don't respond, the device falls back to DNS discovery. Format each entry the same as it would be in a 'krb5.conf' file, for example:\n\n- 'adserver1.example.com'\n- 'tcp/adserver1.example.com:88'\n- 'kkdcp://kerberosproxy.example.com:443/kkdcp'",
                     "pattern": "^((kkdcp:\\/\\/)|(tcp\\/))?[^:\\/]+(:\\d+)?(\\/[^:]*)?$"
                 },
                 "pwChangeURL": {
@@ -232,7 +232,7 @@
                     "type": "boolean",
                     "title": "Password Requirement Complexity",
                     "default": false,
-                    "description": "If 'true', the system requires passwords to meet Active Directory's definition of “complex”. Available in macOS 10.15 and later."
+                    "description": "If 'true', the system requires passwords to meet Active Directory's definition of \"complex\". Available in macOS 10.15 and later."
                 },
                 "pwReqHistory": {
                     "type": "integer",
@@ -454,7 +454,7 @@
                 },
                 "identityIssuerAutoSelectFilter": {
                     "type": "string",
-                    "description": "A string with wildcards that can use used to filter the list of available SmartCards by issuer. e.g “*My CA2*”. If there is one remaining, it will be auto-selected. If there more than one remaining, then the list is shorter. Available in macOS 15 and later."
+                    "description": "A string with wildcards that can use used to filter the list of available SmartCards by issuer. e.g \"\\*My CA2\\*\". If there is one remaining, it will be auto-selected. If there more than one remaining, then the list is shorter. Available in macOS 15 and later."
                 },
                 "allowSmartCard": {
                     "type": "boolean",
@@ -520,7 +520,7 @@
                 "EnableCreateUserAtLogin": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Enables creating new users at the login window with an 'AuthenticationMethod' of either 'Password' or 'SmartCard'. Requires that 'UseSharedDeviceKeys' is 'true'."
+                    "description": "Enables creating users at the Login Window with an 'AuthenticationMethod' of either 'Password' or 'SmartCard'. Requires that 'UseSharedDeviceKeys' is 'true'."
                 },
                 "EnableAuthorization": {
                     "type": "boolean",
@@ -529,7 +529,7 @@
                 },
                 "TokenToUserMapping": {
                     "type": "object",
-                    "description": "The attribute mapping to use when creating new users or for authorization.",
+                    "description": "The attribute mapping to use when creating users, or for authorization.",
                     "properties": {
                         "AccountName": {
                             "type": "string",
@@ -543,16 +543,17 @@
                 },
                 "NewUserAuthorizationMode": {
                     "type": "string",
-                    "description": "The permission to apply to newly created accounts at login. Allowed values:\n\n* 'Standard': The account is a standard user.\n* 'Admin': The system adds the account to the local administrators group.\n* 'Groups': The system assigns group to the account using 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.",
+                    "description": "The permission to apply to newly created accounts at login. Allowed values:\n\n- 'Standard': The account is a standard user.\n- 'Admin': The system adds the account to the local administrators group.\n- 'Groups': The system assigns groups to the account using 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.\n- 'Temporary': The system uses a temporary session configuration for newly created accounts at login.",
                     "enum": [
                         "Standard",
                         "Admin",
-                        "Groups"
+                        "Groups",
+                        "Temporary"
                     ]
                 },
                 "UserAuthorizationMode": {
                     "type": "string",
-                    "description": "The permission to apply to an account each time the user authenticates. Allowed values:\n\n* 'Standard': The account is a standard user.\n* 'Admin': The system adds the account to the local administrators group.\n* 'Groups': The system assigns group to the account using 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.",
+                    "description": "The permission to apply to an account each time the user authenticates. Allowed values:\n\n- 'Standard': The account is a standard user.\n- 'Admin': The system adds the account to the local administrators group.\n- 'Groups': The system assigns group to the account using 'AdministratorGroups', 'AdditionalGroups', or 'AuthorizationGroups'.",
                     "enum": [
                         "Standard",
                         "Admin",
@@ -577,7 +578,7 @@
                 },
                 "AuthorizationGroups": {
                     "type": "object",
-                    "description": "The pairing of Authorization Rights to group names. The system updates the Authorization Right to use the group when used.",
+                    "description": "The pairing of Authorization Rights to group names. When using this, the system updates the Authorization Right to use the group.",
                     "properties": {
                         "{{key}}": {
                             "type": "string"
@@ -592,7 +593,7 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "description": "* AttemptAuthentication\n    Platform SSO authentication is attempted before proceeding. If offline, unlock will continue\n    if the local account password matches. If online and the credential is incorrect, then a\n    successful Platform SSO authentication is required to proceed, even if taken offline.\n* RequireAuthentication\n    Platform SSO authentication is required before proceeding.  If the device is offline and\n    `AllowOfflineGracePeriod` is enabled, then the offline `OfflineGracePeriod` is used to determine\n    if the user can proceed or not. If online and the credential is incorrect, then a valid Platform\n    SSO authentication is required to proceed regardless of the `OfflineGracePeriod`. If the account\n    is not registered for Platform SSO and `AllowAuthenticationGracePeriod` is enabled, then the\n    `AuthenticationGracePeriod` is used to determine if the user can proceed or not.\n* AllowOfflineGracePeriod\n    Allow the use of the `OfflineGracePeriod` when `RequireAuthentication` is enabled.  If\n    `AllowOfflineGracePeriod` is not set, then offline access is denied.\n* AllowAuthenticationGracePeriod\n    Allow the use of the `AuthenticationGracePeriod` for other local accounts when `RequireAuthentication`\n    is enabled. The `AuthenticationGracePeriod` starts when any of the policies have been updated. If\n    `AllowAuthenticationGracePeriod` is not set, then unregistered account access is denied.",
+                        "description": "* AttemptAuthentication\n    Platform SSO authentication is attempted before proceeding. If offline, unlock will continue\n    if the local account password matches. If online and the credential is incorrect, then a\n    successful Platform SSO authentication is required to proceed, even if taken offline.\n* RequireAuthentication\n    Platform SSO authentication is required before proceeding.  If the device is offline and\n    'AllowOfflineGracePeriod' is enabled, then the offline 'OfflineGracePeriod' is used to determine\n    if the user can proceed or not. If online and the credential is incorrect, then a valid Platform\n    SSO authentication is required to proceed regardless of the 'OfflineGracePeriod'. If the account\n    is not registered for Platform SSO and 'AllowAuthenticationGracePeriod' is enabled, then the\n    'AuthenticationGracePeriod' is used to determine if the user can proceed or not.\n* AllowOfflineGracePeriod\n    Allow the use of the 'OfflineGracePeriod' when 'RequireAuthentication' is enabled.  If\n    'AllowOfflineGracePeriod' is not set, then offline access is denied.\n* AllowAuthenticationGracePeriod\n    Allow the use of the 'AuthenticationGracePeriod' for other local accounts when 'RequireAuthentication'\n    is enabled. The 'AuthenticationGracePeriod' starts when any of the policies have been updated. If\n    'AllowAuthenticationGracePeriod' is not set, then unregistered account access is denied.",
                         "enum": [
                             "AttemptAuthentication",
                             "RequireAuthentication",
@@ -600,13 +601,13 @@
                             "AllowAuthenticationGracePeriod"
                         ]
                     },
-                    "description": "The policy to apply when using Platform SSO at FileVault unlock on Apple Silicon Macs. Applies when 'AuthenticationMethod' is 'Password'. Available in macOS 15 and later."
+                    "description": "The policy to apply when using Platform SSO at FileVault unlock on a Mac with Apple silicon. Applies when 'AuthenticationMethod' is 'Password'. Available in macOS 15 and later."
                 },
                 "LoginPolicy": {
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "description": "* AttemptAuthentication\n    Platform SSO authentication is attempted before proceeding. If offline, unlock will continue\n    if the local account password matches. If online and the credential is incorrect, then a\n    successful Platform SSO authentication is required to proceed, even if taken offline.\n* RequireAuthentication\n    Platform SSO authentication is required before proceeding.  If the device is offline and\n    `AllowOfflineGracePeriod` is enabled, then the offline `OfflineGracePeriod` is used to determine\n    if the user can proceed or not. If online and the credential is incorrect, then a valid Platform\n    SSO authentication is required to proceed regardless of the `OfflineGracePeriod`. If the account\n    is not registered for Platform SSO and `AllowAuthenticationGracePeriod` is enabled, then the\n    `AuthenticationGracePeriod` is used to determine if the user can proceed or not.\n* AllowOfflineGracePeriod\n    Allow the use of the `OfflineGracePeriod` when `RequireAuthentication` is enabled.  If\n    `AllowOfflineGracePeriod` is not set, then offline access is denied.\n* AllowAuthenticationGracePeriod\n    Allow the use of the `AuthenticationGracePeriod` for other local accounts when `RequireAuthentication`\n    is enabled. The `AuthenticationGracePeriod` starts when any of the policies have been updated. If\n    `AllowAuthenticationGracePeriod` is not set, then unregistered account access is denied.",
+                        "description": "* AttemptAuthentication\n    Platform SSO authentication is attempted before proceeding. If offline, unlock will continue\n    if the local account password matches. If online and the credential is incorrect, then a\n    successful Platform SSO authentication is required to proceed, even if taken offline.\n* RequireAuthentication\n    Platform SSO authentication is required before proceeding.  If the device is offline and\n    'AllowOfflineGracePeriod' is enabled, then the offline 'OfflineGracePeriod' is used to determine\n    if the user can proceed or not. If online and the credential is incorrect, then a valid Platform\n    SSO authentication is required to proceed regardless of the 'OfflineGracePeriod'. If the account\n    is not registered for Platform SSO and 'AllowAuthenticationGracePeriod' is enabled, then the\n    'AuthenticationGracePeriod' is used to determine if the user can proceed or not.\n* AllowOfflineGracePeriod\n    Allow the use of the 'OfflineGracePeriod' when 'RequireAuthentication' is enabled.  If\n    'AllowOfflineGracePeriod' is not set, then offline access is denied.\n* AllowAuthenticationGracePeriod\n    Allow the use of the 'AuthenticationGracePeriod' for other local accounts when 'RequireAuthentication'\n    is enabled. The 'AuthenticationGracePeriod' starts when any of the policies have been updated. If\n    'AllowAuthenticationGracePeriod' is not set, then unregistered account access is denied.",
                         "enum": [
                             "AttemptAuthentication",
                             "RequireAuthentication",
@@ -614,13 +615,13 @@
                             "AllowAuthenticationGracePeriod"
                         ]
                     },
-                    "description": "The policy to apply when using Platform SSO at the login window. Applies when 'AuthenticationMethod' is 'Password'. Available in macOS 15 and later."
+                    "description": "The policy to apply when using Platform SSO at the Login Window. Applies when 'AuthenticationMethod' is 'Password'. Available in macOS 15 and later."
                 },
                 "UnlockPolicy": {
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "description": "* AttemptAuthentication\n    Platform SSO authentication is attempted before proceeding. If offline, unlock will continue\n    if the local account password matches. If online and the credential is incorrect, then a\n    successful Platform SSO authentication is required to proceed, even if taken offline.\n* RequireAuthentication\n    Platform SSO authentication is required before proceeding.  If the device is offline and\n    `AllowOfflineGracePeriod` is enabled, then the offline `OfflineGracePeriod` is used to determine\n    if the user can proceed or not. If online and the credential is incorrect, then a valid Platform\n    SSO authentication is required to proceed regardless of the `OfflineGracePeriod`. If the account\n    is not registered for Platform SSO and `AllowAuthenticationGracePeriod` is enabled, then the\n    `AuthenticationGracePeriod` is used to determine if the user can proceed or not.\n* AllowOfflineGracePeriod\n    Allow the use of the `OfflineGracePeriod` when `RequireAuthentication` is enabled.  If\n    `AllowOfflineGracePeriod` is not set, then offline access is denied.\n* AllowAuthenticationGracePeriod\n    Allow the use of the `AuthenticationGracePeriod` for other local accounts when `RequireAuthentication`\n    is enabled. The `AuthenticationGracePeriod` starts when any of the policies have been updated. If\n    `AllowAuthenticationGracePeriod` is not set, then unregistered account access is denied.\n* AllowTouchIDOrWatchForUnlock\n    Allow TouchID or Watch to unlock the screensaver instead of Platform SSO authentication when\n    `RequireAuthentication` is enabled.",
+                        "description": "* AttemptAuthentication\n    Platform SSO authentication is attempted before proceeding. If offline, unlock will continue\n    if the local account password matches. If online and the credential is incorrect, then a\n    successful Platform SSO authentication is required to proceed, even if taken offline.\n* RequireAuthentication\n    Platform SSO authentication is required before proceeding.  If the device is offline and\n    'AllowOfflineGracePeriod' is enabled, then the offline 'OfflineGracePeriod' is used to determine\n    if the user can proceed or not. If online and the credential is incorrect, then a valid Platform\n    SSO authentication is required to proceed regardless of the 'OfflineGracePeriod'. If the account\n    is not registered for Platform SSO and 'AllowAuthenticationGracePeriod' is enabled, then the\n    'AuthenticationGracePeriod' is used to determine if the user can proceed or not.\n* AllowOfflineGracePeriod\n    Allow the use of the 'OfflineGracePeriod' when 'RequireAuthentication' is enabled.  If\n    'AllowOfflineGracePeriod' is not set, then offline access is denied.\n* AllowAuthenticationGracePeriod\n    Allow the use of the 'AuthenticationGracePeriod' for other local accounts when 'RequireAuthentication'\n    is enabled. The 'AuthenticationGracePeriod' starts when any of the policies have been updated. If\n    'AllowAuthenticationGracePeriod' is not set, then unregistered account access is denied.\n* AllowTouchIDOrWatchForUnlock\n    Allow TouchID or Watch to unlock the screensaver instead of Platform SSO authentication when\n    'RequireAuthentication' is enabled.",
                         "enum": [
                             "AttemptAuthentication",
                             "RequireAuthentication",
@@ -633,11 +634,11 @@
                 },
                 "OfflineGracePeriod": {
                     "type": "integer",
-                    "description": "The amount of time after the last successful Platform SSO login a local account password can be used offline. Required when 'AllowOfflineGracePeriod' is set. Available in macOS 15 and later."
+                    "description": "The amount of time after the last successful Platform SSO login for using a local account password offline. Required when setting 'AllowOfflineGracePeriod'. Available in macOS 15 and later."
                 },
                 "AuthenticationGracePeriod": {
                     "type": "integer",
-                    "description": "The amount of time after a 'FileVaultPolicy', 'LoginPolicy', or 'UnlockPolicy' is received or updated that unregistered local accounts can be used. Required when 'AllowAuthenticationGracePeriod' is set. Available in macOS 15 and later."
+                    "description": "The amount of time after receiving or updating a 'FileVaultPolicy', 'LoginPolicy', or 'UnlockPolicy' that the system can use unregistered local accounts. Required when 'AllowAuthenticationGracePeriod' is set. Available in macOS 15 and later."
                 },
                 "NonPlatformSSOAccounts": {
                     "type": "array",
@@ -645,12 +646,54 @@
                         "type": "string",
                         "description": "A local account username."
                     },
-                    "description": "The list of local accounts that aren't subject to the 'FileVaultPolicy', 'LoginPolicy', or 'UnlockPolicy'. The accounts aren't prompted to register for Platform SSO. Available in macOS 15 and later."
+                    "description": "The list of local accounts that aren't subject to the 'FileVaultPolicy', 'LoginPolicy', or 'UnlockPolicy'. The accounts don't receive a prompt to register for Platform SSO. Available in macOS 15 and later."
                 },
                 "AllowDeviceIdentifiersInAttestation": {
                     "type": "boolean",
                     "default": false,
-                    "description": "If set to true, the device UDID and serial number will be included in Platform SSO attestations."
+                    "description": "If 'true', the system includes the device UDID and serial number in Platform SSO attestations."
+                },
+                "EnableCreateFirstUserDuringSetup": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If 'true', the device uses Platform SSO to create the first user account on the Mac during 'Setup Assistant'."
+                },
+                "NewUserAuthenticationMethods": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "An authentication method to use for newly created accounts at login or during 'Setup Assistant'. Allowed values:\n\n- 'Password': The account uses a password for authentication.\n- 'SmartCard': The account uses a smart card for authentication.\n- 'AccessKey': The account uses an access key for authentication.",
+                        "enum": [
+                            "Password",
+                            "SmartCard",
+                            "AccessKey"
+                        ]
+                    },
+                    "description": "The set of authentication methods to use for newly created accounts at login or during 'Setup Assistant'. The system uses 'Password' and 'SmartCard' if this key isn't present."
+                },
+                "AccessKeyTerminalIdentityUUID": {
+                    "type": "string",
+                    "description": "The 'PayloadUUID' of an identity payload to use as the 'Terminal' identity of the access key. The identity needs to be trusted by the access key. Required if 'NewUserAuthenticationMethods' includes 'AccessKey'. Allowed identity payload types:\n\n- 'com.apple.security.pkcs12'\n- 'com.apple.security.acme'\n- 'com.apple.security.scep'"
+                },
+                "AllowAccessKeyExpressMode": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If 'true', the system uses the access key in express mode, and doesn't require authentication before use."
+                },
+                "SynchronizeProfilePicture": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If 'true', the system requests the user's profile picture from the SSO extension."
+                },
+                "TemporarySessionQuickLogin": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If 'true', the system uses a quicker Authenticated Guest Mode login to Mac behavior. The system erases user data from only select locations in the user home directory after each session completes. Once every eight hours the system erases the full user home directory after a session completes. Turn this on for shared environments that have a high frequency of short sessions."
+                },
+                "EnableRegistrationDuringSetup": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If 'true', the system enables the PlatformSSO registration process during Setup Assistant on devices running macOS 26 and later. Set this key to 'true' when configuring PlatformSSO before enrollment using the 'com.apple.psso.required' error response."
                 }
             },
             "property_order": 55
@@ -658,7 +701,7 @@
         "RegistrationToken": {
             "type": "string",
             "title": "Registration Token",
-            "description": "The token this device uses for registration with Platform SSO. Use it for silent registration with the Identity Provider. Requires that 'PlatformSSO.AuthenticationMethod' isn't empty. Available in macOS 13 and later.",
+            "description": "The token this device uses for registration with Platform SSO. Use it for silent registration with the Identity Provider. Requires that 'AuthenticationMethod' in 'PlatformSSO' isn't empty. Available in macOS 13 and later.",
             "property_order": 60
         }
     }

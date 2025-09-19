@@ -1,18 +1,18 @@
 {
     "title": "System Migration (com.apple.systemmigration)",
-    "description": "System Migration settings",
+    "description": "The payload that configures system migration.",
     "properties": {
         "CustomBehavior": {
             "type": "array",
             "items": {
                 "type": "object",
                 "title": "Custom Paths Item",
-                "description": "Custom Paths Item Dictionary",
+                "description": "The custom behavior dictionary.",
                 "properties": {
                     "Context": {
                         "type": "string",
                         "title": "Context",
-                        "description": "The context to which custom paths apply.",
+                        "description": "The context that custom paths apply to.",
                         "enum": [
                             "Windows"
                         ]
@@ -22,7 +22,7 @@
                         "items": {
                             "type": "object",
                             "title": "Custom Paths Path Item",
-                            "description": "Custom Paths Path Item Dictionary",
+                            "description": "The custom behavior path dictionary.",
                             "properties": {
                                 "SourcePath": {
                                     "type": "string",
@@ -32,7 +32,7 @@
                                 "SourcePathInUserHome": {
                                     "type": "boolean",
                                     "title": "Source Path In User Home",
-                                    "description": "If the source path is located within a user home directory."
+                                    "description": "If 'true', the source path is located within a user home directory."
                                 },
                                 "TargetPath": {
                                     "type": "string",
@@ -42,17 +42,17 @@
                                 "TargetPathInUserHome": {
                                     "type": "boolean",
                                     "title": "Target Path In User Home",
-                                    "description": "If the target path is located within a user home directory."
+                                    "description": "If 'true', the target path is located within a user home directory."
                                 }
                             }
                         },
                         "title": "Paths",
-                        "description": "The custom paths to be migrated from a source system to a target system."
+                        "description": "The list of custom behavior path dictionaries."
                     }
                 }
             },
             "title": "Custom Paths",
-            "description": "Custom Paths to be migrated from source system",
+            "description": "The list of custom behavior dictionaries.",
             "property_order": 5
         }
     }

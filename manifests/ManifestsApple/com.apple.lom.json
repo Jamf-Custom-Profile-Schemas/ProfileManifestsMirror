@@ -1,6 +1,6 @@
 {
     "title": "Lights Out Management (LOM) (com.apple.lom)",
-    "description": "Use this section to define settings for Lights Out Management (LOM).",
+    "description": "The payload that configures lights-out management (LOM) settings.",
     "properties": {
         "ControllerCACertificateUUIDs": {
             "type": "array",
@@ -8,14 +8,14 @@
                 "type": "string",
                 "title": "UUID"
             },
-            "title": "Controller CA Certificate UUIDs",
-            "description": "An array of UUIDs of payloads in this profile that contain certificates that will be used for controller certificate trustworthiness evaluation.",
+            "title": "CA certificate payload UUIDs",
+            "description": "An array of payload UUIDs containing CA certificates that devices use to evaluate trust of controller certificates.\n\nThis key configures the device to accept the 'LOMDeviceRequestCommand' from MDM and then send it to the target device. This certificate must contain the Key Usage attributes of Digital Signature, Key Encipherment and Data Encipherment. As well as the Extended Key Usage attributes of Server Authentication and Client Authentication.",
             "property_order": 5
         },
         "ControllerCertificateUUID": {
             "type": "string",
-            "title": "Controller Certificate UUID",
-            "description": "UUID of a payload in this profile that contains the certificate of the LOM controller. Configures the device to accept LOMDeviceRequestCommand.",
+            "title": "Controller Certificate payload UUID",
+            "description": "The UUID certificate for the LOM controller. This key configures the device to accept the 'LOMDeviceRequestCommand' from MDM and then send it to the target device.",
             "property_order": 10
         },
         "DeviceCACertificateUUIDs": {
@@ -23,14 +23,14 @@
             "items": {
                 "type": "string"
             },
-            "title": "Device CA Certificate UUIDs",
-            "description": "An array of UUIDs of payloads in this profile that contain certificates that will be used for device certificate trustworthiness evaluation.",
+            "title": "CA certificate payload UUIDs",
+            "description": "An array of payload UUIDs containing CA certificates that controllers use to evaluate trust of device certificates.",
             "property_order": 15
         },
         "DeviceCertificateUUID": {
             "type": "string",
-            "title": "Device Certificate UUID",
-            "description": "UUID of a payload in this profile that contains the certificate of the LOM device. Configures the device to accept PowerON, PowerOFF, and Reset requests.",
+            "title": "Device Certificate payload UUID",
+            "description": "The UUID certificate for the device. This key indicates the device can receive 'PowerON', 'PowerOFF', and 'Reset' requests from a LOM controller. This certificate must contain the Key Usage attributes of Digital Signature, Key Encipherment and Data Encipherment. As well as the Extended Key Usage attributes of Server Authentication and Client Authentication.",
             "property_order": 20
         }
     }

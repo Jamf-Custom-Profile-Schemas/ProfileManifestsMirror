@@ -1,6 +1,6 @@
 {
     "title": "Domains (com.apple.domains)",
-    "description": "Use this section to define Domains settings.",
+    "description": "The payload that configures the domains under an organization's management.",
     "properties": {
         "EmailDomains": {
             "type": "array",
@@ -10,7 +10,7 @@
                 "description": "An email address."
             },
             "title": "Email Domains",
-            "description": "An array of domains. The system considers email addresses that lack a suffix matching any of these strings out of domain and marked in Mail.\nAvailable in iOS 8 and later and macOS 10.10 and later.",
+            "description": "An array of domains. Mail marks in red all email addresses that lack a suffix matching any of these strings.\n\nAvailable in iOS 8 and later and macOS 10.10 and later.",
             "property_order": 5
         },
         "WebDomains": {
@@ -20,7 +20,7 @@
                 "title": "Domain"
             },
             "title": "Managed Safari Web Domains",
-            "description": "An array of domains. The system considers URLs matching the patterns listed in this property managed.\nAvailable in iOS 9.3 and later.",
+            "description": "An array of domains. The system considers URLs matching the patterns listed in this property managed.\n\nAvailable in iOS 9.3 and later.",
             "property_order": 10
         },
         "SafariPasswordAutoFillDomains": {
@@ -30,7 +30,7 @@
                 "title": "Domain"
             },
             "title": "Safari Password Domains",
-            "description": "An array of domains. Users can only save passwords in Safari from URLs matching the patterns listed here. This property doesn't disable the autofill feature itself.\nSupervised devices or Shared iPads need this property to enable saving passwords in Safari.\nAvailable in iOS 9.3 and later.",
+            "description": "An array of domains. Users can only save passwords in Safari from URLs matching the patterns listed here. This property doesn't disable the autofill feature itself.\n\nSupervised devices or Shared iPads need this property to enable saving passwords in Safari.\n\nAvailable in iOS 9.3 and later.",
             "property_order": 15
         },
         "CrossSiteTrackingPreventionRelaxedDomains": {
@@ -40,7 +40,7 @@
                 "title": "Domain"
             },
             "title": "Cross-Site Tracking Prevention Relaxed Domains",
-            "description": "An array of up to 10 strings. URLs matching the patterns listed here have relaxed enforcement of cross-site tracking prevention.\nAvailable in iOS 16.2 and later and macOS 13.1 and later.",
+            "description": "An array of up to 10 strings. URLs matching the patterns listed here have relaxed enforcement of cross-site tracking prevention.\n\nAvailable in iOS 16.2 and later and macOS 13.1 and later.",
             "property_order": 20
         },
         "CrossSiteTrackingPreventionRelaxedApps": {
@@ -49,7 +49,7 @@
                 "type": "string"
             },
             "title": "Cross-Site Tracking Prevention Relaxed Apps",
-            "description": "An array of up to 10 strings representing app bundle-ids. Apps matching the bundle-ids listed here will have relaxed enforcement of cross-site tracking prevention for the domains listed in the 'CrossSiteTrackingPreventionRelaxedDomains' key.",
+            "description": "An array of up to 10 strings representing app bundle-ids. Apps matching the bundle-ids listed here have relaxed enforcement of cross-site tracking prevention for the domains listed in 'CrossSiteTrackingPreventionRelaxedDomains'.\n\nAvailable in iOS 18 and later and macOS 15 and later.",
             "property_order": 25
         }
     }

@@ -1,27 +1,27 @@
 {
     "title": "AirPlay (com.apple.airplay)",
-    "description": "AirPlay settings",
+    "description": "The payload that configures AirPlay settings.",
     "properties": {
         "AllowList": {
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "Allow List Content Item",
+                "title": "AllowList Content Item",
                 "properties": {
                     "DeviceID": {
                         "type": "string",
                         "title": "Device ID",
-                        "description": "The device ID of the AirPlay destination in the format 'xx:xx:xx:xx:xx:xx'. This field isn't case-sensitive.\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads.\nSpecifying the same MACAddress more than once, whether in the same payload across different payloads, results in undefined behavior.\nAs of tvOS 18, 'DeviceID' isn't supported.",
+                        "description": "The device ID of the AirPlay destination in the format 'xx:xx:xx:xx:xx:xx'. This field isn't case-sensitive.\n\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads.\n\nSpecifying the same MACAddress more than once, whether in the same payload across different payloads, results in undefined behavior.\n\nAs of tvOS 18, 'DeviceID' isn't supported.",
                         "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
                     },
                     "DeviceName": {
                         "type": "string",
                         "title": "Device Name",
-                        "description": "The name of the AirPlay device.\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads."
+                        "description": "The name of the AirPlay device.\n\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads."
                     }
                 }
             },
-            "title": "Allow List",
+            "title": "AllowList",
             "description": "If present, only AirPlay destinations in this list are available to the device. This allow list applies to supervised devices.",
             "property_order": 5
         },
@@ -34,13 +34,13 @@
                     "DeviceID": {
                         "type": "string",
                         "title": "Device ID",
-                        "description": "The device ID of the AirPlay destination in the format 'xx:xx:xx:xx:xx:xx'. This field isn't case-sensitive.\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads.\nSpecifying the same MACAddress more than once, whether in the same payload across different payloads, results in undefined behavior.\nAs of tvOS 18, 'DeviceID' isn't supported.",
+                        "description": "The device ID of the AirPlay destination in the format 'xx:xx:xx:xx:xx:xx'. This field isn't case-sensitive.\n\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads.\n\nSpecifying the same MACAddress more than once, whether in the same payload across different payloads, results in undefined behavior.\n\nAs of tvOS 18, 'DeviceID' isn't supported.",
                         "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
                     },
                     "DeviceName": {
                         "type": "string",
                         "title": "Device Name",
-                        "description": "The name of the AirPlay device.\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads."
+                        "description": "The name of the AirPlay device.\n\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads."
                     }
                 }
             },
@@ -63,7 +63,7 @@
                     "DeviceID": {
                         "type": "string",
                         "title": "Device ID",
-                        "description": "The device ID of the AirPlay destination; used in macOS.\nIn macOS 15 and later, 'DeviceID' is deprecated as tvOS 18 AirPlay destinations do not support it; use 'DeviceName' instead.",
+                        "description": "The device ID of the AirPlay destination; used in macOS.\n\nDeprecated in macOS 15 and later as tvOS 18 AirPlay destinations don't support it; use 'DeviceName' instead.",
                         "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
                     },
                     "Password": {

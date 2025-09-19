@@ -1,23 +1,23 @@
 {
     "title": "FileVault Recovery Key Escrow (com.apple.security.FDERecoveryKeyEscrow)",
-    "description": "FileVault Recovery Key Escrow settings",
+    "description": "The payload that configures FileVault recovery key escrow.",
     "properties": {
         "Location": {
             "type": "string",
             "title": "Location",
-            "description": "A short description of the location where the recovery key will be escrowed. This text will be inserted into the message the user sees when enabling FileVault.",
+            "description": "The description of the location where the system escrows the recovery key. The system inserts this text into the message the user sees when it enables FileVault.",
             "property_order": 5
         },
         "EncryptCertPayloadUUID": {
             "type": "string",
             "title": "EncryptCertPayloadUUID",
-            "description": "The UUID of a payload within the same profile that contains the certificate that will be used to encrypt the recovery key. The referenced payload must be of type com.apple.security.pkcs1.",
+            "description": "The UUID of a payload within the same profile that contains the certificate that the system uses to encrypt the recovery key. The referenced payload must be of type 'com.apple.security.pkcs1'.",
             "property_order": 10
         },
         "DeviceKey": {
             "type": "string",
             "title": "DeviceKey",
-            "description": "An optional string that will be included in help text if the user appears to have forgotten the password. Can be used by a site admin to look up the escrowed key for the particular machine. Replaces the RecordNumber key used in previous escrow mechanism. If missing, the device serial number will be used instead.",
+            "description": "The string that's included in help text if the user appears to have forgotten the password. Site admins can use this key to look up the escrowed key for the particular computer.\n\nThis key replaces the 'RecordNumber' key used in the previous escrow mechanism. If the key is missing, the system uses the device serial number instead.",
             "property_order": 15
         }
     }

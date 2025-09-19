@@ -1,47 +1,56 @@
 {
     "title": "Xsan Preferences (com.apple.xsan.preferences)",
-    "description": "Xsan Preference settings",
+    "description": "The payload that configures the Xsan preferences that define the volumes that automatically mount at startup.",
     "properties": {
         "useDLC": {
             "type": "boolean",
             "title": "Use Distributed LAN Client (DLC)",
             "default": false,
+            "description": "If 'true', use the DLC for all volumes.",
             "property_order": 5
         },
         "onlyMount": {
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "Xsan or StorNext Volume Name"
+                "title": "Xsan or StorNext Volume Name",
+                "description": "A volume name."
             },
             "title": "Only Mount",
+            "description": "An array of Xsan or StorNext volume names. The Xsan client attempts to automatically mount these volumes at startup. The system administrator can mount additional volumes manually by using the 'xsanctl(8)' mount command.",
             "property_order": 10
         },
         "denyMount": {
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "Xsan or StorNext Volume Name"
+                "title": "Xsan or StorNext Volume Name",
+                "description": "A volume name."
             },
             "title": "Deny Mount",
+            "description": "An array of Xsan or StorNext volume names. If no 'onlyMount' array is present, the Xsan client automatically attempts to mount all SAN volumes except the volumes in this array. The system administrator can mount those volumes manually by using the 'xsanctl(8)' mount command.",
             "property_order": 15
         },
         "preferDLC": {
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "StorNext Volume Name"
+                "title": "StorNext Volume Name",
+                "description": "A volume name."
             },
             "title": "Prefer DLC",
+            "description": "An array of StorNext volume names. If the Xsan client is attempting to mount a volume named in this array, the Xsan client attempts to mount the volume using DLC. If DLC isn't available, the client attempts to mount the volume if its LUNs are available through Fibre Channel. The volume name must not also appear in 'denyDLC'.",
             "property_order": 20
         },
         "denyDLC": {
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "StorNext Volume Name"
+                "title": "StorNext Volume Name",
+                "description": "A volume name."
             },
             "title": "Deny DLC",
+            "description": "An array of StorNext volume names. If the Xsan client is attempting to mount a volume named in this array, the client only mounts the volume if its logical units (LUNs) are available through Fibre Channel. It doesn't attempt to mount the volume using Distributed LAN Client (DLC).",
             "property_order": 25
         }
     }

@@ -1,24 +1,24 @@
 {
     "title": "TV Remote (com.apple.tvremote)",
-    "description": "TV Remote app settings",
+    "description": "The payload that configures the Apple TV remote.",
     "properties": {
         "AllowedRemotes": {
             "type": "array",
             "items": {
                 "type": "object",
                 "title": "Allowed Remotes Content Item",
-                "description": "An item in the allowed remotes",
+                "description": "The array of valid devices that Apple TV can connect to.",
                 "properties": {
                     "RemoteDeviceID": {
                         "type": "string",
                         "title": "Remote Device ID",
-                        "description": "The iOS remote's MAC address",
+                        "description": "The MAC address of a permitted iOS device that can control this Apple TV. Use the format 'xx:xx:xx:xx:xx:xx', which isn't case-sensitive.",
                         "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
                     }
                 }
             },
             "title": "Allowed Remotes",
-            "description": "List of permitted iOS remote devices restricted on this device.",
+            "description": "The array of valid devices that Apple TV can connect to.",
             "property_order": 5
         },
         "AllowedTVs": {
@@ -26,23 +26,23 @@
             "items": {
                 "type": "object",
                 "title": "Allowed TVs Content Item",
-                "description": "An item in the allowed TVs",
+                "description": "The array of valid Apple TV identifiers that the remote can connect to.",
                 "properties": {
                     "TVDeviceID": {
                         "type": "string",
                         "title": "TV Device ID",
-                        "description": "The tvOS destination MAC address",
+                        "description": "The MAC address of an Apple TV device that the system permits this iOS device to control. Use the format 'xx:xx:xx:xx:xx:xx', which isn't case-sensitive.",
                         "pattern": "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$"
                     },
                     "TVDeviceName": {
                         "type": "string",
                         "title": "TV Device Name",
-                        "description": "The tvOS destination device name"
+                        "description": "The name of an Apple TV device that the system permits this iOS device to control."
                     }
                 }
             },
             "title": "Allowed TVs",
-            "description": "List of permitted tvOS remote devices restricted on this device.",
+            "description": "The array of valid Apple TV identifiers that the remote can connect to.",
             "property_order": 10
         }
     }

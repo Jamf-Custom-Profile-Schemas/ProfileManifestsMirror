@@ -1,12 +1,12 @@
 {
     "title": "Declarations (com.apple.declarations)",
-    "description": "Declarations",
+    "description": "The payload that applies a set of declarations to the device through the Settings app.",
     "properties": {
         "Declarations": {
             "type": "array",
             "items": {},
             "title": "Declarations",
-            "description": "The set of declarations to apply. The items in this array are <data> (base64-encoded) representations\nof the declaration JSON data.",
+            "description": "The set of declarations to apply. The array items are Base64-encoded data representations of the declaration JSON data.",
             "property_order": 5
         }
     }

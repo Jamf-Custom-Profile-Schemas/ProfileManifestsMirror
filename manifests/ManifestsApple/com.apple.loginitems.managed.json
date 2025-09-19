@@ -1,24 +1,23 @@
 {
-    "title": "Login Items (com.apple.loginitems.managed)",
-    "description": "Login Items settings",
+    "title": "Login Items: Managed Items (com.apple.loginitems.managed)",
+    "description": "The payload that configures a device's login items.",
     "properties": {
         "AutoLaunchedApplicationDictionary-managed": {
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "Login Item",
-                "description": "Automatically Launched Login Item",
+                "description": "A login item.",
                 "properties": {
                     "Hide": {
                         "type": "boolean",
                         "title": "Hide",
                         "default": false,
-                        "description": "If true, hide this item in the Users & Groups login items list."
+                        "description": "If 'true', the system hides this item in the Users & Groups login items list."
                     },
                     "Path": {
                         "type": "string",
                         "title": "Path",
-                        "description": "Path to the item's location."
+                        "description": "The URL or path string to the item's location."
                     },
                     "URL": {
                         "type": "string",
@@ -34,7 +33,7 @@
                 }
             },
             "title": "Automatically launched items",
-            "description": "Automatically launch these items at login.",
+            "description": "An array of login item dictionaries.",
             "links": [
                 {
                     "rel": "More information",

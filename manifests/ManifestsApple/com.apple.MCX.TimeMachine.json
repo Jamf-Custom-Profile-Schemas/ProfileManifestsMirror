@@ -1,46 +1,46 @@
 {
     "title": "Time Machine (com.apple.MCX.TimeMachine)",
-    "description": "Time Machine settings",
+    "description": "The payload that configures Time Machine.",
     "properties": {
         "BackupDestURL": {
             "type": "string",
             "title": "Backup Destination",
-            "description": "URL of the backup destination. (e.g., smb://server.example.com/backups/)",
+            "description": "The URL of the backup destination.",
             "property_order": 5
         },
         "BackupAllVolumes": {
             "type": "boolean",
             "title": "Backup all volumes",
             "default": false,
-            "description": "Only startup volume is backed up by default.",
+            "description": "If 'true', backs up only the startup volume by default.",
             "property_order": 10
         },
         "BackupSkipSys": {
             "type": "boolean",
             "title": "Back up system files and folders",
             "default": false,
-            "description": "System files and folders are skipped by default.",
+            "description": "If 'true', skips system files and folders by default.",
             "property_order": 15
         },
         "AutoBackup": {
             "type": "boolean",
             "title": "Enable automatic backups",
             "default": true,
-            "description": "Automatically backup at regulard intervals.",
+            "description": "If 'true', performs automatic backups at regular intervals.",
             "property_order": 20
         },
         "MobileBackups": {
             "type": "boolean",
             "title": "Enable local snapshots",
             "default": true,
-            "description": "Creates local backup snapshots if the backup destination is offline.",
+            "description": "If 'true', create local backup snapshots when not connected to the network.",
             "property_order": 25
         },
         "BackupSizeMB": {
             "type": "integer",
             "title": "Backup size limit",
             "default": 0,
-            "description": "Enter a limit in MB for the size of the backup. Set to 0 for unlimited.",
+            "description": "The backup size limit, in megabytes. Set to 0 for unlimited.",
             "property_order": 30
         },
         "SkipPaths": {
@@ -50,8 +50,16 @@
                 "title": "Path to skip"
             },
             "title": "Paths to skip",
-            "description": "Enter additional volumes and locations to exclude from the backup.",
+            "description": "The path to skip from start volume.",
             "property_order": 35
+        },
+        "BasePaths": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of paths to back up besides the startup volume.",
+            "property_order": 40
         }
     }
 }

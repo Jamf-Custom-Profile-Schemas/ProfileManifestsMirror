@@ -1,29 +1,32 @@
 {
     "title": "Extensions (com.apple.NSExtension)",
-    "description": "Use the Extensions payload to control which extensions can be used with macOS.",
+    "description": "The payload that configures the extensions that the system allows or disallows to run on the device.",
     "properties": {
         "AllowedExtensions": {
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "string",
+                "description": "An extension identifier."
             },
             "title": "Allowed extensions",
-            "description": "Add the bundle identifier for each extension allowed to run on the Mac. Any extensions not listed are unable to run.",
+            "description": "An array of bundle identifiers for allowed extensions.",
             "property_order": 5
         },
         "DeniedExtensions": {
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "string",
+                "description": "An extension identifier."
             },
             "title": "Disallowed extensions",
-            "description": "Disallow specific extensions by their bundle identifier.",
+            "description": "An array of bundle identifiers for extensions that the system doesn't allow to run.",
             "property_order": 10
         },
         "DeniedExtensionPoints": {
             "type": "array",
             "items": {
                 "type": "string",
+                "description": "An extension identifier.",
                 "enum": [
                     "AllPublicExtensionPoints",
                     "com.apple.ui-services",
@@ -56,7 +59,7 @@
                 }
             },
             "title": "Disallow some extensions points",
-            "description": "Disallow specific extension points.",
+            "description": "An array of extension points for extensions that the system doesn't allow to run.",
             "property_order": 15
         }
     }

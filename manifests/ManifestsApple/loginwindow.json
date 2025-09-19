@@ -1,12 +1,12 @@
 {
     "title": "Login Window: Login Items (loginwindow)",
-    "description": "Login Window: Login Items settings",
+    "description": "The payload that configures login behavior.",
     "properties": {
         "DisableLoginItemsSuppression": {
             "type": "boolean",
             "title": "Disable shift to suppress login items",
             "default": false,
-            "description": "Prevent users from disabling login items launching using the Shift key.",
+            "description": "If 'true', the system prevents the user from disabling login item launches by using the Shift key.",
             "property_order": 5
         },
         "AutoLaunchedApplicationDictionary-managed": {

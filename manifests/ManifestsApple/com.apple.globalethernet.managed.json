@@ -1,6 +1,6 @@
 {
     "title": "802.1X Ethernet: Global (com.apple.globalethernet.managed)",
-    "description": "Use this section to define Global Ethernet settings",
+    "description": "The payload that configures the default fallback global Ethernet interface.",
     "properties": {
         "SetupModes": {
             "type": "array",

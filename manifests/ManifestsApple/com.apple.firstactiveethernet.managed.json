@@ -1,6 +1,6 @@
 {
     "title": "802.1X Ethernet: First Active (com.apple.firstactiveethernet.managed)",
-    "description": "Use this section to define First Active Ethernet settings",
+    "description": "The payload that configures the first wired, active Ethernet interface.",
     "properties": {
         "SetupModes": {
             "type": "array",

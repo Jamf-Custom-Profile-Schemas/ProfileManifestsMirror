@@ -1,12 +1,12 @@
 {
     "title": "Finder (com.apple.finder)",
-    "description": "Finder settings",
+    "description": "The payload that configures Finder settings.",
     "properties": {
         "InterfaceLevel": {
             "type": "string",
             "title": "Finder Interface Level",
             "default": "Full",
-            "description": "Select if the standard (Full) or Simple Finder should be used",
+            "description": "Specifies whether Finder should operate in Simple or Full mode.",
             "links": [
                 {
                     "rel": "More information",
@@ -14,8 +14,8 @@
                 }
             ],
             "enum": [
-                "Full",
-                "Simple"
+                "Simple",
+                "Full"
             ],
             "property_order": 5
         },
@@ -23,7 +23,7 @@
             "type": "boolean",
             "title": "Show warning before emptying the Trash",
             "default": true,
-            "description": "Warning message requiring user approval before emptying the Trash",
+            "description": "If 'false', the system doesn't warn the user before emptying the trash.",
             "links": [
                 {
                     "rel": "More information",
@@ -36,7 +36,7 @@
             "type": "boolean",
             "title": "Allow Connect to Server",
             "default": false,
-            "description": "Opens a dialog box for finding servers on the network",
+            "description": "If 'true', the system disables Connect to Server.",
             "links": [
                 {
                     "rel": "More information",
@@ -49,7 +49,7 @@
             "type": "boolean",
             "title": "Allow Eject",
             "default": false,
-            "description": "Ejects removable media and mountable volumes",
+            "description": "If 'true', the system disables Eject.",
             "links": [
                 {
                     "rel": "More information",
@@ -62,7 +62,7 @@
             "type": "boolean",
             "title": "Allow Burn Disc",
             "default": false,
-            "description": "Writes permanent information to a CD or DVD. Disc burning restrictions require both Disc Burning and Finder payloads.",
+            "description": "If 'true', the system disables the Finder's burn support.",
             "links": [
                 {
                     "rel": "More information",
@@ -75,7 +75,7 @@
             "type": "boolean",
             "title": "Allow Go to Folder",
             "default": false,
-            "description": "Allows user to open files or folders by typing a pathname",
+            "description": "If 'true', the system disables Go to Folder.",
             "links": [
                 {
                     "rel": "More information",
@@ -88,7 +88,7 @@
             "type": "boolean",
             "title": "Show Hard disks",
             "default": false,
-            "description": "Show hard disks on the desktop",
+            "description": "If 'false', the system doesn't show internal hard drives on the Desktop.",
             "links": [
                 {
                     "rel": "More information",
@@ -101,7 +101,7 @@
             "type": "boolean",
             "title": "Show External disks",
             "default": true,
-            "description": "Show external disks on the desktop",
+            "description": "If 'false', the system doesn't show external hard drives on the Desktop.",
             "links": [
                 {
                     "rel": "More information",
@@ -114,7 +114,7 @@
             "type": "boolean",
             "title": "Show Removable media (CDs, DVDs, etc.)",
             "default": true,
-            "description": "Show removable media on the desktop",
+            "description": "If 'false', the system doesn't show removable media items on the Desktop.",
             "links": [
                 {
                     "rel": "More information",
@@ -127,7 +127,7 @@
             "type": "boolean",
             "title": "Show Connected servers",
             "default": false,
-            "description": "Show connected servers on the desktop",
+            "description": "If 'false', the system doesn't show mounted file servers on the Desktop.",
             "links": [
                 {
                     "rel": "More information",

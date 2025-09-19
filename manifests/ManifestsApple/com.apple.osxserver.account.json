@@ -1,30 +1,30 @@
 {
-    "title": "macOS Server Accounts (com.apple.osxserver.account)",
-    "description": "Use the macOS Server Accounts payload to specify macOS Server account information allowing an iOS device to use it as a document repository.",
+    "title": "macOS Server Account (com.apple.osxserver.account)",
+    "description": "The payload that configures a macOS Server account.",
     "properties": {
         "AccountDescription": {
             "type": "string",
             "title": "Account Description",
             "default": "My macOS Server Account",
-            "description": "The display name for the macOS Server Account.",
+            "description": "The description of the account.",
             "property_order": 5
         },
         "HostName": {
             "type": "string",
-            "title": "Hostname",
-            "description": "The IP address or fully qualified domain name (FQDN) of the server.",
+            "title": "Account Hostname",
+            "description": "The server's address.",
             "property_order": 10
         },
         "UserName": {
             "type": "string",
-            "title": "User Name",
-            "description": "The name of the user.",
+            "title": "Account Username",
+            "description": "The user's user name.",
             "property_order": 15
         },
         "Password": {
             "type": "string",
             "title": "Account Password",
-            "description": "The password for the user.",
+            "description": "The user's password.",
             "property_order": 20
         },
         "ConfiguredAccounts": {
@@ -38,18 +38,21 @@
                         "type": "string",
                         "title": "Account Type",
                         "default": "com.apple.osxserver.documents",
-                        "description": "Must be com.apple.osxserver.documents (the Documents account type)."
+                        "description": "com.apple.osxserver.documents (the Documents account type).",
+                        "enum": [
+                            "com.apple.osxserver.documents"
+                        ]
                     },
                     "Port": {
                         "type": "integer",
                         "title": "Port Number",
                         "default": 8071,
-                        "description": "The port on which to connect to the server."
+                        "description": "Designates the port number to use when contacting the server. If no port number is specified, the default port is used."
                     }
                 }
             },
-            "title": "Documents Server Port",
-            "description": "The port on macOS Server over which the connection is established.",
+            "title": "Configured Accounts",
+            "description": "An array of dictionaries containing configured account types and relevant settings",
             "property_order": 25
         }
     }

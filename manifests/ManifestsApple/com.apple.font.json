@@ -1,6 +1,6 @@
 {
     "title": "Font (com.apple.font)",
-    "description": "Use this section to define Font settings.",
+    "description": "The payload that configures fonts.",
     "properties": {
         "Name": {
             "type": "string",

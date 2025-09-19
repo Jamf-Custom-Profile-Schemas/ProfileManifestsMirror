@@ -1,6 +1,6 @@
 {
     "title": "802.1X Ethernet: Second Active (com.apple.secondactiveethernet.managed)",
-    "description": "Use this section to define Second Active Ethernet settings",
+    "description": "The payload that configures the second wired, active Ethernet interface.",
     "properties": {
         "SetupModes": {
             "type": "array",

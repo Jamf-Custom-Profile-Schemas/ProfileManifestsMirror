@@ -1,6 +1,6 @@
 {
     "title": "Web Content Filter (com.apple.webcontent-filter)",
-    "description": "Use this section to define managed email and web domains.",
+    "description": "The payload that configures web content filters.",
     "properties": {
         "FilterType": {
             "type": "string",
@@ -38,7 +38,7 @@
         },
         "AutoFilterEnabled": {
             "type": "boolean",
-            "title": "Limit adult content automatically",
+            "title": "Web filter enabled",
             "default": false,
             "description": "If 'true', the system enables automatic filtering. Use when 'FilterType' is 'BuiltIn'.",
             "property_order": 15
@@ -47,7 +47,7 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "Permitted URL",
+                "title": "Permitted url items",
                 "pattern": "^https?://.*$"
             },
             "title": "Permitted URLs",
@@ -58,7 +58,7 @@
             "type": "boolean",
             "title": "Filter WebKit Traffic",
             "default": false,
-            "description": "If 'true', the system enables filtering WebKit traffic. Use when 'FilterType' is 'Plugin'.\nAt least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
+            "description": "If 'true', the system enables filtering WebKit traffic. Use when 'FilterType' is 'Plugin'.\n\nNote:\nAt least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
             "property_order": 25
         },
         "AllowListBookmarks": {
@@ -114,7 +114,7 @@
                 "title": "Deny List URL"
             },
             "title": "Deny List URLs",
-            "description": "An array of URLs that are inaccessible. Use when 'FilterType' is 'BuiltIn'. Limit the number of these URLs to about 500.",
+            "description": "An array of URLs that are inaccessible. Use when 'FilterType' is 'BuiltIn'. Limit the number of these URLs to no more than 500.",
             "property_order": 40
         },
         "BlacklistedURLs": {
@@ -174,7 +174,7 @@
             "type": "boolean",
             "title": "Enable Socket Filtering",
             "default": false,
-            "description": "If 'true', enables the filtering of socket traffic. Use when 'FilterType' is 'Plugin'.\nAt least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
+            "description": "If 'true', enables the filtering of socket traffic. Use when 'FilterType' is 'Plugin'.\n\nNote:\nAt least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
             "property_order": 85
         },
         "FilterDataProviderBundleIdentifier": {
@@ -193,12 +193,12 @@
             "type": "boolean",
             "title": "Enable Packet Filtering",
             "default": false,
-            "description": "If 'true' and 'FilterType' is 'Plugin', the system enables filtering network packets. Use when 'FilterType' is 'Plugin'.\nAt least one of 'FilterPackets' or 'FilterSockets' needs to be 'true'.",
+            "description": "If 'true' and 'FilterType' is 'Plugin', the system enables filtering network packets. Use when 'FilterType' is 'Plugin'.\n\nNote:\nAt least one of 'FilterPackets' or 'FilterSockets' needs to be 'true'.",
             "property_order": 100
         },
         "FilterPacketProviderBundleIdentifier": {
             "type": "string",
-            "title": "Filter Packet Provider Bundle ID",
+            "title": "Filter Packet Provider Bundle Identifier",
             "description": "The bundle identifier string of the filter packet provider system extension. This string identifies the filter packet provider when the filter starts running. Required if 'FilterPackets' is 'true'.",
             "property_order": 105
         },
@@ -228,15 +228,73 @@
         "ContentFilterUUID": {
             "type": "string",
             "title": "Content Filter UUID",
-            "description": "A globally unique identifier for this content filter configuration. The content filter processes network traffic for managed apps with the same 'ContentFilterUUID' in their app attributes. Use when 'FilterType' is 'Plugin'. This key must be present for unsupervised devices and user enrollments.",
+            "description": "A globally unique identifier for this content filter configuration. The content filter processes network traffic for managed apps with the same 'ContentFilterUUID' in their app attributes. Use when 'FilterType' is 'Plugin'.This key must be present for unsupervised devices and user enrollment.",
             "property_order": 120
         },
         "HideDenyListURLs": {
             "type": "boolean",
             "title": "HideDenyListURLs",
             "default": false,
-            "description": "Hide the DenyListURLs in profiles UI in Settings > General > VPN & Device Management > profiles details.",
+            "description": "If 'true', the device hides the 'DenyListURLs' item in the profiles that display in Settings > General > VPN & Device Management.",
             "property_order": 125
+        },
+        "FilterURLs": {
+            "type": "boolean",
+            "title": "FilterURLs",
+            "default": false,
+            "description": "If 'true', the system filters URL requests. Use when 'FilterType' is 'Plugin'. Available in iOS 26 and macOS 26, and later.",
+            "property_order": 130
+        },
+        "URLFilterParameters": {
+            "type": "object",
+            "description": "A dictionary containing URL filter parameters. Required when 'FilterURLs' is 'true'. Available in iOS 26 and macOS 26 and later.",
+            "properties": {
+                "URLFilterControlProviderDesignatedRequirement": {
+                    "type": "string",
+                    "title": "URL Filter Control Provider Designated Requirement",
+                    "description": "The designated requirement string in the code signature of the URL filter control provider app extension. The system uses this string to identify the URL filter control provider when the filter starts running. Required in macOS."
+                },
+                "URLFilterControlProviderBundleIdentifier": {
+                    "type": "string",
+                    "title": "URL Filter Control Provider Bundle Identifier",
+                    "description": "The bundle identifier string of the URL filter control provider app extension. The system uses this string to identify the URL filter control provider when the filter starts running."
+                },
+                "PIRServerURL": {
+                    "type": "string",
+                    "title": "Private Information Retrieval server URL",
+                    "description": "The URL containing the domain name of the private information retrieval server."
+                },
+                "PIRPrivacyPassIssuerURL": {
+                    "type": "string",
+                    "title": "Privacy Pass Issuer URL",
+                    "description": "The URL containing the domain name of Privacy Pass Issuer."
+                },
+                "PIRAuthenticationToken": {
+                    "type": "string",
+                    "title": "Authentication Token",
+                    "description": "The per-user authentication token string, which is an HTTP bearer token for the person using your app. The system uses this token to attest that it is a valid user when requesting anonymous authentication tokens for PIR exchanges."
+                },
+                "URLFilterFailClosed": {
+                    "type": "boolean",
+                    "title": "URLFilterFailClosed",
+                    "default": false,
+                    "description": "If 'true', the system blocks URLs if the filter is enabled, but it fails to make any filtering decision; for example, if there's a communication failure with the PIR server. If 'false', the system allows URLs if the filter is enabled, but it fails to make any filtering decision."
+                },
+                "URLPrefilterFetchFrequency": {
+                    "type": "integer",
+                    "title": "URLPrefilterFetchFrequency",
+                    "default": 86400,
+                    "description": "The time interval in seconds that the system uses to periodically run the 'NEURLFilterControlProvider' app extension. The default value is 86400 seconds (1 day). The minimum allowed value is 2700 seconds (45 minutes). The system allows 'NEURLFilterControlProvider' implementations to download prefilter Bloom filter data onto the device periodically at the specified interval. Implementations need to allow for a slight difference between the scheduled time and the actual runtime of the task, due to the scheduling mechanism on the system."
+                }
+            },
+            "property_order": 135
+        },
+        "SafariHistoryRetentionEnabled": {
+            "type": "boolean",
+            "title": "SafariHistoryRetentionEnabled",
+            "default": true,
+            "description": "If 'true', this payload enforces a policy which requires retention of browsing history. This causes Safari to disable clearing of browsing history, and prevents the use of private browsing mode because that mode doesn't keep browsing history.",
+            "property_order": 140
         }
     }
 }

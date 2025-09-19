@@ -1,23 +1,24 @@
 {
-    "title": "Parental Controls: Dashboard (com.apple.dashboard)",
-    "description": "Parental Controls: Dashboard settings",
+    "title": "Parental Controls: Dashboard Widget Restrictions (com.apple.dashboard)",
+    "description": "The payload that configures allowed dashboard widgets.",
     "properties": {
         "whiteListEnabled": {
             "type": "boolean",
             "title": "Enable dashboard widget allowlist",
-            "description": "Set to true to enable the widget white list items.",
+            "description": "If 'true', enables the widget allow list.",
             "property_order": 5
         },
         "WhiteList": {
             "type": "array",
             "items": {
                 "type": "object",
+                "description": "The widget item dictionary.",
                 "properties": {
                     "Type": {
                         "type": "string",
                         "title": "Entry Type",
                         "default": "bundleID",
-                        "description": "Set to \"bundleID\" to use a widget's bundle ID as its ID.",
+                        "description": "The type of allow list item. Set to 'bundleID' to use a widget's bundle ID as its main ID.",
                         "enum": [
                             "bundleID"
                         ],
@@ -35,7 +36,7 @@
                 }
             },
             "title": "Dashboard widget allowlist",
-            "description": "List that defines Dashboard widgets.",
+            "description": "An array of widget item dictionaries that are allowed.",
             "property_order": 10
         }
     }

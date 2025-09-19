@@ -6,7 +6,7 @@
             "type": "boolean",
             "title": "Prevent users from removing this profile",
             "default": false,
-            "description": "If present and set to 'true', the user can't delete the profile unless the profile has a removal password and the user provides it.\nOn macOS 10.15 and later, this key only affects removal of manually installed profiles. If set to 'true' and no profile removal payload is present, removing the profile requires admin auth.\nOn macOS versions prior to 10.15, this key prevents admins from removing MDM installed profiles. However, as of macOS 10.15, users can never remove MDM profiles, not even the admin.\nOn iOS users can't remove a MDM profile.\nRequires a supervised device.",
+            "description": "If present and set to 'true', the user can't delete the profile unless the profile has a removal password and the user provides it.\n\nOn macOS 10.15 and later, this key only affects removal of manually installed profiles. If set to 'true' and no profile removal payload is present, removing the profile requires admin auth.\n\nOn macOS versions prior to 10.15, this key prevents admins from removing MDM installed profiles. However, as of macOS 10.15, users can never remove MDM profiles, not even the admin.\n\nOn iOS users can't remove a MDM profile.\n\nRequires a supervised device.",
             "property_order": 5
         },
         "RemovalDate": {
@@ -24,7 +24,7 @@
         "ConsentText": {
             "type": "object",
             "title": "Consent Text",
-            "description": "A dictionary that includes:\n* A key that contains the IETF BCP 47 identifier for a language, such as en or jp\n* A value that contains the agreement localized to language specified by the key\nThe dictionary can also contain an optional key, 'default', with its value consisting of the unlocalized (usually in en) agreement.\nThe system always displays the agreement in a dialog, and the user needs to agree before the system can install the profile.\nThe system chooses a localized version in the order of preference that the user specifies in macOS, or based on the user's current language setting in iOS. If there's no exact match, the system uses the default localization. If there's no default localization, the system uses the en localization. If there's no en localization, the system uses the first available localization.\nProvide a default value, if possible. The system won't display a warning if the user's locale doesn't match any localization in the 'ConsentText' dictionary.",
+            "description": "A dictionary that includes:\n\n- A key that contains the IETF BCP 47 identifier for a language, such as en or jp\n- A value that contains the agreement localized to language specified by the key\n\nThe dictionary can also contain an optional key, 'default', with its value consisting of the unlocalized (usually in en) agreement.\n\nThe system always displays the agreement in a dialog, and the user needs to agree before the system can install the profile.\n\nThe system chooses a localized version in the order of preference that the user specifies in macOS, or based on the user's current language setting in iOS. If there's no exact match, the system uses the default localization. If there's no default localization, the system uses the en localization. If there's no en localization, the system uses the first available localization.\n\nTip:\nProvide a default value, if possible. The system won't display a warning if the user's locale doesn't match any localization in the 'ConsentText' dictionary.",
             "properties": {
                 "{{key}}": {
                     "type": "string",
@@ -72,7 +72,7 @@
             "type": "integer",
             "title": "Target Device Type",
             "default": 0,
-            "description": "The type of platform of the target device for this profile",
+            "description": "The type of platform of the target device. Specifying the platform type helps prevent unintended installations.\n\nFor interactive installations on iOS devices, specifying a target platform avoids interstitial alerts that prompt the user to choose a profile target when multiple targets are eligible.\n\nAllowed values:\n\n- '0': Any/unspecified\n- '1': iPhone/iPad/iPod Touch\n- '2': Apple Watch\n- '3': HomePod\n- '4': Apple TV\n- '5': Mac\n- '6': Vision Pro",
             "enum": [
                 0,
                 1,

@@ -1,12 +1,12 @@
 {
     "title": "Wi-Fi (com.apple.wifi.managed)",
-    "description": "Use this section to define Wi-Fi settings",
+    "description": "The payload that configures Wi-Fi settings.",
     "properties": {
         "IsHotspot": {
             "type": "boolean",
             "title": "Is Hotspot",
             "default": false,
-            "description": "If 'true', the device treats the network as a hotspot. Available in iOS 7.0 and later, and in macOS 10.9 and later.",
+            "description": "If 'true', the device treats the network as a hotspot.",
             "property_order": 5
         },
         "SSID_STR": {
@@ -26,21 +26,21 @@
             "type": "boolean",
             "title": "Auto Join",
             "default": true,
-            "description": "If 'true', the device joins the network automatically.\nIf 'false', the user must tap the network name to join it.\nAvailable in iOS 5.0 and later, and in macOS 10.7 and later.",
+            "description": "If 'true', the device joins the network automatically.\n\nIf 'false', the user must tap the network name to join it.",
             "property_order": 20
         },
         "CaptiveBypass": {
             "type": "boolean",
             "title": "Disable Captive Network Detection",
             "default": false,
-            "description": "If 'true', the system bypasses Captive Network detection when the device connects to the network. Available in iOS 10.0 and later.",
+            "description": "If 'true', the system bypasses Captive Network detection when the device connects to the network.",
             "property_order": 25
         },
         "DisableAssociationMACRandomization": {
             "type": "boolean",
             "title": "Disable MAC address randomization during association",
             "default": false,
-            "description": "If 'true,' disables MAC address randomization for a Wi-Fi network while associated with that network. This feature also shows a privacy warning in Settings indicating that the network has reduced privacy protections.\nIf 'false', then the system enables MAC address randomization on iOS, watchOS, and visionOS.\nThis value is only locked when MDM installs the profile. If the profile is manually installed, the system sets the value but the user can change it. Available in iOS 14 and later, watchOS 7 and later, macOS 15 and later, and visionOS.",
+            "description": "If 'true,' disables MAC address randomization for a Wi-Fi network while associated with that network. This feature also shows a privacy warning in Settings indicating that the network has reduced privacy protections.\n\nIf 'false', then the system enables MAC address randomization on iOS, watchOS, and visionOS.\n\nThis value is only locked when MDM installs the profile. If the profile is manually installed, the system sets the value but the user can change it.",
             "property_order": 30
         },
         "EnableIPv6": {
@@ -54,7 +54,7 @@
             "type": "string",
             "title": "Proxy Type",
             "default": "None",
-            "description": "The proxy type, if any, to use. If you choose the manual proxy type, you need the proxy server address, including its port and optionally a user name and password into the proxy server. If you choose the auto proxy type, you can enter a proxy autoconfiguration (PAC) URL. Available in iOS 5.0 and later, and on all versions of macOS.",
+            "description": "The proxy type, if any, to use. If you choose the manual proxy type, you need the proxy server address, including its port and optionally a user name and password into the proxy server. If you choose the auto proxy type, you can enter a proxy autoconfiguration (PAC) URL.",
             "enum": [
                 "None",
                 "Manual",
@@ -103,7 +103,7 @@
             "type": "string",
             "title": "Encryption Type",
             "default": "Any",
-            "description": "The encryption type for the network.\nIf set to anything except 'None', the payload may contain the following three keys: 'Password', 'PayloadCertificateUUID', or 'EAPClientConfiguration'.\nAs of iOS 16, tvOS 16, watchOS 9, and macOS 13:\n* 'WPA' allows joining WPA or WPA2 networks\n* 'WPA2' allows joining WPA2 or WPA3 networks\n* 'WPA3' allows joining WPA3 networks only\n* 'Any' allows joining WPA, WPA2, WPA3, and WEP networks\nPrior to iOS 16, tvOS 16, and watchOS 9, specifying 'WPA', 'WPA2', and 'WPA3' were equivalent and would allow joining any WPA network.\nPrior to macOS 13, the encryption type, if specified explicitly, needed to match the encryption type of the network exactly.",
+            "description": "The encryption type for the network.\n\nIf set to anything except 'None', the payload may contain the following three keys: 'Password', 'PayloadCertificateUUID', or 'EAPClientConfiguration'.\n\nAs of iOS 16, tvOS 16, watchOS 9, and macOS 13:\n\n- 'WPA' allows joining WPA or WPA2 networks\n- 'WPA2' allows joining WPA2 or WPA3 networks\n- 'WPA3' allows joining WPA3 networks only\n- 'Any' allows joining WPA, WPA2, WPA3, and WEP networks\n\nPrior to iOS 16, tvOS 16, and watchOS 9, specifying 'WPA', 'WPA2', and 'WPA3' were equivalent and would allow joining any WPA network.\n\nPrior to macOS 13, the encryption type, if specified explicitly, needed to match the encryption type of the network exactly.",
             "enum": [
                 "WEP",
                 "WPA",
@@ -133,20 +133,20 @@
         "DisplayedOperatorName": {
             "type": "string",
             "title": "Displayed Operator Name",
-            "description": "The operator name to display when connected to this network. Used only with Wi-Fi Hotspot 2.0 access points. Available in iOS 7.0 and later, and in macOS 10.9 and later.",
+            "description": "The operator name to display when connected to this network. Used only with Wi-Fi Hotspot 2.0 access points.",
             "property_order": 85
         },
         "DomainName": {
             "type": "string",
             "title": "Domain Name",
-            "description": "The primary domain of the tunnel. Available in iOS 7.0 and later, and in macOS 10.9 and later.",
+            "description": "The primary domain of the tunnel.",
             "property_order": 90
         },
         "ServiceProviderRoamingEnabled": {
             "type": "boolean",
             "title": "Roaming Enable",
             "default": false,
-            "description": "If 'true', allows connection to roaming service providers. Available in iOS 7.0 and later, and in macOS 10.9 and later.",
+            "description": "If 'true', allows connection to roaming service providers.",
             "property_order": 95
         },
         "RoamingConsortiumOIs": {
@@ -156,7 +156,7 @@
                 "pattern": "^([0-9A-Za-z]{6})|([0-9A-Za-z]{9})$"
             },
             "title": "Roaming OIs",
-            "description": "An array of Roaming Consortium Organization Identifiers used for Wi-Fi Hotspot 2.0 negotiation. Available in iOS 7.0 and later, and in macOS 10.9 and later.",
+            "description": "An array of Roaming Consortium Organization Identifiers used for Wi-Fi Hotspot 2.0 negotiation.",
             "property_order": 100
         },
         "NAIRealmNames": {
@@ -165,7 +165,7 @@
                 "type": "string"
             },
             "title": "Realm Names",
-            "description": "An array of Network Access Identifier Realm names used for Wi-Fi Hotspot 2.0 negotiation. Available in iOS 7.0 and later, and in macOS 10.9 and later.",
+            "description": "An array of Network Access Identifier Realm names used for Wi-Fi Hotspot 2.0 negotiation.",
             "property_order": 105
         },
         "MCCAndMNCs": {
@@ -175,7 +175,7 @@
                 "pattern": "^[0-9]{6}$"
             },
             "title": "MCC/MNCs",
-            "description": "An array of Mobile Country Code/Mobile Network Code (MCC/MNC) pairs used for Wi-Fi Hotspot 2.0 negotiation. Each string must contain exactly six digits. Available in iOS 7.0 and later. This feature isn't supported in macOS.",
+            "description": "An array of Mobile Country Code/Mobile Network Code (MCC/MNC) pairs used for Wi-Fi Hotspot 2.0 negotiation. Each string must contain exactly six digits.",
             "property_order": 110
         },
         "HESSID": {
@@ -238,7 +238,7 @@
                         }
                     },
                     "title": "Accept EAP Types",
-                    "description": "The EAP types that the system accepts. Allowed values:\n\n* 13: TLS\n* 17: LEAP\n* 18: EAP-SIM\n* 21: TTLS\n* 23: EAP-AKA\n* 25: PEAP\n* 43: EAP-FAST\n\nFor EAP-TLS authentication without a network payload, install the necessary identity certificates and have your users select EAP-TLS mode in the 802.1X credentials dialog that appears when they connect to the network. For other EAP types, a network payload is necessary and must specify the correct settings for the network."
+                    "description": "The EAP types that the system accepts. Allowed values:\n\n- '13': EAP-TLS\n- '17': LEAP\n- '18': EAP-SIM\n- '21': EAP-TTLS\n- '23': EAP-AKA\n- '25': PEAPv0/v1\n- '43': EAP-FAST\n\nFor EAP-TLS authentication without a network payload, install the necessary identity certificates and have your users select EAP-TLS mode in the 802.1X credentials dialog that appears when they connect to the network. For other EAP types, a network payload is necessary and must specify the correct settings for the network."
                 },
                 "UserName": {
                     "type": "string",
@@ -265,7 +265,7 @@
                         "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$"
                     },
                     "title": "Certificate Anchor UUID",
-                    "description": "An array of the UUID of a certificate payloads in the same profile to trust for authentication. Use this key to prevent the device from asking the user whether to trust the listed certificates. Dynamic trust (the certificate dialogue) is in a disabled state if you specify this property without also enabling 'TLSAllowTrustExceptions'."
+                    "description": "An array of the UUID of each certificate payload in the same profile to trust for authentication. Use this key to prevent the device from asking the user whether to trust the listed certificates. Dynamic trust (the certificate dialogue) is in a disabled state if you specify this property without also enabling 'TLSAllowTrustExceptions'."
                 },
                 "TLSTrustedServerNames": {
                     "type": "array",
@@ -392,19 +392,19 @@
         "QoSMarkingPolicy": {
             "type": "object",
             "title": "QoS Marking Policy",
-            "description": "A dictionary that contains the list of apps that the system allows to benefit from L2 and L3 marking. When this dictionary isn't present, the system allows all apps to use L2 and L3 marking when the Wi-Fi network supports Cisco QoS fast lane. Available in iOS 10.0 and later, and in macOS 10.13 and later.",
+            "description": "A dictionary that contains the list of apps that the system allows to benefit from L2 and L3 marking. When this dictionary isn't present, the system allows all apps to use L2 and L3 marking when the Wi-Fi network supports Cisco QoS fast lane.",
             "properties": {
                 "QoSMarkingEnabled": {
                     "type": "boolean",
                     "title": "Allow QoS marking",
                     "default": true,
-                    "description": "If 'true', disables L3 marking and only uses L2 marking for traffic that goes to the Wi-Fi network.\n\nIf 'false', the system behaves as if Wi-Fi doesn't have an association with a Cisco QoS fast lane network."
+                    "description": "If 'true', disables L3 marking and only uses L2 marking for traffic that goes to the Wi-Fi network.\n\n\n\nIf 'false', the system behaves as if Wi-Fi doesn't have an association with a Cisco QoS fast lane network."
                 },
                 "QoSMarkingAppleAudioVideoCalls": {
                     "type": "boolean",
-                    "title": "QoS marking for audio/video calls",
+                    "title": "QoS marking for audio or video calls",
                     "default": true,
-                    "description": "If 'true', adds audio and video traffic of built-in audio/video services, such as FaceTime and Wi-Fi Calling, to the allow list for L2 and L3 marking for traffic that goes to the Wi-Fi network."
+                    "description": "If 'true', adds audio and video traffic of built-in audio or video services, such as FaceTime and Wi-Fi Calling, to the allow list for L2 and L3 marking for traffic that goes to the Wi-Fi network."
                 },
                 "QoSMarkingAllowListAppIdentifiers": {
                     "type": "array",

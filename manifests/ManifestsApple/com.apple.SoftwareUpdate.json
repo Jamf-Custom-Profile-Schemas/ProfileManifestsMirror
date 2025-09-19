@@ -1,11 +1,11 @@
 {
     "title": "Software Update (com.apple.SoftwareUpdate)",
-    "description": "Software Update settings",
+    "description": "The payload that configures the software update policy.",
     "properties": {
         "CatalogURL": {
             "type": "string",
             "title": "Catalog URL",
-            "description": "Specify a URL of the desired software update catalog in the form of http://server.example.com:8088/index.sucatalog",
+            "description": "The URL of the software update catalog. This property is not supported in macOS 11 and later.",
             "property_order": 5
         },
         "SUDisableEVCheck": {
@@ -18,43 +18,49 @@
             "type": "boolean",
             "title": "Automatically check for updates",
             "default": true,
+            "description": "If 'false', deselects the \"Check for updates\" option and prevents the user from changing the option.",
             "property_order": 15
         },
         "AutomaticDownload": {
             "type": "boolean",
             "title": "Download newly available updates in the background",
             "default": true,
+            "description": "If 'false', deselects the \"Download new updates when available from the App Store\" option and prevents the user from changing the option.",
             "property_order": 20
         },
         "AutomaticallyInstallMacOSUpdates": {
             "type": "boolean",
             "title": "Automatically install macOS updates",
             "default": true,
+            "description": "If 'false', restricts the \"Install macOS Updates\" option and prevents the user from changing the option.",
             "property_order": 25
         },
         "AutomaticallyInstallAppUpdates": {
             "type": "boolean",
             "title": "Automatically install App Store app updates",
             "default": true,
+            "description": "If 'false', deselects the \"Install app updates from the App Store\" option and prevents the user from changing the option.",
             "property_order": 30
         },
         "ConfigDataInstall": {
             "type": "boolean",
             "title": "Install XProtect, MRT, & Gatekeeper updates automatically",
             "default": true,
+            "description": "If 'false', restricts the automatic installation of configuration data.",
             "property_order": 35
         },
         "CriticalUpdateInstall": {
             "type": "boolean",
             "title": "Install security updates automatically",
             "default": true,
-            "description": "These are not regular security updates. An example is the OS X NTP Security Update 1.0 update.",
+            "description": "If 'false', disables the automatic installation of critical updates and prevents the user from changing the \"Install system data files and security updates\" option.",
             "property_order": 40
         },
         "AllowPreReleaseInstallation": {
             "type": "boolean",
-            "title": "Allow installation of macOS beta releases",
+            "title": "Allow Pre-Release Update Installation",
             "default": true,
+            "description": "If 'true', prerelease software can be installed on this computer.",
             "property_order": 45
         },
         "forceDelayedSoftwareUpdates": {
@@ -67,7 +73,7 @@
             "type": "boolean",
             "title": "Restrict app installations to admin users",
             "default": false,
-            "description": "This key has the same function as the key restrict-store-require-admin-to-install in the com.apple.appstore payload.",
+            "description": "If 'true', restrict app installations to admin users. This key has the same function as the  'restrict-store-require-admin-to-install' key in the 'com.apple.appstore' payload.",
             "property_order": 55
         },
         "ManagedDeferredInstallDelay": {

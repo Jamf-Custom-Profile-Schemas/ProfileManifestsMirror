@@ -1,6 +1,6 @@
 {
     "title": "Exchange ActiveSync (com.apple.eas.account)",
-    "description": "Use this section to define settings for the Exchange ActiveSync account.",
+    "description": "The payload that configures Exchange ActiveSync accounts.",
     "properties": {
         "UserName": {
             "type": "string",
@@ -44,7 +44,7 @@
             "type": "boolean",
             "title": "Use OAuth",
             "default": false,
-            "description": "If 'true', enables OAuth for authentication. If enabled, don't specify a password.\nAvailable only in iOS 12.0 and above.",
+            "description": "If 'true', enables OAuth for authentication. If enabled, don't specify a password.\n\nAvailable only in iOS 12.0 and above.",
             "property_order": 35
         },
         "CertificateName": {
@@ -119,7 +119,7 @@
             "type": "boolean",
             "title": "S/MIME Enable Per-Message Switch",
             "default": false,
-            "description": "If 'true', the system displays the per-message encryption switch in the Mail Compose UI.\nAvailable in iOS 8.0 and later. As of iOS 12.0, this key is deprecated. Use 'SMIMEEnableEncryptionPerMessageSwitch' instead.",
+            "description": "If 'true', the system displays the per-message encryption switch in the Mail Compose UI.\n\nAvailable in iOS 8.0 and later. As of iOS 12.0, this key is deprecated. Use 'SMIMEEnableEncryptionPerMessageSwitch' instead.",
             "property_order": 90
         },
         "SMIMESigningUserOverrideable": {
@@ -168,35 +168,35 @@
             "type": "boolean",
             "title": "Enabled Services - Calendars",
             "default": true,
-            "description": "If 'false', the system disables the Calendars service for this account. The user can reenable Calendars service in Settings unless 'EnableCalendarsUserOverridable' is 'false'.\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
+            "description": "If 'false', the system disables the Calendars service for this account. The user can reenable Calendars service in Settings unless 'EnableCalendarsUserOverridable' is 'false'.\n\nNote:\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
             "property_order": 125
         },
         "EnableContacts": {
             "type": "boolean",
             "title": "Enabled Services - Contacts",
             "default": true,
-            "description": "If 'false', the system disables the Contacts service for this account. The user can reenable Contacts service in Settings unless 'EnableContactsUserOverridable' is 'false'.\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
+            "description": "If 'false', the system disables the Contacts service for this account. The user can reenable Contacts service in Settings unless 'EnableContactsUserOverridable' is 'false'.\n\nNote:\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
             "property_order": 130
         },
         "EnableMail": {
             "type": "boolean",
             "title": "Enabled Services - Mail",
             "default": true,
-            "description": "If 'false', the system disables the Mail service for this account. The user can reenable Mail service in Settings unless 'EnableMailUserOverridable' is 'false'.\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
+            "description": "If 'false', the system disables the Mail service for this account. The user can reenable Mail service in Settings unless 'EnableMailUserOverridable' is 'false'.\n\nNote:\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
             "property_order": 135
         },
         "EnableNotes": {
             "type": "boolean",
             "title": "Enabled Services - Notes",
             "default": true,
-            "description": "If 'false', the system disables the Notes service for this account. The user can reenable Notes service in Settings unless 'EnableNotesUserOverridable' is 'false'.\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
+            "description": "If 'false', the system disables the Notes service for this account. The user can reenable Notes service in Settings unless 'EnableNotesUserOverridable' is 'false'.\n\nNote:\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
             "property_order": 140
         },
         "EnableReminders": {
             "type": "boolean",
             "title": "Enabled Services - Reminders",
             "default": true,
-            "description": "If 'false', the system disables the Reminders service for this account. The user can reenable Reminders service in Settings unless 'EnableRemindersUserOverridable' is 'false'.\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
+            "description": "If 'false', the system disables the Reminders service for this account. The user can reenable Reminders service in Settings unless 'EnableRemindersUserOverridable' is 'false'.\n\nNote:\nAt least of the following fields needs to be 'true': 'EnableMail', 'EnableContacts', 'EnableCalendars', 'EnableReminders', and 'EnableNotes'.",
             "property_order": 145
         },
         "EnableCalendarsUserOverridable": {
@@ -245,7 +245,7 @@
             "type": "integer",
             "title": "Past Days of Mail to Sync",
             "default": 7,
-            "description": "The number of days in the past to sync mail on the device.\nFor no limit, use the value '0'.",
+            "description": "The number of days in the past to sync mail on the device.\n\nFor no limit, use the value '0'.",
             "enum": [
                 0,
                 1,

@@ -1,11 +1,11 @@
 {
-    "title": "Web Clips (com.apple.webClip.managed)",
-    "description": "Use this section to define web clips",
+    "title": "Web Clip (com.apple.webClip.managed)",
+    "description": "The profile that configures web clips on the device.",
     "properties": {
         "Label": {
             "type": "string",
             "title": "Label",
-            "description": "The name of the Web Clip",
+            "description": "The name of the web clip that the system displays on the Home Screen.",
             "property_order": 5
         },
         "URL": {
@@ -18,34 +18,34 @@
             "type": "boolean",
             "title": "Removable",
             "default": true,
-            "description": "Whether the Web Clip can be removed by users",
+            "description": "If 'true', the system enables removing the web clip.",
             "property_order": 15
         },
         "Precomposed": {
             "type": "boolean",
             "title": "Precomposed Icon",
             "default": false,
-            "description": "Prevents the iOS device from adding a shine to the image",
+            "description": "If 'true', the system prevents SpringBoard from adding shine to the icon.",
             "property_order": 20
         },
         "FullScreen": {
             "type": "boolean",
             "title": "Full Screen",
             "default": false,
-            "description": "Opens the URL as a web app without a browser",
+            "description": "If 'true', the system launches the web clip as a full-screen web app.",
             "property_order": 25
         },
         "IgnoreManifestScope": {
             "type": "boolean",
-            "title": "Ignore Manifest Scope",
+            "title": "Ignore Web Clip manifest scope",
             "default": false,
-            "description": "If true, a full screen web clip will not show the Safari UI when navigating to URLs other than the web clip's own.",
+            "description": "If 'true', a full screen web clip can navigate to an external web site without showing Safari UI. Otherwise, Safari UI appears when navigating away from the web clip's URL. This key has no effect when 'FullScreen' is 'false'. Available in iOS 14 and later.",
             "property_order": 30
         },
         "TargetApplicationBundleIdentifier": {
             "type": "string",
             "title": "Target Application Bundle Identifier",
-            "description": "Bundle identifier of the application that opens this web clip's URL.",
+            "description": "The application bundle identifier of the application that opens the URL. To use this property, install the profile through MDM. Available in iOS 14 and later.",
             "property_order": 35
         }
     }

@@ -1,6 +1,6 @@
 {
     "title": "802.1X Ethernet: First (com.apple.firstethernet.managed)",
-    "description": "Use this section to define First Ethernet settings",
+    "description": "The payload that configures the first wired Ethernet interface.",
     "properties": {
         "SetupModes": {
             "type": "array",

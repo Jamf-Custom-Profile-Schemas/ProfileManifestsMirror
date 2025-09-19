@@ -1,29 +1,29 @@
 {
-    "title": "Messages: AIM (com.apple.AIM.account)",
-    "description": "Messages: AIM settings",
+    "title": "AIM Account (com.apple.AIM.account)",
+    "description": "The payload that configures an AIM account on the device.",
     "properties": {
         "AIMAccountDescription": {
             "type": "string",
-            "title": "Account description",
-            "description": "The display name for the account.",
+            "title": "Account Description",
+            "description": "The description of the account.",
             "property_order": 5
         },
         "AIMUserName": {
             "type": "string",
-            "title": "Account name",
-            "description": "The chat name of the user.",
+            "title": "Account Username",
+            "description": "The user's login name.",
             "property_order": 10
         },
         "AIMPassword": {
             "type": "string",
-            "title": "Password",
-            "description": "The password for the account.",
+            "title": "Account Password",
+            "description": "The user's password.",
             "property_order": 15
         },
         "AIMAuthentication": {
             "type": "string",
-            "title": "Authentication Type",
-            "description": "The authentication method for the server.",
+            "title": "AIM Authentication",
+            "description": "The authentication method for the account.",
             "enum": [
                 "AIMAuthPassword"
             ],
@@ -36,23 +36,26 @@
         },
         "AIMHostName": {
             "type": "string",
-            "title": "Hostname",
+            "title": "Account Hostname",
             "default": "slogin.oscar.aol.com",
-            "description": "The IP address or fully qualified domain name (FQDN) of the server.",
+            "description": "The server address.",
+            "enum": [
+                "slogin.oscar.aol.com"
+            ],
             "property_order": 25
         },
         "AIMPort": {
             "type": "integer",
-            "title": "Port",
+            "title": "Port Number",
             "default": 5190,
-            "description": "The port on which to connect to the server.",
+            "description": "The connection port for the server.",
             "property_order": 30
         },
         "AIMUseSSL": {
             "type": "boolean",
             "title": "Use SSL",
             "default": true,
-            "description": "Enable Secure Socket Layer for this connection.",
+            "description": "If 'true', enables SSL.",
             "property_order": 35
         }
     }

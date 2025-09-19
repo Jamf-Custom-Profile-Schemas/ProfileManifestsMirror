@@ -1,53 +1,53 @@
 {
     "title": "Single Sign-On (com.apple.sso)",
-    "description": "Single Sign-On Account Payload",
+    "description": "The payload that configures single sign-on (SSO).",
     "properties": {
         "Name": {
             "type": "string",
             "title": "Account Name",
-            "description": "Human-readable name for the account",
+            "description": "The human-readable name for the account.",
             "property_order": 5
         },
         "Kerberos": {
             "type": "object",
             "title": "Kerberos-Related Information",
-            "description": "Kerberos-related information.",
+            "description": "The Kerberos dictionary.",
             "properties": {
                 "AppIdentifierMatches": {
                     "type": "array",
                     "items": {
                         "type": "string",
                         "title": "App Bundle ID Item",
-                        "description": "Exact or partial bundle ID match using the wildcard character eg com.apple.*"
+                        "description": "An app identifier."
                     },
                     "title": "App Identifiers",
-                    "description": "List of app identifiers that are allowed to use this login"
+                    "description": "The list of app identifiers that the system allows to use this login. If this field missing, the system matches all app identifiers with this login.\n\nDon't set an empty array. The array needs to contain strings that match App Bundle IDs. These strings can be exact matches such as 'com.mycompany.myapp', or they may specify a prefix match on the Bundle ID by using the '*' wildcard character. The wildcard character needs to appear after a period ('.'), and may only appear once, at the end of the string, for example, 'com.mycompany.*'. When you provide a wildcard, the system grants access to the account to any app with a Bundle ID that begins with the prefix."
                 },
                 "PayloadCertificateUUID": {
                     "type": "string",
                     "title": "Identity Certificate UUID",
-                    "description": "The PayloadUUID of an identity certificate payload for Kerberos credential renewal without user interaction.",
+                    "description": "The 'PayloadUUID' of an identity certificate payload that the system can use to renew the Kerberos credential without user interaction. Set the payload type to either 'com.apple.security.pkcs12' or 'com.apple.security.scep' in the certificate payload. The configuration file needs to contain both the SSO payload and the identity certificate payload.",
                     "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$"
                 },
                 "PrincipalName": {
                     "type": "string",
                     "title": "Kerberos Principal Name",
-                    "description": "The Kerberos principal name. The user will be prompted for one during profile installation if not provided."
+                    "description": "The principal name. If not provided, the system prompts the user for one during profile installation. Required for MDM installation."
                 },
                 "Realm": {
                     "type": "string",
                     "title": "Kerberos Realm Name",
-                    "description": "Properly capitalized Kerberos realm name"
+                    "description": "The properly capitalized realm name."
                 },
                 "URLPrefixMatches": {
                     "type": "array",
                     "items": {
                         "type": "string",
                         "title": "URL Matching Item",
-                        "description": "Each entry in the URLPrefixMatches array must contain a URL prefix. Only URLs that begin with one of the strings in this account are allowed to access the Kerberos ticket."
+                        "description": "A URL prefix."
                     },
                     "title": "URLs Prefix Matches",
-                    "description": "List of URLs prefixes that must be matched to use this account for Kerberos authentication over HTTP. Note that the URL postfixes must match as well."
+                    "description": "The list of URL prefixes to match in order to use this account for Kerberos authentication over HTTP. If this key is missing, the system makes the account eligible to match all 'http://' and 'https://' URLs.\n\nBegin the URL matching patterns with either 'http://' or 'https://'. The system performs a simple string match, so the URL prefix 'http://www.apple.com/' doesn't match 'http://www.apple.com:80/'. However, if a matching pattern doesn't end in '/', the system automatically append a '/' to it."
                 }
             },
             "property_order": 10

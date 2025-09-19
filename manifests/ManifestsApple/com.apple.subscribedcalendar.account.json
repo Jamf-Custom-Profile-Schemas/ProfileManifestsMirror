@@ -1,38 +1,44 @@
 {
     "title": "Subscribed Calendars (com.apple.subscribedcalendar.account)",
-    "description": "Use this section to define settings for subscribed calendar account.",
+    "description": "The payload that configures subscribed calendars.",
     "properties": {
         "SubCalAccountDescription": {
             "type": "string",
             "title": "Description",
             "default": "My Subscribed Calendar",
-            "description": "The description of the calendar subscription",
+            "description": "The description of the account.",
             "property_order": 5
         },
         "SubCalAccountHostName": {
             "type": "string",
             "title": "URL",
-            "description": "The URL of the calendar file",
+            "description": "The server's address.",
             "property_order": 10
         },
         "SubCalAccountUsername": {
             "type": "string",
             "title": "Username",
-            "description": "The username for this subscription",
+            "description": "The user's user name.",
             "property_order": 15
         },
         "SubCalAccountPassword": {
             "type": "string",
             "title": "Password",
-            "description": "The password for this subscription",
+            "description": "The user's password.",
             "property_order": 20
         },
         "SubCalAccountUseSSL": {
             "type": "boolean",
             "title": "Use SSL",
-            "default": true,
-            "description": "Use Secure Socket Layer for this subscription",
+            "default": false,
+            "description": "If 'true', the system enables SSL.",
             "property_order": 25
+        },
+        "VPNUUID": {
+            "type": "string",
+            "title": "VPNUUID",
+            "description": "The VPNUUID of the per-app VPN the account uses for network communication. Available in iOS 14 and later.",
+            "property_order": 30
         }
     }
 }

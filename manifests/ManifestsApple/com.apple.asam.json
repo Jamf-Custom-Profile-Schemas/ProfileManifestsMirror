@@ -1,27 +1,28 @@
 {
     "title": "Autonomous Single App Mode (com.apple.asam)",
-    "description": "This payload grants Autonomous Single App Mode capabilities for specific applications",
+    "description": "The payload that configures Autonomous Single App mode.",
     "properties": {
         "AllowedApplications": {
             "type": "array",
             "items": {
                 "type": "object",
                 "title": "Allowed Application Item",
+                "description": "A dictionary that specifies an app that can be granted access to the Accessibilty APIs.",
                 "properties": {
                     "BundleIdentifier": {
                         "type": "string",
                         "title": "Bundle Identifier",
-                        "description": "The application's bundle identifier. BundleIdentifier must be unique. If two dictionaries contain the same BundleIdentifier but different TeamIdentifiers, this will be considered a hard error and the payload will not be installed."
+                        "description": "The unique bundle identifier. If two dictionaries contain the same 'BundleIdentifier' value but a different 'TeamIdentifier' value, an error occurs and the profile won't be installed."
                     },
                     "TeamIdentifier": {
                         "type": "string",
                         "title": "Team Identifier",
-                        "description": "The application's team identifier."
+                        "description": "The developer's team identifier that the system used when it signed the app."
                     }
                 }
             },
             "title": "Allowed Applications",
-            "description": "Array of dictionaries that specify applications that are to be granted access to Assessment APIs.",
+            "description": "An array of dictionaries that specifies the apps that the system grants access to the Accessibility APIs.",
             "property_order": 5
         }
     }

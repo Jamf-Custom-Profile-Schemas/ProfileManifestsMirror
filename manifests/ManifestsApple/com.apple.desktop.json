@@ -1,18 +1,18 @@
 {
     "title": "Desktop Picture (com.apple.desktop)",
-    "description": "Desktop Picture settings",
+    "description": "The payload that configures the desktop wallpaper.",
     "properties": {
         "locked": {
             "type": "boolean",
             "title": "Lock desktop picture",
             "default": false,
-            "description": "Prevents users from modifying the desktop picture selection.",
+            "description": "If 'true', locks the desktop picture. Replaced with allowWallpaperModification in macOS 10.13.",
             "property_order": 5
         },
         "override-picture-path": {
             "type": "string",
             "title": "Desktop picture path",
-            "description": "The path of the file to use as the desktop picture.",
+            "description": "The path to the desktop picture. If set, this picture is always locked.",
             "property_order": 10
         }
     }

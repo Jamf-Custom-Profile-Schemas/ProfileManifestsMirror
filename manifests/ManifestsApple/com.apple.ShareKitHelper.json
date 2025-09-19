@@ -1,12 +1,13 @@
 {
     "title": "ShareKit (com.apple.ShareKitHelper)",
-    "description": "Configures available Share menu options",
+    "description": "The payload that configures ShareKit.",
     "properties": {
         "SHKAllowedShareServices": {
             "type": "array",
             "items": {
                 "type": "string",
                 "title": "Allowed Services",
+                "description": "A plugin ID.",
                 "enum": [
                     "com.apple.share.AirDrop",
                     "com.apple.share.Facebook",
@@ -41,6 +42,7 @@
                 }
             },
             "title": "Allowed Share Services",
+            "description": "The list of plugin IDs that show up in the user's Share menu. If this array exists, only these items are permitted.",
             "property_order": 5
         },
         "SHKDeniedShareServices": {
@@ -48,6 +50,7 @@
             "items": {
                 "type": "string",
                 "title": "Denied Services",
+                "description": "A plugin ID.",
                 "enum": [
                     "com.apple.share.AirDrop",
                     "com.apple.share.Facebook",
@@ -82,6 +85,7 @@
                 }
             },
             "title": "Denied Share Services",
+            "description": "The list of plugin IDs that won't show up in the user's Share menu. This key is used only if there is no 'SHKAllowedShareServices' key.",
             "property_order": 10
         }
     }

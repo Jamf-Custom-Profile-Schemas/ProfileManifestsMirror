@@ -1,32 +1,32 @@
 {
     "title": "Screensaver (com.apple.screensaver)",
-    "description": "Screensaver settings",
+    "description": "The payload that configures the screen saver.",
     "properties": {
         "askForPassword": {
             "type": "boolean",
             "title": "Require password to unlock screen.",
             "default": false,
-            "description": "If true, the user will be prompted for a password when the screensaver is unlocked or stopped.",
+            "description": "If 'true', the user is prompted for a password when the screen saver is unlocked or stopped. When you use this prompt, you must also provide 'askForPasswordDelay'. Available in macOS 10.13 and later.",
             "property_order": 5
         },
         "askForPasswordDelay": {
             "type": "integer",
             "title": "Require password delay",
             "default": 0,
-            "description": "Number of seconds to delay before the password will be required to unlock or stop the screen saver (the \"grace period\"). A value of 2147483647 can be used to disable this requirement.",
+            "description": "The number of seconds to delay before the password will be required to unlock or stop the screen saver (the grace period). A value of '2147483647' (for example, '0x7FFFFFFF') disables this requirement. To use this option, you must set 'askForPassword' to 'true'. Available in macOS 10.13 and later.",
             "property_order": 10
         },
         "loginWindowModulePath": {
             "type": "string",
             "title": "Screensaver path",
-            "description": "A full path to the screen saver module to be used.",
+            "description": "The full path to the screen-saver module to use.",
             "property_order": 15
         },
         "loginWindowIdleTime": {
             "type": "integer",
             "title": "LoginWindow Screensaver idle time",
             "default": 300,
-            "description": "Number of seconds of inactivity before screensaver activates. (0 = never activate).",
+            "description": "The number of seconds of inactivity before the screen saver activates (0 = Never activate).",
             "property_order": 20
         },
         "idleTime": {
@@ -40,7 +40,7 @@
             "type": "string",
             "title": "Screensaver Module Name",
             "default": "Flurry",
-            "description": "Name of the screensaver module to use.",
+            "description": "The name of the screen saver module.",
             "property_order": 30
         }
     }

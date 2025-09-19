@@ -1,6 +1,6 @@
 {
     "title": "Service Management - Managed Login Items (com.apple.servicemanagement)",
-    "description": "Control the user experience for ServiceManagement login items (including launchd agents and daemons) in Login Items Settings.",
+    "description": "This payload that configures managed login items, which auto-enables and auto-allows matched items.",
     "properties": {
         "Rules": {
             "type": "array",
@@ -24,7 +24,7 @@
                     "RuleValue": {
                         "type": "string",
                         "title": "Rule Value",
-                        "description": "The value to compare with each login item's value, to determine a match to this rule."
+                        "description": "The value to compare with each login item's value, to determine if this rule is a match."
                     },
                     "Comment": {
                         "type": "string",
@@ -34,12 +34,12 @@
                     "TeamIdentifier": {
                         "type": "string",
                         "title": "Team Identifier",
-                        "description": "An additional constraint to limit the scope of the rule that is tested after matching the RuleType/RuleValue."
+                        "description": "An additional constraint to limit the scope of the rule that the system tests after matching the 'RuleType' and 'RuleValue'."
                     }
                 }
             },
             "title": "Rules",
-            "description": "An array of rule dictionaries.",
+            "description": "An array of service management rules.",
             "property_order": 5
         }
     }

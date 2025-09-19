@@ -1,18 +1,27 @@
 {
-    "title": "System Preferences: Security (com.apple.preference.security)",
-    "description": "System Preferences: Security settings",
+    "title": "Security Preferences (com.apple.preference.security)",
+    "description": "The payload that configures security preferences.",
     "properties": {
         "dontAllowPasswordResetUI": {
             "type": "boolean",
             "title": "Allow user to change password",
             "default": false,
+            "description": "If 'true', disables user changes to the password.",
             "property_order": 5
         },
         "dontAllowLockMessageUI": {
             "type": "boolean",
             "title": "Allow user to set lock message",
             "default": false,
+            "description": "If 'true', disables user changes to the lock message.",
             "property_order": 10
+        },
+        "dontAllowFireWallUI": {
+            "type": "boolean",
+            "title": "Disallow firewall setting modification",
+            "default": false,
+            "description": "If 'true', disables user changes to the firewall settings.",
+            "property_order": 15
         }
     }
 }

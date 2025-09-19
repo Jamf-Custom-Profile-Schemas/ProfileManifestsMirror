@@ -1,29 +1,32 @@
 {
     "title": "Parental Controls: Time Limits (com.apple.familycontrols.timelimits.v2)",
-    "description": "Parental Controls: Time Limit settings",
+    "description": "The payload that configures parental control time limits.",
     "properties": {
         "familyControlsEnabled": {
             "type": "boolean",
             "title": "Enable Time Limits",
-            "description": "Set to true to enable family control time limits",
+            "description": "If 'true', enables time limits.",
             "property_order": 5
         },
         "time-limits": {
             "type": "object",
             "title": "Time Limits",
+            "description": "The time limits to enforce if 'familyControlsEnabled' is enabled.",
             "properties": {
                 "weekday-allowance": {
                     "type": "object",
                     "title": "Weekday Allowance",
-                    "description": "Weekday allowance settings",
+                    "description": "The weekday allowance settings.",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
-                            "title": "Enable Weekday Allowance"
+                            "title": "Enable Weekday Allowance",
+                            "description": "If 'true', enable these settings."
                         },
                         "secondsPerDay": {
                             "type": "integer",
-                            "title": "Allowance Seconds per Day"
+                            "title": "Allowance Seconds per Day",
+                            "description": "The allowance for that day, in seconds."
                         },
                         "rangeType": {
                             "type": "integer",
@@ -43,10 +46,12 @@
                 "weekday-curfew": {
                     "type": "object",
                     "title": "Weekday Curfew",
+                    "description": "The weekday curfew settings.",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
-                            "title": "Enable Weekday Curfew"
+                            "title": "Enable Weekday Curfew",
+                            "description": "If 'true', enable these settings."
                         },
                         "start": {
                             "type": "string",
@@ -76,14 +81,17 @@
                 "weekend-allowance": {
                     "type": "object",
                     "title": "Weekend Allowance",
+                    "description": "The weekend allowance settings.",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
-                            "title": "Enable Weekend Allowance"
+                            "title": "Enable Weekend Allowance",
+                            "description": "If 'true', enable these settings."
                         },
                         "secondsPerDay": {
                             "type": "integer",
-                            "title": "Allowance Seconds per Day"
+                            "title": "Allowance Seconds per Day",
+                            "description": "The allowance for that day, in seconds."
                         },
                         "rangeType": {
                             "type": "integer",
@@ -103,10 +111,12 @@
                 "weekend-curfew": {
                     "type": "object",
                     "title": "Weekend Curfew",
+                    "description": "The weekend curfew settings.",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
-                            "title": "Enable Weekend Curfew"
+                            "title": "Enable Weekend Curfew",
+                            "description": "If 'true', enable these settings."
                         },
                         "start": {
                             "type": "string",

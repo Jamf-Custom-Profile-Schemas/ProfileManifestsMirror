@@ -1,11 +1,11 @@
 {
     "title": "Conference Room Display (com.apple.conferenceroomdisplay)",
-    "description": "Use this section to place an Apple TV device into Conference Room Display mode.",
+    "description": "The payload that configures Conference Room Display mode for Apple TV.",
     "properties": {
         "Message": {
             "type": "string",
-            "title": "Message",
-            "description": "A custom message displayed on the screen in Conference Room Display mode.",
+            "title": "Custom message",
+            "description": "The custom message displayed on the screen in Conference Room Display mode.",
             "property_order": 5
         }
     }

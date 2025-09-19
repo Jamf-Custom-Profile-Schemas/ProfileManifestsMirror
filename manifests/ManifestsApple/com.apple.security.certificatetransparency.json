@@ -1,25 +1,26 @@
 {
     "title": "Certificate Transparency (com.apple.security.certificatetransparency)",
-    "description": "Certificate Transparency settings",
+    "description": "The payload that configures certificate transparency enforcement.",
     "properties": {
         "DisabledForDomains": {
             "type": "array",
             "items": {
                 "type": "string"
             },
-            "title": "Disabled Domains",
-            "description": "List of domains where certificate transparency is disabled.",
+            "title": "Disabled domains",
+            "description": "An array of strings that represent the domains to exclude from certificate transparency enforcement. The system supports using a leading period ('.') to signify subdomains. However, the system doesn't support wildcards. If you include a leading period, the domain can't be a top-level domain, such as '.com' and '.co.uk'.",
             "property_order": 5
         },
         "DisabledForCerts": {
             "type": "array",
             "items": {
                 "type": "object",
+                "description": "A dictionary of hashed public keys.",
                 "properties": {
                     "Algorithm": {
                         "type": "string",
                         "default": "sha256",
-                        "description": "Hash algorithm",
+                        "description": "The algorithm must be 'sha256'.",
                         "enum": [
                             "sha256"
                         ]
@@ -27,7 +28,7 @@
                 }
             },
             "title": "Disabled Certificates",
-            "description": "A list of certificate hashes for which certificate transparency is disabled.",
+            "description": "An array of certificates for which certificate transparency is disabled. One of the following conditions needs to be met to disable certificate transparency enforcement when this policy is set:\n\n- The hash is of the server certificate's 'subjectPublicKeyInfo'.\n- The hash is of a 'subjectPublicKeyInfo' that appears in a CA certificate in the certificate chain; the CA certificate is constrained through the X.509v3 'nameConstraints' extension. One or more 'directoryName' 'nameConstraints' are present in the 'permittedSubtrees', and the 'directoryName' contains an 'organizationName' attribute.\n- The hash is of a 'subjectPublicKeyInfo' that appears in a CA certificate in the certificate chain. The CA certificate has one or more 'organizationName' attributes in the certificate 'Subject', and the server's certificate contains the same number of 'organizationName' attributes, in the same order, and with byte-for-byte identical values.",
             "property_order": 10
         }
     }

@@ -1,124 +1,136 @@
 {
-    "title": "Single App Mode (com.apple.app.lock)",
-    "description": "Single App Mode settings",
+    "title": "App Lock (com.apple.app.lock)",
+    "description": "The payload that configures a device to run a single app.",
     "properties": {
         "App": {
             "type": "object",
             "title": "App",
-            "description": "A dictionary containing information about the app",
+            "description": "A dictionary that contains information about the app.",
             "properties": {
                 "Identifier": {
                     "type": "string",
                     "title": "Identifier",
-                    "description": "The bundle identifier of the application."
+                    "description": "The app's bundle identifier."
                 },
                 "Options": {
                     "type": "object",
                     "title": "Options",
-                    "description": "Settings enforced when in Single App Mode",
+                    "description": "A dictionary of options that the user can't change.",
                     "properties": {
                         "DisableTouch": {
                             "type": "boolean",
                             "title": "Disable Touch",
                             "default": false,
-                            "description": "Disable Touch Screen"
+                            "description": "If 'true', the system disables the touch screen. In tvOS, it disables the touch surface on the Apple TV Remote."
                         },
                         "DisableDeviceRotation": {
                             "type": "boolean",
                             "title": "Disable Device Rotation",
                             "default": false,
-                            "description": "Disable Device Rotation"
+                            "description": "If 'true', the system disables device rotation sensing."
                         },
                         "DisableVolumeButtons": {
                             "type": "boolean",
                             "title": "Disable Volume Buttons",
                             "default": false,
-                            "description": "Disable Volume Buttons"
+                            "description": "If 'true', the system disables the volume buttons."
                         },
                         "DisableRingerSwitch": {
                             "type": "boolean",
                             "title": "Disable Ringer Switch",
                             "default": false,
-                            "description": "Disable Ringer Switch"
+                            "description": "If 'true', the system disables the ringer switch. When disabled, the ringer behavior depends on what position the switch was in when it was first disabled."
                         },
                         "DisableSleepWakeButton": {
                             "type": "boolean",
                             "title": "Disable Sleep Wake Button",
                             "default": false,
-                            "description": "Disable Sleep Wake Button"
+                            "description": "If 'true', the system disables the sleep/wake button."
                         },
                         "DisableAutoLock": {
                             "type": "boolean",
                             "title": "Disable Auto Lock",
                             "default": false,
-                            "description": "Disable Auto Lock"
+                            "description": "If 'true', the device doesn't automatically go to sleep after an idle period."
                         },
                         "EnableVoiceOver": {
                             "type": "boolean",
                             "title": "Enable Voice Over",
                             "default": false,
-                            "description": "Enable Voice Over"
+                            "description": "If 'true', the system enables VoiceOver."
                         },
                         "EnableZoom": {
                             "type": "boolean",
                             "title": "Enable Zoom",
                             "default": false,
-                            "description": "Enable Zoom"
+                            "description": "If 'true', the system enables Zoom."
                         },
                         "EnableInvertColors": {
                             "type": "boolean",
                             "title": "Enable Invert Colors",
                             "default": false,
-                            "description": "Enable Inverted Colors"
+                            "description": "If 'true', the system enables Invert Colors."
                         },
                         "EnableAssistiveTouch": {
                             "type": "boolean",
                             "title": "Enable Assistive Touch",
                             "default": false,
-                            "description": "Enable Assistive Touch"
+                            "description": "If 'true', the system enables AssistiveTouch."
                         },
                         "EnableSpeakSelection": {
                             "type": "boolean",
                             "title": "Enable Speak Selection",
                             "default": false,
-                            "description": "Enable Speak Selection"
+                            "description": "If 'true', the system enables Speak Selection."
                         },
                         "EnableMonoAudio": {
                             "type": "boolean",
                             "title": "Enable Mono Audio",
                             "default": false,
-                            "description": "Enable Mono Audio"
+                            "description": "If 'true', the system enables Mono Audio."
+                        },
+                        "EnableVoiceControl": {
+                            "type": "boolean",
+                            "title": "Enable Voice Control",
+                            "default": false,
+                            "description": "If 'true', the system enables Voice Control."
                         }
                     }
                 },
                 "UserEnabledOptions": {
                     "type": "object",
                     "title": "User Enabled Options",
-                    "description": "Allow the user to change these settings when in Single App Mode",
+                    "description": "A dictionary of user-editable options.",
                     "properties": {
                         "VoiceOver": {
                             "type": "boolean",
                             "title": "Voice Over",
                             "default": false,
-                            "description": "Allow user to enable Voice Over"
+                            "description": "If 'true', the system allows the user to toggle VoiceOver."
                         },
                         "Zoom": {
                             "type": "boolean",
                             "title": "Zoom",
                             "default": false,
-                            "description": "Allow user to enable Zoom"
+                            "description": "If 'true', the system allows the user to toggle Zoom."
                         },
                         "InvertColors": {
                             "type": "boolean",
                             "title": "Invert Colors",
                             "default": false,
-                            "description": "Allow user to enable Inverted Colors"
+                            "description": "If 'true', the system allows the user to toggle Invert Colors."
                         },
                         "AssistiveTouch": {
                             "type": "boolean",
                             "title": "Assistive Touch",
                             "default": false,
-                            "description": "Allow user to enable Assistive Touch"
+                            "description": "If 'true', the system allows the user to toggle AssistiveTouch."
+                        },
+                        "VoiceControl": {
+                            "type": "boolean",
+                            "title": "Voice Control",
+                            "default": false,
+                            "description": "If 'true', the system allows the user to toggle Voice Control."
                         }
                     }
                 }

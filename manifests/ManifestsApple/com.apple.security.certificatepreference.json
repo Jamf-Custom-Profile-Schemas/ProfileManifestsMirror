@@ -1,14 +1,16 @@
 {
     "title": "Certificate Preference (com.apple.security.certificatepreference)",
-    "description": "Certificate Preference settings",
+    "description": "The payload that configures a certificate preference.",
     "properties": {
         "Name": {
             "type": "string",
+            "description": "An email address (in RFC 822 format) or other name for which a preferred certificate is requested.",
             "property_order": 5
         },
         "PayloadCertificateUUID": {
             "type": "string",
             "title": "Payload Certificate UUID",
+            "description": "The UUID of the certificate payload within the same profile to use for the identity credential.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 10
         }

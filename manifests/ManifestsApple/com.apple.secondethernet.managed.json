@@ -1,6 +1,6 @@
 {
     "title": "802.1X Ethernet: Second (com.apple.secondethernet.managed)",
-    "description": "Use this section to define Second Ethernet settings",
+    "description": "The payload that configures the second wired Ethernet interface.",
     "properties": {
         "SetupModes": {
             "type": "array",

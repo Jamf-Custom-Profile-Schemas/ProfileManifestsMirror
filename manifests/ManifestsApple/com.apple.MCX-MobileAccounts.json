@@ -1,37 +1,40 @@
 {
     "title": "Mobile Accounts (com.apple.MCX)",
-    "description": "Mobile Accounts settings",
+    "description": "The payload that configures mobile accounts on the device.",
     "properties": {
         "cachedaccounts.askForSecureTokenAuthBypass": {
             "type": "boolean",
             "title": "Ask for Secure Token Auth Bypass",
             "default": false,
-            "description": "Hides the authentication UI when a mobile account is created.",
+            "description": "If 'true', the system bypasses the secure token authorization dialog. This dialog only appears on APFS volumes.",
             "property_order": 5
         },
         "cachedaccounts.expiry.delete.disusedSeconds": {
             "type": "integer",
             "title": "Cached Accounts Expiry",
             "default": -1,
-            "description": "Mobile account lifetime before automatic removal in an integer value representing seconds, where -1 means never and 0 means at next login",
+            "description": "The minimum number of seconds a mobile account can exist before the system makes an automatic attempt to remove the mobile account. Set to '0' to attempt removing it at the next login or logout. Set to '-1' to never attempt removing the mobile account.",
             "property_order": 10
         },
         "cachedaccounts.WarnOnCreate.allowNever": {
             "type": "boolean",
             "title": "Allow Users to Stop Mobile Account Creation Prompts",
             "default": false,
+            "description": "If 'true', the system allows the user to stop the prompts about mobile account creation every time the user logs in. This key is only valid if 'com.apple.cachedaccounts.WarnOnCreate' is 'true'.",
             "property_order": 15
         },
         "com.apple.cachedaccounts.CreateAtLogin": {
             "type": "boolean",
             "title": "Create Mobile Account at Login Time",
             "default": false,
+            "description": "If 'true', the system creates the mobile account at login time.",
             "property_order": 20
         },
         "com.apple.cachedaccounts.WarnOnCreate": {
             "type": "boolean",
             "title": "Prompt for Mobile Account Creation",
             "default": false,
+            "description": "If 'true', the system asks the user whether to create the mobile account and it allows the user to not create it.",
             "property_order": 25
         }
     }

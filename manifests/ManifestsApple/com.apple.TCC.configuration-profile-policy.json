@@ -1,11 +1,11 @@
 {
     "title": "Privacy Preferences Policy Control (com.apple.TCC.configuration-profile-policy)",
-    "description": "Configures Privacy Preferences Policy Control settings",
+    "description": "The payload that configures privacy preferences.",
     "properties": {
         "Services": {
             "type": "object",
             "title": "Services",
-            "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+            "description": "A dictionary whose keys are limited to the privacy policy control services.  In the case of conflicting specifications, the most restrictive setting (deny) is used.",
             "properties": {
                 "Accessibility": {
                     "type": "array",
@@ -66,7 +66,8 @@
                             }
                         }
                     },
-                    "title": "Accessibility"
+                    "title": "Accessibility",
+                    "description": "Specifies the policies for the app via the Accessibility subsystem."
                 },
                 "AppleEvents": {
                     "type": "array",

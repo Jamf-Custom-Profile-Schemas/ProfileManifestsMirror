@@ -1,11 +1,12 @@
 {
     "title": "Cellular Private Network (com.apple.cellularprivatenetwork.managed)",
-    "description": "Cellular Private Network Settings and Device Configuration",
+    "description": "The payload that provides device info on private network deployments, including geographical location, preference over Wi-Fi, and network deployment type.",
     "properties": {
         "Geofences": {
             "type": "array",
             "items": {
                 "type": "object",
+                "description": "A geofence for a private network.",
                 "properties": {
                     "Longitude": {
                         "type": "number",
@@ -52,12 +53,12 @@
         },
         "NetworkIdentifier": {
             "type": "string",
-            "description": "String formatted in accordance with the definition of a \"Coordinated NID\" (option 1 or option 2) in 3GPP 31.102 §12.7.1. Used to match this profile to a SIM present on the device. All combinations of NetworkIdentifier and CsgNetworkIdentifier must be unique between profiles installed on the device.",
+            "description": "A string using the 3GPP \"Coordinated NID\" (option 1 or option 2) format (defined in 3GPP 31.102, Section 12.7.1). The device uses this value to match a SIM present on the device.\n\nAll combinations of 'NetworkIdentifier' and 'CsgNetworkIdentifier' must be unique across all profiles installed on the device.",
             "property_order": 30
         },
         "CsgNetworkIdentifier": {
             "type": "string",
-            "description": "String formatted in accordance with the definition of \"CSG_ID\" in 3GPP 23.003 §4.7. Used to match this profile to a SIM present on the device. All combinations of NetworkIdentifier and CsgNetworkIdentifier must be unique between profiles installed on the device.",
+            "description": "A string using the 3GPP \"CSG_ID\" format (defined in 3GPP 23.003, Section 4.7). The device uses this value to match a SIM present on the device.\n\nAll combinations of 'NetworkIdentifier' and 'CsgNetworkIdentifier' must be unique across all profiles installed on the device.",
             "property_order": 35
         }
     }

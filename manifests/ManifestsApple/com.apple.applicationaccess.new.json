@@ -1,6 +1,6 @@
 {
     "title": "Parental Controls: Application Restrictions (com.apple.applicationaccess.new)",
-    "description": "Configures Parental Controls: Application Restrictions settings",
+    "description": "The payload that configures parental controls for apps.",
     "properties": {
         "familyControlsEnabled": {
             "type": "boolean",
@@ -13,7 +13,7 @@
             "items": {
                 "type": "object",
                 "title": "Allowlisted Item",
-                "description": "Allowlisted application dictionary",
+                "description": "A dictionary defining an app for parental control.",
                 "properties": {
                     "bundleID": {
                         "type": "string",
@@ -28,9 +28,29 @@
                     "subApps": {
                         "type": "array",
                         "items": {
-                            "type": "string",
-                            "title": "Bundle Identifier",
-                            "description": "Bundle ID of application."
+                            "type": "object",
+                            "description": "A dictionary defining an app for parental control.",
+                            "properties": {
+                                "bundleID": {
+                                    "type": "string",
+                                    "title": "Bundle Identifier",
+                                    "description": "The bundle ID of the app."
+                                },
+                                "displayName": {
+                                    "type": "string",
+                                    "title": "Display Name",
+                                    "description": "The name used for display purposes."
+                                },
+                                "appStore": {
+                                    "type": "boolean",
+                                    "title": "App Store"
+                                },
+                                "disabled": {
+                                    "type": "boolean",
+                                    "title": "Disabled",
+                                    "description": "If 'true', this app isn't added to the allow list."
+                                }
+                            }
                         },
                         "title": "Sub Apps",
                         "description": "An array of nested helper applications."

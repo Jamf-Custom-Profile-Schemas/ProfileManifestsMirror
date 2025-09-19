@@ -1,6 +1,6 @@
 {
     "title": "Dock (com.apple.dock)",
-    "description": "Use this section to manage the Dock.",
+    "description": "The payload that configures the Dock.",
     "properties": {
         "static-apps": {
             "type": "array",
@@ -24,12 +24,12 @@
                     "tile-data": {
                         "type": "object",
                         "title": "Information",
-                        "description": "The information about the dock item.",
+                        "description": "The information about the Dock item.",
                         "properties": {
                             "label": {
                                 "type": "string",
                                 "title": "Label",
-                                "description": "The label of the dock item."
+                                "description": "The label of the Dock item."
                             },
                             "file-label": {
                                 "type": "string",
@@ -93,6 +93,7 @@
             "items": {
                 "type": "object",
                 "title": "Static Other",
+                "description": "Items that are located on the Documents side of the Dock and cannot be removed from that location.",
                 "properties": {
                     "tile-type": {
                         "type": "string",
@@ -115,12 +116,12 @@
                     "tile-data": {
                         "type": "object",
                         "title": "Information",
-                        "description": "The information about the dock item.",
+                        "description": "The information about the Dock item.",
                         "properties": {
                             "label": {
                                 "type": "string",
                                 "title": "Label",
-                                "description": "The label of the dock item."
+                                "description": "The label of the Dock item."
                             },
                             "file-label": {
                                 "type": "string",
@@ -135,7 +136,7 @@
                             "file-type": {
                                 "type": "integer",
                                 "title": "Type",
-                                "description": "The type of tile:\n* '0': URL\n* '1': File\n* '3': Directory",
+                                "description": "The type of tile:\n\n- '0': URL\n- '1': File\n- '3': Directory",
                                 "enum": [
                                     0,
                                     1,
@@ -269,12 +270,12 @@
                     "tile-data": {
                         "type": "object",
                         "title": "Information",
-                        "description": "The information about the dock item.",
+                        "description": "The information about the Dock item.",
                         "properties": {
                             "label": {
                                 "type": "string",
                                 "title": "Label",
-                                "description": "The label of the dock item."
+                                "description": "The label of the Dock item."
                             },
                             "file-label": {
                                 "type": "string",
@@ -330,7 +331,7 @@
                 }
             },
             "title": "Persistent Apps",
-            "description": "An array of items located on the Applications side of the Dock that can be removed from the dock.",
+            "description": "An array of items located on the Applications side of the Dock that can be removed from the Dock.",
             "property_order": 15
         },
         "persistent-others": {
@@ -338,6 +339,7 @@
             "items": {
                 "type": "object",
                 "title": "Static Other",
+                "description": "Items that are located on the Documents side of the Dock and cannot be removed from that location.",
                 "properties": {
                     "tile-type": {
                         "type": "string",
@@ -360,12 +362,12 @@
                     "tile-data": {
                         "type": "object",
                         "title": "Information",
-                        "description": "The information about the dock item.",
+                        "description": "The information about the Dock item.",
                         "properties": {
                             "label": {
                                 "type": "string",
                                 "title": "Label",
-                                "description": "The label of the dock item."
+                                "description": "The label of the Dock item."
                             },
                             "file-label": {
                                 "type": "string",
@@ -380,7 +382,7 @@
                             "file-type": {
                                 "type": "integer",
                                 "title": "Type",
-                                "description": "The type of tile:\n* '0': URL\n* '1': File\n* '3': Directory",
+                                "description": "The type of tile:\n\n- '0': URL\n- '1': File\n- '3': Directory",
                                 "enum": [
                                     0,
                                     1,
@@ -489,7 +491,7 @@
                 }
             },
             "title": "Persistent Others",
-            "description": "An array of items located on the Documents side of the Dock that can be removed from the dock.",
+            "description": "An array of items located on the Documents side of the Dock that can be removed from the Dock.",
             "property_order": 20
         },
         "tilesize": {
@@ -537,7 +539,7 @@
         "orientation": {
             "type": "string",
             "title": "Position on screen",
-            "description": "The orientation of the dock.",
+            "description": "The orientation of the Dock.",
             "enum": [
                 "bottom",
                 "left",
@@ -580,49 +582,49 @@
             "type": "boolean",
             "title": "Minimize window effect button disabled",
             "default": false,
-            "description": "If 'true', locks 'Minimize windows using.'",
+            "description": "If 'true', locks \"Minimize windows using.\"",
             "property_order": 70
         },
         "minimize-to-application": {
             "type": "boolean",
             "title": "Minimize windows into application icon",
             "default": false,
-            "description": "If 'true', enables 'Minimize windows into application icon.'",
+            "description": "If 'true', enables \"Minimize windows into application icon.\"",
             "property_order": 75
         },
         "minintoapp-immutable": {
             "type": "boolean",
             "title": "Minimize windows into application icon Checkbox Disable",
             "default": false,
-            "description": "If 'true', disables the 'Minimize windows into application icon' checkbox.",
+            "description": "If 'true', disables the \"Minimize windows into application icon\" checkbox.",
             "property_order": 80
         },
         "launchanim": {
             "type": "boolean",
             "title": "Animate opening applications",
             "default": false,
-            "description": "If 'true', enables 'Animate opening applications.'",
+            "description": "If 'true', enables \"Animate opening applications.\"",
             "property_order": 85
         },
         "launchanim-immutable": {
             "type": "boolean",
             "title": "Animate opening applications checkbox disabled",
             "default": false,
-            "description": "If 'true', locks 'Animate opening applications.'",
+            "description": "If 'true', locks \"Animate opening applications.\"",
             "property_order": 90
         },
         "autohide": {
             "type": "boolean",
             "title": "Automatically hide and show the Dock",
             "default": false,
-            "description": "If 'true', enables 'Automatically hide and show the dock.'",
+            "description": "If 'true', enables \"Automatically hide and show the Dock.\"",
             "property_order": 95
         },
         "autohide-immutable": {
             "type": "boolean",
             "title": "Automatically hide and show the Dock checkbox disabled",
             "default": false,
-            "description": "If 'true', locks 'Automatically hide.'",
+            "description": "If 'true', locks \"Automatically hide.\"",
             "property_order": 100
         },
         "show-process-indicators": {
@@ -636,7 +638,7 @@
             "type": "boolean",
             "title": "Show recent applications in Dock",
             "default": false,
-            "description": "If 'true', enables 'Show recent items.'",
+            "description": "If 'true', enables \"Show recent items.\"",
             "property_order": 110
         },
         "show-recent-count": {
@@ -656,14 +658,14 @@
             "type": "boolean",
             "title": "Remove non-static apps and documents from Dock",
             "default": false,
-            "description": "If 'true', uses the 'static-apps' and 'static-others' dictionaries for the dock and ignores any items in the 'persistent-apps' and 'persistent-others' dictionaries. If 'false', the contents are merged with the static items listed first.",
+            "description": "If 'true', uses the 'static-apps' and 'static-others' dictionaries for the Dock and ignores any items in the 'persistent-apps' and 'persistent-others' dictionaries. If 'false', the contents are merged with the static items listed first.",
             "property_order": 120
         },
         "contents-immutable": {
             "type": "boolean",
             "title": "Prevent modifying items in Dock",
             "default": false,
-            "description": "If 'true', disables changes to the dock.",
+            "description": "If 'true', disables changes to the Dock.",
             "property_order": 125
         },
         "AllowDockFixupOverride": {
@@ -695,7 +697,7 @@
                 }
             },
             "title": "Managed Client Special Folders",
-            "description": "One or more special folders that may be created at user login time and placed in the dock.\n\nThe 'My Applications' item is only used for Simple Finder environments. The 'Original Network Home' item is only used for mobile account users.",
+            "description": "One or more special folders that may be created at user login time and placed in the Dock.\n\n\n\nThe \"My Applications\" item is only used for Simple Finder environments. The \"Original Network Home\" item is only used for mobile account users.",
             "property_order": 135
         },
         "wvous-tl-corner": {
@@ -1029,7 +1031,7 @@
         "windowtabbing": {
             "type": "string",
             "title": "Prefer tabs when opening documents",
-            "description": "Set the 'Prefer tabs when opening documents' to the provided value.",
+            "description": "Set the \"Prefer tabs when opening documents\" to the provided value.",
             "enum": [
                 "manual",
                 "always",
@@ -1048,7 +1050,7 @@
             "type": "boolean",
             "title": "Prevent changing tabs preference",
             "default": false,
-            "description": "If 'true', disables 'Prefer tabs when opening documents' checkbox.",
+            "description": "If 'true', disables \"Prefer tabs when opening documents\" checkbox.",
             "property_order": 185
         },
         "dblclickbehavior": {
@@ -1073,21 +1075,21 @@
             "type": "boolean",
             "title": "Prevent changing doubleclick behavior",
             "default": false,
-            "description": "If 'true', locks 'Double-click a window's title bar.'",
+            "description": "If 'true', locks \"Double-click a window's title bar.\"",
             "property_order": 195
         },
         "showindicators-immutable": {
             "type": "boolean",
             "title": "Prevent changing indicators display",
             "default": false,
-            "description": "If 'true', locks 'Show indicators.'",
+            "description": "If 'true', locks \"Show indicators.\"",
             "property_order": 200
         },
         "showrecents-immutable": {
             "type": "boolean",
             "title": "Prevent shanging recents display",
             "default": false,
-            "description": "If 'true', disables 'Show recent applications' checkbox.",
+            "description": "If 'true', disables \"Show recent applications\" checkbox.",
             "property_order": 205
         }
     }

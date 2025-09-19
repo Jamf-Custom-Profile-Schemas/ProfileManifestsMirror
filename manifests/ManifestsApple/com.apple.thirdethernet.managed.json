@@ -1,6 +1,6 @@
 {
     "title": "802.1X Ethernet: Third (com.apple.thirdethernet.managed)",
-    "description": "Use this section to define Third Ethernet settings",
+    "description": "The payload that configures the third wired Ethernet interface.",
     "properties": {
         "SetupModes": {
             "type": "array",

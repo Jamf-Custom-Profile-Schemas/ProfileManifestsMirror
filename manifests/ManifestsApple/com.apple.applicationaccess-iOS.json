@@ -1,160 +1,170 @@
 {
     "title": "Restrictions (iOS) (com.apple.applicationaccess)",
-    "description": "Use this section to define restrictions settings",
+    "description": "The payload that configures restrictions on a device.",
     "properties": {
         "allowCamera": {
             "type": "boolean",
-            "title": "Allow Camera",
+            "title": "Allow Camera Use",
             "default": true,
-            "description": "If 'false', the system disables the camera and removes its icon from the Home screen, and users are unable to take photographs. Available in iOS 4 and later, macOS 10.11 and later, and tvOS 17 and later. Support for this restriction on unsupervised devices is deprecated.",
+            "description": "If 'false', the system disables the camera and removes its icon from the Home Screen, and users are unable to take photographs. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 5
+        },
+        "allowedCameraRestrictionBundleIDs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Bundle ID to be excepted"
+            },
+            "title": "Allowed Exceptions to Camera Restriction",
+            "description": "If present, the system exempts apps with bundle IDs in the array from the 'allowCamera' restriction. The system doesn't grant these apps access to the camera automatically; they're only exempted from the 'allowCamera' restriction. This key has no effect when the camera isn't restricted. Multiple payloads combine using an intersect operation. Requires a supervised device.",
+            "property_order": 10
         },
         "allowVideoConferencing": {
             "type": "boolean",
-            "title": "Allow FaceTime",
+            "title": "Allow Video Conferencing",
             "default": true,
-            "description": "If 'false', the system hides the FaceTime app. Available in iOS 4 and later. Requires a supervised device in iOS 13 and later.",
-            "property_order": 10
+            "description": "If 'false', the system hides the FaceTime app. Requires a supervised device in iOS 13 and later.",
+            "property_order": 15
         },
         "allowCloudBackup": {
             "type": "boolean",
             "title": "Allow iCloud Backup",
             "default": true,
-            "description": "If 'false', the system disables backing up the device to iCloud. Available in iOS 5 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 15
+            "description": "If 'false', the system disables backing up the device to iCloud. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 20
         },
         "allowCloudPhotoLibrary": {
             "type": "boolean",
             "title": "Allow iCloud Photo Library",
             "default": true,
-            "description": "If 'false', the system disables iCloud Photo Library. The system removes any photos from local storage that aren't fully downloaded from iCloud Photo Library to the device. Available in iOS 9 and later, and macOS 10.12 and later. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
-            "property_order": 20
+            "description": "If 'false', the system disables iCloud Photo Library. The system removes any photos from local storage that aren't fully downloaded from iCloud Photo Library to the device. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
+            "property_order": 25
         },
         "allowPhotoStream": {
             "type": "boolean",
             "title": "Allow Photo Stream",
             "default": true,
-            "description": "If 'false', the system disables Photo Stream. Available in iOS 5 and later. This restriction is deprecated and will be removed in a future release.",
-            "property_order": 25
+            "description": "If 'false', the system disables Photo Stream.",
+            "property_order": 30
         },
         "allowSharedStream": {
             "type": "boolean",
-            "title": "Allow iCloud Photo Sharing",
+            "title": "Allow Shared Stream",
             "default": true,
-            "description": "If 'false', the system disables Shared Photo Stream. Available in iOS 6 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 30
+            "description": "If 'false', the system disables Shared Photo Stream. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 35
         },
         "allowPasswordAutoFill": {
             "type": "boolean",
             "title": "Allow password AutoFill",
             "default": true,
-            "description": "If 'false', the system disables:\n* The AutoFill Passwords feature in iOS, with Keychain and third-party password managers\n* Prompting the user to use a saved password in Safari or in apps\n* Automatic strong passwords\n* Suggesting strong passwords to users\nHowever, if 'false', the system doesn't prevent AutoFill for contact info and credit cards in Safari.\nAvailable in iOS 12 and later, and macOS 10.14 and later. Requires a supervised device in iOS.",
-            "property_order": 35
+            "description": "If 'false', the system disables:\n\n- The AutoFill Passwords feature in iOS, with Keychain and third-party password managers\n- Prompting the user to use a saved password in Safari or in apps\n- Automatic strong passwords\n- Suggesting strong passwords to users\n\nHowever, if 'false', the system doesn't prevent AutoFill for contact info and credit cards in Safari.",
+            "property_order": 40
         },
         "allowAutoUnlock": {
             "type": "boolean",
             "title": "Allow Apple Watch to auto unlock device",
             "default": true,
-            "description": "If 'false', the system disallows auto unlock. Available in macOS 10.12 and later, and iOS 14.5 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 40
+            "description": "If 'false', the system disallows auto unlock. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 45
         },
         "allowFingerprintForUnlock": {
             "type": "boolean",
-            "title": "Allow Touch ID / Face ID to unlock device",
+            "title": "Allow Touch ID to Unlock Device",
             "default": true,
-            "description": "If 'false', the system prevents Touch ID or Face ID from unlocking a device. Available in iOS 7 and later, and macOS 10.12.4 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 45
+            "description": "If 'false', the system prevents Touch ID, Face ID, or Optic ID from unlocking a device. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 50
         },
         "allowBookstore": {
             "type": "boolean",
             "title": "Allow Bookstore",
             "default": true,
-            "description": "If 'false', the system removes the Book Store tab from the Books app. Requires a supervised device. Available in iOS 6 and later and macOS 15 and later.",
-            "property_order": 50
+            "description": "If 'false', the system removes the Book Store tab from the Books app.",
+            "property_order": 55
         },
         "allowChat": {
             "type": "boolean",
-            "title": "Allow iMessage",
+            "title": "Allow use of iMessage",
             "default": true,
-            "description": "If 'false', the system disables the use of iMessage with supervised devices. If the device supports text messaging, the user can still send and receive text messages. Requires a supervised device. Available in iOS 5 and later.",
-            "property_order": 55
+            "description": "If 'false', the system disables the use of iMessage with supervised devices. If the device supports text messaging, the user can still send and receive text messages.",
+            "property_order": 60
         },
         "allowiTunes": {
             "type": "boolean",
-            "title": "Allow iTunes Store",
+            "title": "Allow use of iTunes",
             "default": true,
-            "description": "If 'false', the system disables the iTunes Music Store, and the system removes its icon from the Home screen. Users can't preview, purchase, or download content. Available in iOS 4 and later. Requires a supervised device in iOS 13 and later.",
-            "property_order": 60
+            "description": "If 'false', the system disables the iTunes Music Store and removes its icon from the Home Screen. Users can't preview, purchase, or download content. Requires a supervised device in iOS 13 and later.",
+            "property_order": 65
         },
         "allowMusicService": {
             "type": "boolean",
             "title": "Allow Apple Music",
             "default": true,
-            "description": "If 'false', the system disables the Music service, and the Music app reverts to classic mode. Requires a supervised device. Available in iOS 9.3 and later, and macOS 10.12 and later.",
-            "property_order": 65
+            "description": "If 'false', the system disables the Music service, and the Music app reverts to classic mode.",
+            "property_order": 70
         },
         "allowNews": {
             "type": "boolean",
-            "title": "Allow News",
+            "title": "Allow use of News",
             "default": true,
-            "description": "If 'false', the system disables News. Requires a supervised device. Available in iOS 9 and later.",
-            "property_order": 70
+            "description": "If 'false', the system disables News.",
+            "property_order": 75
         },
         "allowPodcasts": {
             "type": "boolean",
             "title": "Allow Podcasts",
             "default": true,
-            "description": "If 'false', the system disables podcasts. Requires a supervised device. Available in iOS 8 and later.",
-            "property_order": 75
+            "description": "If 'false', the system disables podcasts.",
+            "property_order": 80
         },
         "allowRadioService": {
             "type": "boolean",
             "title": "Allow iTunes Radio",
             "default": true,
-            "description": "If 'false', the system disables Apple Music Radio. Requires a supervised device. Available in iOS 9.3 and later.",
-            "property_order": 80
+            "description": "If 'false', the system disables Apple Music Radio.",
+            "property_order": 85
         },
         "allowYouTube": {
             "type": "boolean",
             "title": "Allow Apple's YouTube",
             "default": true,
             "description": "This key is ignored on iOS 6 and later because the YouTube app is no longer built in.",
-            "property_order": 85
+            "property_order": 90
         },
         "allowAppsToBeHidden": {
             "type": "boolean",
             "title": "Allow Hiding Apps",
             "default": true,
-            "description": "If 'false', disables the ability for the user to hide apps. It doesn't affect the user's ability to leave it in the App Library, while removing it from the home screen. Available in iOS 18 and later.",
-            "property_order": 90
+            "description": "If 'false', disables the ability for the user to hide apps. It doesn't affect the user's ability to leave it in the App Library, while removing it from the Home Screen.",
+            "property_order": 95
         },
         "allowAppsToBeLocked": {
             "type": "boolean",
             "title": "Allow Locking Apps",
             "default": true,
-            "description": "If 'false', disables the ability for the user to lock apps. Because hiding apps also requires locking them, disallowing locking also disallows hiding. Available in iOS 18 and later.",
-            "property_order": 95
+            "description": "If 'false', disables the ability for the user to lock apps. Because hiding apps also requires locking them, disallowing locking also disallows hiding.",
+            "property_order": 100
         },
         "allowCloudDocumentSync": {
             "type": "boolean",
             "title": "Allow iCloud Document Sync",
             "default": true,
-            "description": "If 'false', the system disables document and key-value syncing to iCloud. Available in iOS 5 and later, and macOS 10.11 and later. Requires a supervised device in iOS 13 and later, and Shared iPad doesn't support it. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
-            "property_order": 100
+            "description": "If 'false', the system disables document and key-value syncing to iCloud. Requires a supervised device in iOS 13 and later, and Shared iPad doesn't support it. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
+            "property_order": 105
         },
         "allowCloudKeychainSync": {
             "type": "boolean",
             "title": "Allow iCloud Keychain",
             "default": true,
-            "description": "If 'false', the system disables iCloud keychain synchronization. Available in iOS 7 and later, and macOS 10.12 and later. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
-            "property_order": 105
+            "description": "If 'false', the system disables iCloud Keychain synchronization. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
+            "property_order": 110
         },
         "allowDefinitionLookup": {
             "type": "boolean",
             "title": "Allow definition lookup",
             "default": true,
-            "description": "If 'false', the system disables definition lookup. Available in iOS 8.1.3 and later, and macOS 10.11 and later. Requires a supervised device on iOS.",
-            "property_order": 110
+            "description": "If 'false', the system disables definition lookup.",
+            "property_order": 115
         },
         "allowDeprecatedWebKitTLS": {
             "type": "boolean",
@@ -167,90 +177,90 @@
                     "href": "https://docs.jamf.com/10.20.0/jamf-pro/release-notes/What%27s_New.html"
                 }
             ],
-            "property_order": 115
+            "property_order": 120
         },
         "allowAirPrint": {
             "type": "boolean",
             "title": "Allow AirPrint",
             "default": true,
-            "description": "If 'false', the system disables AirPrint. Requires a supervised device. Available in iOS 11 and later.",
-            "property_order": 120
+            "description": "If 'false', the system disables AirPrint.",
+            "property_order": 125
         },
         "allowAirPrintiBeaconDiscovery": {
             "type": "boolean",
             "title": "Allow discovery of AirPrint printers using iBeacons",
             "default": true,
-            "description": "If 'false', the system disables iBeacon discovery of AirPrint printers, which prevents spurious AirPrint Bluetooth beacons from phishing for network traffic. Requires a supervised device. Available in iOS 11 and later.",
-            "property_order": 125
+            "description": "If 'false', the system disables iBeacon discovery of AirPrint printers, which prevents spurious AirPrint Bluetooth beacons from phishing for network traffic.",
+            "property_order": 130
         },
         "forceAirPrintTrustedTLSRequirement": {
             "type": "boolean",
             "title": "Disallow AirPrint to destinations with untrusted certificates",
             "default": false,
-            "description": "If 'true', the system requires trusted certificates for TLS printing communication. Requires a supervised device. Available in iOS 11 and later.",
-            "property_order": 130
+            "description": "If 'true', the system requires trusted certificates for TLS printing communication.",
+            "property_order": 135
         },
         "allowScreenShot": {
             "type": "boolean",
             "title": "Allow Screenshots and Screen Recording",
             "default": true,
-            "description": "If 'false', the system disables saving a screenshot of the display and capturing a screen recording. It also disables the Classroom app from observing remote screens. Available in iOS 4 and later, and macOS 10.14.4 and later. Also available for user enrollment.",
-            "property_order": 135
+            "description": "If 'false', the system disables saving a screenshot of the display and capturing a screen recording. It also disables the Classroom app from observing remote screens.",
+            "property_order": 140
         },
         "allowRemoteScreenObservation": {
             "type": "boolean",
             "title": "Allow Remote Screen Observation",
             "default": true,
-            "description": "If 'false', the system disables remote screen observation by the Classroom app. Nest this key beneath 'allowScreenShot' as a subrestriction. If 'allowScreenShot' is 'false', the Classroom app doesn't observe remote screens. Available in iOS 12 and later, and macOS 10.14.4 and later. Requires a supervised device until iOS 13 and macOS 10.15. Allowed for user enrollments in macOS 12 and later.",
-            "property_order": 140
+            "description": "If 'false', the system disables remote screen observation by the Classroom app. Nest this key beneath 'allowScreenShot' as a subrestriction. If 'allowScreenShot' is 'false', the Classroom app doesn't observe remote screens. Requires a supervised device until iOS 13 and macOS 10.15. Allowed for user enrollments in macOS 12 and later.",
+            "property_order": 145
         },
         "forceClassroomUnpromptedScreenObservation": {
             "type": "boolean",
             "title": "Allow Classroom app to perform AirPlay and View Screen without prompting",
             "default": false,
-            "description": "If 'true' and 'ScreenObservationPermissionModificationAllowed' is also 'true' in the Education payload, a student enrolled in a managed course through the Classroom app automatically gives permission to that course teacher's requests to observe the student's screen without prompting the student. Requires a supervised device. Available in iOS 11 and later, and macOS 10.14.4 and later.",
-            "property_order": 145
+            "description": "If 'true' and 'ScreenObservationPermissionModificationAllowed' is also 'true' in the Education payload, a student enrolled in a managed course through the Classroom app automatically gives permission to that course teacher's requests to observe the student's screen without prompting the student.",
+            "property_order": 150
         },
         "forceUnpromptedManagedClassroomScreenObservation": {
             "type": "boolean",
             "default": false,
             "description": "Deprecated in iOS 11. Use forceClassroomUnpromptedScreenObservation instead.",
-            "property_order": 150
+            "property_order": 155
         },
         "allowVoiceDialing": {
             "type": "boolean",
             "title": "Allow Voice Dialing While Device is Locked",
             "default": true,
-            "description": "If 'false', the system disables voice dialing if the device is locked with a passcode. Available in iOS 4 and later.",
-            "property_order": 155
+            "description": "If 'false', the system disables voice dialing if the device is locked with a passcode.",
+            "property_order": 160
         },
         "allowAssistant": {
             "type": "boolean",
             "title": "Allow Siri",
             "default": true,
-            "description": "If 'false', the system disables Siri. Available in iOS 5 and later, and macOS 14 and later. Also available for user enrollment.",
-            "property_order": 160
+            "description": "If 'false', the system disables Siri.",
+            "property_order": 165
         },
         "allowAssistantWhileLocked": {
             "type": "boolean",
             "title": "Allow Siri While Locked",
             "default": true,
-            "description": "If 'false', the system disables Siri when the device is locked. The system ignores this restriction if the device doesn't have a passcode set. Available in iOS 5.1 and later. Also available for user enrollment.",
-            "property_order": 165
+            "description": "If 'false', the system disables Siri when the device is locked. The system ignores this restriction if the device doesn't have a passcode set.",
+            "property_order": 170
         },
         "forceAssistantProfanityFilter": {
             "type": "boolean",
             "title": "Enable Siri Profanity Filter",
             "default": false,
-            "description": "If 'true', the system forces the use of the profanity filter for Siri and dictation. Available in iOS 11 and later, and macOS 10.13 and later. Requires a supervised device in iOS.",
-            "property_order": 170
+            "description": "If 'true', the system forces the use of the profanity filter for Siri and dictation. Requires a supervised device in iOS.",
+            "property_order": 175
         },
         "allowAssistantUserGeneratedContent": {
             "type": "boolean",
             "title": "Show user-generated content in Siri",
             "default": true,
-            "description": "If 'false', the system prevents Siri from querying user-generated content from the web. Requires a supervised device. Available in iOS 7 and later, and watchOS 10 and later.",
-            "property_order": 175
+            "description": "If 'false', the system prevents Siri from querying user-generated content from the web.",
+            "property_order": 180
         },
         "allowSiriServerLogging": {
             "type": "boolean",
@@ -263,643 +273,643 @@
                     "href": "https://docs.jamf.com/10.11.0/jamf-pro/release-notes/What's_New.html"
                 }
             ],
-            "property_order": 180
+            "property_order": 185
         },
         "allowSpotlightInternetResults": {
             "type": "boolean",
             "title": "Allow Siri Suggestions",
             "default": true,
-            "description": "If 'false', the system disables Spotlight Internet search results in Siri Suggestions. Available in iOS 8 and later, and macOS 10.11 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 185
+            "description": "If 'false', the system disables Spotlight Internet search results in Siri Suggestions. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 190
         },
         "allowAppInstallation": {
             "type": "boolean",
             "title": "Allow App Installation",
             "default": true,
-            "description": "If 'false', the system disables the App Store, and the system removes its icon from the Home screen. Users are unable to install or update their apps. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, etc).\nIn iOS 10 and later, MDM commands can override this restriction. Available in iOS 4 and later, and watchOS 10 and later. Requires a supervised device in iOS 13 and later, and watchOS.",
-            "property_order": 190
+            "description": "If 'false', the system disables the App Store and removes its icon from the Home Screen. Users are unable to install or update their apps. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, and so forth).\n\nIn iOS 10 and later, MDM commands can override this restriction. Requires a supervised device in iOS 13 and later.",
+            "property_order": 195
         },
         "allowUIAppInstallation": {
             "type": "boolean",
             "title": "Allow App Installation from App Store",
             "default": true,
-            "description": "If 'false', the system disables the App Store, and the systems removes its icon from the Home screen. However, users may continue to install or update their apps either locally (via Configurator, Xcode, etc), or using alternative marketplace apps.\nIn iOS 10 and later, MDM commands can override this restriction. Requires a supervised device. Available in iOS 9 and later, and watchOS 10 and later.",
-            "property_order": 195
+            "description": "If 'false', the system disables the App Store and removes its icon from the Home Screen. However, users can continue to install or update their apps either locally (via Configurator, Xcode, and so forth), or using alternative marketplace apps.\n\nIn iOS 10 and later, MDM commands can override this restriction.",
+            "property_order": 200
         },
         "allowAutomaticAppDownloads": {
             "type": "boolean",
             "title": "Allow Automatic App Downloads",
             "default": true,
-            "description": "If 'false', the system prevents automatic downloading of apps purchased on other devices. This setting doesn't affect updates to existing apps. Requires a supervised device. Available in iOS 9 and later, and watchOS 10 and later.",
-            "property_order": 200
+            "description": "If 'false', the system prevents automatic downloading of apps purchased on other devices. This setting doesn't affect updates to existing apps.",
+            "property_order": 205
         },
         "allowMarketplaceAppInstallation": {
             "type": "boolean",
             "title": "Allow App Installation from alternative marketplaces",
             "default": true,
-            "description": "If 'false', the system prevents installation of alternative marketplace apps from the web and prevents any installed alternative marketplace apps from installing apps. Available in iOS 17.4 and later. Requires a supervised device.",
-            "property_order": 205
+            "description": "If 'false', the system prevents installation of alternative marketplace apps from the web and prevents any installed alternative marketplace apps from installing apps.",
+            "property_order": 210
         },
         "allowWebDistributionAppInstallation": {
             "type": "boolean",
             "title": "Allow App Installation from web sites",
             "default": true,
-            "description": "If 'false', the device prevents installation of apps directly from the web. Available in iOS 17.5 and later.",
-            "property_order": 210
+            "description": "If 'false', the device prevents installation of apps directly from the web.",
+            "property_order": 215
         },
         "allowAppRemoval": {
             "type": "boolean",
             "title": "Allow App Removal",
             "default": true,
-            "description": "If 'false', the system disables removal of apps from an iOS device. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, etc).\nRequires a supervised device. Available in iOS 4.2.1 and later, and watchOS 10 and later.",
-            "property_order": 215
+            "description": "If 'false', the system disables removal of apps from an iOS device. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, and so forth).",
+            "property_order": 220
         },
         "allowAppClips": {
             "type": "boolean",
             "title": "Allow App Clips",
             "default": true,
-            "description": "If 'false', the system prevents a user from adding any App Clips, and removes any existing App Clips on the device. Requires a supervised device. Available in iOS 14.0 and later.",
-            "property_order": 220
+            "description": "If 'false', the system prevents a user from adding any App Clips, and removes any existing App Clips on the device.",
+            "property_order": 225
         },
         "allowSystemAppRemoval": {
             "type": "boolean",
             "title": "Allow removing system apps",
             "default": true,
-            "description": "If 'false', the system disables the removal of system apps from the device. Requires a supervised device. Available in iOS 11 and later.",
-            "property_order": 225
+            "description": "If 'false', the system disables the removal of system apps from the device.",
+            "property_order": 230
         },
         "allowInAppPurchases": {
             "type": "boolean",
             "title": "Allow In App Purchases",
             "default": true,
-            "description": "If 'false', the system prohibits in-app purchasing. Available in iOS 4 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 230
+            "description": "If 'false', the system prohibits in-app purchasing. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 235
         },
         "forceITunesStorePasswordEntry": {
             "type": "boolean",
             "title": "Require iTunes password for all purchases",
             "default": false,
-            "description": "If 'true', the system forces the user to enter their iTunes password for each transaction. Available in iOS 6 and later.",
-            "property_order": 235
+            "description": "If 'true', the system forces the user to enter their iTunes password for each transaction.",
+            "property_order": 240
         },
         "allowManagedAppsCloudSync": {
             "type": "boolean",
             "title": "Allow iCloud Sync for Managed Apps",
             "default": true,
-            "description": "If 'false', the system prevents managed apps from using iCloud sync. Available in iOS 8 and later. Also available for user enrollment.",
-            "property_order": 240
+            "description": "If 'false', the system prevents managed apps from using iCloud sync.",
+            "property_order": 245
         },
         "allowEnterpriseBookBackup": {
             "type": "boolean",
             "title": "Allow Enterprise Books Backup",
             "default": true,
-            "description": "If 'false', the system disables backup of Enterprise books. Available in iOS 8 and later. Also available for user enrollment.",
-            "property_order": 245
+            "description": "If 'false', the system disables backup of Enterprise books.",
+            "property_order": 250
         },
         "allowEnterpriseBookMetadataSync": {
             "type": "boolean",
             "title": "Allow Enterprise Books Notes and Highlights Sync",
             "default": true,
-            "description": "If 'false', the system disables sync of Enterprise books, notes, and highlights. Available in iOS 8 and later. Also available for user enrollment.",
-            "property_order": 250
+            "description": "If 'false', the system disables sync of Enterprise books, notes, and highlights.",
+            "property_order": 255
         },
         "allowCloudPrivateRelay": {
             "type": "boolean",
             "title": "Allow iCloud Private Relay",
             "default": true,
-            "description": "If 'false', the system disables iCloud Private Relay. Available in iOS 15 and later, and in macOS 12 and later. Requires a supervised device in iOS. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
-            "property_order": 255
+            "description": "If 'false', the system disables iCloud Private Relay. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
+            "property_order": 260
         },
         "allowGlobalBackgroundFetchWhenRoaming": {
             "type": "boolean",
             "title": "Allow Automatic Sync While Roaming",
             "default": true,
-            "description": "If 'false', the system disables global background fetch activity when an iOS phone is roaming. Available in iOS 4 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 260
+            "description": "If 'false', the system disables global background fetch activity when an iOS phone is roaming. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 265
         },
         "forceEncryptedBackup": {
             "type": "boolean",
             "title": "Force Encrypted Backups",
             "default": false,
-            "description": "If 'true', the system encrypts all backups. Available in iOS 4 and later. Also available for user enrollment.",
-            "property_order": 265
+            "description": "If 'true', the system encrypts all backups.",
+            "property_order": 270
         },
         "allowEraseContentAndSettings": {
             "type": "boolean",
             "title": "Allow Erase All Content and Settings",
             "default": true,
-            "description": "If 'false', the system disables the Erase All Content and Settings option in the Reset UI. Available in iOS 8 and later, and macOS 12 and later. Requires a supervised device in iOS.",
-            "property_order": 270
+            "description": "If 'false', the system disables the Erase All Content and Settings option in the Reset UI.",
+            "property_order": 275
         },
         "forcePreserveESIMOnErase": {
             "type": "boolean",
             "title": "Force Preserve ESIM on Erase",
             "default": false,
-            "description": "If 'true', the system preserves eSIM when it erases the device due to too many failed password attempts or the Erase All Content and Settings option in Settings > General > Reset. Requires a supervised device. Available in iOS 17.2 and later.\nThe system doesn't preserve eSIM if Find My initiates erasing the device.",
-            "property_order": 275
+            "description": "If 'true', the system preserves eSIM when it erases the device due to too many failed password attempts or the Erase All Content and Settings option in Settings > General > Reset.\n\nNote:\nThe system doesn't preserve eSIM if Find My initiates erasing the device.",
+            "property_order": 280
         },
         "allowUntrustedTLSPrompt": {
             "type": "boolean",
             "title": "Allow user to accept untrusted TLS certificates",
             "default": true,
-            "description": "If 'false', the system automatically rejects untrusted HTTPS certificates without prompting the user. Available in iOS 5 and later.",
-            "property_order": 280
+            "description": "If 'false', the system automatically rejects untrusted HTTPS certificates without prompting the user.",
+            "property_order": 285
         },
         "allowEnterpriseAppTrust": {
             "type": "boolean",
             "title": "Allow Trusting Enterprise Apps",
             "default": true,
-            "description": "If 'false', the system removes the Trust Developer button in Settings > General > VPN & Device Management, which prevents provisioning apps by universal provisioning profiles. This restriction applies to both free developer accounts and enterprise app developers that are not implicitly trusted by apps installed through MDM. This restriction does not revoke previously granted trust. Available in iOS 9 and later.",
-            "property_order": 285
+            "description": "If 'false', the system removes the Trust Enterprise Developer button in Settings > General > VPN & Device Management, which prevents provisioning apps by universal provisioning profiles. This restriction applies to free developer accounts and enterprise app developers that aren't implicitly trusted by apps that install through MDM. This restriction doesn't revoke previously granted trust.",
+            "property_order": 290
         },
         "allowOTAPKIUpdates": {
             "type": "boolean",
             "title": "Allow automatic updates to certificate trust settings",
             "default": true,
-            "description": "If 'false', the system disables over-the-air PKI updates. Setting this restriction to 'false' doesn't disable CRL and OCSP checks. Available in iOS 7 and later.",
-            "property_order": 290
+            "description": "If 'false', the system disables over-the-air PKI updates. Setting this restriction to 'false' doesn't disable CRL and OCSP checks.",
+            "property_order": 295
         },
         "allowUIConfigurationProfileInstallation": {
             "type": "boolean",
             "title": "Allow UI Configuration Profile Installation",
             "default": true,
-            "description": "If 'false', the system prohibits the user from installing configuration profiles and certificates interactively. Available in iOS 6 and later, and macOS 13 and later. Requires a supervised device in iOS.",
-            "property_order": 295
+            "description": "If 'false', the system prohibits the user from installing configuration profiles and certificates interactively.",
+            "property_order": 300
         },
         "allowVPNCreation": {
             "type": "boolean",
             "title": "Allow Adding VPN Configurations (Supervised devices only)",
             "default": true,
-            "description": "If 'false', the system disables the creation of VPN configurations. Requires a supervised device. Available in iOS 11 and later.",
-            "property_order": 300
+            "description": "If 'false', the system allows only managed apps to create VPN configurations. Prior to iOS 18, the system also allows unmanaged apps to create VPN configurations.",
+            "property_order": 305
         },
         "forceAutomaticDateAndTime": {
             "type": "boolean",
             "title": "Force automatic date and time",
             "default": false,
-            "description": "If 'true', the system enables the Set Automatically feature in Date & Time and the user can't disable it. The system updates the device's time zone only when the device can determine its location using a cellular connection or Wi-Fi with location services enabled. Requires a supervised device. Available in iOS 12 and later, and tvOS 12.2 and later.",
-            "property_order": 305
+            "description": "If 'true', the system enables the Set Automatically feature in Date & Time and the user can't disable it. The system updates the device's time zone only when the device can determine its location using a cellular connection or Wi-Fi with location services enabled.",
+            "property_order": 310
         },
         "forceClassroomUnpromptedAppAndDeviceLock": {
             "type": "boolean",
             "title": "Allow Classroom to lock apps or the device without prompting",
             "default": false,
-            "description": "If 'true', the system allows the teacher to lock apps or the device without prompting the student. Requires a supervised device. Available in iOS 11 and later, and macOS 10.14.4 and later.",
-            "property_order": 310
+            "description": "If 'true', the system allows the teacher to lock apps or the device without prompting the student.",
+            "property_order": 315
         },
         "forceClassroomAutomaticallyJoinClasses": {
             "type": "boolean",
             "title": "Automatically join Classroom classes without prompting",
             "default": false,
-            "description": "If 'true', the system automatically gives permission to the teacher's requests without prompting the student. Requires a supervised device. Available in iOS 11 and later, and macOS 10.14.4 and later.",
-            "property_order": 315
+            "description": "If 'true', the system automatically gives permission to the teacher's requests without prompting the student.",
+            "property_order": 320
         },
         "forceClassroomRequestPermissionToLeaveClasses": {
             "type": "boolean",
             "title": "Require teacher permission to leave Classroom app unmanaged classes",
             "default": false,
-            "description": "If 'true', a student enrolled in an unmanaged course through Classroom needs to request permission from the teacher to leave the course. Requires a supervised device. Available in iOS 11.3 and later, and macOS 10.14.4 and later.",
-            "property_order": 320
+            "description": "If 'true', a student enrolled in an unmanaged course through Classroom needs to request permission from the teacher to leave the course.",
+            "property_order": 325
         },
         "allowAccountModification": {
             "type": "boolean",
             "title": "Allow modifying account settings",
             "default": true,
-            "description": "If 'false', the system disables modification of accounts such as Apple Accounts and Internet-based accounts such as Mail, Contacts, and Calendar. Available in iOS 7 and later, macOS 14 and later, and watchOS 10 and later. Requires a supervised device in iOS and watchOS.",
-            "property_order": 325
+            "description": "If 'false', the system disables modification of accounts, such as Apple Accounts, and internet-based accounts, such as Mail, Contacts, and Calendar.",
+            "property_order": 330
         },
         "allowBluetoothModification": {
             "type": "boolean",
             "title": "Allow modifying Bluetooth settings",
             "default": true,
-            "description": "If 'false', the system prevents modification of Bluetooth settings. Requires a supervised device. Available in iOS 11 and later, and macOS 13.0 and later.",
-            "property_order": 330
+            "description": "If 'false', the system prevents modification of Bluetooth settings.",
+            "property_order": 335
         },
         "allowAppCellularDataModification": {
             "type": "boolean",
             "title": "Allow Modifying Cellular Data Usage for Apps Settings",
             "default": true,
-            "description": "If 'false', the system disables changing settings for cellular data usage for apps. Requires a supervised device. Available in iOS 7 and later.",
-            "property_order": 335
+            "description": "If 'false', the system disables changing settings for cellular data usage for apps.",
+            "property_order": 340
         },
         "allowCellularPlanModification": {
             "type": "boolean",
             "title": "Allow modifying celluar plan settings",
             "default": true,
-            "description": "If 'false', the system prevents users from changing settings related to their cellular plan (only available on select carriers). Requires a supervised device. Available in iOS 11 and later.",
-            "property_order": 340
+            "description": "If 'false', the system prevents users from changing settings related to their cellular plan (available only on select carriers).",
+            "property_order": 345
         },
         "allowESIMModification": {
             "type": "boolean",
             "title": "Allow eSIM Modification",
             "default": true,
-            "description": "If 'false', the system disables modifications of eSIMs. Requires a supervised device. Available in iOS 12.1 and later.",
-            "property_order": 345
+            "description": "If 'false', the system disables modifications of eSIMs.",
+            "property_order": 350
         },
         "allowFindMyFriendsModification": {
             "type": "boolean",
             "title": "Allow modifying Find My Friends settings",
             "default": true,
-            "description": "If 'false', the system disables changes to Find My Friends. Requires a supervised device. Available in iOS 7 and later.",
-            "property_order": 350
+            "description": "If 'false', the system disables changes to Find My Friends.",
+            "property_order": 355
         },
         "allowNotificationsModification": {
             "type": "boolean",
             "title": "Allow Modifying Notifications Settings",
             "default": true,
-            "description": "If 'false', the system disables modification of notification settings. Requires a supervised device. Available in iOS 9.3 and later.",
-            "property_order": 355
+            "description": "If 'false', the system disables modification of notification settings.",
+            "property_order": 360
         },
         "allowNFC": {
             "type": "boolean",
             "title": "Allow NFC",
             "default": true,
-            "description": "If 'false', the system disables NFC. Requires a supervised device. Available in iOS 14.2 and later.",
-            "property_order": 360
+            "description": "If 'false', the system disables NFC.",
+            "property_order": 365
         },
         "allowPasscodeModification": {
             "type": "boolean",
             "title": "Allow Modifying Passcode",
             "default": true,
-            "description": "If 'false', the system prevents adding, changing, or removing the passcode. The system ignores this restriction on Shared iPad. Available in iOS 9 and later, and macOS 10.13 and later. Requires a supervised device in iOS.",
-            "property_order": 365
+            "description": "If 'false', the system prevents adding, changing, or removing the passcode. The system ignores this restriction on Shared iPad.",
+            "property_order": 370
         },
         "allowFingerprintModification": {
             "type": "boolean",
             "title": "Allow modifying Touch ID / Face ID",
             "default": true,
-            "description": "If 'false', the system prevents the user from modifying Touch ID or Face ID. Available in iOS 8.3 and later, and macOS 14 and later. Requires a supervised device in iOS.",
-            "property_order": 370
+            "description": "If 'false', the system prevents the user from modifying Touch ID or Face ID.",
+            "property_order": 375
         },
         "allowEnablingRestrictions": {
             "type": "boolean",
             "title": "Allow Configuring Restrictions or ScreenTime",
             "default": true,
-            "description": "If 'false', the system disables the Enable Restrictions option in the Restrictions UI in Settings. If 'false' in iOS 12 and later, the system disables the Enable ScreenTime option in the ScreenTime UI in Settings and disables ScreenTime if already enabled. Requires a supervised device. Available in iOS 8 and later.",
-            "property_order": 375
+            "description": "If 'false', the system disables the Enable Restrictions option in the Restrictions UI in Settings. If 'false' in iOS 12 and later, the system disables the Enable ScreenTime option in the ScreenTime UI in Settings and disables ScreenTime if already enabled.",
+            "property_order": 380
         },
         "allowWallpaperModification": {
             "type": "boolean",
             "title": "Allow Modifying Wallpaper",
             "default": true,
-            "description": "If 'false', the system prevents changing the wallpaper. Available in iOS 9 and later, and macOS 10.13 and later. Requires a supervised device in iOS.",
-            "property_order": 380
+            "description": "If 'false', the system prevents changing the wallpaper.",
+            "property_order": 385
         },
         "allowUSBRestrictedMode": {
             "type": "boolean",
             "title": "Allow USB Restricted Mode",
             "default": true,
-            "description": "If 'false', the system allows iOS devices to always connect to USB accessories while locked. On macOS, allows new USB and Thunderbolt accessories and SD cards to connect without authorization. If the system has Lockdown mode enabled, it ignores this value. Available in iOS 11.4.1 and later, and macOS 13 and later. Requires a supervised device in iOS.",
-            "property_order": 385
+            "description": "If 'false', the system allows iOS devices to always connect to USB accessories while locked. In macOS, allows new USB and Thunderbolt accessories, and SD cards to connect without authorization. If the system has Lockdown mode enabled, it ignores this value.",
+            "property_order": 390
         },
         "allowHostPairing": {
             "type": "boolean",
             "title": "Allow pairing with non-Configurator hosts",
             "default": true,
-            "description": "If 'false', the system disables host pairing with the exception of the supervision host. If there's no configured supervision host certificate, the system disables all pairing. Host pairing lets the administrator control if an iOS device can pair with a host Mac or PC. Requires a supervised device. Available in iOS 7 and later.",
-            "property_order": 390
+            "description": "If 'false', the system disables host pairing with the exception of the supervision host. If there's no configured supervision host certificate, the system disables all pairing. Host pairing lets the administrator control whether an iOS device can pair with a host Mac or PC.",
+            "property_order": 395
         },
         "allowiPhoneWidgetsOnMac": {
             "type": "boolean",
             "title": "Allow iPhone widget on Mac",
             "default": true,
-            "description": "If 'false', the system disallows iPhone widgets on a Mac that has signed in the same Apple Account for iCloud. Requires a supervised device. Available on iOS 17 and later.",
-            "property_order": 395
+            "description": "If 'false', the system disallows iPhone widgets on a Mac that signs in with the same Apple Account for iCloud.",
+            "property_order": 400
         },
         "allowUnpairedExternalBootToRecovery": {
             "type": "boolean",
             "title": "Allow booting into recovery by unpaired devices",
             "default": false,
-            "description": "If 'true', the system allows unpaired devices to boot devices into recovery. Requires a supervised device. Available in iOS 14.5 and later.",
-            "property_order": 400
+            "description": "If 'true', the system allows unpaired devices to boot devices into recovery.",
+            "property_order": 405
         },
         "allowOpenFromManagedToUnmanaged": {
             "type": "boolean",
             "title": "Enable allow open from managed to unmanaged",
             "default": true,
-            "description": "If 'false', documents in managed apps and accounts only open in other managed apps and accounts. Available in iOS 7 and later. Also available for user enrollment.",
-            "property_order": 405
+            "description": "If 'false', documents in managed apps and accounts open only in other managed apps and accounts.",
+            "property_order": 410
         },
         "allowOpenFromUnmanagedToManaged": {
             "type": "boolean",
             "title": "Enable allow open from unmanaged to managed",
             "default": true,
-            "description": "If 'false', documents in unmanaged apps and accounts only open in other unmanaged apps and accounts. Available in iOS 7 and later. Also available for user enrollment.",
-            "property_order": 410
+            "description": "If 'false', documents in unmanaged apps and accounts open only in other unmanaged apps and accounts.",
+            "property_order": 415
         },
         "allowUnmanagedToReadManagedContacts": {
             "type": "boolean",
             "title": "Allow unmanaged apps to read managed contacts accounts",
             "default": false,
-            "description": "If 'true', the system allows unmanaged apps to read from managed contacts accounts. If 'allowOpenFromManagedToUnmanaged' is 'true', this restriction has no effect. Available in iOS 12 and later.\nUse MDM to install profiles that contain this restriction.",
-            "property_order": 415
+            "description": "If 'true', the system allows unmanaged apps to read from managed contacts accounts. If 'allowOpenFromManagedToUnmanaged' is 'true', this restriction has no effect.\n\nImportant:\nUse MDM to install profiles that contain this restriction.",
+            "property_order": 420
         },
         "allowManagedToWriteUnmanagedContacts": {
             "type": "boolean",
             "title": "Allow managed apps to write to managed contacts accounts",
             "default": false,
-            "description": "If 'true', the system allows managed apps to write contacts to unmanaged accounts. If 'allowOpenFromManagedToUnmanaged' is 'true', this restriction has no effect. Available in iOS 12 and later.\nUse MDM to install profiles that contain this restriction.",
-            "property_order": 420
+            "description": "If 'true', the system allows managed apps to write contacts to unmanaged accounts. If 'allowOpenFromManagedToUnmanaged' is 'true', this restriction has no effect.\n\nImportant:\nUse MDM to install profiles that contain this restriction.",
+            "property_order": 425
         },
         "requireManagedPasteboard": {
             "type": "boolean",
             "title": "Require managed pasteboard",
             "default": false,
-            "description": "If 'true', copy and paste functionality is limited by the 'allowOpenFromManagedToUnmanaged' and 'allowOpenFromUnmanagedToManaged' restrictions. Also available for user enrollment.",
-            "property_order": 425
+            "description": "If 'true', copy-and-paste functionality is limited by the 'allowOpenFromManagedToUnmanaged' and 'allowOpenFromUnmanagedToManaged' restrictions.",
+            "property_order": 430
         },
         "allowAirDrop": {
             "type": "boolean",
             "title": "Allow AirDrop",
             "default": true,
-            "description": "If 'false', the system disables AirDrop. Requires a supervised device. Available in iOS 7 and later, and macOS 10.13 and later.",
-            "property_order": 430
+            "description": "If 'false', the system disables AirDrop.",
+            "property_order": 435
         },
         "forceAirDropUnmanaged": {
             "type": "boolean",
             "title": "Treat AirDrop as Unmanaged Destination",
             "default": false,
-            "description": "If 'true', the system considers AirDrop to be an unmanaged drop target. Available in iOS 9 and later. Also available for user enrollment.",
-            "property_order": 435
+            "description": "If 'true', the system considers AirDrop to be an unmanaged drop target.",
+            "property_order": 440
         },
         "allowActivityContinuation": {
             "type": "boolean",
             "title": "Allow Handoff",
             "default": true,
-            "description": "If 'false', the system disables activity continuation. Available in iOS 8 and later, and macOS 10.15 and later. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated. In a future release, this restriction will begin requiring supervision and will apply to personal Apple Accounts only.",
-            "property_order": 440
+            "description": "If 'false', the system disables activity continuation. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated. In a future release, this restriction will begin requiring supervision and will apply to personal Apple Accounts only.",
+            "property_order": 445
         },
         "allowDiagnosticSubmission": {
             "type": "boolean",
             "title": "Allow diagnostic submission",
             "default": true,
-            "description": "If 'false', the system prevents the device from automatically submitting diagnostic reports to Apple. Available in iOS 6 and later, and macOS 10.13 and later. Also available for user enrollment.",
-            "property_order": 445
+            "description": "If 'false', the system prevents the device from automatically submitting diagnostic reports to Apple.",
+            "property_order": 450
         },
         "allowDiagnosticSubmissionModification": {
             "type": "boolean",
             "title": "Allow modifying diagnostics settings",
             "default": true,
-            "description": "If 'false', the system disables changing the diagnostic submission and app analytics settings in the Diagnostics & Usage UI in Settings. Requires a supervised device. Available in iOS 9.3.2 and later.",
-            "property_order": 450
+            "description": "If 'false', the system disables changing the diagnostic submission and app analytics settings in the Diagnostics & Usage UI in Settings.",
+            "property_order": 455
         },
         "forceAuthenticationBeforeAutoFill": {
             "type": "boolean",
             "title": "Require Touch ID / Face ID authentication before Autofill",
             "default": false,
-            "description": "If 'true', the user needs to authenticate before the system can autofill passwords or credit card information in Safari and apps. If this restriction isn't enforced, the user can toggle this feature in Settings. Only supported on devices with Face ID or Touch ID. Requires a supervised device. Available in iOS 11 and later.",
-            "property_order": 455
+            "description": "If 'true', the user needs to authenticate before the system can autofill passwords or credit card information in Safari and apps. If this restriction isn't enforced, the user can toggle this feature in Settings. Only supported on devices with Face ID or Touch ID.",
+            "property_order": 460
         },
         "allowPairedWatch": {
             "type": "boolean",
             "title": "Allow Pairing With Apple Watch",
             "default": true,
-            "description": "If 'false', the system disables pairing with an Apple Watch, and the system unpairs any currently paired Apple Watch and erases its content. Requires a supervised device. Available in iOS 9 and later.",
-            "property_order": 460
+            "description": "If 'false', the system disables pairing with an Apple Watch, and the system unpairs any currently paired Apple Watch and erases its content.",
+            "property_order": 465
         },
         "forceWatchWristDetection": {
             "type": "boolean",
             "title": "Force Apple Watch Wrist Detection",
             "default": false,
-            "description": "If 'true', the system forces a paired Apple Watch to use Wrist Detection. Available in iOS 8.2 and later. Also available for user enrollment.",
-            "property_order": 465
+            "description": "If 'true', the system forces a paired Apple Watch to use Wrist Detection.",
+            "property_order": 470
         },
         "forceWiFiPowerOn": {
             "type": "boolean",
             "title": "Disallow Wi-Fi from being turned off",
             "default": false,
-            "description": "If 'true', the system prevents turning off Wi-Fi in Settings or Control Center, even by entering or leaving Airplane Mode. It doesn't prevent selecting which Wi-Fi network to use. Requires a supervised device. Available in iOS 13.0 and later.",
-            "property_order": 470
+            "description": "If 'true', the system prevents turning off Wi-Fi in Settings or Control Center, even by entering or leaving Airplane Mode. It doesn't prevent selecting which Wi-Fi network to use. and later.",
+            "property_order": 475
         },
         "forceWiFiToAllowedNetworksOnly": {
             "type": "boolean",
             "title": "Join only Wi-Fi networks installed by a Wi-Fi payload",
             "default": false,
-            "description": "If 'true', the system limits the device to only join Wi-Fi networks set up through a configuration profile. Requires a supervised device. Available in iOS 14.5 and later.",
-            "property_order": 475
+            "description": "If 'true', the system limits the device to only join Wi-Fi networks set up through a configuration profile.",
+            "property_order": 480
         },
         "forceWiFiWhitelisting": {
             "type": "boolean",
             "title": "Only join Wi-Fi networks installed by profiles",
             "default": false,
             "description": "Use 'forceWiFiToAllowedNetworksOnly' instead.",
-            "property_order": 480
+            "property_order": 485
         },
         "allowProximitySetupToNewDevice": {
             "type": "boolean",
             "title": "Allow setting up new nearby iOS devices",
             "default": true,
-            "description": "If 'false', disables the prompt to set up new devices that are nearby. Requires a supervised device. Available in iOS 11 and later.",
-            "property_order": 485
+            "description": "If 'false', disables the prompt to set up new devices that are nearby.",
+            "property_order": 490
         },
         "allowPredictiveKeyboard": {
             "type": "boolean",
             "title": "Allow Predictive Keyboard",
             "default": true,
-            "description": "If 'false', the system disables predictive keyboards. Requires a supervised device. Available in iOS 8.1.3 and later.",
-            "property_order": 490
+            "description": "If 'false', the system disables predictive keyboards.",
+            "property_order": 495
         },
         "allowKeyboardShortcuts": {
             "type": "boolean",
             "title": "Allow Keyboard Shortcuts",
             "default": true,
-            "description": "If 'false', the system disables keyboard shortcuts. Requires a supervised device. Available in iOS 9 and later.",
-            "property_order": 495
+            "description": "If 'false', the system disables keyboard shortcuts.",
+            "property_order": 500
         },
         "allowAutoCorrection": {
             "type": "boolean",
             "title": "Allow Auto Correction",
             "default": true,
-            "description": "If 'false', the system disables keyboard autocorrection. Requires a supervised device. Available in iOS 8.1.3 and later.",
-            "property_order": 500
+            "description": "If 'false', the system disables keyboard autocorrection.",
+            "property_order": 505
         },
         "allowContinuousPathKeyboard": {
             "type": "boolean",
             "title": "Allow Continuous Path Keyboard",
             "default": true,
-            "description": "If 'false', the system disables QuickPath keyboard. Requires a supervised device. Available in iOS 13 and later.",
-            "property_order": 505
+            "description": "If 'false', the system disables QuickPath keyboard.",
+            "property_order": 510
         },
         "allowSpellCheck": {
             "type": "boolean",
             "title": "Allow Spell Check",
             "default": true,
-            "description": "If 'false', the system disables the keyboard spell checker. Requires a supervised device. Available in iOS 8.1.3 and later.",
-            "property_order": 510
+            "description": "If 'false', the system disables the keyboard spell checker.",
+            "property_order": 515
         },
         "allowSharedDeviceTemporarySession": {
             "type": "boolean",
             "title": "Allow Shared iPad temporary session",
             "default": true,
-            "description": "If 'false', the system makes temporary sessions unavailable on Shared iPad. Available in iOS 13.4 and later.",
-            "property_order": 515
+            "description": "If 'false', the system makes temporary sessions unavailable on Shared iPad.",
+            "property_order": 520
         },
         "allowDictation": {
             "type": "boolean",
             "title": "Allow dictation",
             "default": true,
-            "description": "If 'false', the system disallows dictation input. Available in iOS 10.3 and later, and macOS 10.13 and later. Requires a supervised device in iOS.",
-            "property_order": 520
+            "description": "If 'false', the system disallows dictation input.",
+            "property_order": 525
         },
         "forceOnDeviceOnlyDictation": {
             "type": "boolean",
             "title": "Force on-device only dictation",
             "default": false,
-            "description": "If 'true', the system disables connections to Siri servers for the purposes of dictation. Available in iOS 14.5 and later, macOS 14 and later, and watchOS 10 and later. Also available for user enrollment.",
-            "property_order": 525
+            "description": "If 'true', the system disables connections to Siri servers for the purposes of dictation.",
+            "property_order": 530
         },
         "forceOnDeviceOnlyTranslation": {
             "type": "boolean",
             "title": "Force on-device only translation",
             "default": false,
-            "description": "If 'true', the device won't connect to Siri servers for the purposes of translation. Available in iOS 15 and later. Also available for user enrollment.",
-            "property_order": 530
+            "description": "If 'true', the device can't connect to Siri servers for the purposes of translation.",
+            "property_order": 535
         },
         "allowPassbookWhileLocked": {
             "type": "boolean",
             "title": "Allow Wallet While Locked",
             "default": true,
-            "description": "If 'false', the system hides Passbook notifications from the lock screen. Available in iOS 6 and later.",
-            "property_order": 535
+            "description": "If 'false', the system hides Passbook notifications from the Lock Screen.",
+            "property_order": 540
         },
         "allowPersonalHotspotModification": {
             "type": "boolean",
             "title": "Allow modifying Personal Hotspot settings",
             "default": true,
-            "description": "If 'false', the system disables modifications of the personal hotspot setting. Requires a supervised device. Available in iOS 12.2 and later.",
-            "property_order": 540
+            "description": "If 'false', the system disables modifications of the personal hotspot setting.",
+            "property_order": 545
         },
         "allowLiveVoicemail": {
             "type": "boolean",
             "title": "Allow Live Voicemail",
             "default": true,
-            "description": "If 'false', the system disables live voicemail on the device.\nRequires a supervised device. Available in iOS 17.2 and later.",
-            "property_order": 545
+            "description": "If 'false', the system disables live voicemail on the device.",
+            "property_order": 550
         },
         "allowLockScreenControlCenter": {
             "type": "boolean",
             "title": "Show Control Center on Lock screen",
             "default": true,
-            "description": "If 'false', the system prevents Control Center from appearing on the Lock screen. Available in iOS 7 and later. Also available for user enrollment.",
-            "property_order": 550
+            "description": "If 'false', the system prevents Control Center from appearing on the Lock Screen.",
+            "property_order": 555
         },
         "allowLockScreenNotificationsView": {
             "type": "boolean",
             "title": "Show Notification Center on Lock screen",
             "default": true,
-            "description": "If 'false', the system disables the Notifications history view on the lock screen, so users can't view past notifications. However, they can still see notifications when they arrive. Available in iOS 7 and later. Also available for user enrollment.",
-            "property_order": 555
+            "description": "If 'false', the system disables the Notifications history view on the Lock Screen, so users can't view past notifications. However, they can still see notifications when they arrive.",
+            "property_order": 560
         },
         "allowLockScreenTodayView": {
             "type": "boolean",
             "title": "Show Today view on Lock screen",
             "default": true,
-            "description": "If 'false', the system disables the Today view in Notification Center on the lock screen. Available in iOS 7 and later. Also available for user enrollment.",
-            "property_order": 560
+            "description": "If 'false', the system disables the Today view in Notification Center on the Lock Screen.",
+            "property_order": 565
         },
         "forceAirPlayOutgoingRequestsPairingPassword": {
             "type": "boolean",
             "title": "Require passcode on first AirPlay pairing",
             "default": false,
-            "description": "If 'true', the system forces all devices receiving AirPlay requests from this device to use a pairing password. Available in iOS 7.1 and later. Also available for user enrollment.",
-            "property_order": 565
+            "description": "If 'true', the system forces all devices receiving AirPlay requests from this device to use a pairing password.",
+            "property_order": 570
         },
         "allowAirPrintCredentialsStorage": {
             "type": "boolean",
             "title": "Allow storage of AirPrint credentials in Keychain",
             "default": true,
-            "description": "If 'false', the system disables keychain storage of user name and password for AirPrint. Requires a supervised device. Available in iOS 11 and later.",
-            "property_order": 570
+            "description": "If 'false', the system disables Keychain storage of user name and password for AirPrint.",
+            "property_order": 575
         },
         "forceLimitAdTracking": {
             "type": "boolean",
             "title": "Force limited ad tracking",
             "default": false,
-            "description": "If 'true', the system limits ad tracking. Additionally, it disables app tracking and the Allow Apps to Request to Track setting. Available in iOS 7 and later.",
-            "property_order": 575
+            "description": "If 'true', the system limits ad tracking. Additionally, it disables app tracking and the Allow Apps to Request to Track setting.",
+            "property_order": 580
         },
         "allowApplePersonalizedAdvertising": {
             "type": "boolean",
             "title": "Allow Apple-personalized advertizing",
             "default": true,
-            "description": "If 'false', the system limits Apple personalized advertising. Available in iOS 14 and later, and macOS 12 and later.",
-            "property_order": 580
+            "description": "If 'false', the system limits Apple personalized advertising.",
+            "property_order": 585
         },
         "allowMailPrivacyProtection": {
             "type": "boolean",
             "title": "Allow mail privacy protection",
             "default": true,
-            "description": "If 'false', the system disables Mail Privacy Protection on the device. Requires a supervised device. Available in iOS 15.2 and later.",
-            "property_order": 585
+            "description": "If 'false', the system disables Mail Privacy Protection on the device.",
+            "property_order": 590
         },
         "allowAutoDim": {
             "type": "boolean",
             "title": "Allow Auto Dim",
             "default": true,
-            "description": "If 'false', disables auto dim on iPads with OLED displays. Requires a supervised device in iOS. Available in iOS 17.4 and later.",
-            "property_order": 590
+            "description": "If 'false', disables auto dim on iPads with OLED displays.",
+            "property_order": 595
         },
         "allowGameCenter": {
             "type": "boolean",
             "title": "Allow Game Center",
             "default": true,
-            "description": "If 'false', the system disables Game Center, and the system removes its icon from the Home screen. Available in iOS 6 and later, and macOS 10.13 and later. Requires a supervised device in iOS.",
-            "property_order": 595
+            "description": "If 'false', the system disables Game Center, and the system removes its icon from the Home Screen.",
+            "property_order": 600
         },
         "allowAddingGameCenterFriends": {
             "type": "boolean",
             "title": "Allow Adding Game Center Friends",
             "default": true,
-            "description": "If 'false', the system prohibits adding friends to Game Center. Available in iOS 4.2.1 and later, and macOS 10.13 and later. Requires a supervised device in iOS 13 and later.",
-            "property_order": 600
+            "description": "If 'false', the system prohibits adding friends to Game Center. Requires a supervised device in iOS 13 and later.",
+            "property_order": 605
         },
         "allowMultiplayerGaming": {
             "type": "boolean",
             "title": "Allow Multiplayer Gaming",
             "default": true,
-            "description": "If 'false', the system prohibits multiplayer gaming. Available in iOS 4.1 and later, and macOS 10.13 and later. Requires a supervised device in iOS.",
-            "property_order": 605
+            "description": "If 'false', the system prohibits multiplayer gaming.",
+            "property_order": 610
         },
         "allowSafari": {
             "type": "boolean",
             "title": "Allow use of Safari",
             "default": true,
-            "description": "If 'false', the system disables the Safari web browser app, and the system removes its icon from the Home screen. This setting also prevents users from opening web clips. As of iOS 13, requires a supervised device. Available in iOS 4 and later.",
-            "property_order": 610
+            "description": "If 'false', the system disables the Safari web browser app, and the system removes its icon from the Home Screen. This setting also prevents users from opening web clips. Requires a supervised device in iOS 13 and later.",
+            "property_order": 615
         },
         "safariAllowAutoFill": {
             "type": "boolean",
             "title": "Allow AutoFill in Safari",
             "default": true,
-            "description": "If 'false', the system disables Safari AutoFill for passwords, contact info, and credit cards and also prevents using the Keychain for AutoFill. As of iOS 13, requires a supervised device. Available in iOS 4 and later, and macOS 10.13 and later.\nThe system still allows third-party password managers, and apps can use AutoFill.",
-            "property_order": 615
+            "description": "If 'false', the system disables Safari AutoFill for passwords, contact info, and credit cards, and also prevents using the Keychain for AutoFill. Requires a supervised device in iOS 13 and later.\n\nNote:\nThe system still allows third-party password managers, and apps can use AutoFill.",
+            "property_order": 620
         },
         "safariForceFraudWarning": {
             "type": "boolean",
             "title": "Enable Fraud Warning",
             "default": false,
-            "description": "If 'true', the system enables Safari fraud warning. Available in iOS 4 and later. Also available for user enrollment.",
-            "property_order": 620
+            "description": "If 'true', the system enables Safari fraud warning.",
+            "property_order": 625
         },
         "safariAllowJavaScript": {
             "type": "boolean",
             "title": "Allow JavaScript",
             "default": true,
-            "description": "If 'false', Safari doesn't execute JavaScript. Available in iOS 4 and later. This restriction will require supervision in a future release.",
-            "property_order": 625
+            "description": "If 'false', Safari doesn't execute JavaScript. This restriction will require supervision in a future release.",
+            "property_order": 630
         },
         "safariAllowPopups": {
             "type": "boolean",
             "title": "Allow Pop-ups",
             "default": true,
-            "description": "If 'false', Safari doesn't allow pop-up windows. Available in iOS 4 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 630
+            "description": "If 'false', Safari doesn't allow pop-up windows. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 635
         },
         "safariAcceptCookies": {
             "type": "number",
             "title": "Accept Cookies in Safari",
             "default": 2.0,
-            "description": "Defines the conditions under which the device accepts cookies. The user-facing settings changed in iOS 11, although the possible values remain the same. Available in iOS 4 and later. Support for this restriction on unsupervised devices is deprecated. Allowed values:\n* '0': Enables Prevent Cross-Site Tracking and Block All Cookies, and the user canʼt disable either setting.\n* '1' or '1.5': Enables Prevent Cross-Site Tracking, and the user canʼt disable it. Doesn't enable Block All Cookies, but the user can enable it.\n* '2': Enables Prevent Cross-Site Tracking but doesn't enable Block All Cookies. The user can toggle either setting.",
+            "description": "Defines the conditions under which the device accepts cookies. The user-facing settings changed in iOS 11, although the possible values remain the same. Support for this restriction on unsupervised devices is deprecated. Allowed values:\n\n- '0': Enables Prevent Cross-Site Tracking and Block All Cookies, and the user canʼt disable either setting.\n- '1' or '1.5': Enables Prevent Cross-Site Tracking, and the user canʼt disable it. Doesn't enable Block All Cookies, but the user can enable it.\n- '2': Enables Prevent Cross-Site Tracking, but doesn't enable Block All Cookies. The user can toggle either setting.",
             "enum": [
                 0.0,
                 1.0,
@@ -914,14 +924,14 @@
                     "Always / Prevent Cross-Site Tracking"
                 ]
             },
-            "property_order": 635
+            "property_order": 640
         },
         "allowDeviceNameModification": {
             "type": "boolean",
             "title": "Allow Modifying Device Name",
             "default": true,
-            "description": "If 'false', the system prevents the user from changing the device name. Available in iOS 9 and later, macOS 14 and later, and tvOS 11.0 and later. Requires a supervised device in iOS and tvOS.",
-            "property_order": 640
+            "description": "If 'false', the system prevents the user from changing the device name.",
+            "property_order": 645
         },
         "blockedAppBundleIDs": {
             "type": "array",
@@ -930,8 +940,8 @@
                 "title": "Bundle ID"
             },
             "title": "Blocked Apps",
-            "description": "If present, the system prevents showing or launching apps with bundle IDs in the array. Include the value 'com.apple.webapp' to restrict all webclips. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, etc).\nRequires a supervised device. Available in iOS 15 and later, and tvOS 15 and later.\nDenying system apps may disable other functionality. For example, denying the App Store app may prevent users from accepting the terms and conditions for the user-based Volume Purchase Program (VPP).",
-            "property_order": 645
+            "description": "If present, the system prevents showing or launching apps with bundle IDs in the array. Include the value 'com.apple.webapp' to restrict all webclips. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, and so forth).\n\nNote:\nDenying system apps may disable other functionality. For example, denying the App Store app may prevent users from accepting the terms and conditions for the user-based Volume Purchase Program (VPP).",
+            "property_order": 650
         },
         "blacklistedAppBundleIDs": {
             "type": "array",
@@ -941,7 +951,7 @@
             },
             "title": "Restrict App Usage - Denylist",
             "description": "Use 'blockedAppBundleIDs' instead.",
-            "property_order": 650
+            "property_order": 655
         },
         "allowListedAppBundleIDs": {
             "type": "array",
@@ -950,8 +960,8 @@
                 "title": "Bundle ID"
             },
             "title": "Allow Listed Apps",
-            "description": "If present, the system only shows or can launch apps with bundle IDs in the array. Include the value 'com.apple.webapp' to allow all webclips. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, etc).\nRequires a supervised device. Available in iOS 15 and later, and tvOS 15 and later.",
-            "property_order": 655
+            "description": "If present, the system only shows or can launch apps with bundle IDs in the array. Include the value 'com.apple.webapp' to allow all webclips. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, and so forth).",
+            "property_order": 660
         },
         "whitelistedAppBundleIDs": {
             "type": "array",
@@ -961,7 +971,7 @@
             },
             "title": "Restrict App Usage - Allowlist",
             "description": "Use 'allowListedAppBundleIDs' instead.",
-            "property_order": 660
+            "property_order": 665
         },
         "autonomousSingleAppModePermittedAppIDs": {
             "type": "array",
@@ -970,14 +980,14 @@
                 "title": "Apps allow list for Autonomous Single App Mode"
             },
             "title": "Autonomous Single App Mode Permitted App IDs",
-            "description": "If present, the system allows apps identified by the bundle IDs listed in the array to autonomously enter Single App Mode. Requires a supervised device. Available in iOS 7 and later.",
-            "property_order": 665
+            "description": "If present, the system allows apps identified by the bundle IDs listed in the array to autonomously enter Single App Mode.",
+            "property_order": 670
         },
         "ratingRegion": {
             "type": "string",
             "title": "Ratings region",
             "default": "us",
-            "description": "The two-letter key that profile tools use to display the proper ratings for the given region. The client doesn't recognize or report this data. Available in iOS 4.0 and later, macOS 10.7 and later, and tvOS 9 and later.",
+            "description": "The two-letter key that profile tools use to display the proper ratings for the given region. The client doesn't recognize or report this data.",
             "enum": [
                 "us",
                 "au",
@@ -1002,13 +1012,13 @@
                     "United Kingdom"
                 ]
             },
-            "property_order": 670
+            "property_order": 675
         },
         "ratingApps": {
             "type": "integer",
             "title": "Apps Ranking Number",
             "default": 1000,
-            "description": "The maximum level of app content allowed on the device. Preinstalled (first party) apps ignore this restriction. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n* '1000': All\n* '600': 17+\n* '300': 12+\n* '200': 9+\n* '100': 4+\n* '0': None",
+            "description": "The maximum level of app content allowed on the device. Preinstalled (first-party) apps ignore this restriction.\n\nPossible values, with the U.S. description of the rating level:\n\n- '1000': All\n- '600': 17+\n- '300': 12+\n- '200': 9+\n- '100': 4+\n- '0': None\n\nAge bands and the number of discrete age values vary by region, but the values are consistent across regions. For example, in a region that defines rating level 14+, its value is guaranteed to be larger than 300 (12+) and smaller than 600 (17+). Also, the value of rating level 15+ is guaranteed to be larger than the assigned value of rating level 14+. For more information about age ratings, see [Age ratings values and definitions](https://developer.apple.com/help/app-store-connect/reference/age-ratings-values-and-definitions).\n\nExamples of values in other regions include:\n\n- '1000': All\n- '621': 21+\n- '620': 20+\n- '619': 19+\n- '618': 18+\n- '600': 17+\n- '416': 16+\n- '415': 15+\n- '314': 14+\n- '313': 13+\n- '300': 12+\n- '211': 11+\n- '210': 10+\n- '200': 9+\n- '108': 8+\n- '107': 7+\n- '106': 6+\n- '105': 5+\n- '100': 4+\n- '3': 3+\n- '2': 2+\n- '1': 1+\n- '0': None\n\nThis restriction will require supervision in a future release.",
             "enum": [
                 1000,
                 900,
@@ -1037,13 +1047,13 @@
                     "Don't Allow Apps"
                 ]
             },
-            "property_order": 675
+            "property_order": 680
         },
         "ratingMovies": {
             "type": "integer",
-            "title": "Allowed content ratings - Movies",
+            "title": "Movies Ranking Number",
             "default": 1000,
-            "description": "The maximum level of movie content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later.  Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n* '1000': All\n* '500': NC-17\n* '400': R\n* '300': PG-13\n* '200': PG\n* '100': G\n* '0': None",
+            "description": "The maximum level of movie content allowed on the device. Support for this restriction on unsupervised devices is deprecated.\n\nPossible values, with the U.S. description of the rating level:\n\n- '1000': All\n- '500': NC-17\n- '400': R\n- '300': PG-13\n- '200': PG\n- '100': G\n- '0': None",
             "enum": [
                 1000,
                 900,
@@ -1072,13 +1082,13 @@
                     "Don't Allow Movies"
                 ]
             },
-            "property_order": 680
+            "property_order": 685
         },
         "ratingTVShows": {
             "type": "integer",
             "title": "Allowed content ratings - TV Shows",
             "default": 1000,
-            "description": "The maximum level of TV content allowed on the device. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the US description of the rating level:\n\n* '1000': All\n* '600': TV-MA\n* '500': TV-14\n* '400': TV-PG\n* '300': TV-G\n* '200': TV-Y7\n* '100': TV-Y\n* '0': None",
+            "description": "The maximum level of TV content allowed on the device. Support for this restriction on unsupervised devices is deprecated.\n\nPossible values, with the U.S. description of the rating level:\n\n- '1000': All\n- '600': TV-MA\n- '500': TV-14\n- '400': TV-PG\n- '300': TV-G\n- '200': TV-Y7\n- '100': TV-Y\n- '0': None",
             "enum": [
                 1000,
                 900,
@@ -1107,200 +1117,200 @@
                     "Don't Allow TV Shows"
                 ]
             },
-            "property_order": 685
+            "property_order": 690
         },
         "allowExplicitContent": {
             "type": "boolean",
             "title": "Allow Explicit Content",
             "default": true,
-            "description": "If 'false', the system hides explicit music or video content purchased from the iTunes Store. The system marks explicit content as such by content providers, such as record labels, when sold through the iTunes Store. Explicit content in the News and Podcast apps is also hidden.\nAvailable in iOS 4.0 and later, macOS 15 and later, and tvOS 11.3 and later. Requires a supervised device in iOS 13 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 690
+            "description": "If 'false', the system hides explicit music or video content purchased from the iTunes Store. The system marks explicit content as such by content providers, such as record labels, when sold through the iTunes Store. Explicit content in the News and Podcast apps is also hidden.\n\nRequires a supervised device in iOS 13 and later. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 695
         },
         "allowFilesUSBDriveAccess": {
             "type": "boolean",
             "title": "Allow Files USB Drive Access",
             "default": true,
-            "description": "If 'false', the system prevents connecting to any connected USB devices in the Files app. Requires a supervised device. Available in iOS 13.1 and later.",
-            "property_order": 695
+            "description": "If 'false', the system prevents connecting to any connected USB devices in the Files app.",
+            "property_order": 700
         },
         "allowBookstoreErotica": {
             "type": "boolean",
             "title": "Allow Bookstore Erotica",
             "default": true,
-            "description": "If 'false', the system prevents the user from downloading Apple Books media that's tagged as erotica. Available in iOS 4.0 and later, macOS 15 and later, and tvOS 17 and later. Support for this restriction on unsupervised devices is deprecated.",
-            "property_order": 700
+            "description": "If 'false', the system prevents the user from downloading Apple Books media that's tagged as erotica. Support for this restriction on unsupervised devices is deprecated.",
+            "property_order": 705
         },
         "allowPasswordSharing": {
             "type": "boolean",
             "title": "Allow password sharing",
             "default": true,
-            "description": "If 'false', the system disables sharing passwords with the Airdrop Passwords feature. Available in iOS 12 and later, and macOS 10.14 and later. Requires a supervised device in iOS.",
-            "property_order": 705
+            "description": "If 'false', the system disables sharing passwords with the AirDrop passwords feature, or with the Passwords app.",
+            "property_order": 710
         },
         "allowPasswordProximityRequests": {
             "type": "boolean",
             "title": "Allow proximity based password sharing requests",
             "default": true,
-            "description": "If 'false', the system disables requesting passwords from nearby devices. Available in iOS 12 and later, macOS 10.14 and later, and tvOS 12 and later. Requires a supervised device in iOS and tvOS. Deprecated on tvOS 17.4 or later as guest password sharing is no longer supported.",
-            "property_order": 710
+            "description": "If 'false', the system disables requesting passwords from nearby devices.",
+            "property_order": 715
         },
         "forceDelayedSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer Software Updates",
             "default": false,
-            "description": "If 'true', the system delays user visibility of software updates. In macOS, the system allows seed build updates without delay. The delay is 30 days unless you set 'enforcedSoftwareUpdateDelay' to another value. Available in iOS 11.3 and later, macOS 10.13 and later, and tvOS 12.2 and later. Requires a supervised device in iOS and tvOS.",
-            "property_order": 715
+            "description": "If 'true', the system delays user visibility of software updates. In macOS, the system allows seed build updates without delay. The delay is 30 days unless you set 'enforcedSoftwareUpdateDelay' to another value.",
+            "property_order": 720
         },
         "enforcedSoftwareUpdateDelay": {
             "type": "integer",
             "title": "Deferred Software Updates Delay",
             "default": 30,
-            "description": "How many days to delay a software update on the device. With this restriction in place, the user doesn't see a software update until the specified number of days after the software update release date. The restrictions 'forceDelayedAppSoftwareUpdates' and 'forceDelayedSoftwareUpdates' use this value. Available in iOS 11.3 and later, macOS 10.13.4 and later, and tvOS 12.2 and later. Requires a supervised device in iOS and tvOS.",
-            "property_order": 720
+            "description": "How many days to delay a software update on the device. With this restriction in place, the user doesn't see a software update until the specified number of days after the software update release date. The restrictions 'forceDelayedAppSoftwareUpdates' and 'forceDelayedSoftwareUpdates' use this value.",
+            "property_order": 725
         },
         "allowRapidSecurityResponseInstallation": {
             "type": "boolean",
             "title": "Allow Rapid Security Response Installation",
             "default": true,
-            "description": "If 'false', the system prohibits installation of rapid security responses. Available in iOS 16 and later, and macOS 13 and later.",
-            "property_order": 725
+            "description": "If 'false', the system prohibits installation of rapid security responses.",
+            "property_order": 730
         },
         "allowRapidSecurityResponseRemoval": {
             "type": "boolean",
             "title": "Allow Rapid Security Response Removal",
             "default": true,
-            "description": "If 'false', the system prohibits removal of rapid security responses. Available in iOS 16 and later, and macOS 13 and later.",
-            "property_order": 730
+            "description": "If 'false', the system prohibits removal of rapid security responses.",
+            "property_order": 735
         },
         "allowFindMyDevice": {
             "type": "boolean",
             "title": "Allow Find My Devices",
             "default": true,
-            "description": "If 'false', the system disables Find My Device in the Find My app. Requires a supervised device. Available in iOS 13 and later, and macOS 10.15 and later.",
-            "property_order": 735
+            "description": "If 'false', the system disables Find My Device in the Find My app.",
+            "property_order": 740
         },
         "allowFindMyFriends": {
             "type": "boolean",
             "title": "Allow Find My Friends",
             "default": true,
-            "description": "If 'false', the system disables Find My Friends in the Find My app. Requires a supervised device. Available in iOS 13 and later, and macOS 10.15 and later.",
-            "property_order": 740
+            "description": "If 'false', the system disables Find My Friends in the Find My app.",
+            "property_order": 745
         },
         "allowFilesNetworkDriveAccess": {
             "type": "boolean",
             "title": "Allow Files Network Drive Access",
             "default": true,
-            "description": "If 'false', the system prevents connecting to network drives in the Files app. Requires a supervised device. Available in iOS 13.1 and later.",
-            "property_order": 745
+            "description": "If 'false', the system prevents connecting to network drives in the Files app.",
+            "property_order": 750
         },
         "allowESIMOutgoingTransfers": {
             "type": "boolean",
             "title": "Allow eSIM Outgoing Transfers",
             "default": true,
-            "description": "If 'false', prevents the transfer of an eSIM from the device on which the restriction is installed to a different device. Requires a supervised device. Available in iOS 18 and later.",
-            "property_order": 750
+            "description": "If 'false', prevents the transfer of an eSIM from the device on which the restriction is installed to a different device.",
+            "property_order": 755
         },
         "allowGenmoji": {
             "type": "boolean",
             "title": "Allow Genmoji",
             "default": true,
-            "description": "If 'false', prohibits creating new Genmoji. Requires a supervised device. Available in iOS 18 and later.",
-            "property_order": 755
+            "description": "If 'false', prohibits creating new Genmoji.",
+            "property_order": 760
         },
         "allowImagePlayground": {
             "type": "boolean",
             "title": "Allow Image Playground",
             "default": true,
-            "description": "If 'false', prohibits the use of image generation. Requires a supervised device. Available in iOS 18 and later and macOS 15 and later.",
-            "property_order": 760
+            "description": "If 'false', prohibits the use of image generation.",
+            "property_order": 765
         },
         "allowImageWand": {
             "type": "boolean",
             "title": "Allow Image Wand",
             "default": true,
-            "description": "If 'false', prohibits the use of Image Wand. Requires a supervised device. Available in iOS 18 and later.",
-            "property_order": 765
+            "description": "If 'false', prohibits the use of Image Wand.",
+            "property_order": 770
         },
         "allowiPhoneMirroring": {
             "type": "boolean",
             "title": "Allow iPhone mirroring",
             "default": true,
-            "description": "If 'false', prohibits the use of iPhone Mirroring. When used on macOS, this prevents the Mac from mirroring any iPhone. When used on iOS, this prevents the iPhone from mirroring to any Mac. Requires a supervised device. Available in iOS 18 and later and macOS 15 and later.",
-            "property_order": 770
+            "description": "If 'false', prohibits the use of iPhone Mirroring. In macOS, this prevents the Mac from mirroring any iPhone. In iOS, this prevents the iPhone from mirroring to any Mac.",
+            "property_order": 775
         },
         "allowPersonalizedHandwritingResults": {
             "type": "boolean",
             "title": "Allow personalized handwriting results",
             "default": true,
-            "description": "If false, prevents the system from generating text in the user's handwriting. Requires a supervised device. Available in iOS 18 and later.",
-            "property_order": 775
+            "description": "If false, prevents the system from generating text in the user's handwriting.",
+            "property_order": 780
         },
         "allowWritingTools": {
             "type": "boolean",
             "title": "Allow writing tools",
             "default": true,
-            "description": "If 'false', disables Apple Intelligence writing tools. Requires a supervised device. Available in iOS 18 and later and macOS 15 and later.",
-            "property_order": 780
+            "description": "If 'false', disables Apple Intelligence writing tools.",
+            "property_order": 785
         },
         "allowCallRecording": {
             "type": "boolean",
             "title": "Allow Call Recording",
             "default": true,
-            "description": "If 'false', disables call recording. Available in iOS 18 and later.",
-            "property_order": 785
+            "description": "If 'false', disables call recording.",
+            "property_order": 790
         },
         "allowMailSummary": {
             "type": "boolean",
             "default": true,
-            "description": "If 'false', disables the ability to create summaries of email messages manually. This doesn't affect automatic summary generation. Available in iOS 18.1 and later.",
-            "property_order": 790
+            "description": "If 'false', disables the ability to create summaries of email messages manually. This doesn't affect automatic summary generation.",
+            "property_order": 795
         },
         "allowMailSmartReplies": {
             "type": "boolean",
             "default": true,
-            "description": "If 'false', disables smart replies in Mail. Available in iOS 18.2 and later, and macOS 15.2 and later.",
-            "property_order": 795
+            "description": "If 'false', disables smart replies in Mail.",
+            "property_order": 800
         },
         "allowRCSMessaging": {
             "type": "boolean",
             "default": true,
-            "description": "If 'false', prevents the use of RCS messaging. Available in iOS 18.1 and later.",
-            "property_order": 800
+            "description": "If 'false', prevents the use of RCS messaging.",
+            "property_order": 805
         },
         "allowDefaultBrowserModification": {
             "type": "boolean",
             "title": "Allow default browser modification",
             "default": true,
-            "description": "If 'false', disables default browser preference modification. The MDM Settings command to set the default browser preference will still work when this is applied. Available in iOS 18.2 and later, and visionOS 2.2 and later.",
-            "property_order": 805
+            "description": "If 'false', disables default browser preference modification. The MDM Settings command to set the default browser preference still works when applying this.",
+            "property_order": 810
         },
         "allowDefaultCallingAppModification": {
             "type": "boolean",
             "title": "Allow default calling app modification",
             "default": true,
-            "description": "If 'false', disables default calling app preference modification. The MDM Settings command to set the default calling app preference still works when this is applied. Available in iOS 18.4 and later.",
-            "property_order": 810
+            "description": "If 'false', disables default calling app preference modification. The MDM Settings command to set the default calling app preference still works when applying this.",
+            "property_order": 815
         },
         "allowDefaultMessagingAppModification": {
             "type": "boolean",
             "title": "Allow default messaging app modification",
             "default": true,
-            "description": "If 'false', disables default messaging app preference modification. The MDM Settings command to set the default messaging app preference still works when this is applied. Available in iOS 18.4 and later.",
-            "property_order": 815
+            "description": "If 'false', disables default messaging app preference modification. The MDM Settings command to set the default messaging app preference still works when applying this.",
+            "property_order": 820
         },
         "allowExternalIntelligenceIntegrations": {
             "type": "boolean",
             "title": "Allow external intelligence integrations",
             "default": true,
-            "description": "If 'false', disables the use of external, cloud-based intelligence services with Siri. On iOS, this restriction is temporarily allowed on unsupervised and user enrollments. In a future release, this restriction will require supervision, and will be ignored on non-supervised devices. Available in iOS 18.2 and later, and macOS 15.2 and later.",
-            "property_order": 820
+            "description": "If 'false', disables the use of external, cloud-based intelligence services with Siri. In iOS, this restriction is temporarily allowed on unsupervised and user enrollments. In a future release, this restriction will require supervision, and will be ignored on unsupervised devices.",
+            "property_order": 825
         },
         "allowExternalIntelligenceIntegrationsSignIn": {
             "type": "boolean",
             "title": "Allow external intelligence integrations sign-in",
             "default": true,
-            "description": "If 'false', forces external intelligence providers into anonymous mode. If a user is already signed in to an external intelligence provider, applying this restriction will cause them to be signed out when the next request is attempted. Available in iOS 18.2 and later, and macOS 15.2 and later.",
-            "property_order": 825
+            "description": "If 'false', forces external intelligence providers into anonymous mode. If a user is already signed in to an external intelligence provider, applying this restriction signs them out when attempting the next request.",
+            "property_order": 830
         },
         "allowedExternalIntelligenceWorkspaceIDs": {
             "type": "array",
@@ -1309,54 +1319,86 @@
                 "title": "Allowed Workspace ID"
             },
             "title": "Allowed External Intelligence Workspace IDs",
-            "description": "An array of strings, but currently restricted to a single element. If present, Apple Intelligence only allows the given external integration workspace ID to be used, and requires a sign-in to make requests; the user will be required to sign in to integrations that support signing in. Multiple payloads combine using an intersect operation. This means the allowed set of workspace IDs can become the empty set if conflicting values are specified in multiple payloads.",
-            "property_order": 830
+            "description": "An array of strings, but currently restricted to a single element. If present, Apple Intelligence allows use of only the given external integration workspace ID, and requires a sign-in to make requests. The user is required to sign in to integrations that support signing in. Multiple payloads combine using an intersect operation. This means the allowed set of workspace IDs can become the empty set if multiple payloads specify conflicting values.",
+            "property_order": 835
         },
         "allowNotesTranscriptionSummary": {
             "type": "boolean",
             "default": true,
-            "description": "If 'false', disables transcription summarization in Notes. Available in iOS 18.3 and later, and macOS 15.3 and later.",
-            "property_order": 835
+            "description": "If 'false', disables transcription summarization in Notes.",
+            "property_order": 840
         },
         "allowNotesTranscription": {
             "type": "boolean",
             "default": true,
-            "description": "If 'false', disables transcription in Notes. Available in iOS 18.2 and later, and macOS 15.2 and later.",
-            "property_order": 840
+            "description": "If 'false', disables transcription in Notes.",
+            "property_order": 845
         },
         "allowVisualIntelligenceSummary": {
             "type": "boolean",
             "title": "Allow Visual Intelligence Summary",
             "default": true,
-            "description": "If 'false', the system disables visual intelligence summarization. Available in iOS 18.3 and later.",
-            "property_order": 845
+            "description": "If 'false', the system disables visual intelligence summarization.",
+            "property_order": 850
         },
         "allowSatelliteConnection": {
             "type": "boolean",
             "title": "Allow use of satellite connectivity",
             "default": true,
-            "description": "If 'false', the system prohibits the connection to and use of satellite services. Available in iOS 18.2 and later.",
-            "property_order": 850
+            "description": "If 'false', the system prohibits the connection to and use of satellite services.",
+            "property_order": 855
         },
         "allowAppleIntelligenceReport": {
             "type": "boolean",
             "title": "Allow Apple Intelligence Report",
             "default": true,
-            "description": "If 'false', the system disables Apple Intelligence reports. Available in iOS 18.4 and later, and macOS 15.4 and later.",
-            "property_order": 855
+            "description": "If 'false', the system disables Apple Intelligence reports.",
+            "property_order": 860
         },
         "allowSafariSummary": {
             "type": "boolean",
             "default": true,
-            "description": "If 'false', the system disables the ability to summarize content in Safari. Available in iOS 18.2 and later, and macOS 15.2 and later.",
-            "property_order": 860
+            "description": "If 'false', the system disables the ability to summarize content in Safari.",
+            "property_order": 865
         },
         "allowVideoConferencingRemoteControl": {
             "type": "boolean",
             "title": "Allow Video Conferencing Remote Control",
             "default": true,
-            "description": "When false, disables the ability for a remote FaceTime session to request control of the device.",
-            "property_order": 865
+            "description": "If 'false', disables the ability for a remote FaceTime session to request control of the device.",
+            "property_order": 870
+        },
+        "allowSafariHistoryClearing": {
+            "type": "boolean",
+            "default": true,
+            "description": "If 'false', the system disables the ability to clear browsing history in Safari.",
+            "property_order": 875
+        },
+        "allowSafariPrivateBrowsing": {
+            "type": "boolean",
+            "default": true,
+            "description": "If 'false', the system disables the ability to use private browsing in Safari.",
+            "property_order": 880
+        },
+        "deniedICCIDsForiMessageFaceTime": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Denied ICCID for iMessage and FaceTime",
+                "description": "An ICCID."
+            },
+            "description": "An array of strings representing ICCIDs of cellular plans. The device prevents use of any matching cellular networks in iMessage and FaceTime. The array must contain no more than 4 ICCID strings.",
+            "property_order": 885
+        },
+        "deniedICCIDsForRCS": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Denied ICCID for RCS",
+                "description": "An ICCID."
+            },
+            "description": "An array of strings representing ICCIDs of cellular plans. The device prevents use of any matching cellular networks with RCS messaging. The array must contain no more than 4 ICCID strings.",
+            "property_order": 890
         }
     }
 }

@@ -1,12 +1,12 @@
 {
     "title": "Mail (com.apple.mail.managed)",
-    "description": "Mail settings",
+    "description": "The payload that configures a Mail account.",
     "properties": {
         "EmailAccountType": {
             "type": "string",
             "title": "Account Type",
             "default": "EmailTypeIMAP",
-            "description": "The protocol for accessing the account",
+            "description": "Defines the protocol to use for the account.",
             "enum": [
                 "EmailTypeIMAP",
                 "EmailTypePOP"
@@ -22,25 +22,25 @@
         "EmailAccountDescription": {
             "type": "string",
             "title": "Account Description",
-            "description": "The display name of the account (e.g. \"Company Mail Account\")",
+            "description": "A user-visible description of the email account, shown in the Mail and Settings applications.",
             "property_order": 10
         },
         "IncomingMailServerIMAPPathPrefix": {
             "type": "string",
             "title": "Path Prefix",
-            "description": "Path prefix for IMAP mail server",
+            "description": "The path prefix for the IMAP mail server.",
             "property_order": 15
         },
         "EmailAccountName": {
             "type": "string",
             "title": "User Display Name",
-            "description": "The display name of the user (e.g. \"John Appleseed\")",
+            "description": "The full user name for the account. The system displays this name in sent messages.",
             "property_order": 20
         },
         "EmailAddress": {
             "type": "string",
             "title": "Email Address",
-            "description": "The address of the account (e.g. \"john@company.com\")",
+            "description": "The full email address for the account. If this string isn't present in the payload, the device prompts the user for this string during interactive profile installation in Settings or System Preferences.",
             "property_order": 25
         },
         "IdentificationUUID": {
@@ -53,138 +53,138 @@
             "type": "boolean",
             "title": "Allow user to move messages from this account",
             "default": false,
-            "description": "Messages can be moved out of this account into another.",
+            "description": "If 'true', the system prevents moving messages out of this email account and into another account. It also prevents forwarding or replying from an account other than the recipient of the message.",
             "property_order": 35
         },
         "disableMailRecentsSyncing": {
             "type": "boolean",
             "title": "Allow recent addresses to be synced",
             "default": false,
-            "description": "Include this account in recent address syncing",
+            "description": "If 'true', the system excludes this account from Recent Addresses syncing.",
             "property_order": 40
         },
         "allowMailDrop": {
             "type": "boolean",
             "title": "Allow Mail Drop",
             "default": false,
-            "description": "Allow Mail Drop for this account",
+            "description": "If 'true', the system enables this account to use Mail Drop.",
             "property_order": 45
         },
         "PreventAppSheet": {
             "type": "boolean",
             "title": "Use Only In Mail",
             "default": false,
-            "description": "Send outgoing mail from this account only from Mail app",
+            "description": "If 'true', the system prevents this account from sending mail in any app other than the Apple Mail app.",
             "property_order": 50
         },
         "SMIMEEnabled": {
             "type": "boolean",
             "title": "S/MIME Enabled",
             "default": false,
-            "description": "If set to true, this account will support S/MIME",
+            "description": "If 'true', the system enables S/MIME encryption. The system ignores this key in iOS 10.0 and later.",
             "property_order": 55
         },
         "SMIMESigningEnabled": {
             "type": "boolean",
-            "title": "Enable S/MIME Signing",
+            "title": "S/MIME Signing Enabled",
             "default": false,
-            "description": "Support S/MIME signing for this account",
+            "description": "If 'true', the system enables S/MIME signing for this account.",
             "property_order": 60
         },
         "SMIMESigningCertificateUUID": {
             "type": "string",
             "title": "S/MIME Signing Certificate",
-            "description": "The PayloadUUID of the identity certificate used to sign messages sent from this account.",
+            "description": "The payload UUID of the identity certificate used to sign messages sent from this account.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 65
         },
         "SMIMEEncryptionEnabled": {
             "type": "boolean",
-            "title": "Enable S/MIME Encryption",
+            "title": "S/MIME Encryption Enabled",
             "default": false,
-            "description": "Support S/MIME encryption from this account",
+            "description": "If 'true', the system enables S/MIME encryption for this account.",
             "property_order": 70
         },
         "SMIMEEncryptionCertificateUUID": {
             "type": "string",
             "title": "S/MIME Encryption Certificate",
-            "description": "The PayloadUUID of the identity certificate used to decrypt messages coming into this account.",
+            "description": "The UUID of the identity certificate used to decrypt messages sent to this account. The system attaches the public certificate to outgoing mail to allow the user to receive encrypted mail. When the user sends encrypted mail, the system uses the public certificate to encrypt the copy of the mail in their Sent mailbox.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 75
         },
         "SMIMEEnablePerMessageSwitch": {
             "type": "boolean",
-            "title": "Enable per-message encryption switch",
+            "title": "S/MIME Enable Per-Message Switch",
             "default": false,
-            "description": "Allow the user to choose whether to encrypt each message",
+            "description": "If 'true', the system displays the per-message encryption switch in the Mail Compose UI. Deprecated in iOS 12.0. Use 'SMIMEEnableEncryptionPerMessageSwitch' instead.",
             "property_order": 80
         },
         "SMIMESigningUserOverrideable": {
             "type": "boolean",
             "title": "Enable S/MIME toggle",
             "default": false,
-            "description": "Allow the user to toggle S/MIME signing on or off in Settings.",
+            "description": "If 'true', the user can turn S/MIME signing on or off in Settings.",
             "property_order": 85
         },
         "SMIMESigningCertificateUUIDUserOverrideable": {
             "type": "boolean",
             "title": "Enable user to select the signing identity",
             "default": false,
-            "description": "Allow the user to select the signing identity.",
+            "description": "If 'true', the user can select the signing identity.",
             "property_order": 90
         },
         "SMIMEEncryptByDefault": {
             "type": "boolean",
             "title": "Enable S/MIME by default",
             "default": false,
-            "description": "If SMIMEEnableEncryptionPerMessageSwitch is false, this default cannot be changed by the user.",
+            "description": "If 'true', the system enables S/MIME encryption by default.",
             "property_order": 95
         },
         "SMIMEEncryptByDefaultUserOverrideable": {
             "type": "boolean",
             "title": "Enable user to toggle S/MIME by default",
             "default": false,
-            "description": "Allow the user to toggle the encryption by default setting.",
+            "description": "If 'true', the user can turn encryption by default on/off, and encryption is on.",
             "property_order": 100
         },
         "SMIMEEncryptionCertificateUUIDUserOverrideable": {
             "type": "boolean",
             "title": "Enable user to select the signing identity and encryption is enabled",
             "default": false,
-            "description": "Allow the user to select the signing identity and encryption is enabled.",
+            "description": "If 'true', the user can select the S/MIME encryption identity, and encryption is on.",
             "property_order": 105
         },
         "SMIMEEnableEncryptionPerMessageSwitch": {
             "type": "boolean",
             "title": "Enable per-message encryption switch",
             "default": false,
-            "description": "Allow the user toggle encrytion in the compose view and encryption is enabled.",
+            "description": "If 'true', the system displays the per-message encryption switch in the Mail Compose UI.",
             "property_order": 110
         },
         "IncomingMailServerHostName": {
             "type": "string",
             "title": "Incoming Mail Server Hostname",
-            "description": "Hostname or IP Address for incoming mail",
+            "description": "The incoming mail server host name.",
             "property_order": 115
         },
         "IncomingMailServerPortNumber": {
             "type": "integer",
             "title": "Incoming Mail Server Port",
             "default": 993,
-            "description": "Port number for incoming mail",
+            "description": "The incoming mail server port number. If not set, the system uses the default port for a given protocol.",
             "property_order": 120
         },
         "IncomingMailServerUsername": {
             "type": "string",
             "title": "Incoming Mail Server Username",
-            "description": "The username used to connect to the server for incoming mail",
+            "description": "The user name for the email account, usually the same as the email address up to the \"@\" character. If not set and the account requires authentication for incoming email, the device prompts the user for this string during interactive profile installation in Settings or System Preferences.",
             "property_order": 125
         },
         "IncomingMailServerAuthentication": {
             "type": "string",
             "title": "Incoming Mail Server Authentification Type",
             "default": "EmailAuthPassword",
-            "description": "The authentication method for the incoming mail server",
+            "description": "The authentication scheme for incoming mail.",
             "enum": [
                 "EmailAuthNone",
                 "EmailAuthPassword",
@@ -206,40 +206,40 @@
         "IncomingPassword": {
             "type": "string",
             "title": "Incoming Mail Server Password",
-            "description": "The password for the incoming mail server",
+            "description": "The password for the incoming mail server. Only use this in encrypted profiles.",
             "property_order": 135
         },
         "IncomingMailServerUseSSL": {
             "type": "boolean",
             "title": "Incoming Mail Server Use SSL",
             "default": false,
-            "description": "Retrieve incoming mail through Secure Socket Layer",
+            "description": "If 'true', the system enables SSL for authentication on the incoming mail server.",
             "property_order": 140
         },
         "OutgoingMailServerHostName": {
             "type": "string",
             "title": "Outgoing Mail Server Hostname",
-            "description": "Hostname or IP address for outgoing mail",
+            "description": "The outgoing mail server host name.",
             "property_order": 145
         },
         "OutgoingMailServerPortNumber": {
             "type": "integer",
             "title": "Outgoing Mail Server Port",
             "default": 587,
-            "description": "The port number for outgoing mail",
+            "description": "The outgoing mail server port number. If not set, the system uses ports 25, 587, and 465, in that order.",
             "property_order": 150
         },
         "OutgoingMailServerUsername": {
             "type": "string",
             "title": "Outgoing Mail Server Username",
-            "description": "The username used to connect to the server for outgoing mail",
+            "description": "The user name for the email account, usually the same as the email address up to the \"@\" character. If not set and the account requires authentication for outgoing email, the device prompts the user for this string during interactive profile installation in Settings or System Preferences.",
             "property_order": 155
         },
         "OutgoingMailServerAuthentication": {
             "type": "string",
             "title": "Outgoing Mail Server Authentication Type",
             "default": "EmailAuthPassword",
-            "description": "The authentication method for the outgoing mail server",
+            "description": "The authentication scheme for outgoing mail.",
             "enum": [
                 "EmailAuthNone",
                 "EmailAuthPassword",
@@ -261,22 +261,28 @@
         "OutgoingPassword": {
             "type": "string",
             "title": "Outgoing Mail Server Password",
-            "description": "The password for the outgoing mail server",
+            "description": "The password for the outgoing mail server. Only use this in encrypted profiles.",
             "property_order": 165
         },
         "OutgoingPasswordSameAsIncomingPassword": {
             "type": "boolean",
             "title": "Outgoing Password Same As Incoming",
             "default": false,
-            "description": "SMTP authentication uses the same password as POP/IMAP",
+            "description": "If 'true', the system prompts the user only once for the password, which it uses for both outgoing and incoming mail.\n\nThis setting is only supported by interactive profile installations. Not supported by non-interactive installations, such as MDM on iOS.",
             "property_order": 170
         },
         "OutgoingMailServerUseSSL": {
             "type": "boolean",
             "title": "Outgoing Mail Server Use SSL",
             "default": false,
-            "description": "Send outgoing mail through Secure Socket Layer",
+            "description": "If 'true', the system enables SSL authentication on the outgoing mail server.",
             "property_order": 175
+        },
+        "VPNUUID": {
+            "type": "string",
+            "title": "VPNUUID",
+            "description": "The VPNUUID of the per-app VPN the account uses for network communication. Available in iOS 14 and later.",
+            "property_order": 180
         }
     }
 }

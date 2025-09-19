@@ -1,6 +1,6 @@
 {
     "title": "FDE FileVault (com.apple.MCX.FileVault2)",
-    "description": "Use this section to define settings for FileVault 2",
+    "description": "The payload that configures FileVault.",
     "properties": {
         "Enable": {
             "type": "string",
@@ -87,7 +87,7 @@
         "ForceEnableInSetupAssistant": {
             "type": "boolean",
             "default": false,
-            "description": "If 'true', and installation of this payload occurs after enrolling with MDM in Setup Assistant, the system requests Setup Assistant to enable FileVault at setup time.\nTo use this, enable the Await Device Configured DEP configuration option and send this profile with this key set, before sending the DeviceConfiguredCommand.\nAn admin SecureToken user is required, otherwise the FileVault pane does not appear.",
+            "description": "If 'true', and installation of this payload occurs after enrolling with MDM in Setup Assistant, the system requests Setup Assistant to enable FileVault at setup time.\n\nTo use this, enable the Await Device Configured DEP configuration option and send this profile with this key set, before sending the 'DeviceConfiguredCommand'.\n\nAn admin SecureToken user is required, otherwise the FileVault pane does not appear.",
             "property_order": 65
         }
     }

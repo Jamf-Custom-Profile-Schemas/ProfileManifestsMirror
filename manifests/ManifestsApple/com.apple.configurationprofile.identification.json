@@ -1,6 +1,6 @@
 {
     "title": "Identification (com.apple.configurationprofile.identification)",
-    "description": "Identification settings",
+    "description": "The payload that configures the names of the account user.",
     "properties": {
         "PayloadIdentification": {
             "type": "object",

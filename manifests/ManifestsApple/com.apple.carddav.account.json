@@ -1,70 +1,77 @@
 {
     "title": "Contacts (com.apple.carddav.account)",
-    "description": "Use the Contacts payload to provide account settings for connecting to a CardDAV-compliant contact server. If you omit the account information, users need to enter it manually when the profile is installed.",
+    "description": "The payload that configures a Contacts account.",
     "properties": {
         "CardDAVAccountDescription": {
             "type": "string",
             "title": "Account Description",
             "default": "My Contacts Account",
-            "description": "The display name of the account (e.g. \"Company Contacts Account\")",
+            "description": "The description of the account.",
             "property_order": 5
         },
         "CardDAVHostName": {
             "type": "string",
             "title": "Account Hostname",
-            "description": "The IP address or fully qualified domain name (FQDN) of the CardDAV server.",
+            "description": "The server's address.",
             "property_order": 10
         },
         "CardDAVPort": {
             "type": "integer",
             "title": "Port Number",
             "default": 443,
-            "description": "The port on which to connect to the CardDAV server.",
+            "description": "The server's port.",
             "property_order": 15
         },
         "CardDAVPrincipalURL": {
             "type": "string",
             "title": "Principal URL",
-            "description": "The Principal URL for the CardDAV account.",
+            "description": "The base URL to the user's address book.",
             "property_order": 20
         },
         "CardDAVUsername": {
             "type": "string",
             "title": "Account Username",
-            "description": "The CardDAV username",
+            "description": "The user name for logins.",
             "property_order": 25
         },
         "CardDAVPassword": {
             "type": "string",
             "title": "Account Password",
-            "description": "The CardDAV password",
+            "description": "The user's password. Only use this in encrypted profiles.",
             "property_order": 30
         },
         "CardDAVUseSSL": {
             "type": "boolean",
             "title": "Use SSL",
             "default": true,
-            "description": "Enable Secure Socket Layer communication with CardDAV server",
+            "description": "If 'true', the system enables SSL.",
             "property_order": 35
         },
         "CommunicationServiceRules": {
             "type": "object",
             "title": "Communication Service Rules",
-            "description": "The communication service handler rules for this account.",
+            "description": "An array of communication service rules for this account.",
             "properties": {
                 "DefaultServiceHandlers": {
                     "type": "object",
                     "title": "Default Service Handlers",
+                    "description": "A dictionary of service handlers for contacts from this account.",
                     "properties": {
                         "AudioCall": {
                             "type": "string",
-                            "title": "Bundle Identifier",
-                            "description": "Bundle identifier for the default application that handles audio calls made to contacts from this account"
+                            "title": "App for audio calls",
+                            "description": "The bundle identifier for the default application that handles audio calls to contacts from this account."
                         }
                     }
                 }
             },
             "property_order": 40
+        },
+        "VPNUUID": {
+            "type": "string",
+            "title": "VPNUUID",
+            "description": "The VPNUUID of the per-app VPN the account uses for network communication. Available in iOS 14 and later.",
+            "property_order": 45
         }
     }
 }

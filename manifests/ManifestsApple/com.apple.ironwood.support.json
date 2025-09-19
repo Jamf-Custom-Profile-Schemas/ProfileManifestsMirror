@@ -1,19 +1,19 @@
 {
     "title": "Parental Controls: Dictation and Profanity (com.apple.ironwood.support)",
-    "description": "Parental Controls: Dictation and Profanity settings",
+    "description": "The payload that configures parental control for dictation and profanity.",
     "properties": {
         "Ironwood Allowed": {
             "type": "boolean",
             "title": "Allow use of Siri and Dictation",
             "default": true,
-            "description": "Set to false to disable dictation.",
+            "description": "If 'false', disables dictation. Use 'allowDictation' in Restrictions instead.",
             "property_order": 5
         },
         "Profanity Allowed": {
             "type": "boolean",
             "title": "Allow Profanity in Dictation",
             "default": true,
-            "description": "Set to false to suppress profanity.",
+            "description": "If 'false', suppresses profanity. Use 'forceAssistantProfanityFilter' in Restrictions instead.",
             "property_order": 10
         },
         "Assistant Allowed": {

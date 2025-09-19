@@ -1,6 +1,6 @@
 {
     "title": "Global HTTP Proxy (com.apple.proxy.http.global)",
-    "description": "Global HTTP Proxy settings",
+    "description": "The payload that configures a global HTTP proxy.",
     "properties": {
         "ProxyType": {
             "type": "string",
@@ -16,31 +16,31 @@
         "ProxyServer": {
             "type": "string",
             "title": "Proxy Server",
-            "description": "The proxy server's network address. This is required if the ProxyType is set to Manual, and is ignored if the ProxyType is set to Automatic.",
+            "description": "The proxy server's network address. The device requires this if 'ProxyType' is set to 'Manual', and ignores it if 'ProxyType' is set to 'Automatic'.",
             "property_order": 10
         },
         "ProxyServerPort": {
             "type": "integer",
             "title": "Proxy Server Port",
-            "description": "The proxy server's port number. This is required if the ProxyType is set to Manual, and is ignored if the ProxyType is set to Automatic.",
+            "description": "The proxy server's port number. The device requires this if 'ProxyType' is set to 'Manual', and ignores this if 'ProxyType' is set to 'Automatic'.",
             "property_order": 15
         },
         "ProxyUsername": {
             "type": "string",
             "title": "Proxy Username",
-            "description": "The user name used to authenticate to the proxy server. This setting is only used if the ProxyType is set to Manual, and is ignored if the ProxyType is set to Automatic.",
+            "description": "The user name used to authenticate to the proxy server. The device only uses this if 'ProxyType' is set to 'Manual', and ignores it if 'ProxyType' is set to 'Automatic'.",
             "property_order": 20
         },
         "ProxyPassword": {
             "type": "string",
             "title": "Proxy Password",
-            "description": "The password used to authenticate to the proxy server. This setting is only used if the ProxyType is set to Manual, and is ignored if the ProxyType is set to Automatic.",
+            "description": "The password used to authenticate to the proxy server. The device only uses this if 'ProxyType' is set to 'Manual', and ignores it if 'ProxyType' is set to 'Automatic'.",
             "property_order": 25
         },
         "ProxyPACURL": {
             "type": "string",
             "title": "Proxy PAC URL",
-            "description": "The URL of the PAC file that defines the proxy configuration. Starting in iOS 13 and macOS 10.15, only URLs that begin with 'http://' or 'https://' are allowed. This setting is only used if the ProxyType is set to Automatic, and is ignored if the ProxyType is set to Manual.",
+            "description": "The URL of the PAC file that defines the proxy configuration. Starting in iOS 13 and macOS 10.15, only URLs that begin with 'http://' or 'https://' are allowed. This is only used if 'ProxyType' is set to 'Automatic', and is ignored if 'ProxyType' is set to 'Manual'.",
             "pattern": "^https?://.*",
             "property_order": 30
         },
@@ -53,7 +53,7 @@
         },
         "ProxyCaptiveLoginAllowed": {
             "type": "boolean",
-            "title": "Allow Proxy Bypass for Captive Portal Logins",
+            "title": "Proxy Bypass Allowed",
             "default": false,
             "description": "If 'true', allows the device to bypass the proxy server to display the login page for captive networks.",
             "property_order": 40

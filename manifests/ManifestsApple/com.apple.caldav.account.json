@@ -1,51 +1,57 @@
 {
     "title": "Calendar (com.apple.caldav.account)",
-    "description": "Calendar settings",
+    "description": "The payload that configures a Calendar account.",
     "properties": {
         "CalDAVAccountDescription": {
             "type": "string",
             "title": "Account Description",
             "default": "My Calendar Account",
-            "description": "The display name of the account (e.g. \"Company Calendar Account\")",
+            "description": "The description of the account.",
             "property_order": 5
         },
         "CalDAVHostName": {
             "type": "string",
             "title": "Account Hostname",
-            "description": "The IP address or fully qualified domain name (FQDN) of the CalDAV server.",
+            "description": "The server's address.",
             "property_order": 10
         },
         "CalDAVPort": {
             "type": "integer",
             "title": "Port Number",
             "default": 443,
-            "description": "The port on which to connect to the CalDAV server.",
+            "description": "The server's port.",
             "property_order": 15
         },
         "CalDAVPrincipalURL": {
             "type": "string",
             "title": "Principal URL",
-            "description": "The base URL to the user's calendar. In macOS this URL is required if the user doesn't provide a password, because auto-discovery of the service will fail and the account won't be created.",
+            "description": "The base URL to the user's calendar.",
             "property_order": 20
         },
         "CalDAVUsername": {
             "type": "string",
             "title": "Account Username",
-            "description": "The user name for the CalDAV account.",
+            "description": "The user name for logins. If this profile is part of a non-interactive install, the system requires this field.",
             "property_order": 25
         },
         "CalDAVPassword": {
             "type": "string",
             "title": "Account Password",
-            "description": "The CalDAV password",
+            "description": "The user's password. Only use this in encrypted profiles.",
             "property_order": 30
         },
         "CalDAVUseSSL": {
             "type": "boolean",
             "title": "Use SSL",
-            "default": false,
-            "description": "Enable Secure Socket Layer communication with CalDAV server",
+            "default": true,
+            "description": "If 'true', the system enables SSL.",
             "property_order": 35
+        },
+        "VPNUUID": {
+            "type": "string",
+            "title": "VPNUUID",
+            "description": "The VPNUUID of the per-app VPN the account uses for network communication. Available in iOS 14 and later.",
+            "property_order": 40
         }
     }
 }

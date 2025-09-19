@@ -1,98 +1,98 @@
 {
     "title": "Active Directory (com.apple.DirectoryService.managed)",
-    "description": "Active Directory settings",
+    "description": "The payload that configures an Active Directory (AD) domain.",
     "properties": {
         "HostName": {
             "type": "string",
-            "title": "Server Hostname",
-            "description": "The hostname of the directory server.",
+            "title": "HostName",
+            "description": "The Active Directory domain to join.",
             "property_order": 5
         },
         "UserName": {
             "type": "string",
-            "title": "User name",
-            "description": "User name of the account used to join the domain.",
+            "title": "UserName",
+            "description": "The user name of the account for the domain.",
             "property_order": 10
         },
         "Password": {
             "type": "string",
             "title": "Password",
-            "description": "Password of the account used to join the domain.",
+            "description": "The password of the account for the domain.",
             "property_order": 15
         },
         "ClientID": {
             "type": "string",
             "title": "Client ID",
-            "description": "The directory server client ID.",
+            "description": "The client's identifier.",
             "property_order": 20
         },
         "ADOrganizationalUnit": {
             "type": "string",
-            "title": "Organizational Unit",
-            "description": "The organizational unit (OU) where the joining computer object is added.",
+            "title": "ADOrganizationalUnit",
+            "description": "The organizational unit to add the joining computer object to.",
             "property_order": 25
         },
         "ADCreateMobileAccountAtLoginFlag": {
             "type": "boolean",
             "title": "Enable ADCreateMobileAccountAtLogin Flag",
             "default": false,
-            "description": "Enable ADCreateMobileAccountAtLogin Flag.",
+            "description": "If 'true', the system enables the 'ADCreateMobileAccountAtLogin' key.",
             "property_order": 30
         },
         "ADCreateMobileAccountAtLogin": {
             "type": "boolean",
             "title": "Create mobile account at login",
             "default": false,
-            "description": "Create mobile account at login.",
+            "description": "If 'true', the system creates a mobile account at login.",
             "property_order": 35
         },
         "ADWarnUserBeforeCreatingMAFlag": {
             "type": "boolean",
             "title": "Enable ADWarnUserBeforeCreatingMA Flag",
             "default": false,
-            "description": "Enable ADWarnUserBeforeCreatingMA Flag.",
+            "description": "If 'true', the system enables the 'ADWarnUserBeforeCreatingMA' key.",
             "property_order": 40
         },
         "ADWarnUserBeforeCreatingMA": {
             "type": "boolean",
             "title": "Require confirmation before creating mobile account",
             "default": false,
-            "description": "Require confirmation before creating mobile account.",
+            "description": "If 'true', the system enables the warning before creating the mobile account.",
             "property_order": 45
         },
         "ADForceHomeLocalFlag": {
             "type": "boolean",
             "title": "Enable ADForceHomeLocal Flag",
             "default": false,
-            "description": "Enable ADForceHomeLocal Flag.",
+            "description": "If 'true', the system enables the 'ADForceHomeLocal' key.",
             "property_order": 50
         },
         "ADForceHomeLocal": {
             "type": "boolean",
             "title": "Force local home directory on startup disk",
             "default": false,
-            "description": "Force local home directory on startup disk.",
+            "description": "If 'true', the system forces a local home directory.",
             "property_order": 55
         },
         "ADUseWindowsUNCPathFlag": {
             "type": "boolean",
             "title": "Enable ADUseWindowsUNCPath Flag",
             "default": false,
-            "description": "Enable ADUseWindowsUNCPath Flag.",
+            "description": "If 'true', the system enables the 'ADUseWindowsUNCPath' key.",
             "property_order": 60
         },
         "ADUseWindowsUNCPath": {
             "type": "boolean",
             "title": "Use UNC path for network home location",
             "default": false,
-            "description": "Use UNC path from Active Directory to derive network home location",
+            "description": "If 'true', the system uses the UNC path from Active Directory to derive the network home location.",
             "property_order": 65
         },
         "ADMountStyle": {
             "type": "string",
             "title": "Mount Style",
             "default": "smb",
-            "description": "Network protocol to be used to mount home directory.",
+            "description": "The network home protocol to use: 'afp' or 'smb'.",
             "enum": [
                 "afp",
                 "smb"
@@ -109,73 +109,73 @@
             "type": "boolean",
             "title": "Enable ADDefaultUserShell Key",
             "default": false,
-            "description": "Enable ADDefaultUserShell Key.",
+            "description": "If 'true', the system enables the 'ADDefaultUserShell' key.",
             "property_order": 75
         },
         "ADDefaultUserShell": {
             "type": "string",
             "title": "Default user shell",
             "default": "/bin/bash",
-            "description": "Default user shell.",
+            "description": "The default user shell.",
             "property_order": 80
         },
         "ADMapUIDAttributeFlag": {
             "type": "boolean",
             "title": "Enable ADMapUIDAttribute Key",
             "default": false,
-            "description": "Enable ADMapUIDAttribute Key.",
+            "description": "If 'true', the system enables the 'ADMapUIDAttribute' key.",
             "property_order": 85
         },
         "ADMapUIDAttribute": {
             "type": "string",
             "title": "Map UID to attribute",
-            "description": "Map UID to attribute.",
+            "description": "The map UID to attribute.",
             "property_order": 90
         },
         "ADMapGIDAttributeFlag": {
             "type": "boolean",
             "title": "Enable ADMapGIDAttribute Key",
             "default": false,
-            "description": "Enable ADMapGIDAttribute Key.",
+            "description": "If 'true', the system enables the 'ADMapGIDAttribute' key.",
             "property_order": 95
         },
         "ADMapGIDAttribute": {
             "type": "string",
             "title": "Map user GID to attribute",
-            "description": "Map user GID to attribute.",
+            "description": "The map GID to attribute.",
             "property_order": 100
         },
         "ADMapGGIDAttributeFlag": {
             "type": "boolean",
             "title": "Enable ADMapGGIDAttribute Key",
             "default": false,
-            "description": "Enable ADMapGGIDAttribute Key.",
+            "description": "If 'true', the system enables the 'ADMapGGIDAttributeFlag' key.",
             "property_order": 105
         },
         "ADMapGGIDAttribute": {
             "type": "string",
             "title": "Map group GID to attribute",
-            "description": "Map group GID to attribute.",
+            "description": "The map group GID to attribute.",
             "property_order": 110
         },
         "ADPreferredDCServerFlag": {
             "type": "boolean",
             "title": "Enable ADPreferredDCServer Key",
             "default": false,
-            "description": "Enable ADPreferredDCServer Key.",
+            "description": "If 'true', the system enables the 'ADPreferredDCServer' key.",
             "property_order": 115
         },
         "ADPreferredDCServer": {
             "type": "string",
             "title": "Preferred domain server",
-            "description": "Preferred domain server.",
+            "description": "The preferred domain server.",
             "property_order": 120
         },
         "ADDomainAdminGroupListFlag": {
             "type": "boolean",
             "title": "Enable ADDomainAdminGroupList Key",
             "default": false,
-            "description": "Enable ADDomainAdminGroupList Key.",
+            "description": "If 'true', the system enables the 'ADDomainAdminGroupList' key.",
             "property_order": 125
         },
         "ADDomainAdminGroupList": {
@@ -186,35 +186,35 @@
                 "description": "An active directory group"
             },
             "title": "Allow administration by specified Active Directory groups.",
-            "description": "Allow administration by specified Active Directory groups.",
+            "description": "The list of Active Directory groups with admin access.",
             "property_order": 130
         },
         "ADAllowMultiDomainAuthFlag": {
             "type": "boolean",
             "title": "Enable ADAllowMultiDomainAuth Key",
             "default": false,
-            "description": "Enable ADAllowMultiDomainAuth Key.",
+            "description": "If 'true', the system enables the 'ADAllowMultiDomainAuth' key.",
             "property_order": 135
         },
         "ADAllowMultiDomainAuth": {
             "type": "boolean",
             "title": "Allow authentication from any domain in the forest",
             "default": false,
-            "description": "Allow authentication from any domain in the forest.",
+            "description": "If 'true', the system allows authentication from any domain in the namespace.",
             "property_order": 140
         },
         "ADNamespaceFlag": {
             "type": "boolean",
             "title": "Enable ADNamespace Key",
             "default": false,
-            "description": "Enable ADNamespace Key.",
+            "description": "If 'true', the system enables the 'ADNamespace' key.",
             "property_order": 145
         },
         "ADNamespace": {
             "type": "string",
             "title": "Set primary user account naming convention: \"forest\" or \"domain\"",
             "default": "domain",
-            "description": "Set primary user account naming convention: \"forest\" or \"domain\".",
+            "description": "The primary user account naming convention; either 'forest' or 'domain'.",
             "enum": [
                 "domain",
                 "forest"
@@ -225,14 +225,14 @@
             "type": "boolean",
             "title": "Enable ADPacketSign Key",
             "default": false,
-            "description": "Enable ADPacketSign Key.",
+            "description": "If 'true', the system enables the 'ADPacketSign' key.",
             "property_order": 155
         },
         "ADPacketSign": {
             "type": "string",
             "title": "Packet signing",
             "default": "allow",
-            "description": "Packet signing.",
+            "description": "The packet signing policy.",
             "enum": [
                 "allow",
                 "disable",
@@ -244,14 +244,14 @@
             "type": "boolean",
             "title": "Enable ADPacketEncrypt Key",
             "default": false,
-            "description": "Enable ADPacketEncrypt Key",
+            "description": "If 'true', the system enables the 'ADPacketEncrypt' key.",
             "property_order": 165
         },
         "ADPacketEncrypt": {
             "type": "string",
             "title": "Packet encryption",
             "default": "allow",
-            "description": "Packet encryption.",
+            "description": "The packet encryption policy.",
             "enum": [
                 "allow",
                 "disable",
@@ -264,7 +264,7 @@
             "type": "boolean",
             "title": "Enable ADRestrictDDNS Key",
             "default": false,
-            "description": "Enable ADRestrictDDNS Key.",
+            "description": "If 'true', the system enables the 'ADRestrictDDNS' key.",
             "property_order": 175
         },
         "ADRestrictDDNS": {
@@ -275,22 +275,28 @@
                 "description": "An interface name which is allowed to make DDNS updates"
             },
             "title": "Restrict DDNS on interfaces",
-            "description": "Restrict Dynamic DNS updates to the specified interfaces (e.g. en0, en1, etc).",
+            "description": "An array of strings that represent the interfaces allowed for dynamic DNS updates, such as en0 and en1.",
             "property_order": 180
         },
         "ADTrustChangePassIntervalDaysFlag": {
             "type": "boolean",
             "title": "Enable ADTrustChangePassIntervalDays Key",
             "default": false,
-            "description": "Enable ADTrustChangePassIntervalDays Key.",
+            "description": "If 'true', the system enables the 'ADTrustChangePassIntervalDays' key.",
             "property_order": 185
         },
         "ADTrustChangePassIntervalDays": {
             "type": "integer",
             "title": "Password trust interval",
             "default": 14,
-            "description": "How often to change computer trust account password in days.",
+            "description": "The number of days before requiring a change of the computer trust account password. Set to '0' to disable the feature.",
             "property_order": 190
+        },
+        "Description": {
+            "type": "string",
+            "title": "Description",
+            "description": "The directory service description.",
+            "property_order": 195
         }
     }
 }

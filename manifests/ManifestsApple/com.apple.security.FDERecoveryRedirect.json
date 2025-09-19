@@ -1,18 +1,18 @@
 {
     "title": "FileVault Recovery Key Redirection Payload (com.apple.security.FDERecoveryRedirect)",
-    "description": "FileVault Recovery Key Redirection settings",
+    "description": "The payload that configures FileVault recovery key redirection.",
     "properties": {
         "RedirectURL": {
             "type": "string",
             "title": "Redirect URL",
-            "description": "The URL to which FDE recovery keys should be sent instead of Apple. Must begin with https://.",
+            "description": "The URL to which FDE recovery keys should be sent instead of to Apple. The URL must begin with https://.",
             "pattern": "^https://.*$",
             "property_order": 5
         },
         "EncryptCertPayloadUUID": {
             "type": "string",
             "title": "Encryption Certificate Payload UUID",
-            "description": "The UUID of a payload within the same profile that contains a certificate whose public key is used to encrypt the recovery key when it is sent to the redirected URL. The referenced payload must be of type com.apple.security.pkcs1.",
+            "description": "The UUID of a payload within the same profile that contains a certificate used to encrypt the recovery key when it's sent to the redirected URL. The referenced payload must be of type \\'com.apple.security.pkcs1\\'.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 10
         }

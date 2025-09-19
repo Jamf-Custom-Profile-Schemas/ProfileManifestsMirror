@@ -1,6 +1,6 @@
 {
     "title": "802.1X Ethernet: Third Active (com.apple.thirdactiveethernet.managed)",
-    "description": "Use this section to define Third Active Ethernet settings",
+    "description": "The payload that configures the third wired, active Ethernet interface.",
     "properties": {
         "SetupModes": {
             "type": "array",

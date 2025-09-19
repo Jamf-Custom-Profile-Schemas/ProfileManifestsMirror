@@ -1,6 +1,6 @@
 {
     "title": "System Extensions (com.apple.system-extension-policy)",
-    "description": "Use this section to define policy for system extensions.",
+    "description": "The payload that configures system extensions.",
     "properties": {
         "AllowUserOverrides": {
             "type": "boolean",
@@ -16,14 +16,14 @@
                 "title": "Team Identifier"
             },
             "title": "Allowed Team Identifiers",
-            "description": "An array of team identifiers that defines valid, signed system extensions that are allowable to load. Approved system extensions are those signed with any of the specified team identifiers.\nTo avoid requiring an administrator to authorize the operation, you can activate system extensions that this key specifies using activationRequest(forExtensionWithIdentifier:queue:).\nIt's an error for the same team identifier to appear in both this array and as a key in the 'AllowedSystemExtensions' dictionary.",
+            "description": "An array of team identifiers that defines valid, signed system extensions that are allowable to load. Approved system extensions are those signed with any of the specified team identifiers.\n\nTo avoid requiring an administrator to authorize the operation, you can activate system extensions that this key specifies using 'OSSystemExtensionActivationRequest API'.\n\nIt's an error for the same team identifier to appear in both this array and as a key in the 'AllowedSystemExtensions' dictionary.",
             "pattern": "^[A-Z0-9]{10}$",
             "property_order": 10
         },
         "AllowedSystemExtensions": {
             "type": "object",
             "title": "Allowed System Extensions",
-            "description": "A dictionary of approved system extensions on the computer. The dictionary maps the team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension to install.\nTo avoid requiring an administrator to authorize the operation, you can activate system extensions that this key specifies using activationRequest(forExtensionWithIdentifier:queue:).\nIt's an error for the same team identifier to appear in both the 'AllowedTeamIdentifiers' array and as a key in this dictionary.",
+            "description": "A dictionary of approved system extensions on the computer. The dictionary maps the team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension to install.\n\nTo avoid requiring an administrator to authorize the operation, you can activate system extensions that this key specifies using 'OSSystemExtensionActivationRequest API'.\n\nIt's an error for the same team identifier to appear in both the 'AllowedTeamIdentifiers' array and as a key in this dictionary.",
             "properties": {
                 "{{key}}": {
                     "type": "string",
@@ -46,7 +46,7 @@
         "AllowedSystemExtensionTypes": {
             "type": "object",
             "title": "Allowed System Extension Types",
-            "description": "A dictionary that maps a team identifier to an array of strings, where each string is a type of system extension that you can install for that team identifier. The allowed extension types are 'DriverExtension', 'NetworkExtension', and 'EndpointSecurityExtension'.\nIf there's no entry for a specified team identifier in the dictionary, the system allows all extension types.",
+            "description": "A dictionary that maps a team identifier to an array of strings, where each string is a type of system extension that you can install for that team identifier. The allowed extension types are 'DriverExtension', 'NetworkExtension', and 'EndpointSecurityExtension'.\n\nIf there's no entry for a specified team identifier in the dictionary, the system allows all extension types.",
             "properties": {
                 "{{key}}": {
                     "type": "string",
@@ -81,7 +81,7 @@
         "RemovableSystemExtensions": {
             "type": "object",
             "title": "Removable System Extensions",
-            "description": "A dictionary of system extensions that are allowed to remove themselves from the machine. The dictionary maps team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension. An application using the 'OSSystemExtensionDeactivationRequest' API can deactivate the specified system extensions without requiring an administrator to authorize the operation.\nAvailable in macOS 12 and later.",
+            "description": "A dictionary of system extensions that are allowed to remove themselves from the machine. The dictionary maps team identifiers (keys) to arrays of bundle identifiers, where the bundle identifier defines the system extension. An application using the 'OSSystemExtensionDeactivationRequest' API can deactivate the specified system extensions without requiring an administrator to authorize the operation.\n\nAvailable in macOS 12 and later.",
             "properties": {
                 "{{key}}": {
                     "type": "string",

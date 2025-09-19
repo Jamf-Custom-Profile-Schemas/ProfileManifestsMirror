@@ -1,74 +1,79 @@
 {
     "title": "Proxies (com.apple.SystemConfiguration)",
-    "description": "Proxies settings",
+    "description": "The payload that configures network proxies for a device.",
     "properties": {
         "Proxies": {
             "type": "object",
             "title": "Proxy Configuration",
-            "description": "macOS System Proxy Configuration",
+            "description": "The dictionary containing all the proxies for this device.",
             "properties": {
                 "HTTPEnable": {
                     "type": "integer",
                     "title": "Enable HTTP Proxy",
-                    "default": 0
+                    "default": 0,
+                    "description": "If 'true', enables web proxy."
                 },
                 "HTTPProxy": {
                     "type": "string",
                     "title": "HTTP Proxy Hostname",
-                    "description": "The IP address or fully qualified domain name (FQDN) of the http proxy server."
+                    "description": "The host name or IP address for the web proxy."
                 },
                 "HTTPPort": {
                     "type": "integer",
                     "title": "HTTP Proxy Port",
                     "default": 80,
-                    "description": "The port on which to connect to the http proxy server."
+                    "description": "The web proxy port."
                 },
                 "HTTPSEnable": {
                     "type": "integer",
                     "title": "Enable HTTPS Proxy",
-                    "default": 0
+                    "default": 0,
+                    "description": "If 'true', enables secure web proxy."
                 },
                 "HTTPSProxy": {
                     "type": "string",
                     "title": "HTTPS Proxy Hostname",
-                    "description": "The IP address or fully qualified domain name (FQDN) of the https proxy server."
+                    "description": "The host name or IP address for the secure web proxy."
                 },
                 "HTTPSPort": {
                     "type": "integer",
                     "title": "HTTPS Proxy Port",
                     "default": 80,
-                    "description": "The port on which to connect to the https proxy server."
+                    "description": "The secure web proxy port."
                 },
                 "FTPEnable": {
                     "type": "integer",
                     "title": "Enable FTP Proxy",
-                    "default": 0
+                    "default": 0,
+                    "description": "If 'true', enables FTP proxy."
                 },
                 "FTPPassive": {
                     "type": "integer",
                     "title": "Use Passive FTP Mode (PASV)",
-                    "default": 0
+                    "default": 0,
+                    "description": "If 'true', enables passive FTP mode."
                 },
                 "FTPProxy": {
                     "type": "string",
                     "title": "FTP Proxy Hostname",
-                    "description": "The IP address or fully qualified domain name (FQDN) of the ftp proxy server."
+                    "description": "The host name or IP address for the FTP proxy."
                 },
                 "FTPPort": {
                     "type": "integer",
                     "title": "FTP Proxy Port",
                     "default": 80,
-                    "description": "The port on which to connect to the ftp proxy server."
+                    "description": "The FTP proxy port."
                 },
                 "SOCKSEnable": {
                     "type": "integer",
                     "title": "Enable SOCKS Proxy",
-                    "default": 0
+                    "default": 0,
+                    "description": "If 'true', enable the SOCKS proxy."
                 },
                 "SOCKSProxy": {
                     "type": "string",
                     "title": "SOCKS Proxy Hostname",
-                    "description": "The IP address or fully qualified domain name (FQDN) of the socks proxy server."
+                    "description": "The host name or IP address for the SOCKS proxy."
                 },
                 "SOCKSPortInteger": {
                     "type": "integer",
@@ -79,66 +84,73 @@
                 "RTSPEnable": {
                     "type": "integer",
                     "title": "Enable RTSP Steaming Proxy",
-                    "default": 0
+                    "default": 0,
+                    "description": "If 'true', enable streaming proxy."
                 },
                 "RTSPProxy": {
                     "type": "string",
                     "title": "RTSP Proxy Hostname",
-                    "description": "The IP address or fully qualified domain name (FQDN) of the rtsp proxy server."
+                    "description": "The host name or IP address for the streaming proxy."
                 },
                 "RTSPPort": {
                     "type": "integer",
                     "title": "RTSP Proxy Port",
                     "default": 80,
-                    "description": "The port on which to connect to the rtsp proxy server."
+                    "description": "The streaming proxy port."
                 },
                 "GopherEnable": {
                     "type": "integer",
                     "title": "Enable Gopher Proxy",
-                    "default": 0
+                    "default": 0,
+                    "description": "If 'true', enables gopher proxy."
                 },
                 "GopherProxy": {
                     "type": "string",
                     "title": "Gopher Proxy Hostname",
-                    "description": "The IP address or fully qualified domain name (FQDN) of the gopher proxy server."
+                    "description": "The host name or IP address for the gopher proxy."
                 },
                 "GopherPort": {
                     "type": "integer",
                     "title": "Gopher Proxy Port",
                     "default": 80,
-                    "description": "The port on which to connect to the gopher proxy server."
+                    "description": "The gopher proxy port."
                 },
                 "ExceptionsList": {
                     "type": "array",
                     "items": {
                         "type": "string",
                         "title": "Bypassed Domain",
-                        "description": "Bypassed domain or IP address. May contain wildcards. IP addresses may be in CIDR format."
+                        "description": "Bypass proxy settings for these Hosts & Domains"
                     },
                     "title": "Exceptions",
-                    "description": "Bypass proxy settings for these Hosts & Domains."
+                    "description": "The list of hosts and domains that should bypass proxy settings."
                 },
                 "ProxyAutoConfigEnable": {
                     "type": "integer",
                     "title": "Enable Automatic Proxy Configuration",
                     "default": 0,
-                    "description": "Enable the use of a Proxy AutoConfig file."
+                    "description": "If 'true', enables automatic proxy configuration."
                 },
                 "ProxyAutoConfigURLString": {
                     "type": "string",
                     "title": "Automatic Proxy Configuration URL",
-                    "description": "URL to the Automatic Proxy Configuration file."
+                    "description": "The automatic proxy configuration URL."
                 },
                 "FallBackAllowed": {
                     "type": "integer",
                     "title": "Allow Proxy PAC Fallback",
-                    "description": "Enables fallback when set to 1. The default value is 1, except for managed devices whose default is 0."
+                    "description": "If '1', enables fallback. Default is '1'.\n\nFor managed devices, if not supplied, the default is '0'."
                 },
                 "ProxyCaptiveLoginAllowed": {
-                    "type": "boolean",
+                    "type": "integer",
                     "title": "Allow Proxy Bypass for Captive Portal Logins",
                     "default": false,
-                    "description": "Allow the device to bypass the proxy server to display the login page for captive networks."
+                    "description": "If 1, allows client to log into captive portal network."
+                },
+                "SOCKSPortinteger": {
+                    "type": "integer",
+                    "title": "SOCKS Port",
+                    "description": "The SOCKS proxy port."
                 }
             },
             "property_order": 5

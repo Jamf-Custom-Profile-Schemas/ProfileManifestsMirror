@@ -1,6 +1,6 @@
 {
     "title": "Xsan (com.apple.xsan)",
-    "description": "Xsan settings",
+    "description": "The payload that configures an Xsan client system.",
     "properties": {
         "sanName": {
             "type": "string",
@@ -16,13 +16,13 @@
                 "description": "A name server."
             },
             "title": "File system name servers",
-            "description": "This key is required for StorNext SANs. This array contains one string value for each of the SAN's File System Name Server coordinators. The list should contain the same addresses in the same order as the MDC's /Library/Preferences/Xsan/fsnameservers file.",
+            "description": "An array of storage area network (SAN) File System Name Server coordinators. The list should contain the same addresses in the same order as the metadata controller (MDC) '/Library/Preferences/Xsan/fsnameservers' file.\n\nThis key is required for StorNext SANs.",
             "property_order": 10
         },
         "sanAuthMethod": {
             "type": "string",
             "title": "Authentication method",
-            "description": "The authentication method for the SAN. This key is required for all Xsan SANs. It's optional for StorNext SANs but should be set if the StorNext SAN uses an 'auth_secret' file.\nOnly one value is accepted: 'auth_secret'",
+            "description": "The authentication method for the SAN. This key is required for all Xsan SANs. It's optional for StorNext SANs but should be set if the StorNext SAN uses an 'auth_secret' file.\n\n\n\nOnly one value is accepted: 'auth_secret'",
             "enum": [
                 "auth_secret"
             ],
@@ -45,7 +45,7 @@
                 "type": "string",
                 "description": "A URL."
             },
-            "description": "This key is required for all Xsan SANs. Each string in this array contains an LDAP URL where Xsan systems can obtain SAN configuration updates. There should be one entry for each Xsan MDC.\nExample URL: 'ldaps://mdc1.example.com:389'.",
+            "description": "An array of LDAP URLs where Xsan systems can obtain SAN configuration updates. There should be one entry for each Xsan MDC.\n\nThis key is required for all Xsan SANs.\n\nExample URL: 'ldaps://mdc1.example.com:389'.",
             "property_order": 25
         }
     }

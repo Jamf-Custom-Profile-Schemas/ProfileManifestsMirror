@@ -1,11 +1,11 @@
 {
     "title": "MDM (com.apple.mdm)",
-    "description": "Use this section to define settings for mobile device management.",
+    "description": "The payload that configures mobile device management (MDM) settings.",
     "properties": {
         "ServerURL": {
             "type": "string",
             "title": "Server URL",
-            "description": "The URL that the device contacts to retrieve device management instructions. The URL must begin with the 'https://' URL scheme, and may contain a port number (':1234', for example).\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update rejected.",
+            "description": "The URL that the device contacts to retrieve device management instructions. The URL must begin with the 'https://' URL scheme, and may contain a port number\n(':1234', for example).\n\nNote:\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
             "pattern": "^https://.*$",
             "property_order": 5
         },
@@ -30,13 +30,13 @@
                 ]
             },
             "title": "Server Capabilities",
-            "description": "A unique array of strings indicating server capabilities.\n\n* com.apple.mdm.per-user-connections - used to indicate that the server supports both device and user connections. This must be present when managing Shared iPad or macOS devices.\n* com.apple.mdm.bootstraptoken - used to indicate that the server supports escrowing the Bootstrap Token. This must be present to have the device create a Bootstrap Token and send it to the server. Available as of macOS 11.0.\n* com.apple.mdm.token - used to indicate that the server supports the \"GetToken\" CheckIn message type. This must be present to have the device use \"GetToken\" CheckIn message requests when appropriate.\n\nWhen updating the payload, the \"com.apple.mdm.per-user-connections\" capability must not be added or removed. Any such change is an error, and the update rejected.",
+            "description": "A unique array of strings indicating server capabilities:\n\n- 'com.apple.mdm.per-user-connections': Indicates that the server supports both device and user connections. This must be present when managing Shared iPad or macOS devices.\n- 'com.apple.mdm.bootstraptoken': Indicates that the server supports escrowing the Bootstrap Token. This must be present for the device to create a Bootstrap Token and send it to the server. Available as of macOS 11.0.\n- 'com.apple.mdm.token': Indicates that the server supports the 'Get-Token' CheckIn message type. This must be present for the device to use 'Get-Token' CheckIn message when appropriate.\n\nNote:\nWhen updating the payload, the 'com.apple.mdm.per-user-connections' capability must not be added or removed. Any such change is an error, and the update is rejected.",
             "property_order": 15
         },
         "Topic": {
             "type": "string",
             "title": "Topic",
-            "description": "The topic that MDM listens to for push notifications. The certificate that the server uses to send push notifications must have the same topic in its subject. The topic must begin with the 'com.apple.mgmt.' prefix.\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update rejected.",
+            "description": "The topic that MDM listens to for push notifications. The certificate that the server uses to send push notifications must have the same topic in its subject. The topic must begin with the 'com.apple.mgmt.' prefix.\n\nNote:\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
             "pattern": "^com\\.apple\\.mgmt\\..+$",
             "property_order": 20
         },
@@ -56,13 +56,13 @@
         "AccessRights": {
             "type": "integer",
             "title": "Access Rights",
-            "description": "Logical OR of access rights bit-flags. When 2 is specified 1 must be specified along. When 128 is specified 64 must be specified along. This property is ignored when ManagedAppleID is present.",
+            "description": "Logical OR of the following bit flags:\n\n- '1': Allow inspection of installed configuration profiles.\n- '2': Allow installation and removal of configuration profiles.\n- '4': Allow device lock and passcode removal.\n- '8': Allow device erase.\n- '16': Allow query of device information (device capacity, serial number).\n- '32': Allow query of network information (phone/SIM numbers, MAC addresses).\n- '64': Allow inspection of installed provisioning profiles.\n- '128': Allow installation and removal of provisioning profiles.\n- '256': Allow inspection of installed applications.\n- '512': Allow restriction-related queries.\n- '1024': Allow security-related queries.\n- '2048': Allow manipulation of settings.\n- '4096': Allow app management.\n\nDon't set to '0'. Specify '1' if you specify '2'. Specify '64' if you specify '128'. Ignored if you set a value for 'ManagedAppleID'.\n\nNote:\nWhen updating the payload, the addition of any access right is an error, and the update is rejected.",
             "property_order": 35
         },
         "CheckInURL": {
             "type": "string",
             "title": "Check In URL",
-            "description": "The URL that the device should use to check in during installation. The URL must begin with the 'https://' URL scheme and may contain a port number (':1234', for example). If not set, the system uses 'ServerURL'.\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update rejected.",
+            "description": "The URL that the device should use to check in during installation. The URL must begin with the 'https://' URL scheme and may contain a port number (':1234', for example). If not set, the system uses 'ServerURL'.\n\nNote:\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
             "pattern": "^https://.*$",
             "property_order": 40
         },
@@ -80,7 +80,7 @@
             "type": "boolean",
             "title": "Check-Out When Removed",
             "default": false,
-            "description": "If 'true', the device attempts to send a CheckOut <https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/2-MDM_Check_In_Protocol/MDM_Check_In_Protocol..html#//apple_ref/doc/uid/TP40017387-CH4-SW7> message to the 'CheckInURL' when the profile is removed.",
+            "description": "If 'true', the device attempts to send a 'Check-Out' message to the 'CheckInURL' when the profile is removed.",
             "property_order": 50
         },
         "PinningRevocationCheckRequired": {
@@ -94,7 +94,7 @@
             "type": "boolean",
             "title": "Prompt User to Allow Bootstrap Token for Authentication",
             "default": false,
-            "description": "If 'true', the system warns the user that they need to reboot into RecoveryOS and allow the MDM to use the Bootstrap Token for authentication for certain sensitive operations such as enabling kernel extensions or installing some types of software updates. If the MDM doesn't need to perform these operations, it can leave this key set to 'false', and the user isn't notified.\nThe SettingsCommand.Command.Settings.MDMOptions.MDMOptions command overrides this default value.\nThis setting only applies to devices that have 'BootstrapTokenRequiredForSoftwareUpdate' or 'BootstrapTokenRequiredForKernelExtensionApproval' set to 'true' in their SecurityInfoResponse.SecurityInfo.\nDEP-enrolled devices are automatically allowed to use the Bootstrap Token for authentication.\nAvailable in macOS 11 and later.",
+            "description": "If 'true', the system warns the user that they need to reboot into RecoveryOS and allow the MDM to use the bootstrap token for authentication for certain sensitive operations such as enabling kernel extensions or installing some types of software updates. If the MDM doesn't need to perform these operations, it can leave this key set to 'false', and the user isn't notified.\nThe SettingsCommand.Command.Settings.MDMOptions.MDMOptions command overrides this default value.\nThis setting only applies to devices that have 'BootstrapTokenRequiredForSoftwareUpdate' or 'BootstrapTokenRequiredForKernelExtensionApproval' set to 'true' in their SecurityInfoResponse.SecurityInfo.\nDEP-enrolled devices are automatically allowed to use the bootstrap token for authentication.\nAvailable in macOS 11 and later.",
             "property_order": 60
         },
         "SignMessage": {
@@ -114,13 +114,13 @@
         "AssignedManagedAppleID": {
             "type": "string",
             "title": "Assigned Managed Apple Account",
-            "description": "The Managed Apple Account pre-assigned to the authenticated user. The system only uses this value with account-driven enrollment.\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update rejected.\nAvailable in iOS 15 and later.",
+            "description": "The Managed Apple Account pre-assigned to the authenticated user. Required for account-driven enrollments. Available in iOS 15 and later, and macOS 14 and later.\n\nNote:\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
             "property_order": 75
         },
         "EnrollmentMode": {
             "type": "string",
             "title": "Enrollment Mode",
-            "description": "The enrollment mode the server indicates to use when enrolling. Required for account-driven enrollment.\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update rejected.\nAvailable in iOS 15 and macOS 14, and later.",
+            "description": "The enrollment mode the server indicates to use when enrolling. Required for account-driven enrollment. Available in iOS 15 and macOS 14, and later.\n\nNote:\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
             "enum": [
                 "BYOD",
                 "ADDE"
@@ -130,7 +130,7 @@
         "RequiredAppIDForMDM": {
             "type": "integer",
             "title": "Required App ID for MDM on Unsupervised Device",
-            "description": "This property specifies an iTunes Store ID for an app the system can install with the InstallApplicationCommand, without any approval from the user. The MDM vendor or managing organization generally provides this app, which enhances the management experience for the user. The device shows the user details about this app in the account-driven enrollment process prior to installing the MDM profile. Use this property with account-driven MDM enrollment that normally requires user approval for app installs through MDM.\nOnly account-driven enrollment supports this property and other enrollment types ignore it.\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update rejected.\nAvailable in iOS 15.1 and later.",
+            "description": "This property specifies an iTunes Store ID for an app the system can install with the InstallApplicationCommand, without any approval from the user. The MDM vendor or managing organization generally provides this app, which enhances the management experience for the user. The device shows the user details about this app in the account-driven enrollment process prior to installing the MDM profile. Use this property with account-driven MDM enrollments that normally require user approval for app installs through MDM.\nOnly account-driven enrollments support this property and other enrollment types ignore it.\nAvailable in iOS 15.1 and later.\n\nNote:\nWhen updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
             "links": [
                 {
                     "rel": "More information",

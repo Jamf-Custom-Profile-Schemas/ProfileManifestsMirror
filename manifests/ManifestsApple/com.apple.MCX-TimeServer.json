@@ -1,17 +1,17 @@
 {
     "title": "Time Server (com.apple.MCX)",
-    "description": "Time Server settings",
+    "description": "The payload that configures the time server.",
     "properties": {
         "timeServer": {
             "type": "string",
             "title": "Time Server",
-            "description": "The NTP host to connect to. Separate multiple hosts with commas",
+            "description": "The NTP server to connect to. In macOS 10.13 and later, only one time server is supported.",
             "property_order": 5
         },
         "timeZone": {
             "type": "string",
             "title": "Time Zone",
-            "description": "Time zone path location string in /usr/share/zoneinfo/. For example, ”America/Denver” or ”Zulu”",
+            "description": "The time zone path location string in '/usr/share/zoneinfo/'; for example, 'America/Denver' or 'Zulu'.",
             "property_order": 10
         }
     }
