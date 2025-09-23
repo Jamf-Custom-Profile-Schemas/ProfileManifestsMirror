@@ -35,7 +35,7 @@
                 "title": "Hostname / Domain name",
                 "description": "A host or domain name, with or without a leading dot."
             },
-            "description": "An array of host or domain names that apps can authenticate through the app extension.\n\nRequired for 'Credential' payloads. Ignored for 'Redirect' payloads.\n\nThe system:\n\n- Matches host or domain names case-insensitively\n- Requires that all the host and domain names of all installed Extensible SSO payloads are unique\n\nNote:\nHost names that begin with a \".\" are wildcard suffixes that match all subdomains; otherwise the host name needs be an exact match.",
+            "description": "An array of host or domain names that apps can authenticate through the app extension.\n\nRequired for 'Credential' payloads. Ignored for 'Redirect' payloads.\n\nThe system:\n\n- Matches host or domain names case-insensitively\n- Requires that all the host and domain names of all installed Extensible SSO payloads are unique\n\nNote:\nHost names that begin with a \".\" are wildcard suffixes that match all subdomains; otherwise the host name needs to be an exact match.",
             "property_order": 20
         },
         "Realm": {
