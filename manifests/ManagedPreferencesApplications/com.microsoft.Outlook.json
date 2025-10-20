@@ -165,6 +165,19 @@
             ],
             "property_order": 50
         },
+        "DisableDefaultAppSignature": {
+            "type": "boolean",
+            "title": "Disable Default Signature",
+            "default": false,
+            "description": "Prevent Outlook from being able to use the default signature. This will keep the default Outlook signature but disable the settings to apply the default Outlook signatures for new messages and for reply/forward message settings.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/preferences-outlook#disable-default-signature"
+                }
+            ],
+            "property_order": 55
+        },
         "DisableSkypeMeeting": {
             "type": "boolean",
             "title": "Disable Skype Meetings",
@@ -176,7 +189,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#disable-skype-for-business-online-meetings"
                 }
             ],
-            "property_order": 55
+            "property_order": 60
         },
         "DisableTeamsMeeting": {
             "type": "boolean",
@@ -189,7 +202,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#disable-teams-online-meetings"
                 }
             ],
-            "property_order": 60
+            "property_order": 65
         },
         "FirstRunExperienceCompletedO15": {
             "type": "boolean",
@@ -202,7 +215,7 @@
                     "href": "https://derflounder.wordpress.com/2016/01/17/suppressing-office-2016s-first-run-dialog-windows/"
                 }
             ],
-            "property_order": 65
+            "property_order": 70
         },
         "kSubUIAppCompletedFirstRunSetup1507": {
             "type": "boolean",
@@ -215,7 +228,7 @@
                     "href": "https://derflounder.wordpress.com/2016/01/17/suppressing-office-2016s-first-run-dialog-windows/"
                 }
             ],
-            "property_order": 70
+            "property_order": 75
         },
         "HideFoldersOnMyComputerRootInFolderList": {
             "type": "boolean",
@@ -228,7 +241,7 @@
                     "href": "https://docs.microsoft.com/en-us/DeployOffice/mac/preferences-outlook#hide-local-folders"
                 }
             ],
-            "property_order": 75
+            "property_order": 80
         },
         "HideCanAddOtherAccountTypesTipText": {
             "type": "boolean",
@@ -241,7 +254,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#hide-text-about-adding-non-corporate-mailboxes"
                 }
             ],
-            "property_order": 80
+            "property_order": 85
         },
         "SignInOptions": {
             "type": "integer",
@@ -267,7 +280,7 @@
                     "No accounts allowed"
                 ]
             },
-            "property_order": 85
+            "property_order": 90
         },
         "SendASmileEnabled": {
             "type": "boolean",
@@ -280,7 +293,7 @@
                     "href": "https://docs.google.com/spreadsheets/d/1ESX5td0y0OP3jdzZ-C2SItm-TUi-iA_bcHCBvaoCumw/"
                 }
             ],
-            "property_order": 90
+            "property_order": 95
         },
         "SendAllTelemetryEnabled": {
             "type": "boolean",
@@ -293,7 +306,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/deploy-office-365-proplus-in-gcc-high-dod#turn-off-sending-telemetry-data-to-microsoft-from-office-for-mac"
                 }
             ],
-            "property_order": 95
+            "property_order": 100
         },
         "SendCrashReportsEvenWithTelemetryDisabled": {
             "type": "boolean",
@@ -305,7 +318,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1536706447000100"
                 }
             ],
-            "property_order": 100
+            "property_order": 105
         },
         "OverrideAccountConfigurationWindow": {
             "type": "boolean",
@@ -318,7 +331,7 @@
                     "href": "https://macadmins.slack.com/archives/C19MR7EM9/p1497634255270865"
                 }
             ],
-            "property_order": 105
+            "property_order": 110
         },
         "kFRETelemetryConsentKey": {
             "type": "boolean",
@@ -330,7 +343,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1527191452000462"
                 }
             ],
-            "property_order": 110
+            "property_order": 115
         },
         "o365GroupsOobePromoTriggeredPref": {
             "type": "boolean",
@@ -343,7 +356,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1528845850000040"
                 }
             ],
-            "property_order": 115
+            "property_order": 120
         },
         "googlePromoTriggeredPref": {
             "type": "boolean",
@@ -356,7 +369,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1528897598000193"
                 }
             ],
-            "property_order": 120
+            "property_order": 125
         },
         "TrustO365AutodiscoverRedirect": {
             "type": "boolean",
@@ -369,7 +382,7 @@
                     "href": "https://support.microsoft.com/en-us/help/3206915/how-to-suppress-the-office-365-autodiscover-redirect-warning-in-outloo"
                 }
             ],
-            "property_order": 125
+            "property_order": 130
         },
         "kFREEnterpriseTelemetryInfoKey": {
             "type": "boolean",
@@ -382,7 +395,7 @@
                     "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
                 }
             ],
-            "property_order": 130
+            "property_order": 135
         },
         "kFREIntelligenceServicesConsentV2Key": {
             "type": "boolean",
@@ -394,7 +407,7 @@
                     "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
                 }
             ],
-            "property_order": 135
+            "property_order": 140
         },
         "PII_And_Intelligent_Services_Preference": {
             "type": "boolean",
@@ -406,7 +419,7 @@
                     "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
                 }
             ],
-            "property_order": 140
+            "property_order": 145
         },
         "DefaultWeatherLocation": {
             "type": "string",
@@ -418,7 +431,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#weather-location-settings"
                 }
             ],
-            "property_order": 145
+            "property_order": 150
         },
         "Weather_update_automatically": {
             "type": "boolean",
@@ -431,7 +444,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook#disable-automatic-updating-of-weather-location"
                 }
             ],
-            "property_order": 150
+            "property_order": 155
         },
         "EnableNewOutlook": {
             "type": "integer",
@@ -458,7 +471,7 @@
                     "Enabled, switch hidden"
                 ]
             },
-            "property_order": 155
+            "property_order": 160
         }
     }
 }
