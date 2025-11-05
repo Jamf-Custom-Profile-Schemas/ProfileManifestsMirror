@@ -559,7 +559,7 @@
             "type": "boolean",
             "title": "Allow USB Restricted Mode",
             "default": true,
-            "description": "If 'false', the system allows iOS devices to always connect to USB accessories while locked. In macOS, allows new USB and Thunderbolt accessories, and SD cards to connect without authorization. If the system has Lockdown mode enabled, it ignores this value.",
+            "description": "If 'false', the system allows iOS devices to always connect to USB accessories while locked. In macOS, allows new USB and Thunderbolt accessories, and SD cards to connect without authorization. If the system has Lockdown mode enabled, it ignores this value. This restriction is not supported on the user channel.",
             "property_order": 390
         },
         "allowHostPairing": {
@@ -1170,16 +1170,16 @@
         },
         "allowRapidSecurityResponseInstallation": {
             "type": "boolean",
-            "title": "Allow Rapid Security Response Installation",
+            "title": "Allow Background Security Improvement Installation",
             "default": true,
-            "description": "If 'false', the system prohibits installation of rapid security responses.",
+            "description": "If 'false', the system prohibits installation of Background Security Improvements.",
             "property_order": 730
         },
         "allowRapidSecurityResponseRemoval": {
             "type": "boolean",
-            "title": "Allow Rapid Security Response Removal",
+            "title": "Allow Background Security Improvement Removal",
             "default": true,
-            "description": "If 'false', the system prohibits removal of rapid security responses.",
+            "description": "If 'false', the system prohibits removal of Background Security Improvements.",
             "property_order": 735
         },
         "allowFindMyDevice": {
@@ -1399,6 +1399,16 @@
             },
             "description": "An array of strings representing ICCIDs of cellular plans. The device prevents use of any matching cellular networks with RCS messaging. The array must contain no more than 4 ICCID strings.",
             "property_order": 890
+        },
+        "ratingAppsExemptedBundleIDs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Exempted App"
+            },
+            "title": "Apps Exempted from Rating Restrictions",
+            "description": "If present, the system exempts apps with bundle IDs in the array from age-based rating restrictions. The system uses intersection combine rules to combine multiple payloads and any exceptions that parental control apps provide, including ScreenTime.",
+            "property_order": 895
         }
     }
 }

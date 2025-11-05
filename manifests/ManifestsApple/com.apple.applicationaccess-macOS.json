@@ -47,7 +47,7 @@
             "type": "boolean",
             "title": "Allow Content Caching",
             "default": true,
-            "description": "If 'false', the system disables content caching.",
+            "description": "If 'false', the system disables content caching. This restriction is not supported on the user channel.",
             "property_order": 30
         },
         "forceOnDeviceOnlyTranslation": {
@@ -445,7 +445,7 @@
             "type": "boolean",
             "title": "Allow modifying Time Machine settings",
             "default": true,
-            "description": "If 'false', the system prevents modification of Time Machine settings in System Settings.",
+            "description": "If 'false', the system prevents modification of Time Machine settings in System Settings. This restriction is not supported on the user channel.",
             "property_order": 295
         },
         "allowUIConfigurationProfileInstallation": {
@@ -522,7 +522,7 @@
             "type": "boolean",
             "title": "Allow USB Restricted Mode",
             "default": true,
-            "description": "If 'false', the system allows iOS devices to always connect to USB accessories while locked. In macOS, allows new USB and Thunderbolt accessories, and SD cards to connect without authorization. If the system has Lockdown mode enabled, it ignores this value.",
+            "description": "If 'false', the system allows iOS devices to always connect to USB accessories while locked. In macOS, allows new USB and Thunderbolt accessories, and SD cards to connect without authorization. If the system has Lockdown mode enabled, it ignores this value. This restriction is not supported on the user channel.",
             "property_order": 350
         },
         "allowAssistant": {
@@ -548,16 +548,16 @@
         },
         "allowRapidSecurityResponseInstallation": {
             "type": "boolean",
-            "title": "Allow Rapid Security Response Installation",
+            "title": "Allow Background Security Improvement Installation",
             "default": true,
-            "description": "If 'false', the system prohibits installation of rapid security responses.",
+            "description": "If 'false', the system prohibits installation of Background Security Improvements.",
             "property_order": 370
         },
         "allowRapidSecurityResponseRemoval": {
             "type": "boolean",
-            "title": "Allow Rapid Security Response Removal",
+            "title": "Allow Background Security Improvement Removal",
             "default": true,
-            "description": "If 'false', the system prohibits removal of rapid security responses.",
+            "description": "If 'false', the system prohibits removal of Background Security Improvements.",
             "property_order": 375
         },
         "enforcedSoftwareUpdateMinorOSDeferredInstallDelay": {

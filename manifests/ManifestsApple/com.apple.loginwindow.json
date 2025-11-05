@@ -186,7 +186,7 @@
                 "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$"
             },
             "title": "Allowed Users or Groups",
-            "description": "The list of user GUIDs or group GUIDs of users that the system allows to log in. An asterisk ('*') string specifies all users or groups.",
+            "description": "The list of user GUIDs or group GUIDs of users that the system allows to log in. An asterisk ('*') string specifies all users or groups. This only applies to network accounts and mobile accounts.",
             "property_order": 130
         },
         "DenyList": {
@@ -198,7 +198,7 @@
                 "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$"
             },
             "title": "Denied Users or Groups",
-            "description": "The list of user GUIDs or group GUIDs of users that the system disallows to log in. This list takes priority over the list in the 'AllowList' key.",
+            "description": "The list of user GUIDs or group GUIDs of users that the system disallows to log in. This list takes priority over the list in the 'AllowList' key. This only applies to network accounts and mobile accounts.",
             "property_order": 135
         },
         "LocalUserLoginEnabled": {

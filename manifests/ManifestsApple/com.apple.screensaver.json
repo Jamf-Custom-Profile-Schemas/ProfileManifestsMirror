@@ -33,7 +33,7 @@
             "type": "integer",
             "title": "Screensaver idle time",
             "default": 300,
-            "description": "Number of seconds of inactivity before screensaver activates. (0 = never activate).",
+            "description": "The number of seconds of inactivity before the screen saver activates (0 = Never activate).",
             "property_order": 25
         },
         "moduleName": {
