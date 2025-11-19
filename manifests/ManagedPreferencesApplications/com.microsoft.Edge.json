@@ -3960,6 +3960,50 @@
                 }
             ],
             "property_order": 1210
+        },
+        "AutoLaunchProtocolsFromOrigins": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "allowed_origins": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "pattern": "^https?://.*"
+                        },
+                        "title": "Allowed Origins",
+                        "description": "A list of allowed origin patterns for the specified protocol."
+                    },
+                    "protocol": {
+                        "type": "string",
+                        "title": "Protocol",
+                        "pattern": "^((?!\\:).)*$"
+                    }
+                }
+            },
+            "title": "Allow protocols to auto launch external applications",
+            "description": "Define a list of protocols that can launch an external application from listed origins without prompting the user. If this policy is set, a protocol will only be permitted to launch an external application without prompting by policy if the protocol is listed, and the origin of the site trying to launch the protocol matches one of the origin patterns in that protocol's allowed_origins list.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-au/deployedge/microsoft-edge-browser-policies/autolaunchprotocolsfromorigins"
+                }
+            ],
+            "property_order": 1215
+        },
+        "AutoLaunchProtocolsComponentEnabled": {
+            "type": "boolean",
+            "title": "Enable the AutoLaunch Protocols component",
+            "default": true,
+            "description": "Specifies whether the AutoLaunch Protocols component should be enabled.\nThis component allows Microsoft to provide a list similar to that of the AutoLaunchProtocolsFromOrigins policy, allowing certain external protocols to launch without prompt or blocking certain protocols (on specified origins). By default, this component is enabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-au/deployedge/microsoft-edge-browser-policies/autolaunchprotocolscomponentenabled"
+                }
+            ],
+            "property_order": 1220
         }
     }
 }
