@@ -36,33 +36,40 @@
             "description": "Hide the Admin portal link in the Firezone menu in the macOS menu bar.",
             "property_order": 25
         },
+        "hideResourceList": {
+            "type": "boolean",
+            "title": "Hide resource list",
+            "default": false,
+            "description": "Hide the resource list in the Firezone menu in the macOS menu bar.",
+            "property_order": 30
+        },
         "connectOnStart": {
             "type": "boolean",
             "title": "Connect on start",
             "default": false,
             "description": "Try to connect to Firezone using the saved token and configuration when the client application starts. If the authentication token is expired, the client will start in a disconnected state.",
-            "property_order": 30
+            "property_order": 35
         },
         "startOnLogin": {
             "type": "boolean",
             "title": "Start on login",
             "default": false,
             "description": "Start the Firezone client when the user logs into the machine. Requires the Firezone client to be running to take effect. In many cases you probably want to configure this using a Managed Login Items payload instead to force the client to be running.",
-            "property_order": 35
+            "property_order": 40
         },
         "disableUpdateCheck": {
             "type": "boolean",
             "title": "Disable update check",
             "default": false,
             "description": "Disables the update check and notification for the Standalone variant of the macOS client. App Store variant versions 1.4.15 and higher already have this disabled.",
-            "property_order": 40
+            "property_order": 45
         },
         "supportURL": {
             "type": "string",
             "title": "Support URL",
             "default": "https://www.firezone.dev/support",
             "description": "The URL to which users will be taken to when clicking the Help -> Support link in the menu bar.",
-            "property_order": 45
+            "property_order": 50
         }
     }
 }
