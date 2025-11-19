@@ -142,6 +142,91 @@
             ],
             "property_order": 55
         },
+        "MonthlyPatchingCadenceEnabled": {
+            "type": "boolean",
+            "title": "Monthly Patching Cadence Enabled",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                }
+            ],
+            "property_order": 60
+        },
+        "MonthlyPatchingCadenceOrdinalValue": {
+            "type": "string",
+            "title": "Monthly Patching Cadence Ordinal Value",
+            "description": "Week of the month you want AAP to be scheduled",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                }
+            ],
+            "enum": [
+                "first",
+                "second",
+                "third",
+                "fourth",
+                "fifth",
+                "final"
+            ],
+            "options": {
+                "enum_titles": [
+                    "First Week",
+                    "Second Week",
+                    "Third Week",
+                    "Fourth Week",
+                    "Fifth Week",
+                    "Final Week"
+                ]
+            },
+            "property_order": 65
+        },
+        "MonthlyPatchingCadenceWeekdayIndex": {
+            "type": "string",
+            "title": "Monthly Patching Cadence Weekday Index",
+            "description": "Day of the week you want AAP to be scheduled",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                }
+            ],
+            "enum": [
+                "sunday",
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday",
+                "saturday"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ]
+            },
+            "property_order": 70
+        },
+        "MonthlyPatchingCadenceStartTime": {
+            "type": "string",
+            "title": "Monthly Patching Cadence Start Time",
+            "description": "Local time you want AAP to be scheduled",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                }
+            ],
+            "property_order": 75
+        },
         "DialogOnTop": {
             "type": "string",
             "title": "Dialog On Top",
@@ -156,7 +241,7 @@
                     "Do Not Force Dialog On Top"
                 ]
             },
-            "property_order": 60
+            "property_order": 80
         },
         "DialogTimeoutDeferral": {
             "type": "integer",
@@ -168,7 +253,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 65
+            "property_order": 85
         },
         "DialogTimeoutDeferralAction": {
             "type": "string",
@@ -184,7 +269,7 @@
                     "Continue after timer expires"
                 ]
             },
-            "property_order": 70
+            "property_order": 90
         },
         "UnattendedExit": {
             "type": "string",
@@ -200,7 +285,7 @@
                     "Do Not Auto Close Dialog"
                 ]
             },
-            "property_order": 75
+            "property_order": 95
         },
         "UnattendedExitSeconds": {
             "type": "integer",
@@ -212,7 +297,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 80
+            "property_order": 100
         },
         "UseOverlayIcon": {
             "type": "string",
@@ -228,7 +313,13 @@
                     "Do Not Use Overlay Icon"
                 ]
             },
-            "property_order": 85
+            "property_order": 105
+        },
+        "DialogIcon": {
+            "type": "string",
+            "title": "Dialog Icon",
+            "description": "Allows you to set a custom icon for the dialog vs. the default Laptop/Desktop symbol",
+            "property_order": 110
         },
         "IgnoredLabels": {
             "type": "string",
@@ -240,7 +331,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 90
+            "property_order": 115
         },
         "RequiredLabels": {
             "type": "string",
@@ -252,7 +343,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 95
+            "property_order": 120
         },
         "OptionalLabels": {
             "type": "string",
@@ -264,7 +355,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 100
+            "property_order": 125
         },
         "AppTitle": {
             "type": "string",
@@ -277,7 +368,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 105
+            "property_order": 130
         },
         "ConvertAppsInHomeFolder": {
             "type": "string",
@@ -294,7 +385,7 @@
                     "Do Not Convert Apps"
                 ]
             },
-            "property_order": 110
+            "property_order": 135
         },
         "IgnoreAppsInHomeFolder": {
             "type": "string",
@@ -311,7 +402,7 @@
                     "Move Apps to the Default Path"
                 ]
             },
-            "property_order": 115
+            "property_order": 140
         },
         "InstallomatorOptions": {
             "type": "string",
@@ -323,7 +414,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 120
+            "property_order": 145
         },
         "InstallomatorUpdateDisable": {
             "type": "string",
@@ -340,7 +431,7 @@
                     "Enable Installomator Updates"
                 ]
             },
-            "property_order": 125
+            "property_order": 150
         },
         "InstallomatorVersion": {
             "type": "string",
@@ -352,19 +443,19 @@
                 "Release",
                 "Custom"
             ],
-            "property_order": 130
+            "property_order": 155
         },
         "InstallomatorVersionCustomRepoPath": {
             "type": "string",
             "title": "Installomator Version custom Repo Path",
             "description": "If InstallomatorVersion is set to Custom, enter the Github Site and Repository name in the following format: site_name/repo_name . For example, if the custom fork is located at https://github.com/TechTrekkie/Installomator, you would set this key to techtrekkie/installomator",
-            "property_order": 135
+            "property_order": 160
         },
         "InstallomatorVersionCustomBranchName": {
             "type": "string",
             "title": "Installomator Version Custom Branch Name",
             "description": "The name of the branch you want to use in your custom repo, typically main.",
-            "property_order": 140
+            "property_order": 165
         },
         "InteractiveMode": {
             "type": "integer",
@@ -383,7 +474,7 @@
                     "2 - Full Interactive"
                 ]
             },
-            "property_order": 145
+            "property_order": 170
         },
         "RemoveInstallomatorPath": {
             "type": "string",
@@ -400,7 +491,7 @@
                     "Do Not Remove Installomator"
                 ]
             },
-            "property_order": 150
+            "property_order": 175
         },
         "SupportTeamName": {
             "type": "string",
@@ -412,7 +503,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 155
+            "property_order": 180
         },
         "SupportTeamEmail": {
             "type": "string",
@@ -424,7 +515,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 160
+            "property_order": 185
         },
         "SupportTeamPhone": {
             "type": "string",
@@ -436,7 +527,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 165
+            "property_order": 190
         },
         "SupportTeamWebsite": {
             "type": "string",
@@ -448,7 +539,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 170
+            "property_order": 195
         },
         "WebhookFeature": {
             "type": "string",
@@ -460,7 +551,7 @@
                 "ALL",
                 "FAILURES"
             ],
-            "property_order": 175
+            "property_order": 200
         },
         "WebhookURLSlack": {
             "type": "string",
@@ -472,7 +563,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 180
+            "property_order": 205
         },
         "WebhookURLTeams": {
             "type": "string",
@@ -484,7 +575,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
                 }
             ],
-            "property_order": 185
+            "property_order": 210
         },
         "WorkflowDisableAppDiscovery": {
             "type": "string",
@@ -507,7 +598,7 @@
                     "Enable App Discovery"
                 ]
             },
-            "property_order": 190
+            "property_order": 215
         },
         "WorkflowDisableRelaunch": {
             "type": "string",
@@ -530,7 +621,7 @@
                     "Enable Automatic Relaunch"
                 ]
             },
-            "property_order": 195
+            "property_order": 220
         },
         "WorkflowInstallNowPatchingStatusAction": {
             "type": "string",
@@ -542,7 +633,43 @@
                 "ALWAYS",
                 "SUCCESS"
             ],
-            "property_order": 200
+            "property_order": 225
+        },
+        "SelfUpdateEnabled": {
+            "type": "boolean",
+            "title": "Self Update Enabled",
+            "description": "Determines if the Self Update feature is enabled. this will automatically update App Auto-Patch if a new version is posted on github",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                }
+            ],
+            "property_order": 230
+        },
+        "SelfUpdateFrequency": {
+            "type": "string",
+            "title": "Self Update Frequency",
+            "description": "The frequency to check for updates to the App Auto-Patch script",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                }
+            ],
+            "enum": [
+                "daily",
+                "weekly",
+                "monthly"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Daily",
+                    "Weekly",
+                    "Monthly"
+                ]
+            },
+            "property_order": 235
         },
         "userInterface": {
             "type": "object",
@@ -1073,7 +1200,7 @@
                     ]
                 }
             },
-            "property_order": 205
+            "property_order": 240
         }
     }
 }
