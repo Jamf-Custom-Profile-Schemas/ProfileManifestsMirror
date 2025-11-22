@@ -1,0 +1,41 @@
+{
+    "title": "Claude (com.anthropic.claudefordesktop)",
+    "description": "Claude Desktop enterprise configuration settings",
+    "properties": {
+        "disableAutoUpdates": {
+            "type": "boolean",
+            "title": "Disable Auto Updates",
+            "default": false,
+            "description": "Disable automatic updates for Claude Desktop.",
+            "property_order": 5
+        },
+        "autoUpdaterEnforcementHours": {
+            "type": "integer",
+            "title": "Auto Update Enforcement Hours",
+            "default": 72,
+            "description": "Hours before forcefully restarting Claude to apply a prepared update. Must be between 1 and 72 hours.",
+            "property_order": 10
+        },
+        "isDesktopExtensionEnabled": {
+            "type": "boolean",
+            "title": "Enable Desktop Extensions",
+            "default": true,
+            "description": "Enable or disable Claude Desktop extensions.",
+            "property_order": 15
+        },
+        "isDesktopExtensionDirectoryEnabled": {
+            "type": "boolean",
+            "title": "Enable Extension Directory",
+            "default": true,
+            "description": "Enable or disable access to the extension directory.",
+            "property_order": 20
+        },
+        "isLocalDevMcpEnabled": {
+            "type": "boolean",
+            "title": "Enable Local MCP Servers",
+            "default": true,
+            "description": "Enable or disable local Model Context Protocol (MCP) servers.",
+            "property_order": 25
+        }
+    }
+}
