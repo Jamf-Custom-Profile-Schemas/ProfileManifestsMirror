@@ -9,7 +9,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#debug"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#debug"
                 }
             ],
             "property_order": 5
@@ -18,11 +18,11 @@
             "type": "string",
             "title": "Title",
             "default": "Welcome to Setup Manager",
-            "description": "The main title over the window.",
+            "description": "The main title over the window. Supports substitutions.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#title"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#title"
                 }
             ],
             "property_order": 10
@@ -35,7 +35,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#icon"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#icon"
                 }
             ],
             "property_order": 15
@@ -44,11 +44,11 @@
             "type": "string",
             "title": "Message",
             "default": "Setup Manager is configuring your Mac…",
-            "description": "The message shown below the title.",
+            "description": "The message shown below the title. Supports Markdown and substitutions.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#message"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#message"
                 }
             ],
             "property_order": 20
@@ -60,7 +60,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#background"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#background"
                 }
             ],
             "property_order": 25
@@ -73,7 +73,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#runat"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#runat"
                 }
             ],
             "enum": [
@@ -95,7 +95,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#accentcolor"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#accentcolor"
                 }
             ],
             "property_order": 35
@@ -108,7 +108,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#finalcountdown"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finalcountdown"
                 }
             ],
             "property_order": 40
@@ -121,7 +121,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#finalaction"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finalaction"
                 }
             ],
             "enum": [
@@ -147,7 +147,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#totaldownloadbytes"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#totaldownloadbytes"
                 }
             ],
             "property_order": 50
@@ -159,7 +159,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#jssid"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#jssid"
                 }
             ],
             "enum": [
@@ -174,7 +174,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#userid"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#userid"
                 }
             ],
             "enum": [
@@ -190,7 +190,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#computernametemplate"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#computernametemplate"
                 }
             ],
             "property_order": 65
@@ -202,7 +202,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#overrideserialnumber"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#overrideserialnumber"
                 }
             ],
             "property_order": 70
@@ -214,7 +214,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#hideactionlabels"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#hideactionlabels"
                 }
             ],
             "property_order": 75
@@ -227,7 +227,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#actionoutputlogging"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#actionoutputlogging"
                 }
             ],
             "enum": [
@@ -251,7 +251,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#hidedebuglabel"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#hidedebuglabel"
                 }
             ],
             "property_order": 85
@@ -263,7 +263,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#simulatemdm"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#simulatemdm"
                 }
             ],
             "enum": [
@@ -284,18 +284,18 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#title-1"
+                            "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#title-1"
                         }
                     ]
                 },
                 "message": {
                     "type": "string",
                     "title": "Help Message",
-                    "description": "The help message.",
+                    "description": "The help message. Supports Markdown.",
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#message-1"
+                            "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#message-1"
                         }
                     ]
                 },
@@ -306,7 +306,7 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#url"
+                            "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#url"
                         }
                     ]
                 }
@@ -320,7 +320,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#user-entry"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#user-entry"
                 }
             ],
             "properties": {
@@ -335,7 +335,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -346,7 +346,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -361,7 +361,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -372,7 +372,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -383,7 +383,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -395,7 +395,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -412,7 +412,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -423,7 +423,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -438,7 +438,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -449,7 +449,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -460,7 +460,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -472,7 +472,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -489,7 +489,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -500,7 +500,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -515,7 +515,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -526,7 +526,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -537,7 +537,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -549,7 +549,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -566,7 +566,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -577,7 +577,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -592,7 +592,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -603,7 +603,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -614,7 +614,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -626,7 +626,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -643,7 +643,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -654,7 +654,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -669,7 +669,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -680,7 +680,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -691,7 +691,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -703,7 +703,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -720,7 +720,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -731,7 +731,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -746,7 +746,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -757,7 +757,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -768,7 +768,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -780,7 +780,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -797,7 +797,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -808,7 +808,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -823,7 +823,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -834,7 +834,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -845,7 +845,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -857,7 +857,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -874,7 +874,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -885,7 +885,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -900,7 +900,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -911,7 +911,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -922,7 +922,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -934,7 +934,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -951,7 +951,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -962,7 +962,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -977,7 +977,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -988,7 +988,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -999,7 +999,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -1011,7 +1011,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -1028,7 +1028,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -1039,7 +1039,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -1054,7 +1054,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -1065,7 +1065,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -1076,7 +1076,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -1088,7 +1088,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -1106,7 +1106,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#default"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#default"
                                 }
                             ]
                         },
@@ -1117,7 +1117,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#placeholder"
                                 }
                             ]
                         },
@@ -1132,7 +1132,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#options"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#options"
                                 }
                             ]
                         },
@@ -1143,7 +1143,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validation"
                                 }
                             ]
                         },
@@ -1154,7 +1154,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#validationmessage"
                                 }
                             ]
                         },
@@ -1166,7 +1166,7 @@
                             "links": [
                                 {
                                     "rel": "More information",
-                                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
+                                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#label-1"
                                 }
                             ]
                         }
@@ -1183,7 +1183,7 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#conditionally-show-the-user-entry-for-certain-users"
+                            "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#conditionally-show-the-user-entry-for-certain-users"
                         }
                     ]
                 }
@@ -1203,7 +1203,7 @@
                     "icon": {
                         "type": "string",
                         "title": "Icon",
-                        "description": "The label is used as the name of the action in display."
+                        "description": "The icon shown for the action."
                     },
                     "shell": {
                         "type": "string",
@@ -1289,7 +1289,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#actions"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#actions"
                 }
             ],
             "property_order": 105
@@ -1301,7 +1301,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#finishedscript"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finishedscript"
                 }
             ],
             "property_order": 110
@@ -1313,7 +1313,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/ConfigurationProfile.md#finishedtrigger"
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finishedtrigger"
                 }
             ],
             "property_order": 115
@@ -1358,7 +1358,7 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/Docs/Webhooks.md"
+                            "href": "https://github.com/jamf/Setup-Manager/blob/main/Docs/Webhooks.md"
                         }
                     ]
                 },
@@ -1396,12 +1396,78 @@
                     "links": [
                         {
                             "rel": "More information",
-                            "href": "https://github.com/Jamf-Concepts/Setup-Manager/blob/main/Docs/Webhooks.md"
+                            "href": "https://github.com/jamf/Setup-Manager/blob/main/Docs/Webhooks.md"
+                        }
+                    ]
+                },
+                "DEBUG": {
+                    "type": "boolean",
+                    "title": "Webhook Debug Mode",
+                    "description": "Enables webhook debug mode.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/jamf/Setup-Manager/blob/main/Docs/Webhooks.md#webhooks-in-debug-mode"
                         }
                     ]
                 }
             },
             "property_order": 120
+        },
+        "networkCheck": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "host": {
+                        "type": "string",
+                        "title": "Host",
+                        "description": "The host name, e.g. host.example.com (no url scheme) to test a connection to."
+                    },
+                    "port": {
+                        "type": "integer",
+                        "title": "Port",
+                        "default": 443,
+                        "description": "The port to test a connection to."
+                    },
+                    "protocol": {
+                        "type": "string",
+                        "title": "Protocol",
+                        "default": "tcp",
+                        "description": "The connection protocol to test",
+                        "enum": [
+                            "tcp",
+                            "udp"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "TCP",
+                                "UDP"
+                            ]
+                        }
+                    },
+                    "label": {
+                        "type": "string",
+                        "title": "Label",
+                        "description": "A display label for the connection test."
+                    }
+                }
+            },
+            "title": "Network Checks",
+            "description": "Provides a list of hosts to check connectivity to. These will be shown in the 'Connectivity' section in the network info pane. Be sure to read the documentation before configuring.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/Docs/Network.md"
+                }
+            ],
+            "property_order": 125
+        },
+        "PLEASE_DO_NOT_TRACK": {
+            "type": "boolean",
+            "title": "Do Not Track",
+            "description": "Suppress launch tracking by enabling this setting.",
+            "property_order": 130
         }
     }
 }
