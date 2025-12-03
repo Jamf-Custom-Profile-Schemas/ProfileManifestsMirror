@@ -4004,6 +4004,49 @@
                 }
             ],
             "property_order": 1220
+        },
+        "LocalNetworkAccessRestrictionsEnabled": {
+            "type": "boolean",
+            "title": "Local Network Access Restrictions Enabled",
+            "default": false,
+            "description": "A policy to control whether users are prompted to allow sites to ask for Local Network Access.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-au/deployedge/microsoft-edge-browser-policies/localnetworkaccessrestrictionsenabled"
+                }
+            ],
+            "property_order": 1225
+        },
+        "LocalNetworkAccessAllowedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Local Network Access Allowed For URLs",
+            "description": "A policy to automatically grant specific sites Local Network Access.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-au/deployedge/microsoft-edge-browser-policies/localnetworkaccessallowedforurls"
+                }
+            ],
+            "property_order": 1230
+        },
+        "LocalNetworkAccessBlockedForUrls": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Local Network Access Blocked For URLs",
+            "description": "A policy to automatically deny specific sites Local Network Access.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-au/deployedge/microsoft-edge-browser-policies/localnetworkaccessblockedforurls"
+                }
+            ],
+            "property_order": 1235
         }
     }
 }
