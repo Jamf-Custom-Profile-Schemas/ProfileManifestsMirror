@@ -243,7 +243,7 @@
                 }
             },
             "title": "File Operation Rules",
-            "description": "Rules to restrict file operations. Allow rules can be used in conjunction with block rules to allow a process to execute under the specified conditions. \\nFile open operations can be restricted to read only access where required.",
+            "description": "Rules to restrict file operations. Allow rules can be used in conjunction with block rules to allow a process to execute under the specified conditions.\n\t\t\t\nFile open operations can be restricted to read only access where required.",
             "links": [
                 {
                     "rel": "More information",
@@ -295,7 +295,7 @@
             "default": [
                 {}
             ],
-            "description": "Rules to restrict execution of processes. Allow rules can be used in conjunction with block rules to allow a process to execute under the specified conditions. \\nMultiple arguments can be specified by seperating them with a comma.",
+            "description": "Rules to restrict execution of processes. Allow rules can be used in conjunction with block rules to allow a process to execute under the specified conditions.\n\t\t\t\nMultiple arguments can be specified by seperating them with a comma.",
             "links": [
                 {
                     "rel": "More information",
