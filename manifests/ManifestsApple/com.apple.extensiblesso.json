@@ -675,6 +675,11 @@
                     "type": "string",
                     "description": "The 'PayloadUUID' of an identity payload to use as the 'Terminal' identity of the access key. The identity needs to be trusted by the access key. Required if 'NewUserAuthenticationMethods' includes 'AccessKey'. Allowed identity payload types:\n\n- 'com.apple.security.pkcs12'\n- 'com.apple.security.acme'\n- 'com.apple.security.scep'"
                 },
+                "AccessKeyReaderIssuerCertificateUUID": {
+                    "type": "string",
+                    "title": "Access Key Reader Issuer Certificate UUID",
+                    "description": "The 'PayloadUUID' of a certificate payload for the issuer certificate of the `Terminal` identity of the access key. Other specifications refer to the key as the \"Reader CA Public Key\". The key must be an elliptic curve key. Required if `NewUserAuthenticationMethods` includes `AccessKey`. The issuer of the Terminal identity of the access key needs to match this certificate, otherwise the device fails the authentication."
+                },
                 "AllowAccessKeyExpressMode": {
                     "type": "boolean",
                     "default": false,

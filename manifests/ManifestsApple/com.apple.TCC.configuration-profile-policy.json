@@ -67,7 +67,7 @@
                         }
                     },
                     "title": "Accessibility",
-                    "description": "Specifies the policies for the app via the Accessibility subsystem."
+                    "description": "Specifies the policies for the app via the Accessibility subsystem. The ability to grant access by this profile is deprecated as of macOS 26.2, and will be removed in macOS 27.0."
                 },
                 "AppleEvents": {
                     "type": "array",
