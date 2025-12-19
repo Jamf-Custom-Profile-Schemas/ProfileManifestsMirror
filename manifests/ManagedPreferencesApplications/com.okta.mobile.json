@@ -96,6 +96,19 @@
             ],
             "property_order": 30
         },
+        "OktaVerify.OSQueryCustomChecksTimeout": {
+            "type": "string",
+            "title": "OS Query Custom Checks Timeouts",
+            "default": "2",
+            "description": "Admins can use this value to customize the osquery timeout value and fine-tune device posture checks",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri9"
+                }
+            ],
+            "property_order": 35
+        },
         "OktaVerify.EnableOSQueryCustomChecks": {
             "type": "boolean",
             "title": "Enable OS Query Custom Checks",
@@ -107,7 +120,7 @@
                     "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri7"
                 }
             ],
-            "property_order": 35
+            "property_order": 40
         },
         "OktaVerify.OSQueryAllowedDomains": {
             "type": "string",
@@ -119,7 +132,7 @@
                     "href": "https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/managed-app-configs-macos.htm#OktaVeri8"
                 }
             ],
-            "property_order": 40
+            "property_order": 45
         }
     }
 }
