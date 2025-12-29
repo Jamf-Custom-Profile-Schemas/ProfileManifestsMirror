@@ -13,6 +13,28 @@
                 }
             ],
             "properties": {
+                "behaviorMonitoring": {
+                    "type": "string",
+                    "title": "Behavior Monitoring",
+                    "default": "enabled",
+                    "description": "Determines whether behavior monitoring and blocking capability is enabled on the device or not.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://learn.microsoft.com/en-us/defender-endpoint/mac-preferences#enabledisable-behavior-monitoring"
+                        }
+                    ],
+                    "enum": [
+                        "disabled",
+                        "enabled"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Disabled",
+                            "Enabled"
+                        ]
+                    }
+                },
                 "enforcementLevel": {
                     "type": "string",
                     "title": "Enforcement level for antivirus engine",
