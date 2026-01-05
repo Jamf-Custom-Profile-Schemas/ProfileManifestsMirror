@@ -791,6 +791,50 @@
             },
             "property_order": 215
         },
+        "GenerativeAI": {
+            "type": "object",
+            "title": "Generative AI",
+            "description": "Configure generative AI features",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://mozilla.github.io/policy-templates/#generativeai"
+                }
+            ],
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "title": "Enabled",
+                    "default": false,
+                    "description": "Controls whether generative AI features are enabled by default"
+                },
+                "Chatbot": {
+                    "type": "boolean",
+                    "title": "ChatBot",
+                    "default": false,
+                    "description": "Controls access to AI chatbots in the sidebar"
+                },
+                "LinkPreviews": {
+                    "type": "boolean",
+                    "title": "Link Previews",
+                    "default": false,
+                    "description": "Controls whether AI is used to generate link previews"
+                },
+                "TabGroups": {
+                    "type": "boolean",
+                    "title": "Tab Groups",
+                    "default": false,
+                    "description": "Controls whether AI is used to suggest names and tabs for tab groups"
+                },
+                "Locked": {
+                    "type": "boolean",
+                    "title": "Locked",
+                    "default": false,
+                    "description": "Prevents the user from changing generative AI preferences"
+                }
+            },
+            "property_order": 220
+        },
         "Homepage": {
             "type": "object",
             "description": "Configure the default homepage and how Firefox starts.",
@@ -838,7 +882,7 @@
                     "description": "If true, prevents the user from changing homepage preferences."
                 }
             },
-            "property_order": 220
+            "property_order": 225
         },
         "ShowHomeButton": {
             "type": "boolean",
@@ -851,7 +895,7 @@
                     "href": "https://github.com/mozilla/policy-templates#showhomebutton"
                 }
             ],
-            "property_order": 225
+            "property_order": 230
         },
         "LocalFileLinks": {
             "type": "array",
@@ -866,7 +910,7 @@
                     "href": "https://github.com/mozilla/policy-templates#localfilelinks"
                 }
             ],
-            "property_order": 230
+            "property_order": 235
         },
         "NewTabPage": {
             "type": "boolean",
@@ -878,7 +922,7 @@
                     "href": "https://github.com/mozilla/policy-templates#newtabpage"
                 }
             ],
-            "property_order": 235
+            "property_order": 240
         },
         "NoDefaultBookmarks": {
             "type": "boolean",
@@ -890,7 +934,7 @@
                     "href": "https://github.com/mozilla/policy-templates#nodefaultbookmarks"
                 }
             ],
-            "property_order": 240
+            "property_order": 245
         },
         "OverrideFirstRunPage": {
             "type": "string",
@@ -902,7 +946,7 @@
                     "href": "https://github.com/mozilla/policy-templates#overridefirstrunpage"
                 }
             ],
-            "property_order": 245
+            "property_order": 250
         },
         "OverridePostUpdatePage": {
             "type": "string",
@@ -914,7 +958,7 @@
                     "href": "https://github.com/mozilla/policy-templates#overridepostupdatepage"
                 }
             ],
-            "property_order": 250
+            "property_order": 255
         },
         "PictureInPicture": {
             "type": "object",
@@ -934,7 +978,7 @@
                     "type": "boolean"
                 }
             },
-            "property_order": 255
+            "property_order": 260
         },
         "PromptForDownloadLocation": {
             "type": "boolean",
@@ -946,7 +990,7 @@
                     "href": "https://github.com/mozilla/policy-templates#promptfordownloadlocation"
                 }
             ],
-            "property_order": 260
+            "property_order": 265
         },
         "RequestedLocales": {
             "type": "array",
@@ -1167,7 +1211,7 @@
                     "href": "https://github.com/mozilla/policy-templates#requestedlocales"
                 }
             ],
-            "property_order": 265
+            "property_order": 270
         },
         "SanitizeOnShutdown": {
             "type": "object",
@@ -1220,7 +1264,7 @@
                     "default": false
                 }
             },
-            "property_order": 270
+            "property_order": 275
         },
         "SearchBar": {
             "type": "string",
@@ -1243,7 +1287,7 @@
                     "Unified"
                 ]
             },
-            "property_order": 275
+            "property_order": 280
         },
         "SearchEngines": {
             "type": "object",
@@ -1347,7 +1391,7 @@
                     ]
                 }
             },
-            "property_order": 280
+            "property_order": 285
         },
         "SearchSuggestEnabled": {
             "type": "boolean",
@@ -1359,7 +1403,7 @@
                     "href": "https://github.com/mozilla/policy-templates#searchsuggestenabled"
                 }
             ],
-            "property_order": 285
+            "property_order": 290
         },
         "Handlers": {
             "type": "object",
@@ -1520,7 +1564,7 @@
                     }
                 }
             },
-            "property_order": 290
+            "property_order": 295
         },
         "DisabledCiphers": {
             "type": "object",
@@ -1567,7 +1611,7 @@
                     "type": "boolean"
                 }
             },
-            "property_order": 295
+            "property_order": 300
         },
         "DNSOverHTTPS": {
             "type": "object",
@@ -1605,7 +1649,7 @@
                     "description": "List of excluded domains from DNS over HTTPS."
                 }
             },
-            "property_order": 300
+            "property_order": 305
         },
         "Proxy": {
             "type": "object",
@@ -1704,7 +1748,7 @@
                     "description": "Proxy bypass URLs."
                 }
             },
-            "property_order": 305
+            "property_order": 310
         },
         "SSLVersionMin": {
             "type": "string",
@@ -1729,7 +1773,7 @@
                     "TLS 1.3"
                 ]
             },
-            "property_order": 310
+            "property_order": 315
         },
         "SSLVersionMax": {
             "type": "string",
@@ -1754,7 +1798,7 @@
                     "TLS 1.3"
                 ]
             },
-            "property_order": 315
+            "property_order": 320
         },
         "NetworkPrediction": {
             "type": "boolean",
@@ -1766,7 +1810,7 @@
                     "href": "https://github.com/mozilla/policy-templates#networkprediction"
                 }
             ],
-            "property_order": 320
+            "property_order": 325
         },
         "Cookies": {
             "type": "object",
@@ -1869,7 +1913,7 @@
                     "description": "If this is true, cookies preferences cannot be changed."
                 }
             },
-            "property_order": 325
+            "property_order": 330
         },
         "DisableFormHistory": {
             "type": "boolean",
@@ -1882,7 +1926,7 @@
                     "href": "https://github.com/mozilla/policy-templates#disableformhistory"
                 }
             ],
-            "property_order": 330
+            "property_order": 335
         },
         "DisablePasswordReveal": {
             "type": "boolean",
@@ -1895,7 +1939,7 @@
                     "href": "https://github.com/mozilla/policy-templates#disablepasswordreveal"
                 }
             ],
-            "property_order": 335
+            "property_order": 340
         },
         "DisableTelemetry": {
             "type": "boolean",
@@ -1908,7 +1952,7 @@
                     "href": "https://github.com/mozilla/policy-templates#disabletelemetry"
                 }
             ],
-            "property_order": 340
+            "property_order": 345
         },
         "EnableTrackingProtection": {
             "type": "object",
@@ -1946,7 +1990,7 @@
                     "description": "If Fingerprinting is set to true, fingerprinting scripts on websites are blocked."
                 }
             },
-            "property_order": 345
+            "property_order": 350
         },
         "FlashPlugin": {
             "type": "object",
@@ -1988,7 +2032,7 @@
                     "description": "If this is true, Flash preferences cannot be changed."
                 }
             },
-            "property_order": 350
+            "property_order": 355
         },
         "InstallAddonsPermission": {
             "type": "object",
@@ -2015,7 +2059,7 @@
                     "description": "If this is set to false, add-ons cannot be installed by the user."
                 }
             },
-            "property_order": 355
+            "property_order": 360
         },
         "OfferToSaveLogins": {
             "type": "boolean",
@@ -2028,7 +2072,7 @@
                     "href": "https://github.com/mozilla/policy-templates#offertosavelogins"
                 }
             ],
-            "property_order": 360
+            "property_order": 365
         },
         "OfferToSaveLoginsDefault": {
             "type": "boolean",
@@ -2041,7 +2085,7 @@
                     "href": "https://github.com/mozilla/policy-templates#offertosaveloginsdefault"
                 }
             ],
-            "property_order": 365
+            "property_order": 370
         },
         "PasswordManagerEnabled": {
             "type": "boolean",
@@ -2054,7 +2098,7 @@
                     "href": "https://github.com/mozilla/policy-templates#passwordmanagerenabled"
                 }
             ],
-            "property_order": 370
+            "property_order": 375
         },
         "Permissions": {
             "type": "object",
@@ -2271,7 +2315,7 @@
                     }
                 }
             },
-            "property_order": 375
+            "property_order": 380
         },
         "PopupBlocking": {
             "type": "object",
@@ -2303,7 +2347,7 @@
                     "description": "If this is true, pop-up blocking preferences cannot be changed."
                 }
             },
-            "property_order": 380
+            "property_order": 385
         },
         "Certificates": {
             "type": "object",
@@ -2341,7 +2385,7 @@
                     ]
                 }
             },
-            "property_order": 385
+            "property_order": 390
         },
         "DisableSecurityBypass": {
             "type": "object",
@@ -2365,7 +2409,7 @@
                     "description": "Prevents selecting \"ignore the risk\" and visiting a harmful site anyway. If this preference is enabled, a user cannot bypass the warning and visit a harmful site. If this preference is disabled or not configured, a user can choose to visit a harmful site."
                 }
             },
-            "property_order": 390
+            "property_order": 395
         },
         "SecurityDevices": {
             "type": "object",
@@ -2389,7 +2433,7 @@
                     "title": "Library Path"
                 }
             },
-            "property_order": 395
+            "property_order": 400
         },
         "UserMessaging": {
             "type": "object",
@@ -2428,7 +2472,7 @@
                     "description": "If enabled, don't offer Firefox specific suggestions in the URL bar."
                 }
             },
-            "property_order": 400
+            "property_order": 405
         },
         "LegacySameSiteCookieBehaviorEnabled": {
             "type": "boolean",
@@ -2440,7 +2484,7 @@
                     "href": "https://github.com/mozilla/policy-templates#legacysamesitecookiebehaviorenabled"
                 }
             ],
-            "property_order": 405
+            "property_order": 410
         },
         "LegacySameSiteCookieBehaviorEnabledForDomainList": {
             "type": "array",
@@ -2456,7 +2500,7 @@
                     "href": "https://github.com/mozilla/policy-templates#legacysamesitecookiebehaviorenabledfordomainlist"
                 }
             ],
-            "property_order": 410
+            "property_order": 415
         },
         "WebsiteFilter": {
             "type": "object",
@@ -2489,7 +2533,7 @@
                     "description": "If this preference is enabled, and the website filter is enabled, you can specify match patterns for sites you do not want to block. The match patterns are documented at https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns. Only http/https addresses are supported at the moment. There is a 1000 entry limit. If this preference is disabled or not configured, there are no exceptions to the website filter."
                 }
             },
-            "property_order": 415
+            "property_order": 420
         },
         "AllowedDomainsForApps": {
             "type": "string",
@@ -2501,7 +2545,7 @@
                     "href": "https://github.com/mozilla/policy-templates#alloweddomainsforapps"
                 }
             ],
-            "property_order": 420
+            "property_order": 425
         },
         "AutoLaunchProtocolsFromOrigins": {
             "type": "array",
@@ -2533,7 +2577,7 @@
                     "href": "https://github.com/mozilla/policy-templates#autolaunchprotocolsfromorigins"
                 }
             ],
-            "property_order": 425
+            "property_order": 430
         },
         "CaptivePortal": {
             "type": "boolean",
@@ -2545,7 +2589,7 @@
                     "href": "https://github.com/mozilla/policy-templates#captiveportal"
                 }
             ],
-            "property_order": 430
+            "property_order": 435
         },
         "Preferences": {
             "type": "object",
@@ -2859,7 +2903,7 @@
                     "description": "If set, overrides the GTK theme for widgets."
                 }
             },
-            "property_order": 435
+            "property_order": 440
         },
         "SupportMenu": {
             "type": "object",
@@ -2885,14 +2929,14 @@
                     "title": "AccessKey"
                 }
             },
-            "property_order": 440
+            "property_order": 445
         },
         "MicrosoftEntraSSO": {
             "type": "boolean",
             "title": "Allow single sign-on for Microsoft Entra accounts on macOS",
             "default": false,
             "description": "If this policy is set to true, Firefox will use credentials stored in the Company Portal to sign in to Microsoft Entra accounts. Affects `network.http.microsoft-entra-sso.enabled`.",
-            "property_order": 445
+            "property_order": 450
         }
     }
 }
