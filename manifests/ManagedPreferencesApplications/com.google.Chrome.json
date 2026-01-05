@@ -2512,14 +2512,16 @@
                 0,
                 1,
                 2,
-                3
+                3,
+                4
             ],
             "options": {
                 "enum_titles": [
                     "No special restrictions",
-                    "Block dangerous downloads",
-                    "Block potentially dangerous downloads",
-                    "Block all downloads"
+                    "Block malicious downloads and dangerous file types",
+                    "Block malicious downloads, uncommon or unwanted downloads and dangerous file types",
+                    "Block all downloads",
+                    "Block malicious downloads"
                 ]
             },
             "property_order": 775
