@@ -1683,7 +1683,7 @@
                 },
                 "Locked": {
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "If this preference is enabled, Proxy preferences cannot be changed."
                 },
                 "AutoLogin": {
