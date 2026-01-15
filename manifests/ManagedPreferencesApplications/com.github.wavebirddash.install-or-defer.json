@@ -1,0 +1,302 @@
+{
+    "title": "Install or Defer (com.github.wavebirddash.install-or-defer)",
+    "description": "Install or Defer settings",
+    "properties": {
+        "InstallButtonLabel": {
+            "type": "string",
+            "title": "Install Button Label",
+            "default": "Install",
+            "description": "The label of the install button.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 5
+        },
+        "DeferButtonLabel": {
+            "type": "string",
+            "title": "Defer Button Label",
+            "default": "Defer",
+            "description": "The label of the defer button.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 10
+        },
+        "DisablePostInstallAlert": {
+            "type": "boolean",
+            "title": "Disable Post-Install Alert",
+            "default": false,
+            "description": "Whether to suppress the persistent alert to run updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 15
+        },
+        "MessagingLogo": {
+            "type": "string",
+            "title": "Messaging Logo",
+            "description": "File path to a logo that will be used in messaging.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 20
+        },
+        "SupportContact": {
+            "type": "string",
+            "title": "Support Contact",
+            "default": "IT",
+            "description": "Contact information for technical support included in messaging alerts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 25
+        },
+        "DeferralPeriod": {
+            "type": "integer",
+            "title": "Deferral Period",
+            "default": 14400,
+            "description": "Number of seconds between when the user clicks \"Defer\" and the next prompt appears.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 30
+        },
+        "HardRestartDelay": {
+            "type": "integer",
+            "title": "Hard Restart Delay",
+            "default": 300,
+            "description": "Number of seconds to wait between attempting a soft restart and forcing a restart.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 35
+        },
+        "MaxDeferralTime": {
+            "type": "integer",
+            "title": "Maximum Deferral Time",
+            "default": 259200,
+            "description": "Number of seconds between the first script run and the updates being enforced.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 40
+        },
+        "PromptTimeout": {
+            "type": "integer",
+            "title": "Prompt Timeout",
+            "default": 3600,
+            "description": "Number of seconds to wait before timing out the Install or Defer prompt.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 45
+        },
+        "SkipDeferral": {
+            "type": "boolean",
+            "title": "Skip Deferral",
+            "default": false,
+            "description": "Whether to bypass deferral time entirely and skip straight to update enforcement.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 50
+        },
+        "UpdateDelay": {
+            "type": "integer",
+            "title": "Update Delay",
+            "default": 600,
+            "description": "Number of seconds to wait between displaying the \"install updates\" message and applying updates, then attempting a soft restart.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 55
+        },
+        "WorkdayStartHour": {
+            "type": "integer",
+            "title": "Workday Start Hour",
+            "description": "The hour that a workday starts in your organization.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22
+            ],
+            "options": {
+                "enum_titles": [
+                    "12:00 AM",
+                    "1:00 AM",
+                    "2:00 AM",
+                    "3:00 AM",
+                    "4:00 AM",
+                    "5:00 AM",
+                    "6:00 AM",
+                    "7:00 AM",
+                    "8:00 AM",
+                    "9:00 AM",
+                    "10:00 AM",
+                    "11:00 AM",
+                    "12:00 PM",
+                    "1:00 PM",
+                    "2:00 PM",
+                    "3:00 PM",
+                    "4:00 PM",
+                    "5:00 PM",
+                    "6:00 PM",
+                    "7:00 PM",
+                    "8:00 PM",
+                    "9:00 PM",
+                    "10:00 PM"
+                ]
+            },
+            "property_order": 60
+        },
+        "WorkdayEndHour": {
+            "type": "integer",
+            "title": "Workday End Hour",
+            "description": "The hour that a workday ends in your organization.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "enum": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23
+            ],
+            "options": {
+                "enum_titles": [
+                    "1:00 AM",
+                    "2:00 AM",
+                    "3:00 AM",
+                    "4:00 AM",
+                    "5:00 AM",
+                    "6:00 AM",
+                    "7:00 AM",
+                    "8:00 AM",
+                    "9:00 AM",
+                    "10:00 AM",
+                    "11:00 AM",
+                    "12:00 PM",
+                    "1:00 PM",
+                    "2:00 PM",
+                    "3:00 PM",
+                    "4:00 PM",
+                    "5:00 PM",
+                    "6:00 PM",
+                    "7:00 PM",
+                    "8:00 PM",
+                    "9:00 PM",
+                    "10:00 PM",
+                    "11:00 PM"
+                ]
+            },
+            "property_order": 65
+        },
+        "DiagnosticLog": {
+            "type": "boolean",
+            "title": "Enable Diagnostic Log",
+            "default": false,
+            "description": "Whether to write to a persistent log file at /var/log/install-or-defer.log.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 70
+        },
+        "ManualUpdates": {
+            "type": "boolean",
+            "title": "Manual Updates",
+            "default": false,
+            "description": "Whether to prompt users to run updates manually via System Preferences.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/wavebirddash/install-or-defer#configuration-profile"
+                }
+            ],
+            "property_order": 75
+        }
+    }
+}
