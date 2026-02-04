@@ -306,6 +306,31 @@
             },
             "property_order": 100
         },
+        "finishedMessage": {
+            "type": "string",
+            "title": "Finished Message",
+            "description": "Custom message when Setup Manager workflow is complete. Supports Markdown and substitutions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finishedMessage"
+                }
+            ],
+            "property_order": 105
+        },
+        "startingMessage": {
+            "type": "string",
+            "title": "Starting Message",
+            "default": "Getting Ready…",
+            "description": "Custom message shown while Setup Manager is \"Getting Ready…\" Supports Markdown and substitutions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#startingMessage"
+                }
+            ],
+            "property_order": 110
+        },
         "networkQualityCheck": {
             "type": "boolean",
             "title": "Network Quality Check",
@@ -317,7 +342,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#networkqualitycheck"
                 }
             ],
-            "property_order": 105
+            "property_order": 115
         },
         "hideDebugLabel": {
             "type": "boolean",
@@ -329,7 +354,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#hidedebuglabel"
                 }
             ],
-            "property_order": 110
+            "property_order": 120
         },
         "simulateMDM": {
             "type": "string",
@@ -345,7 +370,7 @@
                 "Jamf Pro",
                 "Jamf School"
             ],
-            "property_order": 115
+            "property_order": 125
         },
         "help": {
             "type": "object",
@@ -386,7 +411,7 @@
                     ]
                 }
             },
-            "property_order": 120
+            "property_order": 130
         },
         "userEntry": {
             "type": "object",
@@ -1263,7 +1288,7 @@
                     ]
                 }
             },
-            "property_order": 125
+            "property_order": 135
         },
         "enrollmentActions": {
             "type": "array",
@@ -1372,7 +1397,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#actions"
                 }
             ],
-            "property_order": 130
+            "property_order": 140
         },
         "finishedScript": {
             "type": "string",
@@ -1384,7 +1409,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finishedscript"
                 }
             ],
-            "property_order": 135
+            "property_order": 145
         },
         "finishedTrigger": {
             "type": "string",
@@ -1396,19 +1421,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finishedtrigger"
                 }
             ],
-            "property_order": 140
-        },
-        "finishedMessage": {
-            "type": "string",
-            "title": "Finished Message",
-            "description": "Custom message when Setup Manager workflow is complete. Supports Markdown and substitutions.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finishedMessage"
-                }
-            ],
-            "property_order": 145
+            "property_order": 150
         },
         "webhooks": {
             "type": "object",
@@ -1506,7 +1519,7 @@
                     ]
                 }
             },
-            "property_order": 150
+            "property_order": 155
         },
         "networkCheck": {
             "type": "array",
@@ -1555,7 +1568,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/Docs/Network.md"
                 }
             ],
-            "property_order": 155
+            "property_order": 160
         },
         "PLEASE_DO_NOT_TRACK": {
             "type": "boolean",
@@ -1567,7 +1580,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/Docs/LaunchTracking.md"
                 }
             ],
-            "property_order": 160
+            "property_order": 165
         }
     }
 }
