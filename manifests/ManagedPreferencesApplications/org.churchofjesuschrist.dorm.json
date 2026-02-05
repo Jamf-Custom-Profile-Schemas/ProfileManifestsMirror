@@ -12,35 +12,35 @@
         "DaysBeforeDeadlineDisplayReminder": {
             "type": "integer",
             "title": "Days Before Deadline: Display Reminder",
-            "default": 14,
+            "default": 60,
             "description": "Number of days before the deadline when reminders start being displayed.",
             "property_order": 10
         },
         "DaysBeforeDeadlineBlurscreen": {
             "type": "integer",
             "title": "Days Before Deadline: Blur Screen",
-            "default": 3,
+            "default": 45,
             "description": "Number of days before the deadline when blur-screen enforcement starts.",
             "property_order": 15
         },
         "DaysBeforeDeadlineHidingButton2": {
             "type": "integer",
             "title": "Days Before Deadline: Hide Defer Button",
-            "default": 1,
+            "default": 21,
             "description": "Number of days before the deadline when the secondary button is hidden.",
             "property_order": 20
         },
         "DaysOfExcessiveUptimeWarning": {
             "type": "integer",
             "title": "Days of Excessive Uptime Warning",
-            "default": 1,
+            "default": 0,
             "description": "Number of days of excessive uptime before warning the user.",
             "property_order": 25
         },
         "MinimumDiskFreePercentage": {
             "type": "integer",
             "title": "Minimum Disk Free Percentage",
-            "default": 1,
+            "default": 99,
             "description": "Percent of free disk space required before warning the user.",
             "property_order": 30
         },
@@ -51,173 +51,187 @@
             "description": "Delay in minutes before enforcing reminders around meetings.",
             "property_order": 35
         },
+        "AcceptableAssertionApplicationNames": {
+            "type": "string",
+            "title": "Acceptable Assertion Application Names",
+            "default": "MSTeams zoom.us Webex",
+            "description": "Space-delimited list of application name substrings used to allowlist display sleep assertions; matching assertions defer reminders up to the Meeting Delay.",
+            "property_order": 40
+        },
         "OrganizationOverlayIconURL": {
             "type": "string",
             "title": "Organization Overlay Icon URL",
-            "default": "https://usw2.ics.services.jamfcloud.com/icon/hash_4804203ac36cbd7c83607487f4719bd4707f2e283500f54428153af17da082e2",
+            "default": "https://use2.ics.services.jamfcloud.com/icon/hash_2d64ce7f0042ad68234a2515211adb067ad6714703dd8ebd6f33c1ab30354b1d",
             "description": "URL to the organization overlay icon image.",
-            "property_order": 40
+            "property_order": 45
+        },
+        "OrganizationOverlayIconURLdark": {
+            "type": "string",
+            "title": "Organization Overlay Icon URL (Dark Mode)",
+            "default": "https://use2.ics.services.jamfcloud.com/icon/hash_d3a3bc5e06d2db5f9697f9b4fa095bfecb2dc0d22c71aadea525eb38ff981d39",
+            "description": "URL to the organization overlay icon image used when the interface is in Dark Mode. Falls back to OrganizationOverlayIconURL when unset.",
+            "property_order": 50
         },
         "SwapOverlayAndLogo": {
             "type": "boolean",
             "title": "Swap Overlay And Logo",
             "default": false,
             "description": "Whether to swap the overlay icon and primary logo positions.",
-            "property_order": 45
+            "property_order": 55
         },
         "DateFormatDeadlineHumanReadable": {
             "type": "string",
             "title": "Deadline Date Format (Human Readable)",
             "default": "+%a, %d-%b-%Y, %-l:%M %p",
             "description": "strftime format string used to render the deadline date for users.",
-            "property_order": 50
+            "property_order": 60
         },
         "SupportTeamName": {
             "type": "string",
             "title": "Support Team Name",
             "default": "IT Support",
             "description": "Display name of the support team.",
-            "property_order": 55
+            "property_order": 65
         },
         "SupportTeamPhone": {
             "type": "string",
             "title": "Support Team Phone",
             "default": "+1 (801) 555-1212",
             "description": "Phone number for support.",
-            "property_order": 60
+            "property_order": 70
         },
         "SupportTeamEmail": {
             "type": "string",
             "title": "Support Team Email",
             "default": "rescue@domain.org",
             "description": "Email address for support.",
-            "property_order": 65
+            "property_order": 75
         },
         "SupportTeamWebsite": {
             "type": "string",
             "title": "Support Team Website",
             "default": "https://support.domain.org",
             "description": "Website URL for support.",
-            "property_order": 70
+            "property_order": 80
         },
         "SupportKB": {
             "type": "string",
             "title": "Support KB Identifier",
-            "default": "KB8675309",
+            "default": "Update macOS on Mac",
             "description": "Knowledge base article identifier.",
-            "property_order": 75
+            "property_order": 85
         },
         "InfoButtonAction": {
             "type": "string",
             "title": "Info Button Action URL",
             "default": "https://support.apple.com/108382",
             "description": "URL opened when the info button is clicked.",
-            "property_order": 80
+            "property_order": 90
         },
         "SupportKBURL": {
             "type": "string",
             "title": "Support KB Markdown Link",
-            "default": "[108382](https://support.apple.com/108382)",
+            "default": "[Update macOS on Mac](https://support.apple.com/108382)",
             "description": "Markdown-formatted link to the support knowledge base article.",
-            "property_order": 85
+            "property_order": 95
         },
         "Title": {
             "type": "string",
             "title": "Dialog Title",
             "default": "macOS {titleMessageUpdateOrUpgrade} Required",
             "description": "Title text displayed at the top of the DDM dialog.",
-            "property_order": 90
+            "property_order": 100
         },
         "Button1Text": {
             "type": "string",
             "title": "Primary Button Text",
             "default": "Open Software Update",
             "description": "Label for the primary action button.",
-            "property_order": 95
+            "property_order": 105
         },
         "Button2Text": {
             "type": "string",
             "title": "Secondary Button Text",
             "default": "Remind Me Later",
             "description": "Label for the secondary (remind later) button.",
-            "property_order": 100
+            "property_order": 110
         },
         "InfoButtonText": {
             "type": "string",
             "title": "Info Button Text",
-            "default": "KB8675309",
+            "default": "Update macOS on Mac",
             "description": "Label for the info button.",
-            "property_order": 105
+            "property_order": 115
         },
         "ExcessiveUptimeWarningMessage": {
             "type": "string",
             "title": "Excessive Uptime Warning Message",
-            "default": "<br><br>**Note:** Your Mac has been powered-on for **${uptimeHumanReadable}**. For more reliable results, please manually restart your Mac before proceeding.",
+            "default": "<br><br>**Note:** Your Mac has been powered-on for **{uptimeHumanReadable}**. For more reliable results, please manually restart your Mac before proceeding.",
             "description": "Markdown-formatted text displayed in the dialog.",
-            "property_order": 110
+            "property_order": 120
         },
         "DiskSpaceWarningMessage": {
             "type": "string",
             "title": "Disk Space Warning Message",
-            "default": "<br><br>Sample **Note:** Your Mac has only **{diskSpaceHumanReadable}**, which may prevent this macOS {titleMessageUpdateOrUpgrade:l}.",
+            "default": "<br><br>**Note:** Your Mac has only **{diskSpaceHumanReadable}**, which may prevent this macOS {titleMessageUpdateOrUpgrade:l}.",
             "description": "Markdown-formatted text displayed in the dialog.",
-            "property_order": 115
+            "property_order": 125
         },
         "StagedUpdateMessage": {
             "type": "string",
             "title": "Staged Update Message",
-            "default": "<br><br>Sample **Good news!** The macOS update has already been downloaded. When ready, click **{button1text}** to install.",
+            "default": "<br><br>**Good news!** The macOS {ddmVersionString} update has already been downloaded to your Mac and is ready to install. Installation will proceed quickly when you click **{button1text}**.",
             "description": "Markdown-formatted message displayed when the update is fully staged (downloaded and ready).",
-            "property_order": 120
+            "property_order": 130
         },
         "PartiallyStagedUpdateMessage": {
             "type": "string",
             "title": "Partially Staged Update Message",
-            "default": "<br><br>Sample Your Mac is currently preparing the required macOS update.",
+            "default": "<br><br>Your Mac has begun downloading and preparing required macOS update components. Installation will be quicker once all assets have finished staging.",
             "description": "Markdown-formatted message displayed when the update is partially staged (preparing).",
-            "property_order": 125
+            "property_order": 135
         },
         "PendingDownloadMessage": {
             "type": "string",
             "title": "Pending Download Message",
-            "default": "<br><br>Sample Your Mac will begin downloading the update shortly.",
+            "default": "<br><br>Your Mac will begin downloading the update shortly.",
             "description": "Markdown-formatted message displayed when the update download is pending.",
-            "property_order": 130
+            "property_order": 140
         },
         "HideStagedUpdateInfo": {
             "type": "boolean",
             "title": "Hide Staged Update Info",
             "default": false,
             "description": "Whether to hide staged update information (e.g., staged/partial/pending messages) in the UI.",
-            "property_order": 135
+            "property_order": 145
         },
         "Message": {
             "type": "string",
             "title": "Dialog Message",
-            "default": "**A required macOS ${titleMessageUpdateOrUpgrade:l} is now available**<br><br>Happy $( date +'%A' ), ${loggedInUserFirstname}!<br><br>Please ${titleMessageUpdateOrUpgrade:l} to macOS **${ddmVersionString}** to ensure your Mac remains secure and compliant with organizational policies.<br><br>To perform the ${titleMessageUpdateOrUpgrade:l} now, click **${button1text}**, review the on-screen instructions, then click **${softwareUpdateButtonText}**.<br><br>If you are unable to perform this ${titleMessageUpdateOrUpgrade:l} now, click **${button2text}** to be reminded again later.<br><br>However, your device **will automatically restart and ${titleMessageUpdateOrUpgrade:l}** on **${ddmEnforcedInstallDateHumanReadable}** if you have not ${titleMessageUpdateOrUpgrade:l}d before the deadline.${excessiveUptimeWarningMessage}<br><br>For assistance, please contact **${supportTeamName}** by clicking the (?) button in the bottom, right-hand corner.",
+            "default": "**A required macOS {titleMessageUpdateOrUpgrade:l} is now available**<br><br>Happy {weekday}, {loggedInUserFirstname}!<br><br>Please {titleMessageUpdateOrUpgrade:l} to macOS **{ddmVersionString}** to ensure your Mac remains secure and compliant with organizational policies.{updateReadyMessage}<br><br>To perform the {titleMessageUpdateOrUpgrade:l} now, click **{button1text}**, review the on-screen instructions, then click **{softwareUpdateButtonText}**.<br><br>If you are unable to perform this {titleMessageUpdateOrUpgrade:l} now, click **{button2text}** to be reminded again later (which is disabled when the deadline is imminent).<br><br>However, your device **will automatically restart and {titleMessageUpdateOrUpgrade:l}** on **{ddmEnforcedInstallDateHumanReadable}** if you have not {titleMessageUpdateOrUpgrade:l}d before the deadline.{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}<br><br>For assistance, please contact **{supportTeamName}** by clicking the (?) button in the bottom, right-hand corner.",
             "description": "Markdown-formatted message body displayed in the dialog.",
-            "property_order": 140
+            "property_order": 150
         },
         "InfoBox": {
             "type": "string",
             "title": "Info Box Content",
-            "default": "**Current:** {installedmacOSVersion}<br><br>**Required:** {ddmVersionString}<br><br>**Deadline:** {ddmVersionStringDeadlineHumanReadable}<br><br>**Day(s) Remaining:** {ddmVersionStringDaysRemaining}",
+            "default": "**Current:** macOS {installedmacOSVersion}<br><br>**Required:** macOS {ddmVersionString}<br><br>**Deadline:** {ddmVersionStringDeadlineHumanReadable}<br><br>**Day(s) Remaining:** {ddmVersionStringDaysRemaining}<br><br>**Last Restart:** {uptimeHumanReadable}<br><br>**Free Disk Space:** {diskSpaceHumanReadable}",
             "description": "Markdown-formatted info box content showing current and required versions and deadline.",
-            "property_order": 145
+            "property_order": 155
         },
         "HelpMessage": {
             "type": "string",
             "title": "Help Message",
             "default": "For assistance, please contact: **{supportTeamName}**<br>- **Telephone:** {supportTeamPhone}<br>- **Email:** {supportTeamEmail}<br>- **Website:** {supportTeamWebsite}<br>- **Knowledge Base Article:** {supportKBURL}<br><br>**User Information:**<br>- **Full Name:** {userfullname}<br>- **User Name:** {username}<br><br>**Computer Information:**<br>- **Computer Name:** {computername}<br>- **Serial Number:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**Script Information:**<br>- **Dialog:** {dialogVersion}<br>- **Script:** {scriptVersion}<br>",
             "description": "Markdown-formatted help text including support, user, and computer information.",
-            "property_order": 150
+            "property_order": 160
         },
         "HelpImage": {
             "type": "string",
             "title": "Help Image",
             "default": "qr={infobuttonaction}",
             "description": "Help image configuration, such as QR code pointing to the info button action.",
-            "property_order": 155
+            "property_order": 165
         }
     }
 }
