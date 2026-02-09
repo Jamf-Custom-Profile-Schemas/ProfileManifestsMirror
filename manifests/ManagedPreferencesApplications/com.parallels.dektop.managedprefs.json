@@ -31,6 +31,30 @@
                 }
             ],
             "property_order": 10
+        },
+        "SsoEmailDialogHeaderText": {
+            "type": "string",
+            "title": "SSO Dialogue Header Text (Optional)",
+            "description": "Enter SSO dialogue header text:",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.parallels.com/parallels-desktop-licensing-guide/managing-subscriptions-licences-and-seats/viewing-subscriptions-and-subscription-details"
+                }
+            ],
+            "property_order": 15
+        },
+        "SsoEmailDialogDescriptionText": {
+            "type": "string",
+            "title": "SSO Dialogue Description Text (Optional)",
+            "description": "Enter SSO dialogue description text:",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.parallels.com/parallels-desktop-licensing-guide/managing-subscriptions-licences-and-seats/viewing-subscriptions-and-subscription-details"
+                }
+            ],
+            "property_order": 20
         }
     }
 }
