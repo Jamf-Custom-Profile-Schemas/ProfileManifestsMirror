@@ -173,6 +173,19 @@
             ],
             "property_order": 50
         },
+        "DisableOptInNotification": {
+            "type": "boolean",
+            "title": "Disable Opt-In Notification",
+            "default": false,
+            "description": "When Set to TRUE, prevents Opt-In notification/pop-up window from showing even when HowToCheck is set to Automatic.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/mau-preferences#disableoptinnotification"
+                }
+            ],
+            "property_order": 55
+        },
         "UpdateCache": {
             "type": "string",
             "title": "Update Cache Server",
@@ -183,7 +196,7 @@
                     "href": "https://macadmins.software/docs/MAU_CachingServer.pdf"
                 }
             ],
-            "property_order": 55
+            "property_order": 60
         },
         "UpdateCheckInterval": {
             "type": "integer",
@@ -196,7 +209,7 @@
                     "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/mau-preferences#updatecheckinterval"
                 }
             ],
-            "property_order": 60
+            "property_order": 65
         },
         "UpdateCheckFrequency": {
             "type": "integer",
@@ -209,7 +222,7 @@
                     "href": "https://macadmins.slack.com/archives/C07UZ1X7B/p1493835630209456"
                 }
             ],
-            "property_order": 65
+            "property_order": 70
         },
         "UpdateDeadline.DaysBeforeForcedQuit": {
             "type": "integer",
@@ -221,7 +234,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-a-deadline-for-a-certain-number-of-days-after-the-update-is-detected"
                 }
             ],
-            "property_order": 70
+            "property_order": 75
         },
         "UpdateDeadline.FinalCountDown": {
             "type": "integer",
@@ -234,7 +247,7 @@
                     "href": "https://docs.microsoft.com/en-us/officeupdates/release-history-microsoft-autoupdate#june-2022-release"
                 }
             ],
-            "property_order": 75
+            "property_order": 80
         },
         "UpdateDeadline.StartAutomaticUpdates": {
             "type": "integer",
@@ -247,7 +260,7 @@
                     "href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline#configure-automatic-download-and-install-mode"
                 }
             ],
-            "property_order": 80
+            "property_order": 85
         },
         "UpdaterOptimization": {
             "type": "string",
@@ -264,7 +277,7 @@
                 "Size",
                 "CPU"
             ],
-            "property_order": 85
+            "property_order": 90
         },
         "OptionalUpdatesDeferralsDays": {
             "type": "integer",
@@ -276,7 +289,7 @@
                     "href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deferred-updates#global-deferral-days-setting"
                 }
             ],
-            "property_order": 90
+            "property_order": 95
         },
         "OptionalUpdatesDeferrals": {
             "type": "object",
@@ -372,7 +385,7 @@
                     }
                 }
             },
-            "property_order": 95
+            "property_order": 100
         },
         "Applications": {
             "type": "object",
@@ -911,7 +924,7 @@
                     }
                 }
             },
-            "property_order": 100
+            "property_order": 105
         },
         "UpdateDeadline.ApplicationsForcedUpdateSchedule": {
             "type": "object",
@@ -1401,7 +1414,7 @@
                     }
                 }
             },
-            "property_order": 105
+            "property_order": 110
         }
     }
 }
