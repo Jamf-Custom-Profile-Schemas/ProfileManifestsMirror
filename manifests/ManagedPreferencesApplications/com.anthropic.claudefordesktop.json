@@ -36,6 +36,20 @@
             "default": true,
             "description": "Enable or disable local Model Context Protocol (MCP) servers.",
             "property_order": 25
+        },
+        "isClaudeCodeForDesktopEnabled": {
+            "type": "boolean",
+            "title": "Enable Claude Code for Desktop",
+            "default": true,
+            "description": "Enable Claude code access in desktop.",
+            "property_order": 30
+        },
+        "secureVmFeaturesEnabled": {
+            "type": "boolean",
+            "title": "Enable Secure VM Features",
+            "default": true,
+            "description": "Enable Cowork access in desktop",
+            "property_order": 35
         }
     }
 }
