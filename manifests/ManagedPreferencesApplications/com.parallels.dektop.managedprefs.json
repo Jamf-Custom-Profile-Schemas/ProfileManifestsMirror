@@ -55,6 +55,18 @@
                 }
             ],
             "property_order": 20
+        },
+        "SsoEmailDialogLabelText": {
+            "type": "string",
+            "title": "SSO Dialogue Label Text (Optional)",
+            "description": "Enter SSO dialogue label text:",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.parallels.com/parallels-desktop-licensing-guide/managing-subscriptions-licences-and-seats/viewing-subscriptions-and-subscription-details"
+                }
+            ],
+            "property_order": 25
         }
     }
 }
