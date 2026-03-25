@@ -10,8 +10,6 @@
                 "enum": [
                     "Accessibility",
                     "ActionButton",
-                    "AgeAssurance",
-                    "AgeBasedSafetySettings",
                     "Android",
                     "Appearance",
                     "AppleID",
@@ -60,8 +58,6 @@
                     "enum_titles": [
                         "Accessibility",
                         "Action Button",
-                        "Age Assurance",
-                        "Age-Based Safety Settings",
                         "Android",
                         "Appearance",
                         "Apple ID",

@@ -23,6 +23,45 @@
             },
             "description": "An array of strings representing the composed identifiers of apps. The device allows the corresponding apps to use File Provider extension desktop and documents synchronization. If present, and 'ManagementAllowsKnownFolderSyncing' is set to 'true', the device allows only the apps in this list to use desktop and documents synchronization. This key is ignored if 'ManagementAllowsKnownFolderSyncing' is set to 'false'. This setting does not impact the ability for apps to use File Provider extension volume access. The format of the app identifiers is \"Bundle-ID (Team-ID)\", for example 'com.example.app (ABCD1234)'.",
             "property_order": 15
+        },
+        "ManagementAllowsRemoteSyncing": {
+            "type": "boolean",
+            "default": true,
+            "description": "If 'false', the device prevents the File Provider extension from using synchronization in any app. Also, none of the other options will be evaluated. Synchronization will be totally disabled for any application.",
+            "property_order": 20
+        },
+        "ManagementRemoteSyncingAllowList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "A composed app identifier. The format is \"Bundle.Identifier (TeamIdentifier)\"."
+            },
+            "description": "An array of strings representing the composed identifiers of apps. The device allows the corresponding apps to use File Provider extension synchronization. If present, and 'ManagementAllowsRemoteSyncing' is set to 'true', the device allows only the apps in this list to use synchronization. This key is ignored if 'ManagementAllowsRemoteSyncing' is set to 'false'. If present, the other options will only be evaluated for the apps in this list. The format of the app identifiers is \"Bundle-ID (Team-ID)\", for example 'com.example.app (ABCD1234)'.",
+            "property_order": 25
+        },
+        "ManagementAllowsExternalVolumeSyncing": {
+            "type": "boolean",
+            "default": true,
+            "description": "If 'false', the device only allows File Provider extension volume synchronization for the system \"home\" volume and any data separated volume, and prevents synchronization with any other volumes. If 'true'', the device allows File Provider extension volume synchronization for the system \"home\" volume, any data separated volume, and any encrypted APFS volumes (on either internal or external media).",
+            "property_order": 30
+        },
+        "ManagementExternalVolumeSyncingAllowList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "A composed app identifier. The format is \"Bundle.Identifier (TeamIdentifier)\"."
+            },
+            "description": "An array of strings representing the composed identifiers of apps. The device allows the corresponding apps to use File Provider extension volume synchronization. If present, and 'ManagementAllowsExternalVolumeSyncing' is set to 'true', the device allows only the apps in this list to use volume synchronization. This key is ignored if 'ManagementAllowsExternalVolumeSyncing' is set to 'false'. The format of the app identifiers is \"Bundle-ID (Team-ID)\", for example 'com.example.app (ABCD1234)'.",
+            "property_order": 35
+        },
+        "ManagementDomainAutoEnablementList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "A composed app identifier. The format is \"Bundle.Identifier (TeamIdentifier)\"."
+            },
+            "description": "An array of strings representing the composed identifiers of apps. The device automatically enables the File Provider domains for the corresponding apps. The device doesn't enable existing domains if enrollment happens after they are created. The device doesn't prevent the user from disabling these File Provider domains. Users need to manually enable File Provider domains in the Finder if their corresponding apps aren't listed here. The format of the app identifiers is \"Bundle-ID (Team-ID)\", for example 'com.example.app (ABCD1234)'.",
+            "property_order": 40
         }
     }
 }

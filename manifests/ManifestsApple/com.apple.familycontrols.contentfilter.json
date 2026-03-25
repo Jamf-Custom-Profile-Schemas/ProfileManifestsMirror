@@ -12,7 +12,7 @@
             "type": "boolean",
             "title": "Enable site allowlist",
             "default": false,
-            "description": "Use 'allowlistEnabled' instead.",
+            "description": "Use 'allowListEnabled' instead.",
             "property_order": 10
         },
         "siteWhitelist": {
@@ -35,7 +35,7 @@
                 }
             },
             "title": "Site Allowlist",
-            "description": "Use 'siteAllowlist' instead.",
+            "description": "Use 'siteAllowList' instead.",
             "property_order": 15
         },
         "useContentFilter": {
@@ -53,7 +53,7 @@
                 "description": "An allowed site."
             },
             "title": "Content Filter Allowlist",
-            "description": "Use 'filterAllowlist' instead.",
+            "description": "Use 'filterAllowList' instead.",
             "property_order": 25
         },
         "filterBlacklist": {
@@ -64,16 +64,16 @@
                 "description": "A disallowed site."
             },
             "title": "Content Filter Backlist",
-            "description": "Use 'filterDenylist' instead.",
+            "description": "Use 'filterDenyList' instead.",
             "property_order": 30
         },
-        "allowlistEnabled": {
+        "allowListEnabled": {
             "type": "boolean",
             "default": false,
             "description": "If 'true', enables web content filters.",
             "property_order": 35
         },
-        "siteAllowlist": {
+        "siteAllowList": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -89,10 +89,10 @@
                     }
                 }
             },
-            "description": "An array of sites that defines an allow list. If specified, this defines additional allowed sites besides those in the automated allow list and deny list, including disallowed adult sites.\n\nThis key is required if 'allowlistEnabled' is 'true'.",
+            "description": "An array of sites that defines an allow list. If specified, this defines additional allowed sites besides those in the automated allow list and deny list, including disallowed adult sites.\n\nThis key is required if 'allowListEnabled' is 'true'.",
             "property_order": 40
         },
-        "filterAllowlist": {
+        "filterAllowList": {
             "type": "array",
             "items": {
                 "type": "string",
@@ -101,7 +101,7 @@
             "description": "The array of URLs that defines an allow list. When 'restrictWeb' and 'useContentFilter' are enabled, only URLs in the allow list are available to the user.",
             "property_order": 45
         },
-        "filterDenylist": {
+        "filterDenyList": {
             "type": "array",
             "items": {
                 "type": "string",
