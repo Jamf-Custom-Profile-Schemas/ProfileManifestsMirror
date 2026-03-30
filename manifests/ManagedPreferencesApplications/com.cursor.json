@@ -1,0 +1,97 @@
+{
+    "title": "Cursor (com.todesktop.230313mzl4w4u92)",
+    "description": "Cursor settings",
+    "properties": {
+        "AllowedExtensions": {
+            "type": "string",
+            "title": "Allowed Extensions",
+            "description": "Controls which extensions can be installed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cursor.com/docs/enterprise/deployment-patterns#string-policies"
+                }
+            ],
+            "property_order": 5
+        },
+        "AllowedTeamId": {
+            "type": "string",
+            "title": "Allowed Team IDs",
+            "description": "Controls which team IDs are allowed to log in. Users with unauthorized team IDs are forcefully logged out.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cursor.com/docs/enterprise/deployment-patterns#string-policies"
+                }
+            ],
+            "property_order": 10
+        },
+        "ExtensionGalleryServiceUrl": {
+            "type": "string",
+            "title": "Extension Gallery Service URL",
+            "description": "Configures a custom extension marketplace URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cursor.com/docs/enterprise/deployment-patterns#extensiongalleryserviceurl-policy"
+                }
+            ],
+            "property_order": 15
+        },
+        "NetworkDisableHttp2": {
+            "type": "boolean",
+            "title": "Disable HTTP/2 on Network Requests",
+            "default": false,
+            "description": "Disables HTTP/2 for all requests, using HTTP/1.1 instead.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cursor.com/docs/enterprise/deployment-patterns#boolean-policies"
+                }
+            ],
+            "property_order": 20
+        },
+        "UpdateMode": {
+            "type": "string",
+            "title": "Update Mode",
+            "default": "default",
+            "description": "Controls automatic update behavior. Set to 'none' to disable updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cursor.com/docs/enterprise/deployment-patterns#updatemode-policy"
+                }
+            ],
+            "enum": [
+                "none",
+                "manual",
+                "start",
+                "default",
+                "silentlyApplyOnQuit"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disable all automatic updates",
+                    "Users can manually check for updates",
+                    "Check for updates when Cursor starts",
+                    "Default behavior (same as start)",
+                    "Download updates in the background and apply when Cursor quits"
+                ]
+            },
+            "property_order": 25
+        },
+        "WorkspaceTrustEnabled": {
+            "type": "boolean",
+            "title": "Workspace Trust Enabled",
+            "default": false,
+            "description": "Controls whether Workspace Trust is enabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cursor.com/docs/enterprise/deployment-patterns#workspacetrustenabled-policy"
+                }
+            ],
+            "property_order": 30
+        }
+    }
+}
