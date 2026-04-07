@@ -96,6 +96,19 @@
                 }
             ],
             "property_order": 35
+        },
+        "NSMenuEnableActionImages": {
+            "type": "boolean",
+            "title": "Enable Menu Item Icons",
+            "default": true,
+            "description": "If 'false', menu item icons added in macOS Tahoe (26.0) are removed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://mastodon.social/@stroughtonsmith/116262411548746327"
+                }
+            ],
+            "property_order": 40
         }
     }
 }
