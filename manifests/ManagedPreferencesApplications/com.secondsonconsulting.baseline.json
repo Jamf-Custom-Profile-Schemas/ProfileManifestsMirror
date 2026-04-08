@@ -36,6 +36,17 @@
                         "type": "boolean",
                         "title": "Run as User",
                         "description": "Enable this option to run the script as the logged in user."
+                    },
+                    "Retries": {
+                        "type": "integer",
+                        "title": "Retries",
+                        "default": false,
+                        "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
+                    },
+                    "CurlOptions": {
+                        "type": "string",
+                        "title": "Curl Options",
+                        "description": "Custom Curl Options to used when downloading this script."
                     }
                 }
             },
@@ -72,6 +83,33 @@
                         "type": "string",
                         "title": "Subtitle",
                         "description": "The subtitle text to appear on this line item."
+                    },
+                    "StatusIconWait": {
+                        "type": "string",
+                        "title": "Wait Icon",
+                        "description": "The icon used for the wait list status, for this specific line item."
+                    },
+                    "StatusIconSuccess": {
+                        "type": "string",
+                        "title": "Success Icon",
+                        "description": "The icon used for the success list status, for this specific line item."
+                    },
+                    "StatusIconFail": {
+                        "type": "string",
+                        "title": "Fail Icon",
+                        "description": "The icon used for the fail list status, for this specific line item."
+                    },
+                    "Retries": {
+                        "type": "integer",
+                        "title": "Retries",
+                        "default": false,
+                        "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
+                    },
+                    "HideListView": {
+                        "type": "boolean",
+                        "title": "Hide List While Running",
+                        "default": false,
+                        "description": "Hide the window while this item is running. Default is false"
                     }
                 }
             },
@@ -123,6 +161,38 @@
                         "type": "string",
                         "title": "Subtitle",
                         "description": "The subtitle text to appear on this line item."
+                    },
+                    "StatusIconWait": {
+                        "type": "string",
+                        "title": "Wait Icon",
+                        "description": "The icon used for the wait list status, for this specific line item."
+                    },
+                    "StatusIconSuccess": {
+                        "type": "string",
+                        "title": "Success Icon",
+                        "description": "The icon used for the success list status, for this specific line item."
+                    },
+                    "StatusIconFail": {
+                        "type": "string",
+                        "title": "Fail Icon",
+                        "description": "The icon used for the fail list status, for this specific line item."
+                    },
+                    "Retries": {
+                        "type": "integer",
+                        "title": "Retries",
+                        "default": false,
+                        "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
+                    },
+                    "HideListView": {
+                        "type": "boolean",
+                        "title": "Hide List While Running",
+                        "default": false,
+                        "description": "Hide the window while this item is running. Default is false"
+                    },
+                    "CurlOptions": {
+                        "type": "string",
+                        "title": "Curl Options",
+                        "description": "Custom Curl Options to used when downloading this package."
                     }
                 }
             },
@@ -174,6 +244,38 @@
                         "type": "string",
                         "title": "Subtitle",
                         "description": "The subtitle text to appear on this line item."
+                    },
+                    "HideListView": {
+                        "type": "boolean",
+                        "title": "Hide List While Running",
+                        "default": false,
+                        "description": "Hide the window while this item is running. Default is false"
+                    },
+                    "StatusIconWait": {
+                        "type": "string",
+                        "title": "Wait Icon",
+                        "description": "The icon used for the wait list status, for this specific line item."
+                    },
+                    "StatusIconSuccess": {
+                        "type": "string",
+                        "title": "Success Icon",
+                        "description": "The icon used for the success list status, for this specific line item."
+                    },
+                    "StatusIconFail": {
+                        "type": "string",
+                        "title": "Fail Icon",
+                        "description": "The icon used for the fail list status, for this specific line item."
+                    },
+                    "Retries": {
+                        "type": "integer",
+                        "title": "Retries",
+                        "default": false,
+                        "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
+                    },
+                    "CurlOptions": {
+                        "type": "string",
+                        "title": "Curl Options",
+                        "description": "Custom Curl Options to used when downloading this script."
                     }
                 }
             },
@@ -246,6 +348,17 @@
                         "type": "boolean",
                         "title": "Run as User",
                         "description": "Enable this option to run the script as the logged in user."
+                    },
+                    "Retries": {
+                        "type": "integer",
+                        "title": "Retries",
+                        "default": false,
+                        "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
+                    },
+                    "CurlOptions": {
+                        "type": "string",
+                        "title": "Curl Options",
+                        "description": "Custom Curl Options to used when downloading this script."
                     }
                 }
             },
@@ -273,104 +386,189 @@
             "description": "This setting controls whether Baseline forces a restart after completion.",
             "property_order": 45
         },
-        "BlurScreen": {
-            "type": "boolean",
-            "title": "Blur Screen",
-            "default": true,
-            "description": "This setting controls whether Baseline uses the SwiftDialog --blurscreen feature. Default is true. If you set to false, consider using --ontop in your DialogListOptions key",
-            "property_order": 50
-        },
-        "ProgressBar": {
-            "type": "boolean",
-            "title": "Show Progress Bar",
-            "default": false,
-            "description": "This setting controls whether Baseline displays a progress bar.",
-            "property_order": 55
-        },
-        "ProgressBarDisplayNames": {
-            "type": "boolean",
-            "title": "Show Display Names on Progress Bar",
-            "default": false,
-            "description": "This setting controls whether Baseline displays the current item being processed under the progress bar.",
-            "property_order": 60
-        },
         "CleanupAfterUse": {
             "type": "boolean",
             "title": "Cleanup After Use",
             "default": true,
             "description": "This setting controls whether Baseline deletes it's install directory after use: /usr/local/Baseline.",
-            "property_order": 65
-        },
-        "ReinstallDialog": {
-            "type": "boolean",
-            "title": "Reinstall SwiftDialog",
-            "description": "Deprecated: This feature was removed in v.2.3, as it is no longer needed. This setting controls whether Baseline will reinstall SwiftDialog as the final step before completion. Default behavior if this key is omitted will reinstall SwiftDialog if a custom PNG is found in /Library/Application Support/Dialog/Dialog.png. Leave this as default if you use Baseline to deploy a custom SwiftDialog icon. Set to false if you do not want Baseline to ever reinstall SwiftDialog. Set to True if you always want to reinstall SwiftDialog after each Baseline.",
-            "property_order": 70
-        },
-        "InstallomatorSwiftDialogIntegration": {
-            "type": "boolean",
-            "title": "Use Installomator SwiftDialog Integration",
-            "default": false,
-            "description": "Tell Installomator to use it's built in SwiftDialog integration for the List View.",
-            "property_order": 75
+            "property_order": 50
         },
         "IgnoreDefaultInstallomatorOptions": {
             "type": "boolean",
             "title": "Ignore Default Installomator Options",
             "default": false,
             "description": "By default, Baseline uses \"NOTIFY=silent\" and \"BLOCKING_PROCESS_ACTION=kill\" Installomator options. Setting this to True means Baseline will not use those options.",
-            "property_order": 80
+            "property_order": 55
         },
-        "Button1Enabled": {
+        "SkipSuccessDialog": {
             "type": "boolean",
-            "title": "Button 1 Enabled",
+            "title": "Skip Success Dialog",
             "default": false,
-            "description": "This setting enables SwiftDialog \"Button 1\" (the OK button) on the Baseline List View. This allows users to dismiss the list view and continue working while Baseline runs. By default this button is disabled.",
-            "property_order": 85
+            "description": "If set to true, Baseline will not present a Success dialog at completion.",
+            "property_order": 60
         },
-        "JamfVerbose": {
+        "SkipFailDialog": {
             "type": "boolean",
-            "title": "Verbose Jamf Items",
+            "title": "Skip Failure Dialog",
             "default": false,
-            "description": "If set to true, when a Script is processing a jamf policy (/usr/local/bin/jamf), Baseline will watch the Jamf log to provide more verbose output on that line item. Similar to the Installomator integration, text and a progress circle will be used for all jamf items. ",
-            "property_order": 90
+            "description": "If set to true, Baseline will not present a Failure dialog at completion.",
+            "property_order": 65
+        },
+        "SilentMode": {
+            "type": "boolean",
+            "title": "Silent Mode",
+            "default": false,
+            "description": "If set to true, no dialog windows will be created. All items and item types will process as normal.",
+            "property_order": 70
         },
         "CloseListBeforeFinalScripts": {
             "type": "boolean",
             "title": "Close List View Before Final Scripts",
             "default": false,
             "description": "If set to true, Baseline will close the list view window before running FinalScripts. Use this option if you want to utilize FinalScripts to have the user complete actions prior to the Baseline completion dialog.",
-            "property_order": 95
+            "property_order": 75
         },
         "DialogListOptions": {
             "type": "string",
             "title": "Dialog List Window Options",
             "description": "SwiftDialog options for the primary Baseline progress list window.",
-            "property_order": 100
+            "property_order": 80
         },
         "DialogSuccessOptions": {
             "type": "string",
             "title": "Dialog Success Window Options",
             "description": "SwiftDialog options for the Success Dialog window.",
-            "property_order": 105
+            "property_order": 85
         },
         "DialogFailureOptions": {
             "type": "string",
             "title": "Dialog Failure Window Options",
             "description": "SwiftDialog options for the Failure Dialog window.",
+            "property_order": 90
+        },
+        "DialogInspectModeOptions": {
+            "type": "string",
+            "title": "Dialog Inspect Mode Window Options",
+            "description": "SwiftDialog options for Inspect Mode. Most options should be in the JSON file, but some can be passed here. See swiftDialog documentation for specifics.",
+            "property_order": 95
+        },
+        "InspectModeJSON": {
+            "type": "string",
+            "title": "Inspect Mode JSON",
+            "description": "Path to your Inspect Mode JSON file. Using this option enables \"Inspect Mode\". DialogListView options will not be respected, and no Baseline DialogListView will be drawn. Inspect Mode is enabled after InitialScripts",
+            "property_order": 100
+        },
+        "BlurScreen": {
+            "type": "boolean",
+            "title": "Blur Screen",
+            "default": true,
+            "description": "This setting controls whether Baseline uses the SwiftDialog --blurscreen feature. Default is true. If you set to false, consider using --ontop in your DialogListOptions key",
+            "property_order": 105
+        },
+        "ShowList": {
+            "type": "boolean",
+            "title": "Show List",
+            "default": true,
+            "description": "If false, the ListView will not show any list items. Instead, a standard Dialog window is drawn with the options configured in `DialogListOptions`. If used with progress bar, the progress bar will still be displayed.",
             "property_order": 110
+        },
+        "ProgressBar": {
+            "type": "boolean",
+            "title": "Show Progress Bar",
+            "default": false,
+            "description": "This setting controls whether Baseline displays a progress bar.",
+            "property_order": 115
+        },
+        "ProgressBarDisplayNames": {
+            "type": "boolean",
+            "title": "Show Display Names on Progress Bar",
+            "default": false,
+            "description": "This setting controls whether Baseline displays the current item being processed under the progress bar.",
+            "property_order": 120
+        },
+        "InstallomatorSwiftDialogIntegration": {
+            "type": "boolean",
+            "title": "Use Installomator SwiftDialog Integration",
+            "default": false,
+            "description": "Tell Installomator to use it's built in SwiftDialog integration for the List View.",
+            "property_order": 125
+        },
+        "JamfVerbose": {
+            "type": "boolean",
+            "title": "Verbose Jamf Items",
+            "default": false,
+            "description": "If set to true, when a Script is processing a jamf policy (/usr/local/bin/jamf), Baseline will watch the Jamf log to provide more verbose output on that line item. Similar to the Installomator integration, text and a progress circle will be used for all jamf items. ",
+            "property_order": 130
+        },
+        "Button1Enabled": {
+            "type": "boolean",
+            "title": "Button 1 Enabled",
+            "default": false,
+            "description": "This setting enables SwiftDialog \"Button 1\" (the OK button) on the Baseline List View. This allows users to dismiss the list view and continue working while Baseline runs. By default this button is disabled.",
+            "property_order": 135
+        },
+        "GlobalDialogStatusIconWait": {
+            "type": "string",
+            "title": "Global Status Icon - Wait",
+            "description": "The icon used for the wait list status, if no specific wait status icon is set.",
+            "property_order": 140
+        },
+        "GlobalDialogStatusIconSuccess": {
+            "type": "string",
+            "title": "Global Status Icon - Success",
+            "description": "The icon used for the success list status, if no specific success status icon is set.",
+            "property_order": 145
+        },
+        "GlobalDialogStatusIconFail": {
+            "type": "string",
+            "title": "Global Status Icon - Fail",
+            "description": "The icon used for the fail list status, if no specific fail status icon is set.",
+            "property_order": 150
+        },
+        "PendingWaitForIcon": {
+            "type": "string",
+            "title": "Wait For Pending Icon",
+            "description": "The icon used for the \"pending\" status of all WaitFor items. Leave blank for nothing. Use \"pending\" for swiftDialog Default.",
+            "property_order": 155
+        },
+        "ReinstallDialog": {
+            "type": "boolean",
+            "title": "Reinstall SwiftDialog",
+            "description": "Deprecated: This feature was removed in v.2.3, as it is no longer needed. This setting controls whether Baseline will reinstall SwiftDialog as the final step before completion. Default behavior if this key is omitted will reinstall SwiftDialog if a custom PNG is found in /Library/Application Support/Dialog/Dialog.png. Leave this as default if you use Baseline to deploy a custom SwiftDialog icon. Set to false if you do not want Baseline to ever reinstall SwiftDialog. Set to True if you always want to reinstall SwiftDialog after each Baseline.",
+            "property_order": 160
         },
         "ExitCondition": {
             "type": "string",
             "title": "Exit Condition",
             "description": "Define a file or folder path. When Baseline starts, if this file or folder exists, Baseline will exit quietly without processing any items. Use this option if your management tool may re-send scripts when not desired.",
-            "property_order": 115
+            "property_order": 165
         },
         "BailOutFile": {
             "type": "string",
             "title": "Bail Out File",
             "description": "Define a file path. If this file exists at any point while Baseline is running, Baseline will exit and will not process additional items.",
-            "property_order": 120
+            "property_order": 170
+        },
+        "DefaultInstallomatorRetries": {
+            "type": "integer",
+            "title": "Default Installomator Retries",
+            "default": 0,
+            "description": "Default number of retries for Installomator items. Default 0",
+            "property_order": 175
+        },
+        "DefaultScriptRetries": {
+            "type": "integer",
+            "title": "Default Script Retries",
+            "default": 0,
+            "description": "Default number of retries for Script items. Default 0",
+            "property_order": 180
+        },
+        "DefaultPackageRetries": {
+            "type": "integer",
+            "title": "Default Package Retries",
+            "default": 0,
+            "description": "Default number of retries for Package items. Default 0",
+            "property_order": 185
         }
     }
 }
