@@ -769,7 +769,7 @@
         },
         "InstallMacOSMajorUpgrades": {
             "type": "boolean",
-            "title": "Install MacOS Major Upgrades",
+            "title": "Install macOS Major Upgrades",
             "default": false,
             "description": "With this option enabled super leverages built-in commands and the mist command to find compatible macOS major upgrade versions. If a newer macOS major upgrade is available then the super workflow attempts to download and install the upgrade. The default super workflow always selects the newest compatible macOS major upgrade version",
             "links": [
@@ -831,6 +831,19 @@
             ],
             "property_order": 355
         },
+        "InstallMacOSBSIUpdates": {
+            "type": "boolean",
+            "title": "Install macOS BSI Update",
+            "default": true,
+            "description": "Allows the super workflow to install macOS BSI Updates",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/Macjutsu/super/blob/main/CHANGELOG.md#specific-changes-510-rc2"
+                }
+            ],
+            "property_order": 360
+        },
         "WorkflowDisableRelaunch": {
             "type": "boolean",
             "title": "Workflow Disable Relaunch",
@@ -842,7 +855,7 @@
                     "href": "https://github.com/Macjutsu/super/wiki/Alternate-Workflows#disable-automatic-relaunch"
                 }
             ],
-            "property_order": 360
+            "property_order": 365
         },
         "WorkflowDisableUpdateCheck": {
             "type": "boolean",
@@ -855,7 +868,7 @@
                     "href": "https://github.com/Macjutsu/super/wiki/Alternate-Workflows#disable-software-update-check"
                 }
             ],
-            "property_order": 365
+            "property_order": 370
         },
         "WorkflowOnlyDownload": {
             "type": "boolean",
@@ -868,7 +881,7 @@
                     "href": "https://github.com/Macjutsu/super/wiki/User-Initiated-Workflows#only-download"
                 }
             ],
-            "property_order": 370
+            "property_order": 375
         },
         "VerboseMode": {
             "type": "boolean",
@@ -881,7 +894,7 @@
                     "href": "https://github.com/Macjutsu/super/wiki/Troubleshooting#use-super-verbose-mode"
                 }
             ],
-            "property_order": 375
+            "property_order": 380
         }
     }
 }
