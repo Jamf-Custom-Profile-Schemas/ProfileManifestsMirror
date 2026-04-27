@@ -13,6 +13,36 @@
             "title": "Suppress iWork Update Messages",
             "default": "2099-01-01 00:00:00",
             "property_order": 10
+        },
+        "TMAApplicationUpdateNotifier.MigrationAlertToInstallCallCounter": {
+            "type": "integer",
+            "title": "Migration Alert Prompt Counter",
+            "description": "Set to 99 as part of suppressing the dialog asking to switch to the Creator Studio version.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://soundmacguy.wordpress.com/2026/01/29/suppress-the-upgrade-dialog-for-keynote-numbers-and-pages/"
+                }
+            ],
+            "enum": [
+                99
+            ],
+            "property_order": 15
+        },
+        "TMAApplicationUpdateNotifier.MigrationAlertToInstallLastShownTimeStamp": {
+            "type": "number",
+            "title": "Migration Alert Prompt Last Shown Stamp",
+            "description": "Set to 4068144000000 as part of suppressing the dialog asking to switch to the Creator Studio version.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://soundmacguy.wordpress.com/2026/01/29/suppress-the-upgrade-dialog-for-keynote-numbers-and-pages/"
+                }
+            ],
+            "enum": [
+                4068144000000.0
+            ],
+            "property_order": 20
         }
     }
 }
