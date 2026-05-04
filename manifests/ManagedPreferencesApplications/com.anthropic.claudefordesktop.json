@@ -50,6 +50,128 @@
             "default": true,
             "description": "Enable Cowork access in desktop",
             "property_order": 35
+        },
+        "isDesktopExtensionSignatureRequired": {
+            "type": "boolean",
+            "title": "Require Signed Desktop Extensions",
+            "default": false,
+            "description": "When true, Claude Desktop rejects extensions that aren't signed by a trusted publisher.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
+                }
+            ],
+            "property_order": 40
+        },
+        "disabledBuiltinTools": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Tool",
+                "description": "Name of a built-in tool to disable."
+            },
+            "title": "Disabled Built-in Tools",
+            "description": "Removes the listed built-in tools from the available set in Claude Desktop. Known tools: Task, Bash, Glob, Grep, Read, Edit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, Skill, REPL, JavaScript, AskUserQuestion. ToolSearch and SendUserMessage are also available under specific conditions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
+                }
+            ],
+            "property_order": 45
+        },
+        "managedMcpServers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Managed MCP Server",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Name",
+                        "description": "Unique name identifying this MCP server."
+                    },
+                    "url": {
+                        "type": "string",
+                        "title": "URL",
+                        "description": "HTTPS URL of the remote MCP server."
+                    },
+                    "transport": {
+                        "type": "string",
+                        "title": "Transport",
+                        "default": "http",
+                        "description": "Transport protocol used to reach the MCP server.",
+                        "enum": [
+                            "http",
+                            "sse"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "HTTP",
+                                "SSE"
+                            ]
+                        }
+                    },
+                    "headers": {
+                        "type": "object",
+                        "title": "Headers",
+                        "description": "Static request headers used to authenticate to the MCP server (for example, Authorization). Mutually exclusive with the OAuth field.",
+                        "properties": {
+                            "{{key}}": {
+                                "type": "string",
+                                "title": "Header Name"
+                            },
+                            "{{value}}": {
+                                "type": "string",
+                                "title": "Header Value"
+                            }
+                        }
+                    },
+                    "oauth": {
+                        "type": "boolean",
+                        "title": "OAuth",
+                        "default": false,
+                        "description": "When true, Claude Desktop runs a PKCE OAuth flow at first use to acquire user credentials. Mutually exclusive with the Headers field."
+                    },
+                    "toolPolicy": {
+                        "type": "object",
+                        "title": "Tool Policy",
+                        "description": "Maps tool names exposed by the MCP server to a policy. Allowed values per tool: allow, ask, blocked. The \"ask\" policy prompts the user to confirm before the tool runs.",
+                        "properties": {
+                            "{{key}}": {
+                                "type": "string",
+                                "title": "Tool Name"
+                            },
+                            "{{value}}": {
+                                "type": "string",
+                                "title": "Policy",
+                                "enum": [
+                                    "allow",
+                                    "ask",
+                                    "blocked"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Allow",
+                                        "Ask",
+                                        "Block"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "title": "Managed MCP Servers",
+            "description": "Distributes remote MCP (Model Context Protocol) servers to users. Each entry requires a unique name and an HTTPS URL. Optional fields include transport, headers, OAuth, and tool-level policies. Used in Claude Cowork deployments on third-party platforms (Bedrock, Vertex AI, Azure AI Foundry, LLM gateways).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
+                }
+            ],
+            "property_order": 50
         }
     }
 }
