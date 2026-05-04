@@ -144,7 +144,7 @@
                 "ProxyCaptiveLoginAllowed": {
                     "type": "integer",
                     "title": "Allow Proxy Bypass for Captive Portal Logins",
-                    "default": false,
+                    "default": 0,
                     "description": "If 1, allows client to log into captive portal network."
                 },
                 "SOCKSPortinteger": {
