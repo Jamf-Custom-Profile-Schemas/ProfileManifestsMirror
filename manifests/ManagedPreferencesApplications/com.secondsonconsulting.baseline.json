@@ -40,7 +40,7 @@
                     "Retries": {
                         "type": "integer",
                         "title": "Retries",
-                        "default": false,
+                        "default": 0,
                         "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
                     },
                     "CurlOptions": {
@@ -102,7 +102,7 @@
                     "Retries": {
                         "type": "integer",
                         "title": "Retries",
-                        "default": false,
+                        "default": 0,
                         "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
                     },
                     "HideListView": {
@@ -180,7 +180,7 @@
                     "Retries": {
                         "type": "integer",
                         "title": "Retries",
-                        "default": false,
+                        "default": 0,
                         "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
                     },
                     "HideListView": {
@@ -269,7 +269,7 @@
                     "Retries": {
                         "type": "integer",
                         "title": "Retries",
-                        "default": false,
+                        "default": 0,
                         "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
                     },
                     "CurlOptions": {
@@ -352,7 +352,7 @@
                     "Retries": {
                         "type": "integer",
                         "title": "Retries",
-                        "default": false,
+                        "default": 0,
                         "description": "The number of times Baseline will retry this specific item if it fails. If omitted, will use the Global Retries Default."
                     },
                     "CurlOptions": {
