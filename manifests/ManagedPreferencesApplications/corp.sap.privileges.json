@@ -26,6 +26,32 @@
             ],
             "property_order": 10
         },
+        "AllowPrivilegeRenewal": {
+            "type": "boolean",
+            "title": "Allow Privilege Renewal",
+            "default": false,
+            "description": "Specifies whether expiring administrator privileges can be renewed. When set to true, the user receives a notification one minute before administrator privileges expire and can renew them.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#AllowPrivilegeRenewal"
+                }
+            ],
+            "property_order": 15
+        },
+        "RenewalFollowsAuthSetting": {
+            "type": "boolean",
+            "title": "Renewal Follows Auth Setting",
+            "default": false,
+            "description": "When set to true, renewing privileges requires the same kind of authentication as initially requesting administrator privileges (for example, Touch ID or password).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#RenewalFollowsAuthSetting"
+                }
+            ],
+            "property_order": 20
+        },
         "AllowCLIBiometricAuthentication": {
             "type": "boolean",
             "title": "Allow CLI Biometric Authenication",
@@ -37,7 +63,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 15
+            "property_order": 25
         },
         "PostChangeExecutablePath": {
             "type": "string",
@@ -49,7 +75,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 20
+            "property_order": 30
         },
         "PostChangeActionOnGrantOnly": {
             "type": "boolean",
@@ -62,7 +88,20 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 25
+            "property_order": 35
+        },
+        "PassReasonToExecutable": {
+            "type": "boolean",
+            "title": "Pass Reason To Executable",
+            "default": false,
+            "description": "Specifies whether the reason that the user entered when requesting administrator privileges should be passed to the executable configured with the PostChangeExecutablePath key. The reason is passed as the third launch argument ($3).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#PassReasonToExecutable"
+                }
+            ],
+            "property_order": 40
         },
         "RevokePrivilegesAtLogin": {
             "type": "boolean",
@@ -75,7 +114,24 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 30
+            "property_order": 45
+        },
+        "RevokeAtLoginExcludedUsers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "User Short Name",
+                "description": "The short name of a user to exclude from privilege revocation at login."
+            },
+            "title": "Revoke At Login Excluded Users",
+            "description": "If RevokePrivilegesAtLogin is set to true, the specified users are excluded from privilege revocation at login. Provide an array of strings containing the short names of the users.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#RevokeAtLoginExcludedUsers"
+                }
+            ],
+            "property_order": 50
         },
         "HideOtherWindows": {
             "type": "boolean",
@@ -88,7 +144,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 35
+            "property_order": 55
         },
         "EnforcePrivileges": {
             "type": "string",
@@ -113,7 +169,7 @@
                     "None"
                 ]
             },
-            "property_order": 40
+            "property_order": 60
         },
         "DockToggleTimeout": {
             "type": "integer",
@@ -125,7 +181,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 45
+            "property_order": 65
         },
         "DockToggleMaxTimeout": {
             "type": "integer",
@@ -137,7 +193,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 50
+            "property_order": 70
         },
         "LimitToGroup": {
             "type": "string",
@@ -149,7 +205,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 55
+            "property_order": 75
         },
         "LimitToUser": {
             "type": "string",
@@ -161,7 +217,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 60
+            "property_order": 80
         },
         "ReasonRequired": {
             "type": "boolean",
@@ -173,7 +229,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 65
+            "property_order": 85
         },
         "ReasonMaxLength": {
             "type": "integer",
@@ -186,7 +242,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 70
+            "property_order": 90
         },
         "ReasonMinLength": {
             "type": "integer",
@@ -199,7 +255,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 75
+            "property_order": 95
         },
         "ReasonPresetList": {
             "type": "array",
@@ -241,7 +297,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 80
+            "property_order": 100
         },
         "ReasonCheckingEnabled": {
             "type": "boolean",
@@ -254,7 +310,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 85
+            "property_order": 105
         },
         "HideSettingsButton": {
             "type": "boolean",
@@ -267,7 +323,33 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 90
+            "property_order": 110
+        },
+        "HideHelpButton": {
+            "type": "boolean",
+            "title": "Hide Help Button",
+            "default": false,
+            "description": "If set to true, the Help (?) button is no longer displayed in the app.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#HideHelpButton"
+                }
+            ],
+            "property_order": 115
+        },
+        "HelpButtonCustomURL": {
+            "type": "string",
+            "title": "Help Button Custom URL",
+            "description": "If specified, this URL is opened instead of the Privileges GitHub URL when the user clicks the help button. Must use http:// or https://.",
+            "pattern": "^https?://.+",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#HelpButtonCustomURL"
+                }
+            ],
+            "property_order": 120
         },
         "HideSettingsFromDockMenu": {
             "type": "boolean",
@@ -280,7 +362,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 95
+            "property_order": 125
         },
         "HideSettingsFromStatusItem": {
             "type": "boolean",
@@ -293,7 +375,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#HideSettingsFromStatusItem"
                 }
             ],
-            "property_order": 100
+            "property_order": 130
         },
         "ShowInMenuBar": {
             "type": "boolean",
@@ -306,7 +388,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#ShowInMenuBar"
                 }
             ],
-            "property_order": 105
+            "property_order": 135
         },
         "RequireAuthentication": {
             "type": "boolean",
@@ -318,7 +400,7 @@
                     "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges"
                 }
             ],
-            "property_order": 110
+            "property_order": 140
         },
         "RemoteLogging": {
             "type": "object",
@@ -355,6 +437,17 @@
                     "title": "Enable TCP",
                     "default": false,
                     "description": "If set to true, the log messages are sent via TCP instead of UDP. By default, messages are sent via UDP."
+                },
+                "WebhookCustomData": {
+                    "type": "object",
+                    "title": "Webhook Custom Data",
+                    "description": "A dictionary of custom data (such as machine name or serial number) that is added to the webhook's JSON payload as the custom_data field.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/SAP/macOS-enterprise-privileges/wiki/Managing-Privileges#WebhookCustomData"
+                        }
+                    ]
                 },
                 "SyslogOptions": {
                     "type": "object",
@@ -476,7 +569,7 @@
                     }
                 }
             },
-            "property_order": 115
+            "property_order": 145
         }
     }
 }
