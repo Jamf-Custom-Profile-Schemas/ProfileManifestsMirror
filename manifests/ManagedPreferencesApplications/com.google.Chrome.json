@@ -38,6 +38,29 @@
             ],
             "property_order": 15
         },
+        "DefaultClipboardSetting": {
+            "type": "integer",
+            "title": "Default clipboard setting",
+            "default": 3,
+            "description": "This policy only affects clipboard operations controlled by the clipboard site permission, and does not affect sanitized clipboard writes or trusted copy and paste operations.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#DefaultClipboardSetting"
+                }
+            ],
+            "enum": [
+                2,
+                3
+            ],
+            "options": {
+                "enum_titles": [
+                    "Do not allow any site to use the clipboard site permission",
+                    "Allow sites to ask the user to grant the clipboard site permission"
+                ]
+            },
+            "property_order": 20
+        },
         "DefaultCookiesSetting": {
             "type": "integer",
             "title": "Default cookies setting",
@@ -60,7 +83,7 @@
                     "Keep cookies for the duration of the session"
                 ]
             },
-            "property_order": 20
+            "property_order": 25
         },
         "BlockThirdPartyCookies": {
             "type": "boolean",
@@ -72,7 +95,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BlockThirdPartyCookies"
                 }
             ],
-            "property_order": 25
+            "property_order": 30
         },
         "CookiesAllowedForUrls": {
             "type": "array",
@@ -87,7 +110,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CookiesAllowedForUrls"
                 }
             ],
-            "property_order": 30
+            "property_order": 35
         },
         "CookiesBlockedForUrls": {
             "type": "array",
@@ -102,7 +125,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CookiesBlockedForUrls"
                 }
             ],
-            "property_order": 35
+            "property_order": 40
         },
         "CookiesSessionOnlyForUrls": {
             "type": "array",
@@ -117,7 +140,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CookiesSessionOnlyForUrls"
                 }
             ],
-            "property_order": 40
+            "property_order": 45
         },
         "DefaultWebBluetoothGuardSetting": {
             "type": "integer",
@@ -139,7 +162,7 @@
                     "Allow sites to ask the user to grant access to a nearby Bluetooth device"
                 ]
             },
-            "property_order": 45
+            "property_order": 50
         },
         "DefaultWebUsbGuardSetting": {
             "type": "integer",
@@ -161,7 +184,7 @@
                     "Allow sites to ask the user to grant access to a connected USB device"
                 ]
             },
-            "property_order": 50
+            "property_order": 55
         },
         "DefaultImagesSetting": {
             "type": "integer",
@@ -183,7 +206,7 @@
                     "Do not allow any site to show images"
                 ]
             },
-            "property_order": 55
+            "property_order": 60
         },
         "ImagesAllowedForUrls": {
             "type": "array",
@@ -198,7 +221,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImagesAllowedForUrls"
                 }
             ],
-            "property_order": 60
+            "property_order": 65
         },
         "ImagesBlockedForUrls": {
             "type": "array",
@@ -213,7 +236,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImagesBlockedForUrls"
                 }
             ],
-            "property_order": 65
+            "property_order": 70
         },
         "DefaultInsecureContentSetting": {
             "type": "integer",
@@ -235,7 +258,7 @@
                     "Allow users to add exceptions to allow mixed content"
                 ]
             },
-            "property_order": 70
+            "property_order": 75
         },
         "InsecureContentAllowedForUrls": {
             "type": "array",
@@ -250,7 +273,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=InsecureContentAllowedForUrls"
                 }
             ],
-            "property_order": 75
+            "property_order": 80
         },
         "InsecureContentBlockedForUrls": {
             "type": "array",
@@ -265,7 +288,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=InsecureContentBlockedForUrls"
                 }
             ],
-            "property_order": 80
+            "property_order": 85
         },
         "DefaultJavaScriptSetting": {
             "type": "integer",
@@ -287,7 +310,7 @@
                     "Do not allow any site to run JavaScript"
                 ]
             },
-            "property_order": 85
+            "property_order": 90
         },
         "JavaScriptAllowedForUrls": {
             "type": "array",
@@ -302,7 +325,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=JavaScriptAllowedForUrls"
                 }
             ],
-            "property_order": 90
+            "property_order": 95
         },
         "JavaScriptBlockedForUrls": {
             "type": "array",
@@ -317,7 +340,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=JavaScriptBlockedForUrls"
                 }
             ],
-            "property_order": 95
+            "property_order": 100
         },
         "LegacySameSiteCookieBehaviorEnabled": {
             "type": "integer",
@@ -339,7 +362,7 @@
                     "Use SameSite-by-default behavior for cookies on all sites"
                 ]
             },
-            "property_order": 100
+            "property_order": 105
         },
         "LegacySameSiteCookieBehaviorEnabledForDomainList": {
             "type": "array",
@@ -355,7 +378,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=LegacySameSiteCookieBehaviorEnabledForDomainList"
                 }
             ],
-            "property_order": 105
+            "property_order": 110
         },
         "DefaultPluginsSetting": {
             "type": "integer",
@@ -379,7 +402,7 @@
                     "Click to play"
                 ]
             },
-            "property_order": 110
+            "property_order": 115
         },
         "PluginsAllowedForUrls": {
             "type": "array",
@@ -394,44 +417,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PluginsAllowedForUrls"
                 }
             ],
-            "property_order": 115
-        },
-        "DefaultThirdPartyStoragePartitioningSetting": {
-            "type": "integer",
-            "title": "Default Third Party Storage Partitioning Setting",
-            "description": "Third-party storage partitioning is on by default for some users as of M113, but can be disabled via Chrome flag. If this policy is set to AllowPartitioning or unset, third-party storage partitioning may be enabled. If this policy is set to BlockPartitioning, third-party storage partitioning cannot be enabled.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://chromeenterprise.google/policies/#DefaultThirdPartyStoragePartitioningSetting"
-                }
-            ],
-            "enum": [
-                1,
-                2
-            ],
-            "options": {
-                "enum_titles": [
-                    "Allow third-party storage partitioning to be enabled",
-                    "Block third-party storage partitioning from being enabled"
-                ]
-            },
             "property_order": 120
-        },
-        "ThirdPartyStoragePartitioningBlockedForOrigins": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
-            "title": "Third Party Storage Partitioning Blocked For Origins",
-            "description": "Allows you to set a list of url patterns that specify top-level (the url in the tab's address bar) origins which block third-party storage partitioning (partitioning of cross-origin iframe storage). If this policy is left not set or a top-level origin doesn't match then the value from DefaultThirdPartyStoragePartitioningSetting will be used.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://chromeenterprise.google/policies/#ThirdPartyStoragePartitioningBlockedForOrigins"
-                }
-            ],
-            "property_order": 125
         },
         "DefaultNotificationsSetting": {
             "type": "integer",
@@ -455,7 +441,7 @@
                     "Ask every time a site wants to show desktop notifications"
                 ]
             },
-            "property_order": 130
+            "property_order": 125
         },
         "NotificationsAllowedForUrls": {
             "type": "array",
@@ -470,7 +456,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NotificationsAllowedForUrls"
                 }
             ],
-            "property_order": 135
+            "property_order": 130
         },
         "NotificationsBlockedForUrls": {
             "type": "array",
@@ -483,6 +469,21 @@
                 {
                     "rel": "More information",
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NotificationsBlockedForUrls"
+                }
+            ],
+            "property_order": 135
+        },
+        "PdfLocalFileAccessAllowedForDomains": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow local file access to file:// URLs on these sites in the PDF Viewer",
+            "description": "Setting this policy allows the domains listed to access file:// URLs in the PDF Viewer.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#PdfLocalFileAccessAllowedForDomains"
                 }
             ],
             "property_order": 140
@@ -524,6 +525,28 @@
             },
             "property_order": 150
         },
+        "DefaultThirdPartyStoragePartitioningSetting": {
+            "type": "integer",
+            "title": "Default Third Party Storage Partitioning Setting",
+            "description": "Third-party storage partitioning is on by default for some users as of M113, but can be disabled via Chrome flag. If this policy is set to AllowPartitioning or unset, third-party storage partitioning may be enabled. If this policy is set to BlockPartitioning, third-party storage partitioning cannot be enabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#DefaultThirdPartyStoragePartitioningSetting"
+                }
+            ],
+            "enum": [
+                1,
+                2
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow third-party storage partitioning to be enabled",
+                    "Block third-party storage partitioning from being enabled"
+                ]
+            },
+            "property_order": 155
+        },
         "PopupsAllowedForUrls": {
             "type": "array",
             "items": {
@@ -537,7 +560,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PopupsAllowedForUrls"
                 }
             ],
-            "property_order": 155
+            "property_order": 160
         },
         "PopupsBlockedForUrls": {
             "type": "array",
@@ -552,7 +575,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PopupsBlockedForUrls"
                 }
             ],
-            "property_order": 160
+            "property_order": 165
         },
         "AutoSelectCertificateForUrls": {
             "type": "array",
@@ -567,7 +590,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoSelectCertificateForUrls"
                 }
             ],
-            "property_order": 165
+            "property_order": 170
         },
         "DefaultGeolocationSetting": {
             "type": "integer",
@@ -591,7 +614,7 @@
                     "Ask whenever a site wants to track the users' physical location"
                 ]
             },
-            "property_order": 170
+            "property_order": 175
         },
         "DefaultMediaStreamSetting": {
             "type": "integer",
@@ -613,7 +636,7 @@
                     "Ask every time a site wants to access the camera and/or microphone"
                 ]
             },
-            "property_order": 175
+            "property_order": 180
         },
         "RegisteredProtocolHandlers": {
             "type": "array",
@@ -640,7 +663,22 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RegisteredProtocolHandlers"
                 }
             ],
-            "property_order": 180
+            "property_order": 185
+        },
+        "ThirdPartyStoragePartitioningBlockedForOrigins": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Third Party Storage Partitioning Blocked For Origins",
+            "description": "Allows you to set a list of url patterns that specify top-level (the url in the tab's address bar) origins which block third-party storage partitioning (partitioning of cross-origin iframe storage). If this policy is left not set or a top-level origin doesn't match then the value from DefaultThirdPartyStoragePartitioningSetting will be used.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#ThirdPartyStoragePartitioningBlockedForOrigins"
+                }
+            ],
+            "property_order": 190
         },
         "WebUsbAllowDevicesForUrls": {
             "type": "array",
@@ -680,7 +718,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebUsbAllowDevicesForUrls"
                 }
             ],
-            "property_order": 185
+            "property_order": 195
         },
         "AutoplayAllowed": {
             "type": "boolean",
@@ -692,7 +730,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoplayAllowed"
                 }
             ],
-            "property_order": 190
+            "property_order": 200
         },
         "AutoplayWhitelist": {
             "type": "array",
@@ -707,7 +745,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoplayWhitelist"
                 }
             ],
-            "property_order": 195
+            "property_order": 205
         },
         "AutoplayAllowlist": {
             "type": "array",
@@ -722,7 +760,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoplayAllowlist"
                 }
             ],
-            "property_order": 200
+            "property_order": 210
         },
         "DefaultSearchProviderAlternateURLs": {
             "type": "array",
@@ -737,7 +775,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderAlternateURLs"
                 }
             ],
-            "property_order": 205
+            "property_order": 215
         },
         "DefaultSearchProviderEnabled": {
             "type": "boolean",
@@ -749,7 +787,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderEnabled"
                 }
             ],
-            "property_order": 210
+            "property_order": 220
         },
         "DefaultSearchProviderEncodings": {
             "type": "array",
@@ -764,7 +802,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderEncodings"
                 }
             ],
-            "property_order": 215
+            "property_order": 225
         },
         "DefaultSearchProviderIconURL": {
             "type": "string",
@@ -776,7 +814,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderIconURL"
                 }
             ],
-            "property_order": 220
+            "property_order": 230
         },
         "DefaultSearchProviderImageURL": {
             "type": "string",
@@ -788,7 +826,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderImageURL"
                 }
             ],
-            "property_order": 225
+            "property_order": 235
         },
         "DefaultSearchProviderImageURLPostParams": {
             "type": "string",
@@ -800,7 +838,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderImageURLPostParams"
                 }
             ],
-            "property_order": 230
+            "property_order": 240
         },
         "DefaultSearchProviderKeyword": {
             "type": "string",
@@ -812,7 +850,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderKeyword"
                 }
             ],
-            "property_order": 235
+            "property_order": 245
         },
         "DefaultSearchProviderName": {
             "type": "string",
@@ -824,7 +862,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderName"
                 }
             ],
-            "property_order": 240
+            "property_order": 250
         },
         "DefaultSearchProviderNewTabURL": {
             "type": "string",
@@ -836,7 +874,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderNewTabURL"
                 }
             ],
-            "property_order": 245
+            "property_order": 255
         },
         "DefaultSearchProviderSearchURL": {
             "type": "string",
@@ -848,7 +886,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderSearchURL"
                 }
             ],
-            "property_order": 250
+            "property_order": 260
         },
         "DefaultSearchProviderSearchURLPostParams": {
             "type": "string",
@@ -860,7 +898,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderSearchURLPostParams"
                 }
             ],
-            "property_order": 255
+            "property_order": 265
         },
         "DefaultSearchProviderSuggestURL": {
             "type": "string",
@@ -872,7 +910,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderSuggestURL"
                 }
             ],
-            "property_order": 260
+            "property_order": 270
         },
         "DefaultSearchProviderSuggestURLPostParams": {
             "type": "string",
@@ -884,7 +922,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderSuggestURLPostParams"
                 }
             ],
-            "property_order": 265
+            "property_order": 275
         },
         "ExtensionAllowedTypes": {
             "type": "array",
@@ -917,7 +955,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionAllowedTypes"
                 }
             ],
-            "property_order": 270
+            "property_order": 280
         },
         "ExtensionInstallSources": {
             "type": "array",
@@ -932,7 +970,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallSources"
                 }
             ],
-            "property_order": 275
+            "property_order": 285
         },
         "ExtensionInstallBlacklist": {
             "type": "array",
@@ -947,7 +985,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallBlacklist"
                 }
             ],
-            "property_order": 280
+            "property_order": 290
         },
         "ExtensionInstallBlocklist": {
             "type": "array",
@@ -962,7 +1000,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallBlocklist"
                 }
             ],
-            "property_order": 285
+            "property_order": 295
         },
         "ExtensionInstallWhitelist": {
             "type": "array",
@@ -977,7 +1015,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallWhitelist"
                 }
             ],
-            "property_order": 290
+            "property_order": 300
         },
         "ExtensionInstallAllowlist": {
             "type": "array",
@@ -992,7 +1030,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallAllowlist"
                 }
             ],
-            "property_order": 295
+            "property_order": 305
         },
         "ExtensionManifestV2Availability": {
             "type": "integer",
@@ -1018,7 +1056,7 @@
                     "Manifest v2 is enabled for forced extensions only"
                 ]
             },
-            "property_order": 300
+            "property_order": 310
         },
         "ExtensionInstallForcelist": {
             "type": "array",
@@ -1033,7 +1071,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallForcelist"
                 }
             ],
-            "property_order": 305
+            "property_order": 315
         },
         "ExtensionSettings": {
             "type": "object",
@@ -1156,6 +1194,28 @@
                             "type": "string",
                             "description": "Maps to a version string."
                         },
+                        "ExtensionUnpublishedAvailability": {
+                            "type": "integer",
+                            "title": "Control availability of extensions unpublished on the Chrome Web Store.",
+                            "default": 0,
+                            "description": "If this policy is enabled, extensions that are unpublished on the Chrome Web Store will be disabled in Google Chrome",
+                            "links": [
+                                {
+                                    "rel": "More information",
+                                    "href": "https://chromeenterprise.google/policies/#ExtensionUnpublishedAvailability"
+                                }
+                            ],
+                            "enum": [
+                                0,
+                                1
+                            ],
+                            "options": {
+                                "enum_titles": [
+                                    "Allow unpublished extensions",
+                                    "Disable unpublished extensions"
+                                ]
+                            }
+                        },
                         "install_sources": {
                             "type": "array",
                             "items": {
@@ -1199,7 +1259,7 @@
                     }
                 }
             },
-            "property_order": 310
+            "property_order": 320
         },
         "BlockExternalExtensions": {
             "type": "boolean",
@@ -1212,7 +1272,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BlockExternalExtensions"
                 }
             ],
-            "property_order": 315
+            "property_order": 325
         },
         "ExtensionAllowInsecureUpdates": {
             "type": "boolean",
@@ -1225,7 +1285,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionAllowInsecureUpdates"
                 }
             ],
-            "property_order": 320
+            "property_order": 330
         },
         "EnableMediaRouter": {
             "type": "boolean",
@@ -1238,7 +1298,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnableMediaRouter"
                 }
             ],
-            "property_order": 325
+            "property_order": 335
         },
         "ShowCastIconInToolbar": {
             "type": "boolean",
@@ -1251,7 +1311,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ShowCastIconInToolbar"
                 }
             ],
-            "property_order": 330
+            "property_order": 340
         },
         "AllowCrossOriginAuthPrompt": {
             "type": "boolean",
@@ -1264,7 +1324,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowCrossOriginAuthPrompt"
                 }
             ],
-            "property_order": 335
+            "property_order": 345
         },
         "AuthNegotiateDelegateByKdcPolicy": {
             "type": "boolean",
@@ -1277,7 +1337,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthNegotiateDelegateByKdcPolicy"
                 }
             ],
-            "property_order": 340
+            "property_order": 350
         },
         "AuthNegotiateDelegateWhitelist": {
             "type": "string",
@@ -1289,7 +1349,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthNegotiateDelegateWhitelist"
                 }
             ],
-            "property_order": 345
+            "property_order": 355
         },
         "AuthNegotiateDelegateAllowlist": {
             "type": "string",
@@ -1301,7 +1361,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthNegotiateDelegateAllowlist"
                 }
             ],
-            "property_order": 350
+            "property_order": 360
         },
         "AuthSchemes": {
             "type": "string",
@@ -1313,7 +1373,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthSchemes"
                 }
             ],
-            "property_order": 355
+            "property_order": 365
         },
         "AuthServerWhitelist": {
             "type": "string",
@@ -1325,7 +1385,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthServerWhitelist"
                 }
             ],
-            "property_order": 360
+            "property_order": 370
         },
         "BasicAuthOverHttpEnabled": {
             "type": "boolean",
@@ -1337,7 +1397,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthServerWhitelist"
                 }
             ],
-            "property_order": 365
+            "property_order": 375
         },
         "AuthServerAllowlist": {
             "type": "string",
@@ -1349,7 +1409,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthServerAllowlist"
                 }
             ],
-            "property_order": 370
+            "property_order": 380
         },
         "DisableAuthNegotiateCnameLookup": {
             "type": "boolean",
@@ -1362,7 +1422,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DisableAuthNegotiateCnameLookup"
                 }
             ],
-            "property_order": 375
+            "property_order": 385
         },
         "EnableAuthNegotiatePort": {
             "type": "boolean",
@@ -1375,7 +1435,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnableAuthNegotiatePort"
                 }
             ],
-            "property_order": 380
+            "property_order": 390
         },
         "NtlmV2Enabled": {
             "type": "boolean",
@@ -1388,7 +1448,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NtlmV2Enabled"
                 }
             ],
-            "property_order": 385
+            "property_order": 395
         },
         "BrowserSwitcherEnabled": {
             "type": "boolean",
@@ -1401,7 +1461,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserSwitcherEnabled"
                 }
             ],
-            "property_order": 390
+            "property_order": 400
         },
         "AlternativeBrowserParameters": {
             "type": "array",
@@ -1416,7 +1476,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AlternativeBrowserParameters"
                 }
             ],
-            "property_order": 395
+            "property_order": 405
         },
         "AlternativeBrowserPath": {
             "type": "string",
@@ -1434,7 +1494,7 @@
                 "${opera}",
                 "${ie}"
             ],
-            "property_order": 400
+            "property_order": 410
         },
         "BrowserSwitcherDelay": {
             "type": "integer",
@@ -1446,7 +1506,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserSwitcherDelay"
                 }
             ],
-            "property_order": 405
+            "property_order": 415
         },
         "BrowserSwitcherKeepLastChromeTab": {
             "type": "boolean",
@@ -1459,7 +1519,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserSwitcherKeepLastChromeTab"
                 }
             ],
-            "property_order": 410
+            "property_order": 420
         },
         "BrowserSwitcherUrlList": {
             "type": "array",
@@ -1475,7 +1535,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserSwitcherUrlGreylist"
                 }
             ],
-            "property_order": 415
+            "property_order": 425
         },
         "BrowserSwitcherUrlGreylist": {
             "type": "array",
@@ -1491,7 +1551,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserSwitcherUrlGreylist"
                 }
             ],
-            "property_order": 420
+            "property_order": 430
         },
         "BrowserSwitcherExternalGreylistUrl": {
             "type": "string",
@@ -1504,7 +1564,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserSwitcherExternalGreylistUrl"
                 }
             ],
-            "property_order": 425
+            "property_order": 435
         },
         "BrowserSwitcherExternalSitelistUrl": {
             "type": "string",
@@ -1517,7 +1577,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserSwitcherExternalSitelistUrl"
                 }
             ],
-            "property_order": 430
+            "property_order": 440
         },
         "AbusiveExperienceInterventionEnforce": {
             "type": "boolean",
@@ -1530,7 +1590,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AbusiveExperienceInterventionEnforce"
                 }
             ],
-            "property_order": 435
+            "property_order": 445
         },
         "AccessibilityImageLabelsEnabled": {
             "type": "boolean",
@@ -1542,7 +1602,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AccessibilityImageLabelsEnabled"
                 }
             ],
-            "property_order": 440
+            "property_order": 450
         },
         "AdsSettingForIntrusiveAdsSites": {
             "type": "integer",
@@ -1564,7 +1624,7 @@
                     "Do not allow ads on sites with intrusive ads"
                 ]
             },
-            "property_order": 445
+            "property_order": 455
         },
         "LocalNetworkAccessRestrictionsEnabled": {
             "type": "boolean",
@@ -1577,7 +1637,7 @@
                     "href": "https://chromeenterprise.google/policies/#LocalNetworkAccessRestrictionsEnabled"
                 }
             ],
-            "property_order": 450
+            "property_order": 460
         },
         "LocalNetworkAccessAllowedForUrls": {
             "type": "array",
@@ -1592,7 +1652,7 @@
                     "href": "https://chromeenterprise.google/policies/#LocalNetworkAccessAllowedForUrls"
                 }
             ],
-            "property_order": 455
+            "property_order": 465
         },
         "LocalNetworkAccessBlockedForUrls": {
             "type": "array",
@@ -1607,7 +1667,7 @@
                     "href": "https://chromeenterprise.google/policies/#LocalNetworkAccessBlockedForUrls"
                 }
             ],
-            "property_order": 460
+            "property_order": 470
         },
         "PrivacySandboxAdMeasurementEnabled": {
             "type": "boolean",
@@ -1620,7 +1680,7 @@
                     "href": "https://chromeenterprise.google/policies/#PrivacySandboxAdMeasurementEnabled"
                 }
             ],
-            "property_order": 465
+            "property_order": 475
         },
         "PrivacySandboxAdTopicsEnabled": {
             "type": "boolean",
@@ -1633,7 +1693,7 @@
                     "href": "https://chromeenterprise.google/policies/#PrivacySandboxAdTopicsEnabled"
                 }
             ],
-            "property_order": 470
+            "property_order": 480
         },
         "PrivacySandboxPromptEnabled": {
             "type": "boolean",
@@ -1646,7 +1706,7 @@
                     "href": "https://chromeenterprise.google/policies/#PrivacySandboxPromptEnabled"
                 }
             ],
-            "property_order": 475
+            "property_order": 485
         },
         "PrivacySandboxSiteEnabledAdsEnabled": {
             "type": "boolean",
@@ -1659,7 +1719,7 @@
                     "href": "https://chromeenterprise.google/policies/#PrivacySandboxSiteEnabledAdsEnabled"
                 }
             ],
-            "property_order": 480
+            "property_order": 490
         },
         "AdvancedProtectionAllowed": {
             "type": "boolean",
@@ -1672,7 +1732,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AdvancedProtectionAllowed"
                 }
             ],
-            "property_order": 485
+            "property_order": 495
         },
         "AdvancedProtectionDeepScanningEnabled": {
             "type": "boolean",
@@ -1685,7 +1745,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AdvancedProtectionDeepScanningEnabled"
                 }
             ],
-            "property_order": 490
+            "property_order": 500
         },
         "AllowDeletingBrowserHistory": {
             "type": "boolean",
@@ -1698,7 +1758,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowDeletingBrowserHistory"
                 }
             ],
-            "property_order": 495
+            "property_order": 505
         },
         "AllowDinosaurEasterEgg": {
             "type": "boolean",
@@ -1710,7 +1770,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowDinosaurEasterEgg"
                 }
             ],
-            "property_order": 500
+            "property_order": 510
         },
         "AllowFileSelectionDialogs": {
             "type": "boolean",
@@ -1723,7 +1783,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowFileSelectionDialogs"
                 }
             ],
-            "property_order": 505
+            "property_order": 515
         },
         "AllowOutdatedPlugins": {
             "type": "boolean",
@@ -1735,7 +1795,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowOutdatedPlugins"
                 }
             ],
-            "property_order": 510
+            "property_order": 520
         },
         "AllowPopupsDuringPageUnload": {
             "type": "boolean",
@@ -1748,7 +1808,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowPopupsDuringPageUnload"
                 }
             ],
-            "property_order": 515
+            "property_order": 525
         },
         "AllowSyncXHRInPageDismissal": {
             "type": "boolean",
@@ -1761,7 +1821,20 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowSyncXHRInPageDismissal"
                 }
             ],
-            "property_order": 520
+            "property_order": 530
+        },
+        "AllowWebAuthnWithBrokenTlsCerts": {
+            "type": "boolean",
+            "title": "Allow web authentication requests on sites with broken TLS certificates",
+            "default": false,
+            "description": "This policy will allow WebAuthn on sites with invalid TLS certificates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#AllowWebAuthnWithBrokenTlsCerts"
+                }
+            ],
+            "property_order": 535
         },
         "AllowedDomainsForApps": {
             "type": "string",
@@ -1773,7 +1846,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowedDomainsForApps"
                 }
             ],
-            "property_order": 525
+            "property_order": 540
         },
         "AlternateErrorPagesEnabled": {
             "type": "boolean",
@@ -1785,7 +1858,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AlternateErrorPagesEnabled"
                 }
             ],
-            "property_order": 530
+            "property_order": 545
         },
         "AlwaysOpenPdfExternally": {
             "type": "boolean",
@@ -1798,7 +1871,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AlwaysOpenPdfExternally"
                 }
             ],
-            "property_order": 535
+            "property_order": 550
         },
         "AmbientAuthenticationInPrivateModesEnabled": {
             "type": "integer",
@@ -1824,7 +1897,7 @@
                     "Enable in regular, incognito and guest sessions"
                 ]
             },
-            "property_order": 540
+            "property_order": 555
         },
         "AppCacheForceEnabled": {
             "type": "boolean",
@@ -1836,7 +1909,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AppCacheForceEnabled"
                 }
             ],
-            "property_order": 545
+            "property_order": 560
         },
         "AudioCaptureAllowed": {
             "type": "boolean",
@@ -1849,7 +1922,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AudioCaptureAllowed"
                 }
             ],
-            "property_order": 550
+            "property_order": 565
         },
         "AudioSandboxEnabled": {
             "type": "boolean",
@@ -1861,7 +1934,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AudioSandboxEnabled"
                 }
             ],
-            "property_order": 555
+            "property_order": 570
         },
         "AudioCaptureAllowedUrls": {
             "type": "array",
@@ -1876,7 +1949,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AudioCaptureAllowedUrls"
                 }
             ],
-            "property_order": 560
+            "property_order": 575
         },
         "AutoFillEnabled": {
             "type": "boolean",
@@ -1889,7 +1962,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoFillEnabled"
                 }
             ],
-            "property_order": 565
+            "property_order": 580
         },
         "AutoLaunchProtocolsFromOrigins": {
             "type": "array",
@@ -1920,7 +1993,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoLaunchProtocolsFromOrigins"
                 }
             ],
-            "property_order": 570
+            "property_order": 585
         },
         "AutoOpenAllowedForURLs": {
             "type": "array",
@@ -1936,7 +2009,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoOpenAllowedForURLs"
                 }
             ],
-            "property_order": 575
+            "property_order": 590
         },
         "AutoOpenFileTypes": {
             "type": "array",
@@ -1953,7 +2026,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoOpenFileTypes"
                 }
             ],
-            "property_order": 580
+            "property_order": 595
         },
         "AutofillAddressEnabled": {
             "type": "boolean",
@@ -1966,7 +2039,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutofillAddressEnabled"
                 }
             ],
-            "property_order": 585
+            "property_order": 600
         },
         "AutofillCreditCardEnabled": {
             "type": "boolean",
@@ -1979,7 +2052,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutofillCreditCardEnabled"
                 }
             ],
-            "property_order": 590
+            "property_order": 605
         },
         "BookmarkBarEnabled": {
             "type": "boolean",
@@ -1991,7 +2064,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BookmarkBarEnabled"
                 }
             ],
-            "property_order": 595
+            "property_order": 610
         },
         "BrowserAddPersonEnabled": {
             "type": "boolean",
@@ -2004,7 +2077,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserAddPersonEnabled"
                 }
             ],
-            "property_order": 600
+            "property_order": 615
         },
         "BrowserGuestModeEnabled": {
             "type": "boolean",
@@ -2017,7 +2090,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserGuestModeEnabled"
                 }
             ],
-            "property_order": 605
+            "property_order": 620
         },
         "BrowserGuestModeEnforced": {
             "type": "boolean",
@@ -2030,7 +2103,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserGuestModeEnforced"
                 }
             ],
-            "property_order": 610
+            "property_order": 625
         },
         "BrowserNetworkTimeQueriesEnabled": {
             "type": "boolean",
@@ -2043,7 +2116,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BrowserNetworkTimeQueriesEnabled"
                 }
             ],
-            "property_order": 615
+            "property_order": 630
         },
         "BrowserSignin": {
             "type": "integer",
@@ -2067,7 +2140,7 @@
                     "Force users to sign-in to use the browser"
                 ]
             },
-            "property_order": 620
+            "property_order": 635
         },
         "BuiltInDnsClientEnabled": {
             "type": "boolean",
@@ -2079,7 +2152,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BuiltInDnsClientEnabled"
                 }
             ],
-            "property_order": 625
+            "property_order": 640
         },
         "BuiltinCertificateVerifierEnabled": {
             "type": "boolean",
@@ -2091,7 +2164,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BuiltinCertificateVerifierEnabled"
                 }
             ],
-            "property_order": 630
+            "property_order": 645
         },
         "CertificateTransparencyEnforcementDisabledForCas": {
             "type": "array",
@@ -2106,7 +2179,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CertificateTransparencyEnforcementDisabledForCas"
                 }
             ],
-            "property_order": 635
+            "property_order": 650
         },
         "CertificateTransparencyEnforcementDisabledForLegacyCas": {
             "type": "array",
@@ -2121,7 +2194,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CertificateTransparencyEnforcementDisabledForLegacyCas"
                 }
             ],
-            "property_order": 640
+            "property_order": 655
         },
         "CertificateTransparencyEnforcementDisabledForUrls": {
             "type": "array",
@@ -2136,7 +2209,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CertificateTransparencyEnforcementDisabledForUrls"
                 }
             ],
-            "property_order": 645
+            "property_order": 660
         },
         "ChromeVariations": {
             "type": "integer",
@@ -2161,7 +2234,7 @@
                     "Disable all variations"
                 ]
             },
-            "property_order": 650
+            "property_order": 665
         },
         "ClickToCallEnabled": {
             "type": "boolean",
@@ -2174,7 +2247,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ClickToCallEnabled"
                 }
             ],
-            "property_order": 655
+            "property_order": 670
         },
         "CloudManagementEnrollmentToken": {
             "type": "string",
@@ -2186,7 +2259,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudManagementEnrollmentToken"
                 }
             ],
-            "property_order": 660
+            "property_order": 675
         },
         "CloudManagementEnrollmentMandatory": {
             "type": "boolean",
@@ -2199,7 +2272,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudManagementEnrollmentMandatory"
                 }
             ],
-            "property_order": 665
+            "property_order": 680
         },
         "CloudPolicyOverridesPlatformPolicy": {
             "type": "boolean",
@@ -2212,7 +2285,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudPolicyOverridesPlatformPolicy"
                 }
             ],
-            "property_order": 670
+            "property_order": 685
         },
         "CommandLineFlagSecurityWarningsEnabled": {
             "type": "boolean",
@@ -2225,7 +2298,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CommandLineFlagSecurityWarningsEnabled"
                 }
             ],
-            "property_order": 675
+            "property_order": 690
         },
         "ComponentUpdatesEnabled": {
             "type": "boolean",
@@ -2238,7 +2311,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ComponentUpdatesEnabled"
                 }
             ],
-            "property_order": 680
+            "property_order": 695
         },
         "CorsLegacyModeEnabled": {
             "type": "boolean",
@@ -2251,7 +2324,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CorsLegacyModeEnabled"
                 }
             ],
-            "property_order": 685
+            "property_order": 700
         },
         "CorsMitigationList": {
             "type": "array",
@@ -2266,7 +2339,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CorsMitigationList"
                 }
             ],
-            "property_order": 690
+            "property_order": 705
         },
         "DNSInterceptionChecksEnabled": {
             "type": "boolean",
@@ -2279,7 +2352,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DNSInterceptionChecksEnabled"
                 }
             ],
-            "property_order": 695
+            "property_order": 710
         },
         "DefaultBrowserSettingEnabled": {
             "type": "boolean",
@@ -2291,7 +2364,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultBrowserSettingEnabled"
                 }
             ],
-            "property_order": 700
+            "property_order": 715
         },
         "PromotionsEnabled": {
             "type": "boolean",
@@ -2304,7 +2377,7 @@
                     "href": "https://chromeenterprise.google/policies/?policy=PromotionsEnabled"
                 }
             ],
-            "property_order": 705
+            "property_order": 720
         },
         "DefaultDownloadDirectory": {
             "type": "string",
@@ -2316,7 +2389,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultDownloadDirectory"
                 }
             ],
-            "property_order": 710
+            "property_order": 725
         },
         "DefaultSearchProviderContextMenuAccessAllowed": {
             "type": "boolean",
@@ -2329,7 +2402,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSearchProviderContextMenuAccessAllowed"
                 }
             ],
-            "property_order": 715
+            "property_order": 730
         },
         "DeveloperToolsAvailability": {
             "type": "integer",
@@ -2353,7 +2426,7 @@
                     "Disallow usage of the Developer Tools"
                 ]
             },
-            "property_order": 720
+            "property_order": 735
         },
         "Disable3DAPIs": {
             "type": "boolean",
@@ -2366,7 +2439,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=Disable3DAPIs"
                 }
             ],
-            "property_order": 725
+            "property_order": 740
         },
         "DisableSafeBrowsingProceedAnyway": {
             "type": "boolean",
@@ -2379,7 +2452,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DisableSafeBrowsingProceedAnyway"
                 }
             ],
-            "property_order": 730
+            "property_order": 745
         },
         "DisableScreenshots": {
             "type": "boolean",
@@ -2392,7 +2465,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DisableScreenshots"
                 }
             ],
-            "property_order": 735
+            "property_order": 750
         },
         "DisabledPlugins": {
             "type": "array",
@@ -2407,7 +2480,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DisabledPlugins"
                 }
             ],
-            "property_order": 740
+            "property_order": 755
         },
         "DisabledPluginsExceptions": {
             "type": "array",
@@ -2422,7 +2495,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DisabledPluginsExceptions"
                 }
             ],
-            "property_order": 745
+            "property_order": 760
         },
         "DisabledSchemes": {
             "type": "array",
@@ -2437,7 +2510,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DisabledSchemes"
                 }
             ],
-            "property_order": 750
+            "property_order": 765
         },
         "DiskCacheDir": {
             "type": "string",
@@ -2449,7 +2522,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DiskCacheDir"
                 }
             ],
-            "property_order": 755
+            "property_order": 770
         },
         "DiskCacheSize": {
             "type": "integer",
@@ -2461,7 +2534,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DiskCacheSize"
                 }
             ],
-            "property_order": 760
+            "property_order": 775
         },
         "DnsOverHttpsMode": {
             "type": "string",
@@ -2485,7 +2558,7 @@
                     "Enable DNS-over-HTTPS without insecure fallback"
                 ]
             },
-            "property_order": 765
+            "property_order": 780
         },
         "DnsOverHttpsTemplates": {
             "type": "string",
@@ -2497,7 +2570,19 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DnsOverHttpsTemplates"
                 }
             ],
-            "property_order": 770
+            "property_order": 785
+        },
+        "DomainReliabilityAllowed": {
+            "type": "boolean",
+            "title": "Allow reporting of domain reliability related data",
+            "description": "This policy will allow sending domain reliability data to Google",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#DomainReliabilityAllowed"
+                }
+            ],
+            "property_order": 790
         },
         "DownloadDirectory": {
             "type": "string",
@@ -2509,7 +2594,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DownloadDirectory"
                 }
             ],
-            "property_order": 775
+            "property_order": 795
         },
         "DownloadRestrictions": {
             "type": "integer",
@@ -2537,7 +2622,7 @@
                     "Block malicious downloads"
                 ]
             },
-            "property_order": 780
+            "property_order": 800
         },
         "EditBookmarksEnabled": {
             "type": "boolean",
@@ -2550,7 +2635,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EditBookmarksEnabled"
                 }
             ],
-            "property_order": 785
+            "property_order": 805
         },
         "EnableDeprecatedWebPlatformFeatures": {
             "type": "array",
@@ -2565,7 +2650,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnableDeprecatedWebPlatformFeatures"
                 }
             ],
-            "property_order": 790
+            "property_order": 810
         },
         "EnableExperimentalPolicies": {
             "type": "array",
@@ -2581,7 +2666,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnableExperimentalPolicies"
                 }
             ],
-            "property_order": 795
+            "property_order": 815
         },
         "EnableOnlineRevocationChecks": {
             "type": "boolean",
@@ -2594,7 +2679,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnableOnlineRevocationChecks"
                 }
             ],
-            "property_order": 800
+            "property_order": 820
         },
         "EnabledPlugins": {
             "type": "array",
@@ -2609,7 +2694,20 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnabledPlugins"
                 }
             ],
-            "property_order": 805
+            "property_order": 825
+        },
+        "EncryptedClientHelloEnabled": {
+            "type": "boolean",
+            "title": "Enable TLS Encrypted ClientHello",
+            "default": true,
+            "description": "This policy will allow encryption of TLS ClientHello for enhanced privacy.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#EncryptedClientHelloEnabled"
+                }
+            ],
+            "property_order": 830
         },
         "EnterpriseHardwarePlatformAPIEnabled": {
             "type": "boolean",
@@ -2622,7 +2720,20 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnterpriseHardwarePlatformAPIEnabled"
                 }
             ],
-            "property_order": 810
+            "property_order": 835
+        },
+        "EnterpriseProfileCreationKeepBrowsingData": {
+            "type": "boolean",
+            "title": "Keep browsing data when creating enterprise profile by default",
+            "default": false,
+            "description": "This policy will allow keeping browsing data in new enterprise profiles",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#EnterpriseProfileCreationKeepBrowsingData"
+                }
+            ],
+            "property_order": 840
         },
         "EnterpriseRealTimeUrlCheckMode": {
             "type": "integer",
@@ -2644,7 +2755,7 @@
                     "Enabled"
                 ]
             },
-            "property_order": 815
+            "property_order": 845
         },
         "ExternalProtocolDialogShowAlwaysOpenCheckbox": {
             "type": "boolean",
@@ -2657,7 +2768,22 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExternalProtocolDialogShowAlwaysOpenCheckbox"
                 }
             ],
-            "property_order": 820
+            "property_order": 850
+        },
+        "FileOrDirectoryPickerWithoutGestureAllowedForOrigins": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Allow file or directory picker APIs to be called without prior user gesture",
+            "description": "This policy will allow file picker APIs without user gesture for specified origins",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#FileOrDirectoryPickerWithoutGestureAllowedForOrigins"
+                }
+            ],
+            "property_order": 855
         },
         "ForceBrowserSignin": {
             "type": "boolean",
@@ -2670,7 +2796,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ForceBrowserSignin"
                 }
             ],
-            "property_order": 825
+            "property_order": 860
         },
         "ForceEphemeralProfiles": {
             "type": "boolean",
@@ -2683,7 +2809,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ForceEphemeralProfiles"
                 }
             ],
-            "property_order": 830
+            "property_order": 865
         },
         "ForceGoogleSafeSearch": {
             "type": "boolean",
@@ -2696,7 +2822,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ForceGoogleSafeSearch"
                 }
             ],
-            "property_order": 835
+            "property_order": 870
         },
         "ForceSafeSearch": {
             "type": "boolean",
@@ -2709,7 +2835,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ForceSafeSearch"
                 }
             ],
-            "property_order": 840
+            "property_order": 875
         },
         "ForceLegacyDefaultReferrerPolicy": {
             "type": "boolean",
@@ -2722,7 +2848,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ForceLegacyDefaultReferrerPolicy"
                 }
             ],
-            "property_order": 845
+            "property_order": 880
         },
         "GloballyScopeHTTPAuthCacheEnabled": {
             "type": "boolean",
@@ -2735,23 +2861,20 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=GloballyScopeHTTPAuthCacheEnabled"
                 }
             ],
-            "property_order": 850
+            "property_order": 885
         },
-        "HSTSPolicyBypassList": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "title": "Hostname"
-            },
-            "title": "HSTS Policy Bypass List",
-            "description": "List of names that will bypass the HSTS policy check. Hostnames specified in this list will be exempt from the HSTS policy check that could potentially upgrade requests from http to https.",
+        "GoogleSearchSidePanelEnabled": {
+            "type": "boolean",
+            "title": "Enable Google Search Side Panel",
+            "default": true,
+            "description": "This policy will allow Google Search Side Panel.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=HSTSPolicyBypassList"
+                    "href": "https://chromeenterprise.google/policies/#GoogleSearchSidePanelEnabled"
                 }
             ],
-            "property_order": 855
+            "property_order": 890
         },
         "ForceYouTubeRestrict": {
             "type": "integer",
@@ -2775,7 +2898,7 @@
                     "Enforce Strict Restricted Mode for YouTube"
                 ]
             },
-            "property_order": 860
+            "property_order": 895
         },
         "ForceYouTubeSafetyMode": {
             "type": "boolean",
@@ -2788,7 +2911,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ForceYouTubeSafetyMode"
                 }
             ],
-            "property_order": 865
+            "property_order": 900
         },
         "HardwareAccelerationModeEnabled": {
             "type": "boolean",
@@ -2801,7 +2924,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=HardwareAccelerationModeEnabled"
                 }
             ],
-            "property_order": 870
+            "property_order": 905
         },
         "HideWebStoreIcon": {
             "type": "boolean",
@@ -2814,7 +2937,23 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=HideWebStoreIcon"
                 }
             ],
-            "property_order": 875
+            "property_order": 910
+        },
+        "HSTSPolicyBypassList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Hostname"
+            },
+            "title": "HSTS Policy Bypass List",
+            "description": "List of names that will bypass the HSTS policy check. Hostnames specified in this list will be exempt from the HSTS policy check that could potentially upgrade requests from http to https.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=HSTSPolicyBypassList"
+                }
+            ],
+            "property_order": 915
         },
         "Http09OnNonDefaultPortsEnabled": {
             "type": "boolean",
@@ -2827,7 +2966,20 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=Http09OnNonDefaultPortsEnabled"
                 }
             ],
-            "property_order": 880
+            "property_order": 920
+        },
+        "HttpsUpgradesEnabled": {
+            "type": "boolean",
+            "title": "Enable automatic HTTPS upgrades",
+            "default": true,
+            "description": "This policy will allow automatic HTTPS upgrades.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#HttpsUpgradesEnabled"
+                }
+            ],
+            "property_order": 925
         },
         "ImportAutofillFormData": {
             "type": "boolean",
@@ -2839,7 +2991,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImportAutofillFormData"
                 }
             ],
-            "property_order": 885
+            "property_order": 930
         },
         "ImportBookmarks": {
             "type": "boolean",
@@ -2852,7 +3004,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImportBookmarks"
                 }
             ],
-            "property_order": 890
+            "property_order": 935
         },
         "ImportHistory": {
             "type": "boolean",
@@ -2864,7 +3016,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImportHistory"
                 }
             ],
-            "property_order": 895
+            "property_order": 940
         },
         "ImportHomepage": {
             "type": "boolean",
@@ -2876,7 +3028,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImportHomepage"
                 }
             ],
-            "property_order": 900
+            "property_order": 945
         },
         "ImportSavedPasswords": {
             "type": "boolean",
@@ -2888,7 +3040,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImportSavedPasswords"
                 }
             ],
-            "property_order": 905
+            "property_order": 950
         },
         "ImportSearchEngine": {
             "type": "boolean",
@@ -2900,7 +3052,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImportSearchEngine"
                 }
             ],
-            "property_order": 910
+            "property_order": 955
         },
         "IncognitoEnabled": {
             "type": "boolean",
@@ -2913,7 +3065,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImportSearchEngine"
                 }
             ],
-            "property_order": 915
+            "property_order": 960
         },
         "IncognitoModeAvailability": {
             "type": "integer",
@@ -2937,7 +3089,7 @@
                     "Incognito mode forced"
                 ]
             },
-            "property_order": 920
+            "property_order": 965
         },
         "IntensiveWakeUpThrottlingEnabled": {
             "type": "boolean",
@@ -2949,7 +3101,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=IntensiveWakeUpThrottlingEnabled"
                 }
             ],
-            "property_order": 925
+            "property_order": 970
         },
         "IsolateOrigins": {
             "type": "string",
@@ -2961,7 +3113,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=IsolateOrigins"
                 }
             ],
-            "property_order": 930
+            "property_order": 975
         },
         "JavascriptEnabled": {
             "type": "boolean",
@@ -2974,7 +3126,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=JavascriptEnabled"
                 }
             ],
-            "property_order": 935
+            "property_order": 980
         },
         "LocalDiscoveryEnabled": {
             "type": "boolean",
@@ -2986,7 +3138,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=LocalDiscoveryEnabled"
                 }
             ],
-            "property_order": 940
+            "property_order": 985
         },
         "LookalikeWarningAllowlistDomains": {
             "type": "array",
@@ -3002,7 +3154,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=LookalikeWarningAllowlistDomains"
                 }
             ],
-            "property_order": 945
+            "property_order": 990
         },
         "MachineLevelUserCloudPolicyEnrollmentToken": {
             "type": "string",
@@ -3014,7 +3166,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=MachineLevelUserCloudPolicyEnrollmentToken"
                 }
             ],
-            "property_order": 950
+            "property_order": 995
         },
         "ManagedBookmarks": {
             "type": "array",
@@ -3039,7 +3191,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ManagedBookmarks"
                 }
             ],
-            "property_order": 955
+            "property_order": 1000
         },
         "MaxConnectionsPerProxy": {
             "type": "integer",
@@ -3052,7 +3204,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=MaxConnectionsPerProxy"
                 }
             ],
-            "property_order": 960
+            "property_order": 1005
         },
         "MaxInvalidationFetchDelay": {
             "type": "integer",
@@ -3065,7 +3217,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=MaxInvalidationFetchDelay"
                 }
             ],
-            "property_order": 965
+            "property_order": 1010
         },
         "MediaRecommendationsEnabled": {
             "type": "boolean",
@@ -3077,7 +3229,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=MediaRecommendationsEnabled"
                 }
             ],
-            "property_order": 970
+            "property_order": 1015
         },
         "MediaRouterCastAllowAllIPs": {
             "type": "boolean",
@@ -3089,7 +3241,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=MediaRouterCastAllowAllIPs"
                 }
             ],
-            "property_order": 975
+            "property_order": 1020
         },
         "MetricsReportingEnabled": {
             "type": "boolean",
@@ -3101,32 +3253,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=MetricsReportingEnabled"
                 }
             ],
-            "property_order": 980
-        },
-        "NTPCardsVisible": {
-            "type": "boolean",
-            "title": "Show cards on the New Tab Page",
-            "description": "This policy controls the visibility of cards on the New Tab Page. Cards surface entry points to launch common user journeys based on the user's browsing behavior.\n\nIf the policy is set to Enabled, the New Tab Page will show cards if content is available.\n\nIf the policy is set to Disabled, the New Tab Page won't show cards.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NTPCardsVisible"
-                }
-            ],
-            "property_order": 985
-        },
-        "NTPCustomBackgroundEnabled": {
-            "type": "boolean",
-            "title": "Allow New Tab page background customization",
-            "default": true,
-            "description": "Allow users to customize the background on the New Tab page",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NTPCustomBackgroundEnabled"
-                }
-            ],
-            "property_order": 990
+            "property_order": 1025
         },
         "NetworkPredictionOptions": {
             "type": "integer",
@@ -3150,7 +3277,32 @@
                     "Do not predict network actions on any network connection"
                 ]
             },
-            "property_order": 995
+            "property_order": 1030
+        },
+        "NTPCardsVisible": {
+            "type": "boolean",
+            "title": "Show cards on the New Tab Page",
+            "description": "This policy controls the visibility of cards on the New Tab Page. Cards surface entry points to launch common user journeys based on the user's browsing behavior.\n\nIf the policy is set to Enabled, the New Tab Page will show cards if content is available.\n\nIf the policy is set to Disabled, the New Tab Page won't show cards.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NTPCardsVisible"
+                }
+            ],
+            "property_order": 1035
+        },
+        "NTPCustomBackgroundEnabled": {
+            "type": "boolean",
+            "title": "Allow New Tab page background customization",
+            "default": true,
+            "description": "Allow users to customize the background on the New Tab page",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NTPCustomBackgroundEnabled"
+                }
+            ],
+            "property_order": 1040
         },
         "OverrideSecurityRestrictionsOnInsecureOrigin": {
             "type": "array",
@@ -3165,7 +3317,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=OverrideSecurityRestrictionsOnInsecureOrigin"
                 }
             ],
-            "property_order": 1000
+            "property_order": 1045
         },
         "PaymentMethodQueryEnabled": {
             "type": "boolean",
@@ -3178,7 +3330,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PaymentMethodQueryEnabled"
                 }
             ],
-            "property_order": 1005
+            "property_order": 1050
         },
         "PolicyAtomicGroupsEnabled": {
             "type": "boolean",
@@ -3191,7 +3343,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PolicyAtomicGroupsEnabled"
                 }
             ],
-            "property_order": 1010
+            "property_order": 1055
         },
         "PolicyDictionaryMultipleSourceMergeList": {
             "type": "array",
@@ -3206,7 +3358,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PolicyDictionaryMultipleSourceMergeList"
                 }
             ],
-            "property_order": 1015
+            "property_order": 1060
         },
         "PolicyListMultipleSourceMergeList": {
             "type": "array",
@@ -3221,7 +3373,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PolicyListMultipleSourceMergeList"
                 }
             ],
-            "property_order": 1020
+            "property_order": 1065
         },
         "PolicyRefreshRate": {
             "type": "integer",
@@ -3234,7 +3386,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PolicyRefreshRate"
                 }
             ],
-            "property_order": 1025
+            "property_order": 1070
         },
         "ProfilePickerOnStartupAvailability": {
             "type": "integer",
@@ -3258,7 +3410,7 @@
                     "Profile picker forced at startup"
                 ]
             },
-            "property_order": 1030
+            "property_order": 1075
         },
         "PromotionalTabsEnabled": {
             "type": "boolean",
@@ -3271,7 +3423,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PromotionalTabsEnabled"
                 }
             ],
-            "property_order": 1035
+            "property_order": 1080
         },
         "PromptForDownloadLocation": {
             "type": "boolean",
@@ -3283,63 +3435,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PromptForDownloadLocation"
                 }
             ],
-            "property_order": 1040
-        },
-        "ProxySettings": {
-            "type": "object",
-            "title": "Proxy Settings",
-            "description": "Configures the proxy settings for Google Chrome. These proxy settings will be available for ARC-apps too.\n\nIf you enable this setting, Google Chrome and ARC-apps ignore all proxy-related options specified from the command line.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://chromeenterprise.google/policies/#ProxySettings"
-                }
-            ],
-            "properties": {
-                "ProxyMode": {
-                    "type": "string",
-                    "title": "Proxy Mode",
-                    "description": "Specifies the proxy server Google Chrome uses and prevents users from changing proxy settings.",
-                    "enum": [
-                        "direct",
-                        "system",
-                        "auto_detect",
-                        "fixed_servers",
-                        "pac_script"
-                    ],
-                    "options": {
-                        "enum_titles": [
-                            "Never use proxy (ignores other fields)",
-                            "System (ignores other fields)",
-                            "Auto Detect (ignores other fields)",
-                            "Fixed (Uses ProxyServer & ProxyBypassList)",
-                            "Pac Script (Uses ProxyPacUrl & ProxyBypassList)"
-                        ]
-                    }
-                },
-                "ProxyServer": {
-                    "type": "string",
-                    "title": "Proxy Server URL",
-                    "description": "Specifies the URL of the proxy server"
-                },
-                "ProxyBypassList": {
-                    "type": "string",
-                    "title": "Proxy Bypass List",
-                    "description": "Defines a comma-separated list of hosts for which Google Chrome bypasses any proxy."
-                },
-                "ProxyPacUrl": {
-                    "type": "string",
-                    "title": "Proxy PAC URL",
-                    "description": "Specifies the URL for a proxy auto-config (PAC) file.",
-                    "pattern": "^https?://.*.pac$"
-                },
-                "ProxyPacMandatory": {
-                    "type": "boolean",
-                    "title": "Proxy PAC Mandatory",
-                    "description": "Prevents the network stack from falling back to direct connections with invalid or unavailable PAC script."
-                }
-            },
-            "property_order": 1045
+            "property_order": 1085
         },
         "QuicAllowed": {
             "type": "boolean",
@@ -3352,7 +3448,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=QuicAllowed"
                 }
             ],
-            "property_order": 1050
+            "property_order": 1090
         },
         "RelaunchNotification": {
             "type": "integer",
@@ -3374,7 +3470,7 @@
                     "Show a recurring prompt to the user indicating that a relaunch is required"
                 ]
             },
-            "property_order": 1055
+            "property_order": 1095
         },
         "RelaunchNotificationPeriod": {
             "type": "integer",
@@ -3386,7 +3482,20 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RelaunchNotificationPeriod"
                 }
             ],
-            "property_order": 1060
+            "property_order": 1100
+        },
+        "RemoteDebuggingAllowed": {
+            "type": "boolean",
+            "title": "Allow remote debugging",
+            "default": true,
+            "description": "Controls whether users may use remote debugging.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#RemoteDebuggingAllowed"
+                }
+            ],
+            "property_order": 1105
         },
         "RestrictSigninToPattern": {
             "type": "string",
@@ -3398,7 +3507,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RestrictSigninToPattern"
                 }
             ],
-            "property_order": 1065
+            "property_order": 1110
         },
         "RunAllFlashInAllowMode": {
             "type": "boolean",
@@ -3411,7 +3520,218 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RunAllFlashInAllowMode"
                 }
             ],
-            "property_order": 1070
+            "property_order": 1115
+        },
+        "SafeBrowsingForTrustedSourcesEnabled": {
+            "type": "boolean",
+            "title": "Safe Browsing checks",
+            "default": true,
+            "description": "Setting the policy to Enabled or leaving it unset means downloaded files are sent to be analyzed by Safe Browsing, even when it's from a trusted source.\nSetting the policy to Disabled means downloaded files won't be sent to be analyzed by Safe Browsing when it's from a trusted source.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#SafeBrowsingForTrustedSourcesEnabled"
+                }
+            ],
+            "property_order": 1120
+        },
+        "SafeSitesFilterBehavior": {
+            "type": "integer",
+            "title": "Control SafeSites adult content filtering.",
+            "description": "This policy controls the application of the SafeSites URL filter.\nThis filter uses the Google Safe Search API to classify URLs as pornographic or not.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeSitesFilterBehavior"
+                }
+            ],
+            "enum": [
+                0,
+                1
+            ],
+            "options": {
+                "enum_titles": [
+                    "Do not filter sites for adult content",
+                    "Filter top level sites (but not embedded iframes) for adult content"
+                ]
+            },
+            "property_order": 1125
+        },
+        "SavingBrowserHistoryDisabled": {
+            "type": "boolean",
+            "title": "Disable saving browser history",
+            "default": false,
+            "description": "Disables saving browser history in Google Chrome and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SavingBrowserHistoryDisabled"
+                }
+            ],
+            "property_order": 1130
+        },
+        "ScreenCaptureAllowed": {
+            "type": "boolean",
+            "title": "Screen Capture",
+            "default": true,
+            "description": "If enabled or not configured (default), a Web page can use screen-share APIs (e.g., getDisplayMedia() or the Desktop Capture extension API) to prompt the user to select a tab, window or desktop to capture.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ScreenCaptureAllowed"
+                }
+            ],
+            "property_order": 1135
+        },
+        "ScrollToTextFragmentEnabled": {
+            "type": "boolean",
+            "title": "Enable scroll to text fragment",
+            "default": true,
+            "description": "This feature allows for hyperlinks and address bar URL navigations to target specific text within a web page, which will be scrolled to once the loading of the web page is complete.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ScrollToTextFragmentEnabled"
+                }
+            ],
+            "property_order": 1140
+        },
+        "SearchSuggestEnabled": {
+            "type": "boolean",
+            "title": "Enable search suggestions",
+            "description": "Enables search suggestions in Google Chrome's omnibox and prevents users from changing this setting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SearchSuggestEnabled"
+                }
+            ],
+            "property_order": 1145
+        },
+        "SecurityKeyPermitAttestation": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "URLs/domains automatically permitted direct Security Key attestation",
+            "description": "Specifies URLs and domains for which no prompt will be shown when attestation certificates from Security Keys are requested. Additionally, a signal will be sent to the Security Key indicating that individual attestation may be used. Without this, users will be prompted in Chrome 65+ when sites request attestation of Security Keys.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SecurityKeyPermitAttestation"
+                }
+            ],
+            "property_order": 1150
+        },
+        "SharedClipboardEnabled": {
+            "type": "boolean",
+            "title": "Enable Shared Clipboard",
+            "default": true,
+            "description": "Enables the Shared Clipboard feature which allows users to send text between Chrome Desktops and an Android device when Sync is enabled and the user is Signed-in.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SharedClipboardEnabled"
+                }
+            ],
+            "property_order": 1155
+        },
+        "ShowAppsShortcutInBookmarkBar": {
+            "type": "boolean",
+            "title": "Show the apps shortcut in the bookmark bar",
+            "description": "Enables or disables the apps shortcut in the bookmark bar.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ShowAppsShortcutInBookmarkBar"
+                }
+            ],
+            "property_order": 1160
+        },
+        "ShowFullUrlsInAddressBar": {
+            "type": "boolean",
+            "title": "Show Full URLs",
+            "description": "This feature enables display of the full URL in the address bar. If this policy is set to True, then the full URL will be shown in the address bar, including schemes and subdomains. If this policy is set to False, then the default URL display will apply.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ShowFullUrlsInAddressBar"
+                }
+            ],
+            "property_order": 1165
+        },
+        "SignedHTTPExchangeEnabled": {
+            "type": "boolean",
+            "title": "Enabled Signed HTTP Exchange (SXG) support",
+            "default": true,
+            "description": "Enable support for Signed HTTP Exchange (SXG).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SignedHTTPExchangeEnabled"
+                }
+            ],
+            "property_order": 1170
+        },
+        "SigninAllowed": {
+            "type": "boolean",
+            "title": "Allow sign in",
+            "description": "This policy is deprecated, consider using BrowserSignin instead.\n\nAllows the user to sign in to Google Chrome.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SigninAllowed"
+                }
+            ],
+            "property_order": 1175
+        },
+        "SigninInterceptionEnabled": {
+            "type": "boolean",
+            "title": "Enable signin interception",
+            "description": "This settings enables or disables signin interception. When this policy not set or is set to True, the signin interception dialog triggers when a Google account is added on the web, and the user may benefit from moving this account to another (new or existing) profile. When this is set to False, the signin interception dialog does not trigger.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SigninInterceptionEnabled"
+                }
+            ],
+            "property_order": 1180
+        },
+        "SitePerProcess": {
+            "type": "boolean",
+            "title": "Enable Site Isolation for every site",
+            "description": "You might want to look at the IsolateOrigins policy setting to get the best of both worlds, isolation and limited impact for users, by using IsolateOrigins with a list of the sites you want to isolate. This setting, SitePerProcess, isolates all sites. If the policy is enabled, each site will run in its own process. If the policy is disabled, no explicit Site Isolation will happen and field trials of IsolateOrigins and SitePerProcess will be disabled. Users will still be able to enable SitePerProcess manually. If the policy is not configured, the user will be able to change this setting. On Google Chrome OS, it is recommended to also set the DeviceLoginScreenSitePerProcess device policy to the same value. If the values specified by the two policies don't match, a delay may be incurred when entering a user session while the value specified by user policy is being applied.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SitePerProcess"
+                }
+            ],
+            "property_order": 1185
+        },
+        "SpellCheckServiceEnabled": {
+            "type": "boolean",
+            "title": "Enable or disable spell checking web service",
+            "description": "Google Chrome can use a Google web service to help resolve spelling errors. If this setting is enabled, then this service is always used. If this setting is disabled, then this service is never used.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SpellCheckServiceEnabled"
+                }
+            ],
+            "property_order": 1190
+        },
+        "SpellcheckEnabled": {
+            "type": "boolean",
+            "title": "Enable spellcheck",
+            "description": "If this policy is not set or enabled, the user is allowed to use spellcheck.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SpellcheckEnabled"
+                }
+            ],
+            "property_order": 1195
         },
         "SSLErrorOverrideAllowed": {
             "type": "boolean",
@@ -3424,7 +3744,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SSLErrorOverrideAllowed"
                 }
             ],
-            "property_order": 1075
+            "property_order": 1200
         },
         "SSLVersionMin": {
             "type": "string",
@@ -3448,205 +3768,20 @@
                     "TLS 1.2"
                 ]
             },
-            "property_order": 1080
+            "property_order": 1205
         },
-        "SafeSitesFilterBehavior": {
-            "type": "integer",
-            "title": "Control SafeSites adult content filtering.",
-            "description": "This policy controls the application of the SafeSites URL filter.\nThis filter uses the Google Safe Search API to classify URLs as pornographic or not.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeSitesFilterBehavior"
-                }
-            ],
-            "enum": [
-                0,
-                1
-            ],
-            "options": {
-                "enum_titles": [
-                    "Do not filter sites for adult content",
-                    "Filter top level sites (but not embedded iframes) for adult content"
-                ]
-            },
-            "property_order": 1085
-        },
-        "SavingBrowserHistoryDisabled": {
+        "StrictMimetypeCheckForWorkerScriptsEnabled": {
             "type": "boolean",
-            "title": "Disable saving browser history",
-            "default": false,
-            "description": "Disables saving browser history in Google Chrome and prevents users from changing this setting.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SavingBrowserHistoryDisabled"
-                }
-            ],
-            "property_order": 1090
-        },
-        "ScreenCaptureAllowed": {
-            "type": "boolean",
-            "title": "Screen Capture",
+            "title": "Enable strict MIME type checking for worker scripts",
             "default": true,
-            "description": "If enabled or not configured (default), a Web page can use screen-share APIs (e.g., getDisplayMedia() or the Desktop Capture extension API) to prompt the user to select a tab, window or desktop to capture.",
+            "description": "This policy enables strict MIME type checking for worker scripts.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ScreenCaptureAllowed"
+                    "href": "https://chromeenterprise.google/policies/#StrictMimetypeCheckForWorkerScriptsEnabled"
                 }
             ],
-            "property_order": 1095
-        },
-        "ScrollToTextFragmentEnabled": {
-            "type": "boolean",
-            "title": "Enable scroll to text fragment",
-            "default": true,
-            "description": "This feature allows for hyperlinks and address bar URL navigations to target specific text within a web page, which will be scrolled to once the loading of the web page is complete.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ScrollToTextFragmentEnabled"
-                }
-            ],
-            "property_order": 1100
-        },
-        "SearchSuggestEnabled": {
-            "type": "boolean",
-            "title": "Enable search suggestions",
-            "description": "Enables search suggestions in Google Chrome's omnibox and prevents users from changing this setting.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SearchSuggestEnabled"
-                }
-            ],
-            "property_order": 1105
-        },
-        "SecurityKeyPermitAttestation": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
-            "title": "URLs/domains automatically permitted direct Security Key attestation",
-            "description": "Specifies URLs and domains for which no prompt will be shown when attestation certificates from Security Keys are requested. Additionally, a signal will be sent to the Security Key indicating that individual attestation may be used. Without this, users will be prompted in Chrome 65+ when sites request attestation of Security Keys.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SecurityKeyPermitAttestation"
-                }
-            ],
-            "property_order": 1110
-        },
-        "SharedClipboardEnabled": {
-            "type": "boolean",
-            "title": "Enable Shared Clipboard",
-            "default": true,
-            "description": "Enables the Shared Clipboard feature which allows users to send text between Chrome Desktops and an Android device when Sync is enabled and the user is Signed-in.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SharedClipboardEnabled"
-                }
-            ],
-            "property_order": 1115
-        },
-        "ShowAppsShortcutInBookmarkBar": {
-            "type": "boolean",
-            "title": "Show the apps shortcut in the bookmark bar",
-            "description": "Enables or disables the apps shortcut in the bookmark bar.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ShowAppsShortcutInBookmarkBar"
-                }
-            ],
-            "property_order": 1120
-        },
-        "ShowFullUrlsInAddressBar": {
-            "type": "boolean",
-            "title": "Show Full URLs",
-            "description": "This feature enables display of the full URL in the address bar. If this policy is set to True, then the full URL will be shown in the address bar, including schemes and subdomains. If this policy is set to False, then the default URL display will apply.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ShowFullUrlsInAddressBar"
-                }
-            ],
-            "property_order": 1125
-        },
-        "SignedHTTPExchangeEnabled": {
-            "type": "boolean",
-            "title": "Enabled Signed HTTP Exchange (SXG) support",
-            "default": true,
-            "description": "Enable support for Signed HTTP Exchange (SXG).",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SignedHTTPExchangeEnabled"
-                }
-            ],
-            "property_order": 1130
-        },
-        "SigninAllowed": {
-            "type": "boolean",
-            "title": "Allow sign in",
-            "description": "This policy is deprecated, consider using BrowserSignin instead.\n\nAllows the user to sign in to Google Chrome.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SigninAllowed"
-                }
-            ],
-            "property_order": 1135
-        },
-        "SigninInterceptionEnabled": {
-            "type": "boolean",
-            "title": "Enable signin interception",
-            "description": "This settings enables or disables signin interception. When this policy not set or is set to True, the signin interception dialog triggers when a Google account is added on the web, and the user may benefit from moving this account to another (new or existing) profile. When this is set to False, the signin interception dialog does not trigger.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SigninInterceptionEnabled"
-                }
-            ],
-            "property_order": 1140
-        },
-        "SitePerProcess": {
-            "type": "boolean",
-            "title": "Enable Site Isolation for every site",
-            "description": "You might want to look at the IsolateOrigins policy setting to get the best of both worlds, isolation and limited impact for users, by using IsolateOrigins with a list of the sites you want to isolate. This setting, SitePerProcess, isolates all sites. If the policy is enabled, each site will run in its own process. If the policy is disabled, no explicit Site Isolation will happen and field trials of IsolateOrigins and SitePerProcess will be disabled. Users will still be able to enable SitePerProcess manually. If the policy is not configured, the user will be able to change this setting. On Google Chrome OS, it is recommended to also set the DeviceLoginScreenSitePerProcess device policy to the same value. If the values specified by the two policies don't match, a delay may be incurred when entering a user session while the value specified by user policy is being applied.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SitePerProcess"
-                }
-            ],
-            "property_order": 1145
-        },
-        "SpellCheckServiceEnabled": {
-            "type": "boolean",
-            "title": "Enable or disable spell checking web service",
-            "description": "Google Chrome can use a Google web service to help resolve spelling errors. If this setting is enabled, then this service is always used. If this setting is disabled, then this service is never used.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SpellCheckServiceEnabled"
-                }
-            ],
-            "property_order": 1150
-        },
-        "SpellcheckEnabled": {
-            "type": "boolean",
-            "title": "Enable spellcheck",
-            "description": "If this policy is not set or enabled, the user is allowed to use spellcheck.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SpellcheckEnabled"
-                }
-            ],
-            "property_order": 1155
+            "property_order": 1210
         },
         "StricterMixedContentTreatmentEnabled": {
             "type": "boolean",
@@ -3659,7 +3794,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=StricterMixedContentTreatmentEnabled"
                 }
             ],
-            "property_order": 1160
+            "property_order": 1215
         },
         "SuppressUnsupportedOSWarning": {
             "type": "boolean",
@@ -3671,7 +3806,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SuppressUnsupportedOSWarning"
                 }
             ],
-            "property_order": 1165
+            "property_order": 1220
         },
         "SyncDisabled": {
             "type": "boolean",
@@ -3683,7 +3818,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SyncDisabled"
                 }
             ],
-            "property_order": 1170
+            "property_order": 1225
         },
         "SyncTypesListDisabled": {
             "type": "array",
@@ -3725,20 +3860,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SyncTypesListDisabled"
                 }
             ],
-            "property_order": 1175
-        },
-        "TLS13HardeningForLocalAnchorsEnabled": {
-            "type": "boolean",
-            "title": "Enable TLS 1.3 hardening for local anchors",
-            "default": true,
-            "description": "Enable a TLS 1.3 security feature for local trust anchors. This policy controls a security feature in TLS 1.3 which protects connections against downgrade attacks. It is backwards-compatible and will not affect connections to compliant TLS 1.2 servers or proxies. However, older versions of some TLS-intercepting proxies have an implementation flaw which causes them to be incompatible.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=TLS13HardeningForLocalAnchorsEnabled"
-                }
-            ],
-            "property_order": 1180
+            "property_order": 1230
         },
         "TargetBlankImpliesNoOpener": {
             "type": "boolean",
@@ -3751,7 +3873,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=TargetBlankImpliesNoOpener"
                 }
             ],
-            "property_order": 1185
+            "property_order": 1235
         },
         "TaskManagerEndProcessEnabled": {
             "type": "boolean",
@@ -3764,7 +3886,20 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=TaskManagerEndProcessEnabled"
                 }
             ],
-            "property_order": 1190
+            "property_order": 1240
+        },
+        "TLS13HardeningForLocalAnchorsEnabled": {
+            "type": "boolean",
+            "title": "Enable TLS 1.3 hardening for local anchors",
+            "default": true,
+            "description": "Enable a TLS 1.3 security feature for local trust anchors. This policy controls a security feature in TLS 1.3 which protects connections against downgrade attacks. It is backwards-compatible and will not affect connections to compliant TLS 1.2 servers or proxies. However, older versions of some TLS-intercepting proxies have an implementation flaw which causes them to be incompatible.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=TLS13HardeningForLocalAnchorsEnabled"
+                }
+            ],
+            "property_order": 1245
         },
         "TotalMemoryLimitMb": {
             "type": "integer",
@@ -3776,7 +3911,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=TotalMemoryLimitMb"
                 }
             ],
-            "property_order": 1195
+            "property_order": 1250
         },
         "TranslateEnabled": {
             "type": "boolean",
@@ -3788,7 +3923,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=TranslateEnabled"
                 }
             ],
-            "property_order": 1200
+            "property_order": 1255
         },
         "URLBlacklist": {
             "type": "array",
@@ -3803,7 +3938,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=URLBlacklist"
                 }
             ],
-            "property_order": 1205
+            "property_order": 1260
         },
         "URLBlocklist": {
             "type": "array",
@@ -3818,7 +3953,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=URLBlocklist"
                 }
             ],
-            "property_order": 1210
+            "property_order": 1265
         },
         "URLWhitelist": {
             "type": "array",
@@ -3833,7 +3968,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=URLWhitelist"
                 }
             ],
-            "property_order": 1215
+            "property_order": 1270
         },
         "URLAllowlist": {
             "type": "array",
@@ -3848,7 +3983,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=URLAllowlist"
                 }
             ],
-            "property_order": 1220
+            "property_order": 1275
         },
         "UnsafelyTreatInsecureOriginAsSecure": {
             "type": "array",
@@ -3863,7 +3998,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=UnsafelyTreatInsecureOriginAsSecure"
                 }
             ],
-            "property_order": 1225
+            "property_order": 1280
         },
         "UrlKeyedAnonymizedDataCollectionEnabled": {
             "type": "boolean",
@@ -3875,7 +4010,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=UrlKeyedAnonymizedDataCollectionEnabled"
                 }
             ],
-            "property_order": 1230
+            "property_order": 1285
         },
         "UserAgentClientHintsEnabled": {
             "type": "boolean",
@@ -3887,7 +4022,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=UserAgentClientHintsEnabled"
                 }
             ],
-            "property_order": 1235
+            "property_order": 1290
         },
         "UserFeedbackAllowed": {
             "type": "boolean",
@@ -3900,7 +4035,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=UserFeedbackAllowed"
                 }
             ],
-            "property_order": 1240
+            "property_order": 1295
         },
         "UserDataDir": {
             "type": "string",
@@ -3912,7 +4047,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=UserDataDir"
                 }
             ],
-            "property_order": 1245
+            "property_order": 1300
         },
         "UserDataSnapshotRetentionLimit": {
             "type": "integer",
@@ -3925,7 +4060,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=UserDataSnapshotRetentionLimit"
                 }
             ],
-            "property_order": 1250
+            "property_order": 1305
         },
         "VideoCaptureAllowed": {
             "type": "boolean",
@@ -3938,7 +4073,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=VideoCaptureAllowed"
                 }
             ],
-            "property_order": 1255
+            "property_order": 1310
         },
         "VideoCaptureAllowedUrls": {
             "type": "array",
@@ -3953,20 +4088,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=VideoCaptureAllowedUrls"
                 }
             ],
-            "property_order": 1260
-        },
-        "WPADQuickCheckEnabled": {
-            "type": "boolean",
-            "title": "Enable WPAD optimization",
-            "default": true,
-            "description": "Allows to turn off WPAD (Web Proxy Auto-Discovery) optimization in Google Chrome.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WPADQuickCheckEnabled"
-                }
-            ],
-            "property_order": 1265
+            "property_order": 1315
         },
         "WebAppInstallForceList": {
             "type": "array",
@@ -4033,7 +4155,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebAppInstallForceList"
                 }
             ],
-            "property_order": 1270
+            "property_order": 1320
         },
         "WebComponentsV0Enabled": {
             "type": "boolean",
@@ -4046,7 +4168,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebComponentsV0Enabled"
                 }
             ],
-            "property_order": 1275
+            "property_order": 1325
         },
         "WebDriverOverridesIncompatiblePolicies": {
             "type": "boolean",
@@ -4059,7 +4181,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebDriverOverridesIncompatiblePolicies"
                 }
             ],
-            "property_order": 1280
+            "property_order": 1330
         },
         "WebRtcAllowLegacyTLSProtocols": {
             "type": "boolean",
@@ -4071,7 +4193,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebRtcAllowLegacyTLSProtocols"
                 }
             ],
-            "property_order": 1285
+            "property_order": 1335
         },
         "WebRtcEventLogCollectionAllowed": {
             "type": "boolean",
@@ -4083,7 +4205,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebRtcEventLogCollectionAllowed"
                 }
             ],
-            "property_order": 1290
+            "property_order": 1340
         },
         "WebRtcLocalIpsAllowedUrls": {
             "type": "array",
@@ -4099,7 +4221,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebRtcLocalIpsAllowedUrls"
                 }
             ],
-            "property_order": 1295
+            "property_order": 1345
         },
         "WebRtcUdpPortRange": {
             "type": "string",
@@ -4111,7 +4233,20 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebRtcUdpPortRange"
                 }
             ],
-            "property_order": 1300
+            "property_order": 1350
+        },
+        "WPADQuickCheckEnabled": {
+            "type": "boolean",
+            "title": "Enable WPAD optimization",
+            "default": true,
+            "description": "Allows to turn off WPAD (Web Proxy Auto-Discovery) optimization in Google Chrome.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WPADQuickCheckEnabled"
+                }
+            ],
+            "property_order": 1355
         },
         "NativeMessagingBlacklist": {
             "type": "array",
@@ -4126,7 +4261,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NativeMessagingBlacklist"
                 }
             ],
-            "property_order": 1305
+            "property_order": 1360
         },
         "NativeMessagingBlocklist": {
             "type": "array",
@@ -4141,7 +4276,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NativeMessagingBlocklist"
                 }
             ],
-            "property_order": 1310
+            "property_order": 1365
         },
         "NativeMessagingUserLevelHosts": {
             "type": "boolean",
@@ -4153,7 +4288,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NativeMessagingUserLevelHosts"
                 }
             ],
-            "property_order": 1315
+            "property_order": 1370
         },
         "NativeMessagingWhitelist": {
             "type": "array",
@@ -4168,7 +4303,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NativeMessagingWhitelist"
                 }
             ],
-            "property_order": 1320
+            "property_order": 1375
         },
         "NativeMessagingAllowlist": {
             "type": "array",
@@ -4183,7 +4318,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NativeMessagingAllowlist"
                 }
             ],
-            "property_order": 1325
+            "property_order": 1380
         },
         "PasswordLeakDetectionEnabled": {
             "type": "boolean",
@@ -4195,7 +4330,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PasswordLeakDetectionEnabled"
                 }
             ],
-            "property_order": 1330
+            "property_order": 1385
         },
         "PasswordManagerEnabled": {
             "type": "boolean",
@@ -4207,7 +4342,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PasswordManagerEnabled"
                 }
             ],
-            "property_order": 1335
+            "property_order": 1390
         },
         "CloudPrintProxyEnabled": {
             "type": "boolean",
@@ -4220,7 +4355,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudPrintProxyEnabled"
                 }
             ],
-            "property_order": 1340
+            "property_order": 1395
         },
         "CloudPrintSubmitEnabled": {
             "type": "boolean",
@@ -4233,7 +4368,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudPrintSubmitEnabled"
                 }
             ],
-            "property_order": 1345
+            "property_order": 1400
         },
         "DefaultPrinterSelection": {
             "type": "string",
@@ -4245,7 +4380,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultPrinterSelection"
                 }
             ],
-            "property_order": 1350
+            "property_order": 1405
         },
         "DisablePrintPreview": {
             "type": "boolean",
@@ -4258,7 +4393,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DisablePrintPreview"
                 }
             ],
-            "property_order": 1355
+            "property_order": 1410
         },
         "PrintHeaderFooter": {
             "type": "boolean",
@@ -4270,7 +4405,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PrintHeaderFooter"
                 }
             ],
-            "property_order": 1360
+            "property_order": 1415
         },
         "PrinterTypeDenyList": {
             "type": "array",
@@ -4302,7 +4437,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PrinterTypeDenyList"
                 }
             ],
-            "property_order": 1365
+            "property_order": 1420
         },
         "PrintingAllowedBackgroundGraphicsModes": {
             "type": "string",
@@ -4326,7 +4461,7 @@
                     "Allow printing only without background graphics"
                 ]
             },
-            "property_order": 1370
+            "property_order": 1425
         },
         "PrintingBackgroundGraphicsDefault": {
             "type": "string",
@@ -4348,7 +4483,7 @@
                     "Disabled"
                 ]
             },
-            "property_order": 1375
+            "property_order": 1430
         },
         "PrintingEnabled": {
             "type": "boolean",
@@ -4361,7 +4496,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PrintingEnabled"
                 }
             ],
-            "property_order": 1380
+            "property_order": 1435
         },
         "PrintPreviewUseSystemDefaultPrinter": {
             "type": "boolean",
@@ -4374,7 +4509,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PrintPreviewUseSystemDefaultPrinter"
                 }
             ],
-            "property_order": 1385
+            "property_order": 1440
         },
         "PrinterPaperSizeDefault": {
             "type": "object",
@@ -4545,7 +4680,7 @@
                     ]
                 }
             },
-            "property_order": 1390
+            "property_order": 1445
         },
         "ProxyBypassList": {
             "type": "string",
@@ -4557,7 +4692,63 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ProxyBypassList"
                 }
             ],
-            "property_order": 1395
+            "property_order": 1450
+        },
+        "ProxySettings": {
+            "type": "object",
+            "title": "Proxy Settings",
+            "description": "Configures the proxy settings for Google Chrome. These proxy settings will be available for ARC-apps too.\n\nIf you enable this setting, Google Chrome and ARC-apps ignore all proxy-related options specified from the command line.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://chromeenterprise.google/policies/#ProxySettings"
+                }
+            ],
+            "properties": {
+                "ProxyMode": {
+                    "type": "string",
+                    "title": "Proxy Mode",
+                    "description": "Specifies the proxy server Google Chrome uses and prevents users from changing proxy settings.",
+                    "enum": [
+                        "direct",
+                        "system",
+                        "auto_detect",
+                        "fixed_servers",
+                        "pac_script"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Never use proxy (ignores other fields)",
+                            "System (ignores other fields)",
+                            "Auto Detect (ignores other fields)",
+                            "Fixed (Uses ProxyServer & ProxyBypassList)",
+                            "Pac Script (Uses ProxyPacUrl & ProxyBypassList)"
+                        ]
+                    }
+                },
+                "ProxyServer": {
+                    "type": "string",
+                    "title": "Proxy Server URL",
+                    "description": "Specifies the URL of the proxy server"
+                },
+                "ProxyBypassList": {
+                    "type": "string",
+                    "title": "Proxy Bypass List",
+                    "description": "Defines a comma-separated list of hosts for which Google Chrome bypasses any proxy."
+                },
+                "ProxyPacUrl": {
+                    "type": "string",
+                    "title": "Proxy PAC URL",
+                    "description": "Specifies the URL for a proxy auto-config (PAC) file.",
+                    "pattern": "^https?://.*.pac$"
+                },
+                "ProxyPacMandatory": {
+                    "type": "boolean",
+                    "title": "Proxy PAC Mandatory",
+                    "description": "Prevents the network stack from falling back to direct connections with invalid or unavailable PAC script."
+                }
+            },
+            "property_order": 1455
         },
         "ProxyMode": {
             "type": "string",
@@ -4585,20 +4776,20 @@
                     "Use system proxy settings"
                 ]
             },
-            "property_order": 1400
+            "property_order": 1460
         },
         "ProxyPacUrl": {
             "type": "string",
             "title": "URL to a proxy .pac file",
             "description": "You can specify a URL to a proxy .pac file here.",
             "pattern": "https?://.*.pac$",
-            "property_order": 1405
+            "property_order": 1465
         },
         "ProxyServer": {
             "type": "string",
             "title": "Address or URL of proxy server",
             "description": "You can specify the URL of the proxy server here.",
-            "property_order": 1410
+            "property_order": 1470
         },
         "ProxyServerMode": {
             "type": "integer",
@@ -4618,7 +4809,7 @@
                     "Use system proxy settings"
                 ]
             },
-            "property_order": 1415
+            "property_order": 1475
         },
         "RemoteAccessHostAllowClientPairing": {
             "type": "boolean",
@@ -4631,7 +4822,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostAllowClientPairing"
                 }
             ],
-            "property_order": 1420
+            "property_order": 1480
         },
         "RemoteAccessHostAllowFileTransfer": {
             "type": "boolean",
@@ -4643,7 +4834,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostAllowFileTransfer"
                 }
             ],
-            "property_order": 1425
+            "property_order": 1485
         },
         "RemoteAccessHostAllowGnubbyAuth": {
             "type": "boolean",
@@ -4656,7 +4847,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostAllowGnubbyAuth"
                 }
             ],
-            "property_order": 1430
+            "property_order": 1490
         },
         "RemoteAccessHostAllowRelayedConnection": {
             "type": "boolean",
@@ -4669,7 +4860,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostAllowRelayedConnection"
                 }
             ],
-            "property_order": 1435
+            "property_order": 1495
         },
         "RemoteAccessHostClientDomain": {
             "type": "array",
@@ -4684,7 +4875,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostClientDomain"
                 }
             ],
-            "property_order": 1440
+            "property_order": 1500
         },
         "RemoteAccessHostClientDomainList": {
             "type": "array",
@@ -4699,7 +4890,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostClientDomainList"
                 }
             ],
-            "property_order": 1445
+            "property_order": 1505
         },
         "RemoteAccessHostDomain": {
             "type": "array",
@@ -4714,7 +4905,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostDomain"
                 }
             ],
-            "property_order": 1450
+            "property_order": 1510
         },
         "RemoteAccessHostDomainList": {
             "type": "array",
@@ -4729,7 +4920,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostDomainList"
                 }
             ],
-            "property_order": 1455
+            "property_order": 1515
         },
         "RemoteAccessHostFirewallTraversal": {
             "type": "boolean",
@@ -4742,7 +4933,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostFirewallTraversal"
                 }
             ],
-            "property_order": 1460
+            "property_order": 1520
         },
         "RemoteAccessHostMatchUsername": {
             "type": "boolean",
@@ -4755,7 +4946,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostMatchUsername"
                 }
             ],
-            "property_order": 1465
+            "property_order": 1525
         },
         "RemoteAccessHostRequireCurtain": {
             "type": "boolean",
@@ -4768,7 +4959,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostRequireCurtain"
                 }
             ],
-            "property_order": 1470
+            "property_order": 1530
         },
         "RemoteAccessHostTalkGadgetPrefix": {
             "type": "string",
@@ -4780,7 +4971,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostTalkGadgetPrefix"
                 }
             ],
-            "property_order": 1475
+            "property_order": 1535
         },
         "RemoteAccessHostTokenUrl": {
             "type": "string",
@@ -4792,7 +4983,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostTokenUrl"
                 }
             ],
-            "property_order": 1480
+            "property_order": 1540
         },
         "RemoteAccessHostTokenValidationCertificateIssuer": {
             "type": "string",
@@ -4804,7 +4995,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostTokenValidationCertificateIssuer"
                 }
             ],
-            "property_order": 1485
+            "property_order": 1545
         },
         "RemoteAccessHostTokenValidationUrl": {
             "type": "string",
@@ -4816,7 +5007,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostTokenValidationUrl"
                 }
             ],
-            "property_order": 1490
+            "property_order": 1550
         },
         "RemoteAccessHostUdpPortRange": {
             "type": "string",
@@ -4828,7 +5019,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostUdpPortRange"
                 }
             ],
-            "property_order": 1495
+            "property_order": 1555
         },
         "PasswordProtectionChangePasswordURL": {
             "type": "string",
@@ -4840,7 +5031,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PasswordProtectionChangePasswordURL"
                 }
             ],
-            "property_order": 1500
+            "property_order": 1560
         },
         "PasswordProtectionLoginURLs": {
             "type": "array",
@@ -4855,7 +5046,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PasswordProtectionLoginURLs"
                 }
             ],
-            "property_order": 1505
+            "property_order": 1565
         },
         "PasswordProtectionWarningTrigger": {
             "type": "integer",
@@ -4879,7 +5070,7 @@
                     "Password protection warning is triggered by password reuse on phishing page"
                 ]
             },
-            "property_order": 1510
+            "property_order": 1570
         },
         "SafeBrowsingEnabled": {
             "type": "boolean",
@@ -4891,7 +5082,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeBrowsingEnabled"
                 }
             ],
-            "property_order": 1515
+            "property_order": 1575
         },
         "SafeBrowsingExtendedReportingEnabled": {
             "type": "boolean",
@@ -4903,7 +5094,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeBrowsingExtendedReportingEnabled"
                 }
             ],
-            "property_order": 1520
+            "property_order": 1580
         },
         "SafeBrowsingProtectionLevel": {
             "type": "integer",
@@ -4928,7 +5119,7 @@
                     "Safe Browsing is active in the enhanced mode"
                 ]
             },
-            "property_order": 1525
+            "property_order": 1585
         },
         "SafeBrowsingWhitelistDomains": {
             "type": "array",
@@ -4943,7 +5134,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeBrowsingWhitelistDomains"
                 }
             ],
-            "property_order": 1530
+            "property_order": 1590
         },
         "SafeBrowsingAllowlistDomains": {
             "type": "array",
@@ -4958,7 +5149,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeBrowsingAllowlistDomains"
                 }
             ],
-            "property_order": 1535
+            "property_order": 1595
         },
         "SafeBrowsingExtendedReportingOptInAllowed": {
             "type": "boolean",
@@ -4971,7 +5162,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeBrowsingExtendedReportingEnabled"
                 }
             ],
-            "property_order": 1540
+            "property_order": 1600
         },
         "HomepageIsNewTabPage": {
             "type": "boolean",
@@ -4983,7 +5174,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=HomepageIsNewTabPage"
                 }
             ],
-            "property_order": 1545
+            "property_order": 1605
         },
         "HomepageLocation": {
             "type": "string",
@@ -4995,7 +5186,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=HomepageLocation"
                 }
             ],
-            "property_order": 1550
+            "property_order": 1610
         },
         "NewTabPageLocation": {
             "type": "string",
@@ -5007,7 +5198,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NewTabPageLocation"
                 }
             ],
-            "property_order": 1555
+            "property_order": 1615
         },
         "RestoreOnStartup": {
             "type": "integer",
@@ -5033,7 +5224,7 @@
                     "Open a list of URLs and restore the last session"
                 ]
             },
-            "property_order": 1560
+            "property_order": 1620
         },
         "RestoreOnStartupURLs": {
             "type": "array",
@@ -5048,7 +5239,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RestoreOnStartupURLs"
                 }
             ],
-            "property_order": 1565
+            "property_order": 1625
         },
         "ShowHomeButton": {
             "type": "boolean",
@@ -5060,7 +5251,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ShowHomeButton"
                 }
             ],
-            "property_order": 1570
+            "property_order": 1630
         },
         "WebUsbAskForUrls": {
             "type": "array",
@@ -5075,7 +5266,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebUsbAskForUrls"
                 }
             ],
-            "property_order": 1575
+            "property_order": 1635
         },
         "WebUsbBlockedForUrls": {
             "type": "array",
@@ -5090,7 +5281,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebUsbBlockedForUrls"
                 }
             ],
-            "property_order": 1580
+            "property_order": 1640
         },
         "DeveloperToolsDisabled": {
             "type": "boolean",
@@ -5103,7 +5294,7 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DeveloperToolsDisabled"
                 }
             ],
-            "property_order": 1585
+            "property_order": 1645
         }
     }
 }
