@@ -1,0 +1,19 @@
+{
+    "title": "Notion (notion.id)",
+    "description": "Settings for the Notion desktop app for macOS",
+    "properties": {
+        "NotionNoAutoUpdates": {
+            "type": "boolean",
+            "title": "Disable Auto Updates",
+            "default": false,
+            "description": "Prevents Notion from automatically checking for updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://www.notion.com/help/deploy-notion-for-macos#disable-automatic-updates"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
