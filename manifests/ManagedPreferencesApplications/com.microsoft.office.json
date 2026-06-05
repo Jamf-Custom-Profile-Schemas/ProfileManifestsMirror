@@ -125,7 +125,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://macadmins.software/docs/16.28-Privacy-Consent.key"
+                    "href": "https://www.kevinmcox.com/2019/08/privacy-and-consent-changes-in-microsoft-office-16-28/"
                 }
             ],
             "property_order": 45
@@ -357,7 +357,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://macadmins.software/matrix/"
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/set-preference-macro-security-office-for-mac#disable-visual-basic"
                 }
             ],
             "property_order": 130
@@ -370,7 +370,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/set-preference-macro-security-office-for-mac#visual-basic-macro-notifications"
                 }
             ],
             "enum": [
@@ -395,7 +395,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/set-preference-macro-security-office-for-mac#visual-basic-external-library-bindings"
                 }
             ],
             "property_order": 140
@@ -408,7 +408,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/set-preference-macro-security-office-for-mac#visual-basic-system-bindings"
                 }
             ],
             "property_order": 145
@@ -421,7 +421,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/set-preference-macro-security-office-for-mac#visual-basic-pipe-bindings"
                 }
             ],
             "property_order": 150
@@ -434,7 +434,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/set-preference-macro-security-office-for-mac#visual-basic-and-applescript"
                 }
             ],
             "property_order": 155
@@ -447,7 +447,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://macadmins.software/docs/VBSecurityControls.pdf"
+                    "href": "https://learn.microsoft.com/en-us/microsoft-365-apps/mac/set-preference-macro-security-office-for-mac#vba-object-model"
                 }
             ],
             "property_order": 160
