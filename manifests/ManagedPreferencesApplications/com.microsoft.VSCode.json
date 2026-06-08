@@ -1,0 +1,321 @@
+{
+    "title": "Visual Studio Code (com.microsoft.VSCode)",
+    "description": "Visual Studio Code settings",
+    "properties": {
+        "UpdateMode": {
+            "type": "string",
+            "title": "Update Mode",
+            "default": "default",
+            "description": "Controls whether VS Code automatically updates when a new version is released.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://code.visualstudio.com/docs/setup/enterprise#_configure-automatic-updates"
+                }
+            ],
+            "enum": [
+                "none",
+                "manual",
+                "start",
+                "default"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disable Both Automatic and Manual Checks",
+                    "Disable Automatic Checks",
+                    "Enable Automatic Check on Startup",
+                    "Enable Automatic Periodic Checks"
+                ]
+            },
+            "property_order": 5
+        },
+        "AllowedExtensions": {
+            "type": "string",
+            "title": "Allowed Extensions",
+            "description": "Controls which extensions can be installed. The value of this policy is a JSON string that contains the allowed extensions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://code.visualstudio.com/docs/enterprise/extensions#_configure-allowed-extensions"
+                }
+            ],
+            "property_order": 10
+        },
+        "ExtensionGalleryServiceUrl": {
+            "type": "string",
+            "title": "Extension Gallery Service URL",
+            "description": "Configure the Marketplace service URL to connect to.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/microsoft/vscode/blob/f562c9d3e85b683f6f8ff75aff280cb74ffbaaae/src/vs/workbench/contrib/extensions/browser/extensions.contribution.ts#L280"
+                }
+            ],
+            "property_order": 15
+        },
+        "TelemetryLevel": {
+            "type": "string",
+            "title": "Telemetry Level",
+            "default": "all",
+            "description": "Controls the level of telemetry data.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://code.visualstudio.com/docs/setup/enterprise#_configure-telemetry-level"
+                }
+            ],
+            "enum": [
+                "all",
+                "error",
+                "crash",
+                "off"
+            ],
+            "options": {
+                "enum_titles": [
+                    "All - sends usage data, errors, and crash reports.",
+                    "Error - sends general error telemetry and crash reports.",
+                    "Crash - sends OS level crash reports.",
+                    "Off - disables all product telemetry."
+                ]
+            },
+            "property_order": 20
+        },
+        "EnableFeedback": {
+            "type": "boolean",
+            "title": "Enable Feedback",
+            "default": true,
+            "description": "Controls feedback mechanisms, such as the issue reporter and surveys.",
+            "property_order": 25
+        },
+        "ChatAgentExtensionTools": {
+            "type": "boolean",
+            "title": "Enable Chat Agent Extension Tools",
+            "default": true,
+            "description": "Enable using tools contributed by third-party extensions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/microsoft/vscode/blob/f562c9d3e85b683f6f8ff75aff280cb74ffbaaae/src/vs/workbench/contrib/chat/browser/chat.contribution.ts#L411"
+                }
+            ],
+            "property_order": 30
+        },
+        "ChatAgentMode": {
+            "type": "boolean",
+            "title": "Enable Chat Agent Mode",
+            "default": true,
+            "description": "Enable agent mode for chat. When this is enabled, agent mode can be activated via the dropdown in the view.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/microsoft/vscode/blob/f562c9d3e85b683f6f8ff75aff280cb74ffbaaae/src/vs/workbench/contrib/chat/browser/chat.contribution.ts#L421"
+                }
+            ],
+            "property_order": 35
+        },
+        "ChatMCP": {
+            "type": "string",
+            "title": "Chat MCP",
+            "default": "all",
+            "description": "Controls access to installed Model Context Protocol servers.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/microsoft/vscode/blob/f562c9d3e85b683f6f8ff75aff280cb74ffbaaae/src/vs/workbench/contrib/chat/browser/chat.contribution.ts#L320"
+                }
+            ],
+            "enum": [
+                "none",
+                "registry",
+                "all"
+            ],
+            "options": {
+                "enum_titles": [
+                    "No access to MCP servers.",
+                    "Allows access to MCP servers installed from the registry that VS Code is connected to.",
+                    "Allow access to any installed MCP server."
+                ]
+            },
+            "property_order": 40
+        },
+        "ChatPromptFiles": {
+            "type": "boolean",
+            "title": "Enable Chat Prompt Files",
+            "default": true,
+            "description": "Enables reusable prompt and instruction files in Chat sessions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/microsoft/vscode/blob/f562c9d3e85b683f6f8ff75aff280cb74ffbaaae/src/vs/workbench/contrib/chat/browser/chat.contribution.ts#L467"
+                }
+            ],
+            "property_order": 45
+        },
+        "ChatToolsAutoApprove": {
+            "type": "boolean",
+            "title": "Enable Chat Tools Auto Approve",
+            "default": false,
+            "description": "Global auto approve also known as \"YOLO mode\" disables manual approval completely for all tools in all workspaces, allowing the agent to act fully autonomously. This is extremely dangerous and is *never* recommended, even containerized environments like Codespaces and Dev Containers have user keys forwarded into the container that could be compromised.\n\t\t\t\n\t\t\tThis feature disables critical security protections and makes it much easier for an attacker to compromise the machine.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/microsoft/vscode/blob/f562c9d3e85b683f6f8ff75aff280cb74ffbaaae/src/vs/workbench/contrib/chat/browser/chat.contribution.ts#L238"
+                }
+            ],
+            "property_order": 50
+        },
+        "BrowserChatTools": {
+            "type": "boolean",
+            "title": "Browser Chat Tools",
+            "default": true,
+            "description": "When enabled, chat agents can use browser tools to open and interact with pages in the Integrated Browser.",
+            "property_order": 55
+        },
+        "ChatAgentAllowedNetworkDomains": {
+            "type": "string",
+            "title": "Chat Agent Allowed Network Domains",
+            "description": "Allowed domains for network access by agent tools (fetch tool, integrated browser). Applies when #chat.agent.networkFilter# or #chat.agent.sandbox.enabled# is enabled. When #chat.agent.sandbox.enabled# is set to allowNetwork, all domains are allowed. Supports wildcards like *.example.com. When both allowed and denied lists are empty, all domains are blocked. Denied domains (see #chat.agent.deniedNetworkDomains#) take precedence.",
+            "property_order": 60
+        },
+        "ChatAgentDeniedNetworkDomains": {
+            "type": "string",
+            "title": "Chat Agent Denied Network Domains",
+            "description": "Denied domains for network access by agent tools (fetch tool, integrated browser). Applies when #chat.agent.networkFilter# or #chat.agent.sandbox.enabled# is enabled. This does not apply when #chat.agent.sandbox.enabled# is set to allowNetwork. Takes precedence over #chat.agent.allowedNetworkDomains#. Supports wildcards like *.example.com.",
+            "property_order": 65
+        },
+        "ChatAgentNetworkFilter": {
+            "type": "boolean",
+            "title": "Chat Agent Network Filter",
+            "default": false,
+            "description": "When enabled, network access by agent tools (fetch tool, integrated browser) is restricted according to #chat.agent.allowedNetworkDomains# and #chat.agent.deniedNetworkDomains#. Domain filtering is also applied to those tools when #chat.agent.sandbox.enabled# is enabled.",
+            "property_order": 70
+        },
+        "ChatApprovedAccountOrganizations": {
+            "type": "string",
+            "title": "Chat Approved Account Organizations",
+            "description": "Setting this policy to a non-empty list activates the Approved Account gate: all AI features are disabled until the user signs into a GitHub account whose organizations intersect this list AND the account-side policy data has resolved. Comparison is case-insensitive. Use '*' as a wildcard to accept any signed-in GitHub or GHE account (use this for GHE deployments where the organization list is not surfaced).",
+            "property_order": 75
+        },
+        "ChatHooks": {
+            "type": "boolean",
+            "title": "Chat Hooks",
+            "default": true,
+            "description": "Controls whether chat hooks are executed at strategic points during an agent's workflow. Hooks are loaded from the files configured in #chat.hookFilesLocations#.",
+            "property_order": 80
+        },
+        "ChatPluginsEnabled": {
+            "type": "boolean",
+            "title": "Chat Plugins Enabled",
+            "default": true,
+            "description": "Enable agent plugin integration in chat.",
+            "property_order": 85
+        },
+        "ChatToolsEligibleForAutoApproval": {
+            "type": "string",
+            "title": "Chat Tools Eligible For Auto Approval",
+            "description": "Controls which tools are eligible for automatic approval. Tools set to 'false' will always present a confirmation and will never offer the option to auto-approve. The default behavior (or setting a tool to 'true') may result in the tool offering auto-approval options.",
+            "property_order": 90
+        },
+        "ChatAgentSandboxAllowAutoApprove": {
+            "type": "boolean",
+            "title": "Chat Agent Sandbox Allow Auto Approve",
+            "default": true,
+            "description": "Controls whether agent mode terminal commands that run inside the sandbox are auto-approved. When disabled, the run in terminal tool uses the existing approval flow. This applies only when #chat.agent.sandbox.enabled# is enabled.",
+            "property_order": 95
+        },
+        "ChatAgentSandboxAllowUnsandboxedCommands": {
+            "type": "boolean",
+            "title": "Chat Agent Sandbox Allow Unsandboxed Commands",
+            "default": true,
+            "description": "Controls whether agent mode terminal commands can run outside the sandbox after user confirmation when a sandboxed command fails or when sandbox restrictions would block the command. This applies only when #chat.agent.sandbox.enabled# is enabled.",
+            "property_order": 100
+        },
+        "ChatAgentSandboxAutoApproveUnsandboxedCommands": {
+            "type": "boolean",
+            "title": "Chat Agent Sandbox Auto Approve Unsandboxed Commands",
+            "default": false,
+            "description": "Controls whether agent mode terminal commands that run outside the sandbox are auto-approved. This applies only when both #chat.agent.sandbox.enabled# and #chat.agent.sandbox.allowUnsandboxedCommands# are enabled.",
+            "property_order": 105
+        },
+        "ChatAgentSandboxEnabled": {
+            "type": "string",
+            "title": "Chat Agent Sandbox Enabled",
+            "default": "off",
+            "description": "Controls whether agent mode terminal commands that run outside the sandbox are auto-approved. This applies only when both #chat.agent.sandbox.enabled# and #chat.agent.sandbox.allowUnsandboxedCommands# are enabled.",
+            "enum": [
+                "off",
+                "on",
+                "allowNetwork"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Disable sandboxing for agent mode tools.",
+                    "Enable sandboxing for agent mode tools.",
+                    "Enable sandboxing for agent mode tools and allow all network domains."
+                ]
+            },
+            "property_order": 110
+        },
+        "ChatToolsTerminalEnableAutoApprove": {
+            "type": "boolean",
+            "title": "Chat Tools Terminal Enable Auto Approve",
+            "default": true,
+            "description": "Controls whether to allow auto approval in the run in terminal tool.",
+            "property_order": 115
+        },
+        "McpGalleryServiceUrl": {
+            "type": "string",
+            "title": "MCP Gallery Service URL",
+            "description": "Configure the MCP Gallery service URL to connect to.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/microsoft/vscode/blob/f562c9d3e85b683f6f8ff75aff280cb74ffbaaae/src/vs/workbench/contrib/chat/browser/chat.contribution.ts#L454"
+                }
+            ],
+            "property_order": 120
+        },
+        "Claude3PIntegration": {
+            "type": "boolean",
+            "title": "Claude Third-party Integration",
+            "default": true,
+            "description": "Enable Claude Agent sessions in VS Code. Start and resume agentic coding sessions powered by Anthropic Claude Agent SDK directly in the editor. Uses your existing Copilot subscription.",
+            "property_order": 125
+        },
+        "CopilotNextEditSuggestions": {
+            "type": "boolean",
+            "title": "Copilot Next Edit Suggestions",
+            "default": true,
+            "description": "Whether to enable next edit suggestions (NES). NES can propose a next edit based on your recent changes.",
+            "property_order": 130
+        },
+        "CopilotReviewAgent": {
+            "type": "boolean",
+            "title": "Copilot Review Agent",
+            "default": true,
+            "description": "Enables the code review agent.",
+            "property_order": 135
+        },
+        "CopilotReviewSelection": {
+            "type": "boolean",
+            "title": "Copilot Review Selection",
+            "default": true,
+            "description": "Enables code review on current selection.",
+            "property_order": 140
+        },
+        "CopilotSessionSync": {
+            "type": "boolean",
+            "title": "Copilot Session Sync",
+            "default": false,
+            "description": "Enable session sync to GitHub.com for cross-device Copilot session history. When disabled by organization policy, session data is kept local only.",
+            "property_order": 145
+        },
+        "DeprecatedEditModeHidden": {
+            "type": "boolean",
+            "title": "Deprecated Edit Mode Hidden",
+            "default": true,
+            "description": "When enabled, hides the Edit mode from the chat mode picker.",
+            "property_order": 150
+        }
+    }
+}
