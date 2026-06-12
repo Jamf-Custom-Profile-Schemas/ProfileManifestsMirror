@@ -161,32 +161,6 @@
             ],
             "property_order": 60
         },
-        "EnableArchive": {
-            "type": "boolean",
-            "title": "Enable Local Retention of Events",
-            "default": false,
-            "description": "Enables the local retention of Events after they have been uploaded to Jigsaw24/SIEM.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
-                }
-            ],
-            "property_order": 65
-        },
-        "MaxArchiveAge": {
-            "type": "integer",
-            "title": "Maximum Age of Retained Events (Days)",
-            "default": 7,
-            "description": "Sets maximum age of events retained locally.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
-                }
-            ],
-            "property_order": 70
-        },
         "UploadOnHotspot": {
             "type": "boolean",
             "title": "Allow Upload Data on Hotspot connection",
@@ -198,7 +172,20 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
                 }
             ],
-            "property_order": 75
+            "property_order": 65
+        },
+        "HideBlockedEventHistory": {
+            "type": "boolean",
+            "title": "Hide Blocked Event History",
+            "default": false,
+            "description": "When enabled, hides the blocked events history from the Elevate24 UI.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/5%20Elevate24%20Session%20Monitoring%20-%20Authorisation%20Rules.html#monitoring-authorisation-rules"
+                }
+            ],
+            "property_order": 70
         },
         "FileOperationRules": {
             "type": "array",
@@ -263,7 +250,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/5%20Elevate24%20Session%20Monitoring%20-%20Authorisation%20Rules.html#monitoring-authorisation-rules"
                 }
             ],
-            "property_order": 80
+            "property_order": 75
         },
         "ExecuteProcessRules": {
             "type": "array",
@@ -301,6 +288,10 @@
                     "alwaysActive": {
                         "type": "boolean",
                         "title": "Always Active"
+                    },
+                    "silentBlock": {
+                        "type": "boolean",
+                        "title": "Silent Block"
                     }
                 }
             },
@@ -315,7 +306,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/5%20Elevate24%20Session%20Monitoring%20-%20Authorisation%20Rules.html#monitoring-authorisation-rules"
                 }
             ],
-            "property_order": 85
+            "property_order": 80
         },
         "logAllEventTypes": {
             "type": "boolean",
@@ -328,7 +319,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
                 }
             ],
-            "property_order": 90
+            "property_order": 85
         },
         "EventsToLog": {
             "type": "array",
@@ -388,7 +379,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
                 }
             ],
-            "property_order": 95
+            "property_order": 90
         },
         "filterRules": {
             "type": "array",
@@ -457,7 +448,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
                 }
             ],
-            "property_order": 100
+            "property_order": 95
         }
     }
 }
