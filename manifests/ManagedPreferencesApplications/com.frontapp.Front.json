@@ -1,0 +1,19 @@
+{
+    "title": "Front (com.frontapp.Front)",
+    "description": "Settings for the Front app for macOS",
+    "properties": {
+        "DisableAutoUpdate": {
+            "type": "boolean",
+            "title": "Disable Auto Update",
+            "default": false,
+            "description": "Prevents Front from updating automatically.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.front.com/en/articles/2296"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
