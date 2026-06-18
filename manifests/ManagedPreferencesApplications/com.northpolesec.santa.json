@@ -6,14 +6,23 @@
             "type": "integer",
             "title": "Client Mode",
             "default": 1,
+            "description": "The client mode that Santa should operate in.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#ClientMode"
+                }
+            ],
             "enum": [
                 1,
-                2
+                2,
+                3
             ],
             "options": {
                 "enum_titles": [
                     "Monitor",
-                    "Lockdown"
+                    "Lockdown",
+                    "Standalone"
                 ]
             },
             "property_order": 5
@@ -31,261 +40,1123 @@
             "description": "Path regexes (ICU format) to monitor for file changes.",
             "property_order": 15
         },
+        "FileChangesPrefixFilters": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Path Prefix"
+            },
+            "title": "File Changes Prefix Filters",
+            "description": "Path prefixes to exclude from file change logging.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#FileChangesPrefixFilters"
+                }
+            ],
+            "property_order": 20
+        },
+        "Telemetry": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Everything",
+                    "Execution",
+                    "Fork",
+                    "Exit",
+                    "Close",
+                    "Rename",
+                    "Unlink",
+                    "Link",
+                    "ExchangeData",
+                    "Disk",
+                    "Bundle",
+                    "Allowlist",
+                    "FileAccess",
+                    "CodesigningInvalidated",
+                    "LoginWindowSession",
+                    "LoginLogout",
+                    "ScreenSharing",
+                    "OpenSSH",
+                    "Authentication",
+                    "Clone",
+                    "Copyfile",
+                    "GatekeeperOverride",
+                    "LaunchItem",
+                    "TCCModification",
+                    "XProtect",
+                    "ProcSuspendResume",
+                    "None"
+                ]
+            },
+            "title": "Telemetry",
+            "default": [
+                "Everything"
+            ],
+            "description": "Types of telemetry events that should be logged.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#Telemetry"
+                }
+            ],
+            "property_order": 25
+        },
         "AllowedPathRegex": {
             "type": "string",
             "title": "Allowed Path Regex",
             "description": "Path regexes (ICU format) of binaries to allow. Lower precedent than binary, certificate, and Team ID scopes.",
-            "property_order": 20
+            "property_order": 30
         },
         "BlockedPathRegex": {
             "type": "string",
             "title": "Blocked Path Regex",
             "description": "Path regexes (ICU format) of binaries to block. Lower precedent than binary, certificate, and Team ID scopes.",
-            "property_order": 25
+            "property_order": 35
         },
         "EnableBadSignatureProtection": {
             "type": "boolean",
             "title": "Bad Signature Protection",
             "default": false,
             "description": "Block binaries with a bad signing chain, unless explicitly allowed.",
-            "property_order": 30
+            "property_order": 40
         },
         "EnablePageZeroProtection": {
             "type": "boolean",
             "title": "Enable Page Zero Protection",
             "default": true,
             "description": "Block 32-bit binaries missing the __PAGEZERO segment, unless explicitly allowed.",
-            "property_order": 35
+            "property_order": 45
         },
-        "EnableSysxCache": {
+        "EnableTransitiveRules": {
             "type": "boolean",
-            "title": "Enable Sysx Cache",
+            "title": "Enable Transitive Rules",
+            "default": false,
+            "description": "Allow transitive rules created by compiler-type rules.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EnableTransitiveRules"
+                }
+            ],
+            "property_order": 50
+        },
+        "StaticRules": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Rule",
+                "properties": {
+                    "identifier": {
+                        "type": "string",
+                        "title": "Identifier",
+                        "description": "The identifier for this rule. The required format depends on rule_type:\n• BINARY / CERTIFICATE — SHA-256 hash (64 hex characters)\n• TEAMID — 10-character alphanumeric Team ID (e.g. ZMCG7MLDV9)\n• SIGNINGID — TeamID:SigningID (e.g. EQHXZ8M8AV:com.google.Chrome), or platform:SigningID for Apple platform binaries (e.g. platform:com.apple.curl)\n• CDHASH — Code Directory Hash (40 hex characters)"
+                    },
+                    "rule_type": {
+                        "type": "string",
+                        "title": "Rule Type",
+                        "description": "The type of rule. Also determines the required format of the identifier and the rule's evaluation precedence: CDHash → Binary → SigningID → Certificate → TeamID.",
+                        "enum": [
+                            "BINARY",
+                            "CERTIFICATE",
+                            "TEAMID",
+                            "SIGNINGID",
+                            "CDHASH"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Binary (SHA-256)",
+                                "Certificate (SHA-256)",
+                                "Team ID",
+                                "Signing ID",
+                                "CDHash"
+                            ]
+                        }
+                    },
+                    "policy": {
+                        "type": "string",
+                        "title": "Policy",
+                        "description": "The action to take when this rule matches an execution. ALLOWLIST_COMPILER rules create transitive allow rules for files written by the matched process; if EnableTransitiveRules is false they are treated as ALLOWLIST. CEL rules evaluate the expression in cel_expr to make their decision.",
+                        "enum": [
+                            "ALLOWLIST",
+                            "ALLOWLIST_COMPILER",
+                            "BLOCKLIST",
+                            "SILENT_BLOCKLIST",
+                            "CEL"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Allowlist",
+                                "Allowlist Compiler",
+                                "Blocklist",
+                                "Silent Blocklist",
+                                "CEL"
+                            ]
+                        }
+                    },
+                    "cel_expr": {
+                        "type": "string",
+                        "title": "CEL Expression",
+                        "description": "A CEL (Common Expression Language) expression to evaluate when this rule matches. Required when policy is CEL. The expression receives an ExecutionContext and must return either a ReturnValue or a bool (true = ALLOWLIST, false = BLOCKLIST).",
+                        "links": [
+                            {
+                                "rel": "More information",
+                                "href": "https://northpole.dev/features/binary-authorization/#cel"
+                            }
+                        ]
+                    },
+                    "custom_msg": {
+                        "type": "string",
+                        "title": "Custom Message",
+                        "description": "Custom message to display in the block notification when this rule blocks an execution. Overrides the global BannedBlockMessage for this specific rule. Only applies to BLOCKLIST and SILENT_BLOCKLIST policies."
+                    },
+                    "custom_url": {
+                        "type": "string",
+                        "title": "Custom URL",
+                        "description": "A custom URL for the block notification button, overriding the global EventDetailURL for this specific rule. Supports the same substitution placeholders as EventDetailURL (e.g. %file_identifier%, %machine_id%, %username%). Only applies to BLOCKLIST policies."
+                    },
+                    "comment": {
+                        "type": "string",
+                        "title": "Comment",
+                        "description": "A freeform comment or note about this rule for documentation purposes. Ignored by Santa at runtime."
+                    }
+                }
+            },
+            "title": "Static Rules",
+            "description": "A static set of rules that always apply to the host, taking precedence over any rules configured by a sync server. The intended use-case is a small hardcoded set of rules that every host needs, such as management tools — not as a general-purpose rule database.\n\nSetting this key (even to an empty array) also prevents local rule management via the santactl rule command.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/features/binary-authorization/#rule-dictionary-format"
+                }
+            ],
+            "property_order": 55
+        },
+        "EnableSilentMode": {
+            "type": "boolean",
+            "title": "Enable Silent Mode",
+            "default": false,
+            "description": "Disable all GUI notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EnableSilentMode"
+                }
+            ],
+            "property_order": 60
+        },
+        "EnableSilentTTYMode": {
+            "type": "boolean",
+            "title": "Enable Silent TTY Mode",
+            "default": false,
+            "description": "Disable all TTY (terminal) notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EnableSilentTTYMode"
+                }
+            ],
+            "property_order": 65
+        },
+        "EnableMenuItem": {
+            "type": "boolean",
+            "title": "Enable Menu Item",
             "default": true,
-            "description": "Enable secondary cache. Improves performance when multiple EndpointSecurity system extensions are installed.",
-            "property_order": 40
+            "description": "Show the Santa menu bar item.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EnableMenuItem"
+                }
+            ],
+            "property_order": 70
         },
         "AboutText": {
             "type": "string",
             "title": "About Text",
             "description": "Custom text to display at launch.",
-            "property_order": 45
+            "property_order": 75
         },
         "MoreInfoURL": {
             "type": "string",
             "title": "More Info URL",
             "description": "Optional \"More Info...\" link.",
-            "property_order": 50
+            "property_order": 80
         },
         "EventDetailURL": {
             "type": "string",
             "title": "Event Detail URL",
             "description": "The URL to open when the user gets a block notification. If unset, the button will not be displayed. Can include the following variables for substitution:\n%file_identifier% - SHA-256 of the file that was blocked\n%bundle_or_file_identifier% - SHA-256 of the file that was blocked or the bundle containing it, if available\n%file_sha% - Deprecated, acts like bundle_or_file_identifier\n%machine_id% - ID of the machine\n%username% - The executing user\n%serial% - System's serial number\n%uuid% - System's UUID\n%hostname% - System's full hostname",
-            "property_order": 55
+            "property_order": 85
         },
         "EventDetailText": {
             "type": "string",
             "title": "Event Detail Text",
             "description": "The text of the button for Event Detail URL.",
-            "property_order": 60
+            "property_order": 90
+        },
+        "FileAccessEventDetailURL": {
+            "type": "string",
+            "title": "File Access Event Detail URL",
+            "description": "The URL to open when the user gets a file access block notification. If unset, the button will not be displayed. Can include the following variables for substitution:\n%rule_version% - Version of the rule that was violated\n%rule_name% - Name of the rule that was violated\n%accessed_path% - The path accessed by the binary\n%file_identifier% - SHA-256 of the binary that performed the access\n%username% - The executing user\n%team_id% - The Team ID that signed the binary, if any\n%signing_id% - The Signing ID of the binary, if any\n%cdhash% - The binary's CDHash, if any\n%machine_id% - ID of the machine\n%hostname% - System's full hostname\n%uuid% - System's UUID\n%serial% - System's serial number",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#FileAccessEventDetailURL"
+                }
+            ],
+            "property_order": 95
+        },
+        "FileAccessEventDetailText": {
+            "type": "string",
+            "title": "File Access Event Detail Text",
+            "description": "The text of the button for File Access Event Detail URL.",
+            "property_order": 100
         },
         "UnknownBlockMessage": {
             "type": "string",
             "title": "Unknown Block Message",
             "description": "Custom message when an unknown binary is blocked.",
-            "property_order": 65
+            "property_order": 105
+        },
+        "DismissText": {
+            "type": "string",
+            "title": "Dismiss Text",
+            "default": "Dismiss",
+            "description": "The text to display on the button that dismisses the binary block dialog.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#DismissText"
+                }
+            ],
+            "property_order": 110
         },
         "BannedBlockMessage": {
             "type": "string",
             "title": "Banned Block Message",
             "description": "Custom message when a binary is blocked by a rule.",
-            "property_order": 70
+            "property_order": 115
         },
         "ModeNotificationMonitor": {
             "type": "string",
             "title": "Monitor Notification Text",
+            "default": "Switching into Monitor mode",
             "description": "Custom message when entering MONITOR mode.",
-            "property_order": 75
+            "property_order": 120
         },
         "ModeNotificationLockdown": {
             "type": "string",
             "title": "Lockdown Notification Text",
+            "default": "Switching into Lockdown mode",
             "description": "Custom message when entering LOCKDOWN mode.",
-            "property_order": 80
+            "property_order": 125
+        },
+        "ModeNotificationStandalone": {
+            "type": "string",
+            "title": "Standalone Notification Text",
+            "default": "Switching into Standalone mode",
+            "description": "Custom message when entering STANDALONE mode. (undocumented)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/northpolesec/santa/blob/cb2c6c4b7db7b6aa94c78264e84856075ac06925/Source/common/SNTConfigurator.h#L639"
+                }
+            ],
+            "property_order": 130
+        },
+        "BannedUSBBlockMessage": {
+            "type": "string",
+            "title": "Banned USB Block Message",
+            "description": "Custom message when a Removable Media (e.g. USB device) is prevented from being mounted.",
+            "property_order": 135
+        },
+        "RemountUSBBlockMessage": {
+            "type": "string",
+            "title": "Remount USB Block Message",
+            "description": "Custom message when a Removable Media (e.g. USB device) is allowed to be mounted with a subset of the requested flags as defined by RemountUSBMode.",
+            "property_order": 140
+        },
+        "FileAccessBlockMessage": {
+            "type": "string",
+            "title": "File Access Block Message",
+            "description": "Custom message when a file access is blocked by a rule.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#FileAccessBlockMessage"
+                }
+            ],
+            "property_order": 145
+        },
+        "EnableNotificationSilences": {
+            "type": "boolean",
+            "title": "Enable Notification Silences",
+            "default": true,
+            "description": "Allow users to silence notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EnableNotificationSilences"
+                }
+            ],
+            "property_order": 150
+        },
+        "BrandingCompanyName": {
+            "type": "string",
+            "title": "Branding Company Name",
+            "description": "Company name displayed in Santa UI. For GUI windows, this setting is ignored if BrandingCompanyLogo is set.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#BrandingCompanyName"
+                }
+            ],
+            "property_order": 155
+        },
+        "BrandingCompanyLogo": {
+            "type": "string",
+            "title": "Branding Company Logo",
+            "description": "A URL referencing a logo image to display on Santa UIs. The image will be scaled down appropriately to fit within image bounds (currently 84x28 pixels). If set, this overrides BrandingCompanyName. Supported URL schemes: file:// and data:. HTTP/HTTPS URLs are not supported.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#BrandingCompanyLogo"
+                }
+            ],
+            "property_order": 160
+        },
+        "BrandingCompanyLogoDark": {
+            "type": "string",
+            "title": "Branding Company Logo (Dark Mode)",
+            "description": "A URL referencing a logo image to display on Santa UIs. When the UI is displayed in dark mode and this is set, it overrides both BrandingCompanyLogo and BrandingCompanyName. Supported URL schemes: file:// and data:. HTTP/HTTPS URLs are not supported.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#BrandingCompanyLogoDark"
+                }
+            ],
+            "property_order": 165
+        },
+        "FunFontsOnSpecificDays": {
+            "type": "boolean",
+            "title": "Fun Fonts On Specific Days",
+            "default": false,
+            "description": "Enable themed fonts and images on April 1, May 4 and October 31.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#FunFontsOnSpecificDays"
+                }
+            ],
+            "property_order": 170
         },
         "SyncBaseURL": {
             "type": "string",
             "title": "Sync Server URL",
-            "property_order": 85
+            "property_order": 175
+        },
+        "SyncEnableProtoTransfer": {
+            "type": "boolean",
+            "title": "Enable Proto Transfer",
+            "default": false,
+            "description": "Enable binary proto transfer for sync instead of JSON.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#SyncEnableProtoTransfer"
+                }
+            ],
+            "property_order": 180
+        },
+        "SyncProxyConfiguration": {
+            "type": "object",
+            "title": "Sync Proxy Configuration",
+            "description": "Proxy configuration applied to all network requests made during syncing. This dictionary is passed directly to NSURLSessionConfiguration.connectionProxyDictionary. Keys are the kCFNetworkProxies* CFNetwork constants (e.g. HTTPEnable, HTTPProxy, HTTPPort, SOCKSEnable, ProxyAutoConfigURLString).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://developer.apple.com/documentation/cfnetwork/global-proxy-settings-constants"
+                }
+            ],
+            "property_order": 185
         },
         "SyncEnableCleanSyncEventUpload": {
             "type": "boolean",
             "title": "Enable Upload Clean Syncs",
             "default": false,
             "description": "Upload events to the sync server even if a clean sync is requested.",
-            "property_order": 90
+            "property_order": 190
         },
         "ClientAuthCertificateFile": {
             "type": "string",
             "title": "Client Certificate File Path",
             "description": "Location of a PKCS#12 certificate to be used for sync authentication.",
-            "property_order": 95
+            "property_order": 195
         },
         "ClientAuthCertificatePassword": {
             "type": "string",
             "title": "Client Certificate Password",
-            "property_order": 100
+            "property_order": 200
         },
         "ClientAuthCertificateCN": {
             "type": "string",
             "title": "Client Certificate Common Name",
             "description": "The Common Name of a certificate in the System keychain to be used for sync authentication.",
-            "property_order": 105
+            "property_order": 205
         },
         "ClientAuthCertificateIssuerCN": {
             "type": "string",
             "title": "Client Certificate Issuer Common Name",
             "description": "The Issuer Name of a certificate in the System keychain to be used for sync authentication.",
-            "property_order": 110
+            "property_order": 210
         },
         "ServerAuthRootsFile": {
             "type": "string",
             "title": "Server Authentication Certificate Roots (Local)",
             "description": "Path to an on-disk X.509 certificate (.pem). A valid PEM containing one or more certificates to be used for certificate pinning.",
-            "property_order": 115
+            "property_order": 215
         },
         "MachineOwner": {
             "type": "string",
             "title": "Machine Owner",
-            "property_order": 120
+            "property_order": 220
+        },
+        "MachineOwnerGroups": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Machine Owner Groups",
+            "description": "Groups the machine owner is a member of.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#MachineOwnerGroups"
+                }
+            ],
+            "property_order": 225
         },
         "MachineID": {
             "type": "string",
             "title": "Machine ID",
-            "property_order": 125
+            "property_order": 230
         },
         "MachineOwnerPlist": {
             "type": "string",
             "title": "Machine Owner Plist",
             "description": "The path to a plist that contains the MachineOwnerKey / value pair.",
-            "property_order": 130
+            "property_order": 235
         },
         "MachineOwnerKey": {
             "type": "string",
             "title": "Machine Owner Key",
             "description": "The key to use on Machine Owner Plist.",
-            "property_order": 135
+            "property_order": 240
+        },
+        "MachineOwnerGroupsKey": {
+            "type": "string",
+            "title": "Machine Owner Groups Key",
+            "description": "The key to use on MachineOwnerPlist to access defined groups.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#MachineOwnerGroupsKey"
+                }
+            ],
+            "property_order": 245
         },
         "MachineIDPlist": {
             "type": "string",
             "title": "Machine ID Plist",
-            "description": "The path to a plist that contains the MachineOwnerKey / value pair.",
-            "property_order": 140
+            "description": "The path to a plist that contains the MachineIDKey / value pair.",
+            "property_order": 250
         },
         "MachineIDKey": {
             "type": "string",
             "title": "Machine ID Key",
             "description": "The key to use on Machine ID Plist.",
-            "property_order": 145
+            "property_order": 255
+        },
+        "EnableAllEventUpload": {
+            "type": "boolean",
+            "title": "Enable All Event Upload",
+            "default": false,
+            "description": "Upload all execution events to the sync server, including those explicitly allowed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EnableAllEventUpload"
+                }
+            ],
+            "property_order": 260
+        },
+        "DisableUnknownEventUpload": {
+            "type": "boolean",
+            "title": "Disable Unknown Event Upload",
+            "default": false,
+            "description": "Do not upload events for executions of unknown binaries allowed in monitor mode.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#DisableUnknownEventUpload"
+                }
+            ],
+            "property_order": 265
+        },
+        "SyncClientContentEncoding": {
+            "type": "string",
+            "title": "Sync Client Content Encoding",
+            "default": "deflate",
+            "description": "Content encoding used for sync requests.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#SyncClientContentEncoding"
+                }
+            ],
+            "enum": [
+                "deflate",
+                "gzip",
+                "none"
+            ],
+            "property_order": 270
+        },
+        "SyncExtraHeaders": {
+            "type": "object",
+            "title": "Sync Extra Headers",
+            "description": "Dictionary of additional headers to include in all requests made to the sync server. System-managed headers such as Content-Length, Host, and WWW-Authenticate will be ignored.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#SyncExtraHeaders"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Header Key"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Header Value"
+                }
+            },
+            "property_order": 275
         },
         "EventLogType": {
             "type": "string",
             "title": "Event Log Type",
-            "default": "filelog",
-            "description": "syslog: Sent to ASL or ULS (if built with the 10.12 SDK or later); filelog: Sent to a file on disk. Use EventLogPath to specify a path.",
+            "default": "file",
+            "description": "Defines how event logs are stored. Allowed values: syslog, file, protobuf, json, null. Note: the protobuf and JSON formats are in BETA and subject to change.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EventLogType"
+                }
+            ],
             "enum": [
                 "syslog",
-                "filelog",
+                "file",
                 "protobuf",
-                ""
+                "json",
+                "null"
             ],
             "options": {
                 "enum_titles": [
-                    "System log",
+                    "System Log",
                     "File",
-                    "Mail",
+                    "Protobuf",
+                    "JSON",
                     "None"
                 ]
             },
-            "property_order": 150
+            "property_order": 280
         },
         "EventLogPath": {
             "type": "string",
             "title": "Event Log Path",
             "default": "/var/db/santa/santa.log",
-            "property_order": 155
+            "description": "Path to the event log file (used for file/json logging).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EventLogPath"
+                }
+            ],
+            "property_order": 285
         },
-        "MailDirectory": {
+        "SpoolDirectory": {
             "type": "string",
-            "title": "Mail Directory",
-            "default": "/var/db/santa/mail",
-            "description": "The base directory used to save mail files.",
-            "property_order": 160
+            "title": "Spool Directory",
+            "default": "/var/db/santa/spool",
+            "description": "Base directory for protobuf maildir-like logs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#SpoolDirectory"
+                }
+            ],
+            "property_order": 290
         },
-        "MailDirectoryFileSizeThresholdKB": {
+        "SpoolDirectoryFileSizeThresholdKB": {
             "type": "integer",
-            "title": "Mail Max File Size",
+            "title": "Spool Max File Size",
+            "default": 250,
+            "description": "Per-file size limit (KB) for protobuf spool files.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#SpoolDirectoryFileSizeThresholdKB"
+                }
+            ],
+            "property_order": 295
+        },
+        "SpoolDirectorySizeThresholdMB": {
+            "type": "integer",
+            "title": "Spool Max Size",
             "default": 100,
-            "description": "Per-file size limit (KB) for files stored in the event log mail directory.",
-            "property_order": 165
+            "description": "Total size limit (MB) for protobuf spool directory.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#SpoolDirectorySizeThresholdMB"
+                }
+            ],
+            "property_order": 300
         },
-        "MailDirectorySizeThresholdMB": {
+        "SpoolDirectoryEventMaxFlushTimeSec": {
             "type": "integer",
-            "title": "Mail Max Size",
-            "default": 500,
-            "description": "Total file size limit (MB) for all files stored in the event log mail directory.",
-            "property_order": 170
-        },
-        "MailDirectoryEventMaxFlushTimeSec": {
-            "type": "integer",
-            "title": "Mail Max Event Buffer",
-            "default": 5,
-            "description": "Maximum time (seconds) events will stay buffered in memory before being flushed to disk.",
-            "property_order": 175
+            "title": "Spool Max Event Buffer",
+            "default": 15,
+            "description": "Maximum time (seconds) events are buffered before flushing to disk.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#SpoolDirectoryEventMaxFlushTimeSec"
+                }
+            ],
+            "property_order": 305
         },
         "EnableMachineIDDecoration": {
             "type": "boolean",
             "title": "Enable Machine ID Decoration",
             "default": false,
             "description": "Appends the MachineID to the end of each log line if enabled.",
-            "property_order": 180
+            "property_order": 310
+        },
+        "EntitlementsPrefixFilter": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Entitlements Prefix Filter",
+            "description": "Filters entitlements from execution telemetry by prefix. Entitlements are only logged when EventLogType is set to protobuf or json.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EntitlementsPrefixFilter"
+                }
+            ],
+            "property_order": 315
+        },
+        "EntitlementsTeamIDFilter": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Entitlements Team ID Filter",
+            "description": "Filters entitlements from execution telemetry by Team ID. Entitlements are only logged when EventLogType is set to protobuf or json.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EntitlementsTeamIDFilter"
+                }
+            ],
+            "property_order": 320
+        },
+        "TelemetryFilterExpressions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Telemetry Filter Expressions",
+            "description": "CEL expressions for filtering or redacting telemetry before upload. Only useful for Workshop customers.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#TelemetryFilterExpressions"
+                }
+            ],
+            "property_order": 325
         },
         "MetricFormat": {
             "type": "string",
             "title": "Metric Format",
-            "description": "The key to use on Machine ID Plist.",
+            "description": "Format to export metrics as, supported formats are \"rawjson\" for a single JSON blob and \"monarchjson\" for a format consumable by Google's Monarch tooling.",
             "enum": [
                 "rawjson",
-                "monarchjson",
-                ""
+                "monarchjson"
             ],
             "options": {
                 "enum_titles": [
                     "Raw JSON",
-                    "Monarch JSON",
-                    "None"
+                    "Monarch JSON"
                 ]
             },
-            "property_order": 185
+            "property_order": 330
         },
         "MetricURL": {
             "type": "string",
             "title": "Metric URL",
             "description": "URL describing where monitoring metrics should be exported.",
-            "property_order": 190
+            "property_order": 335
         },
         "MetricExportInterval": {
             "type": "integer",
             "title": "Metric Export Interval",
             "default": 30,
             "description": "Time (seconds) between exporting metrics.",
-            "property_order": 195
+            "property_order": 340
         },
         "MetricExportTimeout": {
             "type": "integer",
             "title": "Metric Export Timeout",
             "default": 30,
             "description": "Timeout (seconds) for exporting metrics.",
-            "property_order": 200
+            "property_order": 345
+        },
+        "MetricExtraLabels": {
+            "type": "object",
+            "title": "Metric Extra Labels",
+            "description": "A map of key value pairs to add to all metric root labels. If a previously set key (e.g. host_name) is set to \"\" then the key is removed from the metric root labels. Alternatively if a value is set for an existing key then the new value will override the old.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#MetricExtraLabels"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string"
+                },
+                "{{value}}": {
+                    "type": "string"
+                }
+            },
+            "property_order": 350
+        },
+        "EnableStandalonePasswordFallback": {
+            "type": "boolean",
+            "title": "Enable Standalone Password Fallback",
+            "default": true,
+            "description": "Enable password authorization fallback for Standalone mode.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EnableStandalonePasswordFallback"
+                }
+            ],
+            "property_order": 355
+        },
+        "IgnoreOtherEndpointSecurityClients": {
+            "type": "boolean",
+            "title": "Ignore Other Endpoint Security Clients",
+            "default": false,
+            "description": "Ignore events generated by other EndpointSecurity clients.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#IgnoreOtherEndpointSecurityClients"
+                }
+            ],
+            "property_order": 360
+        },
+        "EnableStatsCollection": {
+            "type": "boolean",
+            "title": "Enable Stats Collection",
+            "default": false,
+            "description": "Send basic stats to North Pole Security",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/features/stats/"
+                }
+            ],
+            "property_order": 365
+        },
+        "StatsOrganizationID": {
+            "type": "string",
+            "title": "Stats Organization ID",
+            "description": "North Pole Security customer ID for stats collection.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/features/stats/"
+                }
+            ],
+            "property_order": 370
+        },
+        "AntiSuspendSigningIDs": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Anti Suspend Signing IDs",
+            "description": "A list of Signing IDs to protect from `pid_suspend` calls.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#AntiSuspendSigningIDs"
+                }
+            ],
+            "property_order": 375
+        },
+        "AllowedSantaCommands": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "kill",
+                    "ping",
+                    "eventupload"
+                ]
+            },
+            "title": "Allowed Santa Commands",
+            "description": "Array of allowed Santa commands. If unset, all commands are allowed; if set to an empty array, no commands are allowed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#AllowedSantaCommands"
+                }
+            ],
+            "property_order": 380
+        },
+        "AllowDelegatedSignals": {
+            "type": "boolean",
+            "title": "Allow Delegated Signals",
+            "default": false,
+            "description": "Allow signals delegated by launchd on behalf of Apple platform binaries targeting santad.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#AllowDelegatedSignals"
+                }
+            ],
+            "property_order": 385
+        },
+        "FileAccessPolicyPlist": {
+            "type": "string",
+            "title": "File Access Policy Plist",
+            "description": "Path to a file access configuration plist.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#FileAccessPolicyPlist"
+                }
+            ],
+            "property_order": 390
+        },
+        "FileAccessPolicy": {
+            "type": "object",
+            "title": "File Access Policy",
+            "description": "A complete file access policy embedded directly in the Santa configuration. When set, FileAccessPolicyPlist is ignored.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/faa/"
+                }
+            ],
+            "property_order": 395
+        },
+        "FileAccessPolicyUpdateIntervalSec": {
+            "type": "integer",
+            "title": "File Access Policy Update Interval",
+            "default": 600,
+            "description": "How often (in seconds) to re-read the file access policy config.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#FileAccessPolicyUpdateIntervalSec"
+                }
+            ],
+            "property_order": 400
+        },
+        "OverrideFileAccessAction": {
+            "type": "string",
+            "title": "Override File Access Action",
+            "default": "none",
+            "description": "Global override for the enforcement of all file access policy rules.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#OverrideFileAccessAction"
+                }
+            ],
+            "enum": [
+                "AUDIT_ONLY",
+                "DISABLE",
+                "none"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Audit Only",
+                    "Disable",
+                    "None"
+                ]
+            },
+            "property_order": 405
+        },
+        "FileAccessGlobalLogsPerSec": {
+            "type": "integer",
+            "title": "File Access Global Logs Per Second",
+            "default": 60,
+            "description": "Average number of file access logs per second. Set to 0 to disable rate limiting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#FileAccessGlobalLogsPerSec"
+                }
+            ],
+            "property_order": 410
+        },
+        "FileAccessGlobalWindowSizeSec": {
+            "type": "integer",
+            "title": "File Access Global Window Size",
+            "default": 15,
+            "description": "Window size over which the log rate limit is applied. Set to 0 to disable rate limiting.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#FileAccessGlobalWindowSizeSec"
+                }
+            ],
+            "property_order": 415
+        },
+        "RemovableMediaAction": {
+            "type": "string",
+            "title": "Removable Media Action",
+            "description": "Action applied to all removable media devices.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#RemovableMediaAction"
+                }
+            ],
+            "enum": [
+                "Allow",
+                "Block",
+                "Remount"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow",
+                    "Block",
+                    "Remount with Restrictions"
+                ]
+            },
+            "property_order": 420
+        },
+        "RemovableMediaRemountFlags": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "rdonly",
+                    "noexec",
+                    "nosuid",
+                    "nobrowse",
+                    "noowners",
+                    "nodev",
+                    "async",
+                    "-j"
+                ]
+            },
+            "title": "Removable Media Remount Flags",
+            "description": "Mount flags applied when removable media is remounted.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#RemovableMediaRemountFlags"
+                }
+            ],
+            "property_order": 425
+        },
+        "EncryptedRemovableMediaAction": {
+            "type": "string",
+            "title": "Encrypted Removable Media Action",
+            "description": "Action applied to encrypted removable media devices.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EncryptedRemovableMediaAction"
+                }
+            ],
+            "enum": [
+                "Allow",
+                "Block",
+                "Remount"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow",
+                    "Block",
+                    "Remount with Restrictions"
+                ]
+            },
+            "property_order": 430
+        },
+        "EncryptedRemovableMediaRemountFlags": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "rdonly",
+                    "noexec",
+                    "nosuid",
+                    "nobrowse",
+                    "noowners",
+                    "nodev",
+                    "async",
+                    "-j"
+                ]
+            },
+            "title": "Encrypted Removable Media Remount Flags",
+            "description": "Mount flags applied when encrypted removable media is remounted.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#EncryptedRemovableMediaRemountFlags"
+                }
+            ],
+            "property_order": 435
+        },
+        "OnStartUSBOptions": {
+            "type": "string",
+            "title": "On Start USB Options",
+            "description": "Action applied to existing removable media when Santa starts.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://northpole.dev/configuration/keys/#OnStartUSBOptions"
+                }
+            ],
+            "enum": [
+                "Unmount",
+                "ForceUnmount",
+                "Remount",
+                "ForceRemount"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Unmount",
+                    "Force Unmount",
+                    "Remount",
+                    "Force Remount"
+                ]
+            },
+            "property_order": 440
         }
     }
 }
