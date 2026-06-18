@@ -22,26 +22,19 @@
             "description": "The full path to the screen-saver module to use.",
             "property_order": 15
         },
-        "loginWindowIdleTime": {
-            "type": "integer",
-            "title": "LoginWindow Screensaver idle time",
-            "default": 300,
-            "description": "The number of seconds of inactivity before the screen saver activates (0 = Never activate).",
-            "property_order": 20
-        },
         "idleTime": {
             "type": "integer",
             "title": "Screensaver idle time",
             "default": 300,
             "description": "The number of seconds of inactivity before the screen saver activates (0 = Never activate).",
-            "property_order": 25
+            "property_order": 20
         },
         "moduleName": {
             "type": "string",
             "title": "Screensaver Module Name",
             "default": "Flurry",
             "description": "The name of the screen saver module.",
-            "property_order": 30
+            "property_order": 25
         }
     }
 }
