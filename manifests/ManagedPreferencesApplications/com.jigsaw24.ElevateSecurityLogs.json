@@ -281,6 +281,10 @@
                         "type": "string",
                         "title": "Signing ID"
                     },
+                    "sourceSigningID": {
+                        "type": "string",
+                        "title": "Parent Signing ID"
+                    },
                     "matchingArgumentsContaining": {
                         "type": "string",
                         "title": "Match Arguments Containing"
