@@ -63,7 +63,7 @@
                     "type": "boolean",
                     "title": "Enable file hash computation",
                     "default": false,
-                    "description": "When this feature is enabled, Defender for Endpoint will compute hashes for files it scans.",
+                    "description": "Enables or disables file hash computation feature. When this feature is enabled Defender will compute hashes for files it scans. This will help in improving the accuracy of Custom Indicator matches. However, enabling EnableFileHashComputation may impact device performance.",
                     "links": [
                         {
                             "rel": "More information",
@@ -99,7 +99,7 @@
                     "type": "integer",
                     "title": "Degree of parallelism for on-demand scans",
                     "default": 2,
-                    "description": "The number of threads used to perform the scan.",
+                    "description": "Specifies the degree of parallelism for on-demand scans. This corresponds to the number of threads used to perform the scan and impacts the CPU usage, as well as the duration of the on-demand scan.",
                     "links": [
                         {
                             "rel": "More information",
@@ -340,10 +340,10 @@
                     }
                 },
                 "scanResultsRetentionDays": {
-                    "type": "string",
-                    "title": "Antivirus scan history retention",
-                    "default": "90",
-                    "description": "The number of days (1-180) that results are retained in the scan history on the device.",
+                    "type": "integer",
+                    "title": "Scan results retention",
+                    "default": 90,
+                    "description": "Specify the number of days that results are retained in the scan history on the device. Old scan results are removed from the history. Old quarantined files that are also removed from the disk.",
                     "links": [
                         {
                             "rel": "More information",
@@ -352,10 +352,10 @@
                     ]
                 },
                 "scanHistoryMaximumItems": {
-                    "type": "string",
-                    "title": "Maximum number of items in the antivirus scan history",
-                    "default": "10000",
-                    "description": "The maximum number of entries to keep in the scan history.",
+                    "type": "integer",
+                    "title": "Scan history size",
+                    "default": 10000,
+                    "description": "Specify the maximum number of entries to keep in the scan history. Entries include all on-demand scans performed in the past and all antivirus detections.",
                     "links": [
                         {
                             "rel": "More information",
@@ -970,6 +970,11 @@
                                 "type": "string",
                                 "title": "Signing ID",
                                 "description": "The signing id of the application to exclude from data loss prevention."
+                            },
+                            "flag": {
+                                "type": "integer",
+                                "title": "Flag",
+                                "description": "Bit flags to control the type of exclusion(s) to apply.  EPS=0x1, AX=0x2."
                             }
                         }
                     },
@@ -1027,7 +1032,21 @@
                 "dailyConfiguration": {
                     "type": "object",
                     "title": "Daily and Hourly quick scan configuration",
-                    "description": "Check for definitions update before initiating a scheduled scan"
+                    "description": "Check for definitions update before initiating a scheduled scan",
+                    "properties": {
+                        "timeOfDay": {
+                            "type": "integer",
+                            "title": "Time of day",
+                            "default": 0,
+                            "description": "Specifies the time of day, as the number of minutes after midnight, to perform a daily quick scan."
+                        },
+                        "interval": {
+                            "type": "integer",
+                            "title": "Start time",
+                            "default": 0,
+                            "description": "Specify how many hours should elapse before the next hourly quick scan. 0 indicates no hourly quick scan. 1 indicates a scan every hour. 24 indicates a scan once a day."
+                        }
+                    }
                 },
                 "ignoreExclusions": {
                     "type": "boolean",
@@ -1061,8 +1080,26 @@
                                 "quick",
                                 "full"
                             ]
+                        },
+                        "dayOfWeek": {
+                            "type": "integer",
+                            "title": "Day of week",
+                            "default": 0,
+                            "description": "Specifies the day of the week to perform a weekly scan. 0 indicates never. 1-7 indicates Sunday - Saturday. 8 indicates every day."
+                        },
+                        "timeOfDay": {
+                            "type": "integer",
+                            "title": "Time of day",
+                            "default": 0,
+                            "description": "Specifies the time of day, as the number of minutes after midnight, to perform a weekly scan."
                         }
                     }
+                },
+                "randomizeScanStartTime": {
+                    "type": "integer",
+                    "title": "Randomize scheduled scan start time",
+                    "default": 0,
+                    "description": "Randomize the start time of a daily and weekly scheduled scan to any interval from 0 to 23 hours."
                 }
             },
             "property_order": 50
