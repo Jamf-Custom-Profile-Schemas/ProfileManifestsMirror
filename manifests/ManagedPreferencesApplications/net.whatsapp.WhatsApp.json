@@ -1,0 +1,18 @@
+{
+    "title": "WhatsApp (net.whatsapp.WhatsApp)",
+    "description": "Settings for the WhatsApp desktop client for macOS",
+    "properties": {
+        "SUAutomaticallyUpdate": {
+            "type": "boolean",
+            "title": "Enable automatic updates",
+            "default": true,
+            "property_order": 5
+        },
+        "SUEnableAutomaticChecks": {
+            "type": "boolean",
+            "title": "Enable automatic update checks",
+            "default": true,
+            "property_order": 10
+        }
+    }
+}
