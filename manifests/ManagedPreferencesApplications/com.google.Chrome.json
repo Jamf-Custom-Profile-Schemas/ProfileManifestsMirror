@@ -3172,14 +3172,12 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "title": "Managed Bookmarks Folder Name",
+                "description": "The top-level managed bookmarks folder name.",
                 "properties": {
-                    "name": {
+                    "toplevel_name": {
                         "type": "string",
-                        "description": "Name of the bookmark."
-                    },
-                    "url": {
-                        "type": "string",
-                        "description": "URL for the bookmark."
+                        "title": "Top Level Name"
                     }
                 }
             },
