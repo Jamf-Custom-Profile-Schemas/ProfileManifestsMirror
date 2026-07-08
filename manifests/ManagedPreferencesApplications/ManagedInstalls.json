@@ -228,6 +228,45 @@
             ],
             "property_order": 115
         },
+        "MSCAllowNotificationWindow": {
+            "type": "boolean",
+            "title": "Allowed Notification Window",
+            "default": false,
+            "description": "If true, users can open the Managed Software Center settings window to specify allowed time windows for notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Allowed-notification-windows"
+                }
+            ],
+            "property_order": 120
+        },
+        "MSCAllowedNotificationWindowStart": {
+            "type": "integer",
+            "title": "Allowed Notification Window Start",
+            "default": 0,
+            "description": "The earliest hour that can be selected for allowed notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Allowed-notification-windows"
+                }
+            ],
+            "property_order": 125
+        },
+        "MSCAllowedNotificationWindowEnd": {
+            "type": "integer",
+            "title": "Allowed Notification Window End",
+            "default": 24,
+            "description": "Only hours earlier than this can be selected (non-inclusive).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/munki/munki/wiki/Allowed-notification-windows"
+                }
+            ],
+            "property_order": 130
+        },
         "FollowHTTPRedirects": {
             "type": "string",
             "title": "Follow HTTP Redirects",
@@ -243,7 +282,7 @@
                 "https",
                 "all"
             ],
-            "property_order": 120
+            "property_order": 135
         },
         "AdditionalHttpHeaders": {
             "type": "array",
@@ -259,14 +298,14 @@
                     "href": "https://github.com/munki/munki/wiki/Preferences#additionalhttpheaders"
                 }
             ],
-            "property_order": 125
+            "property_order": 140
         },
         "IgnoreSystemProxies": {
             "type": "boolean",
             "title": "Ignore System Proxies",
             "default": false,
             "description": "HTTP and/or HTTPS proxies set system-wide will be ignored, connections will be made directly.",
-            "property_order": 130
+            "property_order": 145
         },
         "DownloadRetries": {
             "type": "integer",
@@ -279,7 +318,7 @@
                     "href": "https://github.com/munki/munki/wiki/Munki-7.1-download-retries"
                 }
             ],
-            "property_order": 135
+            "property_order": 150
         },
         "DownloadRetrySleepSeconds": {
             "type": "integer",
@@ -292,49 +331,49 @@
                     "href": "https://github.com/munki/munki/wiki/Munki-7.1-download-retries"
                 }
             ],
-            "property_order": 140
+            "property_order": 155
         },
         "PackageURL": {
             "type": "string",
             "title": "Base Package URL",
             "description": "Base URL for Munki pkgs. Useful if your packages are served from a different server than your catalogs or manifests.",
-            "property_order": 145
+            "property_order": 160
         },
         "CatalogURL": {
             "type": "string",
             "title": "Base Catalog URL",
             "description": "Base URL for Munki catalogs. Useful if your catalogs are served from a different server than your packages or manifests.",
-            "property_order": 150
+            "property_order": 165
         },
         "ManifestURL": {
             "type": "string",
             "title": "Base Manifest URL",
             "description": "Base URL for Munki manifests. Useful if your manifests are served from a different server than your catalogs or manifests.",
-            "property_order": 155
+            "property_order": 170
         },
         "IconURL": {
             "type": "string",
             "title": "Base Icon URL",
             "description": "Base URL for product icons. Useful if your icons are served from a different server or different directory than the default.",
-            "property_order": 160
+            "property_order": 175
         },
         "ClientResourceURL": {
             "type": "string",
             "title": "Base Client Resource URL",
             "description": "Base URL for custom client resources for Managed Software Center. Useful if your resources are served from a different server or different directory than the default.",
-            "property_order": 165
+            "property_order": 180
         },
         "ClientResourcesFilename": {
             "type": "string",
             "title": "Client Resources Filename",
             "description": "Specific filename to use when requesting custom client resources.",
-            "property_order": 170
+            "property_order": 185
         },
         "HelpURL": {
             "type": "string",
             "title": "Help URL",
             "description": "URL to open/display when the user selects \"Managed Software Center Help\" from Managed Software Center's Help menu.",
-            "property_order": 175
+            "property_order": 190
         },
         "LicenseInfoURL": {
             "type": "string",
@@ -346,7 +385,7 @@
                     "href": "https://github.com/munki/munki/wiki/License-Seat-Tracking"
                 }
             ],
-            "property_order": 180
+            "property_order": 195
         },
         "SoftwareUpdateServerURL": {
             "type": "string",
@@ -358,45 +397,45 @@
                     "href": "https://github.com/munki/munki/wiki/Preferences#softwareupdateserverurl"
                 }
             ],
-            "property_order": 185
+            "property_order": 200
         },
         "UseClientCertificate": {
             "type": "boolean",
             "title": "Use Client Certificate",
             "default": false,
             "description": "Use an SSL client certificate when communicating with the Munki server. Requires an https:// URL for the Munki repo.",
-            "property_order": 190
+            "property_order": 205
         },
         "UseClientCertificateCNAsClientIdentifier": {
             "type": "boolean",
             "title": "Use Client Certificate CN As Client Identifier",
             "default": false,
             "description": "Use the CN of the client certificate as the Client Identifier. Used in combination with the UseClientCertificate key.",
-            "property_order": 195
+            "property_order": 210
         },
         "ClientCertificatePath": {
             "type": "string",
             "title": "Client Certificate Path",
             "description": "Absolute path to a client certificate. There are 3 defaults for this key. Concatenated cert/key PEM file accepted.",
-            "property_order": 200
+            "property_order": 215
         },
         "ClientKeyPath": {
             "type": "string",
             "title": "Client Key Path",
             "description": "Absolute path to a client private key.",
-            "property_order": 205
+            "property_order": 220
         },
         "SoftwareRepoCAPath": {
             "type": "string",
             "title": "Software Repo CA Path",
             "description": "Path to the directory that stores your CA certificate(s).",
-            "property_order": 210
+            "property_order": 225
         },
         "SoftwareRepoCACertificate": {
             "type": "string",
             "title": "Software Repo CA Certificate",
             "description": "Absolute path to your CA Certificate.",
-            "property_order": 215
+            "property_order": 230
         },
         "LogFile": {
             "type": "string",
@@ -409,35 +448,35 @@
                     "href": "https://github.com/munki/munki/wiki/Preferences#logfile"
                 }
             ],
-            "property_order": 220
+            "property_order": 235
         },
         "LogToSyslog": {
             "type": "boolean",
             "title": "Log to Syslog",
             "default": false,
             "description": "Log to syslog in addition to ManagedSoftwareUpdate.log.",
-            "property_order": 225
+            "property_order": 240
         },
         "LoggingLevel": {
             "type": "integer",
             "title": "Logging Level",
             "default": 1,
             "description": "Higher values cause more detail to be written to the primary log.",
-            "property_order": 230
+            "property_order": 245
         },
         "MSULogEnabled": {
             "type": "boolean",
             "title": "Log Enabled",
             "default": false,
             "description": "Log user actions in the GUI.",
-            "property_order": 235
+            "property_order": 250
         },
         "MSUDebugLogEnabled": {
             "type": "boolean",
             "title": "Debug Log Enabled",
             "default": false,
             "description": "Debug logging for Managed Software Center.",
-            "property_order": 240
+            "property_order": 255
         },
         "AccessKey": {
             "type": "string",
@@ -449,7 +488,7 @@
                     "href": "https://github.com/waderobson/s3-auth"
                 }
             ],
-            "property_order": 245
+            "property_order": 260
         },
         "Region": {
             "type": "string",
@@ -460,7 +499,7 @@
                     "href": "https://github.com/waderobson/s3-auth"
                 }
             ],
-            "property_order": 250
+            "property_order": 265
         },
         "SecretKey": {
             "type": "string",
@@ -472,7 +511,7 @@
                     "href": "https://github.com/waderobson/s3-auth"
                 }
             ],
-            "property_order": 255
+            "property_order": 270
         },
         "S3Endpoint": {
             "type": "string",
@@ -484,7 +523,7 @@
                     "href": "https://github.com/waderobson/s3-auth"
                 }
             ],
-            "property_order": 260
+            "property_order": 275
         },
         "IgnoreMiddleware": {
             "type": "boolean",
@@ -497,7 +536,7 @@
                     "href": "https://github.com/munki/munki/wiki/Preferences#details"
                 }
             ],
-            "property_order": 265
+            "property_order": 280
         },
         "AggressiveUpdateNotificationDays": {
             "type": "integer",
@@ -510,7 +549,7 @@
                     "href": "https://github.com/munki/munki/wiki/aggressive-update-notifications-in-munki-5"
                 }
             ],
-            "property_order": 270
+            "property_order": 285
         }
     }
 }
