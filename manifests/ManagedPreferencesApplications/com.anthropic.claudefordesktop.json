@@ -3,10 +3,14 @@
     "description": "Claude Desktop enterprise configuration settings",
     "properties": {
         "forceLoginOrgUUID": {
-            "type": "string",
-            "title": "Force Login Organization UUID",
-            "description": "Forces users to sign in with the specified Anthropic organization. When set, Claude Desktop requires the user to authenticate with the matching organization UUID.",
-            "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Organization UUID",
+                "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$"
+            },
+            "title": "Force Login Organization UUID(s)",
+            "description": "Require login to belong to a specific organization. Accepts a single UUID string, which also pre-selects that organization during login, or an array of UUIDs where any listed organization is accepted without pre-selection. Login fails if the authenticated account does not belong to a listed organization.",
             "property_order": 5
         },
         "disableAutoUpdates": {
