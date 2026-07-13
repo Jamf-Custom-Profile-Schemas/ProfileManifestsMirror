@@ -12,37 +12,44 @@
         "DaysBeforeDeadlineDisplayReminder": {
             "type": "integer",
             "title": "Days Before Deadline: Display Reminder",
-            "default": 60,
+            "default": 14,
             "description": "Number of days before the deadline when reminders start being displayed.",
             "property_order": 10
         },
         "DaysBeforeDeadlineBlurscreen": {
             "type": "integer",
             "title": "Days Before Deadline: Blur Screen",
-            "default": 45,
+            "default": 3,
             "description": "Number of days before the deadline when blur-screen enforcement starts.",
             "property_order": 15
         },
         "DaysBeforeDeadlineHidingButton2": {
             "type": "integer",
             "title": "Days Before Deadline: Hide Defer Button",
-            "default": 21,
+            "default": 1,
             "description": "Number of days before the deadline when the secondary button is hidden.",
             "property_order": 20
         },
         "DaysOfExcessiveUptimeWarning": {
             "type": "integer",
             "title": "Days of Excessive Uptime Warning",
-            "default": 0,
+            "default": 7,
             "description": "Number of days of excessive uptime before warning the user.",
             "property_order": 25
         },
-        "DaysPastDeadlineRestartWorkflow": {
+        "QuietPeriodMinutes": {
             "type": "integer",
-            "title": "Days Past Deadline: Restart Workflow",
-            "default": 2,
-            "description": "Number of days past deadline before activating restart workflow behavior.",
+            "title": "Quiet Period (Minutes)",
+            "default": 76,
+            "description": "Number of minutes after a user interaction during which baseline reminders are suppressed.",
             "property_order": 30
+        },
+        "OutsideDisplayWindowPeriodicReminderDays": {
+            "type": "integer",
+            "title": "Outside Display Window Periodic Reminder (Days)",
+            "default": 28,
+            "description": "Interval in days for periodic reminders before the regular display window begins.",
+            "property_order": 35
         },
         "PastDeadlineRestartBehavior": {
             "type": "string",
@@ -54,210 +61,2475 @@
                 "Prompt",
                 "Force"
             ],
-            "property_order": 35
+            "property_order": 40
+        },
+        "DaysPastDeadlineRestartWorkflow": {
+            "type": "integer",
+            "title": "Days Past Deadline: Restart Workflow",
+            "default": 2,
+            "description": "Number of days past deadline before activating restart workflow behavior.",
+            "property_order": 45
+        },
+        "PastDeadlineRestartMinimumUptimeMinutes": {
+            "type": "integer",
+            "title": "Past Deadline Restart Minimum Uptime (Minutes)",
+            "default": 75,
+            "description": "Minimum uptime in minutes required before the past-deadline restart workflow is eligible to run.",
+            "property_order": 50
+        },
+        "PastDeadlineForceTimerSeconds": {
+            "type": "integer",
+            "title": "Past Deadline Force Timer (Seconds)",
+            "default": 60,
+            "description": "Countdown duration in seconds shown by the past-deadline Force restart workflow.",
+            "property_order": 55
+        },
+        "PastDeadlineForceRedisplayDelaySeconds": {
+            "type": "integer",
+            "title": "Past Deadline Force Redisplay Delay (Seconds)",
+            "default": 5,
+            "description": "Delay in seconds before redisplaying the past-deadline Force restart dialog.",
+            "property_order": 60
         },
         "MinimumDiskFreePercentage": {
             "type": "integer",
             "title": "Minimum Disk Free Percentage",
-            "default": 99,
+            "default": 10,
             "description": "Percent of free disk space required before warning the user.",
-            "property_order": 40
+            "property_order": 65
+        },
+        "DisableButton2InsteadOfHide": {
+            "type": "boolean",
+            "title": "Disable Secondary Button Instead of Hide",
+            "default": true,
+            "description": "Whether to disable the secondary button instead of hiding it when deferral is no longer allowed.",
+            "property_order": 70
         },
         "MeetingDelay": {
             "type": "integer",
             "title": "Meeting Delay (Minutes)",
             "default": 75,
             "description": "Delay in minutes before enforcing reminders around meetings.",
-            "property_order": 45
+            "property_order": 75
+        },
+        "DailyReminderTimes": {
+            "type": "string",
+            "title": "Daily Reminder Times",
+            "default": "08:00,12:00,16:00",
+            "description": "Comma-separated local reminder times in 24-hour HH:MM format used by the heartbeat scheduler.",
+            "property_order": 80
+        },
+        "MinutesBeforeDeadlineReminderSchedule": {
+            "type": "string",
+            "title": "Minutes Before Deadline Reminder Schedule",
+            "default": "45,30,15,10,5",
+            "description": "Comma-separated minute thresholds before the effective enforcement deadline when final reminders are displayed.",
+            "property_order": 85
+        },
+        "AggressiveModePastDeadlineHours": {
+            "type": "integer",
+            "title": "Aggressive Mode Past Deadline (Hours)",
+            "default": 2,
+            "description": "Hours past the effective deadline before aggressive reminder mode starts.",
+            "property_order": 90
+        },
+        "AggressiveModeFrequencyMinutes": {
+            "type": "integer",
+            "title": "Aggressive Mode Frequency (Minutes)",
+            "default": 20,
+            "description": "Minutes between reminders while aggressive past-deadline mode is active.",
+            "property_order": 95
         },
         "AcceptableAssertionApplicationNames": {
             "type": "string",
             "title": "Acceptable Assertion Application Names",
             "default": "MSTeams zoom.us Webex",
             "description": "Space-delimited list of application name substrings used to allowlist display sleep assertions; matching assertions defer reminders up to the Meeting Delay.",
-            "property_order": 50
+            "property_order": 100
         },
         "OrganizationOverlayIconURL": {
             "type": "string",
             "title": "Organization Overlay Icon URL",
             "default": "https://use2.ics.services.jamfcloud.com/icon/hash_2d64ce7f0042ad68234a2515211adb067ad6714703dd8ebd6f33c1ab30354b1d",
             "description": "URL to the organization overlay icon image.",
-            "property_order": 55
+            "property_order": 105
         },
         "OrganizationOverlayIconURLdark": {
             "type": "string",
             "title": "Organization Overlay Icon URL (Dark Mode)",
             "default": "https://use2.ics.services.jamfcloud.com/icon/hash_d3a3bc5e06d2db5f9697f9b4fa095bfecb2dc0d22c71aadea525eb38ff981d39",
             "description": "URL to the organization overlay icon image used when the interface is in Dark Mode. Falls back to OrganizationOverlayIconURL when unset.",
-            "property_order": 60
+            "property_order": 110
         },
         "SwapOverlayAndLogo": {
             "type": "boolean",
             "title": "Swap Overlay And Logo",
             "default": false,
             "description": "Whether to swap the overlay icon and primary logo positions.",
-            "property_order": 65
+            "property_order": 115
         },
         "DateFormatDeadlineHumanReadable": {
             "type": "string",
             "title": "Deadline Date Format (Human Readable)",
             "default": "+%a, %d-%b-%Y, %-l:%M %p",
             "description": "strftime format string used to render the deadline date for users.",
-            "property_order": 70
+            "property_order": 120
+        },
+        "DateFormatDeadlineHumanReadableLocalized_fr": {
+            "type": "string",
+            "title": "Deadline Date Format (Human Readable) (French)",
+            "default": "+%a %d/%m/%Y %H:%M",
+            "description": "Localized French override for deadline date format (human readable).",
+            "property_order": 125
+        },
+        "DateFormatDeadlineHumanReadableLocalized_fr_CA": {
+            "type": "string",
+            "title": "Deadline Date Format (Human Readable) (French — Canada)",
+            "default": "+%a %Y-%m-%d %H:%M",
+            "description": "Localized French — Canada override for deadline date format (human readable).",
+            "property_order": 130
+        },
+        "DateFormatDeadlineHumanReadableLocalized_en_GB": {
+            "type": "string",
+            "title": "Deadline Date Format (Human Readable) (English — United Kingdom)",
+            "default": "+%a, %d/%m/%Y %H:%M",
+            "description": "Localized English — United Kingdom override for deadline date format (human readable).",
+            "property_order": 135
+        },
+        "DateFormatDeadlineHumanReadableLocalized_ja": {
+            "type": "string",
+            "title": "Deadline Date Format (Human Readable) (Japanese)",
+            "default": "+%Y年%-m月%-d日 (%a) %p %-I:%M",
+            "description": "Localized Japanese override for deadline date format (human readable).",
+            "property_order": 140
         },
         "SupportTeamName": {
             "type": "string",
             "title": "Support Team Name",
-            "default": "IT Support",
+            "default": "Sample IT Support",
             "description": "Display name of the support team.",
-            "property_order": 75
+            "property_order": 145
         },
         "SupportTeamPhone": {
             "type": "string",
             "title": "Support Team Phone",
-            "default": "+1 (801) 555-1212",
+            "default": "Sample +1 (801) 555-1212",
             "description": "Phone number for support.",
-            "property_order": 80
+            "property_order": 150
+        },
+        "HideSupportTeamPhone": {
+            "type": "boolean",
+            "title": "Hide Support Team Phone",
+            "default": false,
+            "description": "When enabled, hide the support phone row and blank the corresponding placeholder.",
+            "property_order": 155
         },
         "SupportTeamEmail": {
             "type": "string",
             "title": "Support Team Email",
-            "default": "rescue@domain.org",
+            "default": "rescue@company.com",
             "description": "Email address for support.",
-            "property_order": 85
+            "property_order": 160
+        },
+        "HideSupportTeamEmail": {
+            "type": "boolean",
+            "title": "Hide Support Team Email",
+            "default": false,
+            "description": "When enabled, hide the support email row and blank the corresponding placeholder.",
+            "property_order": 165
         },
         "SupportTeamWebsite": {
             "type": "string",
             "title": "Support Team Website",
-            "default": "https://support.domain.org",
+            "default": "https://support.company.com",
             "description": "Website URL for support.",
-            "property_order": 90
+            "property_order": 170
+        },
+        "HideSupportTeamWebsite": {
+            "type": "boolean",
+            "title": "Hide Support Team Website",
+            "default": false,
+            "description": "When enabled, hide the support website row and blank the corresponding placeholder.",
+            "property_order": 175
         },
         "SupportKB": {
             "type": "string",
             "title": "Support KB Identifier",
             "default": "Update macOS on Mac",
             "description": "Knowledge base article identifier.",
-            "property_order": 95
+            "property_order": 180
+        },
+        "HideSupportKB": {
+            "type": "boolean",
+            "title": "Hide Support KB",
+            "default": false,
+            "description": "When enabled, hide the support knowledge base row and blank the corresponding placeholders.",
+            "property_order": 185
         },
         "InfoButtonAction": {
             "type": "string",
             "title": "Info Button Action URL",
             "default": "https://support.apple.com/108382",
             "description": "URL opened when the info button is clicked.",
-            "property_order": 100
+            "property_order": 190
         },
         "SupportKBURL": {
             "type": "string",
             "title": "Support KB Markdown Link",
             "default": "[Update macOS on Mac](https://support.apple.com/108382)",
             "description": "Markdown-formatted link to the support knowledge base article.",
-            "property_order": 105
+            "property_order": 195
         },
         "SupportAssistanceMessage": {
             "type": "string",
             "title": "Support Assistance Message",
-            "default": "<br><br>For assistance, please contact **{supportTeamName}** by clicking the (?) button in the bottom right-hand corner.",
+            "default": "<br><br>Sample For assistance, please contact **{supportTeamName}** by clicking the (?) button in the bottom, right-hand corner.",
             "description": "Optional support sentence appended to message body.",
-            "property_order": 110
+            "property_order": 200
+        },
+        "HideSupportAssistanceMessage": {
+            "type": "boolean",
+            "title": "Hide Support Assistance Message",
+            "default": false,
+            "description": "When enabled, suppress the support assistance sentence in the main dialog body.",
+            "property_order": 205
+        },
+        "SupportAssistanceMessageLocalized_en": {
+            "type": "string",
+            "title": "Support Assistance Message (English)",
+            "default": "<br><br>Sample For assistance, please contact **{supportTeamName}** by clicking the (?) button in the bottom, right-hand corner.",
+            "description": "Localized support assistance message for English.",
+            "property_order": 210
+        },
+        "SupportAssistanceMessageLocalized_de": {
+            "type": "string",
+            "title": "Support Assistance Message (German)",
+            "default": "<br><br>Sample Bei Fragen kontaktiere **{supportTeamName}** über die (?) Schaltfläche unten rechts.",
+            "description": "Localized support assistance message for German.",
+            "property_order": 215
+        },
+        "SupportAssistanceMessageLocalized_fr": {
+            "type": "string",
+            "title": "Support Assistance Message (French)",
+            "default": "<br><br>Sample Pour obtenir de l'aide, contactez **{supportTeamName}** via le bouton (?) en bas à droite.",
+            "description": "Localized support assistance message for French.",
+            "property_order": 220
+        },
+        "SupportAssistanceMessageLocalized_es": {
+            "type": "string",
+            "title": "Support Assistance Message (Spanish)",
+            "default": "<br><br>Sample Para obtener ayuda, contacte con **{supportTeamName}** haciendo clic en el botón (?) de la esquina inferior derecha.",
+            "description": "Localized support assistance message for Spanish.",
+            "property_order": 225
+        },
+        "SupportAssistanceMessageLocalized_pt": {
+            "type": "string",
+            "title": "Support Assistance Message (Portuguese)",
+            "default": "<br><br>Sample Para obter assistência, contacte a equipa **{supportTeamName}** clicando no botão (?) no canto inferior direito.",
+            "description": "Localized support assistance message for Portuguese.",
+            "property_order": 230
+        },
+        "SupportAssistanceMessageLocalized_ja": {
+            "type": "string",
+            "title": "Support Assistance Message (Japanese)",
+            "default": "<br><br>Sample サポートが必要な場合は、右下の (?) ボタンをクリックして **{supportTeamName}** にお問い合わせください。",
+            "description": "Localized support assistance message for Japanese.",
+            "property_order": 235
+        },
+        "SupportAssistanceMessageLocalized_nl": {
+            "type": "string",
+            "title": "Support Assistance Message (Dutch)",
+            "default": "<br><br>Sample Voor hulp kunt u contact opnemen met **{supportTeamName}** door op de (?) knop rechtsonder in de hoek te klikken.",
+            "description": "Localized support assistance message for Dutch.",
+            "property_order": 240
+        },
+        "SupportAssistanceMessageLocalized_it": {
+            "type": "string",
+            "title": "Support Assistance Message (Italian)",
+            "default": "<br><br>Sample Per assistenza, contatta **{supportTeamName}** facendo clic sul pulsante (?) nell'angolo in basso a destra.",
+            "description": "Localized support assistance message for Italian.",
+            "property_order": 245
+        },
+        "LanguageOverride": {
+            "type": "string",
+            "title": "Language Override",
+            "default": "auto",
+            "description": "Language code to force for dialog content. Use auto to detect the logged-in user language.",
+            "enum": [
+                "auto",
+                "en",
+                "de",
+                "fr",
+                "es",
+                "it",
+                "nl",
+                "pt",
+                "ja"
+            ],
+            "property_order": 250
         },
         "Title": {
             "type": "string",
             "title": "Dialog Title",
-            "default": "macOS {titleMessageUpdateOrUpgrade} Required",
+            "default": "Sample macOS {titleMessageUpdateOrUpgrade} Required",
             "description": "Title text displayed at the top of the DDM dialog.",
-            "property_order": 115
+            "property_order": 255
+        },
+        "TitleLocalized_en": {
+            "type": "string",
+            "title": "Dialog Title (English)",
+            "default": "Sample macOS {titleMessageUpdateOrUpgrade} Required",
+            "description": "Localized title text displayed at the top of the ddm dialog. for English.",
+            "property_order": 260
+        },
+        "TitleLocalized_de": {
+            "type": "string",
+            "title": "Dialog Title (German)",
+            "default": "Sample macOS {titleMessageUpdateOrUpgrade} erforderlich",
+            "description": "Localized title text displayed at the top of the ddm dialog. for German.",
+            "property_order": 265
+        },
+        "TitleLocalized_fr": {
+            "type": "string",
+            "title": "Dialog Title (French)",
+            "default": "Sample {titleMessageUpdateOrUpgrade} macOS obligatoire",
+            "description": "Localized title text displayed at the top of the ddm dialog. for French.",
+            "property_order": 270
+        },
+        "TitleLocalized_es": {
+            "type": "string",
+            "title": "Dialog Title (Spanish)",
+            "default": "Sample {titleMessageUpdateOrUpgrade} obligatoria de macOS",
+            "description": "Localized title text displayed at the top of the ddm dialog. for Spanish.",
+            "property_order": 275
+        },
+        "TitleLocalized_pt": {
+            "type": "string",
+            "title": "Dialog Title (Portuguese)",
+            "default": "Sample {titleMessageUpdateOrUpgrade} obrigatória do macOS",
+            "description": "Localized title text displayed at the top of the ddm dialog. for Portuguese.",
+            "property_order": 280
+        },
+        "TitleLocalized_ja": {
+            "type": "string",
+            "title": "Dialog Title (Japanese)",
+            "default": "Sample macOSの{titleMessageUpdateOrUpgrade}が必要です",
+            "description": "Localized title text displayed at the top of the ddm dialog. for Japanese.",
+            "property_order": 285
+        },
+        "TitleLocalized_nl": {
+            "type": "string",
+            "title": "Dialog Title (Dutch)",
+            "default": "Sample macOS {titleMessageUpdateOrUpgrade} vereist",
+            "description": "Localized title text displayed at the top of the ddm dialog. for Dutch.",
+            "property_order": 290
+        },
+        "TitleLocalized_it": {
+            "type": "string",
+            "title": "Dialog Title (Italian)",
+            "default": "Sample {titleMessageUpdateOrUpgrade} di macOS richiesto",
+            "description": "Localized title text displayed at the top of the ddm dialog. for Italian.",
+            "property_order": 295
         },
         "Button1Text": {
             "type": "string",
             "title": "Primary Button Text",
-            "default": "Open Software Update",
+            "default": "Sample Open Software Update",
             "description": "Label for the primary action button.",
-            "property_order": 120
+            "property_order": 300
+        },
+        "Button1TextLocalized_en": {
+            "type": "string",
+            "title": "Primary Button Text (English)",
+            "default": "Sample Open Software Update",
+            "description": "Localized label for the primary action button. for English.",
+            "property_order": 305
+        },
+        "Button1TextLocalized_de": {
+            "type": "string",
+            "title": "Primary Button Text (German)",
+            "default": "Sample Softwareupdate öffnen",
+            "description": "Localized label for the primary action button. for German.",
+            "property_order": 310
+        },
+        "Button1TextLocalized_fr": {
+            "type": "string",
+            "title": "Primary Button Text (French)",
+            "default": "Sample Ouvrir Mise à jour de logiciels",
+            "description": "Localized label for the primary action button. for French.",
+            "property_order": 315
+        },
+        "Button1TextLocalized_es": {
+            "type": "string",
+            "title": "Primary Button Text (Spanish)",
+            "default": "Sample Abrir Actualización de software",
+            "description": "Localized label for the primary action button. for Spanish.",
+            "property_order": 320
+        },
+        "Button1TextLocalized_pt": {
+            "type": "string",
+            "title": "Primary Button Text (Portuguese)",
+            "default": "Sample Abrir Atualização de software",
+            "description": "Localized label for the primary action button. for Portuguese.",
+            "property_order": 325
+        },
+        "Button1TextLocalized_ja": {
+            "type": "string",
+            "title": "Primary Button Text (Japanese)",
+            "default": "Sample ソフトウェア・アップデートを開く",
+            "description": "Localized label for the primary action button. for Japanese.",
+            "property_order": 330
+        },
+        "Button1TextLocalized_nl": {
+            "type": "string",
+            "title": "Primary Button Text (Dutch)",
+            "default": "Sample Open Software-update",
+            "description": "Localized label for the primary action button. for Dutch.",
+            "property_order": 335
+        },
+        "Button1TextLocalized_it": {
+            "type": "string",
+            "title": "Primary Button Text (Italian)",
+            "default": "Sample Apri Aggiornamento Software",
+            "description": "Localized label for the primary action button. for Italian.",
+            "property_order": 340
         },
         "Button2Text": {
             "type": "string",
             "title": "Secondary Button Text",
-            "default": "Remind Me Later",
+            "default": "Sample Remind Me Later",
             "description": "Label for the secondary (remind later) button.",
-            "property_order": 125
+            "property_order": 345
+        },
+        "Button2TextLocalized_en": {
+            "type": "string",
+            "title": "Secondary Button Text (English)",
+            "default": "Sample Remind Me Later",
+            "description": "Localized label for the secondary (remind later) button. for English.",
+            "property_order": 350
+        },
+        "Button2TextLocalized_de": {
+            "type": "string",
+            "title": "Secondary Button Text (German)",
+            "default": "Sample Später erinnern",
+            "description": "Localized label for the secondary (remind later) button. for German.",
+            "property_order": 355
+        },
+        "Button2TextLocalized_fr": {
+            "type": "string",
+            "title": "Secondary Button Text (French)",
+            "default": "Sample Me rappeler plus tard",
+            "description": "Localized label for the secondary (remind later) button. for French.",
+            "property_order": 360
+        },
+        "Button2TextLocalized_es": {
+            "type": "string",
+            "title": "Secondary Button Text (Spanish)",
+            "default": "Sample Recordármelo más tarde",
+            "description": "Localized label for the secondary (remind later) button. for Spanish.",
+            "property_order": 365
+        },
+        "Button2TextLocalized_pt": {
+            "type": "string",
+            "title": "Secondary Button Text (Portuguese)",
+            "default": "Sample Lembrar-me mais tarde",
+            "description": "Localized label for the secondary (remind later) button. for Portuguese.",
+            "property_order": 370
+        },
+        "Button2TextLocalized_ja": {
+            "type": "string",
+            "title": "Secondary Button Text (Japanese)",
+            "default": "Sample 後で通知",
+            "description": "Localized label for the secondary (remind later) button. for Japanese.",
+            "property_order": 375
+        },
+        "Button2TextLocalized_nl": {
+            "type": "string",
+            "title": "Secondary Button Text (Dutch)",
+            "default": "Sample Herinner me later",
+            "description": "Localized label for the secondary (remind later) button. for Dutch.",
+            "property_order": 380
+        },
+        "Button2TextLocalized_it": {
+            "type": "string",
+            "title": "Secondary Button Text (Italian)",
+            "default": "Sample Ricordamelo più tardi",
+            "description": "Localized label for the secondary (remind later) button. for Italian.",
+            "property_order": 385
         },
         "InfoButtonText": {
             "type": "string",
             "title": "Info Button Text",
-            "default": "Update macOS on Mac",
+            "default": "Sample Update macOS on Mac",
             "description": "Label for the info button.",
-            "property_order": 130
+            "property_order": 390
+        },
+        "InfoButtonTextLocalized_en": {
+            "type": "string",
+            "title": "Info Button Text (English)",
+            "default": "Sample Update macOS on Mac",
+            "description": "Localized label for the info button. for English.",
+            "property_order": 395
+        },
+        "InfoButtonTextLocalized_de": {
+            "type": "string",
+            "title": "Info Button Text (German)",
+            "default": "Sample macOS auf dem Mac aktualisieren",
+            "description": "Localized label for the info button. for German.",
+            "property_order": 400
+        },
+        "InfoButtonTextLocalized_fr": {
+            "type": "string",
+            "title": "Info Button Text (French)",
+            "default": "Sample Mettre à jour macOS sur Mac",
+            "description": "Localized label for the info button. for French.",
+            "property_order": 405
+        },
+        "InfoButtonTextLocalized_es": {
+            "type": "string",
+            "title": "Info Button Text (Spanish)",
+            "default": "Sample Actualizar macOS en el Mac",
+            "description": "Localized label for the info button. for Spanish.",
+            "property_order": 410
+        },
+        "InfoButtonTextLocalized_pt": {
+            "type": "string",
+            "title": "Info Button Text (Portuguese)",
+            "default": "Sample Atualizar macOS no Mac",
+            "description": "Localized label for the info button. for Portuguese.",
+            "property_order": 415
+        },
+        "InfoButtonTextLocalized_ja": {
+            "type": "string",
+            "title": "Info Button Text (Japanese)",
+            "default": "Sample MacでmacOSをアップデート",
+            "description": "Localized label for the info button. for Japanese.",
+            "property_order": 420
+        },
+        "InfoButtonTextLocalized_nl": {
+            "type": "string",
+            "title": "Info Button Text (Dutch)",
+            "default": "Sample Werk macOS bij op Mac",
+            "description": "Localized label for the info button. for Dutch.",
+            "property_order": 425
+        },
+        "InfoButtonTextLocalized_it": {
+            "type": "string",
+            "title": "Info Button Text (Italian)",
+            "default": "Sample Aggiorna macOS su Mac",
+            "description": "Localized label for the info button. for Italian.",
+            "property_order": 430
         },
         "ExcessiveUptimeWarningMessage": {
             "type": "string",
             "title": "Excessive Uptime Warning Message",
-            "default": "<br><br>**Note:** Your Mac has been powered-on for **{uptimeHumanReadable}**. For more reliable results, please manually restart your Mac before proceeding.",
+            "default": "<br><br>Sample **Note:** Your Mac has been powered-on for **{uptimeHumanReadable}**. For more reliable results, please manually restart your Mac before proceeding.",
             "description": "Markdown-formatted text displayed in the dialog.",
-            "property_order": 135
+            "property_order": 435
+        },
+        "ExcessiveUptimeWarningMessageLocalized_en": {
+            "type": "string",
+            "title": "Excessive Uptime Warning Message (English)",
+            "default": "<br><br>Sample **Note:** Your Mac has been powered-on for **{uptimeHumanReadable}**. For more reliable results, please manually restart your Mac before proceeding.",
+            "description": "Localized markdown-formatted warning shown when system uptime exceeds the configured threshold. for English.",
+            "property_order": 440
+        },
+        "ExcessiveUptimeWarningMessageLocalized_de": {
+            "type": "string",
+            "title": "Excessive Uptime Warning Message (German)",
+            "default": "<br><br>Sample **Hinweis:** Dein Mac läuft seit **{uptimeHumanReadable}**. Starte ihn für zuverlässigere Ergebnisse bitte manuell neu.",
+            "description": "Localized markdown-formatted warning shown when system uptime exceeds the configured threshold. for German.",
+            "property_order": 445
+        },
+        "ExcessiveUptimeWarningMessageLocalized_fr": {
+            "type": "string",
+            "title": "Excessive Uptime Warning Message (French)",
+            "default": "<br><br>Sample **Note :** Votre Mac est allumé depuis **{uptimeHumanReadable}**. Redémarrez-le manuellement pour de meilleurs résultats.",
+            "description": "Localized markdown-formatted warning shown when system uptime exceeds the configured threshold. for French.",
+            "property_order": 450
+        },
+        "ExcessiveUptimeWarningMessageLocalized_es": {
+            "type": "string",
+            "title": "Excessive Uptime Warning Message (Spanish)",
+            "default": "<br><br>Sample **Nota:** Su Mac lleva **{uptimeHumanReadable}** encendido. Para obtener resultados más fiables, reinícielo manualmente antes de continuar.",
+            "description": "Localized markdown-formatted warning shown when system uptime exceeds the configured threshold. for Spanish.",
+            "property_order": 455
+        },
+        "ExcessiveUptimeWarningMessageLocalized_pt": {
+            "type": "string",
+            "title": "Excessive Uptime Warning Message (Portuguese)",
+            "default": "<br><br>Sample **Nota:** O seu Mac está ligado há **{uptimeHumanReadable}**. Para resultados mais fiáveis, reinicie-o manualmente antes de continuar.",
+            "description": "Localized markdown-formatted warning shown when system uptime exceeds the configured threshold. for Portuguese.",
+            "property_order": 460
+        },
+        "ExcessiveUptimeWarningMessageLocalized_ja": {
+            "type": "string",
+            "title": "Excessive Uptime Warning Message (Japanese)",
+            "default": "<br><br>Sample **注意:** このMacは **{uptimeHumanReadable}** の間、再起動されていません。より確実に実行するため、続行前に手動で再起動してください。",
+            "description": "Localized markdown-formatted warning shown when system uptime exceeds the configured threshold. for Japanese.",
+            "property_order": 465
+        },
+        "ExcessiveUptimeWarningMessageLocalized_nl": {
+            "type": "string",
+            "title": "Excessive Uptime Warning Message (Dutch)",
+            "default": "<br><br>Sample **Opmerking:** Uw Mac is al **{uptimeHumanReadable}** ingeschakeld. Voor betrouwbaardere resultaten wordt aanbevolen uw Mac handmatig opnieuw op te starten voordat u verdergaat.",
+            "description": "Localized markdown-formatted warning shown when system uptime exceeds the configured threshold. for Dutch.",
+            "property_order": 470
+        },
+        "ExcessiveUptimeWarningMessageLocalized_it": {
+            "type": "string",
+            "title": "Excessive Uptime Warning Message (Italian)",
+            "default": "<br><br>Sample **Nota:** Il tuo Mac è acceso da **{uptimeHumanReadable}**. Per risultati più affidabili, riavvia manualmente il Mac prima di procedere.",
+            "description": "Localized markdown-formatted warning shown when system uptime exceeds the configured threshold. for Italian.",
+            "property_order": 475
         },
         "DiskSpaceWarningMessage": {
             "type": "string",
             "title": "Disk Space Warning Message",
-            "default": "<br><br>**Note:** Your Mac has only **{diskSpaceHumanReadable}**, which may prevent this macOS {titleMessageUpdateOrUpgrade:l}.",
+            "default": "<br><br>Sample **Note:** Your Mac has only **{diskSpaceHumanReadable}**, which may prevent this macOS {titleMessageUpdateOrUpgradeLower}.",
             "description": "Markdown-formatted text displayed in the dialog.",
-            "property_order": 140
+            "property_order": 480
+        },
+        "DiskSpaceWarningMessageLocalized_en": {
+            "type": "string",
+            "title": "Disk Space Warning Message (English)",
+            "default": "<br><br>Sample **Note:** Your Mac has only **{diskSpaceHumanReadable}**, which may prevent this macOS {titleMessageUpdateOrUpgradeLower}.",
+            "description": "Localized markdown-formatted warning shown when free disk space falls below the configured threshold. for English.",
+            "property_order": 485
+        },
+        "DiskSpaceWarningMessageLocalized_de": {
+            "type": "string",
+            "title": "Disk Space Warning Message (German)",
+            "default": "<br><br>Sample **Hinweis:** Dein Mac hat nur **{diskSpaceHumanReadable}** frei. Dadurch kann dieses macOS-{titleMessageUpdateOrUpgrade} scheitern.",
+            "description": "Localized markdown-formatted warning shown when free disk space falls below the configured threshold. for German.",
+            "property_order": 490
+        },
+        "DiskSpaceWarningMessageLocalized_fr": {
+            "type": "string",
+            "title": "Disk Space Warning Message (French)",
+            "default": "<br><br>Sample **Note :** Votre Mac ne dispose que de **{diskSpaceHumanReadable}**, ce qui peut empêcher cette {titleMessageUpdateOrUpgradeLower} macOS.",
+            "description": "Localized markdown-formatted warning shown when free disk space falls below the configured threshold. for French.",
+            "property_order": 495
+        },
+        "DiskSpaceWarningMessageLocalized_es": {
+            "type": "string",
+            "title": "Disk Space Warning Message (Spanish)",
+            "default": "<br><br>Sample **Nota:** Su Mac solo dispone de **{diskSpaceHumanReadable}**, lo que puede impedir esta {titleMessageUpdateOrUpgradeLower} de macOS.",
+            "description": "Localized markdown-formatted warning shown when free disk space falls below the configured threshold. for Spanish.",
+            "property_order": 500
+        },
+        "DiskSpaceWarningMessageLocalized_pt": {
+            "type": "string",
+            "title": "Disk Space Warning Message (Portuguese)",
+            "default": "<br><br>Sample **Nota:** O seu Mac tem apenas **{diskSpaceHumanReadable}** livres, o que pode impedir esta {titleMessageUpdateOrUpgradeLower} do macOS.",
+            "description": "Localized markdown-formatted warning shown when free disk space falls below the configured threshold. for Portuguese.",
+            "property_order": 505
+        },
+        "DiskSpaceWarningMessageLocalized_ja": {
+            "type": "string",
+            "title": "Disk Space Warning Message (Japanese)",
+            "default": "<br><br>Sample **注意:** このMacの空き容量は **{diskSpaceHumanReadable}** しかないため、このmacOS {titleMessageUpdateOrUpgradeLower} を実行できない可能性があります。",
+            "description": "Localized markdown-formatted warning shown when free disk space falls below the configured threshold. for Japanese.",
+            "property_order": 510
+        },
+        "DiskSpaceWarningMessageLocalized_nl": {
+            "type": "string",
+            "title": "Disk Space Warning Message (Dutch)",
+            "default": "<br><br>Sample **Opmerking:** Uw Mac heeft slechts **{diskSpaceHumanReadable}** beschikbaar, wat deze macOS {titleMessageUpdateOrUpgradeLower} kan verhinderen.",
+            "description": "Localized markdown-formatted warning shown when free disk space falls below the configured threshold. for Dutch.",
+            "property_order": 515
+        },
+        "DiskSpaceWarningMessageLocalized_it": {
+            "type": "string",
+            "title": "Disk Space Warning Message (Italian)",
+            "default": "<br><br>Sample **Nota:** Il tuo Mac ha solo **{diskSpaceHumanReadable}** disponibili, il che potrebbe impedire questo {titleMessageUpdateOrUpgradeLower} di macOS.",
+            "description": "Localized markdown-formatted warning shown when free disk space falls below the configured threshold. for Italian.",
+            "property_order": 520
         },
         "StagedUpdateMessage": {
             "type": "string",
             "title": "Staged Update Message",
-            "default": "<br><br>**Good news!** The macOS {ddmVersionString} update has already been downloaded to your Mac and is ready to install. Installation will proceed quickly when you click **{button1text}**.",
+            "default": "<br><br>Sample **Good news!** The macOS {ddmVersionString} update has already been downloaded to your Mac and is ready to install. Installation will proceed quickly when you click **{button1text}**.",
             "description": "Markdown-formatted message displayed when the update is fully staged (downloaded and ready).",
-            "property_order": 145
+            "property_order": 525
+        },
+        "StagedUpdateMessageLocalized_en": {
+            "type": "string",
+            "title": "Staged Update Message (English)",
+            "default": "<br><br>Sample **Good news!** The macOS {ddmVersionString} update has already been downloaded to your Mac and is ready to install. Installation will proceed quickly when you click **{button1text}**.",
+            "description": "Localized markdown-formatted message displayed when the update is fully staged. for English.",
+            "property_order": 530
+        },
+        "StagedUpdateMessageLocalized_de": {
+            "type": "string",
+            "title": "Staged Update Message (German)",
+            "default": "<br><br>Sample **Gute Nachricht!** Das macOS-{ddmVersionString}-Update wurde bereits auf deinen Mac geladen und ist bereit zur Installation. Die Installation geht schneller, wenn du auf **{button1text}** klickst.",
+            "description": "Localized markdown-formatted message displayed when the update is fully staged. for German.",
+            "property_order": 535
+        },
+        "StagedUpdateMessageLocalized_fr": {
+            "type": "string",
+            "title": "Staged Update Message (French)",
+            "default": "<br><br>Sample **Bonne nouvelle !** La mise à jour macOS {ddmVersionString} est déjà téléchargée. L'installation démarrera rapidement après avoir cliqué sur **{button1text}**.",
+            "description": "Localized markdown-formatted message displayed when the update is fully staged. for French.",
+            "property_order": 540
+        },
+        "StagedUpdateMessageLocalized_es": {
+            "type": "string",
+            "title": "Staged Update Message (Spanish)",
+            "default": "<br><br>Sample **¡Buenas noticias!** La actualización de macOS {ddmVersionString} ya se ha descargado en su Mac y está lista para instalarse. La instalación será más rápida cuando haga clic en **{button1text}**.",
+            "description": "Localized markdown-formatted message displayed when the update is fully staged. for Spanish.",
+            "property_order": 545
+        },
+        "StagedUpdateMessageLocalized_pt": {
+            "type": "string",
+            "title": "Staged Update Message (Portuguese)",
+            "default": "<br><br>Sample **Boas notícias!** A atualização do macOS {ddmVersionString} já foi descarregada para o seu Mac e está pronta para instalar. A instalação será mais rápida quando clicar em **{button1text}**.",
+            "description": "Localized markdown-formatted message displayed when the update is fully staged. for Portuguese.",
+            "property_order": 550
+        },
+        "StagedUpdateMessageLocalized_ja": {
+            "type": "string",
+            "title": "Staged Update Message (Japanese)",
+            "default": "<br><br>Sample **お知らせ:** macOS {ddmVersionString} アップデートはすでにこのMacにダウンロードされており、インストールの準備ができています。**{button1text}** をクリックすると、すばやくインストールできます。",
+            "description": "Localized markdown-formatted message displayed when the update is fully staged. for Japanese.",
+            "property_order": 555
+        },
+        "StagedUpdateMessageLocalized_nl": {
+            "type": "string",
+            "title": "Staged Update Message (Dutch)",
+            "default": "<br><br>Sample **Goed nieuws!** De macOS {ddmVersionString}-update is al gedownload op uw Mac en is klaar om te worden geïnstalleerd. De installatie verloopt snel zodra u op **{button1text}** klikt.",
+            "description": "Localized markdown-formatted message displayed when the update is fully staged. for Dutch.",
+            "property_order": 560
+        },
+        "StagedUpdateMessageLocalized_it": {
+            "type": "string",
+            "title": "Staged Update Message (Italian)",
+            "default": "<br><br>Sample **Buone notizie!** L'aggiornamento di macOS {ddmVersionString} è già stato scaricato sul tuo Mac ed è pronto per l'installazione. L'installazione procederà rapidamente quando fai clic su **{button1text}**.",
+            "description": "Localized markdown-formatted message displayed when the update is fully staged. for Italian.",
+            "property_order": 565
         },
         "PartiallyStagedUpdateMessage": {
             "type": "string",
             "title": "Partially Staged Update Message",
-            "default": "<br><br>Your Mac has begun downloading and preparing required macOS update components. Installation will be quicker once all assets have finished staging.",
+            "default": "<br><br>Sample Your Mac has begun downloading and preparing required macOS update components. Installation will be quicker once all assets have finished staging.",
             "description": "Markdown-formatted message displayed when the update is partially staged (preparing).",
-            "property_order": 150
+            "property_order": 570
+        },
+        "PartiallyStagedUpdateMessageLocalized_en": {
+            "type": "string",
+            "title": "Partially Staged Update Message (English)",
+            "default": "<br><br>Sample Your Mac has begun downloading and preparing required macOS update components. Installation will be quicker once all assets have finished staging.",
+            "description": "Localized markdown-formatted message displayed when the update is partially staged. for English.",
+            "property_order": 575
+        },
+        "PartiallyStagedUpdateMessageLocalized_de": {
+            "type": "string",
+            "title": "Partially Staged Update Message (German)",
+            "default": "<br><br>Sample Dein Mac lädt bereits erforderliche macOS-Update-Komponenten herunter und bereitet sie vor. Die Installation wird schneller, sobald alle Inhalte bereitstehen.",
+            "description": "Localized markdown-formatted message displayed when the update is partially staged. for German.",
+            "property_order": 580
+        },
+        "PartiallyStagedUpdateMessageLocalized_fr": {
+            "type": "string",
+            "title": "Partially Staged Update Message (French)",
+            "default": "<br><br>Sample Votre Mac a commencé à télécharger et à préparer les composants requis de mise à jour macOS. L'installation sera ensuite plus rapide.",
+            "description": "Localized markdown-formatted message displayed when the update is partially staged. for French.",
+            "property_order": 585
+        },
+        "PartiallyStagedUpdateMessageLocalized_es": {
+            "type": "string",
+            "title": "Partially Staged Update Message (Spanish)",
+            "default": "<br><br>Sample Su Mac ha comenzado a descargar y preparar los componentes necesarios de actualización de macOS. La instalación será más rápida cuando finalice la preparación de todos los recursos.",
+            "description": "Localized markdown-formatted message displayed when the update is partially staged. for Spanish.",
+            "property_order": 590
+        },
+        "PartiallyStagedUpdateMessageLocalized_pt": {
+            "type": "string",
+            "title": "Partially Staged Update Message (Portuguese)",
+            "default": "<br><br>Sample O seu Mac começou a descarregar e a preparar os componentes necessários da atualização do macOS. A instalação será mais rápida quando todos os recursos estiverem preparados.",
+            "description": "Localized markdown-formatted message displayed when the update is partially staged. for Portuguese.",
+            "property_order": 595
+        },
+        "PartiallyStagedUpdateMessageLocalized_ja": {
+            "type": "string",
+            "title": "Partially Staged Update Message (Japanese)",
+            "default": "<br><br>Sample このMacでは、必要なmacOSアップデートコンポーネントのダウンロードと準備が進行中です。すべての項目の準備が完了すると、インストールはより短時間で完了します。",
+            "description": "Localized markdown-formatted message displayed when the update is partially staged. for Japanese.",
+            "property_order": 600
+        },
+        "PartiallyStagedUpdateMessageLocalized_nl": {
+            "type": "string",
+            "title": "Partially Staged Update Message (Dutch)",
+            "default": "<br><br>Sample Uw Mac is begonnen met het downloaden en voorbereiden van de vereiste macOS-updateonderdelen. De installatie zal sneller verlopen zodra alle onderdelen volledig zijn voorbereid.",
+            "description": "Localized markdown-formatted message displayed when the update is partially staged. for Dutch.",
+            "property_order": 605
+        },
+        "PartiallyStagedUpdateMessageLocalized_it": {
+            "type": "string",
+            "title": "Partially Staged Update Message (Italian)",
+            "default": "<br><br>Sample Il tuo Mac ha iniziato a scaricare e preparare i componenti necessari per l'aggiornamento di macOS. L'installazione sarà più rapida una volta completata la preparazione di tutti i componenti.",
+            "description": "Localized markdown-formatted message displayed when the update is partially staged. for Italian.",
+            "property_order": 610
         },
         "PendingDownloadMessage": {
             "type": "string",
             "title": "Pending Download Message",
-            "default": "<br><br>Your Mac will begin downloading the update shortly.",
+            "default": "<br><br>Sample Your Mac will begin downloading the update shortly.",
             "description": "Markdown-formatted message displayed when the update download is pending.",
-            "property_order": 155
+            "property_order": 615
+        },
+        "PendingDownloadMessageLocalized_en": {
+            "type": "string",
+            "title": "Pending Download Message (English)",
+            "default": "<br><br>Sample Your Mac will begin downloading the update shortly.",
+            "description": "Localized markdown-formatted message displayed when the update download is pending. for English.",
+            "property_order": 620
+        },
+        "PendingDownloadMessageLocalized_de": {
+            "type": "string",
+            "title": "Pending Download Message (German)",
+            "default": "<br><br>Sample Dein Mac beginnt in Kürze mit dem Download des Updates.",
+            "description": "Localized markdown-formatted message displayed when the update download is pending. for German.",
+            "property_order": 625
+        },
+        "PendingDownloadMessageLocalized_fr": {
+            "type": "string",
+            "title": "Pending Download Message (French)",
+            "default": "<br><br>Sample Votre Mac commencera bientôt à télécharger la mise à jour.",
+            "description": "Localized markdown-formatted message displayed when the update download is pending. for French.",
+            "property_order": 630
+        },
+        "PendingDownloadMessageLocalized_es": {
+            "type": "string",
+            "title": "Pending Download Message (Spanish)",
+            "default": "<br><br>Sample Su Mac comenzará a descargar la actualización en breve.",
+            "description": "Localized markdown-formatted message displayed when the update download is pending. for Spanish.",
+            "property_order": 635
+        },
+        "PendingDownloadMessageLocalized_pt": {
+            "type": "string",
+            "title": "Pending Download Message (Portuguese)",
+            "default": "<br><br>Sample O seu Mac irá começar a descarregar a atualização em breve.",
+            "description": "Localized markdown-formatted message displayed when the update download is pending. for Portuguese.",
+            "property_order": 640
+        },
+        "PendingDownloadMessageLocalized_ja": {
+            "type": "string",
+            "title": "Pending Download Message (Japanese)",
+            "default": "<br><br>Sample このMacはまもなくアップデートのダウンロードを開始します。",
+            "description": "Localized markdown-formatted message displayed when the update download is pending. for Japanese.",
+            "property_order": 645
+        },
+        "PendingDownloadMessageLocalized_nl": {
+            "type": "string",
+            "title": "Pending Download Message (Dutch)",
+            "default": "<br><br>Sample Uw Mac zal binnenkort beginnen met het downloaden van de update.",
+            "description": "Localized markdown-formatted message displayed when the update download is pending. for Dutch.",
+            "property_order": 650
+        },
+        "PendingDownloadMessageLocalized_it": {
+            "type": "string",
+            "title": "Pending Download Message (Italian)",
+            "default": "<br><br>Sample Il tuo Mac inizierà a scaricare l'aggiornamento a breve.",
+            "description": "Localized markdown-formatted message displayed when the update download is pending. for Italian.",
+            "property_order": 655
         },
         "HideStagedUpdateInfo": {
             "type": "boolean",
             "title": "Hide Staged Update Info",
             "default": false,
             "description": "Whether to hide staged update information (e.g., staged/partial/pending messages) in the UI.",
-            "property_order": 160
+            "property_order": 660
+        },
+        "RelativeDeadlineToday": {
+            "type": "string",
+            "title": "Relative Deadline Today",
+            "default": "Today",
+            "description": "Relative deadline phrase used when enforcement occurs on the current day.",
+            "property_order": 665
+        },
+        "RelativeDeadlineTodayLocalized_en": {
+            "type": "string",
+            "title": "Relative Deadline Today (English)",
+            "default": "Today",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the current day. for English.",
+            "property_order": 670
+        },
+        "RelativeDeadlineTodayLocalized_de": {
+            "type": "string",
+            "title": "Relative Deadline Today (German)",
+            "default": "Heute",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the current day. for German.",
+            "property_order": 675
+        },
+        "RelativeDeadlineTodayLocalized_fr": {
+            "type": "string",
+            "title": "Relative Deadline Today (French)",
+            "default": "Aujourd'hui",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the current day. for French.",
+            "property_order": 680
+        },
+        "RelativeDeadlineTodayLocalized_es": {
+            "type": "string",
+            "title": "Relative Deadline Today (Spanish)",
+            "default": "Hoy",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the current day. for Spanish.",
+            "property_order": 685
+        },
+        "RelativeDeadlineTodayLocalized_pt": {
+            "type": "string",
+            "title": "Relative Deadline Today (Portuguese)",
+            "default": "Hoje",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the current day. for Portuguese.",
+            "property_order": 690
+        },
+        "RelativeDeadlineTodayLocalized_ja": {
+            "type": "string",
+            "title": "Relative Deadline Today (Japanese)",
+            "default": "今日",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the current day. for Japanese.",
+            "property_order": 695
+        },
+        "RelativeDeadlineTodayLocalized_nl": {
+            "type": "string",
+            "title": "Relative Deadline Today (Dutch)",
+            "default": "Vandaag",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the current day. for Dutch.",
+            "property_order": 700
+        },
+        "RelativeDeadlineTodayLocalized_it": {
+            "type": "string",
+            "title": "Relative Deadline Today (Italian)",
+            "default": "Oggi",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the current day. for Italian.",
+            "property_order": 705
+        },
+        "RelativeDeadlineTomorrow": {
+            "type": "string",
+            "title": "Relative Deadline Tomorrow",
+            "default": "Tomorrow",
+            "description": "Relative deadline phrase used when enforcement occurs on the following day.",
+            "property_order": 710
+        },
+        "RelativeDeadlineTomorrowLocalized_en": {
+            "type": "string",
+            "title": "Relative Deadline Tomorrow (English)",
+            "default": "Tomorrow",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the following day. for English.",
+            "property_order": 715
+        },
+        "RelativeDeadlineTomorrowLocalized_de": {
+            "type": "string",
+            "title": "Relative Deadline Tomorrow (German)",
+            "default": "Morgen",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the following day. for German.",
+            "property_order": 720
+        },
+        "RelativeDeadlineTomorrowLocalized_fr": {
+            "type": "string",
+            "title": "Relative Deadline Tomorrow (French)",
+            "default": "Demain",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the following day. for French.",
+            "property_order": 725
+        },
+        "RelativeDeadlineTomorrowLocalized_es": {
+            "type": "string",
+            "title": "Relative Deadline Tomorrow (Spanish)",
+            "default": "Mañana",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the following day. for Spanish.",
+            "property_order": 730
+        },
+        "RelativeDeadlineTomorrowLocalized_pt": {
+            "type": "string",
+            "title": "Relative Deadline Tomorrow (Portuguese)",
+            "default": "Amanha",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the following day. for Portuguese.",
+            "property_order": 735
+        },
+        "RelativeDeadlineTomorrowLocalized_ja": {
+            "type": "string",
+            "title": "Relative Deadline Tomorrow (Japanese)",
+            "default": "明日",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the following day. for Japanese.",
+            "property_order": 740
+        },
+        "RelativeDeadlineTomorrowLocalized_nl": {
+            "type": "string",
+            "title": "Relative Deadline Tomorrow (Dutch)",
+            "default": "Morgen",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the following day. for Dutch.",
+            "property_order": 745
+        },
+        "RelativeDeadlineTomorrowLocalized_it": {
+            "type": "string",
+            "title": "Relative Deadline Tomorrow (Italian)",
+            "default": "Domani",
+            "description": "Localized relative deadline phrase used when enforcement occurs on the following day. for Italian.",
+            "property_order": 750
+        },
+        "UpdateWord": {
+            "type": "string",
+            "title": "Update Word",
+            "default": "Update",
+            "description": "Localized word used when the enforced action is an update.",
+            "property_order": 755
+        },
+        "UpdateWordLocalized_en": {
+            "type": "string",
+            "title": "Update Word (English)",
+            "default": "Update",
+            "description": "Localized localized word used when the enforced action is an update. for English.",
+            "property_order": 760
+        },
+        "UpdateWordLocalized_de": {
+            "type": "string",
+            "title": "Update Word (German)",
+            "default": "Update",
+            "description": "Localized localized word used when the enforced action is an update. for German.",
+            "property_order": 765
+        },
+        "UpdateWordLocalized_fr": {
+            "type": "string",
+            "title": "Update Word (French)",
+            "default": "Mise à jour",
+            "description": "Localized localized word used when the enforced action is an update. for French.",
+            "property_order": 770
+        },
+        "UpdateWordLocalized_es": {
+            "type": "string",
+            "title": "Update Word (Spanish)",
+            "default": "Actualización",
+            "description": "Localized localized word used when the enforced action is an update. for Spanish.",
+            "property_order": 775
+        },
+        "UpdateWordLocalized_pt": {
+            "type": "string",
+            "title": "Update Word (Portuguese)",
+            "default": "Atualização",
+            "description": "Localized localized word used when the enforced action is an update. for Portuguese.",
+            "property_order": 780
+        },
+        "UpdateWordLocalized_ja": {
+            "type": "string",
+            "title": "Update Word (Japanese)",
+            "default": "アップデート",
+            "description": "Localized localized word used when the enforced action is an update. for Japanese.",
+            "property_order": 785
+        },
+        "UpdateWordLocalized_nl": {
+            "type": "string",
+            "title": "Update Word (Dutch)",
+            "default": "update",
+            "description": "Localized localized word used when the enforced action is an update. for Dutch.",
+            "property_order": 790
+        },
+        "UpdateWordLocalized_it": {
+            "type": "string",
+            "title": "Update Word (Italian)",
+            "default": "aggiornamento",
+            "description": "Localized localized word used when the enforced action is an update. for Italian.",
+            "property_order": 795
+        },
+        "UpgradeWord": {
+            "type": "string",
+            "title": "Upgrade Word",
+            "default": "Upgrade",
+            "description": "Localized word used when the enforced action is an upgrade.",
+            "property_order": 800
+        },
+        "UpgradeWordLocalized_en": {
+            "type": "string",
+            "title": "Upgrade Word (English)",
+            "default": "Upgrade",
+            "description": "Localized localized word used when the enforced action is an upgrade. for English.",
+            "property_order": 805
+        },
+        "UpgradeWordLocalized_de": {
+            "type": "string",
+            "title": "Upgrade Word (German)",
+            "default": "Upgrade",
+            "description": "Localized localized word used when the enforced action is an upgrade. for German.",
+            "property_order": 810
+        },
+        "UpgradeWordLocalized_fr": {
+            "type": "string",
+            "title": "Upgrade Word (French)",
+            "default": "Mise à niveau",
+            "description": "Localized localized word used when the enforced action is an upgrade. for French.",
+            "property_order": 815
+        },
+        "UpgradeWordLocalized_es": {
+            "type": "string",
+            "title": "Upgrade Word (Spanish)",
+            "default": "Actualización",
+            "description": "Localized localized word used when the enforced action is an upgrade. for Spanish.",
+            "property_order": 820
+        },
+        "UpgradeWordLocalized_pt": {
+            "type": "string",
+            "title": "Upgrade Word (Portuguese)",
+            "default": "Atualização",
+            "description": "Localized localized word used when the enforced action is an upgrade. for Portuguese.",
+            "property_order": 825
+        },
+        "UpgradeWordLocalized_ja": {
+            "type": "string",
+            "title": "Upgrade Word (Japanese)",
+            "default": "アップグレード",
+            "description": "Localized localized word used when the enforced action is an upgrade. for Japanese.",
+            "property_order": 830
+        },
+        "UpgradeWordLocalized_nl": {
+            "type": "string",
+            "title": "Upgrade Word (Dutch)",
+            "default": "upgrade",
+            "description": "Localized localized word used when the enforced action is an upgrade. for Dutch.",
+            "property_order": 835
+        },
+        "UpgradeWordLocalized_it": {
+            "type": "string",
+            "title": "Upgrade Word (Italian)",
+            "default": "upgrade",
+            "description": "Localized localized word used when the enforced action is an upgrade. for Italian.",
+            "property_order": 840
+        },
+        "SoftwareUpdateButtonTextUpdate": {
+            "type": "string",
+            "title": "Software Update Button Text (Update)",
+            "default": "Restart Now",
+            "description": "Text users are told to click in Software Update for point-release updates.",
+            "property_order": 845
+        },
+        "SoftwareUpdateButtonTextUpdateLocalized_en": {
+            "type": "string",
+            "title": "Software Update Button Text (Update) (English)",
+            "default": "Restart Now",
+            "description": "Localized text users are told to click in software update for point-release updates. for English.",
+            "property_order": 850
+        },
+        "SoftwareUpdateButtonTextUpdateLocalized_de": {
+            "type": "string",
+            "title": "Software Update Button Text (Update) (German)",
+            "default": "Jetzt neu starten",
+            "description": "Localized text users are told to click in software update for point-release updates. for German.",
+            "property_order": 855
+        },
+        "SoftwareUpdateButtonTextUpdateLocalized_fr": {
+            "type": "string",
+            "title": "Software Update Button Text (Update) (French)",
+            "default": "Redémarrer maintenant",
+            "description": "Localized text users are told to click in software update for point-release updates. for French.",
+            "property_order": 860
+        },
+        "SoftwareUpdateButtonTextUpdateLocalized_es": {
+            "type": "string",
+            "title": "Software Update Button Text (Update) (Spanish)",
+            "default": "Reiniciar ahora",
+            "description": "Localized text users are told to click in software update for point-release updates. for Spanish.",
+            "property_order": 865
+        },
+        "SoftwareUpdateButtonTextUpdateLocalized_pt": {
+            "type": "string",
+            "title": "Software Update Button Text (Update) (Portuguese)",
+            "default": "Reiniciar agora",
+            "description": "Localized text users are told to click in software update for point-release updates. for Portuguese.",
+            "property_order": 870
+        },
+        "SoftwareUpdateButtonTextUpdateLocalized_ja": {
+            "type": "string",
+            "title": "Software Update Button Text (Update) (Japanese)",
+            "default": "今すぐ再起動",
+            "description": "Localized text users are told to click in software update for point-release updates. for Japanese.",
+            "property_order": 875
+        },
+        "SoftwareUpdateButtonTextUpdateLocalized_nl": {
+            "type": "string",
+            "title": "Software Update Button Text (Update) (Dutch)",
+            "default": "Start nu opnieuw op",
+            "description": "Localized text users are told to click in software update for point-release updates. for Dutch.",
+            "property_order": 880
+        },
+        "SoftwareUpdateButtonTextUpdateLocalized_it": {
+            "type": "string",
+            "title": "Software Update Button Text (Update) (Italian)",
+            "default": "Riavvia ora",
+            "description": "Localized text users are told to click in software update for point-release updates. for Italian.",
+            "property_order": 885
+        },
+        "SoftwareUpdateButtonTextUpgrade": {
+            "type": "string",
+            "title": "Software Update Button Text (Upgrade)",
+            "default": "Upgrade Now",
+            "description": "Text users are told to click in Software Update for major upgrades.",
+            "property_order": 890
+        },
+        "SoftwareUpdateButtonTextUpgradeLocalized_en": {
+            "type": "string",
+            "title": "Software Update Button Text (Upgrade) (English)",
+            "default": "Upgrade Now",
+            "description": "Localized text users are told to click in software update for major upgrades. for English.",
+            "property_order": 895
+        },
+        "SoftwareUpdateButtonTextUpgradeLocalized_de": {
+            "type": "string",
+            "title": "Software Update Button Text (Upgrade) (German)",
+            "default": "Upgrade jetzt",
+            "description": "Localized text users are told to click in software update for major upgrades. for German.",
+            "property_order": 900
+        },
+        "SoftwareUpdateButtonTextUpgradeLocalized_fr": {
+            "type": "string",
+            "title": "Software Update Button Text (Upgrade) (French)",
+            "default": "Mettre à niveau maintenant",
+            "description": "Localized text users are told to click in software update for major upgrades. for French.",
+            "property_order": 905
+        },
+        "SoftwareUpdateButtonTextUpgradeLocalized_es": {
+            "type": "string",
+            "title": "Software Update Button Text (Upgrade) (Spanish)",
+            "default": "Actualizar ahora",
+            "description": "Localized text users are told to click in software update for major upgrades. for Spanish.",
+            "property_order": 910
+        },
+        "SoftwareUpdateButtonTextUpgradeLocalized_pt": {
+            "type": "string",
+            "title": "Software Update Button Text (Upgrade) (Portuguese)",
+            "default": "Atualizar agora",
+            "description": "Localized text users are told to click in software update for major upgrades. for Portuguese.",
+            "property_order": 915
+        },
+        "SoftwareUpdateButtonTextUpgradeLocalized_ja": {
+            "type": "string",
+            "title": "Software Update Button Text (Upgrade) (Japanese)",
+            "default": "今すぐアップグレード",
+            "description": "Localized text users are told to click in software update for major upgrades. for Japanese.",
+            "property_order": 920
+        },
+        "SoftwareUpdateButtonTextUpgradeLocalized_nl": {
+            "type": "string",
+            "title": "Software Update Button Text (Upgrade) (Dutch)",
+            "default": "Voer nu de upgrade uit",
+            "description": "Localized text users are told to click in software update for major upgrades. for Dutch.",
+            "property_order": 925
+        },
+        "SoftwareUpdateButtonTextUpgradeLocalized_it": {
+            "type": "string",
+            "title": "Software Update Button Text (Upgrade) (Italian)",
+            "default": "Esegui upgrade ora",
+            "description": "Localized text users are told to click in software update for major upgrades. for Italian.",
+            "property_order": 930
+        },
+        "RestartNowButtonText": {
+            "type": "string",
+            "title": "Restart Now Button Text",
+            "default": "Restart Now",
+            "description": "Button label used in past-deadline restart dialogs.",
+            "property_order": 935
+        },
+        "RestartNowButtonTextLocalized_en": {
+            "type": "string",
+            "title": "Restart Now Button Text (English)",
+            "default": "Restart Now",
+            "description": "Localized button label used in past-deadline restart dialogs. for English.",
+            "property_order": 940
+        },
+        "RestartNowButtonTextLocalized_de": {
+            "type": "string",
+            "title": "Restart Now Button Text (German)",
+            "default": "Jetzt neu starten",
+            "description": "Localized button label used in past-deadline restart dialogs. for German.",
+            "property_order": 945
+        },
+        "RestartNowButtonTextLocalized_fr": {
+            "type": "string",
+            "title": "Restart Now Button Text (French)",
+            "default": "Redémarrer maintenant",
+            "description": "Localized button label used in past-deadline restart dialogs. for French.",
+            "property_order": 950
+        },
+        "RestartNowButtonTextLocalized_es": {
+            "type": "string",
+            "title": "Restart Now Button Text (Spanish)",
+            "default": "Reiniciar ahora",
+            "description": "Localized button label used in past-deadline restart dialogs. for Spanish.",
+            "property_order": 955
+        },
+        "RestartNowButtonTextLocalized_pt": {
+            "type": "string",
+            "title": "Restart Now Button Text (Portuguese)",
+            "default": "Reiniciar agora",
+            "description": "Localized button label used in past-deadline restart dialogs. for Portuguese.",
+            "property_order": 960
+        },
+        "RestartNowButtonTextLocalized_ja": {
+            "type": "string",
+            "title": "Restart Now Button Text (Japanese)",
+            "default": "今すぐ再起動",
+            "description": "Localized button label used in past-deadline restart dialogs. for Japanese.",
+            "property_order": 965
+        },
+        "RestartNowButtonTextLocalized_nl": {
+            "type": "string",
+            "title": "Restart Now Button Text (Dutch)",
+            "default": "Start nu opnieuw op",
+            "description": "Localized button label used in past-deadline restart dialogs. for Dutch.",
+            "property_order": 970
+        },
+        "RestartNowButtonTextLocalized_it": {
+            "type": "string",
+            "title": "Restart Now Button Text (Italian)",
+            "default": "Riavvia ora",
+            "description": "Localized button label used in past-deadline restart dialogs. for Italian.",
+            "property_order": 975
+        },
+        "InfoboxLabelCurrent": {
+            "type": "string",
+            "title": "Info Box Label: Current",
+            "default": "Current",
+            "description": "Label shown for the current macOS version in the info box.",
+            "property_order": 980
+        },
+        "InfoboxLabelCurrentLocalized_en": {
+            "type": "string",
+            "title": "Info Box Label: Current (English)",
+            "default": "Current",
+            "description": "Localized label shown for the current macos version in the info box. for English.",
+            "property_order": 985
+        },
+        "InfoboxLabelCurrentLocalized_de": {
+            "type": "string",
+            "title": "Info Box Label: Current (German)",
+            "default": "Aktuell",
+            "description": "Localized label shown for the current macos version in the info box. for German.",
+            "property_order": 990
+        },
+        "InfoboxLabelCurrentLocalized_fr": {
+            "type": "string",
+            "title": "Info Box Label: Current (French)",
+            "default": "Version actuelle",
+            "description": "Localized label shown for the current macos version in the info box. for French.",
+            "property_order": 995
+        },
+        "InfoboxLabelCurrentLocalized_es": {
+            "type": "string",
+            "title": "Info Box Label: Current (Spanish)",
+            "default": "Actual",
+            "description": "Localized label shown for the current macos version in the info box. for Spanish.",
+            "property_order": 1000
+        },
+        "InfoboxLabelCurrentLocalized_pt": {
+            "type": "string",
+            "title": "Info Box Label: Current (Portuguese)",
+            "default": "Atual",
+            "description": "Localized label shown for the current macos version in the info box. for Portuguese.",
+            "property_order": 1005
+        },
+        "InfoboxLabelCurrentLocalized_ja": {
+            "type": "string",
+            "title": "Info Box Label: Current (Japanese)",
+            "default": "現在",
+            "description": "Localized label shown for the current macos version in the info box. for Japanese.",
+            "property_order": 1010
+        },
+        "InfoboxLabelCurrentLocalized_nl": {
+            "type": "string",
+            "title": "Info Box Label: Current (Dutch)",
+            "default": "Huidig",
+            "description": "Localized label shown for the current macos version in the info box. for Dutch.",
+            "property_order": 1015
+        },
+        "InfoboxLabelCurrentLocalized_it": {
+            "type": "string",
+            "title": "Info Box Label: Current (Italian)",
+            "default": "Corrente",
+            "description": "Localized label shown for the current macos version in the info box. for Italian.",
+            "property_order": 1020
+        },
+        "InfoboxLabelRequired": {
+            "type": "string",
+            "title": "Info Box Label: Required",
+            "default": "Required",
+            "description": "Label shown for the required macOS version in the info box.",
+            "property_order": 1025
+        },
+        "InfoboxLabelRequiredLocalized_en": {
+            "type": "string",
+            "title": "Info Box Label: Required (English)",
+            "default": "Required",
+            "description": "Localized label shown for the required macos version in the info box. for English.",
+            "property_order": 1030
+        },
+        "InfoboxLabelRequiredLocalized_de": {
+            "type": "string",
+            "title": "Info Box Label: Required (German)",
+            "default": "Erforderlich",
+            "description": "Localized label shown for the required macos version in the info box. for German.",
+            "property_order": 1035
+        },
+        "InfoboxLabelRequiredLocalized_fr": {
+            "type": "string",
+            "title": "Info Box Label: Required (French)",
+            "default": "Version requise",
+            "description": "Localized label shown for the required macos version in the info box. for French.",
+            "property_order": 1040
+        },
+        "InfoboxLabelRequiredLocalized_es": {
+            "type": "string",
+            "title": "Info Box Label: Required (Spanish)",
+            "default": "Requerido",
+            "description": "Localized label shown for the required macos version in the info box. for Spanish.",
+            "property_order": 1045
+        },
+        "InfoboxLabelRequiredLocalized_pt": {
+            "type": "string",
+            "title": "Info Box Label: Required (Portuguese)",
+            "default": "Obrigatório",
+            "description": "Localized label shown for the required macos version in the info box. for Portuguese.",
+            "property_order": 1050
+        },
+        "InfoboxLabelRequiredLocalized_ja": {
+            "type": "string",
+            "title": "Info Box Label: Required (Japanese)",
+            "default": "必要",
+            "description": "Localized label shown for the required macos version in the info box. for Japanese.",
+            "property_order": 1055
+        },
+        "InfoboxLabelRequiredLocalized_nl": {
+            "type": "string",
+            "title": "Info Box Label: Required (Dutch)",
+            "default": "Vereist",
+            "description": "Localized label shown for the required macos version in the info box. for Dutch.",
+            "property_order": 1060
+        },
+        "InfoboxLabelRequiredLocalized_it": {
+            "type": "string",
+            "title": "Info Box Label: Required (Italian)",
+            "default": "Richiesto",
+            "description": "Localized label shown for the required macos version in the info box. for Italian.",
+            "property_order": 1065
+        },
+        "InfoboxLabelDeadline": {
+            "type": "string",
+            "title": "Info Box Label: Deadline",
+            "default": "Deadline",
+            "description": "Label shown for the enforcement deadline in the info box.",
+            "property_order": 1070
+        },
+        "InfoboxLabelDeadlineLocalized_en": {
+            "type": "string",
+            "title": "Info Box Label: Deadline (English)",
+            "default": "Deadline",
+            "description": "Localized label shown for the enforcement deadline in the info box. for English.",
+            "property_order": 1075
+        },
+        "InfoboxLabelDeadlineLocalized_de": {
+            "type": "string",
+            "title": "Info Box Label: Deadline (German)",
+            "default": "Frist",
+            "description": "Localized label shown for the enforcement deadline in the info box. for German.",
+            "property_order": 1080
+        },
+        "InfoboxLabelDeadlineLocalized_fr": {
+            "type": "string",
+            "title": "Info Box Label: Deadline (French)",
+            "default": "Échéance",
+            "description": "Localized label shown for the enforcement deadline in the info box. for French.",
+            "property_order": 1085
+        },
+        "InfoboxLabelDeadlineLocalized_es": {
+            "type": "string",
+            "title": "Info Box Label: Deadline (Spanish)",
+            "default": "Fecha límite",
+            "description": "Localized label shown for the enforcement deadline in the info box. for Spanish.",
+            "property_order": 1090
+        },
+        "InfoboxLabelDeadlineLocalized_pt": {
+            "type": "string",
+            "title": "Info Box Label: Deadline (Portuguese)",
+            "default": "Prazo",
+            "description": "Localized label shown for the enforcement deadline in the info box. for Portuguese.",
+            "property_order": 1095
+        },
+        "InfoboxLabelDeadlineLocalized_ja": {
+            "type": "string",
+            "title": "Info Box Label: Deadline (Japanese)",
+            "default": "期限",
+            "description": "Localized label shown for the enforcement deadline in the info box. for Japanese.",
+            "property_order": 1100
+        },
+        "InfoboxLabelDeadlineLocalized_nl": {
+            "type": "string",
+            "title": "Info Box Label: Deadline (Dutch)",
+            "default": "Deadline",
+            "description": "Localized label shown for the enforcement deadline in the info box. for Dutch.",
+            "property_order": 1105
+        },
+        "InfoboxLabelDeadlineLocalized_it": {
+            "type": "string",
+            "title": "Info Box Label: Deadline (Italian)",
+            "default": "Scadenza",
+            "description": "Localized label shown for the enforcement deadline in the info box. for Italian.",
+            "property_order": 1110
+        },
+        "InfoboxLabelDaysRemaining": {
+            "type": "string",
+            "title": "Info Box Label: Days Remaining",
+            "default": "Day(s) Remaining",
+            "description": "Label shown for remaining days in the info box.",
+            "property_order": 1115
+        },
+        "InfoboxLabelDaysRemainingLocalized_en": {
+            "type": "string",
+            "title": "Info Box Label: Days Remaining (English)",
+            "default": "Day(s) Remaining",
+            "description": "Localized label shown for remaining days in the info box. for English.",
+            "property_order": 1120
+        },
+        "InfoboxLabelDaysRemainingLocalized_de": {
+            "type": "string",
+            "title": "Info Box Label: Days Remaining (German)",
+            "default": "Verbleibende Tage",
+            "description": "Localized label shown for remaining days in the info box. for German.",
+            "property_order": 1125
+        },
+        "InfoboxLabelDaysRemainingLocalized_fr": {
+            "type": "string",
+            "title": "Info Box Label: Days Remaining (French)",
+            "default": "Jours restants",
+            "description": "Localized label shown for remaining days in the info box. for French.",
+            "property_order": 1130
+        },
+        "InfoboxLabelDaysRemainingLocalized_es": {
+            "type": "string",
+            "title": "Info Box Label: Days Remaining (Spanish)",
+            "default": "Días restantes",
+            "description": "Localized label shown for remaining days in the info box. for Spanish.",
+            "property_order": 1135
+        },
+        "InfoboxLabelDaysRemainingLocalized_pt": {
+            "type": "string",
+            "title": "Info Box Label: Days Remaining (Portuguese)",
+            "default": "Dias restantes",
+            "description": "Localized label shown for remaining days in the info box. for Portuguese.",
+            "property_order": 1140
+        },
+        "InfoboxLabelDaysRemainingLocalized_ja": {
+            "type": "string",
+            "title": "Info Box Label: Days Remaining (Japanese)",
+            "default": "残り日数",
+            "description": "Localized label shown for remaining days in the info box. for Japanese.",
+            "property_order": 1145
+        },
+        "InfoboxLabelDaysRemainingLocalized_nl": {
+            "type": "string",
+            "title": "Info Box Label: Days Remaining (Dutch)",
+            "default": "Resterende dagen",
+            "description": "Localized label shown for remaining days in the info box. for Dutch.",
+            "property_order": 1150
+        },
+        "InfoboxLabelDaysRemainingLocalized_it": {
+            "type": "string",
+            "title": "Info Box Label: Days Remaining (Italian)",
+            "default": "Giorno/i rimanenti",
+            "description": "Localized label shown for remaining days in the info box. for Italian.",
+            "property_order": 1155
+        },
+        "InfoboxLabelLastRestart": {
+            "type": "string",
+            "title": "Info Box Label: Last Restart",
+            "default": "Last Restart",
+            "description": "Label shown for the last restart value in the info box.",
+            "property_order": 1160
+        },
+        "InfoboxLabelLastRestartLocalized_en": {
+            "type": "string",
+            "title": "Info Box Label: Last Restart (English)",
+            "default": "Last Restart",
+            "description": "Localized label shown for the last restart value in the info box. for English.",
+            "property_order": 1165
+        },
+        "InfoboxLabelLastRestartLocalized_de": {
+            "type": "string",
+            "title": "Info Box Label: Last Restart (German)",
+            "default": "Letzter Neustart",
+            "description": "Localized label shown for the last restart value in the info box. for German.",
+            "property_order": 1170
+        },
+        "InfoboxLabelLastRestartLocalized_fr": {
+            "type": "string",
+            "title": "Info Box Label: Last Restart (French)",
+            "default": "Dernier redémarrage",
+            "description": "Localized label shown for the last restart value in the info box. for French.",
+            "property_order": 1175
+        },
+        "InfoboxLabelLastRestartLocalized_es": {
+            "type": "string",
+            "title": "Info Box Label: Last Restart (Spanish)",
+            "default": "Último reinicio",
+            "description": "Localized label shown for the last restart value in the info box. for Spanish.",
+            "property_order": 1180
+        },
+        "InfoboxLabelLastRestartLocalized_pt": {
+            "type": "string",
+            "title": "Info Box Label: Last Restart (Portuguese)",
+            "default": "Último reinício",
+            "description": "Localized label shown for the last restart value in the info box. for Portuguese.",
+            "property_order": 1185
+        },
+        "InfoboxLabelLastRestartLocalized_ja": {
+            "type": "string",
+            "title": "Info Box Label: Last Restart (Japanese)",
+            "default": "最終再起動",
+            "description": "Localized label shown for the last restart value in the info box. for Japanese.",
+            "property_order": 1190
+        },
+        "InfoboxLabelLastRestartLocalized_nl": {
+            "type": "string",
+            "title": "Info Box Label: Last Restart (Dutch)",
+            "default": "Laatste herstart",
+            "description": "Localized label shown for the last restart value in the info box. for Dutch.",
+            "property_order": 1195
+        },
+        "InfoboxLabelLastRestartLocalized_it": {
+            "type": "string",
+            "title": "Info Box Label: Last Restart (Italian)",
+            "default": "Ultimo riavvio",
+            "description": "Localized label shown for the last restart value in the info box. for Italian.",
+            "property_order": 1200
+        },
+        "InfoboxLabelFreeDiskSpace": {
+            "type": "string",
+            "title": "Info Box Label: Free Disk Space",
+            "default": "Free Disk Space",
+            "description": "Label shown for free disk space in the info box.",
+            "property_order": 1205
+        },
+        "InfoboxLabelFreeDiskSpaceLocalized_en": {
+            "type": "string",
+            "title": "Info Box Label: Free Disk Space (English)",
+            "default": "Free Disk Space",
+            "description": "Localized label shown for free disk space in the info box. for English.",
+            "property_order": 1210
+        },
+        "InfoboxLabelFreeDiskSpaceLocalized_de": {
+            "type": "string",
+            "title": "Info Box Label: Free Disk Space (German)",
+            "default": "Freier Festplattenspeicher",
+            "description": "Localized label shown for free disk space in the info box. for German.",
+            "property_order": 1215
+        },
+        "InfoboxLabelFreeDiskSpaceLocalized_fr": {
+            "type": "string",
+            "title": "Info Box Label: Free Disk Space (French)",
+            "default": "Espace disque libre",
+            "description": "Localized label shown for free disk space in the info box. for French.",
+            "property_order": 1220
+        },
+        "InfoboxLabelFreeDiskSpaceLocalized_es": {
+            "type": "string",
+            "title": "Info Box Label: Free Disk Space (Spanish)",
+            "default": "Espacio libre en disco",
+            "description": "Localized label shown for free disk space in the info box. for Spanish.",
+            "property_order": 1225
+        },
+        "InfoboxLabelFreeDiskSpaceLocalized_pt": {
+            "type": "string",
+            "title": "Info Box Label: Free Disk Space (Portuguese)",
+            "default": "Espaço livre em disco",
+            "description": "Localized label shown for free disk space in the info box. for Portuguese.",
+            "property_order": 1230
+        },
+        "InfoboxLabelFreeDiskSpaceLocalized_ja": {
+            "type": "string",
+            "title": "Info Box Label: Free Disk Space (Japanese)",
+            "default": "空きディスク容量",
+            "description": "Localized label shown for free disk space in the info box. for Japanese.",
+            "property_order": 1235
+        },
+        "InfoboxLabelFreeDiskSpaceLocalized_nl": {
+            "type": "string",
+            "title": "Info Box Label: Free Disk Space (Dutch)",
+            "default": "Vrije schijfruimte",
+            "description": "Localized label shown for free disk space in the info box. for Dutch.",
+            "property_order": 1240
+        },
+        "InfoboxLabelFreeDiskSpaceLocalized_it": {
+            "type": "string",
+            "title": "Info Box Label: Free Disk Space (Italian)",
+            "default": "Spazio libero su disco",
+            "description": "Localized label shown for free disk space in the info box. for Italian.",
+            "property_order": 1245
+        },
+        "DeadlineEnforcementMessageAbsolute": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Absolute)",
+            "default": "However, your Mac **will automatically restart and {titleMessageUpdateOrUpgradeLower}** on **{deadlineDisplay}** if you have not {titleMessageUpdateOrUpgradeLower}d before the deadline.",
+            "description": "Sentence appended to the main message when the deadline renders as a full date.",
+            "property_order": 1250
+        },
+        "DeadlineEnforcementMessageAbsoluteLocalized_en": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Absolute) (English)",
+            "default": "However, your Mac **will automatically restart and {titleMessageUpdateOrUpgradeLower}** on **{deadlineDisplay}** if you have not {titleMessageUpdateOrUpgradeLower}d before the deadline.",
+            "description": "Localized sentence appended to the main message when the deadline renders as a full date. for English.",
+            "property_order": 1255
+        },
+        "DeadlineEnforcementMessageAbsoluteLocalized_de": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Absolute) (German)",
+            "default": "Andernfalls **wird dein Mac am {deadlineDisplay} automatisch neu gestartet, um das erforderliche macOS-{titleMessageUpdateOrUpgrade} zu installieren**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as a full date. for German.",
+            "property_order": 1260
+        },
+        "DeadlineEnforcementMessageAbsoluteLocalized_fr": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Absolute) (French)",
+            "default": "Sinon, votre Mac **redémarrera automatiquement et appliquera la {titleMessageUpdateOrUpgradeLower}** le **{deadlineDisplay}**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as a full date. for French.",
+            "property_order": 1265
+        },
+        "DeadlineEnforcementMessageAbsoluteLocalized_es": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Absolute) (Spanish)",
+            "default": "De lo contrario, su Mac **se reiniciará automáticamente y aplicará la {titleMessageUpdateOrUpgradeLower}** el **{deadlineDisplay}**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as a full date. for Spanish.",
+            "property_order": 1270
+        },
+        "DeadlineEnforcementMessageAbsoluteLocalized_pt": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Absolute) (Portuguese)",
+            "default": "Caso contrario, o seu Mac **reiniciará automaticamente e aplicará a {titleMessageUpdateOrUpgradeLower}** em **{deadlineDisplay}**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as a full date. for Portuguese.",
+            "property_order": 1275
+        },
+        "DeadlineEnforcementMessageAbsoluteLocalized_ja": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Absolute) (Japanese)",
+            "default": "期限の **{deadlineDisplay}** までに実行されない場合、Macは**自動的に再起動して {titleMessageUpdateOrUpgradeLower} を適用**します。",
+            "description": "Localized sentence appended to the main message when the deadline renders as a full date. for Japanese.",
+            "property_order": 1280
+        },
+        "DeadlineEnforcementMessageAbsoluteLocalized_nl": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Absolute) (Dutch)",
+            "default": "Anders wordt uw Mac **automatisch opnieuw opgestart en wordt de {titleMessageUpdateOrUpgradeLower} uitgevoerd** op **{deadlineDisplay}**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as a full date. for Dutch.",
+            "property_order": 1285
+        },
+        "DeadlineEnforcementMessageAbsoluteLocalized_it": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Absolute) (Italian)",
+            "default": "Tuttavia, il tuo Mac **si riavvierà automaticamente ed eseguirà l'{titleMessageUpdateOrUpgradeLower}** il **{deadlineDisplay}** se non hai completato l'{titleMessageUpdateOrUpgradeLower} entro la scadenza.",
+            "description": "Localized sentence appended to the main message when the deadline renders as a full date. for Italian.",
+            "property_order": 1290
+        },
+        "DeadlineEnforcementMessageRelative": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Relative)",
+            "default": "However, your Mac **will automatically restart and {titleMessageUpdateOrUpgradeLower}** **{deadlineDisplay}** if you have not {titleMessageUpdateOrUpgradeLower}d before the deadline.",
+            "description": "Sentence appended to the main message when the deadline renders as Today or Tomorrow.",
+            "property_order": 1295
+        },
+        "DeadlineEnforcementMessageRelativeLocalized_en": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Relative) (English)",
+            "default": "However, your Mac **will automatically restart and {titleMessageUpdateOrUpgradeLower}** **{deadlineDisplay}** if you have not {titleMessageUpdateOrUpgradeLower}d before the deadline.",
+            "description": "Localized sentence appended to the main message when the deadline renders as today or tomorrow. for English.",
+            "property_order": 1300
+        },
+        "DeadlineEnforcementMessageRelativeLocalized_de": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Relative) (German)",
+            "default": "Andernfalls **wird dein Mac {deadlineDisplay} automatisch neu gestartet, um das erforderliche macOS-{titleMessageUpdateOrUpgrade} zu installieren**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as today or tomorrow. for German.",
+            "property_order": 1305
+        },
+        "DeadlineEnforcementMessageRelativeLocalized_fr": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Relative) (French)",
+            "default": "Sinon, votre Mac **redémarrera automatiquement et appliquera la {titleMessageUpdateOrUpgradeLower}** **{deadlineDisplay}**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as today or tomorrow. for French.",
+            "property_order": 1310
+        },
+        "DeadlineEnforcementMessageRelativeLocalized_es": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Relative) (Spanish)",
+            "default": "De lo contrario, su Mac **se reiniciará automáticamente y aplicará la {titleMessageUpdateOrUpgradeLower}** **{deadlineDisplay}**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as today or tomorrow. for Spanish.",
+            "property_order": 1315
+        },
+        "DeadlineEnforcementMessageRelativeLocalized_pt": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Relative) (Portuguese)",
+            "default": "Caso contrario, o seu Mac **reiniciará automaticamente e aplicará a {titleMessageUpdateOrUpgradeLower}** **{deadlineDisplay}**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as today or tomorrow. for Portuguese.",
+            "property_order": 1320
+        },
+        "DeadlineEnforcementMessageRelativeLocalized_ja": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Relative) (Japanese)",
+            "default": "期限の **{deadlineDisplay}** までに実行されない場合、Macは**自動的に再起動して {titleMessageUpdateOrUpgradeLower} を適用**します。",
+            "description": "Localized sentence appended to the main message when the deadline renders as today or tomorrow. for Japanese.",
+            "property_order": 1325
+        },
+        "DeadlineEnforcementMessageRelativeLocalized_nl": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Relative) (Dutch)",
+            "default": "Anders wordt uw Mac **automatisch opnieuw opgestart en wordt de {titleMessageUpdateOrUpgradeLower} uitgevoerd** **{deadlineDisplay}**.",
+            "description": "Localized sentence appended to the main message when the deadline renders as today or tomorrow. for Dutch.",
+            "property_order": 1330
+        },
+        "DeadlineEnforcementMessageRelativeLocalized_it": {
+            "type": "string",
+            "title": "Deadline Enforcement Message (Relative) (Italian)",
+            "default": "Tuttavia, il tuo Mac **si riavvierà automaticamente ed eseguirà l'{titleMessageUpdateOrUpgradeLower}** **{deadlineDisplay}** se non hai completato l'{titleMessageUpdateOrUpgradeLower} entro la scadenza.",
+            "description": "Localized sentence appended to the main message when the deadline renders as today or tomorrow. for Italian.",
+            "property_order": 1335
+        },
+        "PreDeadlineThresholdTitle": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Title",
+            "default": "Sample macOS {titleMessageUpdateOrUpgrade} Deadline Soon",
+            "description": "Title displayed for a configured final-minute pre-deadline reminder.",
+            "property_order": 1340
+        },
+        "PreDeadlineThresholdTitleLocalized_en": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Title (English)",
+            "default": "Sample macOS {titleMessageUpdateOrUpgrade} Deadline Soon",
+            "description": "Localized English override for pre-deadline threshold title.",
+            "property_order": 1345
+        },
+        "PreDeadlineThresholdTitleLocalized_de": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Title (German)",
+            "default": "Sample macOS-{titleMessageUpdateOrUpgrade}-Frist endet bald",
+            "description": "Localized German override for pre-deadline threshold title.",
+            "property_order": 1350
+        },
+        "PreDeadlineThresholdTitleLocalized_fr": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Title (French)",
+            "default": "Sample Échéance de {titleMessageUpdateOrUpgrade} macOS imminente",
+            "description": "Localized French override for pre-deadline threshold title.",
+            "property_order": 1355
+        },
+        "PreDeadlineThresholdTitleLocalized_es": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Title (Spanish)",
+            "default": "Sample Fecha límite de {titleMessageUpdateOrUpgrade} de macOS inminente",
+            "description": "Localized Spanish override for pre-deadline threshold title.",
+            "property_order": 1360
+        },
+        "PreDeadlineThresholdTitleLocalized_pt": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Title (Portuguese)",
+            "default": "Sample Prazo da {titleMessageUpdateOrUpgrade} do macOS iminente",
+            "description": "Localized Portuguese override for pre-deadline threshold title.",
+            "property_order": 1365
+        },
+        "PreDeadlineThresholdTitleLocalized_ja": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Title (Japanese)",
+            "default": "Sample macOSの{titleMessageUpdateOrUpgrade}期限が近づいています",
+            "description": "Localized Japanese override for pre-deadline threshold title.",
+            "property_order": 1370
+        },
+        "PreDeadlineThresholdTitleLocalized_nl": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Title (Dutch)",
+            "default": "Sample macOS {titleMessageUpdateOrUpgrade}-deadline nadert",
+            "description": "Localized Dutch override for pre-deadline threshold title.",
+            "property_order": 1375
+        },
+        "PreDeadlineThresholdTitleLocalized_it": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Title (Italian)",
+            "default": "Sample Scadenza per {titleMessageUpdateOrUpgrade} di macOS imminente",
+            "description": "Localized Italian override for pre-deadline threshold title.",
+            "property_order": 1380
+        },
+        "PreDeadlineThresholdMessage": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Message",
+            "default": "Sample **{preDeadlineThresholdEmphasisOpen}Your Mac reaches the macOS {ddmVersionString} enforcement deadline in {minutesBeforeDeadline} minutes.{preDeadlineThresholdEmphasisClose}**<br><br>Greetings, {loggedInUserFirstname}!<br><br>{preDeadlineThresholdEmphasisOpen}Please {titleMessageUpdateOrUpgradeLower} to macOS {ddmVersionString} now to avoid the automatic enforcement action at {ddmVersionStringDeadlineHumanReadable}.{preDeadlineThresholdEmphasisClose}{updateReadyMessage}<br><br>To perform the {titleMessageUpdateOrUpgradeLower} now, click **{button1text}**, review the on-screen instructions, then click **{softwareUpdateButtonText}**.{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Markdown-formatted message displayed for a configured final-minute pre-deadline reminder.",
+            "property_order": 1385
+        },
+        "PreDeadlineThresholdMessageLocalized_en": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Message (English)",
+            "default": "Sample **{preDeadlineThresholdEmphasisOpen}Your Mac reaches the macOS {ddmVersionString} enforcement deadline in {minutesBeforeDeadline} minutes.{preDeadlineThresholdEmphasisClose}**<br><br>Greetings, {loggedInUserFirstname}!<br><br>{preDeadlineThresholdEmphasisOpen}Please {titleMessageUpdateOrUpgradeLower} to macOS {ddmVersionString} now to avoid the automatic enforcement action at {ddmVersionStringDeadlineHumanReadable}.{preDeadlineThresholdEmphasisClose}{updateReadyMessage}<br><br>To perform the {titleMessageUpdateOrUpgradeLower} now, click **{button1text}**, review the on-screen instructions, then click **{softwareUpdateButtonText}**.{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized English override for pre-deadline threshold message.",
+            "property_order": 1390
+        },
+        "PreDeadlineThresholdMessageLocalized_de": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Message (German)",
+            "default": "Sample {preDeadlineThresholdEmphasisOpen}Dieser Mac erreicht die Frist für macOS {ddmVersionString} in {minutesBeforeDeadline} Minuten.{preDeadlineThresholdEmphasisClose}<br><br>Hallo {loggedInUserFirstname}!<br><br>{preDeadlineThresholdEmphasisOpen}Bitte installiere macOS {ddmVersionString} jetzt, damit die automatische Durchsetzung um {ddmVersionStringDeadlineHumanReadable} vermieden wird.{preDeadlineThresholdEmphasisClose}{updateReadyMessage}<br><br>Klicke zum Starten auf **{button1text}**, folge den Hinweisen auf dem Bildschirm und klicke anschließend auf **{softwareUpdateButtonText}**.{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized German override for pre-deadline threshold message.",
+            "property_order": 1395
+        },
+        "PreDeadlineThresholdMessageLocalized_fr": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Message (French)",
+            "default": "Sample {preDeadlineThresholdEmphasisOpen}Votre Mac atteint l'échéance d'application de macOS {ddmVersionString} dans {minutesBeforeDeadline} minutes.{preDeadlineThresholdEmphasisClose}<br><br>Bonjour {loggedInUserFirstname}!<br><br>{preDeadlineThresholdEmphasisOpen}Veuillez effectuer la {titleMessageUpdateOrUpgradeLower} vers macOS {ddmVersionString} maintenant afin d'éviter l'action automatique prévue à {ddmVersionStringDeadlineHumanReadable}.{preDeadlineThresholdEmphasisClose}{updateReadyMessage}<br><br>Pour effectuer la {titleMessageUpdateOrUpgradeLower} maintenant, cliquez sur **{button1text}**, suivez les instructions à l'écran, puis cliquez sur **{softwareUpdateButtonText}**.{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized French override for pre-deadline threshold message.",
+            "property_order": 1400
+        },
+        "PreDeadlineThresholdMessageLocalized_es": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Message (Spanish)",
+            "default": "Sample {preDeadlineThresholdEmphasisOpen}Su Mac alcanza la fecha límite de aplicación de macOS {ddmVersionString} en {minutesBeforeDeadline} minutos.{preDeadlineThresholdEmphasisClose}<br><br>Hola {loggedInUserFirstname}.<br><br>{preDeadlineThresholdEmphasisOpen}Aplique la {titleMessageUpdateOrUpgradeLower} a macOS {ddmVersionString} ahora para evitar la acción automática prevista a las {ddmVersionStringDeadlineHumanReadable}.{preDeadlineThresholdEmphasisClose}{updateReadyMessage}<br><br>Para realizar la {titleMessageUpdateOrUpgradeLower} ahora, haga clic en **{button1text}**, revise las instrucciones en pantalla y luego haga clic en **{softwareUpdateButtonText}**.{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Spanish override for pre-deadline threshold message.",
+            "property_order": 1405
+        },
+        "PreDeadlineThresholdMessageLocalized_pt": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Message (Portuguese)",
+            "default": "Sample {preDeadlineThresholdEmphasisOpen}O seu Mac atinge o prazo de aplicação do macOS {ddmVersionString} em {minutesBeforeDeadline} minutos.{preDeadlineThresholdEmphasisClose}<br><br>Ola {loggedInUserFirstname}.<br><br>{preDeadlineThresholdEmphasisOpen}Aplique a {titleMessageUpdateOrUpgradeLower} para o macOS {ddmVersionString} agora para evitar a ação automática prevista para {ddmVersionStringDeadlineHumanReadable}.{preDeadlineThresholdEmphasisClose}{updateReadyMessage}<br><br>Para efetuar a {titleMessageUpdateOrUpgradeLower} agora, clique em **{button1text}**, reveja as instruções no ecrã e clique em **{softwareUpdateButtonText}**.{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Portuguese override for pre-deadline threshold message.",
+            "property_order": 1410
+        },
+        "PreDeadlineThresholdMessageLocalized_ja": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Message (Japanese)",
+            "default": "Sample {preDeadlineThresholdEmphasisOpen}このMacは {minutesBeforeDeadline} 分後に macOS {ddmVersionString} の適用期限に到達します。{preDeadlineThresholdEmphasisClose}<br><br>{loggedInUserFirstname}さん、{weekday}もお疲れさまです。<br><br>{preDeadlineThresholdEmphasisOpen}{ddmVersionStringDeadlineHumanReadable} の自動適用を避けるため、今すぐ macOS {ddmVersionString} への {titleMessageUpdateOrUpgradeLower} を実行してください。{preDeadlineThresholdEmphasisClose}{updateReadyMessage}<br><br>今すぐ実行するには **{button1text}** をクリックし、画面の指示を確認してから **{softwareUpdateButtonText}** をクリックしてください。{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Japanese override for pre-deadline threshold message.",
+            "property_order": 1415
+        },
+        "PreDeadlineThresholdMessageLocalized_nl": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Message (Dutch)",
+            "default": "Sample {preDeadlineThresholdEmphasisOpen}Uw Mac bereikt de afdwingdeadline voor macOS {ddmVersionString} over {minutesBeforeDeadline} minuten.{preDeadlineThresholdEmphasisClose}<br><br>Hallo {loggedInUserFirstname}!<br><br>{preDeadlineThresholdEmphasisOpen}Voer de {titleMessageUpdateOrUpgradeLower} naar macOS {ddmVersionString} nu uit om de automatische afdwingactie om {ddmVersionStringDeadlineHumanReadable} te voorkomen.{preDeadlineThresholdEmphasisClose}{updateReadyMessage}<br><br>Klik op **{button1text}** om de {titleMessageUpdateOrUpgradeLower} nu uit te voeren, volg de instructies op het scherm en klik daarna op **{softwareUpdateButtonText}**.{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Dutch override for pre-deadline threshold message.",
+            "property_order": 1420
+        },
+        "PreDeadlineThresholdMessageLocalized_it": {
+            "type": "string",
+            "title": "Pre-Deadline Threshold Message (Italian)",
+            "default": "Sample {preDeadlineThresholdEmphasisOpen}Il tuo Mac raggiungerà la scadenza di applicazione di macOS {ddmVersionString} tra {minutesBeforeDeadline} minuti.{preDeadlineThresholdEmphasisClose}<br><br>Buon {weekday}, {loggedInUserFirstname}!<br><br>{preDeadlineThresholdEmphasisOpen}Esegui ora l'{titleMessageUpdateOrUpgradeLower} a macOS {ddmVersionString} per evitare l'azione automatica prevista alle {ddmVersionStringDeadlineHumanReadable}.{preDeadlineThresholdEmphasisClose}{updateReadyMessage}<br><br>Per eseguire ora l'{titleMessageUpdateOrUpgradeLower}, fai clic su **{button1text}**, segui le istruzioni sullo schermo, quindi fai clic su **{softwareUpdateButtonText}**.{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Italian override for pre-deadline threshold message.",
+            "property_order": 1425
+        },
+        "PastDeadlinePromptTitle": {
+            "type": "string",
+            "title": "Past Deadline Prompt Title",
+            "default": "Restart Your Mac",
+            "description": "Title shown when past-deadline restart behavior is Prompt.",
+            "property_order": 1430
+        },
+        "PastDeadlinePromptTitleLocalized_en": {
+            "type": "string",
+            "title": "Past Deadline Prompt Title (English)",
+            "default": "Restart Your Mac",
+            "description": "Localized title shown when past-deadline restart behavior is prompt. for English.",
+            "property_order": 1435
+        },
+        "PastDeadlinePromptTitleLocalized_de": {
+            "type": "string",
+            "title": "Past Deadline Prompt Title (German)",
+            "default": "Starte deinen Mac neu",
+            "description": "Localized title shown when past-deadline restart behavior is prompt. for German.",
+            "property_order": 1440
+        },
+        "PastDeadlinePromptTitleLocalized_fr": {
+            "type": "string",
+            "title": "Past Deadline Prompt Title (French)",
+            "default": "Redémarrez votre Mac",
+            "description": "Localized title shown when past-deadline restart behavior is prompt. for French.",
+            "property_order": 1445
+        },
+        "PastDeadlinePromptTitleLocalized_es": {
+            "type": "string",
+            "title": "Past Deadline Prompt Title (Spanish)",
+            "default": "Reinicie su Mac",
+            "description": "Localized title shown when past-deadline restart behavior is prompt. for Spanish.",
+            "property_order": 1450
+        },
+        "PastDeadlinePromptTitleLocalized_pt": {
+            "type": "string",
+            "title": "Past Deadline Prompt Title (Portuguese)",
+            "default": "Reinicie o seu Mac",
+            "description": "Localized title shown when past-deadline restart behavior is prompt. for Portuguese.",
+            "property_order": 1455
+        },
+        "PastDeadlinePromptTitleLocalized_ja": {
+            "type": "string",
+            "title": "Past Deadline Prompt Title (Japanese)",
+            "default": "Macを再起動してください",
+            "description": "Localized title shown when past-deadline restart behavior is prompt. for Japanese.",
+            "property_order": 1460
+        },
+        "PastDeadlinePromptTitleLocalized_nl": {
+            "type": "string",
+            "title": "Past Deadline Prompt Title (Dutch)",
+            "default": "Start uw Mac opnieuw op",
+            "description": "Localized title shown when past-deadline restart behavior is prompt. for Dutch.",
+            "property_order": 1465
+        },
+        "PastDeadlinePromptTitleLocalized_it": {
+            "type": "string",
+            "title": "Past Deadline Prompt Title (Italian)",
+            "default": "Riavvia il tuo Mac",
+            "description": "Localized title shown when past-deadline restart behavior is prompt. for Italian.",
+            "property_order": 1470
+        },
+        "PastDeadlinePromptMessage": {
+            "type": "string",
+            "title": "Past Deadline Prompt Message",
+            "default": "**Please restart your Mac now**<br><br>Happy {weekday}, {loggedInUserFirstname}!<br><br>Your Mac is past the **{ddmVersionStringDeadlineHumanReadable}** deadline to {titleMessageUpdateOrUpgradeLower} to macOS {ddmVersionString}.<br><br>Click **{button1text}** to restart now to help complete the required {titleMessageUpdateOrUpgradeLower}.<br><br>(This reminder will persist until your Mac has been restarted.)",
+            "description": "Message shown when past-deadline restart behavior is Prompt.",
+            "property_order": 1475
+        },
+        "PastDeadlinePromptMessageLocalized_en": {
+            "type": "string",
+            "title": "Past Deadline Prompt Message (English)",
+            "default": "**Please restart your Mac now**<br><br>Happy {weekday}, {loggedInUserFirstname}!<br><br>Your Mac is past the **{ddmVersionStringDeadlineHumanReadable}** deadline to {titleMessageUpdateOrUpgradeLower} to macOS {ddmVersionString}.<br><br>Click **{button1text}** to restart now to help complete the required {titleMessageUpdateOrUpgradeLower}.<br><br>(This reminder will persist until your Mac has been restarted.)",
+            "description": "Localized message shown when past-deadline restart behavior is prompt. for English.",
+            "property_order": 1480
+        },
+        "PastDeadlinePromptMessageLocalized_de": {
+            "type": "string",
+            "title": "Past Deadline Prompt Message (German)",
+            "default": "**Bitte starte deinen Mac jetzt neu**<br><br>Hallo {loggedInUserFirstname}!<br><br>Dein Mac hat die Frist **{ddmVersionStringDeadlineHumanReadable}** für die Installation von macOS {ddmVersionString} überschritten.<br><br>Klicke auf **{button1text}**, um den Neustart jetzt durchzuführen und die erforderliche Installation abzuschließen.<br><br>(Diese Erinnerung bleibt sichtbar, bis dein Mac neu gestartet wurde.)",
+            "description": "Localized message shown when past-deadline restart behavior is prompt. for German.",
+            "property_order": 1485
+        },
+        "PastDeadlinePromptMessageLocalized_fr": {
+            "type": "string",
+            "title": "Past Deadline Prompt Message (French)",
+            "default": "**Veuillez redémarrer votre Mac maintenant**<br><br>Bonjour {loggedInUserFirstname}!<br><br>Votre Mac a dépassé l'échéance **{ddmVersionStringDeadlineHumanReadable}** pour la {titleMessageUpdateOrUpgradeLower} vers macOS {ddmVersionString}.<br><br>Cliquez sur **{button1text}** pour redémarrer maintenant et terminer la {titleMessageUpdateOrUpgradeLower} requise.<br><br>(Ce rappel restera affiché jusqu'au redémarrage de votre Mac.)",
+            "description": "Localized message shown when past-deadline restart behavior is prompt. for French.",
+            "property_order": 1490
+        },
+        "PastDeadlinePromptMessageLocalized_es": {
+            "type": "string",
+            "title": "Past Deadline Prompt Message (Spanish)",
+            "default": "**Reinicie su Mac ahora**<br><br>Hola {loggedInUserFirstname}.<br><br>Su Mac ha superado la fecha límite de **{ddmVersionStringDeadlineHumanReadable}** para aplicar la {titleMessageUpdateOrUpgradeLower} a macOS {ddmVersionString}.<br><br>Haga clic en **{button1text}** para reiniciar ahora y ayudar a completar la {titleMessageUpdateOrUpgradeLower} requerida.<br><br>(Este recordatorio permanecerá visible hasta que se reinicie su Mac.)",
+            "description": "Localized message shown when past-deadline restart behavior is prompt. for Spanish.",
+            "property_order": 1495
+        },
+        "PastDeadlinePromptMessageLocalized_pt": {
+            "type": "string",
+            "title": "Past Deadline Prompt Message (Portuguese)",
+            "default": "**Reinicie o seu Mac agora**<br><br>Ola {loggedInUserFirstname}.<br><br>O seu Mac ultrapassou o prazo de **{ddmVersionStringDeadlineHumanReadable}** para aplicar a {titleMessageUpdateOrUpgradeLower} para o macOS {ddmVersionString}.<br><br>Clique em **{button1text}** para reiniciar agora e ajudar a concluir a {titleMessageUpdateOrUpgradeLower} obrigatória.<br><br>(Este lembrete permanecerá visível até o seu Mac ser reiniciado.)",
+            "description": "Localized message shown when past-deadline restart behavior is prompt. for Portuguese.",
+            "property_order": 1500
+        },
+        "PastDeadlinePromptMessageLocalized_ja": {
+            "type": "string",
+            "title": "Past Deadline Prompt Message (Japanese)",
+            "default": "**今すぐMacを再起動してください**<br><br>{loggedInUserFirstname}さん、{weekday}もお疲れさまです。<br><br>このMacは、macOS {ddmVersionString} への {titleMessageUpdateOrUpgradeLower} の期限 **{ddmVersionStringDeadlineHumanReadable}** を過ぎています。<br><br>必須の {titleMessageUpdateOrUpgradeLower} を完了するため、**{button1text}** をクリックして今すぐ再起動してください。<br><br>（この通知はMacが再起動されるまで表示されます。）",
+            "description": "Localized message shown when past-deadline restart behavior is prompt. for Japanese.",
+            "property_order": 1505
+        },
+        "PastDeadlinePromptMessageLocalized_nl": {
+            "type": "string",
+            "title": "Past Deadline Prompt Message (Dutch)",
+            "default": "**Start uw Mac nu opnieuw op**<br><br>Hallo {loggedInUserFirstname}!<br><br>Uw Mac heeft de deadline van **{ddmVersionStringDeadlineHumanReadable}** overschreden om de {titleMessageUpdateOrUpgradeLower} naar macOS **{ddmVersionString}** uit te voeren.<br><br>Klik op **{button1text}** om nu opnieuw op te starten en de vereiste {titleMessageUpdateOrUpgradeLower} te helpen voltooien.<br><br>(Deze herinnering blijft zichtbaar totdat uw Mac opnieuw is opgestart.)",
+            "description": "Localized message shown when past-deadline restart behavior is prompt. for Dutch.",
+            "property_order": 1510
+        },
+        "PastDeadlinePromptMessageLocalized_it": {
+            "type": "string",
+            "title": "Past Deadline Prompt Message (Italian)",
+            "default": "**Riavvia subito il tuo Mac**<br><br>Buon {weekday}, {loggedInUserFirstname}!<br><br>Il tuo Mac ha superato la scadenza del **{ddmVersionStringDeadlineHumanReadable}** per eseguire l'{titleMessageUpdateOrUpgradeLower} a macOS {ddmVersionString}.<br><br>Fai clic su **{button1text}** per riavviare ora e completare l'{titleMessageUpdateOrUpgradeLower} richiesto.<br><br>(Questo promemoria rimarrà visibile fino al riavvio del Mac.)",
+            "description": "Localized message shown when past-deadline restart behavior is prompt. for Italian.",
+            "property_order": 1515
+        },
+        "PastDeadlineForceTitle": {
+            "type": "string",
+            "title": "Past Deadline Force Title",
+            "default": "Your Mac is restarting",
+            "description": "Title shown when past-deadline restart behavior is Force.",
+            "property_order": 1520
+        },
+        "PastDeadlineForceTitleLocalized_en": {
+            "type": "string",
+            "title": "Past Deadline Force Title (English)",
+            "default": "Your Mac is restarting",
+            "description": "Localized title shown when past-deadline restart behavior is force. for English.",
+            "property_order": 1525
+        },
+        "PastDeadlineForceTitleLocalized_de": {
+            "type": "string",
+            "title": "Past Deadline Force Title (German)",
+            "default": "Dein Mac wird neu gestartet",
+            "description": "Localized title shown when past-deadline restart behavior is force. for German.",
+            "property_order": 1530
+        },
+        "PastDeadlineForceTitleLocalized_fr": {
+            "type": "string",
+            "title": "Past Deadline Force Title (French)",
+            "default": "Votre Mac redémarrera",
+            "description": "Localized title shown when past-deadline restart behavior is force. for French.",
+            "property_order": 1535
+        },
+        "PastDeadlineForceTitleLocalized_es": {
+            "type": "string",
+            "title": "Past Deadline Force Title (Spanish)",
+            "default": "Su Mac se está reiniciando",
+            "description": "Localized title shown when past-deadline restart behavior is force. for Spanish.",
+            "property_order": 1540
+        },
+        "PastDeadlineForceTitleLocalized_pt": {
+            "type": "string",
+            "title": "Past Deadline Force Title (Portuguese)",
+            "default": "O seu Mac está a reiniciar",
+            "description": "Localized title shown when past-deadline restart behavior is force. for Portuguese.",
+            "property_order": 1545
+        },
+        "PastDeadlineForceTitleLocalized_ja": {
+            "type": "string",
+            "title": "Past Deadline Force Title (Japanese)",
+            "default": "Macを再起動しています",
+            "description": "Localized title shown when past-deadline restart behavior is force. for Japanese.",
+            "property_order": 1550
+        },
+        "PastDeadlineForceTitleLocalized_nl": {
+            "type": "string",
+            "title": "Past Deadline Force Title (Dutch)",
+            "default": "Uw Mac wordt opnieuw opgestart",
+            "description": "Localized title shown when past-deadline restart behavior is force. for Dutch.",
+            "property_order": 1555
+        },
+        "PastDeadlineForceTitleLocalized_it": {
+            "type": "string",
+            "title": "Past Deadline Force Title (Italian)",
+            "default": "Il tuo Mac si sta riavviando",
+            "description": "Localized title shown when past-deadline restart behavior is force. for Italian.",
+            "property_order": 1560
+        },
+        "PastDeadlineForceMessage": {
+            "type": "string",
+            "title": "Past Deadline Force Message",
+            "default": "**Your Mac will restart when the timer below expires.**<br><br>Happy {weekday}, {loggedInUserFirstname}!<br><br>Your Mac is past the **{ddmVersionStringDeadlineHumanReadable}** deadline to install macOS {ddmVersionString} and needs to be restarted to help the {titleMessageUpdateOrUpgradeLower} process to complete, or you can click **{button1text}**.<br><br>(This reminder will persist until your Mac has been restarted.)",
+            "description": "Message shown when past-deadline restart behavior is Force.",
+            "property_order": 1565
+        },
+        "PastDeadlineForceMessageLocalized_en": {
+            "type": "string",
+            "title": "Past Deadline Force Message (English)",
+            "default": "**Your Mac will restart when the timer below expires.**<br><br>Happy {weekday}, {loggedInUserFirstname}!<br><br>Your Mac is past the **{ddmVersionStringDeadlineHumanReadable}** deadline to install macOS {ddmVersionString} and needs to be restarted to help the {titleMessageUpdateOrUpgradeLower} process to complete, or you can click **{button1text}**.<br><br>(This reminder will persist until your Mac has been restarted.)",
+            "description": "Localized message shown when past-deadline restart behavior is force. for English.",
+            "property_order": 1570
+        },
+        "PastDeadlineForceMessageLocalized_de": {
+            "type": "string",
+            "title": "Past Deadline Force Message (German)",
+            "default": "**Dein Mac wird neu gestartet, wenn der Timer unten abläuft.**<br><br>Hallo {loggedInUserFirstname}!<br><br>Die Frist **{ddmVersionStringDeadlineHumanReadable}** für macOS {ddmVersionString} wurde überschritten. Ein Neustart ist erforderlich, um die Installation abzuschließen. Du kannst auch auf **{button1text}** klicken.<br><br>(Diese Erinnerung bleibt sichtbar, bis dein Mac neu gestartet wurde.)",
+            "description": "Localized message shown when past-deadline restart behavior is force. for German.",
+            "property_order": 1575
+        },
+        "PastDeadlineForceMessageLocalized_fr": {
+            "type": "string",
+            "title": "Past Deadline Force Message (French)",
+            "default": "**Votre Mac redémarrera lorsque le minuteur ci-dessous expirera.**<br><br>Bonjour {loggedInUserFirstname}!<br><br>Votre Mac a dépassé l'échéance **{ddmVersionStringDeadlineHumanReadable}** pour macOS {ddmVersionString}. Un redémarrage est requis pour terminer la {titleMessageUpdateOrUpgradeLower} ; vous pouvez aussi cliquer sur **{button1text}**.<br><br>(Ce rappel restera affiché jusqu'au redémarrage de votre Mac.)",
+            "description": "Localized message shown when past-deadline restart behavior is force. for French.",
+            "property_order": 1580
+        },
+        "PastDeadlineForceMessageLocalized_es": {
+            "type": "string",
+            "title": "Past Deadline Force Message (Spanish)",
+            "default": "**Su Mac se reiniciará cuando expire el temporizador de abajo.**<br><br>Hola {loggedInUserFirstname}.<br><br>Su Mac ha superado la fecha límite de **{ddmVersionStringDeadlineHumanReadable}** para instalar macOS {ddmVersionString} y debe reiniciarse para ayudar a completar la {titleMessageUpdateOrUpgradeLower}, o bien puede hacer clic en **{button1text}**.<br><br>(Este recordatorio permanecerá visible hasta que se reinicie su Mac.)",
+            "description": "Localized message shown when past-deadline restart behavior is force. for Spanish.",
+            "property_order": 1585
+        },
+        "PastDeadlineForceMessageLocalized_pt": {
+            "type": "string",
+            "title": "Past Deadline Force Message (Portuguese)",
+            "default": "**O seu Mac será reiniciado quando o temporizador abaixo terminar.**<br><br>Ola {loggedInUserFirstname}.<br><br>O seu Mac ultrapassou o prazo de **{ddmVersionStringDeadlineHumanReadable}** para instalar o macOS {ddmVersionString} e precisa de ser reiniciado para ajudar a concluir a {titleMessageUpdateOrUpgradeLower}, ou pode clicar em **{button1text}**.<br><br>(Este lembrete permanecerá visível até o seu Mac ser reiniciado.)",
+            "description": "Localized message shown when past-deadline restart behavior is force. for Portuguese.",
+            "property_order": 1590
+        },
+        "PastDeadlineForceMessageLocalized_ja": {
+            "type": "string",
+            "title": "Past Deadline Force Message (Japanese)",
+            "default": "**下のタイマーが切れるとMacが再起動します。**<br><br>{loggedInUserFirstname}さん、{weekday}もお疲れさまです。<br><br>このMacは、macOS {ddmVersionString} のインストール期限 **{ddmVersionStringDeadlineHumanReadable}** を過ぎています。{titleMessageUpdateOrUpgradeLower} を完了しやすくするため再起動が必要です。すぐに実行するには **{button1text}** をクリックしてください。<br><br>（この通知はMacが再起動されるまで表示されます。）",
+            "description": "Localized message shown when past-deadline restart behavior is force. for Japanese.",
+            "property_order": 1595
+        },
+        "PastDeadlineForceMessageLocalized_nl": {
+            "type": "string",
+            "title": "Past Deadline Force Message (Dutch)",
+            "default": "**Uw Mac wordt opnieuw opgestart wanneer de timer hieronder afloopt.**<br><br>Hallo {loggedInUserFirstname}!<br><br>Uw Mac heeft de deadline van **{ddmVersionStringDeadlineHumanReadable}** overschreden om macOS {ddmVersionString} te installeren en moet opnieuw worden opgestart om het {titleMessageUpdateOrUpgradeLower}-proces te helpen voltooien, of u kunt op **{button1text}** klikken.<br><br>(Deze herinnering blijft zichtbaar totdat uw Mac opnieuw is opgestart.)",
+            "description": "Localized message shown when past-deadline restart behavior is force. for Dutch.",
+            "property_order": 1600
+        },
+        "PastDeadlineForceMessageLocalized_it": {
+            "type": "string",
+            "title": "Past Deadline Force Message (Italian)",
+            "default": "**Il tuo Mac si riavvierà allo scadere del timer sottostante.**<br><br>Buon {weekday}, {loggedInUserFirstname}!<br><br>Il tuo Mac ha superato la scadenza del **{ddmVersionStringDeadlineHumanReadable}** per installare macOS {ddmVersionString} e deve essere riavviato per completare il processo di {titleMessageUpdateOrUpgradeLower}, oppure puoi fare clic su **{button1text}**.<br><br>(Questo promemoria rimarrà visibile fino al riavvio del Mac.)",
+            "description": "Localized message shown when past-deadline restart behavior is force. for Italian.",
+            "property_order": 1605
+        },
+        "AggressiveModeTitle": {
+            "type": "string",
+            "title": "Aggressive Mode Title",
+            "default": "macOS {titleMessageUpdateOrUpgrade} Required Now",
+            "description": "Title displayed while aggressive past-deadline reminder mode is active.",
+            "property_order": 1610
+        },
+        "AggressiveModeTitleLocalized_en": {
+            "type": "string",
+            "title": "Aggressive Mode Title (English)",
+            "default": "macOS {titleMessageUpdateOrUpgrade} Required Now",
+            "description": "Localized English override for aggressive mode title.",
+            "property_order": 1615
+        },
+        "AggressiveModeTitleLocalized_de": {
+            "type": "string",
+            "title": "Aggressive Mode Title (German)",
+            "default": "macOS-{titleMessageUpdateOrUpgrade} jetzt erforderlich",
+            "description": "Localized German override for aggressive mode title.",
+            "property_order": 1620
+        },
+        "AggressiveModeTitleLocalized_fr": {
+            "type": "string",
+            "title": "Aggressive Mode Title (French)",
+            "default": "{titleMessageUpdateOrUpgrade} macOS requise maintenant",
+            "description": "Localized French override for aggressive mode title.",
+            "property_order": 1625
+        },
+        "AggressiveModeTitleLocalized_es": {
+            "type": "string",
+            "title": "Aggressive Mode Title (Spanish)",
+            "default": "{titleMessageUpdateOrUpgrade} de macOS obligatoria ahora",
+            "description": "Localized Spanish override for aggressive mode title.",
+            "property_order": 1630
+        },
+        "AggressiveModeTitleLocalized_pt": {
+            "type": "string",
+            "title": "Aggressive Mode Title (Portuguese)",
+            "default": "{titleMessageUpdateOrUpgrade} do macOS obrigatória agora",
+            "description": "Localized Portuguese override for aggressive mode title.",
+            "property_order": 1635
+        },
+        "AggressiveModeTitleLocalized_ja": {
+            "type": "string",
+            "title": "Aggressive Mode Title (Japanese)",
+            "default": "macOSの{titleMessageUpdateOrUpgrade}が今すぐ必要です",
+            "description": "Localized Japanese override for aggressive mode title.",
+            "property_order": 1640
+        },
+        "AggressiveModeTitleLocalized_nl": {
+            "type": "string",
+            "title": "Aggressive Mode Title (Dutch)",
+            "default": "macOS {titleMessageUpdateOrUpgrade} nu vereist",
+            "description": "Localized Dutch override for aggressive mode title.",
+            "property_order": 1645
+        },
+        "AggressiveModeTitleLocalized_it": {
+            "type": "string",
+            "title": "Aggressive Mode Title (Italian)",
+            "default": "{titleMessageUpdateOrUpgrade} macOS richiesta ora",
+            "description": "Localized Italian override for aggressive mode title.",
+            "property_order": 1650
+        },
+        "AggressiveModeMessage": {
+            "type": "string",
+            "title": "Aggressive Mode Message",
+            "default": "**Your Mac is past its required macOS {titleMessageUpdateOrUpgradeLower} deadline.**<br><br>Happy {weekday}, {loggedInUserFirstname}!<br><br>Your Mac has been past the **{ddmVersionStringDeadlineHumanReadable}** deadline for **{aggressiveModeHoursPastDeadline} hour(s)** and still needs macOS {ddmVersionString}.<br><br>Click **{button1text}**, review the on-screen instructions, then click **{softwareUpdateButtonText}**. This reminder will return about every {aggressiveModeFrequencyMinutes} minutes until macOS {ddmVersionString} is installed.{updateReadyMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Markdown-formatted message displayed while aggressive past-deadline reminder mode is active.",
+            "property_order": 1655
+        },
+        "AggressiveModeMessageLocalized_en": {
+            "type": "string",
+            "title": "Aggressive Mode Message (English)",
+            "default": "**Your Mac is past its required macOS {titleMessageUpdateOrUpgradeLower} deadline.**<br><br>Happy {weekday}, {loggedInUserFirstname}!<br><br>Your Mac has been past the **{ddmVersionStringDeadlineHumanReadable}** deadline for **{aggressiveModeHoursPastDeadline} hour(s)** and still needs macOS {ddmVersionString}.<br><br>Click **{button1text}**, review the on-screen instructions, then click **{softwareUpdateButtonText}**. This reminder will return about every {aggressiveModeFrequencyMinutes} minutes until macOS {ddmVersionString} is installed.{updateReadyMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized English override for aggressive mode message.",
+            "property_order": 1660
+        },
+        "AggressiveModeMessageLocalized_de": {
+            "type": "string",
+            "title": "Aggressive Mode Message (German)",
+            "default": "**Dein Mac hat die erforderliche macOS-{titleMessageUpdateOrUpgradeLower}-Frist überschritten.**<br><br>Hallo {loggedInUserFirstname}!<br><br>Die Frist **{ddmVersionStringDeadlineHumanReadable}** ist seit **{aggressiveModeHoursPastDeadline} Stunde(n)** überschritten, und dieser Mac benötigt weiterhin macOS {ddmVersionString}.<br><br>Klicke auf **{button1text}**, folge den Hinweisen auf dem Bildschirm und klicke anschließend auf **{softwareUpdateButtonText}**. Diese Erinnerung erscheint etwa alle {aggressiveModeFrequencyMinutes} Minuten, bis macOS {ddmVersionString} installiert ist.{updateReadyMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized German override for aggressive mode message.",
+            "property_order": 1665
+        },
+        "AggressiveModeMessageLocalized_fr": {
+            "type": "string",
+            "title": "Aggressive Mode Message (French)",
+            "default": "**Votre Mac a dépassé l'échéance requise de {titleMessageUpdateOrUpgradeLower} macOS.**<br><br>Bonjour {loggedInUserFirstname}!<br><br>Votre Mac a dépassé l'échéance **{ddmVersionStringDeadlineHumanReadable}** depuis **{aggressiveModeHoursPastDeadline} heure(s)** et nécessite toujours macOS {ddmVersionString}.<br><br>Cliquez sur **{button1text}**, suivez les instructions à l'écran, puis cliquez sur **{softwareUpdateButtonText}**. Ce rappel reviendra environ toutes les {aggressiveModeFrequencyMinutes} minutes jusqu'à l'installation de macOS {ddmVersionString}.{updateReadyMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized French override for aggressive mode message.",
+            "property_order": 1670
+        },
+        "AggressiveModeMessageLocalized_es": {
+            "type": "string",
+            "title": "Aggressive Mode Message (Spanish)",
+            "default": "**Su Mac ha superado la fecha límite obligatoria de {titleMessageUpdateOrUpgradeLower} de macOS.**<br><br>Hola {loggedInUserFirstname}.<br><br>Su Mac ha superado la fecha límite de **{ddmVersionStringDeadlineHumanReadable}** por **{aggressiveModeHoursPastDeadline} hora(s)** y aún necesita macOS {ddmVersionString}.<br><br>Haga clic en **{button1text}**, revise las instrucciones en pantalla y luego haga clic en **{softwareUpdateButtonText}**. Este recordatorio volverá aproximadamente cada {aggressiveModeFrequencyMinutes} minutos hasta que macOS {ddmVersionString} esté instalado.{updateReadyMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Spanish override for aggressive mode message.",
+            "property_order": 1675
+        },
+        "AggressiveModeMessageLocalized_pt": {
+            "type": "string",
+            "title": "Aggressive Mode Message (Portuguese)",
+            "default": "**O seu Mac ultrapassou o prazo obrigatório da {titleMessageUpdateOrUpgradeLower} do macOS.**<br><br>Ola {loggedInUserFirstname}.<br><br>O seu Mac ultrapassou o prazo de **{ddmVersionStringDeadlineHumanReadable}** há **{aggressiveModeHoursPastDeadline} hora(s)** e ainda precisa do macOS {ddmVersionString}.<br><br>Clique em **{button1text}**, reveja as instruções no ecrã e clique em **{softwareUpdateButtonText}**. Este lembrete voltará aproximadamente a cada {aggressiveModeFrequencyMinutes} minutos até o macOS {ddmVersionString} estar instalado.{updateReadyMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Portuguese override for aggressive mode message.",
+            "property_order": 1680
+        },
+        "AggressiveModeMessageLocalized_ja": {
+            "type": "string",
+            "title": "Aggressive Mode Message (Japanese)",
+            "default": "**このMacは必須のmacOS {titleMessageUpdateOrUpgradeLower}期限を過ぎています。**<br><br>{loggedInUserFirstname}さん、{weekday}もお疲れさまです。<br><br>期限 **{ddmVersionStringDeadlineHumanReadable}** から **{aggressiveModeHoursPastDeadline} 時間** が経過しており、まだ macOS {ddmVersionString} が必要です。<br><br>**{button1text}** をクリックし、画面の案内を確認したあと **{softwareUpdateButtonText}** をクリックしてください。macOS {ddmVersionString} がインストールされるまで、このリマインダーは約 {aggressiveModeFrequencyMinutes} 分ごとに戻ります。{updateReadyMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Japanese override for aggressive mode message.",
+            "property_order": 1685
+        },
+        "AggressiveModeMessageLocalized_nl": {
+            "type": "string",
+            "title": "Aggressive Mode Message (Dutch)",
+            "default": "**Uw Mac is voorbij de vereiste macOS {titleMessageUpdateOrUpgradeLower}-deadline.**<br><br>Hallo {loggedInUserFirstname}!<br><br>Uw Mac is al **{aggressiveModeHoursPastDeadline} uur** voorbij de deadline **{ddmVersionStringDeadlineHumanReadable}** en heeft nog steeds macOS {ddmVersionString} nodig.<br><br>Klik op **{button1text}**, volg de instructies op het scherm en klik daarna op **{softwareUpdateButtonText}**. Deze herinnering komt ongeveer elke {aggressiveModeFrequencyMinutes} minuten terug totdat macOS {ddmVersionString} is geïnstalleerd.{updateReadyMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Dutch override for aggressive mode message.",
+            "property_order": 1690
+        },
+        "AggressiveModeMessageLocalized_it": {
+            "type": "string",
+            "title": "Aggressive Mode Message (Italian)",
+            "default": "**Il tuo Mac ha superato la scadenza obbligatoria per l'{titleMessageUpdateOrUpgradeLower} di macOS.**<br><br>Buon {weekday}, {loggedInUserFirstname}!<br><br>Il tuo Mac ha superato la scadenza **{ddmVersionStringDeadlineHumanReadable}** da **{aggressiveModeHoursPastDeadline} ora/e** e richiede ancora macOS {ddmVersionString}.<br><br>Fai clic su **{button1text}**, segui le istruzioni sullo schermo, quindi fai clic su **{softwareUpdateButtonText}**. Questo promemoria tornerà circa ogni {aggressiveModeFrequencyMinutes} minuti finché macOS {ddmVersionString} non sarà installato.{updateReadyMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized Italian override for aggressive mode message.",
+            "property_order": 1695
         },
         "Message": {
             "type": "string",
             "title": "Dialog Message",
-            "default": "**A required macOS {titleMessageUpdateOrUpgrade:l} is now available**<br><br>Happy {weekday}, {loggedInUserFirstname}!<br><br>Please {titleMessageUpdateOrUpgrade:l} to macOS **{ddmVersionString}** to ensure your Mac remains secure and compliant with organizational policies.{updateReadyMessage}<br><br>To perform the {titleMessageUpdateOrUpgrade:l} now, click **{button1text}**, review the on-screen instructions, then click **{softwareUpdateButtonText}**.<br><br>If you are unable to perform this {titleMessageUpdateOrUpgrade:l} now, click **{button2text}** to be reminded again later (which is disabled when the deadline is imminent).<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "default": "Sample **A required macOS {titleMessageUpdateOrUpgradeLower} is now available**<br><br>Greetings, {loggedInUserFirstname}!<br><br>Please {titleMessageUpdateOrUpgradeLower} to macOS **{ddmVersionString}** to ensure your Mac remains secure and compliant with organizational policies.{updateReadyMessage}<br><br>To perform the {titleMessageUpdateOrUpgradeLower} now, click **{button1text}**, review the on-screen instructions, then click **{softwareUpdateButtonText}**.<br><br>If you are unable to perform this {titleMessageUpdateOrUpgradeLower} now, click **{button2text}** to be reminded again later (which is disabled when the deadline is imminent).<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
             "description": "Markdown-formatted message body displayed in the dialog.",
-            "property_order": 165
+            "property_order": 1700
+        },
+        "MessageLocalized_en": {
+            "type": "string",
+            "title": "Dialog Message (English)",
+            "default": "Sample **A required macOS {titleMessageUpdateOrUpgradeLower} is now available**<br><br>Greetings, {loggedInUserFirstname}!<br><br>Please {titleMessageUpdateOrUpgradeLower} to macOS **{ddmVersionString}** to ensure your Mac remains secure and compliant with organizational policies.{updateReadyMessage}<br><br>To perform the {titleMessageUpdateOrUpgradeLower} now, click **{button1text}**, review the on-screen instructions, then click **{softwareUpdateButtonText}**.<br><br>If you are unable to perform this {titleMessageUpdateOrUpgradeLower} now, click **{button2text}** to be reminded again later (which is disabled when the deadline is imminent).<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized markdown-formatted message body displayed in the dialog. for English.",
+            "property_order": 1705
+        },
+        "MessageLocalized_de": {
+            "type": "string",
+            "title": "Dialog Message (German)",
+            "default": "Sample **Ein erforderliches macOS-{titleMessageUpdateOrUpgrade} ist jetzt verfügbar**<br><br>Hallo {loggedInUserFirstname}!<br><br>Bitte installiere macOS **{ddmVersionString}**, damit dein Mac sicher bleibt und den Richtlinien entspricht.{updateReadyMessage}<br><br>Um jetzt zu beginnen, klicke auf **{button1text}**, folge den Hinweisen auf dem Bildschirm und klicke anschließend auf **{softwareUpdateButtonText}**.<br><br>Wenn du das jetzt nicht durchführen kannst, klicke auf **{button2text}**, um später erinnert zu werden (diese Option ist kurz vor der Frist deaktiviert).<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized markdown-formatted message body displayed in the dialog. for German.",
+            "property_order": 1710
+        },
+        "MessageLocalized_fr": {
+            "type": "string",
+            "title": "Dialog Message (French)",
+            "default": "Sample **Une {titleMessageUpdateOrUpgradeLower} macOS requise est maintenant disponible**<br><br>Bonjour, {loggedInUserFirstname}!<br><br>Veuillez effectuer la {titleMessageUpdateOrUpgradeLower} vers macOS **{ddmVersionString}** afin de maintenir la sécurité et la conformité de votre Mac aux politiques de votre organisation.{updateReadyMessage}<br><br>Pour effectuer la {titleMessageUpdateOrUpgradeLower} maintenant, cliquez sur **{button1text}**, suivez les instructions à l'écran, puis cliquez sur **{softwareUpdateButtonText}**.<br><br>Si vous ne pouvez pas effectuer cette {titleMessageUpdateOrUpgradeLower} maintenant, cliquez sur **{button2text}** pour recevoir un nouveau rappel plus tard (ce bouton est désactivé lorsque l'échéance est imminente).<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized markdown-formatted message body displayed in the dialog. for French.",
+            "property_order": 1715
+        },
+        "MessageLocalized_es": {
+            "type": "string",
+            "title": "Dialog Message (Spanish)",
+            "default": "Sample **Ya está disponible una {titleMessageUpdateOrUpgradeLower} obligatoria de macOS**<br><br>¡Feliz {weekday}, {loggedInUserFirstname}!<br><br>Realice la {titleMessageUpdateOrUpgradeLower} a macOS **{ddmVersionString}** para mantener su Mac seguro y en cumplimiento con las políticas de la organización.{updateReadyMessage}<br><br>Para realizar la {titleMessageUpdateOrUpgradeLower} ahora, haga clic en **{button1text}**, revise las instrucciones en pantalla y luego haga clic en **{softwareUpdateButtonText}**.<br><br>Si no puede realizar esta {titleMessageUpdateOrUpgradeLower} ahora, haga clic en **{button2text}** para recibir otro recordatorio más tarde (esta opción se desactiva cuando se acerca la fecha límite).<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized markdown-formatted message body displayed in the dialog. for Spanish.",
+            "property_order": 1720
+        },
+        "MessageLocalized_pt": {
+            "type": "string",
+            "title": "Dialog Message (Portuguese)",
+            "default": "Sample **Já está disponível uma {titleMessageUpdateOrUpgradeLower} obrigatória do macOS**<br><br>Feliz {weekday}, {loggedInUserFirstname}!<br><br>Efetue a {titleMessageUpdateOrUpgradeLower} para o macOS **{ddmVersionString}** para manter o seu Mac seguro e em conformidade com as políticas da organização.{updateReadyMessage}<br><br>Para efetuar a {titleMessageUpdateOrUpgradeLower} agora, clique em **{button1text}**, siga as instruções no ecrã e depois clique em **{softwareUpdateButtonText}**.<br><br>Se não puder efetuar esta {titleMessageUpdateOrUpgradeLower} agora, clique em **{button2text}** para receber outro lembrete mais tarde (esta opção fica desativada quando o prazo se aproxima).<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized markdown-formatted message body displayed in the dialog. for Portuguese.",
+            "property_order": 1725
+        },
+        "MessageLocalized_ja": {
+            "type": "string",
+            "title": "Dialog Message (Japanese)",
+            "default": "Sample **必須のmacOS {titleMessageUpdateOrUpgradeLower} を利用できます**<br><br>{loggedInUserFirstname}さん、{weekday}もお疲れさまです。<br><br>Macを安全に保ち、組織のポリシーに準拠するため、macOS **{ddmVersionString}** へ {titleMessageUpdateOrUpgradeLower} してください。{updateReadyMessage}<br><br>今すぐ {titleMessageUpdateOrUpgradeLower} するには、**{button1text}** をクリックし、画面の案内を確認したあと **{softwareUpdateButtonText}** をクリックしてください。<br><br>今すぐ実行できない場合は、**{button2text}** をクリックして後で再通知を受けてください（期限が近づくとこのオプションは無効になります）。<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized markdown-formatted message body displayed in the dialog. for Japanese.",
+            "property_order": 1730
+        },
+        "MessageLocalized_nl": {
+            "type": "string",
+            "title": "Dialog Message (Dutch)",
+            "default": "Sample **Een vereiste macOS {titleMessageUpdateOrUpgradeLower} is nu beschikbaar**<br><br>Hallo, {loggedInUserFirstname}!<br><br>Voer de macOS {titleMessageUpdateOrUpgradeLower} naar macOS **{ddmVersionString}** uit om ervoor te zorgen dat uw Mac veilig blijft en voldoet aan de beleidsregels van de organisatie.{updateReadyMessage}<br><br>Om de {titleMessageUpdateOrUpgradeLower} nu uit te voeren, klikt u op **{button1text}**, volgt u de instructies op het scherm en klikt u vervolgens op **{softwareUpdateButtonText}**.<br><br>Als u deze {titleMessageUpdateOrUpgradeLower} nu niet kunt uitvoeren, klikt u op **{button2text}** om later opnieuw te worden herinnerd (deze optie is niet beschikbaar wanneer de deadline nadert).<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized markdown-formatted message body displayed in the dialog. for Dutch.",
+            "property_order": 1735
+        },
+        "MessageLocalized_it": {
+            "type": "string",
+            "title": "Dialog Message (Italian)",
+            "default": "Sample **È ora disponibile un {titleMessageUpdateOrUpgradeLower} obbligatorio di macOS**<br><br>Salve, {loggedInUserFirstname}!<br><br>Esegui l'{titleMessageUpdateOrUpgradeLower} a macOS **{ddmVersionString}** per garantire che il tuo Mac rimanga sicuro e conforme alle politiche organizzative.{updateReadyMessage}<br><br>Per eseguire l'{titleMessageUpdateOrUpgradeLower} ora, fai clic su **{button1text}**, segui le istruzioni sullo schermo, quindi fai clic su **{softwareUpdateButtonText}**.<br><br>Se non puoi eseguire l'{titleMessageUpdateOrUpgradeLower} ora, fai clic su **{button2text}** per ricevere un promemoria in seguito (disabilitato quando la scadenza è imminente).<br><br>{deadlineEnforcementMessage}{excessiveUptimeWarningMessage}{diskSpaceWarningMessage}{supportAssistanceMessage}",
+            "description": "Localized markdown-formatted message body displayed in the dialog. for Italian.",
+            "property_order": 1740
         },
         "InfoBox": {
             "type": "string",
             "title": "Info Box Content",
-            "default": "**Current:** macOS {installedmacOSVersion}<br><br>**Required:** macOS {ddmVersionString}<br><br>**Deadline:** {infoboxDeadlineDisplay}<br><br>**Day(s) Remaining:** {infoboxDaysRemainingDisplay}<br><br>**Last Restart:** {infoboxLastRestartDisplay}<br><br>**Free Disk Space:** {diskSpaceHumanReadable}",
+            "default": "Sample<br><br>**{infoboxLabelCurrent}:** macOS {installedmacOSVersion}<br><br>**{infoboxLabelRequired}:** macOS {ddmVersionString}<br><br>**{infoboxLabelDeadline}:** {infoboxDeadlineDisplay}<br><br>**{infoboxLabelDaysRemaining}:** {infoboxDaysRemainingDisplay}<br><br>**{infoboxLabelLastRestart}:** {infoboxLastRestartDisplay}<br><br>**{infoboxLabelFreeDiskSpace}:** {diskSpaceHumanReadable}",
             "description": "Markdown-formatted info box content showing current and required versions and deadline.",
-            "property_order": 170
+            "property_order": 1745
         },
         "HelpMessage": {
             "type": "string",
             "title": "Help Message",
-            "default": "For assistance, please contact: **{supportTeamName}**<br>- **Telephone:** {supportTeamPhone}<br>- **Email:** {supportTeamEmail}<br>- **Website:** {supportTeamWebsite}<br>- **Knowledge Base Article:** {supportKBURL}<br><br>**User Information:**<br>- **Full Name:** {userfullname}<br>- **User Name:** {username}<br><br>**Computer Information:**<br>- **Computer Name:** {computername}<br>- **Serial Number:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**Script Information:**<br>- **Dialog:** {dialogVersion}<br>- **Script:** {scriptVersion}<br>",
+            "default": "Sample<br><br>For assistance, please contact: **{supportTeamName}**<br>- **Telephone:** {supportTeamPhone}<br>- **Email:** {supportTeamEmail}<br>- **Website:** {supportTeamWebsite}<br>- **Knowledge Base Article:** {supportKBURL}<br><br>**User Information:**<br>- **Full Name:** {userfullname}<br>- **User Name:** {username}<br><br>**Computer Information:**<br>- **Computer Name:** {computername}<br>- **Serial Number:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**Script Information:**<br>- **Dialog:** {dialogVersion}<br>- **Script:** {scriptVersion}<br>",
             "description": "Markdown-formatted help text including support, user, and computer information.",
-            "property_order": 175
+            "property_order": 1750
+        },
+        "HelpMessageLocalized_en": {
+            "type": "string",
+            "title": "Help Message (English)",
+            "default": "Sample<br><br>For assistance, please contact: **{supportTeamName}**<br>- **Telephone:** {supportTeamPhone}<br>- **Email:** {supportTeamEmail}<br>- **Website:** {supportTeamWebsite}<br>- **Knowledge Base Article:** {supportKBURL}<br><br>**User Information:**<br>- **Full Name:** {userfullname}<br>- **User Name:** {username}<br><br>**Computer Information:**<br>- **Computer Name:** {computername}<br>- **Serial Number:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**Script Information:**<br>- **Dialog:** {dialogVersion}<br>- **Script:** {scriptVersion}<br>",
+            "description": "Localized help message for English.",
+            "property_order": 1755
+        },
+        "HelpMessageLocalized_de": {
+            "type": "string",
+            "title": "Help Message (German)",
+            "default": "Sample<br><br>Bei Fragen kontaktiere bitte **{supportTeamName}**:<br>- **Telefon:** {supportTeamPhone}<br>- **E-Mail:** {supportTeamEmail}<br>- **Webseite:** {supportTeamWebsite}<br>- **Knowledge-Base-Artikel:** {supportKBURL}<br><br>**Benutzerinformationen:**<br>- **Vollständiger Name:** {userfullname}<br>- **Benutzername:** {username}<br><br>**Computerinformationen:**<br>- **Computername:** {computername}<br>- **Seriennummer:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**Skriptinformationen:**<br>- **Dialog:** {dialogVersion}<br>- **Skript:** {scriptVersion}<br>",
+            "description": "Localized help message for German.",
+            "property_order": 1760
+        },
+        "HelpMessageLocalized_fr": {
+            "type": "string",
+            "title": "Help Message (French)",
+            "default": "Sample<br><br>Pour obtenir de l'aide, veuillez contacter : **{supportTeamName}**<br>- **Téléphone :** {supportTeamPhone}<br>- **E-mail :** {supportTeamEmail}<br>- **Site web :** {supportTeamWebsite}<br>- **Article de la base de connaissances :** {supportKBURL}<br><br>**Informations utilisateur :**<br>- **Nom complet :** {userfullname}<br>- **Nom d'utilisateur :** {username}<br><br>**Informations de l'ordinateur :**<br>- **Nom de l'ordinateur :** {computername}<br>- **Numéro de série :** {serialnumber}<br>- **macOS :** {osversion}<br><br>**Informations du script :**<br>- **Dialog :** {dialogVersion}<br>- **Script :** {scriptVersion}<br>",
+            "description": "Localized help message for French.",
+            "property_order": 1765
+        },
+        "HelpMessageLocalized_es": {
+            "type": "string",
+            "title": "Help Message (Spanish)",
+            "default": "Sample<br><br>Para obtener ayuda, contacte con: **{supportTeamName}**<br>- **Teléfono:** {supportTeamPhone}<br>- **Correo electrónico:** {supportTeamEmail}<br>- **Sitio web:** {supportTeamWebsite}<br>- **Artículo de la base de conocimiento:** {supportKBURL}<br><br>**Información del usuario:**<br>- **Nombre completo:** {userfullname}<br>- **Nombre de usuario:** {username}<br><br>**Información del ordenador:**<br>- **Nombre del ordenador:** {computername}<br>- **Número de serie:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**Información del script:**<br>- **Dialog:** {dialogVersion}<br>- **Script:** {scriptVersion}<br>",
+            "description": "Localized help message for Spanish.",
+            "property_order": 1770
+        },
+        "HelpMessageLocalized_pt": {
+            "type": "string",
+            "title": "Help Message (Portuguese)",
+            "default": "Sample<br><br>Para obter assistência, contacte: **{supportTeamName}**<br>- **Telefone:** {supportTeamPhone}<br>- **Email:** {supportTeamEmail}<br>- **Site web:** {supportTeamWebsite}<br>- **Artigo da base de conhecimento:** {supportKBURL}<br><br>**Informações do utilizador:**<br>- **Nome completo:** {userfullname}<br>- **Nome de utilizador:** {username}<br><br>**Informações do computador:**<br>- **Nome do computador:** {computername}<br>- **Número de série:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**Informações do script:**<br>- **Dialog:** {dialogVersion}<br>- **Script:** {scriptVersion}<br>",
+            "description": "Localized help message for Portuguese.",
+            "property_order": 1775
+        },
+        "HelpMessageLocalized_ja": {
+            "type": "string",
+            "title": "Help Message (Japanese)",
+            "default": "Sample<br><br>サポートが必要な場合は次までご連絡ください: **{supportTeamName}**<br>- **電話:** {supportTeamPhone}<br>- **メール:** {supportTeamEmail}<br>- **Webサイト:** {supportTeamWebsite}<br>- **ナレッジベース記事:** {supportKBURL}<br><br>**ユーザー情報:**<br>- **氏名:** {userfullname}<br>- **ユーザー名:** {username}<br><br>**コンピュータ情報:**<br>- **コンピュータ名:** {computername}<br>- **シリアル番号:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**スクリプト情報:**<br>- **Dialog:** {dialogVersion}<br>- **Script:** {scriptVersion}<br>",
+            "description": "Localized help message for Japanese.",
+            "property_order": 1780
+        },
+        "HelpMessageLocalized_nl": {
+            "type": "string",
+            "title": "Help Message (Dutch)",
+            "default": "Sample<br><br>Voor hulp kunt u contact opnemen met: **{supportTeamName}**<br>- **Telefoon:** {supportTeamPhone}<br>- **Email:** {supportTeamEmail}<br>- **Website:** {supportTeamWebsite}<br>- **Kennisbankartikel:** {supportKBURL}<br><br>**Gebruikersinformatie:**<br>- **Volledige naam:** {userfullname}<br>- **Gebruikersnaam:** {username}<br><br>**Computerinformatie:**<br>- **Computernaam:** {computername}<br>- **Serienummer:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**Scriptinformatie:**<br>- **Dialog:** {dialogVersion}<br>- **Script:** {scriptVersion}<br>",
+            "description": "Localized help message for Dutch.",
+            "property_order": 1785
+        },
+        "HelpMessageLocalized_it": {
+            "type": "string",
+            "title": "Help Message (Italian)",
+            "default": "Sample<br><br>Per assistenza, contatta: **{supportTeamName}**<br>- **Telefono:** {supportTeamPhone}<br>- **Email:** {supportTeamEmail}<br>- **Sito web:** {supportTeamWebsite}<br>- **Articolo della knowledge base:** {supportKBURL}<br><br>**Informazioni utente:**<br>- **Nome completo:** {userfullname}<br>- **Nome utente:** {username}<br><br>**Informazioni computer:**<br>- **Nome computer:** {computername}<br>- **Numero di serie:** {serialnumber}<br>- **macOS:** {osversion}<br><br>**Informazioni script:**<br>- **Dialog:** {dialogVersion}<br>- **Script:** {scriptVersion}<br>",
+            "description": "Localized help message for Italian.",
+            "property_order": 1790
         },
         "HelpImage": {
             "type": "string",
             "title": "Help Image",
             "default": "qr={infobuttonaction}",
             "description": "Help image configuration, such as QR code pointing to the info button action.",
-            "property_order": 180
+            "property_order": 1795
         }
     }
 }
