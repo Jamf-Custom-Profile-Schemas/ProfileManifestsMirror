@@ -77,6 +77,31 @@
                     "default": true,
                     "description": "If enabled, interacting with the notification will initiate a restart. Defaults to true."
                 },
+                "NotificationStyle": {
+                    "type": "string",
+                    "title": "Notification Style",
+                    "description": "Correlates with the --style option of Dialog. Defaults to pseudo-alert on Dialog 3.1 or newer, ignored on any older version.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://github.com/SecondSonConsulting/Renew/wiki/OptionalArguments#notificationstyle"
+                        }
+                    ],
+                    "enum": [
+                        "pseudo-alert",
+                        "pseudo-banner",
+                        "alert",
+                        "banner"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Pseudo Alert",
+                            "Pseudo Banner",
+                            "Alert",
+                            "Banner"
+                        ]
+                    }
+                },
                 "Title": {
                     "type": "string",
                     "title": "Title",
