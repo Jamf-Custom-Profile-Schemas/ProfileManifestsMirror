@@ -1,0 +1,19 @@
+{
+    "title": "Dialpad (com.electron.dialpad)",
+    "description": "Settings for the Dialpad desktop app for macOS",
+    "properties": {
+        "DIALPAD_DISABLE_UPDATES": {
+            "type": "boolean",
+            "title": "Dialpad Disable Updates",
+            "default": true,
+            "description": "Prevents Dialpad from automatically checking for updates.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://help.dialpad.com/docs/app-updates#how-do-i-disable-the-inapp-autoupdater-for-managed-deployments"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
