@@ -1,0 +1,133 @@
+{
+    "title": "Notability (com.gingerlabs.notability)",
+    "description": "Configure managed settings for Notability",
+    "properties": {
+        "License Key": {
+            "type": "string",
+            "title": "License Key",
+            "description": "Required for Notability for Education or Notability for Business access. Obtain this key from the Notability admin panel after registering at gingerlabs.com. The active license count in the admin panel increments the first time each device launches Notability with this key while online.",
+            "property_order": 5
+        },
+        "iCloud Allowed": {
+            "type": "boolean",
+            "title": "iCloud Allowed",
+            "default": true,
+            "description": "Allows iCloud sync.",
+            "property_order": 10
+        },
+        "Link Sharing Allowed": {
+            "type": "boolean",
+            "title": "Link Sharing Allowed",
+            "default": true,
+            "description": "Allows note sharing via links. Disabling both Link Sharing Allowed and Note Gallery Allowed will remove Notability Account access entirely.",
+            "property_order": 15
+        },
+        "Note Gallery Allowed": {
+            "type": "boolean",
+            "title": "Note Gallery Allowed",
+            "default": true,
+            "description": "Allows publishing and downloading notes from the Notability community gallery. Disabling both Note Gallery Allowed and Link Sharing Allowed will remove Notability Account access entirely.",
+            "property_order": 20
+        },
+        "GIF Library Allowed": {
+            "type": "boolean",
+            "title": "GIF Library Allowed",
+            "default": true,
+            "description": "Allows use of Tenor GIFs inside notes.",
+            "property_order": 25
+        },
+        "Photo Library Allowed": {
+            "type": "boolean",
+            "title": "Photo Library Allowed",
+            "default": true,
+            "description": "Allows importing photos from the device Camera Roll into notes.",
+            "property_order": 30
+        },
+        "Web Clip Allowed": {
+            "type": "boolean",
+            "title": "Web Clip Allowed",
+            "default": true,
+            "description": "Allows inserting live webpage previews into notes.",
+            "property_order": 35
+        },
+        "Locked Folders Allowed": {
+            "type": "boolean",
+            "title": "Locked Folders Allowed",
+            "default": true,
+            "description": "Allows users to password-protect Folders.",
+            "property_order": 40
+        },
+        "Allowed Export Options": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Export Option",
+                "enum": [
+                    "GoogleDrive",
+                    "Dropbox",
+                    "OneDrive",
+                    "Box",
+                    "WebDAV",
+                    "Email",
+                    "AirDrop",
+                    "OpenIn"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Google Drive",
+                        "Dropbox",
+                        "OneDrive",
+                        "Box",
+                        "WebDAV",
+                        "Email",
+                        "AirDrop",
+                        "Open In (share sheet)"
+                    ]
+                }
+            },
+            "title": "Allowed Export Options",
+            "default": [
+                "GoogleDrive",
+                "Dropbox",
+                "OneDrive",
+                "Box",
+                "WebDAV",
+                "Email",
+                "AirDrop",
+                "OpenIn"
+            ],
+            "description": "Array of permitted export and import destinations. Supported values: GoogleDrive, Dropbox, OneDrive, Box, WebDAV, Email, AirDrop, OpenIn. Defaults to all.",
+            "property_order": 45
+        },
+        "GoogleDrive Allowed Domains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain"
+            },
+            "title": "Google Drive Allowed Domains",
+            "description": "Restricts Google Drive exports to the specified domains. Include the domain portion only — do not prefix with \"www.\" (e.g., use \"school.edu\", not \"www.school.edu\"). Leave empty to allow all domains.",
+            "property_order": 50
+        },
+        "OneDrive Allowed Domains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain"
+            },
+            "title": "OneDrive Allowed Domains",
+            "description": "Restricts OneDrive exports to the specified domains. Include the domain portion only — do not prefix with \"www.\" (e.g., use \"school.edu\", not \"www.school.edu\"). Leave empty to allow all domains.",
+            "property_order": 55
+        },
+        "Box Allowed Domains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain"
+            },
+            "title": "Box Allowed Domains",
+            "description": "Restricts Box exports to the specified domains. Include the domain portion only — do not prefix with \"www.\" (e.g., use \"school.edu\", not \"www.school.edu\"). Leave empty to allow all domains.",
+            "property_order": 60
+        }
+    }
+}
