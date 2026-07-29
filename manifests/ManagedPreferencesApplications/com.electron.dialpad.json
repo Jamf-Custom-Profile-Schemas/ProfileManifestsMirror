@@ -5,7 +5,7 @@
         "DIALPAD_DISABLE_UPDATES": {
             "type": "boolean",
             "title": "Dialpad Disable Updates",
-            "default": true,
+            "default": false,
             "description": "Prevents Dialpad from automatically checking for updates.",
             "links": [
                 {
