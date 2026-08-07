@@ -4,13 +4,13 @@
     "properties": {
         "DIALPAD_DISABLE_UPDATES": {
             "type": "boolean",
-            "title": "Dialpad Disable Updates",
+            "title": "Disable Updates",
             "default": false,
-            "description": "Prevents Dialpad from automatically checking for updates.",
+            "description": "Prevents Dialpad from automatically checking for updates.\nAlso hides the \"Check for Update\" option from the Dialpad menu.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://help.dialpad.com/docs/app-updates#how-do-i-disable-the-inapp-autoupdater-for-managed-deployments"
+                    "href": "https://help.dialpad.com/docs/app-updates#to-disable-autoupdater-in-macos-pkg-via-mdm"
                 }
             ],
             "property_order": 5
