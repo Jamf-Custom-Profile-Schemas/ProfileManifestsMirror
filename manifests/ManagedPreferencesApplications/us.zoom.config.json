@@ -114,13 +114,13 @@
         },
         "AU2_EnableAutoUpdate": {
             "type": "boolean",
-            "title": "Enable Updates",
+            "title": "Enable Automatic Updates",
             "default": true,
             "description": "Enable auto updates through the client",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 85
@@ -133,7 +133,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "enum": [
@@ -156,7 +156,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 95
@@ -169,7 +169,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 100
@@ -182,7 +182,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 105
@@ -195,7 +195,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 110
@@ -208,7 +208,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 115
@@ -221,7 +221,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 120
@@ -234,7 +234,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 125
@@ -247,7 +247,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 130
@@ -260,15 +260,15 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
+                    "href": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058493"
                 }
             ],
             "property_order": 135
         },
         "ZAutoUpdate": {
             "type": "boolean",
-            "title": "Enable Updates",
-            "default": false,
+            "title": "Allow Manual Update Checks",
+            "default": true,
             "description": "Allow users to check for updates through the Zoom client. If set to 'false', the 'Check for Updates' button is hidden.",
             "property_order": 140
         },
