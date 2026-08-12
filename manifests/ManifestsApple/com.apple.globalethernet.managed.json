@@ -94,12 +94,6 @@
                     "title": "Trusted Server Certificate Names",
                     "description": "Certificate Common Names expected from authentication server. The wildcard * can be used to match a range of strings."
                 },
-                "TLSAllowTrustExceptions": {
-                    "type": "boolean",
-                    "title": "Allow Trust Exceptions",
-                    "default": true,
-                    "description": "Allows a dynamic trust decision by the user."
-                },
                 "TTLSInnerAuthentication": {
                     "type": "string",
                     "title": "Inner Authentication",
