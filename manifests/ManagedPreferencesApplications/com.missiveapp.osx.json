@@ -1,0 +1,19 @@
+{
+    "title": "Missive (com.missiveapp.osx)",
+    "description": "Settings for the Missive desktop app for macOS",
+    "properties": {
+        "AutoUpdate": {
+            "type": "boolean",
+            "title": "AutoUpdate",
+            "default": true,
+            "description": "Prevents Missive from automatically checking for updates to its Electron core. (Users will still see periodic requests to \"update\" via reload.)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://missiveapp.com/docs/device-management/managed-configuration"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
