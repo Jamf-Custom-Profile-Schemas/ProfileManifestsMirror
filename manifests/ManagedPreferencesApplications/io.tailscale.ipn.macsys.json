@@ -45,7 +45,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#check-for-updates-automatically"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#check-for-updates-automatically-macos"
                 }
             ],
             "property_order": 20
@@ -53,11 +53,11 @@
         "SUAutomaticallyUpdate": {
             "type": "boolean",
             "title": "Install updates automatically",
-            "description": "If you are using the Standalone version of Tailscale for macOS, the client can also install updates automatically. This feature also relies on the Sparkle framework. We recommend that you always turn this feature on, in order to ensure your users receive any security updates in a timely manner. However, if you manually manage updates, or prefer your users to be notified but to manually update, you can disable the automatic installation. When set to false, the standalone variant of Tailscale for macOS will require user input before updates are installed.",
+            "description": "If you are using the Standalone version of Tailscale for macOS, the client can install updates automatically. This uses the Sparkle framework. We recommend that you always turn this feature on to make sure your users receive any security updates in a timely manner. Note, when the policy is set to true users may need to confirm the update before it is applied. However, if you manually manage updates, or prefer your users to be notified to manually update, you can disable the automatic installation. When SUAutomaticallyUpdate is set to false, the Standalone variant of Tailscale for macOS will require user input before updates are installed.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#install-updates-automatically"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#install-updates-automatically-macos"
                 }
             ],
             "property_order": 25
