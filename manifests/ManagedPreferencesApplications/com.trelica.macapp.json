@@ -1,0 +1,22 @@
+{
+    "title": "Trelica Browser Helper (com.trelica.macapp)",
+    "description": "Configure settings for the Trelica Browser Helper application.",
+    "properties": {
+        "OrgId": {
+            "type": "string",
+            "title": "Organization ID",
+            "description": "The unique identifier for your organization in Trelica.",
+            "property_order": 5
+        },
+        "Domain": {
+            "type": "string",
+            "title": "Trelica Domain",
+            "description": "The domain your organization uses for Trelica. Use app.trelica.com for US-hosted organizations or eu.trelica.com for EU-hosted organizations.",
+            "enum": [
+                "app.trelica.com",
+                "eu.trelica.com"
+            ],
+            "property_order": 10
+        }
+    }
+}
