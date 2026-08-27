@@ -10,7 +10,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.parallels.com/parallels-desktop-enterprise-administrators-guide/mass-deployment-of-parallels-desktop-and-virtual-machines/deploying-parallels-desktop-via-mdm-app-catalogs-using-configuration-profiles"
+                    "href": "https://link.parallels.com/pde-mdm-activation-experience"
                 }
             ],
             "enum": [
@@ -27,7 +27,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.parallels.com/parallels-desktop-licensing-guide/managing-subscriptions-licences-and-seats/viewing-subscriptions-and-subscription-details"
+                    "href": "https://link.parallels.com/pde-mdm-pd-licensing"
                 }
             ],
             "property_order": 10
@@ -39,7 +39,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.parallels.com/parallels-desktop-licensing-guide/managing-subscriptions-licences-and-seats/viewing-subscriptions-and-subscription-details"
+                    "href": "https://link.parallels.com/pde-mdm-sso-header"
                 }
             ],
             "property_order": 15
@@ -51,7 +51,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.parallels.com/parallels-desktop-licensing-guide/managing-subscriptions-licences-and-seats/viewing-subscriptions-and-subscription-details"
+                    "href": "https://link.parallels.com/pde-mdm-sso-description"
                 }
             ],
             "property_order": 20
@@ -63,7 +63,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.parallels.com/parallels-desktop-licensing-guide/managing-subscriptions-licences-and-seats/viewing-subscriptions-and-subscription-details"
+                    "href": "https://link.parallels.com/pde-mdm-sso-email"
                 }
             ],
             "property_order": 25
