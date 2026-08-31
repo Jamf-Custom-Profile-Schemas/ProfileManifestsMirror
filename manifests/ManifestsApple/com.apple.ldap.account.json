@@ -55,7 +55,7 @@
                         "type": "string",
                         "title": "Search Setting Scope",
                         "default": "LDAPSearchSettingScopeSubtree",
-                        "description": "The type of recursion to use in the search:\n\n- 'LDAPSearchSettingScopeBase': The search uses only the immediate node that the search base points to.\n- 'LDAPSearchSettingScopeOneLevel': The search uses the node plus its immediate children.\n- 'LDAPSearchSettingScopeSubtree': The search uses the node plus all children, regardless of depth.",
+                        "description": "The type of recursion to use in the search:\n'LDAPSearchSettingScopeBase': The search uses only the immediate node that the search base points to.\n'LDAPSearchSettingScopeOneLevel': The search uses the node plus its immediate children.\n'LDAPSearchSettingScopeSubtree': The search uses the node plus all children, regardless of depth.",
                         "enum": [
                             "LDAPSearchSettingScopeBase",
                             "LDAPSearchSettingScopeOneLevel",

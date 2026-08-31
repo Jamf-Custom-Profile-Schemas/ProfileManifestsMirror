@@ -9,7 +9,7 @@
                 "title": "UUID"
             },
             "title": "CA certificate payload UUIDs",
-            "description": "An array of payload UUIDs containing CA certificates that devices use to evaluate trust of controller certificates.\n\nThis key configures the device to accept the 'LOMDeviceRequestCommand' from MDM and then send it to the target device. This certificate must contain the Key Usage attributes of Digital Signature, Key Encipherment and Data Encipherment. As well as the Extended Key Usage attributes of Server Authentication and Client Authentication.",
+            "description": "An array of payload UUIDs containing CA certificates that devices use to evaluate trust of controller certificates.\nThis key configures the device to accept the 'LOMDeviceRequestCommand' from MDM and then send it to the target device. This certificate must contain the Key Usage attributes of Digital Signature, Key Encipherment and Data Encipherment. As well as the Extended Key Usage attributes of Server Authentication and Client Authentication.",
             "property_order": 5
         },
         "ControllerCertificateUUID": {

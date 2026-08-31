@@ -46,7 +46,7 @@
                     "DefaultProtocolMask": {
                         "type": "integer",
                         "title": "Data APN default IP versions",
-                        "description": "The default Internet Protocol versions. Available in iOS 10.3 but no longer used in iOS 11 and later. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
+                        "description": "The default Internet Protocol versions. Available in iOS 10.3 but no longer used in iOS 11 and later. Allowed values:\n'1': IPv4\n'2': IPv6\n'3': Both",
                         "enum": [
                             1,
                             2,
@@ -63,7 +63,7 @@
                     "AllowedProtocolMask": {
                         "type": "integer",
                         "title": "Data APN supported IP versions",
-                        "description": "The Internet Protocol versions that the system supports. Available in iOS 10.3 and later. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
+                        "description": "The Internet Protocol versions that the system supports. Available in iOS 10.3 and later. Allowed values:\n'1': IPv4\n'2': IPv6\n'3': Both",
                         "enum": [
                             1,
                             2,
@@ -80,7 +80,7 @@
                     "AllowedProtocolMaskInRoaming": {
                         "type": "integer",
                         "title": "Data APN supported roaming IP versions",
-                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
+                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n'1': IPv4\n'2': IPv6\n'3': Both",
                         "enum": [
                             1,
                             2,
@@ -97,7 +97,7 @@
                     "AllowedProtocolMaskInDomesticRoaming": {
                         "type": "integer",
                         "title": "Data APN supported domestic roaming IP versions",
-                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
+                        "description": "The Internet Protocol versions that the system supports while roaming. Available in iOS 10.3 and later. Allowed values:\n'1': IPv4\n'2': IPv6\n'3': Both",
                         "enum": [
                             1,
                             2,
@@ -157,7 +157,7 @@
                 "AllowedProtocolMask": {
                     "type": "integer",
                     "title": "Default APN supported IP versions",
-                    "description": "The Internet Protocol versions that the system supports. Allowed values:\n\n- '1': IPv4\n- '2': IPv6\n- '3': Both",
+                    "description": "The Internet Protocol versions that the system supports. Allowed values:\n'1': IPv4\n'2': IPv6\n'3': Both",
                     "enum": [
                         1,
                         2,

@@ -4,7 +4,7 @@
     "properties": {
         "IfLostReturnToMessage": {
             "type": "string",
-            "title": "\"If lost, return to\"",
+            "title": "If Lost message",
             "description": "Deprecated. Use 'LockScreenFootnote' instead.",
             "property_order": 5
         },

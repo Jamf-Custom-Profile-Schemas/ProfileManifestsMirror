@@ -241,7 +241,7 @@
                             "type": "integer",
                             "title": "Days to execute",
                             "default": 31,
-                            "description": "One or more days of the week in an unsigned integer bitmap:\n\n- '1' = Mon\n- '2' = Tue\n- '4' = Wed\n- '8' = Thu\n- '16' = Fri\n- '32' = Sat\n- '64' = Sun",
+                            "description": "One or more days of the week in an unsigned integer bitmap:\n'1' = Mon\n'2' = Tue\n'4' = Wed\n'8' = Thu\n'16' = Fri\n'32' = Sat\n'64' = Sun",
                             "properties": {
                                 "weekday": {
                                     "type": "integer",
@@ -303,7 +303,7 @@
                             "type": "integer",
                             "title": "Days to execute",
                             "default": 31,
-                            "description": "One or more days of the week in an unsigned integer bitmap:\n\n- '1' = Mon\n- '2' = Tue\n- '4' = Wed\n- '8' = Thu\n- '16' = Fri\n- '32' = Sat\n- '64' = Sun",
+                            "description": "One or more days of the week in an unsigned integer bitmap:\n'1' = Mon\n'2' = Tue\n'4' = Wed\n'8' = Thu\n'16' = Fri\n'32' = Sat\n'64' = Sun",
                             "properties": {
                                 "weekday": {
                                     "type": "integer",

@@ -1,11 +1,11 @@
 {
     "title": "Global Preferences (.GlobalPreferences)",
-    "description": "Global Preferences settings",
+    "description": "The payload to configure global preferences.",
     "properties": {
         "com.apple.autologout.AutoLogOutDelay": {
-            "type": "integer",
+            "type": "number",
             "title": "Auto LogOut Delay",
-            "description": "The autologout delay, in seconds. A value of 0 means autologout is off. In some cases, this delay may be restricted to values between 5 minutes and 24 hours.",
+            "description": "The 'autologout' delay, in seconds. A value of '0' means 'autologout' is off. In some cases, this delay may be restricted to values between 5 minutes and 24 hours.",
             "links": [
                 {
                     "rel": "More information",
@@ -17,7 +17,8 @@
         "MultipleSessionEnabled": {
             "type": "boolean",
             "title": "Enable Fast User Switching",
-            "description": "If set to false, fast user switching is disabled.",
+            "default": true,
+            "description": "If 'false', disables fast user switching.",
             "links": [
                 {
                     "rel": "More information",

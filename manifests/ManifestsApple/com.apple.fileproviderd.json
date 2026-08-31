@@ -42,7 +42,7 @@
         "ManagementAllowsExternalVolumeSyncing": {
             "type": "boolean",
             "default": true,
-            "description": "If 'false', the device only allows File Provider extension volume synchronization for the system \"home\" volume and any data separated volume, and prevents synchronization with any other volumes. If 'true'', the device allows File Provider extension volume synchronization for the system \"home\" volume, any data separated volume, and any encrypted APFS volumes (on either internal or external media).",
+            "description": "If 'false', the device only allows File Provider extension volume synchronization for the system \"home\" volume and any data separated volume, and prevents synchronization with any other volumes. If `true``, the device allows File Provider extension volume synchronization for the system \"home\" volume, any data separated volume, and any encrypted APFS volumes (on either internal or external media).",
             "property_order": 30
         },
         "ManagementExternalVolumeSyncingAllowList": {

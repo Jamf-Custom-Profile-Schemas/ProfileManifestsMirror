@@ -139,7 +139,7 @@
                 "FallBackAllowed": {
                     "type": "integer",
                     "title": "Allow Proxy PAC Fallback",
-                    "description": "If '1', enables fallback. Default is '1'.\n\nFor managed devices, if not supplied, the default is '0'."
+                    "description": "If '1', enables fallback. Default is '1'.\nFor managed devices, if not supplied, the default is '0'."
                 },
                 "ProxyCaptiveLoginAllowed": {
                     "type": "integer",

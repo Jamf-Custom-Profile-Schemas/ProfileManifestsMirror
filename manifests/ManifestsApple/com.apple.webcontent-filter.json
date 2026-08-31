@@ -58,7 +58,7 @@
             "type": "boolean",
             "title": "Filter WebKit Traffic",
             "default": false,
-            "description": "If 'true', the system enables filtering WebKit traffic. Use when 'FilterType' is 'Plugin'.\n\nNote:\nAt least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
+            "description": "If 'true', the system enables filtering WebKit traffic. Use when 'FilterType' is 'Plugin'.\nNote: At least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
             "property_order": 25
         },
         "AllowListBookmarks": {
@@ -174,7 +174,7 @@
             "type": "boolean",
             "title": "Enable Socket Filtering",
             "default": false,
-            "description": "If 'true', enables the filtering of socket traffic. Use when 'FilterType' is 'Plugin'.\n\nNote:\nAt least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
+            "description": "If 'true', enables the filtering of socket traffic. Use when 'FilterType' is 'Plugin'.\nNote: At least one of 'FilterBrowsers' or 'FilterSockets' needs to be 'true'.",
             "property_order": 85
         },
         "FilterDataProviderBundleIdentifier": {
@@ -193,7 +193,7 @@
             "type": "boolean",
             "title": "Enable Packet Filtering",
             "default": false,
-            "description": "If 'true' and 'FilterType' is 'Plugin', the system enables filtering network packets. Use when 'FilterType' is 'Plugin'.\n\nNote:\nAt least one of 'FilterPackets' or 'FilterSockets' needs to be 'true'.",
+            "description": "If 'true' and 'FilterType' is 'Plugin', the system enables filtering network packets. Use when 'FilterType' is 'Plugin'.\nNote: At least one of 'FilterPackets' or 'FilterSockets' needs to be 'true'.",
             "property_order": 100
         },
         "FilterPacketProviderBundleIdentifier": {

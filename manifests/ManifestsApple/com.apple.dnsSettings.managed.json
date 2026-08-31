@@ -43,7 +43,7 @@
                         "title": "Supplemental Match Domains Element"
                     },
                     "title": "Supplemental Match Domains",
-                    "description": "A list of domain strings used to determine which DNS queries use the DNS server. If not set, all domains use the DNS server.\n\nThe system supports a single wildcard ('*') prefix, but it's not required. For example, both '*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
+                    "description": "A list of domain strings used to determine which DNS queries use the DNS server. If not set, all domains use the DNS server.\nThe system supports a single wildcard ('*') prefix, but it's not required. For example, both '*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
                 },
                 "AllowFailover": {
                     "type": "boolean",
@@ -69,7 +69,7 @@
                     "Action": {
                         "type": "string",
                         "title": "On Demand Action",
-                        "description": "The action to take if this dictionary matches the current network. Allowed values:\n\n- 'Connect': Apply DNS Settings when the dictionary matches.\n- 'Disconnect': Don't apply DNS Settings when the dictionary matches.\n- 'EvaluateConnection': Apply DNS Settings with per-domain exceptions when the dictionary matches.",
+                        "description": "The action to take if this dictionary matches the current network. Allowed values:\n'Connect': Apply DNS Settings when the dictionary matches.\n'Disconnect': Don't apply DNS Settings when the dictionary matches.\n'EvaluateConnection': Apply DNS Settings with per-domain exceptions when the dictionary matches.",
                         "enum": [
                             "Connect",
                             "Disconnect",
@@ -88,12 +88,12 @@
                         "items": {
                             "type": "object",
                             "title": "Action Parameter",
-                            "description": "A dictionary that provides per-connection rules.\nThe keys allowed in each dictionary are described below. Note: This array is only for dictionaries in which 'EvaluateConnection' is the 'Action' value.",
+                            "description": "A dictionary that provides per-connection rules. The keys allowed in each dictionary are described below. Note: This array is only for dictionaries in which 'EvaluateConnection' is the 'Action' value.",
                             "properties": {
                                 "DomainAction": {
                                     "type": "string",
                                     "title": "Domain Action",
-                                    "description": "The DNS settings behavior for the specified domains. Allowed values:\n\n* 'NeverConnect': Don't use the DNS Settings for the specified domains.\n* 'ConnectIfNeeded': Allow using the DNS Settings for the specified domains.",
+                                    "description": "The DNS settings behavior for the specified domains. Allowed values:\n'NeverConnect': Don't use the DNS Settings for the specified domains.\n'ConnectIfNeeded': Allow using the DNS Settings for the specified domains.",
                                     "enum": [
                                         "NeverConnect",
                                         "ConnectIfNeeded"
@@ -126,7 +126,7 @@
                             "title": "DNS Domain Match Element"
                         },
                         "title": "DNS Domain Match",
-                        "description": "An array of domain names. This rule matches if any of the domain names in the specified list matches any domain in the device's search domains list.\n\nThe system supports a single wildcard ('*') prefix, but it's not required. For example, both '*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
+                        "description": "An array of domain names. This rule matches if any of the domain names in the specified list matches any domain in the device's search domains list.\nThe system supports a single wildcard ('*') prefix, but it's not required. For example, both '*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
                     },
                     "DNSServerAddressMatch": {
                         "type": "array",
@@ -135,7 +135,7 @@
                             "title": "DNS Server Address Match Element"
                         },
                         "title": "DNS Server Address Match",
-                        "description": "An array of IP addresses. This rule matches if any of the network's specified DNS servers match any entry in the array.\n\nThe system supports matching with a single wildcard. For example, '17.*' matches any DNS server in the 17.0.0.0/8 subnet."
+                        "description": "An array of IP addresses. This rule matches if any of the network's specified DNS servers match any entry in the array.\nThe system supports matching with a single wildcard. For example, '17.*' matches any DNS server in the 17.0.0.0/8 subnet."
                     },
                     "InterfaceTypeMatch": {
                         "type": "string",

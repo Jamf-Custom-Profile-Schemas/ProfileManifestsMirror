@@ -13,7 +13,7 @@
             "type": "boolean",
             "title": "Allow non-admin users to approve kernel extensions",
             "default": false,
-            "description": "If 'true', nonadministrative users can approve additional kernel extensions in the Security & Privacy preferences.\n\nAvailable in macOS 11 and later.",
+            "description": "If 'true', nonadministrative users can approve additional kernel extensions in the Security & Privacy preferences.\nAvailable in macOS 11 and later.",
             "property_order": 10
         },
         "AllowedTeamIdentifiers": {

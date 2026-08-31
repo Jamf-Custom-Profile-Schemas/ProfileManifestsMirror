@@ -11,12 +11,12 @@
                     "HTTP3RelayURL": {
                         "type": "string",
                         "title": "HTTP/3 Relay URL",
-                        "description": "The URL or URI template, as defined in RFC 9298, of a relay server that's reachable using HTTP/3 and supports proxying TCP and UDP using the CONNECT method.\n\nEach relay needs to include either 'HTTP2RelayURL' or 'HTTP3RelayURL', or it can include both."
+                        "description": "The URL or URI template, as defined in RFC 9298, of a relay server that's reachable using HTTP/3 and supports proxying TCP and UDP using the CONNECT method.\nEach relay needs to include either 'HTTP2RelayURL' or 'HTTP3RelayURL', or it can include both."
                     },
                     "HTTP2RelayURL": {
                         "type": "string",
                         "title": "HTTP/2 Relay URL",
-                        "description": "The URL or URI template, as defined in RFC 9298, of a relay server that's reachable using HTTP/2 and supports proxying TCP and UDP using the CONNECT method.\n\nEach relay needs to include either 'HTTP2RelayURL' or 'HTTP3RelayURL', or it can include both."
+                        "description": "The URL or URI template, as defined in RFC 9298, of a relay server that's reachable using HTTP/2 and supports proxying TCP and UDP using the CONNECT method.\nEach relay needs to include either 'HTTP2RelayURL' or 'HTTP3RelayURL', or it can include both."
                     },
                     "AdditionalHTTPHeaderFields": {
                         "type": "object",
@@ -42,7 +42,7 @@
                         "type": "array",
                         "items": {},
                         "title": "Raw Public Keys",
-                        "description": "An array of DER-encoded raw public keys that the system uses to authenticate the server during a TLS handshake. The server needs to use one of the keys in the handshake to authenticate.\n\nIf this array is empty, the system uses the default TLS trust evaluation."
+                        "description": "An array of DER-encoded raw public keys that the system uses to authenticate the server during a TLS handshake. The server needs to use one of the keys in the handshake to authenticate.\nIf this array is empty, the system uses the default TLS trust evaluation."
                     }
                 }
             },
@@ -57,7 +57,7 @@
                 "title": "Match Domains Element"
             },
             "title": "Match Domains",
-            "description": "A list of domain strings that the system uses to determine which connection to route through the servers in 'Relays'.\n\nAny connection that matches a domain in the list exactly or is a subdomain of the listed domain uses the relay servers, unless it matches a domain in 'ExcludedDomains'.\n\nIf this list and 'MatchFQDNs' are empty, the system routes traffic to all domains to the relay servers, except those that match an excluded domain or excluded FQDN.",
+            "description": "A list of domain strings that the system uses to determine which connection to route through the servers in 'Relays'.\nAny connection that matches a domain in the list exactly or is a subdomain of the listed domain uses the relay servers, unless it matches a domain in 'ExcludedDomains'.\nIf this list and 'MatchFQDNs' are empty, the system routes traffic to all domains to the relay servers, except those that match an excluded domain or excluded FQDN.",
             "property_order": 10
         },
         "ExcludedDomains": {

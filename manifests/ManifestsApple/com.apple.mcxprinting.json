@@ -18,7 +18,7 @@
         "DefaultPrinter": {
             "type": "object",
             "title": "Default Printer",
-            "description": "The default printer for the user. This information should match one of the printers in the Printer List.",
+            "description": "The default printer for the user.",
             "links": [
                 {
                     "rel": "More information",
@@ -29,7 +29,7 @@
                 "DisplayName": {
                     "type": "string",
                     "title": "Display Name",
-                    "description": "The printer display name. This should match one of the printers in the Printer List.",
+                    "description": "The display name.",
                     "links": [
                         {
                             "rel": "More information",
@@ -40,7 +40,7 @@
                 "DeviceURI": {
                     "type": "string",
                     "title": "Device URI",
-                    "description": "The device URI. This should match one of the printers in the Printer List.",
+                    "description": "The device URI.",
                     "links": [
                         {
                             "rel": "More information",
@@ -154,12 +154,12 @@
                 "Printer": {
                     "type": "object",
                     "title": "Printer",
-                    "description": "A printer item in the printer list",
+                    "description": "A dictionary of printer details.",
                     "properties": {
                         "DisplayName": {
                             "type": "string",
                             "title": "Display Name",
-                            "description": "The printer display name."
+                            "description": "The display name."
                         },
                         "DeviceURI": {
                             "type": "string",

@@ -136,7 +136,7 @@
                             "file-type": {
                                 "type": "integer",
                                 "title": "Type",
-                                "description": "The type of tile:\n\n- '0': URL\n- '1': File\n- '3': Directory",
+                                "description": "The type of tile:\n'0': URL\n'1': File\n'3': Directory",
                                 "enum": [
                                     0,
                                     1,
@@ -382,7 +382,7 @@
                             "file-type": {
                                 "type": "integer",
                                 "title": "Type",
-                                "description": "The type of tile:\n\n- '0': URL\n- '1': File\n- '3': Directory",
+                                "description": "The type of tile:\n'0': URL\n'1': File\n'3': Directory",
                                 "enum": [
                                     0,
                                     1,
@@ -697,7 +697,7 @@
                 }
             },
             "title": "Managed Client Special Folders",
-            "description": "One or more special folders that may be created at user login time and placed in the Dock.\n\n\n\nThe \"My Applications\" item is only used for Simple Finder environments. The \"Original Network Home\" item is only used for mobile account users.",
+            "description": "One or more special folders that may be created at user login time and placed in the Dock.\nThe \"My Applications\" item is only used for Simple Finder environments. The \"Original Network Home\" item is only used for mobile account users.",
             "property_order": 135
         },
         "wvous-tl-corner": {

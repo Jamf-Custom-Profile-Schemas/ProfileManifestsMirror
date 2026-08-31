@@ -32,8 +32,10 @@
                             "type": "integer",
                             "title": "Range Type",
                             "default": 0,
+                            "description": "The type of day range, which has the following possible values:\n'0': Weekday\n'1': Weekend",
                             "enum": [
-                                0
+                                0,
+                                1
                             ],
                             "options": {
                                 "enum_titles": [
@@ -56,19 +58,21 @@
                         "start": {
                             "type": "string",
                             "title": "Curfew Start Time",
-                            "description": "The start time for the curfew in 'hours:minutes:seconds' format."
+                            "description": "The curfew start time, in the format '%d:%d:%d'."
                         },
                         "end": {
                             "type": "string",
                             "title": "Curfew End Time",
-                            "description": "The end time for the curfew in 'hours:minutes:seconds' format."
+                            "description": "The curfew end time, in the format '%d:%d:%d'."
                         },
                         "rangeType": {
                             "type": "integer",
                             "title": "Range Type",
                             "default": 0,
+                            "description": "The type of day range, which has the following possible values:\n'0': Weekday\n'1': Weekend",
                             "enum": [
-                                0
+                                0,
+                                1
                             ],
                             "options": {
                                 "enum_titles": [
@@ -97,7 +101,9 @@
                             "type": "integer",
                             "title": "Range Type",
                             "default": 1,
+                            "description": "The type of day range, which has the following possible values:\n'0': Weekday\n'1': Weekend",
                             "enum": [
+                                0,
                                 1
                             ],
                             "options": {
@@ -121,18 +127,20 @@
                         "start": {
                             "type": "string",
                             "title": "Curfew Start Time",
-                            "description": "The start time for the curfew in 'hours:minutes:seconds' format."
+                            "description": "The curfew start time, in the format '%d:%d:%d'."
                         },
                         "end": {
                             "type": "string",
                             "title": "Curfew End Time",
-                            "description": "The end time for the curfew in 'hours:minutes:seconds' format."
+                            "description": "The curfew end time, in the format '%d:%d:%d'."
                         },
                         "rangeType": {
                             "type": "integer",
                             "title": "Range Type",
                             "default": 1,
+                            "description": "The type of day range, which has the following possible values:\n'0': Weekday\n'1': Weekend",
                             "enum": [
+                                0,
                                 1
                             ],
                             "options": {

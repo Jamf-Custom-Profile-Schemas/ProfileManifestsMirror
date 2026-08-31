@@ -13,24 +13,24 @@
                         "type": "boolean",
                         "title": "Enable Notifications",
                         "default": true,
-                        "description": "If 'true', enables notifications for this app.\n\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "description": "If 'true', enables notifications for this app.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
                     },
                     "BundleIdentifier": {
                         "type": "string",
                         "title": "App Bundle Identifier",
-                        "description": "The bundle identifier of the app to which to apply these notification settings.\n\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "description": "The bundle identifier of the app to which to apply these notification settings.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
                     },
                     "ShowInNotificationCenter": {
                         "type": "boolean",
                         "title": "Show in Notification Center",
                         "default": true,
-                        "description": "If 'true', enables notifications in the notification center for this app.\n\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "description": "If 'true', enables notifications in the notification center for this app.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
                     },
                     "ShowInLockScreen": {
                         "type": "boolean",
                         "title": "Show in Lock Screen",
                         "default": true,
-                        "description": "If 'true', enables notifications on the Lock Screen for this app.\n\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "description": "If 'true', enables notifications on the Lock Screen for this app.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
                     },
                     "SoundsEnabled": {
                         "type": "boolean",
@@ -42,13 +42,13 @@
                         "type": "boolean",
                         "title": "Badges Enabled",
                         "default": true,
-                        "description": "If 'true', enables badges for this app.\n\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "description": "If 'true', enables badges for this app.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
                     },
                     "AlertType": {
                         "type": "integer",
                         "title": "Alert Type",
                         "default": 1,
-                        "description": "The type of alert for notifications for this app:\n\n- '0': None\n- '1': Temporary Banner\n- '2': Persistent Banner\n\nAvailable in iOS 9.3 and later and macOS 10.15 and later.",
+                        "description": "The type of alert for notifications for this app:\n'0': None\n'1': Temporary Banner\n'2': Persistent Banner\nAvailable in iOS 9.3 and later and macOS 10.15 and later.",
                         "enum": [
                             0,
                             1,
@@ -66,7 +66,7 @@
                         "type": "boolean",
                         "title": "Critical Alert Enabled",
                         "default": false,
-                        "description": "If 'true', enables critical alerts that can ignore Do Not Disturb and ringer settings for this app.\n\nAvailable in iOS 12 and later and macOS 10.15 and later.",
+                        "description": "If 'true', enables critical alerts that can ignore Do Not Disturb and ringer settings for this app.\nAvailable in iOS 12 and later and macOS 10.15 and later.",
                         "links": [
                             {
                                 "rel": "More information",

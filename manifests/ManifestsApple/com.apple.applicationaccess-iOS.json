@@ -58,7 +58,7 @@
             "type": "boolean",
             "title": "Allow password AutoFill",
             "default": true,
-            "description": "If 'false', the system disables:\n\n- The AutoFill Passwords feature in iOS, with Keychain and third-party password managers\n- Prompting the user to use a saved password in Safari or in apps\n- Automatic strong passwords\n- Suggesting strong passwords to users\n\nHowever, if 'false', the system doesn't prevent AutoFill for contact info and credit cards in Safari.",
+            "description": "If 'false', the system disables:\nThe AutoFill Passwords feature in iOS, with Keychain and third-party password managers\nPrompting the user to use a saved password in Safari or in apps\nAutomatic strong passwords\nSuggesting strong passwords to users\nHowever, if 'false', the system doesn't prevent AutoFill for contact info and credit cards in Safari.",
             "property_order": 40
         },
         "allowAutoUnlock": {
@@ -286,14 +286,14 @@
             "type": "boolean",
             "title": "Allow App Installation",
             "default": true,
-            "description": "If 'false', the system disables the App Store and removes its icon from the Home Screen. Users are unable to install or update their apps. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, and so forth).\n\nIn iOS 10 and later, MDM commands can override this restriction. Requires a supervised device in iOS 13 and later.",
+            "description": "If 'false', the system disables the App Store and removes its icon from the Home Screen. Users are unable to install or update their apps. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, and so forth).\nIn iOS 10 and later, MDM commands can override this restriction. Requires a supervised device in iOS 13 and later.",
             "property_order": 195
         },
         "allowUIAppInstallation": {
             "type": "boolean",
             "title": "Allow App Installation from App Store",
             "default": true,
-            "description": "If 'false', the system disables the App Store and removes its icon from the Home Screen. However, users can continue to install or update their apps either locally (via Configurator, Xcode, and so forth), or using alternative marketplace apps.\n\nIn iOS 10 and later, MDM commands can override this restriction.",
+            "description": "If 'false', the system disables the App Store and removes its icon from the Home Screen. However, users can continue to install or update their apps either locally (via Configurator, Xcode, and so forth), or using alternative marketplace apps.\nIn iOS 10 and later, MDM commands can override this restriction.",
             "property_order": 200
         },
         "allowAutomaticAppDownloads": {
@@ -405,7 +405,7 @@
             "type": "boolean",
             "title": "Force Preserve ESIM on Erase",
             "default": false,
-            "description": "If 'true', the system preserves eSIM when it erases the device due to too many failed password attempts or the Erase All Content and Settings option in Settings > General > Reset.\n\nNote:\nThe system doesn't preserve eSIM if Find My initiates erasing the device.",
+            "description": "If 'true', the system preserves eSIM when it erases the device due to too many failed password attempts or the Erase All Content and Settings option in Settings > General > Reset.\nNote: The system doesn't preserve eSIM if Find My initiates erasing the device.",
             "property_order": 280
         },
         "allowUntrustedTLSPrompt": {
@@ -601,14 +601,14 @@
             "type": "boolean",
             "title": "Allow unmanaged apps to read managed contacts accounts",
             "default": false,
-            "description": "If 'true', the system allows unmanaged apps to read from managed contacts accounts. If 'allowOpenFromManagedToUnmanaged' is 'true', this restriction has no effect.\n\nImportant:\nUse MDM to install profiles that contain this restriction.",
+            "description": "If 'true', the system allows unmanaged apps to read from managed contacts accounts. If 'allowOpenFromManagedToUnmanaged' is 'true', this restriction has no effect.\nImportant: Use MDM to install profiles that contain this restriction.",
             "property_order": 420
         },
         "allowManagedToWriteUnmanagedContacts": {
             "type": "boolean",
             "title": "Allow managed apps to write to managed contacts accounts",
             "default": false,
-            "description": "If 'true', the system allows managed apps to write contacts to unmanaged accounts. If 'allowOpenFromManagedToUnmanaged' is 'true', this restriction has no effect.\n\nImportant:\nUse MDM to install profiles that contain this restriction.",
+            "description": "If 'true', the system allows managed apps to write contacts to unmanaged accounts. If 'allowOpenFromManagedToUnmanaged' is 'true', this restriction has no effect.\nImportant: Use MDM to install profiles that contain this restriction.",
             "property_order": 425
         },
         "requireManagedPasteboard": {
@@ -881,7 +881,7 @@
             "type": "boolean",
             "title": "Allow AutoFill in Safari",
             "default": true,
-            "description": "If 'false', the system disables Safari AutoFill for passwords, contact info, and credit cards, and also prevents using the Keychain for AutoFill. Requires a supervised device in iOS 13 and later.\n\nNote:\nThe system still allows third-party password managers, and apps can use AutoFill.",
+            "description": "If 'false', the system disables Safari AutoFill for passwords, contact info, and credit cards, and also prevents using the Keychain for AutoFill. Requires a supervised device in iOS 13 and later.\nNote: The system still allows third-party password managers, and apps can use AutoFill.",
             "property_order": 620
         },
         "safariForceFraudWarning": {
@@ -909,7 +909,7 @@
             "type": "number",
             "title": "Accept Cookies in Safari",
             "default": 2.0,
-            "description": "Defines the conditions under which the device accepts cookies. The user-facing settings changed in iOS 11, although the possible values remain the same. Support for this restriction on unsupervised devices is deprecated. Allowed values:\n\n- '0': Enables Prevent Cross-Site Tracking and Block All Cookies, and the user canʼt disable either setting.\n- '1' or '1.5': Enables Prevent Cross-Site Tracking, and the user canʼt disable it. Doesn't enable Block All Cookies, but the user can enable it.\n- '2': Enables Prevent Cross-Site Tracking, but doesn't enable Block All Cookies. The user can toggle either setting.",
+            "description": "Defines the conditions under which the device accepts cookies. The user-facing settings changed in iOS 11, although the possible values remain the same. Support for this restriction on unsupervised devices is deprecated. Allowed values:\n'0': Enables Prevent Cross-Site Tracking and Block All Cookies, and the user canʼt disable either setting.\n'1' or '1.5': Enables Prevent Cross-Site Tracking, and the user canʼt disable it. Doesn't enable Block All Cookies, but the user can enable it.\n'2': Enables Prevent Cross-Site Tracking, but doesn't enable Block All Cookies. The user can toggle either setting.",
             "enum": [
                 0.0,
                 1.0,
@@ -940,7 +940,7 @@
                 "title": "Bundle ID"
             },
             "title": "Blocked Apps",
-            "description": "If present, the system prevents showing or launching apps with bundle IDs in the array. Include the value 'com.apple.webapp' to restrict all webclips. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, and so forth).\n\nNote:\nDenying system apps may disable other functionality. For example, denying the App Store app may prevent users from accepting the terms and conditions for the user-based Volume Purchase Program (VPP).",
+            "description": "If present, the system prevents showing or launching apps with bundle IDs in the array. Include the value 'com.apple.webapp' to restrict all webclips. This applies to App Store apps, marketplace apps, and locally installed apps (using Configurator, Xcode, and so forth).\nNote: Denying system apps may disable other functionality. For example, denying the App Store app may prevent users from accepting the terms and conditions for the user-based Volume Purchase Program (VPP).",
             "property_order": 650
         },
         "blacklistedAppBundleIDs": {
@@ -1018,7 +1018,7 @@
             "type": "integer",
             "title": "Apps Ranking Number",
             "default": 1000,
-            "description": "The maximum level of app content allowed on the device. Starting with iOS 26.2, this rating may apply to certain system apps.\n\nAge bands and the number of discrete age values vary by region, but the values are consistent across regions. For example, in a region that defines rating level 14+, its value is guaranteed to be larger than 300 (12+) and smaller than 600 (17+). Also, the value of rating level 15+ is guaranteed to be larger than the assigned value of rating level 14+. For more information about age ratings, see [Age ratings values and definitions](https://developer.apple.com/help/app-store-connect/reference/age-ratings-values-and-definitions).\n\nBelow is the complete list of age rating values used across all App Store regions.\n- '1000': All\n- '621': 21+\n- '620': 20+\n- '619': 19+\n- '618': 18+\n- '600': 17+\n- '416': 16+\n- '415': 15+\n- '314': 14+\n- '313': 13+\n- '300': 12+\n- '211': 11+\n- '210': 10+\n- '200': 9+\n- '108': 8+\n- '107': 7+\n- '106': 6+\n- '105': 5+\n- '100': 4+\n- '3': 3+\n- '2': 2+\n- '1': 1+\n- '0': None\n\nThis restriction will require supervision in a future release.",
+            "description": "The maximum level of app content allowed on the device. Starting with iOS 26.2, this rating may apply to certain system apps.\nAge bands and the number of discrete age values vary by region, but the values are consistent across regions. For example, in a region that defines rating level 14+, its value is guaranteed to be larger than 300 (12+) and smaller than 600 (17+). Also, the value of rating level 15+ is guaranteed to be larger than the assigned value of rating level 14+. For more information about age ratings, see Age ratings values and definitions.\nBelow is the complete list of age rating values used across all App Store regions.\n'1000': All\n'621': 21+\n'620': 20+\n'619': 19+\n'618': 18+\n'600': 17+\n'416': 16+\n'415': 15+\n'314': 14+\n'313': 13+\n'300': 12+\n'211': 11+\n'210': 10+\n'200': 9+\n'108': 8+\n'107': 7+\n'106': 6+\n'105': 5+\n'100': 4+\n'3': 3+\n'2': 2+\n'1': 1+\n'0': None\nThis restriction will require supervision in a future release.",
             "enum": [
                 1000,
                 900,
@@ -1053,7 +1053,7 @@
             "type": "integer",
             "title": "Movies Ranking Number",
             "default": 1000,
-            "description": "The maximum level of movie content allowed on the device. Support for this restriction on unsupervised devices is deprecated.\n\nPossible values, with the U.S. description of the rating level:\n\n- '1000': All\n- '500': NC-17\n- '400': R\n- '300': PG-13\n- '200': PG\n- '100': G\n- '0': None",
+            "description": "The maximum level of movie content allowed on the device. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the U.S. description of the rating level:\n'1000': All\n'500': NC-17\n'400': R\n'300': PG-13\n'200': PG\n'100': G\n'0': None",
             "enum": [
                 1000,
                 900,
@@ -1088,7 +1088,7 @@
             "type": "integer",
             "title": "Allowed content ratings - TV Shows",
             "default": 1000,
-            "description": "The maximum level of TV content allowed on the device. Support for this restriction on unsupervised devices is deprecated.\n\nPossible values, with the U.S. description of the rating level:\n\n- '1000': All\n- '600': TV-MA\n- '500': TV-14\n- '400': TV-PG\n- '300': TV-G\n- '200': TV-Y7\n- '100': TV-Y\n- '0': None",
+            "description": "The maximum level of TV content allowed on the device. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the U.S. description of the rating level:\n'1000': All\n'600': TV-MA\n'500': TV-14\n'400': TV-PG\n'300': TV-G\n'200': TV-Y7\n'100': TV-Y\n'0': None",
             "enum": [
                 1000,
                 900,
@@ -1123,7 +1123,7 @@
             "type": "boolean",
             "title": "Allow Explicit Content",
             "default": true,
-            "description": "If 'false', the system hides explicit music or video content purchased from the iTunes Store. The system marks explicit content as such by content providers, such as record labels, when sold through the iTunes Store. Explicit content in the News and Podcast apps is also hidden.\n\nRequires a supervised device in iOS 13 and later. Support for this restriction on unsupervised devices is deprecated.",
+            "description": "If 'false', the system hides explicit music or video content purchased from the iTunes Store. The system marks explicit content as such by content providers, such as record labels, when sold through the iTunes Store. Explicit content in the News and Podcast apps is also hidden.\nRequires a supervised device in iOS 13 and later. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 695
         },
         "allowFilesUSBDriveAccess": {

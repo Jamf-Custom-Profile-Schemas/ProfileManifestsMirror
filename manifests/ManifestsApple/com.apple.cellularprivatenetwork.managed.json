@@ -53,12 +53,12 @@
         },
         "NetworkIdentifier": {
             "type": "string",
-            "description": "A string using the 3GPP \"Coordinated NID\" (option 1 or option 2) format (defined in 3GPP 31.102, Section 12.7.1). The device uses this value to match a SIM present on the device.\n\nAll combinations of 'NetworkIdentifier' and 'CsgNetworkIdentifier' must be unique across all profiles installed on the device.",
+            "description": "A string using the 3GPP \"Coordinated NID\" (option 1 or option 2) format (defined in 3GPP 31.102, Section 12.7.1). The device uses this value to match a SIM present on the device.\nAll combinations of 'NetworkIdentifier' and 'CsgNetworkIdentifier' must be unique across all profiles installed on the device.",
             "property_order": 30
         },
         "CsgNetworkIdentifier": {
             "type": "string",
-            "description": "A string using the 3GPP \"CSG_ID\" format (defined in 3GPP 23.003, Section 4.7). The device uses this value to match a SIM present on the device.\n\nAll combinations of 'NetworkIdentifier' and 'CsgNetworkIdentifier' must be unique across all profiles installed on the device.",
+            "description": "A string using the 3GPP \"CSG_ID\" format (defined in 3GPP 23.003, Section 4.7). The device uses this value to match a SIM present on the device.\nAll combinations of 'NetworkIdentifier' and 'CsgNetworkIdentifier' must be unique across all profiles installed on the device.",
             "property_order": 35
         }
     }

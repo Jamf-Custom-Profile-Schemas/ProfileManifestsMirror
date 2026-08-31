@@ -11,18 +11,17 @@
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -37,32 +36,33 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
+                                    "Allow",
+                                    "Deny"
                                 ],
                                 "options": {
                                     "enum_titles": [
-                                        "Deny",
-                                        "Allow"
+                                        "Allow (deprecated 26.2, removed 27.0)",
+                                        "Deny"
                                     ]
                                 }
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
@@ -73,18 +73,17 @@
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -99,37 +98,32 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "AEReceiverIdentifier": {
                                 "type": "string",
                                 "title": "AEReceiverIdentifier",
-                                "description": "The identifier of the process receiving an ApplEvent sent by the Identifier process."
+                                "description": "The identifier of the process receiving an AppleEvent sent by the Identifier process. This identifier is required for AppleEvents service; not valid for other services."
                             },
                             "AEReceiverIdentifierType": {
                                 "type": "string",
                                 "title": "AEReceiverIdentifierType",
-                                "description": "The type of AEReceiverIdentifier value.",
+                                "description": "The type of AEReceiverIdentifier value, either 'bundleID' or 'path'. This setting is required for AppleEvents service; not valid for other services.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -144,33 +138,33 @@
                             "AEReceiverCodeRequirement": {
                                 "type": "string",
                                 "title": "AEReceiverCodeRequirement",
-                                "description": "Code requirement for the receiving binary."
+                                "description": "The code requirement for the receiving binary. This code requirement is required for AppleEvents service; not valid for other services."
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "AppleEvents"
+                    "title": "AppleEvents",
+                    "description": "Specifies the policies for the app sending restricted AppleEvents to another process."
                 },
                 "BluetoothAlways": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -185,16 +179,17 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
                             "Authorization": {
                                 "type": "string",
-                                "description": "The 'Authorization' key is an optional replacement for the 'Allowed' key. Every payload must specify either 'Authorization' or 'Allowed', but not both.\n'Allow': Equivalent to a 'true' value for the 'Allowed' key.\n'Deny': Equivalent to a 'false' value for the 'Allowed' key.",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
                                     "Allow",
                                     "Deny"
@@ -203,7 +198,7 @@
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
@@ -214,18 +209,17 @@
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -240,53 +234,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "Calendar"
+                    "title": "Calendar",
+                    "description": "Specifies the policies for calendar information managed by the Calendar.app."
                 },
                 "Camera": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -301,51 +290,47 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny"
-                                    ]
-                                }
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "Camera"
+                    "title": "Camera",
+                    "description": "A system camera. Access to the camera can't be given in a profile; it can only be denied."
                 },
                 "AddressBook": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -360,53 +345,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "Contacts"
+                    "title": "Contacts",
+                    "description": "Specifies the policies for contact information managed by the Contacts.app."
                 },
                 "FileProviderPresence": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -421,52 +401,47 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "description": "Allows a File Provider application to know when the user is using files managed by the File Provider."
                 },
                 "ListenEvent": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -481,50 +456,52 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Deny': Access is denied.\n'AllowStandardUserToSetSystemService': Allows a standard (non-admin) user to configure the permissions for the specified app in the Privacy preferences for services that otherwise require admin authorization.",
                                 "enum": [
-                                    false
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny"
-                                    ]
-                                }
+                                    "Deny",
+                                    "AllowStandardUserToSetSystemService"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "description": "Allows the application to use CoreGraphics and HID APIs to listen to (receive) CGEvents and HID events from all processes. Access to these events can't be given in a profile; it can only be denied.",
+                    "links": [
+                        {
+                            "rel": "More information",
+                            "href": "https://developer.apple.com/documentation/devicemanagement/privacypreferencespolicycontrol/services-data.dictionary/identity"
+                        }
+                    ]
                 },
                 "MediaLibrary": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -539,52 +516,47 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "description": "Allows the application to access Apple Music, music and video activity, and the media library."
                 },
                 "Microphone": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -599,51 +571,47 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny"
-                                    ]
-                                }
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "Microphone"
+                    "title": "Microphone",
+                    "description": "A system microphone. Access to the microphone can't be given in a profile; it can only be denied."
                 },
                 "Photos": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -658,53 +626,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "Photos"
+                    "title": "Photos",
+                    "description": "The pictures managed by the Photos app in '~/Pictures/.photoslibrary'."
                 },
                 "PostEvent": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -719,32 +682,27 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
@@ -755,18 +713,17 @@
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -781,53 +738,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "Reminders"
+                    "title": "Reminders",
+                    "description": "Specifies the policies for reminders information managed by the Reminders app."
                 },
                 "SystemPolicyAllFiles": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -842,53 +794,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "SystemPolicyAllFiles"
+                    "title": "SystemPolicyAllFiles",
+                    "description": "Allows the application access to all protected files, including system administration files."
                 },
                 "ScreenCapture": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -903,50 +850,47 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Deny': Access is denied.\n'AllowStandardUserToSetSystemService': Allows a standard (non-admin) user to configure the permissions for the specified app in the Privacy preferences for services that otherwise require admin authorization.",
                                 "enum": [
-                                    false
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny"
-                                    ]
-                                }
+                                    "Deny",
+                                    "AllowStandardUserToSetSystemService"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "title": "Screen & System Audio Recording",
+                    "description": "Allows the application to capture (read) the contents of the system display. Access to the contents can't be given in a profile; it can only be denied."
                 },
                 "SpeechRecognition": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -961,52 +905,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "title": "Speech Recognition",
+                    "description": "Allows the application to use the system Speech Recognition facility and to send speech data to Apple."
                 },
                 "SystemPolicyDesktopFolder": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -1021,52 +961,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "title": "Files and Folders: Desktop Folder",
+                    "description": "Allows the application to access files in the user's Desktop folder."
                 },
                 "SystemPolicyDocumentsFolder": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -1081,52 +1017,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "title": "Files and Folders: Documents Folder",
+                    "description": "Allows the application to access files in the user's Documents folder."
                 },
                 "SystemPolicyDownloadsFolder": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -1141,52 +1073,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "title": "Files and Folders: Downloads Folder",
+                    "description": "Allows the application to access files in the user's Downloads folder."
                 },
                 "SystemPolicyNetworkVolumes": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -1201,52 +1129,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "title": "Files and Folders: Network Volumes",
+                    "description": "Allows the application to access files on network volumes."
                 },
                 "SystemPolicyRemovableVolumes": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -1261,52 +1185,48 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
-                    }
+                    },
+                    "title": "Files and Folders: Removable Volumes",
+                    "description": "Allows the application to access files on removable volumes."
                 },
                 "SystemPolicySysAdminFiles": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -1321,45 +1241,42 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "System Policy Sys Admin Files"
+                    "title": "System Policy Sys Admin Files",
+                    "description": "Allows the application access to some files used in system administration."
                 },
                 "SystemPolicyAppData": {
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
@@ -1371,65 +1288,45 @@
                             },
                             "CodeRequirement": {
                                 "type": "string",
-                                "description": "Obtained via the command ''codesign -display -r -''."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
+                                "default": false,
                                 "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
-                            },
-                            "Allowed": {
-                                "type": "boolean",
-                                "description": "If 'true', access is granted; otherwise, the process doesn't have access. The user isn't prompted and can't change this value."
                             },
                             "Authorization": {
                                 "type": "string",
-                                "description": "The 'Authorization' key is an optional replacement for the 'Allowed' key. Every payload must specify either 'Authorization' or 'Allowed', but not both.\n'Allow': Equivalent to a 'true' value for the 'Allowed' key.\n'Deny': Equivalent to a 'false' value for the 'Allowed' key.\n'AllowStandardUserToSetSystemService:' allows a standard (non-admin) user to configure the permissions for the specified app in the Privacy preferences for services that otherwise require admin authorization. 'AllowStandardUserToSetSystemService' is only valid for the 'ListenEvent' and 'ScreenCapture' services.\nAvailable in macOS 11 and later.",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
                                     "Allow",
-                                    "Deny",
-                                    "AllowStandardUserToSetSystemService"
+                                    "Deny"
                                 ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "description": "Not used."
-                            },
-                            "AEReceiverIdentifier": {
-                                "type": "string",
-                                "description": "The identifier of the process receiving an AppleEvent sent by the Identifier process. This identifier is required for AppleEvents service; not valid for other services."
-                            },
-                            "AEReceiverIdentifierType": {
-                                "type": "string",
-                                "description": "The type of AEReceiverIdentifier value, either 'bundleID' or 'path'. This setting is required for AppleEvents service; not valid for other services.",
-                                "enum": [
-                                    "bundleID",
-                                    "path"
-                                ]
-                            },
-                            "AEReceiverCodeRequirement": {
-                                "type": "string",
-                                "description": "The code requirement for the receiving binary. This code requirement is required for AppleEvents service; not valid for other services."
                             }
                         }
                     },
-                    "description": "Allows the application to access data of other apps."
+                    "title": "System Policy App Data",
+                    "description": "Specifies the policies for the app to access the data of other apps."
                 },
                 "SystemPolicyAppBundles": {
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "title": "Services",
-                        "description": "Keys are limited to the privacy service names listed below. Each key is an array of dictionaries describing the app or process to which access is given. In the case of conflicting specifications, the most restrictive setting (deny) will be used.",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
                         "properties": {
                             "Identifier": {
                                 "type": "string",
                                 "title": "Identifier",
-                                "description": "The bundle ID or installation path of the binary."
+                                "description": "The bundle ID or installation path of the binary.\nNote: This value is case-sensitive."
                             },
                             "IdentifierType": {
                                 "type": "string",
                                 "title": "Identifier Type",
-                                "description": "The type of Identifier value.",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
                                 "enum": [
                                     "bundleID",
                                     "path"
@@ -1444,36 +1341,87 @@
                             "CodeRequirement": {
                                 "type": "string",
                                 "title": "Code Requirement",
-                                "description": "The designated requirement describing the code signature of this executable."
+                                "description": "Obtained via the command 'codesign -display -r -'."
                             },
                             "StaticCode": {
                                 "type": "boolean",
                                 "title": "StaticCode",
-                                "description": "If set to true, statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
                             },
-                            "Allowed": {
-                                "type": "boolean",
-                                "title": "Allowed",
-                                "description": "If set to true, access is granted. Otherwise the process does not have access. The user is not prompted and cannot change this value.",
+                            "Authorization": {
+                                "type": "string",
+                                "title": "Authorization",
+                                "description": "The 'Authorization' has one of the following possible values:\n'Allow': Access is granted.\n'Deny': Access is denied.",
                                 "enum": [
-                                    false,
-                                    true
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Deny",
-                                        "Allow"
-                                    ]
-                                }
+                                    "Allow",
+                                    "Deny"
+                                ]
                             },
                             "Comment": {
                                 "type": "string",
                                 "title": "Comment",
-                                "description": "Not Used"
+                                "description": "Not used."
                             }
                         }
                     },
-                    "title": "App Management"
+                    "title": "App Management",
+                    "description": "Allows the application to update or delete other apps. Available in macOS 13 and later."
+                },
+                "RemoteDesktop": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "description": "A dictionary listing apps and the privacy policy to apply to them.",
+                        "properties": {
+                            "Identifier": {
+                                "type": "string",
+                                "title": "Identifier",
+                                "description": "The bundle ID or installation path of the binary."
+                            },
+                            "IdentifierType": {
+                                "type": "string",
+                                "title": "Identifier Type",
+                                "description": "The type of identifier value. Application bundles must be identified by bundle ID. Nonbundled binaries must be identified by installation path. Helper tools embedded within an application bundle automatically inherit the permissions of their enclosing app bundle.",
+                                "enum": [
+                                    "bundleID",
+                                    "path"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Bundle ID",
+                                        "Path"
+                                    ]
+                                }
+                            },
+                            "CodeRequirement": {
+                                "type": "string",
+                                "title": "Code Requirement",
+                                "description": "Obtained via the command 'codesign -display -r -'."
+                            },
+                            "StaticCode": {
+                                "type": "boolean",
+                                "title": "StaticCode",
+                                "default": false,
+                                "description": "If 'true', statically validate the code requirement. Used only if the process invalidates its dynamic code signature."
+                            },
+                            "Authorization": {
+                                "type": "string",
+                                "description": "The 'Authorization' key is an optional replacement for the 'Allowed' key, which has one of the following possible values:\n'Allow': Equivalent to a 'true' value for the 'Allowed' key\n'Deny': Equivalent to a 'false' value for the 'Allowed' key\nNote: Every payload needs to include either 'Authorization' or 'Allowed', but not both.\nAvailable in macOS 14.7 and later.",
+                                "enum": [
+                                    "Allow",
+                                    "Deny"
+                                ]
+                            },
+                            "Comment": {
+                                "type": "string",
+                                "title": "Comment",
+                                "description": "Not used."
+                            }
+                        }
+                    },
+                    "title": "Remote Desktop",
+                    "description": "Allows the application to control the computer remotely. Available in macOS 14.7 and later."
                 }
             },
             "property_order": 5

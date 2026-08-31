@@ -27,7 +27,7 @@
         },
         "IncomingMailServerIMAPPathPrefix": {
             "type": "string",
-            "title": "Path Prefix",
+            "title": "Incoming Mail Server IMAP Path Prefix",
             "description": "The path prefix for the IMAP mail server.",
             "property_order": 15
         },
@@ -51,14 +51,14 @@
         },
         "PreventMove": {
             "type": "boolean",
-            "title": "Allow user to move messages from this account",
+            "title": "Disallow user to move messages from this account",
             "default": false,
             "description": "If 'true', the system prevents moving messages out of this email account and into another account. It also prevents forwarding or replying from an account other than the recipient of the message.",
             "property_order": 35
         },
         "disableMailRecentsSyncing": {
             "type": "boolean",
-            "title": "Allow recent addresses to be synced",
+            "title": "Exclude account from recent addresses syncing",
             "default": false,
             "description": "If 'true', the system excludes this account from Recent Addresses syncing.",
             "property_order": 40

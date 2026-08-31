@@ -89,7 +89,7 @@
                     }
                 }
             },
-            "description": "An array of sites that defines an allow list. If specified, this defines additional allowed sites besides those in the automated allow list and deny list, including disallowed adult sites.\n\nThis key is required if 'allowListEnabled' is 'true'.",
+            "description": "An array of sites that defines an allow list. If specified, this defines additional allowed sites besides those in the automated allow list and deny list, including disallowed adult sites.\nThis key is required if 'allowListEnabled' is 'true'.",
             "property_order": 40
         },
         "filterAllowList": {

@@ -6,7 +6,7 @@
             "type": "boolean",
             "title": "Automatically activate content caching",
             "default": false,
-            "description": "If 'true', the system automatically activates the content cache when possible and prevents disabling it. If 'allowContentCaching' is 'false', 'AutoActivation' is also 'false'.\n\nRemoving a profile that set 'AutoActivation' to 'true' doesn't deactivate the Content Cache.",
+            "description": "If 'true', the system automatically activates the content cache when possible and prevents disabling it. If 'allowContentCaching' is 'false', 'AutoActivation' is also 'false'.\nRemoving a profile that set 'AutoActivation' to 'true' doesn't deactivate the Content Cache.",
             "property_order": 5
         },
         "CacheLimit": {
@@ -20,7 +20,7 @@
             "type": "boolean",
             "title": "Allow Personal iCloud Data Caching",
             "default": true,
-            "description": "If 'true', the system caches the user's iCloud data. Changes to this value don't have an immediate effect. Clients may take some time, such as hours or days, to react to changes.\n\nNote:\nAt least one of the 'AllowPersonalCaching' or 'AllowSharedCaching' keys need to be 'true'.",
+            "description": "If 'true', the system caches the user's iCloud data. Changes to this value don't have an immediate effect. Clients may take some time, such as hours or days, to react to changes.\nNote: At least one of the 'AllowPersonalCaching' or 'AllowSharedCaching' keys need to be 'true'.",
             "property_order": 15
         },
         "PersonalCacheLimit": {
@@ -38,14 +38,14 @@
             "type": "boolean",
             "title": "Allow non-iCloud Data Caching",
             "default": true,
-            "description": "If 'true', the system caches non-iCloud content, such as apps and software updates. Changes to this value don't have an immediate effect. Clients may take some time, such as hours or days, to react to changes.\n\nNote:\nAt least one of the 'AllowPersonalCaching' or 'AllowSharedCaching' keys need to be 'true'.",
+            "description": "If 'true', the system caches non-iCloud content, such as apps and software updates. Changes to this value don't have an immediate effect. Clients may take some time, such as hours or days, to react to changes.\nNote: At least one of the 'AllowPersonalCaching' or 'AllowSharedCaching' keys need to be 'true'.",
             "property_order": 25
         },
         "AutoEnableTetheredCaching": {
             "type": "boolean",
             "title": "Automatically activate Internet connection sharing",
             "default": false,
-            "description": "If 'true', the system automatically enables Internet connection sharing when possible and prevent disabling Internet connection sharing. 'DenyTetheredCaching' overrides 'AutoEnableTetheredCaching'. Tethered caching requires Content Caching.\n\nAvailable in macOS 10.15.4 and later.",
+            "description": "If 'true', the system automatically enables Internet connection sharing when possible and prevent disabling Internet connection sharing. 'DenyTetheredCaching' overrides 'AutoEnableTetheredCaching'. Tethered caching requires Content Caching.\nAvailable in macOS 10.15.4 and later.",
             "property_order": 30
         },
         "Port": {
@@ -59,7 +59,7 @@
             "type": "string",
             "title": "Data Path",
             "default": "/Library/Application Support/Apple/AssetCache/Data",
-            "description": "The path to the directory used to store cached content. Changing this setting manually doesn't automatically move cached content from the old location to the new one. To move content automatically, use the Sharing preference's Content Caching pane. The value must be (or end with) '/Library/Application Support/Apple/AssetCache/Data'.\n\nThe system creates a directory and its intermediates for the given data path if it doesn't already exist. The directory is owned by '_assetcache:_assetcache' and has mode 0750. Its immediate parent directory ('.../Library/Application Support/Apple/AssetCache') is owned by '_assetcache:_assetcache' and has mode '0755'.",
+            "description": "The path to the directory used to store cached content. Changing this setting manually doesn't automatically move cached content from the old location to the new one. To move content automatically, use the Sharing preference's Content Caching pane. The value must be (or end with) '/Library/Application Support/Apple/AssetCache/Data'.\nThe system creates a directory and its intermediates for the given data path if it doesn't already exist. The directory is owned by '_assetcache:_assetcache' and has mode 0750. Its immediate parent directory ('.../Library/Application Support/Apple/AssetCache') is owned by '_assetcache:_assetcache' and has mode '0755'.",
             "property_order": 40
         },
         "DenyTetheredCaching": {
@@ -91,7 +91,7 @@
             "type": "string",
             "title": "Parent Selection Policy",
             "default": "round-robin",
-            "description": "The policy to implement when choosing among more than one configured parent content cache. With every policy, the system skips parent caches that are temporarily unavailable. Allowed values:\n\n- 'first-available': Always use the first available parent in the Parents list. Use this policy to designate permanent primary, secondary, and subsequent parents.\n- 'url-path-hash': Hash the path part of the requested URL so that the same parent is always used for the same URL. This is useful for maximizing the size of the combined caches of     the parents.\n- 'random': Choose a parent at random. Use this policy for load balancing.\n- 'round-robin': Rotate through the parents in order. Use this policy for load balancing.\n- 'sticky-available': Use the first available parent in the Parents list until it becomes unavailable, then advance to the next one. Use this policy for designating floating primary, secondary, and subsequent parents.",
+            "description": "The policy to implement when choosing among more than one configured parent content cache. With every policy, the system skips parent caches that are temporarily unavailable. Allowed values:\n'first-available': Always use the first available parent in the Parents list. Use this policy to designate permanent primary, secondary, and subsequent parents.\n'url-path-hash': Hash the path part of the requested URL so that the same parent is always used for the same URL. This is useful for maximizing the size of the combined caches of     the parents.\n'random': Choose a parent at random. Use this policy for load balancing.\n'round-robin': Rotate through the parents in order. Use this policy for load balancing.\n'sticky-available': Use the first available parent in the Parents list until it becomes unavailable, then advance to the next one. Use this policy for designating floating primary, secondary, and subsequent parents.",
             "enum": [
                 "first-available",
                 "url-path-hash",

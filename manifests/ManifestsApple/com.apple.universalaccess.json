@@ -53,7 +53,7 @@
             "type": "boolean",
             "title": "Use Grayscale",
             "default": false,
-            "description": "If 'true', enables \"Use grayscale\" in the Display options.\n\nThis option is deprecated in macOS 11.",
+            "description": "If 'true', enables \"Use grayscale\" in the Display options.\nThis option is deprecated in macOS 11.",
             "property_order": 40
         },
         "contrast": {
@@ -64,10 +64,10 @@
             "property_order": 45
         },
         "mouseDriverCursorSize": {
-            "type": "number",
+            "type": "integer",
             "title": "Cursor Size",
-            "default": 1.0,
-            "description": "The size of the mouse cursor in a decimal value between 1 and 4, where 1 is normal and 4 is the maximum",
+            "default": 1,
+            "description": "The size of the cursor.",
             "property_order": 50
         },
         "voiceOverOnOffKey": {
@@ -141,10 +141,10 @@
             "property_order": 100
         },
         "mouseDriverInitialDelay": {
-            "type": "number",
+            "type": "integer",
             "title": "Initial delay",
-            "default": 1.0,
-            "description": "The initial delay before moving the mouse cursor with Mouse Keys in a decimal value representing seconds",
+            "default": 1,
+            "description": "The initial delay before moving the mouse with Mouse Keys.",
             "property_order": 105
         },
         "mouseDriverMaxSpeed": {

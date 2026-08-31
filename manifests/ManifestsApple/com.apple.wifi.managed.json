@@ -26,7 +26,7 @@
             "type": "boolean",
             "title": "Auto Join",
             "default": true,
-            "description": "If 'true', the device joins the network automatically.\n\nIf 'false', the user must tap the network name to join it.",
+            "description": "If 'true', the device joins the network automatically.\nIf 'false', the user must tap the network name to join it.",
             "property_order": 20
         },
         "CaptiveBypass": {
@@ -40,7 +40,7 @@
             "type": "boolean",
             "title": "Disable MAC address randomization during association",
             "default": false,
-            "description": "If 'true,' disables MAC address randomization for a Wi-Fi network while associated with that network. This feature also shows a privacy warning in Settings indicating that the network has reduced privacy protections.\n\nIf 'false', then the system enables MAC address randomization on iOS, watchOS, and visionOS.\n\nThis value is only locked when MDM installs the profile. If the profile is manually installed, the system sets the value but the user can change it.",
+            "description": "If 'true,' disables MAC address randomization for a Wi-Fi network while associated with that network. This feature also shows a privacy warning in Settings indicating that the network has reduced privacy protections.\nIf 'false', then the system enables MAC address randomization on iOS, watchOS, and visionOS.\nThis value is only locked when MDM installs the profile. If the profile is manually installed, the system sets the value but the user can change it.",
             "property_order": 30
         },
         "EnableIPv6": {
@@ -103,7 +103,7 @@
             "type": "string",
             "title": "Encryption Type",
             "default": "Any",
-            "description": "The encryption type for the network.\n\nIf set to anything except 'None', the payload may contain the following three keys: 'Password', 'PayloadCertificateUUID', or 'EAPClientConfiguration'.\n\nAs of iOS 16, tvOS 16, watchOS 9, and macOS 13:\n\n- 'WPA' allows joining WPA or WPA2 networks\n- 'WPA2' allows joining WPA2 or WPA3 networks\n- 'WPA3' allows joining WPA3 networks only\n- 'Any' allows joining WPA, WPA2, WPA3, and WEP networks\n\nPrior to iOS 16, tvOS 16, and watchOS 9, specifying 'WPA', 'WPA2', and 'WPA3' were equivalent and would allow joining any WPA network.\n\nPrior to macOS 13, the encryption type, if specified explicitly, needed to match the encryption type of the network exactly.",
+            "description": "The encryption type for the network.\nIf set to anything except 'None', the payload may contain the following three keys: 'Password', 'PayloadCertificateUUID', or 'EAPClientConfiguration'.\nAs of iOS 16, tvOS 16, watchOS 9, and macOS 13:\n'WPA' allows joining WPA or WPA2 networks\n'WPA2' allows joining WPA2 or WPA3 networks\n'WPA3' allows joining WPA3 networks only\n'Any' allows joining WPA, WPA2, WPA3, and WEP networks\nPrior to iOS 16, tvOS 16, and watchOS 9, specifying 'WPA', 'WPA2', and 'WPA3' were equivalent and would allow joining any WPA network.\nPrior to macOS 13, the encryption type, if specified explicitly, needed to match the encryption type of the network exactly.",
             "enum": [
                 "WEP",
                 "WPA",
@@ -238,7 +238,7 @@
                         }
                     },
                     "title": "Accept EAP Types",
-                    "description": "The EAP types that the system accepts. Allowed values:\n\n- '13': EAP-TLS\n- '17': LEAP\n- '18': EAP-SIM\n- '21': EAP-TTLS\n- '23': EAP-AKA\n- '25': PEAPv0/v1\n- '43': EAP-FAST\n\nFor EAP-TLS authentication without a network payload, install the necessary identity certificates and have your users select EAP-TLS mode in the 802.1X credentials dialog that appears when they connect to the network. For other EAP types, a network payload is necessary and must specify the correct settings for the network."
+                    "description": "The EAP types that the system accepts. Allowed values:\n'13': EAP-TLS\n'17': LEAP\n'18': EAP-SIM\n'21': EAP-TTLS\n'23': EAP-AKA\n'25': PEAPv0/v1\n'43': EAP-FAST\nFor EAP-TLS authentication without a network payload, install the necessary identity certificates and have your users select EAP-TLS mode in the 802.1X credentials dialog that appears when they connect to the network. For other EAP types, a network payload is necessary and must specify the correct settings for the network."
                 },
                 "UserName": {
                     "type": "string",
@@ -275,13 +275,13 @@
                         "description": "An item in the TLS Trusted Server Names array representing a Common Name of a server certificate."
                     },
                     "title": "TLS Trusted Server Names",
-                    "description": "The list of accepted server certificate common names. If a server presents a certificate that isn't in this list, the system doesn't trust it.\nIf you specify this property, the system disables dynamic trust (the certificate dialog) unless you also specify 'TLSAllowTrustExceptions' with the value 'true'.\nIf necessary, use wildcards to specify the name, such as 'wpa.*.example.com'."
+                    "description": "The list of accepted server certificate common names. If a server presents a certificate that isn't in this list, the system doesn't trust it. If you specify this property, the system disables dynamic trust (the certificate dialog) unless you also specify 'TLSAllowTrustExceptions' with the value 'true'. If necessary, use wildcards to specify the name, such as 'wpa.*.example.com'."
                 },
                 "TLSAllowTrustExceptions": {
                     "type": "boolean",
                     "title": "Allow Trust Exceptions",
                     "default": true,
-                    "description": "If 'true', allows a dynamic trust decision by the user. The dynamic trust is the certificate dialogue that appears when the system doesn't trust a certificate.\nIf 'false', the authentication fails if the system doesn't already trust the certificate.\nAs of iOS 8, Apple no longer supports this key."
+                    "description": "If 'true', allows a dynamic trust decision by the user. The dynamic trust is the certificate dialogue that appears when the system doesn't trust a certificate. If 'false', the authentication fails if the system doesn't already trust the certificate. As of iOS 8, Apple no longer supports this key."
                 },
                 "TTLSInnerAuthentication": {
                     "type": "string",
@@ -299,7 +299,7 @@
                 "OuterIdentity": {
                     "type": "string",
                     "title": "Outer Identity",
-                    "description": "A name that hides the user's true name. The user's actual name appears only inside the encrypted tunnel. For example, you might set this to anonymous or anon, or anon@mycompany.net. It can increase security because an attacker can't see the authenticating user's name in the clear.\nThis key is only relevant to TTLS, PEAP, and EAP-FAST.\nThis field is required if 'TLSMinimumVersion' is '1.3'."
+                    "description": "A name that hides the user's true name. The user's actual name appears only inside the encrypted tunnel. For example, you might set this to anonymous or anon, or anon@mycompany.net. It can increase security because an attacker can't see the authenticating user's name in the clear. This key is only relevant to TTLS, PEAP, and EAP-FAST. This field is required if 'TLSMinimumVersion' is '1.3'."
                 },
                 "TLSMinimumVersion": {
                     "type": "string",
@@ -335,7 +335,7 @@
                     "type": "boolean",
                     "title": "Provision PAC",
                     "default": false,
-                    "description": "If 'true', allows PAC provisioning.\n\nThis value is only applicable if 'EAPFASTUsePAC' is 'true'. This value must be 'true' for EAP-FAST PAC usage to succeed because there's no other way to provision a PAC."
+                    "description": "If 'true', allows PAC provisioning.\nThis value is only applicable if 'EAPFASTUsePAC' is 'true'. This value must be 'true' for EAP-FAST PAC usage to succeed because there's no other way to provision a PAC."
                 },
                 "EAPFASTProvisionPACAnonymously": {
                     "type": "boolean",
@@ -347,7 +347,7 @@
                     "type": "integer",
                     "title": "Allow Two RANDs",
                     "default": 3,
-                    "description": "The minimum number of RAND values to accept from the server.\nFor use with EAP-SIM only.",
+                    "description": "The minimum number of RAND values to accept from the server. For use with EAP-SIM only.",
                     "enum": [
                         2,
                         3
@@ -356,7 +356,7 @@
                 "SystemModeCredentialsSource": {
                     "type": "string",
                     "title": "System Profile Credentials Source",
-                    "description": "Set this string to 'ActiveDirectory' to use the AD computer name and password credentials.\nIf using this property, you can't use 'SystemModeUseOpenDirectoryCredentials'.",
+                    "description": "Set this string to 'ActiveDirectory' to use the AD computer name and password credentials. If using this property, you can't use 'SystemModeUseOpenDirectoryCredentials'.",
                     "enum": [
                         "ActiveDirectory"
                     ],
@@ -370,7 +370,7 @@
                     "type": "boolean",
                     "title": "Use OpenDirectory System Profile Credentials",
                     "default": false,
-                    "description": "If 'true', the system mode connection tries to use the Open Directory credentials.\nIf using this property, you can't use 'SystemModeCredentialsSource'."
+                    "description": "If 'true', the system mode connection tries to use the Open Directory credentials. If using this property, you can't use 'SystemModeCredentialsSource'."
                 },
                 "TLSTrustedCertificates": {
                     "type": "array",
@@ -384,7 +384,7 @@
                 "TLSCertificateIsRequired": {
                     "type": "boolean",
                     "default": false,
-                    "description": "If 'true', allows for two-factor authentication for EAP-TTLS, PEAP, or EAP-FAST. If 'false', allows for zero-factor authentication for EAP-TLS.\nIf you don't specify a value, the default is 'true' for EAP-TLS, and 'false' for other EAP types."
+                    "description": "If 'true', allows for two-factor authentication for EAP-TTLS, PEAP, or EAP-FAST. If 'false', allows for zero-factor authentication for EAP-TLS. If you don't specify a value, the default is 'true' for EAP-TLS, and 'false' for other EAP types."
                 }
             },
             "property_order": 125
@@ -398,7 +398,7 @@
                     "type": "boolean",
                     "title": "Allow QoS marking",
                     "default": true,
-                    "description": "If 'true', disables L3 marking and only uses L2 marking for traffic that goes to the Wi-Fi network.\n\n\n\nIf 'false', the system behaves as if Wi-Fi doesn't have an association with a Cisco QoS fast lane network."
+                    "description": "If 'true', disables L3 marking and only uses L2 marking for traffic that goes to the Wi-Fi network.\nIf 'false', the system behaves as if Wi-Fi doesn't have an association with a Cisco QoS fast lane network."
                 },
                 "QoSMarkingAppleAudioVideoCalls": {
                     "type": "boolean",

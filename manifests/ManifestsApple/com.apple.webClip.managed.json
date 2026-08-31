@@ -12,6 +12,7 @@
             "type": "string",
             "title": "URL",
             "description": "The URL of the web clip.",
+            "pattern": "^https?://.+$",
             "property_order": 10
         },
         "IsRemovable": {

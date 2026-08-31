@@ -48,6 +48,7 @@
                                 "disabled": {
                                     "type": "boolean",
                                     "title": "Disabled",
+                                    "default": false,
                                     "description": "If 'true', this app isn't added to the allow list."
                                 }
                             }

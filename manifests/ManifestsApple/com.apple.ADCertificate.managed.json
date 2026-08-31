@@ -17,14 +17,14 @@
         "CertificateAuthority": {
             "type": "string",
             "title": "Certificate Authority",
-            "description": "The name of the certificate authority (CA), which is determined from the common name (CN) of the Active Directory entry. Available in macOS 10.8 and later. Valid values:\n\n- CN=<your CA Name>\n- CN='Certification Authorities'\n- CN='Public Key Services'\n- CN='Services'\n- CN='Configuration'\n- CN=<your base Domain Name>",
+            "description": "The name of the certificate authority (CA), which is determined from the common name (CN) of the Active Directory entry. Available in macOS 10.8 and later. Valid values:\nCN=<your CA Name>\nCN='Certification Authorities'\nCN='Public Key Services'\nCN='Services'\nCN='Configuration'\nCN=<your base Domain Name>",
             "property_order": 15
         },
         "CertTemplate": {
             "type": "string",
             "title": "Certificate Template",
             "default": "User",
-            "description": "The certificate template for your environment. The default user certificate value is \\'User\\'. The default computer certificate value is \\'Machine\\'.",
+            "description": "The certificate template for your environment. The default user certificate value is `User`. The default computer certificate value is `Machine`.",
             "property_order": 20
         },
         "CertificateAcquisitionMechanism": {

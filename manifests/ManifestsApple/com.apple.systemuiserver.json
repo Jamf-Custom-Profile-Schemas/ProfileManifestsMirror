@@ -12,7 +12,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -31,14 +31,14 @@
                         }
                     },
                     "title": "External Disk",
-                    "description": "A string or an array of media action strings. Internally installed SD cards and USB flash drives are included in the hard disk-external category.\n\nThis key is the default for media types that don't fall into other categories."
+                    "description": "A string or an array of media action strings. Internally installed SD cards and USB flash drives are included in the hard disk-external category.\nThis key is the default for media types that don't fall into other categories."
                 },
                 "harddisk-internal": {
                     "type": "array",
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -64,7 +64,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -90,7 +90,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -116,7 +116,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -142,7 +142,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -168,7 +168,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -194,7 +194,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -220,7 +220,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -246,7 +246,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -272,7 +272,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -310,7 +310,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -329,14 +329,14 @@
                         }
                     },
                     "title": "External Disk",
-                    "description": "A string or an array of media action strings. Internally installed SD cards and USB flash drives are included in the hard disk-external category.\n\nThis key is the default for media types that don't fall into other categories."
+                    "description": "A string or an array of media action strings. Internally installed SD cards and USB flash drives are included in the hard disk-external category.\nThis key is the default for media types that don't fall into other categories."
                 },
                 "harddisk-internal": {
                     "type": "array",
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -362,7 +362,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -388,7 +388,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -414,7 +414,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -440,7 +440,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -466,7 +466,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -492,7 +492,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -518,7 +518,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -544,7 +544,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -570,7 +570,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -608,7 +608,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -627,14 +627,14 @@
                         }
                     },
                     "title": "External Disk",
-                    "description": "A string or an array of media action strings. Internally installed SD cards and USB flash drives are included in the hard disk-external category.\n\nThis key is the default for media types that don't fall into other categories."
+                    "description": "A string or an array of media action strings. Internally installed SD cards and USB flash drives are included in the hard disk-external category.\nThis key is the default for media types that don't fall into other categories."
                 },
                 "harddisk-internal": {
                     "type": "array",
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -660,7 +660,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -686,7 +686,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -712,7 +712,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -738,7 +738,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -764,7 +764,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -790,7 +790,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -816,7 +816,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -842,7 +842,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
@@ -868,7 +868,7 @@
                     "items": {
                         "type": "string",
                         "title": "Action",
-                        "description": "One of the following values:\n* authenticate - User will be authenticated before media is mounted\n* read-only - The media will be mounted read-only. Not valid for unmount-controls.\n* deny - The media will not be mounted.\n* eject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
+                        "description": "One of the following values:\nauthenticate - User will be authenticated before media is mounted\nread-only - The media will be mounted read-only. Not valid for unmount-controls.\ndeny - The media will not be mounted.\neject - The media will not be mounted and it will be ejected if possible. Note that some volumes are not defined as ejectable, so using the deny key may be the best solution. Not valid for unmount-controls.",
                         "enum": [
                             "authenticate",
                             "read-only",
