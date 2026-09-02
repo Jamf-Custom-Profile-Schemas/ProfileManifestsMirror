@@ -1,0 +1,19 @@
+{
+    "title": "Granola (com.granola.app)",
+    "description": "Granola settings",
+    "properties": {
+        "DisableOAuth": {
+            "type": "boolean",
+            "title": "Disable OAuth Sign-In",
+            "default": false,
+            "description": "If true, removes the personal Google and Microsoft account sign-in options and requires people to sign in with SSO. Make sure SSO is configured for your workspace before enabling this setting. This setting changes the sign-in options shown in the app; it does not configure SSO or sign out people who are already signed in. Deploy to the device channel.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.granola.ai/help-center/getting-started/configure-granola-with-mdm"
+                }
+            ],
+            "property_order": 5
+        }
+    }
+}
