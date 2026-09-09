@@ -9,7 +9,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-your-organization-name"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-your-organization-name"
                 }
             ],
             "property_order": 5
@@ -21,7 +21,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-an-info-message"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-an-info-message"
                 }
             ],
             "property_order": 10
@@ -33,7 +33,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-support-url"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-a-support-url"
                 }
             ],
             "property_order": 15
@@ -70,7 +70,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-auto-update-settings"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-auto-update-settings-macos"
                 }
             ],
             "enum": [
@@ -93,7 +93,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys#manage-unstable-versions-availability"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#manage-unstable-versions-availability"
                 }
             ],
             "enum": [
@@ -117,46 +117,86 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#automatically-start-tailscale-when-the-user-logs-in"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#automatically-start-tailscale-when-the-user-logs-in"
                 }
             ],
             "property_order": 40
         },
-        "ForceEnabled": {
+        "AlwaysOn.Enabled": {
             "type": "boolean",
-            "title": "Force Tailscale to always be running",
-            "description": "When set to true, this boolean instructs Tailscale to always be connected and actively monitor the tunnel state for disconnections. The Disconnect toggle will be disabled, to prevent users from disabling the VPN themselves. An attempt to disconnect will present a banner informing the user the organization’s policy prevents Tailscale from being disconnected. If the client detects the VPN tunnel is down because the Tailscale VPN process was terminated, Tailscale will automatically restart it and reconnect. You might want to use this policy together with an always-on VPN configuration profile.",
+            "title": "Keep Tailscale always connected",
+            "default": false,
+            "description": "Prevents users from disconnecting from the tailnet or exiting the client. When this policy is enabled, you can also enable AlwaysOn.OverrideWithReason to require a reason for disconnecting, and ReconnectAfter to set how long the client can stay disconnected.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#force-tailscale-to-always-be-running"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-tailscale-to-always-be-connected"
                 }
             ],
             "property_order": 45
         },
-        "HideDHCP121Warnings": {
+        "AlwaysOn.OverrideWithReason": {
             "type": "boolean",
-            "title": "Suppress DHCP Option 121 warnings",
-            "description": "By default, Tailscale v1.68 and later detect when DHCP Option 121 is being used, and the client will display a warning to the user in the UI when usage of this option is detected. You may set the HideDHCP121Warnings system policy to true to hide such warnings if you have a legitimate need to use Option 121.",
+            "title": "Require a reason for disconnection",
+            "default": false,
+            "description": "Requires users to submit a reason when disconnecting the Tailscale client. User-provided reasons display in the Configuration logs page of the admin console. On macOS, a user can provide a reason in the client UI dialog or with the CLI command tailscale down --reason \"DNS issues\".",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys#suppress-dhcp-option-121-warnings"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-a-required-reason-for-disconnection"
                 }
             ],
             "property_order": 50
         },
-        "Tailnet": {
+        "ReconnectAfter": {
             "type": "string",
-            "title": "Suggested or required tailnet name",
-            "description": "Specify a tailnet, and its identity provider will be used on the login page. If the policy value is prefixed with \"required:\"\", Tailscale will force that identity provider to be used and won’t allow logging in with anything else.",
+            "title": "Reconnection timer",
+            "description": "Sets how long the client can remain disconnected from the tailnet before automatically reconnecting. Use a Go-style duration string, for example 24h or 5h25m30s. An empty string or a zero duration disables automatic reconnection. Can be used with or without AlwaysOn.Enabled.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-suggested-or-required-tailnet"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-a-reconnection-timer"
                 }
             ],
             "property_order": 55
+        },
+        "ForceEnabled": {
+            "type": "boolean",
+            "title": "Force Tailscale to always be running",
+            "default": false,
+            "description": "When set to true, this boolean instructs Tailscale to always be connected and actively monitor the tunnel state for disconnections. The Disconnect toggle will be disabled, to prevent users from disabling the VPN themselves. An attempt to disconnect will present a banner informing the user the organization’s policy prevents Tailscale from being disconnected. If the client detects the VPN tunnel is down because the Tailscale VPN process was terminated, Tailscale will automatically restart it and reconnect. You might want to use this policy together with an always-on VPN configuration profile.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#force-tailscale-to-always-be-running"
+                }
+            ],
+            "property_order": 60
+        },
+        "HideDHCP121Warnings": {
+            "type": "boolean",
+            "title": "Suppress DHCP Option 121 warnings",
+            "default": false,
+            "description": "By default, Tailscale v1.68 and later detect when DHCP Option 121 is being used, and the client will display a warning to the user in the UI when usage of this option is detected. You may set the HideDHCP121Warnings system policy to true to hide such warnings if you have a legitimate need to use Option 121.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#suppress-dhcp-option-121-warnings"
+                }
+            ],
+            "property_order": 65
+        },
+        "Tailnet": {
+            "type": "string",
+            "title": "Suggested or required tailnet name",
+            "description": "Specifies one or more tailnets to suggest or require during device registration. Set to a comma-separated list of tailnet IDs or organization IDs such as T123456CNTRL,o123456CNTRL. Prefix the value with required: to require one of those values and disallow registration in any other tailnet.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-a-suggested-or-required-tailnet"
+                }
+            ],
+            "property_order": 70
         },
         "LoginURL": {
             "type": "string",
@@ -165,34 +205,127 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-a-custom-control-server-url"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-a-custom-control-server-url"
                 }
             ],
-            "property_order": 60
+            "property_order": 75
+        },
+        "AuthKey": {
+            "type": "string",
+            "title": "Auth key",
+            "description": "Specifies an auth key used to authenticate managed devices without user interaction. Clients automatically try to use the auth key when launched unless already logged in. Use a one-off auth key tagged for the device, with access control policies that grant only necessary access.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-an-auth-key"
+                }
+            ],
+            "property_order": 80
+        },
+        "AuthBrowser.macos": {
+            "type": "string",
+            "title": "Custom browser for authentication",
+            "description": "Controls the browser used to open authentication URLs. Set this to the bundle identifier of the preferred browser. If the specified bundle is not present, the user's default system browser is used.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-a-custom-browser-for-authentication"
+                }
+            ],
+            "property_order": 85
+        },
+        "EncryptState": {
+            "type": "boolean",
+            "title": "Encrypt node state file",
+            "default": false,
+            "description": "Instructs Tailscale to store the node state file in encrypted format on disk. The node state file contains credentials, like the node and machine keys, that could be copied to a different device if stored unencrypted. The Mac App Store variant always stores the state file encrypted regardless of this policy; this key applies to the Standalone variant only.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#encrypt-node-state-file"
+                }
+            ],
+            "property_order": 90
         },
         "ExitNodeID": {
             "type": "string",
             "title": "Forced Exit Node ID",
-            "description": "Forces the Tailscale client to always use the given exit node. This can be useful if you wish to route all Internet traffic through a node for inspection or logging purposes. Users won't be able to disable or choose another exit node when this policy is active. A message will be displayed in the client UI informing users about this restriction. The value for this key should be the ID of an exit node device. You can find the ID for any device in your tailnet by looking at the Machines page of the admin console, or by using the Tailscale API. Note that if a forced exit node goes offline, Internet connectivity will be unavailable on client devices until the exit node comes back online.",
+            "description": "Forces the Tailscale client to always use the given exit node. This can be useful if you wish to route all Internet traffic through a node for inspection or logging purposes. Users won't be able to disable or choose another exit node when this policy is active unless ExitNode.AllowOverride is also enabled. The value should be the ID of an exit node device, or auto:any to require any regionally-routed exit node. You can optionally restrict permitted nodes with AllowedSuggestedExitNodes. If a forced exit node goes offline, Internet connectivity will be unavailable until it returns.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#force-an-exit-node-to-always-be-used"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#force-an-exit-node-to-always-be-used"
                 }
             ],
-            "property_order": 65
+            "property_order": 95
+        },
+        "ExitNode.AllowOverride": {
+            "type": "boolean",
+            "title": "Allow a different exit node when forced",
+            "default": false,
+            "description": "Lets users select a different exit node when ExitNodeID is set to auto:any, which requires the use of an exit node. It does not allow disabling exit node usage entirely.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-a-different-exit-node-when-forced"
+                }
+            ],
+            "property_order": 100
+        },
+        "AllowedSuggestedExitNodes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Exit Node ID",
+                "description": "The ID of an exit node device. You can find device IDs on the Machines page of the admin console or by using the Tailscale API."
+            },
+            "title": "Allowed suggested exit nodes",
+            "description": "Controls which exit nodes are recommended in the Tailscale client and through tailscale exit-node suggest. When ExitNodeID is set to auto:any, this list specifies the allowed regionally-routed exit nodes. If unset, all exit nodes are allowed. If set but empty, no exit nodes are allowed. Other exit nodes not specified by this policy can still be used, but they will not be recommended.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#suggest-allowed-forced-exit-nodes"
+                }
+            ],
+            "property_order": 105
+        },
+        "AdvertiseExitNode": {
+            "type": "string",
+            "title": "Advertise as exit node",
+            "default": "user-decides",
+            "description": "Controls whether the device advertises itself as an exit node for use by other users and their devices.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#advertise-exit-node"
+                }
+            ],
+            "enum": [
+                "always",
+                "never",
+                "user-decides"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Always",
+                    "Never",
+                    "User Decides"
+                ]
+            },
+            "property_order": 110
         },
         "KeyExpirationNotice": {
             "type": "string",
             "title": "Key Expiration Notice Interval",
+            "default": "24h",
             "description": "The KeyExpirationNotice policy controls how long before key expiry should a notice be displayed. The default is 24 hours (\"24h\"). Use a Go-style Duration for this policy value, for instance \"24h\" or \"5h25m30s\".",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys#set-the-key-expiration-notice-period"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-the-key-expiration-notice-period"
                 }
             ],
-            "property_order": 70
+            "property_order": 115
         },
         "ExitNodeAllowLANAccess": {
             "type": "string",
@@ -202,7 +335,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#toggle-local-network-access-when-an-exit-node-is-in-use"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#toggle-local-network-access-when-an-exit-node-is-in-use"
                 }
             ],
             "enum": [
@@ -217,7 +350,7 @@
                     "User Decides"
                 ]
             },
-            "property_order": 75
+            "property_order": 120
         },
         "UseTailscaleSubnets": {
             "type": "string",
@@ -227,7 +360,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-whether-the-device-accepts-tailscale-subnets"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-whether-the-device-accepts-tailscale-subnets"
                 }
             ],
             "enum": [
@@ -242,7 +375,7 @@
                     "User Decides"
                 ]
             },
-            "property_order": 80
+            "property_order": 125
         },
         "Hostname": {
             "type": "string",
@@ -251,10 +384,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys#set-whether-device-hostnames-can-be-modified"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-whether-device-hostnames-can-be-modified"
                 }
             ],
-            "property_order": 85
+            "property_order": 130
         },
         "UseTailscaleDNSSettings": {
             "type": "string",
@@ -264,7 +397,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-whether-the-device-uses-tailscale-dns-settings"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-whether-the-device-uses-tailscale-dns-settings"
                 }
             ],
             "enum": [
@@ -279,7 +412,7 @@
                     "User Decides"
                 ]
             },
-            "property_order": 90
+            "property_order": 135
         },
         "AllowIncomingConnections": {
             "type": "string",
@@ -289,7 +422,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#set-whether-to-allow-incoming-connections"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#set-whether-to-allow-incoming-connections"
                 }
             ],
             "enum": [
@@ -304,7 +437,7 @@
                     "User Decides"
                 ]
             },
-            "property_order": 95
+            "property_order": 140
         },
         "PostureChecking": {
             "type": "string",
@@ -314,7 +447,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#enable-gathering-device-posture-data"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#enable-gathering-device-posture-data"
                 }
             ],
             "enum": [
@@ -329,7 +462,7 @@
                     "User Decides"
                 ]
             },
-            "property_order": 100
+            "property_order": 145
         },
         "ExitNodesPicker": {
             "type": "string",
@@ -339,7 +472,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-exit-node-picker"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-exit-node-picker"
                 }
             ],
             "enum": [
@@ -352,7 +485,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 105
+            "property_order": 150
         },
         "ManageTailnetLock": {
             "type": "string",
@@ -362,7 +495,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-tailnet-lock-settings"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-tailnet-lock-settings"
                 }
             ],
             "enum": [
@@ -375,7 +508,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 110
+            "property_order": 155
         },
         "ResetToDefaults": {
             "type": "string",
@@ -385,7 +518,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-reset-to-defaults-menu-item"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-reset-to-defaults-menu-item"
                 }
             ],
             "enum": [
@@ -398,7 +531,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 115
+            "property_order": 160
         },
         "RunExitNode": {
             "type": "string",
@@ -408,7 +541,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-run-as-exit-node-menu-item"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-run-as-exit-node-menu-item"
                 }
             ],
             "enum": [
@@ -421,7 +554,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 120
+            "property_order": 165
         },
         "StartOnLoginMenuItem": {
             "type": "string",
@@ -431,7 +564,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-start-on-login-menu-item"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-start-on-login-menu-item"
                 }
             ],
             "enum": [
@@ -444,7 +577,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 125
+            "property_order": 170
         },
         "TestMenu": {
             "type": "string",
@@ -454,7 +587,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-debug-menu"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-debug-menu"
                 }
             ],
             "enum": [
@@ -467,7 +600,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 130
+            "property_order": 175
         },
         "UpdateMenu": {
             "type": "string",
@@ -477,7 +610,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-the-update-menu"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-update-menu"
                 }
             ],
             "enum": [
@@ -490,7 +623,7 @@
                     "Hide"
                 ]
             },
-            "property_order": 135
+            "property_order": 180
         },
         "HiddenNetworkDevices": {
             "type": "array",
@@ -514,22 +647,49 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#hide-network-devices"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-network-devices"
                 }
             ],
-            "property_order": 140
+            "property_order": 185
         },
         "IPAddressCopiedAlertSuppressed": {
             "type": "boolean",
             "title": "Suppress IP Address Copied notifications",
+            "default": false,
             "description": "When you use the Tailscale menu bar item to copy to the Clipboard the IP address of a device, a notification displaying the IP address is presented. Use this to suppress this Copied IP address to clipboard notification.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#suppress-ip-address-copied-notifications"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#suppress-ip-address-copied-notifications"
                 }
             ],
-            "property_order": 145
+            "property_order": 190
+        },
+        "AppIntroShown": {
+            "type": "boolean",
+            "title": "Suppress the app window intro flow",
+            "default": false,
+            "description": "Set to true to suppress the \"Welcome to the Tailscale app\" modal window introduction that appears when you log in to Tailscale on a device for the first time.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#suppress-the-app-window-intro-flow"
+                }
+            ],
+            "property_order": 195
+        },
+        "HideDockIcon": {
+            "type": "boolean",
+            "title": "Hide the macOS dock icon after all windows close",
+            "default": false,
+            "description": "The Tailscale dock icon on macOS appears whenever an application window exists. By default, Tailscale leaves an icon in the dock to support quickly reopening the main application window. Set this to true to hide the dock icon after all windows close.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-macos-dock-icon-after-all-windows-close"
+                }
+            ],
+            "property_order": 200
         },
         "CLIIntegration": {
             "type": "string",
@@ -539,7 +699,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys#hide-the-cli-integration-installer"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-cli-integration-installer"
                 }
             ],
             "enum": [
@@ -552,19 +712,43 @@
                     "Hide"
                 ]
             },
-            "property_order": 150
+            "property_order": 205
+        },
+        "OnboardingFlow": {
+            "type": "string",
+            "title": "Show/hide the first launch onboarding flow",
+            "default": "show",
+            "description": "Shows or hides the client onboarding flow that appears the first time Tailscale starts on a device. Hide it if end-users are already familiar with the product. On macOS, typically deploy a VPN configuration profile when hiding the onboarding flow.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#suppress-the-first-launch-onboarding-flow"
+                }
+            ],
+            "enum": [
+                "show",
+                "hide"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Show",
+                    "Hide"
+                ]
+            },
+            "property_order": 210
         },
         "TailscaleOnboardingSeen": {
             "type": "boolean",
             "title": "Suppress the first launch onboarding flow",
+            "default": false,
             "description": "When you start Tailscale on your Mac for the first time, an onboarding flow is presented. It explains the Tailscale privacy policy, and guides the user in setting up the VPN configuration on their Mac. You might want to disable this onboarding flow if you are going to automatically set up the VPN configuration on the system by using a configuration profile. In order to do so, this boolean suppresses the onboarding flow when Tailscale launches for the first time and the value is set to true.",
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys/#suppress-the-first-launch-onboarding-flow"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#suppress-the-first-launch-onboarding-flow"
                 }
             ],
-            "property_order": 155
+            "property_order": 215
         },
         "VPNOnDemandSettings": {
             "type": "string",
@@ -574,7 +758,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://tailscale.com/kb/1315/mdm-keys#hide-the-vpn-on-demand-menu-item"
+                    "href": "https://tailscale.com/docs/features/tailscale-system-policies#hide-the-vpn-on-demand-menu-item"
                 }
             ],
             "enum": [
@@ -587,7 +771,20 @@
                     "Hide"
                 ]
             },
-            "property_order": 160
+            "property_order": 220
+        },
+        "VPNOnDemandIsUserConfigured": {
+            "type": "boolean",
+            "title": "VPN On Demand is user-configured",
+            "default": false,
+            "description": "Instructs Tailscale not to modify the VPN On Demand configuration, so that MDM-deployed OnDemandRules remain in effect. Deploy this together with VPNOnDemandSettings set to hide when providing your own VPN On Demand rules.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://tailscale.com/docs/integrations/mdm/mac#configure-the-required-system-policy-keys"
+                }
+            ],
+            "property_order": 225
         }
     }
 }
