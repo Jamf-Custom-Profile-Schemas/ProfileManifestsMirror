@@ -10,27 +10,27 @@
         },
         "CertServer": {
             "type": "string",
-            "title": "Certificate Server",
+            "title": "Certificate server",
             "description": "The fully qualified host name of the CA.",
             "property_order": 10
         },
         "CertificateAuthority": {
             "type": "string",
-            "title": "Certificate Authority",
-            "description": "The name of the certificate authority (CA), which is determined from the common name (CN) of the Active Directory entry. Available in macOS 10.8 and later. Valid values:\nCN=<your CA Name>\nCN='Certification Authorities'\nCN='Public Key Services'\nCN='Services'\nCN='Configuration'\nCN=<your base Domain Name>",
+            "title": "Certificate authority",
+            "description": "The name of the certificate authority (CA), which the device determines from the common name (CN) of the Active Directory entry. Valid values:\nCN=<your CA Name>\nCN='Certification Authorities'\nCN='Public Key Services'\nCN='Services'\nCN='Configuration'\nCN=<your base Domain Name>",
             "property_order": 15
         },
         "CertTemplate": {
             "type": "string",
-            "title": "Certificate Template",
+            "title": "Certificate template",
             "default": "User",
-            "description": "The certificate template for your environment. The default user certificate value is `User`. The default computer certificate value is `Machine`.",
+            "description": "The certificate template for your environment. The default user certificate value is 'User'. The default computer certificate value is 'Machine'.",
             "property_order": 20
         },
         "CertificateAcquisitionMechanism": {
             "type": "string",
-            "title": "Certificate Acquisition Mechanism",
-            "description": "This value is most commonly 'RPC'; if using web enrollment, use 'HTTP'. Available in macOS 10.8 and later.",
+            "title": "Certificate acquisition mechanism",
+            "description": "This value is most commonly 'RPC'; if using web enrollment, use 'HTTP'.",
             "enum": [
                 "RPC",
                 "HTTP"
@@ -39,23 +39,23 @@
         },
         "CertificateRenewalTimeInterval": {
             "type": "integer",
-            "title": "Certificate Renewal Time Interval",
+            "title": "Certificate renewal time interval",
             "default": 14,
             "description": "The number of days in advance of certificate expiration that the notification center notifies the user.",
             "property_order": 30
         },
         "Keysize": {
             "type": "integer",
-            "title": "Key Size",
+            "title": "Key size",
             "default": 2048,
-            "description": "The RSA key size for the certificate signing request (CSR). Available in macOS 10.11 and later.",
+            "description": "The RSA key size for the certificate signing request (CSR).",
             "property_order": 35
         },
         "PromptForCredentials": {
             "type": "boolean",
-            "title": "Prompt for Credentials",
+            "title": "Prompt for credentials",
             "default": false,
-            "description": "If 'true', the system prompts the user for credentials when is installs the profile. This key applies only to user certificates with the Manual Download profile delivery method. Omit this key for computer certificates. Available in macOS 10.8 and later.",
+            "description": "If 'true', the system prompts the user for credentials when is installs the profile. This key applies only to user certificates with the Manual Download profile delivery method. Omit this key for computer certificates.",
             "property_order": 40
         },
         "UserName": {
@@ -72,23 +72,23 @@
         },
         "AllowAllAppsAccess": {
             "type": "boolean",
-            "title": "Allow All Apps Access",
+            "title": "Allow all apps access",
             "default": false,
-            "description": "If 'true', gives apps access to the private key. Available in macOS 10.10 and later.",
+            "description": "If 'true', gives apps access to the private key.",
             "property_order": 55
         },
         "KeyIsExtractable": {
             "type": "boolean",
-            "title": "Key Is Extractable",
+            "title": "Key is extractable",
             "default": false,
-            "description": "If 'true', the system allows exporting the private key. Available in macOS 10.10 and later.",
+            "description": "If 'true', the system allows exporting the private key.",
             "property_order": 60
         },
         "EnableAutoRenewal": {
             "type": "boolean",
-            "title": "Enable Auto Renewal",
+            "title": "Enable auto renewal",
             "default": false,
-            "description": "If 'true', the certificate obtained with this payload attempts auto-renewal. Auto-renewal can only be used with device Active Directory certificate payloads. Available in macOS 10.13.4 and later.",
+            "description": "If 'true', the certificate obtained with this payload attempts auto-renewal. Auto-renewal can only be used with device Active Directory certificate payloads.",
             "property_order": 65
         }
     }

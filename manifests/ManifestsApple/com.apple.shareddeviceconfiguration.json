@@ -4,7 +4,7 @@
     "properties": {
         "IfLostReturnToMessage": {
             "type": "string",
-            "title": "If Lost message",
+            "title": "If lost message",
             "description": "Deprecated. Use 'LockScreenFootnote' instead.",
             "property_order": 5
         },
@@ -16,7 +16,7 @@
         },
         "AssetTagInformation": {
             "type": "string",
-            "title": "Asset Tag",
+            "title": "Asset tag",
             "description": "The asset tag information for the device, displayed in the Login Window and Lock Screen.",
             "property_order": 15
         }

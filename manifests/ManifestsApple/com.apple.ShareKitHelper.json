@@ -85,7 +85,7 @@
                 }
             },
             "title": "Denied Share Services",
-            "description": "The list of plugin IDs that won't show up in the user's Share menu. This key is used only if there is no 'SHKAllowedShareServices' key.",
+            "description": "The list of plugin IDs that won't show up in the user's Share menu. This key is used only if there's no 'SHKAllowedShareServices' key.",
             "property_order": 10
         }
     }

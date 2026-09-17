@@ -4,25 +4,25 @@
     "properties": {
         "JabberAccountDescription": {
             "type": "string",
-            "title": "Account Description",
+            "title": "Account description",
             "description": "The description of the account.",
             "property_order": 5
         },
         "JabberUserName": {
             "type": "string",
-            "title": "Account Username",
+            "title": "Account username",
             "description": "The user's user name.",
             "property_order": 10
         },
         "JabberPassword": {
             "type": "string",
-            "title": "Account Password",
+            "title": "Account password",
             "description": "The user's password.",
             "property_order": 15
         },
         "JabberAuthentication": {
             "type": "string",
-            "title": "Jabber Authentication",
+            "title": "Jabber authentication",
             "description": "The authentication method for the account.",
             "enum": [
                 "JabberAuthPassword",
@@ -38,13 +38,13 @@
         },
         "JabberHostName": {
             "type": "string",
-            "title": "Account Hostname",
+            "title": "Account hostname",
             "description": "The server's address.",
             "property_order": 25
         },
         "JabberPort": {
             "type": "integer",
-            "title": "Port Number",
+            "title": "Port number",
             "default": 5222,
             "description": "The server's port.",
             "property_order": 30

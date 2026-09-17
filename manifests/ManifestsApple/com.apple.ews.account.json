@@ -80,7 +80,7 @@
             "type": "boolean",
             "title": "Use OAuth",
             "default": false,
-            "description": "If 'true', the system enables OAuth for authentication. Don't specify a password if 'OAuth' is 'true'. Available in macOS 10.14 and later",
+            "description": "If 'true', the system enables OAuth for authentication. Don't specify a password if 'OAuth' is 'true'.",
             "property_order": 65
         },
         "OAuthSignInURL": {
@@ -91,7 +91,7 @@
         },
         "PayloadCertificateUUID": {
             "type": "string",
-            "title": "Payload Certificate UUID",
+            "title": "Payload certificate UUID",
             "description": "The UUID of the certificate payload within the same profile to use for the identity credential. Supported on macOS 10.12 or later.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 75
@@ -103,7 +103,7 @@
         },
         "allowMailDrop": {
             "type": "boolean",
-            "title": "Allow Mail Drop",
+            "title": "Allow mail drop",
             "default": false,
             "description": "If 'true', the system enables Mail Drop.",
             "property_order": 85

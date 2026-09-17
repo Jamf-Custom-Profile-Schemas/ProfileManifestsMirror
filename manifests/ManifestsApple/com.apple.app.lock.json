@@ -19,43 +19,43 @@
                     "properties": {
                         "DisableTouch": {
                             "type": "boolean",
-                            "title": "Disable Touch",
+                            "title": "Disable touch",
                             "default": false,
                             "description": "If 'true', the system disables the touch screen. In tvOS, it disables the touch surface on the Apple TV Remote."
                         },
                         "DisableDeviceRotation": {
                             "type": "boolean",
-                            "title": "Disable Device Rotation",
+                            "title": "Disable device rotation",
                             "default": false,
                             "description": "If 'true', the system disables device rotation sensing."
                         },
                         "DisableVolumeButtons": {
                             "type": "boolean",
-                            "title": "Disable Volume Buttons",
+                            "title": "Disable volume buttons",
                             "default": false,
                             "description": "If 'true', the system disables the volume buttons."
                         },
                         "DisableRingerSwitch": {
                             "type": "boolean",
-                            "title": "Disable Ringer Switch",
+                            "title": "Disable ringer switch",
                             "default": false,
                             "description": "If 'true', the system disables the ringer switch. When disabled, the ringer behavior depends on what position the switch was in when it was first disabled."
                         },
                         "DisableSleepWakeButton": {
                             "type": "boolean",
-                            "title": "Disable Sleep Wake Button",
+                            "title": "Disable sleep wake button",
                             "default": false,
                             "description": "If 'true', the system disables the sleep/wake button."
                         },
                         "DisableAutoLock": {
                             "type": "boolean",
-                            "title": "Disable Auto Lock",
+                            "title": "Disable auto lock",
                             "default": false,
                             "description": "If 'true', the device doesn't automatically go to sleep after an idle period."
                         },
                         "EnableVoiceOver": {
                             "type": "boolean",
-                            "title": "Enable Voice Over",
+                            "title": "Enable VoiceOver",
                             "default": false,
                             "description": "If 'true', the system enables VoiceOver."
                         },
@@ -73,7 +73,7 @@
                         },
                         "EnableAssistiveTouch": {
                             "type": "boolean",
-                            "title": "Enable Assistive Touch",
+                            "title": "Enable AssistiveTouch",
                             "default": false,
                             "description": "If 'true', the system enables AssistiveTouch."
                         },
@@ -99,12 +99,12 @@
                 },
                 "UserEnabledOptions": {
                     "type": "object",
-                    "title": "User Enabled Options",
+                    "title": "User enabled options",
                     "description": "A dictionary of user-editable options.",
                     "properties": {
                         "VoiceOver": {
                             "type": "boolean",
-                            "title": "Voice Over",
+                            "title": "VoiceOver",
                             "default": false,
                             "description": "If 'true', the system allows the user to toggle VoiceOver."
                         },
@@ -122,7 +122,7 @@
                         },
                         "AssistiveTouch": {
                             "type": "boolean",
-                            "title": "Assistive Touch",
+                            "title": "AssistiveTouch",
                             "default": false,
                             "description": "If 'true', the system allows the user to toggle AssistiveTouch."
                         },

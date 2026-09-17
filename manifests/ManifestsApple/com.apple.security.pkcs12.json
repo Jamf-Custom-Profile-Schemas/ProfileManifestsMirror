@@ -4,7 +4,7 @@
     "properties": {
         "PayloadCertificateFileName": {
             "type": "string",
-            "title": "Payload Certificate Filename",
+            "title": "Payload certificate filename",
             "description": "The file name of the enclosed certificate.",
             "property_order": 5
         },
@@ -16,9 +16,9 @@
         },
         "AllowAllAppsAccess": {
             "type": "boolean",
-            "title": "Allow All Apps Access",
+            "title": "Allow all apps access",
             "default": false,
-            "description": "If 'true', the system allows apps access to the private key. Available in macOS 10.10 and later.",
+            "description": "If 'true', the system allows apps access to the private key.",
             "property_order": 15
         },
         "KeyIsExtractable": {

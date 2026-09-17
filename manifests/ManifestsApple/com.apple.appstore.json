@@ -13,21 +13,21 @@
             "type": "boolean",
             "title": "Restrict app installations to software updates only",
             "default": false,
-            "description": "If 'true', the system prevents App Store from launching. Available in macOS 10.14 and later. Restricts installations to software updates only in macOS 10.10 through 10.13.",
+            "description": "If 'true', the system prevents App Store from launching. Restricts installations to software updates only in macOS 10.10 through 10.13.",
             "property_order": 10
         },
         "restrict-store-disable-app-adoption": {
             "type": "boolean",
             "title": "Disable App Adoption by users",
             "default": false,
-            "description": "If 'true', the system disables app adoption by users. Available in macOS 10.10 and later.",
+            "description": "If 'true', the system disables app adoption by users.",
             "property_order": 15
         },
         "DisableSoftwareUpdateNotifications": {
             "type": "boolean",
             "title": "Disable software update notifications",
             "default": false,
-            "description": "If 'true', the system disables software update notifications. Available in macOS 10.10 and later.",
+            "description": "If 'true', the system disables software update notifications.",
             "property_order": 20
         },
         "restrict-store-mdm-install-softwareupdate-only": {

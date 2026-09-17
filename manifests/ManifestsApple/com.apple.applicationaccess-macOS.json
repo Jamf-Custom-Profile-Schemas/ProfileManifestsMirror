@@ -38,7 +38,7 @@
         },
         "allowCamera": {
             "type": "boolean",
-            "title": "Allow Camera Use",
+            "title": "Allow camera use",
             "default": true,
             "description": "If 'false', the system disables the camera and removes its icon from the Home Screen, and users are unable to take photographs. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 25
@@ -97,7 +97,7 @@
         },
         "allowActivityContinuation": {
             "type": "boolean",
-            "title": "Allow Handoff",
+            "title": "Allow handoff",
             "default": true,
             "description": "If 'false', the system disables activity continuation. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated. In a future release, this restriction will begin requiring supervision and will apply to personal Apple Accounts only.",
             "property_order": 70
@@ -124,7 +124,7 @@
         },
         "allowRemoteAppleEventsModification": {
             "type": "boolean",
-            "title": "Allow modifying Remote Apple Events Sharing setting",
+            "title": "Allow modifying remote Apple Events Sharing setting",
             "default": true,
             "description": "If 'false', the system prevents modifying Remote Apple Events Sharing settings in System Settings.",
             "property_order": 85
@@ -158,7 +158,7 @@
         },
         "allowCloudDocumentSync": {
             "type": "boolean",
-            "title": "Allow iCloud Document Sync",
+            "title": "Allow iCloud document sync",
             "default": true,
             "description": "If 'false', the system disables document and key-value syncing to iCloud. Requires a supervised device in iOS 13 and later, and Shared iPad doesn't support it. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
             "property_order": 110
@@ -206,7 +206,7 @@
         },
         "allowCloudPhotoLibrary": {
             "type": "boolean",
-            "title": "Allow iCloud Photo Library",
+            "title": "Allow iCloud photo library",
             "default": true,
             "description": "If 'false', the system disables iCloud Photo Library. The system removes any photos from local storage that aren't fully downloaded from iCloud Photo Library to the device. Support for this restriction on unsupervised devices and with Managed Apple Accounts is deprecated.",
             "property_order": 145
@@ -227,44 +227,44 @@
         },
         "allowSpotlightInternetResults": {
             "type": "boolean",
-            "title": "Allow Siri Suggestions",
+            "title": "Allow Siri suggestions",
             "default": true,
             "description": "If 'false', the system disables Spotlight Internet search results in Siri Suggestions. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 160
         },
         "allowEraseContentAndSettings": {
             "type": "boolean",
-            "title": "Allow Erase All Content and Settings",
+            "title": "Allow erase all content and settings",
             "default": true,
             "description": "If 'false', the system disables the Erase All Content and Settings option in the Reset UI.",
             "property_order": 165
         },
         "allowFileSharingModification": {
             "type": "boolean",
-            "title": "Allow modifying File Sharing setting",
+            "title": "Allow modifying file sharing setting",
             "default": true,
             "description": "If 'false', the system prevents modifying File Sharing setting in System Settings.",
             "property_order": 170
         },
         "allowFingerprintForUnlock": {
             "type": "boolean",
-            "title": "Allow Touch ID to Unlock Device",
+            "title": "Allow Touch ID to unlock device",
             "default": true,
             "description": "If 'false', the system prevents Touch ID, Face ID, or Optic ID from unlocking a device. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 175
         },
         "allowFingerprintModification": {
             "type": "boolean",
-            "title": "Allow Modifying Touch ID Fingerprints",
+            "title": "Allow modifying Touch ID fingerprints",
             "default": true,
             "description": "If 'false', the system prevents the user from modifying Touch ID or Face ID.",
             "property_order": 180
         },
         "allowDefinitionLookup": {
             "type": "boolean",
-            "title": "Allow Define",
+            "title": "Allow definition lookup",
             "default": true,
-            "description": "If 'false', the system disables definition lookup.",
+            "description": "If 'false', the system disables definition lookup.\nDeprecated: use the declarative management 'com.apple.configuration.keyboard.settings' configuration.",
             "property_order": 185
         },
         "allowDeprecatedWebKitTLS": {
@@ -282,7 +282,7 @@
         },
         "allowDeviceNameModification": {
             "type": "boolean",
-            "title": "Allow Modifying Device Name",
+            "title": "Allow modifying device name",
             "default": true,
             "description": "If 'false', the system prevents the user from changing the device name.",
             "property_order": 195
@@ -296,14 +296,14 @@
         },
         "allowMultiplayerGaming": {
             "type": "boolean",
-            "title": "Allow Multiplayer Gaming",
+            "title": "Allow multiplayer gaming",
             "default": true,
             "description": "If 'false', the system prohibits multiplayer gaming.",
             "property_order": 205
         },
         "allowInternetSharingModification": {
             "type": "boolean",
-            "title": "Allow modifying Internet Sharing setting",
+            "title": "Allow modifying internet sharing setting",
             "default": true,
             "description": "If 'false', the system prevents modifying the Internet Sharing setting in System Settings.",
             "property_order": 210
@@ -317,7 +317,7 @@
         },
         "allowAddingGameCenterFriends": {
             "type": "boolean",
-            "title": "Allow Adding Game Center Friends",
+            "title": "Allow adding Game Center friends",
             "default": true,
             "description": "If 'false', the system prohibits adding friends to Game Center. Requires a supervised device in iOS 13 and later.",
             "property_order": 220
@@ -354,42 +354,42 @@
         },
         "ratingApps": {
             "type": "integer",
-            "title": "Apps Ranking Number",
+            "title": "Apps ranking number",
             "default": 1000,
-            "description": "The maximum level of app content allowed on the device. Starting with iOS 26.2, this rating may apply to certain system apps.\nAge bands and the number of discrete age values vary by region, but the values are consistent across regions. For example, in a region that defines rating level 14+, its value is guaranteed to be larger than 300 (12+) and smaller than 600 (17+). Also, the value of rating level 15+ is guaranteed to be larger than the assigned value of rating level 14+. For more information about age ratings, see Age ratings values and definitions.\nBelow is the complete list of age rating values used across all App Store regions.\n'1000': All\n'621': 21+\n'620': 20+\n'619': 19+\n'618': 18+\n'600': 17+\n'416': 16+\n'415': 15+\n'314': 14+\n'313': 13+\n'300': 12+\n'211': 11+\n'210': 10+\n'200': 9+\n'108': 8+\n'107': 7+\n'106': 6+\n'105': 5+\n'100': 4+\n'3': 3+\n'2': 2+\n'1': 1+\n'0': None\nThis restriction will require supervision in a future release.",
+            "description": "The maximum level of app content allowed on the device. Starting with iOS 26.2, this rating may apply to certain system apps.\nAge bands and the number of discrete age values vary by region, but the values are consistent across regions. For example, in a region that defines rating level 14+, its value is guaranteed to be larger than 300 (12+) and smaller than 600 (17+). Also, the value of rating level 15+ is guaranteed to be larger than the assigned value of rating level 14+. For more information about age ratings, see Age ratings values and definitions (https://developer.apple.com/help/app-store-connect/reference/age-ratings-values-and-definitions).\nBelow is the complete list of age rating values used across all App Store regions.\n'1000': All\n'621': 21+\n'620': 20+\n'619': 19+\n'618': 18+\n'600': 17+\n'416': 16+\n'415': 15+\n'314': 14+\n'313': 13+\n'300': 12+\n'211': 11+\n'210': 10+\n'200': 9+\n'108': 8+\n'107': 7+\n'106': 6+\n'105': 5+\n'100': 4+\n'3': 3+\n'2': 2+\n'1': 1+\n'0': None\nThis restriction will require supervision in a future release.",
             "property_order": 230
         },
         "ratingMovies": {
             "type": "integer",
-            "title": "Movies Ranking Number",
+            "title": "Movies ranking number",
             "default": 1000,
             "description": "The maximum level of movie content allowed on the device. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the U.S. description of the rating level:\n'1000': All\n'500': NC-17\n'400': R\n'300': PG-13\n'200': PG\n'100': G\n'0': None",
             "property_order": 235
         },
         "ratingTVShows": {
             "type": "integer",
-            "title": "TV Shows Ranking Number",
+            "title": "TV shows ranking number",
             "default": 1000,
             "description": "The maximum level of TV content allowed on the device. Support for this restriction on unsupervised devices is deprecated.\nPossible values, with the U.S. description of the rating level:\n'1000': All\n'600': TV-MA\n'500': TV-14\n'400': TV-PG\n'300': TV-G\n'200': TV-Y7\n'100': TV-Y\n'0': None",
             "property_order": 240
         },
         "allowExplicitContent": {
             "type": "boolean",
-            "title": "Allow Explicit Content",
+            "title": "Allow explicit content",
             "default": true,
             "description": "If 'false', the system hides explicit music or video content purchased from the iTunes Store. The system marks explicit content as such by content providers, such as record labels, when sold through the iTunes Store. Explicit content in the News and Podcast apps is also hidden.\nRequires a supervised device in iOS 13 and later. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 245
         },
         "allowBookstore": {
             "type": "boolean",
-            "title": "Allow Bookstore",
+            "title": "Allow Book Store",
             "default": true,
             "description": "If 'false', the system removes the Book Store tab from the Books app.",
             "property_order": 250
         },
         "allowBookstoreErotica": {
             "type": "boolean",
-            "title": "Allow Bookstore Erotica",
+            "title": "Allow Book Store erotica",
             "default": true,
             "description": "If 'false', the system prevents the user from downloading Apple Books media that's tagged as erotica. Support for this restriction on unsupervised devices is deprecated.",
             "property_order": 255
@@ -403,7 +403,7 @@
         },
         "allowBluetoothSharingModification": {
             "type": "boolean",
-            "title": "Allow modifying Bluetooth Sharing setting",
+            "title": "Allow modifying Bluetooth sharing setting",
             "default": true,
             "description": "If 'false', the system prevents modifying Bluetooth settings in System Settings.",
             "property_order": 265
@@ -429,14 +429,14 @@
         },
         "allowScreenShot": {
             "type": "boolean",
-            "title": "Allow Screenshots and Screen Recording",
+            "title": "Allow screenshots and screen recording",
             "default": true,
             "description": "If 'false', the system disables saving a screenshot of the display and capturing a screen recording. It also disables the Classroom app from observing remote screens.",
             "property_order": 285
         },
         "allowStartupDiskModification": {
             "type": "boolean",
-            "title": "Allow modifying Startup Disk settings",
+            "title": "Allow modifying startup disk settings",
             "default": true,
             "description": "If 'false', the system prevents modification of Startup Disk settings in System Settings.",
             "property_order": 290
@@ -445,19 +445,19 @@
             "type": "boolean",
             "title": "Allow modifying Time Machine settings",
             "default": true,
-            "description": "If 'false', the system prevents modification of Time Machine settings in System Settings. This restriction is not supported on the user channel.",
+            "description": "If 'false', the system prevents modification of Time Machine settings in System Settings. This restriction isn't supported on the user channel.",
             "property_order": 295
         },
         "allowUIConfigurationProfileInstallation": {
             "type": "boolean",
-            "title": "Allow UI Configuration Profile Installation",
+            "title": "Allow UI configuration profile installation",
             "default": true,
             "description": "If 'false', the system prohibits the user from installing configuration profiles and certificates interactively.",
             "property_order": 300
         },
         "allowRemoteScreenObservation": {
             "type": "boolean",
-            "title": "Allow Remote Screen Observation",
+            "title": "Allow remote screen observation",
             "default": true,
             "description": "If 'false', the system disables remote screen observation by the Classroom app. Nest this key beneath 'allowScreenShot' as a subrestriction. If 'allowScreenShot' is 'false', the Classroom app doesn't observe remote screens. Requires a supervised device until iOS 13 and macOS 10.15. Allowed for user enrollments in macOS 12 and later.",
             "property_order": 305
@@ -506,14 +506,14 @@
         },
         "allowPasscodeModification": {
             "type": "boolean",
-            "title": "Allow Modifying Passcode",
+            "title": "Allow modifying passcode",
             "default": true,
             "description": "If 'false', the system prevents adding, changing, or removing the passcode. The system ignores this restriction on Shared iPad.",
             "property_order": 340
         },
         "allowWallpaperModification": {
             "type": "boolean",
-            "title": "Allow Modifying Wallpaper",
+            "title": "Allow modifying wallpaper",
             "default": true,
             "description": "If 'false', the system prevents changing the wallpaper.",
             "property_order": 345
@@ -522,49 +522,49 @@
             "type": "boolean",
             "title": "Allow USB Restricted Mode",
             "default": true,
-            "description": "If 'false', the system allows iOS devices to always connect to USB accessories while locked. In macOS, allows new USB and Thunderbolt accessories, and SD cards to connect without authorization. If the system has Lockdown mode enabled, it ignores this value. This restriction is not supported on the user channel.",
+            "description": "If 'false', the system allows iOS devices to always connect to USB accessories while locked. In macOS, allows new USB and Thunderbolt accessories, and SD cards to connect without authorization. If the system has Lockdown mode enabled, it ignores this value. This restriction isn't supported on the user channel.",
             "property_order": 350
         },
         "allowAssistant": {
             "type": "boolean",
             "title": "Allow Siri",
             "default": true,
-            "description": "If 'false', the system disables Siri.",
+            "description": "If 'false', the system disables Siri.\nDeprecated: use the declarative management 'com.apple.configuration.siri.settings' configuration.",
             "property_order": 355
         },
         "forceAssistantProfanityFilter": {
             "type": "boolean",
-            "title": "Enable Siri Profanity Filter",
+            "title": "Enable Siri profanity filter",
             "default": false,
-            "description": "If 'true', the system forces the use of the profanity filter for Siri and dictation. Requires a supervised device in iOS.",
+            "description": "If 'true', the system forces the use of the profanity filter for Siri and dictation. Requires a supervised device in iOS.\nDeprecated: use the declarative management 'com.apple.configuration.siri.settings' configuration.",
             "property_order": 360
         },
         "forceDelayedSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer OS Software Updates",
             "default": false,
-            "description": "If 'true', the system delays user visibility of software updates. In macOS, the system allows seed build updates without delay. The delay is 30 days unless you set 'enforcedSoftwareUpdateDelay' to another value.",
+            "description": "If 'true', the system delays user visibility of software updates. In macOS, the system allows seed build updates without delay. The delay is 30 days unless you set 'enforcedSoftwareUpdateDelay' to another value.\nRemoved: use the declarative management 'com.apple.configuration.softwareupdate.settings' configuration.",
             "property_order": 365
         },
         "allowRapidSecurityResponseInstallation": {
             "type": "boolean",
-            "title": "Allow Background Security Improvement Installation",
+            "title": "Allow Background Security Improvements installation",
             "default": true,
-            "description": "If 'false', the system prohibits installation of Background Security Improvements.",
+            "description": "If 'false', the system prohibits installation of Background Security Improvements.\nRemoved: use the declarative management 'com.apple.configuration.softwareupdate.settings' configuration.",
             "property_order": 370
         },
         "allowRapidSecurityResponseRemoval": {
             "type": "boolean",
-            "title": "Allow Background Security Improvement Removal",
+            "title": "Allow Background Security Improvements removal",
             "default": true,
-            "description": "If 'false', the system prohibits removal of Background Security Improvements.",
+            "description": "If 'false', the system prohibits removal of Background Security Improvements.\nRemoved: use the declarative management 'com.apple.configuration.softwareupdate.settings' configuration.",
             "property_order": 375
         },
         "enforcedSoftwareUpdateMinorOSDeferredInstallDelay": {
             "type": "integer",
             "title": "Deferred Minor Software Updates Delay",
             "default": 30,
-            "description": "This restriction allows the administrator to set the number of days to delay a minor OS software update on the device. When this restriction is in place, the user sees a software update only after the specified delay after the release of the software update. This value controls the delay for 'forceDelayedSoftwareUpdates'.",
+            "description": "This restriction allows the administrator to set the number of days to delay a minor OS software update on the device. When this restriction is in place, the user sees a software update only after the specified delay after the release of the software update. This value controls the delay for 'forceDelayedSoftwareUpdates'.\nRemoved: use the declarative management 'com.apple.configuration.softwareupdate.settings' configuration.",
             "property_order": 380
         },
         "forceDelayedAppSoftwareUpdates": {
@@ -578,28 +578,28 @@
             "type": "integer",
             "title": "Deferred Software Updates Delay",
             "default": 30,
-            "description": "How many days to delay a software update on the device. With this restriction in place, the user doesn't see a software update until the specified number of days after the software update release date. The restrictions 'forceDelayedAppSoftwareUpdates' and 'forceDelayedSoftwareUpdates' use this value.",
+            "description": "How many days to delay a software update on the device. With this restriction in place, the user doesn't see a software update until the specified number of days after the software update release date. The restrictions 'forceDelayedAppSoftwareUpdates' and 'forceDelayedSoftwareUpdates' use this value.\nRemoved: use the declarative management 'com.apple.configuration.softwareupdate.settings' configuration.",
             "property_order": 390
         },
         "enforcedSoftwareUpdateNonOSDeferredInstallDelay": {
             "type": "integer",
             "title": "Deferred non-OS Software Updates Delay",
             "default": 30,
-            "description": "This restriction allows the administrator to set the number of days to delay an app software update on the device. When this restriction is in place, the user sees a non-OS software update only after the specified delay after the release of the software. This value controls the delay for 'forceDelayedAppSoftwareUpdates'.",
+            "description": "This restriction allows the administrator to set the number of days to delay an app software update on the device. When this restriction is in place, the user sees a non-OS software update only after the specified delay after the release of the software. This value controls the delay for 'forceDelayedAppSoftwareUpdates'.\nRemoved: use the declarative management 'com.apple.configuration.softwareupdate.settings' configuration.",
             "property_order": 395
         },
         "forceDelayedMajorSoftwareUpdates": {
             "type": "boolean",
             "title": "Defer Major OS Software Updates",
             "default": false,
-            "description": "If 'true', the system delays user visibility of major OS updates.",
+            "description": "If 'true', the system delays user visibility of major OS updates.\nRemoved: use the declarative management 'com.apple.configuration.softwareupdate.settings' configuration.",
             "property_order": 400
         },
         "enforcedSoftwareUpdateMajorOSDeferredInstallDelay": {
             "type": "integer",
             "title": "Deferred Major Software Updates Delay",
             "default": 30,
-            "description": "This restriction allows the administrator to set the number of days to delay a major software upgrade on the device. When this restriction is in place, the user sees a software upgrade only after the specified delay after the release of the software upgrade. This value controls the delay for 'forceDelayedMajorSoftwareUpdates'.",
+            "description": "This restriction allows the administrator to set the number of days to delay a major software upgrade on the device. When this restriction is in place, the user sees a software upgrade only after the specified delay after the release of the software upgrade. This value controls the delay for 'forceDelayedMajorSoftwareUpdates'.\nRemoved: use the declarative management 'com.apple.configuration.softwareupdate.settings' configuration.",
             "property_order": 405
         },
         "enforcedFingerprintTimeout": {
@@ -613,14 +613,14 @@
             "type": "boolean",
             "title": "Allow dictation",
             "default": true,
-            "description": "If 'false', the system disallows dictation input.",
+            "description": "If 'false', the system disallows dictation input.\nDeprecated: use the declarative management 'com.apple.configuration.keyboard.settings' configuration.",
             "property_order": 415
         },
         "forceOnDeviceOnlyDictation": {
             "type": "boolean",
             "title": "Force On-Device Only Dictation",
             "default": false,
-            "description": "If 'true', the system disables connections to Siri servers for the purposes of dictation.",
+            "description": "If 'true', the system disables connections to Siri servers for the purposes of dictation.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 420
         },
         "safariAllowAutoFill": {
@@ -648,14 +648,14 @@
             "type": "boolean",
             "title": "Allow Genmoji",
             "default": true,
-            "description": "If 'false', prohibits creating new Genmoji.",
+            "description": "If 'false', prohibits creating new Genmoji.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 440
         },
         "allowImagePlayground": {
             "type": "boolean",
             "title": "Allow Image Playground",
             "default": true,
-            "description": "If 'false', prohibits the use of image generation.",
+            "description": "If 'false', prohibits the use of image generation.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 445
         },
         "allowiPhoneMirroring": {
@@ -669,21 +669,21 @@
             "type": "boolean",
             "title": "Allow writing tools",
             "default": true,
-            "description": "If 'false', disables Apple Intelligence writing tools.",
+            "description": "If 'false', disables Apple Intelligence writing tools.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 455
         },
         "allowMailSummary": {
             "type": "boolean",
             "title": "Allow Mail Summary",
             "default": true,
-            "description": "If 'false', disables the ability to create summaries of email messages manually. This doesn't affect automatic summary generation.",
+            "description": "If 'false', disables the ability to create summaries of email messages manually. This doesn't affect automatic summary generation.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 460
         },
         "allowMailSmartReplies": {
             "type": "boolean",
             "title": "Allow Mail Smart Replies",
             "default": true,
-            "description": "If 'false', disables smart replies in Mail.",
+            "description": "If 'false', disables smart replies in Mail.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 465
         },
         "allowMediaSharingModification": {
@@ -703,51 +703,51 @@
             "type": "boolean",
             "title": "Allow external intelligence integrations",
             "default": true,
-            "description": "If 'false', disables the use of external, cloud-based intelligence services with Siri. In iOS, this restriction is temporarily allowed on unsupervised and user enrollments. In a future release, this restriction will require supervision, and will be ignored on unsupervised devices.",
+            "description": "If 'false', disables the use of external, cloud-based intelligence services with Siri. In iOS, this restriction is temporarily allowed on unsupervised and user enrollments. In a future release, this restriction will require supervision, and will be ignored on unsupervised devices.\nDeprecated: use the declarative management 'com.apple.configuration.external-intelligence.settings' configuration.",
             "property_order": 480
         },
         "allowExternalIntelligenceIntegrationsSignIn": {
             "type": "boolean",
             "title": "Allow external intelligence integrations sign-in",
             "default": true,
-            "description": "If 'false', forces external intelligence providers into anonymous mode. If a user is already signed in to an external intelligence provider, applying this restriction signs them out when attempting the next request.",
+            "description": "If 'false', forces external intelligence providers into anonymous mode. If a user is already signed in to an external intelligence provider, applying this restriction signs them out when attempting the next request.\nDeprecated: use the declarative management 'com.apple.configuration.external-intelligence.settings' configuration.",
             "property_order": 485
         },
         "allowedExternalIntelligenceWorkspaceIDs": {
             "type": "array",
             "items": {
                 "type": "string",
-                "title": "Allowed Workspace ID"
+                "title": "Allowed workspace ID"
             },
-            "title": "Allowed External Intelligence Workspace IDs",
-            "description": "An array of strings, but currently restricted to a single element. If present, Apple Intelligence allows use of only the given external integration workspace ID, and requires a sign-in to make requests. The user is required to sign in to integrations that support signing in. Multiple payloads combine using an intersect operation. This means the allowed set of workspace IDs can become the empty set if multiple payloads specify conflicting values.",
+            "title": "Allowed external intelligence workspace IDs",
+            "description": "An array of strings, but currently restricted to a single element. If present, Apple Intelligence allows use of only the given external integration workspace ID, and requires a sign-in to make requests. The user is required to sign in to integrations that support signing in. Multiple payloads combine using an intersect operation. This means the allowed set of workspace IDs can become the empty set if multiple payloads specify conflicting values.\nDeprecated: use the declarative management 'com.apple.configuration.external-intelligence.settings' configuration.",
             "property_order": 490
         },
         "allowNotesTranscriptionSummary": {
             "type": "boolean",
             "title": "Allow Notes Transcript Summary",
             "default": true,
-            "description": "If 'false', disables transcription summarization in Notes.",
+            "description": "If 'false', disables transcription summarization in Notes.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 495
         },
         "allowNotesTranscription": {
             "type": "boolean",
             "default": true,
-            "description": "If 'false', disables transcription in Notes.",
+            "description": "If 'false', disables transcription in Notes.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 500
         },
         "allowAppleIntelligenceReport": {
             "type": "boolean",
-            "title": "Allow Apple Intelligence Report",
+            "title": "Allow Apple Intelligence report",
             "default": true,
-            "description": "If 'false', the system disables Apple Intelligence reports.",
+            "description": "If 'false', the system disables Apple Intelligence reports.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 505
         },
         "allowSafariSummary": {
             "type": "boolean",
             "title": "Allow Content Summary in Safari",
             "default": true,
-            "description": "If 'false', the system disables the ability to summarize content in Safari.",
+            "description": "If 'false', the system disables the ability to summarize content in Safari.\nDeprecated: use the declarative management 'com.apple.configuration.intelligence.settings' configuration.",
             "property_order": 510
         },
         "allowSafariHistoryClearing": {
@@ -764,14 +764,14 @@
         },
         "allowCallRecording": {
             "type": "boolean",
-            "title": "Allow Call Recording",
+            "title": "Allow call recording",
             "default": true,
             "description": "If 'false', disables call recording.",
             "property_order": 525
         },
         "allowLiveVoicemail": {
             "type": "boolean",
-            "title": "Allow Live Voicemail",
+            "title": "Allow live voicemail",
             "default": true,
             "description": "If 'false', the system disables live voicemail on the device.",
             "property_order": 530
@@ -780,7 +780,7 @@
             "type": "boolean",
             "title": "Allow Rosetta Usage Awareness",
             "default": true,
-            "description": "If 'false', disables Rosetta usage awareness. When Rosetta usage awareness is active, a pop-up dialog is displayed to the user when an app that is using Rosetta is launched. The pop-up dialog indicates that Rosetta will be removed in a future version of the operating system so that the user can contact the app vendor regarding a replacement for the current app.",
+            "description": "If 'false', disables Rosetta usage awareness. When Rosetta usage awareness is active, the device displays a pop-up dialog to the user when launching an app that uses Rosetta. The pop-up dialog indicates that Rosetta will be removed in a future version of the operating system so that the user can contact the app vendor regarding a replacement for the current app.",
             "property_order": 535
         }
     }

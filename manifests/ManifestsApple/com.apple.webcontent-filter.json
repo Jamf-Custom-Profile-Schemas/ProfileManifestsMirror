@@ -21,7 +21,7 @@
         },
         "FilterGrade": {
             "type": "string",
-            "title": "Filter Grade",
+            "title": "Filter grade",
             "default": "firewall",
             "description": "The system uses this value to derive the relative order of content filters. Filters with a grade of 'firewall' see network traffic before filters with a grade of 'inspector'. However, the system doesn't define the order of filters within a grade.",
             "enum": [
@@ -179,13 +179,13 @@
         },
         "FilterDataProviderBundleIdentifier": {
             "type": "string",
-            "title": "Filter Data Provider Bundle Identifier",
+            "title": "Filter data provider bundle identifier",
             "description": "The bundle identifier string of the filter data provider system extension. This string identifies the filter data provider when the filter starts running. Required if 'FilterSockets' is 'true'.",
             "property_order": 90
         },
         "FilterDataProviderDesignatedRequirement": {
             "type": "string",
-            "title": "Filter Data Provider Designated Requirement",
+            "title": "Filter data provider designated requirement",
             "description": "The designated requirement string that the system embeds in the code signature of the filter data provider system extension. This string identifies the filter data provider when the filter starts running. Required if 'FilterSockets' is 'true'.",
             "property_order": 95
         },
@@ -198,13 +198,13 @@
         },
         "FilterPacketProviderBundleIdentifier": {
             "type": "string",
-            "title": "Filter Packet Provider Bundle Identifier",
+            "title": "Filter packet provider bundle identifier",
             "description": "The bundle identifier string of the filter packet provider system extension. This string identifies the filter packet provider when the filter starts running. Required if 'FilterPackets' is 'true'.",
             "property_order": 105
         },
         "FilterPacketProviderDesignatedRequirement": {
             "type": "string",
-            "title": "Filter Packet Provider Designated Requirement",
+            "title": "Filter packet provider designated requirement",
             "description": "The designated requirement string that the system embeds in the code signature of the filter packet provider system extension. This string identifies the filter packet provider when the filter starts running. Required if 'FilterPackets' is 'true'.",
             "property_order": 110
         },
@@ -227,7 +227,7 @@
         },
         "ContentFilterUUID": {
             "type": "string",
-            "title": "Content Filter UUID",
+            "title": "Content filter UUID",
             "description": "A globally unique identifier for this content filter configuration. The content filter processes network traffic for managed apps with the same 'ContentFilterUUID' in their app attributes. Use when 'FilterType' is 'Plugin'.This key must be present for unsupervised devices and user enrollment.",
             "property_order": 120
         },
@@ -242,36 +242,36 @@
             "type": "boolean",
             "title": "FilterURLs",
             "default": false,
-            "description": "If 'true', the system filters URL requests. Use when 'FilterType' is 'Plugin'. Available in iOS 26 and macOS 26, and later.",
+            "description": "If 'true', the system filters URL requests. Use when 'FilterType' is 'Plugin'.",
             "property_order": 130
         },
         "URLFilterParameters": {
             "type": "object",
-            "description": "A dictionary containing URL filter parameters. Required when 'FilterURLs' is 'true'. Available in iOS 26 and macOS 26 and later.",
+            "description": "A dictionary containing URL filter parameters. Required when 'FilterURLs' is 'true'.",
             "properties": {
                 "URLFilterControlProviderDesignatedRequirement": {
                     "type": "string",
-                    "title": "URL Filter Control Provider Designated Requirement",
+                    "title": "URL filter control provider designated requirement",
                     "description": "The designated requirement string in the code signature of the URL filter control provider app extension. The system uses this string to identify the URL filter control provider when the filter starts running. Required in macOS."
                 },
                 "URLFilterControlProviderBundleIdentifier": {
                     "type": "string",
-                    "title": "URL Filter Control Provider Bundle Identifier",
+                    "title": "URL filter control provider bundle identifier",
                     "description": "The bundle identifier string of the URL filter control provider app extension. The system uses this string to identify the URL filter control provider when the filter starts running."
                 },
                 "PIRServerURL": {
                     "type": "string",
-                    "title": "Private Information Retrieval server URL",
+                    "title": "Private information retrieval server URL",
                     "description": "The URL containing the domain name of the private information retrieval server."
                 },
                 "PIRPrivacyPassIssuerURL": {
                     "type": "string",
-                    "title": "Privacy Pass Issuer URL",
+                    "title": "Privacy pass issuer URL",
                     "description": "The URL containing the domain name of Privacy Pass Issuer."
                 },
                 "PIRAuthenticationToken": {
                     "type": "string",
-                    "title": "Authentication Token",
+                    "title": "Authentication token",
                     "description": "The per-user authentication token string, which is an HTTP bearer token for the person using your app. The system uses this token to attest that it is a valid user when requesting anonymous authentication tokens for PIR exchanges."
                 },
                 "URLFilterFailClosed": {

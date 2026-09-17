@@ -4,25 +4,25 @@
     "properties": {
         "LDAPAccountDescription": {
             "type": "string",
-            "title": "Account Description",
+            "title": "Account description",
             "description": "The description of the account.",
             "property_order": 5
         },
         "LDAPAccountUserName": {
             "type": "string",
-            "title": "Account Username",
+            "title": "Account username",
             "description": "The user's user name.",
             "property_order": 10
         },
         "LDAPAccountPassword": {
             "type": "string",
-            "title": "Account Password",
+            "title": "Account password",
             "description": "The user's password. Only use this in encrypted profiles.",
             "property_order": 15
         },
         "LDAPAccountHostName": {
             "type": "string",
-            "title": "Account Hostname",
+            "title": "Account hostname",
             "description": "The server's address.",
             "property_order": 20
         },
@@ -37,7 +37,7 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "An LDAP Search Setting",
+                "title": "An LDAP search setting",
                 "default": {
                     "LDAPSearchSettingDescription": "My Search",
                     "LDAPSearchSettingScope": "LDAPSearchSettingScopeSubtree",
@@ -53,7 +53,7 @@
                     },
                     "LDAPSearchSettingScope": {
                         "type": "string",
-                        "title": "Search Setting Scope",
+                        "title": "Search setting scope",
                         "default": "LDAPSearchSettingScopeSubtree",
                         "description": "The type of recursion to use in the search:\n'LDAPSearchSettingScopeBase': The search uses only the immediate node that the search base points to.\n'LDAPSearchSettingScopeOneLevel': The search uses the node plus its immediate children.\n'LDAPSearchSettingScopeSubtree': The search uses the node plus all children, regardless of depth.",
                         "enum": [
@@ -71,20 +71,20 @@
                     },
                     "LDAPSearchSettingSearchBase": {
                         "type": "string",
-                        "title": "Search Setting Search Base",
+                        "title": "Search setting search base",
                         "default": "o=My Company,ou=My Department",
                         "description": "The path to the node where a search should start."
                     }
                 }
             },
-            "title": "Search Settings",
+            "title": "Search settings",
             "description": "An array of search settings dictionaries.",
             "property_order": 30
         },
         "VPNUUID": {
             "type": "string",
             "title": "VPNUUID",
-            "description": "The VPNUUID of the per-app VPN the account uses for network communication. Available in iOS 14 and later.",
+            "description": "The VPNUUID of the per-app VPN the account uses for network communication.",
             "property_order": 35
         }
     }

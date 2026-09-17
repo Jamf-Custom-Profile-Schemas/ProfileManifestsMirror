@@ -24,29 +24,29 @@
         },
         "Precomposed": {
             "type": "boolean",
-            "title": "Precomposed Icon",
+            "title": "Precomposed icon",
             "default": false,
             "description": "If 'true', the system prevents SpringBoard from adding shine to the icon.",
             "property_order": 20
         },
         "FullScreen": {
             "type": "boolean",
-            "title": "Full Screen",
+            "title": "Full screen",
             "default": false,
             "description": "If 'true', the system launches the web clip as a full-screen web app.",
             "property_order": 25
         },
         "IgnoreManifestScope": {
             "type": "boolean",
-            "title": "Ignore Web Clip manifest scope",
+            "title": "Ignore web clip manifest scope",
             "default": false,
-            "description": "If 'true', a full screen web clip can navigate to an external web site without showing Safari UI. Otherwise, Safari UI appears when navigating away from the web clip's URL. This key has no effect when 'FullScreen' is 'false'. Available in iOS 14 and later.",
+            "description": "If 'true', a full screen web clip can navigate to an external web site without showing Safari UI. Otherwise, Safari UI appears when navigating away from the web clip's URL. This key has no effect when 'FullScreen' is 'false'.",
             "property_order": 30
         },
         "TargetApplicationBundleIdentifier": {
             "type": "string",
-            "title": "Target Application Bundle Identifier",
-            "description": "The application bundle identifier of the application that opens the URL. To use this property, install the profile through MDM. Available in iOS 14 and later.",
+            "title": "Target application bundle identifier",
+            "description": "The application bundle identifier of the application that opens the URL. To use this property, install the profile through MDM.",
             "property_order": 35
         }
     }

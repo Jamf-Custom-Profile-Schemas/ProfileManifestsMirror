@@ -6,14 +6,14 @@
             "type": "boolean",
             "title": "Require password to unlock screen.",
             "default": false,
-            "description": "If 'true', the user is prompted for a password when the screen saver is unlocked or stopped. When you use this prompt, you must also provide 'askForPasswordDelay'. Available in macOS 10.13 and later.",
+            "description": "If 'true', the device prompts the user for a password when the screen saver is unlocked or stopped. When you use this prompt, you must also provide 'askForPasswordDelay'.",
             "property_order": 5
         },
         "askForPasswordDelay": {
             "type": "integer",
             "title": "Require password delay",
             "default": 0,
-            "description": "The number of seconds to delay before the password will be required to unlock or stop the screen saver (the grace period). A value of '2147483647' (for example, '0x7FFFFFFF') disables this requirement. To use this option, you must set 'askForPassword' to 'true'. Available in macOS 10.13 and later.",
+            "description": "The number of seconds to delay before the device requires a password to unlock or stop the screen saver (the grace period). A value of '2147483647' (hexadecimal equivalent of '0x7FFFFFFF') disables this requirement, and a value of '0' immediately requires the password. To use this option, you must set 'askForPassword' to 'true'.",
             "property_order": 10
         },
         "loginWindowModulePath": {

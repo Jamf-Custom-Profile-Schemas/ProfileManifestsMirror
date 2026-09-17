@@ -4,13 +4,13 @@
     "properties": {
         "AppBundleIdentifier": {
             "type": "string",
-            "title": "App Bundle Identifier",
+            "title": "App bundle identifier",
             "description": "The bundle identifier of the app containing the DNS proxy network extension.",
             "property_order": 5
         },
         "ProviderBundleIdentifier": {
             "type": "string",
-            "title": "Provider Bundle Identifier",
+            "title": "Provider bundle identifier",
             "description": "The bundle identifier of the DNS proxy network extension to use. Declaring the bundle identifier is useful for apps that contain more than one DNS proxy extension.",
             "property_order": 10
         },
@@ -18,13 +18,28 @@
             "type": "object",
             "title": "Provider Custom Configuration",
             "description": "The dictionary of vendor-specific configuration items.",
+            "properties": {
+                "{{key}}": {
+                    "type": "string"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "description": "Key/value pairs."
+                }
+            },
             "property_order": 15
         },
         "DNSProxyUUID": {
             "type": "string",
-            "title": "DNS Proxy UUID",
+            "title": "DNS proxy UUID",
             "description": "A globally unique identifier for this DNS proxy configuration. The proxy processes DNS lookups traffic for managed apps with the same 'DNSProxyUUID' in their app attributes. This key is required for user enrollment.",
             "property_order": 20
+        },
+        "ProviderDesignatedRequirement": {
+            "type": "string",
+            "title": "Provider designated requirement",
+            "description": "The designated requirement string that the system embeds in the code signature of the DNS proxy network extension. Use this to correctly identify the DNS proxy extension when 'ProviderBundleIdentifier' is present.",
+            "property_order": 25
         }
     }
 }

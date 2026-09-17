@@ -4,25 +4,25 @@
     "properties": {
         "AIMAccountDescription": {
             "type": "string",
-            "title": "Account Description",
+            "title": "Account description",
             "description": "The description of the account.",
             "property_order": 5
         },
         "AIMUserName": {
             "type": "string",
-            "title": "Account Username",
+            "title": "Account username",
             "description": "The user's login name.",
             "property_order": 10
         },
         "AIMPassword": {
             "type": "string",
-            "title": "Account Password",
+            "title": "Account password",
             "description": "The user's password.",
             "property_order": 15
         },
         "AIMAuthentication": {
             "type": "string",
-            "title": "AIM Authentication",
+            "title": "AIM authentication",
             "description": "The authentication method for the account.",
             "enum": [
                 "AIMAuthPassword"
@@ -36,7 +36,7 @@
         },
         "AIMHostName": {
             "type": "string",
-            "title": "Account Hostname",
+            "title": "Account hostname",
             "default": "slogin.oscar.aol.com",
             "description": "The server address.",
             "enum": [
@@ -46,7 +46,7 @@
         },
         "AIMPort": {
             "type": "integer",
-            "title": "Port Number",
+            "title": "Port number",
             "default": 5190,
             "description": "The connection port for the server.",
             "property_order": 30

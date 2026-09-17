@@ -4,30 +4,30 @@
     "properties": {
         "AccountDescription": {
             "type": "string",
-            "title": "Account Description",
+            "title": "Account description",
             "description": "A user-visible description of the Google account, shown in the Mail and Settings apps.",
             "property_order": 5
         },
         "AccountName": {
             "type": "string",
-            "title": "Account Name",
+            "title": "Account name",
             "description": "The user's full name for the Google account. This name appears in sent messages.",
             "property_order": 10
         },
         "EmailAddress": {
             "type": "string",
-            "title": "Email Address",
+            "title": "Email address",
             "description": "The full Google email address for the account.",
             "property_order": 15
         },
         "CommunicationServiceRules": {
             "type": "object",
-            "title": "Communication Service Rules",
+            "title": "Communication service rules",
             "description": "The communication service handler rules for this account.",
             "properties": {
                 "DefaultServiceHandlers": {
                     "type": "object",
-                    "title": "Default Service Handlers",
+                    "title": "Default service handlers",
                     "description": "A dictionary that defines which app to use for audio calls from this account.",
                     "properties": {
                         "AudioCall": {
@@ -43,7 +43,7 @@
         "VPNUUID": {
             "type": "string",
             "title": "VPNUUID",
-            "description": "The VPNUUID of the per-app VPN the account uses for network communication. Available in iOS 14 and later.",
+            "description": "The VPNUUID of the per-app VPN the account uses for network communication.",
             "property_order": 25
         }
     }

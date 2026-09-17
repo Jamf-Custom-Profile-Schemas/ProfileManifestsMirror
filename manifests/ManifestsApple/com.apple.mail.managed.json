@@ -4,7 +4,7 @@
     "properties": {
         "EmailAccountType": {
             "type": "string",
-            "title": "Account Type",
+            "title": "Account type",
             "default": "EmailTypeIMAP",
             "description": "Defines the protocol to use for the account.",
             "enum": [
@@ -21,7 +21,7 @@
         },
         "EmailAccountDescription": {
             "type": "string",
-            "title": "Account Description",
+            "title": "Account description",
             "description": "A user-visible description of the email account, shown in the Mail and Settings applications.",
             "property_order": 10
         },
@@ -39,7 +39,7 @@
         },
         "EmailAddress": {
             "type": "string",
-            "title": "Email Address",
+            "title": "Email address",
             "description": "The full email address for the account. If this string isn't present in the payload, the device prompts the user for this string during interactive profile installation in Settings or System Preferences.",
             "property_order": 25
         },
@@ -65,7 +65,7 @@
         },
         "allowMailDrop": {
             "type": "boolean",
-            "title": "Allow Mail Drop",
+            "title": "Allow mail drop",
             "default": false,
             "description": "If 'true', the system enables this account to use Mail Drop.",
             "property_order": 45
@@ -79,42 +79,42 @@
         },
         "SMIMEEnabled": {
             "type": "boolean",
-            "title": "S/MIME Enabled",
+            "title": "S/MIME enabled",
             "default": false,
             "description": "If 'true', the system enables S/MIME encryption. The system ignores this key in iOS 10.0 and later.",
             "property_order": 55
         },
         "SMIMESigningEnabled": {
             "type": "boolean",
-            "title": "S/MIME Signing Enabled",
+            "title": "S/MIME signing enabled",
             "default": false,
             "description": "If 'true', the system enables S/MIME signing for this account.",
             "property_order": 60
         },
         "SMIMESigningCertificateUUID": {
             "type": "string",
-            "title": "S/MIME Signing Certificate",
+            "title": "S/MIME signing certificate",
             "description": "The payload UUID of the identity certificate used to sign messages sent from this account.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 65
         },
         "SMIMEEncryptionEnabled": {
             "type": "boolean",
-            "title": "S/MIME Encryption Enabled",
+            "title": "S/MIME encryption enabled",
             "default": false,
             "description": "If 'true', the system enables S/MIME encryption for this account.",
             "property_order": 70
         },
         "SMIMEEncryptionCertificateUUID": {
             "type": "string",
-            "title": "S/MIME Encryption Certificate",
+            "title": "S/MIME encryption certificate",
             "description": "The UUID of the identity certificate used to decrypt messages sent to this account. The system attaches the public certificate to outgoing mail to allow the user to receive encrypted mail. When the user sends encrypted mail, the system uses the public certificate to encrypt the copy of the mail in their Sent mailbox.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 75
         },
         "SMIMEEnablePerMessageSwitch": {
             "type": "boolean",
-            "title": "S/MIME Enable Per-Message Switch",
+            "title": "S/MIME enable per-message switch",
             "default": false,
             "description": "If 'true', the system displays the per-message encryption switch in the Mail Compose UI. Deprecated in iOS 12.0. Use 'SMIMEEnableEncryptionPerMessageSwitch' instead.",
             "property_order": 80
@@ -266,7 +266,7 @@
         },
         "OutgoingPasswordSameAsIncomingPassword": {
             "type": "boolean",
-            "title": "Outgoing Password Same As Incoming",
+            "title": "Outgoing password same as incoming",
             "default": false,
             "description": "If 'true', the system prompts the user only once for the password, which it uses for both outgoing and incoming mail.\n\nThis setting is only supported by interactive profile installations. Not supported by non-interactive installations, such as MDM on iOS.",
             "property_order": 170
@@ -281,7 +281,7 @@
         "VPNUUID": {
             "type": "string",
             "title": "VPNUUID",
-            "description": "The VPNUUID of the per-app VPN the account uses for network communication. Available in iOS 14 and later.",
+            "description": "The VPNUUID of the per-app VPN the account uses for network communication.",
             "property_order": 180
         }
     }

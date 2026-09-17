@@ -4,7 +4,7 @@
     "properties": {
         "IsHotspot": {
             "type": "boolean",
-            "title": "Is Hotspot",
+            "title": "Is hotspot",
             "default": false,
             "description": "If 'true', the device treats the network as a hotspot.",
             "property_order": 5
@@ -24,14 +24,14 @@
         },
         "AutoJoin": {
             "type": "boolean",
-            "title": "Auto Join",
+            "title": "Auto join",
             "default": true,
             "description": "If 'true', the device joins the network automatically.\nIf 'false', the user must tap the network name to join it.",
             "property_order": 20
         },
         "CaptiveBypass": {
             "type": "boolean",
-            "title": "Disable Captive Network Detection",
+            "title": "Disable captive network detection",
             "default": false,
             "description": "If 'true', the system bypasses Captive Network detection when the device connects to the network.",
             "property_order": 25
@@ -52,7 +52,7 @@
         },
         "ProxyType": {
             "type": "string",
-            "title": "Proxy Type",
+            "title": "Proxy type",
             "default": "None",
             "description": "The proxy type, if any, to use. If you choose the manual proxy type, you need the proxy server address, including its port and optionally a user name and password into the proxy server. If you choose the auto proxy type, you can enter a proxy autoconfiguration (PAC) URL.",
             "enum": [
@@ -64,25 +64,25 @@
         },
         "ProxyServer": {
             "type": "string",
-            "title": "Proxy Server",
+            "title": "Proxy server",
             "description": "The proxy server's network address.",
             "property_order": 45
         },
         "ProxyServerPort": {
             "type": "integer",
-            "title": "Proxy Server Port",
+            "title": "Proxy server port",
             "description": "The proxy server's port number.",
             "property_order": 50
         },
         "ProxyUsername": {
             "type": "string",
-            "title": "Proxy Username",
+            "title": "Proxy username",
             "description": "The user name used to authenticate to the proxy server.",
             "property_order": 55
         },
         "ProxyPassword": {
             "type": "string",
-            "title": "Proxy Password",
+            "title": "Proxy password",
             "description": "The password used to authenticate to the proxy server.",
             "property_order": 60
         },
@@ -94,14 +94,14 @@
         },
         "ProxyPACFallbackAllowed": {
             "type": "boolean",
-            "title": "Proxy PAC Fallback Allowed",
+            "title": "Proxy PAC fallback allowed",
             "default": false,
             "description": "If 'true', allows connecting directly to the destination if the PAC file is unreachable.",
             "property_order": 70
         },
         "EncryptionType": {
             "type": "string",
-            "title": "Encryption Type",
+            "title": "Encryption type",
             "default": "Any",
             "description": "The encryption type for the network.\nIf set to anything except 'None', the payload may contain the following three keys: 'Password', 'PayloadCertificateUUID', or 'EAPClientConfiguration'.\nAs of iOS 16, tvOS 16, watchOS 9, and macOS 13:\n'WPA' allows joining WPA or WPA2 networks\n'WPA2' allows joining WPA2 or WPA3 networks\n'WPA3' allows joining WPA3 networks only\n'Any' allows joining WPA, WPA2, WPA3, and WEP networks\nPrior to iOS 16, tvOS 16, and watchOS 9, specifying 'WPA', 'WPA2', and 'WPA3' were equivalent and would allow joining any WPA network.\nPrior to macOS 13, the encryption type, if specified explicitly, needed to match the encryption type of the network exactly.",
             "enum": [
@@ -132,19 +132,19 @@
         },
         "DisplayedOperatorName": {
             "type": "string",
-            "title": "Displayed Operator Name",
+            "title": "Displayed operator name",
             "description": "The operator name to display when connected to this network. Used only with Wi-Fi Hotspot 2.0 access points.",
             "property_order": 85
         },
         "DomainName": {
             "type": "string",
-            "title": "Domain Name",
+            "title": "Domain name",
             "description": "The primary domain of the tunnel.",
             "property_order": 90
         },
         "ServiceProviderRoamingEnabled": {
             "type": "boolean",
-            "title": "Roaming Enable",
+            "title": "Roaming enable",
             "default": false,
             "description": "If 'true', allows connection to roaming service providers.",
             "property_order": 95
@@ -164,7 +164,7 @@
             "items": {
                 "type": "string"
             },
-            "title": "Realm Names",
+            "title": "Realm names",
             "description": "An array of Network Access Identifier Realm names used for Wi-Fi Hotspot 2.0 negotiation.",
             "property_order": 105
         },
@@ -207,14 +207,14 @@
         },
         "EAPClientConfiguration": {
             "type": "object",
-            "title": "EAP Client Configuration",
+            "title": "EAP client configuration",
             "description": "The enterprise network configuration.",
             "properties": {
                 "AcceptEAPTypes": {
                     "type": "array",
                     "items": {
                         "type": "integer",
-                        "title": "EAP Type",
+                        "title": "EAP type",
                         "description": "An integer representing an EAP type, inside of the Accept EAP Types array.",
                         "enum": [
                             13,
@@ -237,7 +237,7 @@
                             ]
                         }
                     },
-                    "title": "Accept EAP Types",
+                    "title": "Accept EAP types",
                     "description": "The EAP types that the system accepts. Allowed values:\n'13': EAP-TLS\n'17': LEAP\n'18': EAP-SIM\n'21': EAP-TTLS\n'23': EAP-AKA\n'25': PEAPv0/v1\n'43': EAP-FAST\nFor EAP-TLS authentication without a network payload, install the necessary identity certificates and have your users select EAP-TLS mode in the 802.1X credentials dialog that appears when they connect to the network. For other EAP types, a network payload is necessary and must specify the correct settings for the network."
                 },
                 "UserName": {
@@ -252,7 +252,7 @@
                 },
                 "OneTimeUserPassword": {
                     "type": "boolean",
-                    "title": "Per-Connection Password",
+                    "title": "Per-connection password",
                     "default": false,
                     "description": "If 'true', the user receives a prompt for a password each time they connect to the network."
                 },
@@ -260,32 +260,32 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Individual Certificate Anchor UUID",
+                        "title": "Individual certificate anchor UUID",
                         "description": "A UUID for a trusted certificate",
                         "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$"
                     },
-                    "title": "Certificate Anchor UUID",
-                    "description": "An array of the UUID of each certificate payload in the same profile to trust for authentication. Use this key to prevent the device from asking the user whether to trust the listed certificates. Dynamic trust (the certificate dialogue) is in a disabled state if you specify this property without also enabling 'TLSAllowTrustExceptions'."
+                    "title": "Certificate anchor UUID",
+                    "description": "An array of the UUID of each certificate payload in the same profile to trust for authentication. Use this key to prevent the device from asking the user whether to trust the listed certificates. The device disables dynamic trust (the certificate dialogue) if you specify this property without also enabling 'TLSAllowTrustExceptions'."
                 },
                 "TLSTrustedServerNames": {
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Individual Trusted TLS Server Name",
+                        "title": "Individual trusted TLS server name",
                         "description": "An item in the TLS Trusted Server Names array representing a Common Name of a server certificate."
                     },
-                    "title": "TLS Trusted Server Names",
-                    "description": "The list of accepted server certificate common names. If a server presents a certificate that isn't in this list, the system doesn't trust it. If you specify this property, the system disables dynamic trust (the certificate dialog) unless you also specify 'TLSAllowTrustExceptions' with the value 'true'. If necessary, use wildcards to specify the name, such as 'wpa.*.example.com'."
+                    "title": "TLS trusted server names",
+                    "description": "The list of accepted server certificate common names. If a server presents a certificate that isn't in this list, the system doesn't trust it. If you specify this property, the system disables dynamic trust (the certificate dialog) unless you also specify 'TLSAllowTrustExceptions' with the value 'true'. If necessary, use a single \"*\" character to specify a wildcard for an individual component of the name, such as 'wpa.*.example.com'."
                 },
                 "TLSAllowTrustExceptions": {
                     "type": "boolean",
-                    "title": "Allow Trust Exceptions",
+                    "title": "Allow trust exceptions",
                     "default": true,
                     "description": "If 'true', allows a dynamic trust decision by the user. The dynamic trust is the certificate dialogue that appears when the system doesn't trust a certificate. If 'false', the authentication fails if the system doesn't already trust the certificate. As of iOS 8, Apple no longer supports this key."
                 },
                 "TTLSInnerAuthentication": {
                     "type": "string",
-                    "title": "TTLS Inner Authentication",
+                    "title": "TTLS inner authentication",
                     "default": "MSCHAPv2",
                     "description": "The inner authentication that the TTLS module uses.",
                     "enum": [
@@ -298,7 +298,7 @@
                 },
                 "OuterIdentity": {
                     "type": "string",
-                    "title": "Outer Identity",
+                    "title": "Outer identity",
                     "description": "A name that hides the user's true name. The user's actual name appears only inside the encrypted tunnel. For example, you might set this to anonymous or anon, or anon@mycompany.net. It can increase security because an attacker can't see the authenticating user's name in the clear. This key is only relevant to TTLS, PEAP, and EAP-FAST. This field is required if 'TLSMinimumVersion' is '1.3'."
                 },
                 "TLSMinimumVersion": {
@@ -339,13 +339,13 @@
                 },
                 "EAPFASTProvisionPACAnonymously": {
                     "type": "boolean",
-                    "title": "Provision PAC Anonymously",
+                    "title": "Provision PAC anonymously",
                     "default": false,
                     "description": "If 'true', provisions the device anonymously. Note that there are known machine-in-the-middle attacks for anonymous provisioning."
                 },
                 "EAPSIMNumberOfRANDs": {
                     "type": "integer",
-                    "title": "Allow Two RANDs",
+                    "title": "Allow two RANDs",
                     "default": 3,
                     "description": "The minimum number of RAND values to accept from the server. For use with EAP-SIM only.",
                     "enum": [
@@ -378,7 +378,7 @@
                         "type": "string",
                         "description": "A certificate identifier."
                     },
-                    "title": "TLS Trusted Certificates",
+                    "title": "TLS trusted certificates",
                     "description": "An array of trusted certificates. Each entry in the array must contain certificate data that represents an anchor certificate used for verifying the server certificate."
                 },
                 "TLSCertificateIsRequired": {
@@ -391,7 +391,7 @@
         },
         "QoSMarkingPolicy": {
             "type": "object",
-            "title": "QoS Marking Policy",
+            "title": "QoS marking policy",
             "description": "A dictionary that contains the list of apps that the system allows to benefit from L2 and L3 marking. When this dictionary isn't present, the system allows all apps to use L2 and L3 marking when the Wi-Fi network supports Cisco QoS fast lane.",
             "properties": {
                 "QoSMarkingEnabled": {
@@ -410,18 +410,18 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Allowlisted App"
+                        "title": "Allowlisted app"
                     },
-                    "title": "Allowlisted App Identifiers",
+                    "title": "Allowlisted app identifiers",
                     "description": "An array of app bundle identifiers that defines the allow list for L2 and L3 marking for traffic that goes to the Wi-Fi network. If the array isn't present, but the 'QoSMarkingPolicy' key is present — even empty — no apps can use L2 and L3 marking."
                 },
                 "QoSMarkingWhitelistedAppIdentifiers": {
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Allowlisted App"
+                        "title": "Allowlisted app"
                     },
-                    "title": "Whitelisted App Identifiers",
+                    "title": "Whitelisted app identifiers",
                     "description": "Use 'QoSMarkingAllowListAppIdentifiers' instead."
                 }
             },
@@ -436,7 +436,7 @@
         },
         "TLSCertificateRequired": {
             "type": "boolean",
-            "title": "Certificate Required",
+            "title": "Certificate required",
             "default": false,
             "description": "If 'true', allows for two-factor authentication for EAP-TTLS, PEAP, or EAP-FAST. If 'false', allows for zero-factor authentication for EAP-TLS.",
             "property_order": 140

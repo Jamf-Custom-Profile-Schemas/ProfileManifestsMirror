@@ -6,7 +6,7 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "AllowList Content Item",
+                "title": "AllowList content item",
                 "properties": {
                     "DeviceID": {
                         "type": "string",
@@ -16,7 +16,7 @@
                     },
                     "DeviceName": {
                         "type": "string",
-                        "title": "Device Name",
+                        "title": "Device name",
                         "description": "The name of the AirPlay device.\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads."
                     }
                 }
@@ -29,7 +29,7 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "AllowList Content Item",
+                "title": "AllowList content item",
                 "properties": {
                     "DeviceID": {
                         "type": "string",
@@ -39,7 +39,7 @@
                     },
                     "DeviceName": {
                         "type": "string",
-                        "title": "Device Name",
+                        "title": "Device name",
                         "description": "The name of the AirPlay device.\nThe system limits the list of visible AirPlay destinations to devices that are present in the 'AllowList' field of all installed AirPlay payloads."
                     }
                 }
@@ -52,13 +52,13 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "Password Content Item",
+                "title": "Password content item",
                 "description": "An item in the passwords",
                 "properties": {
                     "DeviceName": {
                         "type": "string",
-                        "title": "Device Name",
-                        "description": "The name of the AirPlay destination; used in iOS, and available in macOS 15 and later."
+                        "title": "Device name",
+                        "description": "The name of the AirPlay destination."
                     },
                     "DeviceID": {
                         "type": "string",

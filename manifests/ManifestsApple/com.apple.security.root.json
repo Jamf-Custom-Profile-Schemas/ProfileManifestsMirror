@@ -4,7 +4,7 @@
     "properties": {
         "PayloadCertificateFileName": {
             "type": "string",
-            "title": "Payload Certificate Filename",
+            "title": "Payload certificate filename",
             "description": "The file name of the enclosed certificate.",
             "property_order": 5
         }

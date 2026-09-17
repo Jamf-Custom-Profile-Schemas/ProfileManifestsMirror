@@ -4,7 +4,7 @@
     "properties": {
         "PayloadContent": {
             "type": "object",
-            "title": "Payload Content",
+            "title": "Payload content",
             "description": "A dictionary containing the SCEP information.",
             "properties": {
                 "URL": {
@@ -15,7 +15,7 @@
                 "Name": {
                     "type": "string",
                     "title": "Name",
-                    "description": "A string that's understood by the SCEP server; for example, a domain name like example.org. If a certificate authority has multiple CA certificates, this field can be used to distinguish which is required."
+                    "description": "A string that's understood by the SCEP server; for example, a domain name like example.org. If a certificate authority has multiple CA certificates, use this field to distinguish which is required."
                 },
                 "Subject": {
                     "type": "array",
@@ -25,17 +25,17 @@
                             "type": "array",
                             "items": {
                                 "type": "string",
-                                "title": "SCEP Subject Array Pair Item",
+                                "title": "SCEP subject array pair item",
                                 "description": "One item in the array representing a pair of OID and value"
                             },
-                            "title": "Subject Array Pair",
+                            "title": "Subject array pair",
                             "description": "An array representing an OID and value pair."
                         },
-                        "title": "Array Inside SCEP Subject Array",
+                        "title": "Array inside SCEP subject array",
                         "description": "This array holds another array which holds an OID value pair"
                     },
                     "title": "Subject",
-                    "description": "The representation of an X.500 name as an array of OID and value.\nFor example, '/C=US/O=Apple Inc./CN=foo/1.2.5.3=bar' translates to '[ [ [\"C\", \"US\"] ], [ [\"O\", \"Apple Inc.\"] ], …, [ [ \"1.2.5.3\", \"bar\" ] ] ]'.\nOIDs can be represented as dotted numbers, with shortcuts for country (C), locality (L), state (ST), organization (O), organizational unit (OU), and common name (CN).",
+                    "description": "The representation of an X.500 name as an array of OID and value.\nFor example, '/C=US/O=Apple Inc./CN=foo/1.2.5.3=bar' translates to '[ [ [\"C\", \"US\"] ], [ [\"O\", \"Apple Inc.\"] ], …, [ [ \"1.2.5.3\", \"bar\" ] ] ]'.\nYou can represent OIDs as dotted numbers, with shortcuts for country (C), locality (L), state (ST), organization (O), organizational unit (OU), and common name (CN).",
                     "pattern": "(,?[^=,]+=[^=,]+(,|$))"
                 },
                 "Challenge": {
@@ -45,7 +45,7 @@
                 },
                 "Keysize": {
                     "type": "integer",
-                    "title": "Key Size",
+                    "title": "Key size",
                     "default": 1024,
                     "description": "The key size, in bits.",
                     "enum": [
@@ -56,7 +56,7 @@
                 },
                 "Key Type": {
                     "type": "string",
-                    "title": "Key Type",
+                    "title": "Key type",
                     "default": "RSA",
                     "description": "Always 'RSA'.",
                     "enum": [
@@ -65,7 +65,7 @@
                 },
                 "Key Usage": {
                     "type": "integer",
-                    "title": "Key Usage",
+                    "title": "Key usage",
                     "default": 0,
                     "description": "A bitmask indicating the use of the key. Possible values:\n'1': Signing\n'4': Encryption\nSome certificate authorities, such as Windows CA, support only encryption or signing, but not both at the same time.",
                     "enum": [
@@ -91,17 +91,17 @@
                 },
                 "SubjectAltName": {
                     "type": "object",
-                    "title": "Subject Alt Name",
+                    "title": "Subject alt name",
                     "description": "The SCEP payload can specify an optional 'SubjectAltName' dictionary that provides values required by the CA for issuing a certificate. You can specify a single string or an array of strings for each key. The values you specify depend on the CA you're using, but might include DNS name, URL, or email values. For an example, see Sample Configuration Profile or Over-the-Air Profile Delivery and Configuration.",
                     "properties": {
                         "rfc822Name": {
                             "type": "string",
-                            "title": "RFC 822 Name",
+                            "title": "RFC 822 name",
                             "description": "The RFC 822 (email address) string."
                         },
                         "dNSName": {
                             "type": "string",
-                            "title": "DNS Name",
+                            "title": "DNS name",
                             "description": "The DNS name."
                         },
                         "uniformResourceIdentifier": {
@@ -111,7 +111,7 @@
                         },
                         "ntPrincipalName": {
                             "type": "string",
-                            "title": "NT Principal Name",
+                            "title": "NT principal name",
                             "description": "The NT principal name. Use an other name OID set to '1.3.6.1.4.1.311.20.2.3'."
                         }
                     }
@@ -124,9 +124,9 @@
                 },
                 "RetryDelay": {
                     "type": "integer",
-                    "title": "Retry Delay",
+                    "title": "Retry delay",
                     "default": 10,
-                    "description": "The number of seconds to wait between subsequent retries. The first retry is attempted without this delay."
+                    "description": "The number of seconds to wait between subsequent retries. The device attempts the first retry without this delay."
                 },
                 "CertificateRenewalTimeInterval": {
                     "type": "integer",
@@ -136,7 +136,7 @@
                 },
                 "AllowAllAppsAccess": {
                     "type": "boolean",
-                    "title": "Allow All Apps Access",
+                    "title": "Allow all apps access",
                     "default": false,
                     "description": "If 'true', all apps have access to the private key."
                 }

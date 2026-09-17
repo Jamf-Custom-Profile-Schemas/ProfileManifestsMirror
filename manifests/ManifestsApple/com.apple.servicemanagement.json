@@ -11,7 +11,7 @@
                 "properties": {
                     "RuleType": {
                         "type": "string",
-                        "title": "Rule Type",
+                        "title": "Rule type",
                         "description": "The type of comparison to make.",
                         "enum": [
                             "BundleIdentifier",
@@ -23,7 +23,7 @@
                     },
                     "RuleValue": {
                         "type": "string",
-                        "title": "Rule Value",
+                        "title": "Rule value",
                         "description": "The value to compare with each login item's value, to determine if this rule is a match."
                     },
                     "Comment": {
@@ -33,7 +33,7 @@
                     },
                     "TeamIdentifier": {
                         "type": "string",
-                        "title": "Team Identifier",
+                        "title": "Team identifier",
                         "description": "An additional constraint to limit the scope of the rule that the system tests after matching the 'RuleType' and 'RuleValue'."
                     }
                 }

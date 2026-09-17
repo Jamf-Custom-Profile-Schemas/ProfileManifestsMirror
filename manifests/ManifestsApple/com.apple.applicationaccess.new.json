@@ -68,8 +68,8 @@
                     }
                 }
             },
-            "title": "Allowlisted Applications by Code Signature",
-            "description": "The allow list of app item dictionaries.",
+            "title": "Allowlisted Applications by Code Signature (legacy)",
+            "description": "The allow list of app item dictionaries. This property is deprecated in macOS 10.15 and later - use 'allowList' instead.",
             "property_order": 10
         },
         "pathWhiteList": {
@@ -79,8 +79,8 @@
                 "title": "Folder Path",
                 "description": "A path."
             },
-            "title": "Allowlisted Application Folders",
-            "description": "The paths to apps in the allow list. This property is deprecated in macOS 10.15 and later.",
+            "title": "Allowlisted Application Folders (legacy)",
+            "description": "The paths to apps in the allow list. This property is deprecated in macOS 10.15 and later - use 'pathAllowList' instead.",
             "property_order": 15
         },
         "pathBlackList": {
@@ -90,9 +90,77 @@
                 "title": "Folder Path",
                 "description": "A path."
             },
-            "title": "Denylisted Application Folders",
-            "description": "The paths to apps in the deny list. This property is deprecated in macOS 10.15 and later.",
+            "title": "Denylisted Application Folders (legacy)",
+            "description": "The paths to apps in the deny list. This property is deprecated in macOS 10.15 and later - use 'pathDenyList' instead.",
             "property_order": 20
+        },
+        "allowList": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "A dictionary defining an app for parental control.",
+                "properties": {
+                    "bundleID": {
+                        "type": "string",
+                        "description": "The bundle ID of the app."
+                    },
+                    "disabled": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "If 'true', this app isn't added to the allow list."
+                    },
+                    "subApps": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "description": "A dictionary defining an app for parental control.",
+                            "properties": {
+                                "bundleID": {
+                                    "type": "string",
+                                    "description": "The bundle ID of the app."
+                                },
+                                "disabled": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "If 'true', this app isn't added to the allow list."
+                                },
+                                "displayName": {
+                                    "type": "string",
+                                    "description": "The name used for display purposes."
+                                }
+                            }
+                        },
+                        "description": "An array of nested helper applications."
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "The name used for display purposes."
+                    }
+                }
+            },
+            "title": "Allowlisted Applications by Code Signature",
+            "description": "The allow list of app item dictionaries.",
+            "property_order": 25
+        },
+        "pathDenyList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "A path."
+            },
+            "title": "Denylisted Application Folders",
+            "description": "The paths to apps in the deny list.",
+            "property_order": 30
+        },
+        "pathAllowList": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "A path."
+            },
+            "title": "Allowlisted Application Folders",
+            "description": "The paths to apps in the allow list.",
+            "property_order": 35
         }
     }
 }

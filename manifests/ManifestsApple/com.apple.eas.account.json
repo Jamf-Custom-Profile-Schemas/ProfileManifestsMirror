@@ -10,7 +10,7 @@
         },
         "EmailAddress": {
             "type": "string",
-            "title": "Email Address",
+            "title": "Email address",
             "description": "The full email address for the account. If not present in the payload, the device prompts for this string during profile installation.",
             "property_order": 10
         },
@@ -24,12 +24,12 @@
             "type": "boolean",
             "title": "Override previous password",
             "default": false,
-            "description": "If 'true', the system overrides the previous user/EAS password with the new EAS password in the payload. Available in iOS 14 and later.",
+            "description": "If 'true', the system overrides the previous user/EAS password with the new EAS password in the payload.",
             "property_order": 20
         },
         "Host": {
             "type": "string",
-            "title": "Exchange ActiveSync Host",
+            "title": "Exchange ActiveSync host",
             "description": "The Exchange server host name or IP address.",
             "property_order": 25
         },
@@ -49,119 +49,119 @@
         },
         "CertificateName": {
             "type": "string",
-            "title": "Authentication Credential Name",
+            "title": "Authentication credential name",
             "description": "The name or description of the certificate.",
             "property_order": 40
         },
         "CertificatePassword": {
             "type": "string",
-            "title": "Authentication Credential Password",
+            "title": "Authentication credential password",
             "description": "The password necessary for the '.p12' identity certificate. Used with mandatory encryption of profiles.",
             "property_order": 45
         },
         "PreventMove": {
             "type": "boolean",
-            "title": "Prevent Move",
+            "title": "Prevent move",
             "default": false,
             "description": "If 'true', the system prevents moving messages from out of this email account into another account. This setting also prevents forwarding or replying from an account other than the recipient of the message.",
             "property_order": 50
         },
         "PreventAppSheet": {
             "type": "boolean",
-            "title": "Prevent App Sheet",
+            "title": "Prevent app sheet",
             "default": false,
             "description": "If 'true', prevents this account from sending mail in any app other than the Apple Mail app.",
             "property_order": 55
         },
         "PayloadCertificateUUID": {
             "type": "string",
-            "title": "Payload Certificate UUID",
+            "title": "Payload certificate UUID",
             "description": "The UUID of the certificate payload within the same profile to use for the identity credential. If this field is present, the Certificate field isn't used.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 60
         },
         "SMIMEEnabled": {
             "type": "boolean",
-            "title": "S/MIME Enabled",
+            "title": "S/MIME enabled",
             "default": false,
             "description": "If 'true', the system enables S/MIME encryption. In iOS 10.0 and later, this key is ignored. Use 'SMIMESigningEnabled' instead.",
             "property_order": 65
         },
         "SMIMESigningEnabled": {
             "type": "boolean",
-            "title": "S/MIME Signing Enabled",
+            "title": "S/MIME signing enabled",
             "default": false,
-            "description": "If 'true', the system enables S/MIME signing for this account. Available in iOS 10.0 and later.",
+            "description": "If 'true', the system enables S/MIME signing for this account.",
             "property_order": 70
         },
         "SMIMESigningCertificateUUID": {
             "type": "string",
-            "title": "S/MIME Signing Certificate",
+            "title": "S/MIME signing certificate",
             "description": "The UUID of the identity certificate used to sign messages sent from this account.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 75
         },
         "SMIMEEncryptionEnabled": {
             "type": "boolean",
-            "title": "S/MIME Encryption Enabled",
+            "title": "S/MIME encryption enabled",
             "default": false,
-            "description": "If 'true', the system enables S/MIME encryption for this account. Available in iOS 10.0 and later. As of iOS 12.0, this key is deprecated. Use 'SMIMEEncryptByDefault' instead.",
+            "description": "If 'true', the system enables S/MIME encryption for this account. This key is deprecated. Use 'SMIMEEncryptByDefault' instead.",
             "property_order": 80
         },
         "SMIMEEncryptionCertificateUUID": {
             "type": "string",
-            "title": "S/MIME Encryption Certificate",
+            "title": "S/MIME encryption certificate",
             "description": "The payload UUID of the identity certificate used to decrypt messages sent to this account. The system attaches the public certificate to outgoing mail to allow the user to receive encrypted mail. When the user sends encrypted mail, the system uses the public certificate to encrypt the copy of the mail in the user's Sent mailbox.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 85
         },
         "SMIMEEnablePerMessageSwitch": {
             "type": "boolean",
-            "title": "S/MIME Enable Per-Message Switch",
+            "title": "S/MIME enable per-message switch",
             "default": false,
-            "description": "If 'true', the system displays the per-message encryption switch in the Mail Compose UI.\nAvailable in iOS 8.0 and later. As of iOS 12.0, this key is deprecated. Use 'SMIMEEnableEncryptionPerMessageSwitch' instead.",
+            "description": "If 'true', the system displays the per-message encryption switch in the Mail Compose UI.\nThis key is deprecated. Use 'SMIMEEnableEncryptionPerMessageSwitch' instead.",
             "property_order": 90
         },
         "SMIMESigningUserOverrideable": {
             "type": "boolean",
             "title": "Allow user to toggle S/MIME Signing",
             "default": false,
-            "description": "If 'true', the user can turn S/MIME signing on or off in Settings. Available in iOS 12.0 and later.",
+            "description": "If 'true', the user can turn S/MIME signing on or off in Settings.",
             "property_order": 95
         },
         "SMIMESigningCertificateUUIDUserOverrideable": {
             "type": "boolean",
             "title": "Allow user to select S/MIME Identity",
             "default": false,
-            "description": "If 'true', the user can select the signing identity. Available in iOS 12.0 and later.",
+            "description": "If 'true', the user can select the signing identity.",
             "property_order": 100
         },
         "SMIMEEncryptByDefault": {
             "type": "boolean",
             "title": "Enable S/MIME Encryption",
             "default": false,
-            "description": "If 'true', the system enables S/MIME encryption by default. If 'SMIMEEnableEncryptionPerMessageSwitch' is 'false', the user can't change this default. Available in iOS 12.0 and later.",
+            "description": "If 'true', the system enables S/MIME encryption by default. If 'SMIMEEnableEncryptionPerMessageSwitch' is 'false', the user can't change this default.",
             "property_order": 105
         },
         "SMIMEEncryptByDefaultUserOverrideable": {
             "type": "boolean",
             "title": "Allow user to select S/MIME Encryption",
             "default": false,
-            "description": "If 'true', the system enables encryption by default and the user can't change it. Available in iOS 12.0 and later.",
+            "description": "If 'true', the system enables encryption by default and the user can't change it.",
             "property_order": 110
         },
         "SMIMEEncryptionCertificateUUIDUserOverrideable": {
             "type": "boolean",
             "title": "Allow user to select S/MIME Encryption Certificate",
             "default": false,
-            "description": "If 'true', the user can select the S/MIME encryption identity, and encryption is on.Available in iOS 12.0 and later.",
+            "description": "If 'true', the user can select the S/MIME encryption identity, and encryption is on.",
             "property_order": 115
         },
         "SMIMEEnableEncryptionPerMessageSwitch": {
             "type": "boolean",
             "title": "Allow user to select S/MIME Encryption per message",
             "default": false,
-            "description": "If 'true', the system displays the per-message encryption switch in the Mail Compose UI. Available in iOS 12.0 and later.",
+            "description": "If 'true', the system displays the per-message encryption switch in the Mail Compose UI.",
             "property_order": 120
         },
         "EnableCalendars": {
@@ -236,14 +236,14 @@
         },
         "disableMailRecentsSyncing": {
             "type": "boolean",
-            "title": "Disable Mail Recents Syncing",
+            "title": "Disable mail recents syncing",
             "default": false,
             "description": "If 'true', the system excludes this account from Recent Addresses syncing.",
             "property_order": 175
         },
         "MailNumberOfPastDaysToSync": {
             "type": "integer",
-            "title": "Past Days of Mail to Sync",
+            "title": "Past days of mail to sync",
             "default": 7,
             "description": "The number of days in the past to sync mail on the device.\nFor no limit, use the value '0'.",
             "enum": [
@@ -268,12 +268,12 @@
         },
         "CommunicationServiceRules": {
             "type": "object",
-            "title": "Communication Service Rules",
+            "title": "Communication service rules",
             "description": "The communication service handler rules for this account.",
             "properties": {
                 "DefaultServiceHandlers": {
                     "type": "object",
-                    "title": "Default Service Handlers",
+                    "title": "Default service handlers",
                     "description": "The default handlers to use for contacts from this account.",
                     "properties": {
                         "AudioCall": {
@@ -289,7 +289,7 @@
         "VPNUUID": {
             "type": "string",
             "title": "VPNUUID",
-            "description": "The VPNUUID of the per-app VPN the account uses for network communication. Available in iOS 14 and later.",
+            "description": "The VPNUUID of the per-app VPN the account uses for network communication.",
             "property_order": 190
         },
         "HeaderMagic": {
@@ -299,7 +299,7 @@
         },
         "allowMailDrop": {
             "type": "boolean",
-            "title": "Allow Mail Drop",
+            "title": "Allow mail drop",
             "default": false,
             "description": "If 'true', the system enables this account to use Mail Drop.",
             "property_order": 200

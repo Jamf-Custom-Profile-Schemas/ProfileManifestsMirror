@@ -4,12 +4,12 @@
     "properties": {
         "DNSSettings": {
             "type": "object",
-            "title": "DNS Settings",
+            "title": "DNS settings",
             "description": "A dictionary that defines a configuration for an encrypted DNS server.",
             "properties": {
                 "DNSProtocol": {
                     "type": "string",
-                    "title": "DNS Protocol",
+                    "title": "DNS protocol",
                     "description": "The encrypted transport protocol used to communicate with the DNS server.",
                     "enum": [
                         "HTTPS",
@@ -20,14 +20,14 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Server Address Element"
+                        "title": "Server address element"
                     },
-                    "title": "DNS Server Addresses",
+                    "title": "DNS server addresses",
                     "description": "An unordered list of DNS server IP address strings. These IP addresses can be a mixture of IPv4 and IPv6 addresses."
                 },
                 "ServerName": {
                     "type": "string",
-                    "title": "Server Name",
+                    "title": "Server name",
                     "description": "The hostname of a DNS-over-TLS server used to validate the server certificate, as defined in RFC 7858. If no 'ServerAddresses' are provided, the system uses the hostname to determine the server addresses. This key must be present only if the DNSProtocol is 'TLS'."
                 },
                 "ServerURL": {
@@ -40,14 +40,14 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Supplemental Match Domains Element"
+                        "title": "Supplemental match domains element"
                     },
-                    "title": "Supplemental Match Domains",
-                    "description": "A list of domain strings used to determine which DNS queries use the DNS server. If not set, all domains use the DNS server.\nThe system supports a single wildcard ('*') prefix, but it's not required. For example, both '*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
+                    "title": "Supplemental match domains",
+                    "description": "A list of domain strings used to determine which DNS queries use the DNS server. If not set, all domains use the DNS server.\nThe system supports a single wildcard ('\\*') prefix, but it's not required. For example, both '\\*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
                 },
                 "AllowFailover": {
                     "type": "boolean",
-                    "title": "Allow Failover",
+                    "title": "Allow failover",
                     "default": false,
                     "description": "If 'true', the device allows failover to the default system DNS resolver."
                 },
@@ -64,11 +64,11 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "On Demand Rules Element",
+                "title": "On demand rules element",
                 "properties": {
                     "Action": {
                         "type": "string",
-                        "title": "On Demand Action",
+                        "title": "On demand action",
                         "description": "The action to take if this dictionary matches the current network. Allowed values:\n'Connect': Apply DNS Settings when the dictionary matches.\n'Disconnect': Don't apply DNS Settings when the dictionary matches.\n'EvaluateConnection': Apply DNS Settings with per-domain exceptions when the dictionary matches.",
                         "enum": [
                             "Connect",
@@ -87,12 +87,12 @@
                         "type": "array",
                         "items": {
                             "type": "object",
-                            "title": "Action Parameter",
+                            "title": "Action parameter",
                             "description": "A dictionary that provides per-connection rules. The keys allowed in each dictionary are described below. Note: This array is only for dictionaries in which 'EvaluateConnection' is the 'Action' value.",
                             "properties": {
                                 "DomainAction": {
                                     "type": "string",
-                                    "title": "Domain Action",
+                                    "title": "Domain action",
                                     "description": "The DNS settings behavior for the specified domains. Allowed values:\n'NeverConnect': Don't use the DNS Settings for the specified domains.\n'ConnectIfNeeded': Allow using the DNS Settings for the specified domains.",
                                     "enum": [
                                         "NeverConnect",
@@ -109,37 +109,37 @@
                                     "type": "array",
                                     "items": {
                                         "type": "string",
-                                        "title": "Domains Element"
+                                        "title": "Domains element"
                                     },
                                     "title": "Domains",
                                     "description": "The domains for which this evaluation applies."
                                 }
                             }
                         },
-                        "title": "Action Parameters",
+                        "title": "Action parameters",
                         "description": "An array of dictionaries that provide per-connection rules. The system uses this array only for settings where the 'Action' value is 'EvaluateConnection'."
                     },
                     "DNSDomainMatch": {
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "title": "DNS Domain Match Element"
+                            "title": "DNS domain match element"
                         },
-                        "title": "DNS Domain Match",
-                        "description": "An array of domain names. This rule matches if any of the domain names in the specified list matches any domain in the device's search domains list.\nThe system supports a single wildcard ('*') prefix, but it's not required. For example, both '*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
+                        "title": "DNS domain match",
+                        "description": "An array of domain names. This rule matches if any of the domain names in the specified list matches any domain in the device's search domains list.\nThe system supports a single wildcard ('\\*') prefix, but it's not required. For example, both '\\*.example.com' and 'example.com' match against 'mydomain.example.com' and 'your.domain.example.com', but don't match against 'mydomain-example.com'."
                     },
                     "DNSServerAddressMatch": {
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "title": "DNS Server Address Match Element"
+                            "title": "DNS server address match element"
                         },
-                        "title": "DNS Server Address Match",
-                        "description": "An array of IP addresses. This rule matches if any of the network's specified DNS servers match any entry in the array.\nThe system supports matching with a single wildcard. For example, '17.*' matches any DNS server in the 17.0.0.0/8 subnet."
+                        "title": "DNS server address match",
+                        "description": "An array of IP addresses. This rule matches if any of the network's specified DNS servers match any entry in the array.\nThe system supports matching with a single wildcard. For example, '17.\\*' matches any DNS server in the 17.0.0.0/8 subnet."
                     },
                     "InterfaceTypeMatch": {
                         "type": "string",
-                        "title": "Interface Type Match",
+                        "title": "Interface type match",
                         "description": "An interface type. If specified, this rule matches only if the primary network interface hardware matches the specified type.",
                         "enum": [
                             "Ethernet",
@@ -151,25 +151,25 @@
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "title": "SSID Match Element"
+                            "title": "SSID match element"
                         },
-                        "title": "SSID Match",
+                        "title": "SSID match",
                         "description": "An array of SSIDs to match against the current network. If the network isn't a Wi-Fi network or if the SSID doesn't appear in this array, the match fails. Omit this key and the corresponding array to match against any SSID."
                     },
                     "URLStringProbe": {
                         "type": "string",
-                        "title": "URL String Probe",
+                        "title": "URL string probe",
                         "description": "A URL to probe. This rule matches if this URL is successfully fetched and returns a 200 HTTP status code without redirection."
                     }
                 }
             },
-            "title": "On Demand Rules",
+            "title": "On demand rules",
             "description": "An array of rules that define the DNS settings. If not set, the system always applies the DNS settings. These rules are identical to the 'OnDemandRules' array in VPN payloads.",
             "property_order": 10
         },
         "ProhibitDisablement": {
             "type": "boolean",
-            "title": "Prohibit Disablement",
+            "title": "Prohibit disablement",
             "default": false,
             "description": "If 'true', the system prohibits users from disabling DNS settings. This key is only available on supervised devices.",
             "property_order": 15

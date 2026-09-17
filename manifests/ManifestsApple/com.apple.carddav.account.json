@@ -4,20 +4,20 @@
     "properties": {
         "CardDAVAccountDescription": {
             "type": "string",
-            "title": "Account Description",
+            "title": "Account description",
             "default": "My Contacts Account",
             "description": "The description of the account.",
             "property_order": 5
         },
         "CardDAVHostName": {
             "type": "string",
-            "title": "Account Hostname",
+            "title": "Account hostname",
             "description": "The server's address.",
             "property_order": 10
         },
         "CardDAVPort": {
             "type": "integer",
-            "title": "Port Number",
+            "title": "Port number",
             "default": 443,
             "description": "The server's port.",
             "property_order": 15
@@ -30,13 +30,13 @@
         },
         "CardDAVUsername": {
             "type": "string",
-            "title": "Account Username",
+            "title": "Account username",
             "description": "The user name for logins.",
             "property_order": 25
         },
         "CardDAVPassword": {
             "type": "string",
-            "title": "Account Password",
+            "title": "Account password",
             "description": "The user's password. Only use this in encrypted profiles.",
             "property_order": 30
         },
@@ -49,12 +49,12 @@
         },
         "CommunicationServiceRules": {
             "type": "object",
-            "title": "Communication Service Rules",
+            "title": "Communication service rules",
             "description": "An array of communication service rules for this account.",
             "properties": {
                 "DefaultServiceHandlers": {
                     "type": "object",
-                    "title": "Default Service Handlers",
+                    "title": "Default service handlers",
                     "description": "A dictionary of service handlers for contacts from this account.",
                     "properties": {
                         "AudioCall": {
@@ -70,7 +70,7 @@
         "VPNUUID": {
             "type": "string",
             "title": "VPNUUID",
-            "description": "The VPNUUID of the per-app VPN the account uses for network communication. Available in iOS 14 and later.",
+            "description": "The VPNUUID of the per-app VPN the account uses for network communication.",
             "property_order": 45
         }
     }

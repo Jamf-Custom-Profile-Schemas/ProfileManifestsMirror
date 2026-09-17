@@ -1,11 +1,11 @@
 {
     "title": "Software Update (com.apple.SoftwareUpdate)",
-    "description": "The payload that configures the software update policy.",
+    "description": "The payload that configures the software update policy. Removed: use the declarative management 'com.apple.configuration.softwareupdate.settings' configuration.",
     "properties": {
         "CatalogURL": {
             "type": "string",
             "title": "Catalog URL",
-            "description": "The URL of the software update catalog. This property is not supported in macOS 11 and later.",
+            "description": "The URL of the software update catalog. This property isn't supported in macOS 11 and later.",
             "property_order": 5
         },
         "SUDisableEVCheck": {
@@ -58,7 +58,7 @@
         },
         "AllowPreReleaseInstallation": {
             "type": "boolean",
-            "title": "Allow Pre-Release Update Installation",
+            "title": "Allow pre-release update installation",
             "default": true,
             "description": "If 'true', prerelease software can be installed on this computer.",
             "property_order": 45

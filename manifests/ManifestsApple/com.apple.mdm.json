@@ -5,7 +5,7 @@
         "ServerURL": {
             "type": "string",
             "title": "Server URL",
-            "description": "The URL that the device contacts to retrieve device management instructions. The URL must begin with the 'https://' URL scheme, and may contain a port number (':1234', for example).\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
+            "description": "The URL that the device contacts to retrieve device management instructions. The URL must begin with the 'https://' URL scheme, and may contain a port number (':1234', for example).\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the system rejects the update.",
             "pattern": "^https://.*$",
             "property_order": 5
         },
@@ -36,13 +36,13 @@
         "Topic": {
             "type": "string",
             "title": "Topic",
-            "description": "The topic that MDM listens to for push notifications. The certificate that the server uses to send push notifications must have the same topic in its subject. The topic must begin with the 'com.apple.mgmt.' prefix.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
+            "description": "The topic that MDM listens to for push notifications. The certificate that the server uses to send push notifications must have the same topic in its subject. The topic must begin with the 'com.apple.mgmt.' prefix.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the system rejects the update.",
             "pattern": "^com\\.apple\\.mgmt\\..+$",
             "property_order": 20
         },
         "IdentityCertificateUUID": {
             "type": "string",
-            "title": "Identity Certificate UUID",
+            "title": "Identity certificate UUID",
             "description": "The UUID of the certificate payload for the device's identity. It may also point to a SCEP payload.",
             "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$",
             "property_order": 25
@@ -55,14 +55,14 @@
         },
         "AccessRights": {
             "type": "integer",
-            "title": "Access Rights",
+            "title": "Access rights",
             "description": "Logical OR of the following bit flags:\n'1': Allow inspection of installed configuration profiles.\n'2': Allow installation and removal of configuration profiles.\n'4': Allow device lock and passcode removal.\n'8': Allow device erase.\n'16': Allow query of device information (device capacity, serial number).\n'32': Allow query of network information (phone/SIM numbers, MAC addresses).\n'64': Allow inspection of installed provisioning profiles.\n'128': Allow installation and removal of provisioning profiles.\n'256': Allow inspection of installed applications.\n'512': Allow restriction-related queries.\n'1024': Allow security-related queries.\n'2048': Allow manipulation of settings.\n'4096': Allow app management.\nDon't set to '0'. Specify '1' if you specify '2'. Specify '64' if you specify '128'. Ignored if you set a value for 'ManagedAppleID'.\nNote: When updating the payload, the addition of any access right is an error, and the update is rejected.",
             "property_order": 35
         },
         "CheckInURL": {
             "type": "string",
-            "title": "Check In URL",
-            "description": "The URL that the device should use to check in during installation. The URL must begin with the 'https://' URL scheme and may contain a port number (':1234', for example). If not set, the system uses 'ServerURL'.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
+            "title": "Check in URL",
+            "description": "The URL that the device should use to check in during installation. The URL must begin with the 'https://' URL scheme and may contain a port number (':1234', for example). If not set, the system uses 'ServerURL'.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the system rejects the update.",
             "pattern": "^https://.*$",
             "property_order": 40
         },
@@ -94,19 +94,19 @@
             "type": "boolean",
             "title": "Prompt User to Allow Bootstrap Token for Authentication",
             "default": false,
-            "description": "If 'true', the system warns the user that they need to reboot into RecoveryOS and allow the MDM to use the bootstrap token for authentication for certain sensitive operations such as enabling kernel extensions or installing some types of software updates. If the MDM doesn't need to perform these operations, it can leave this key set to 'false', and the user isn't notified. The SettingsCommand.Command.Settings.MDMOptions.MDMOptions command overrides this default value. This setting only applies to devices that have 'BootstrapTokenRequiredForSoftwareUpdate' or 'BootstrapTokenRequiredForKernelExtensionApproval' set to 'true' in their SecurityInfoResponse.SecurityInfo. DEP-enrolled devices are automatically allowed to use the bootstrap token for authentication. Available in macOS 11 and later.",
+            "description": "If 'true', the system warns the user that they need to reboot into RecoveryOS and allow the MDM to use the bootstrap token for authentication for certain sensitive operations such as enabling kernel extensions or installing some types of software updates. If the MDM doesn't need to perform these operations, it can leave this key set to 'false', and the user isn't notified. The SettingsCommand.Command.Settings.MDMOptions.MDMOptions command overrides this default value. This setting only applies to devices that have 'BootstrapTokenRequiredForSoftwareUpdate' or 'BootstrapTokenRequiredForKernelExtensionApproval' set to 'true' in their SecurityInfoResponse.SecurityInfo. ADE-enrolled devices are automatically allowed to use the bootstrap token for authentication.",
             "property_order": 60
         },
         "SignMessage": {
             "type": "boolean",
-            "title": "Sign Message",
+            "title": "Sign message",
             "default": false,
             "description": "If 'true', each message coming from the device carries the additional 'Mdm-Signature' HTTP header.",
             "property_order": 65
         },
         "UseDevelopmentAPNS": {
             "type": "boolean",
-            "title": "Use Development APNS",
+            "title": "Use development APNS",
             "default": false,
             "description": "If 'true', the device uses the development APNS servers. Otherwise, the device uses the production servers. Set to 'false' if your Apple Push Notification Service certificate was issued by the Apple Push Certificate Portal ('https://identity.apple.com/pushcert'). That portal only issues certificates for the production push environment.",
             "property_order": 70
@@ -114,13 +114,13 @@
         "AssignedManagedAppleID": {
             "type": "string",
             "title": "Assigned Managed Apple Account",
-            "description": "The Managed Apple Account pre-assigned to the authenticated user. Required for account-driven enrollments. Available in iOS 15 and later, and macOS 14 and later.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
+            "description": "The Managed Apple Account pre-assigned to the authenticated user. Required for account-driven enrollments.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the system rejects the update.",
             "property_order": 75
         },
         "EnrollmentMode": {
             "type": "string",
-            "title": "Enrollment Mode",
-            "description": "The enrollment mode the server indicates to use when enrolling. Required for account-driven enrollment. Available in iOS 15 and macOS 14, and later.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
+            "title": "Enrollment mode",
+            "description": "The enrollment mode the server indicates to use when enrolling. Required for account-driven enrollment.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the system rejects the update.",
             "enum": [
                 "BYOD",
                 "ADDE"
@@ -130,7 +130,7 @@
         "RequiredAppIDForMDM": {
             "type": "integer",
             "title": "Required App ID for MDM on Unsupervised Device",
-            "description": "This property specifies an iTunes Store ID for an app the system can install with the InstallApplicationCommand, without any approval from the user. The MDM vendor or managing organization generally provides this app, which enhances the management experience for the user. The device shows the user details about this app in the account-driven enrollment process prior to installing the MDM profile. Use this property with account-driven MDM enrollments that normally require user approval for app installs through MDM. Only account-driven enrollments support this property and other enrollment types ignore it. Available in iOS 15.1 and later.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the update is rejected.",
+            "description": "This property specifies an iTunes Store ID for an app the system can install with the InstallApplicationCommand, without any approval from the user. The MDM vendor or managing organization generally provides this app, which enhances the management experience for the user. The device shows the user details about this app in the account-driven enrollment process prior to installing the MDM profile. Use this property with account-driven MDM enrollments that normally require user approval for app installs through MDM. Only account-driven enrollments support this property and other enrollment types ignore it.\nNote: When updating the payload, the value of this key must not change. Any change is an error, and the system rejects the update.",
             "links": [
                 {
                     "rel": "More information",

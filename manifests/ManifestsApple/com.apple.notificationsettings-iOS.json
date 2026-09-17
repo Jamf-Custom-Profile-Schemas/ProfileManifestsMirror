@@ -6,37 +6,37 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "Notification Setting",
+                "title": "Notification setting",
                 "description": "Notification settings for an app",
                 "properties": {
                     "NotificationsEnabled": {
                         "type": "boolean",
-                        "title": "Enable Notifications",
+                        "title": "Enable notifications",
                         "default": true,
-                        "description": "If 'true', enables notifications for this app.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "description": "If 'true', enables notifications for this app."
                     },
                     "BundleIdentifier": {
                         "type": "string",
-                        "title": "App Bundle Identifier",
-                        "description": "The bundle identifier of the app to which to apply these notification settings.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "title": "App bundle identifier",
+                        "description": "The bundle identifier of the app to which to apply these notification settings."
                     },
                     "ShowInNotificationCenter": {
                         "type": "boolean",
                         "title": "Show in Notification Center",
                         "default": true,
-                        "description": "If 'true', enables notifications in the notification center for this app.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "description": "If 'true', enables notifications in the Notification Center for this app."
                     },
                     "ShowInLockScreen": {
                         "type": "boolean",
                         "title": "Show in Lock Screen",
                         "default": true,
-                        "description": "If 'true', enables notifications on the Lock Screen for this app.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "description": "If 'true', enables notifications on the Lock Screen for this app."
                     },
                     "ShowInCarPlay": {
                         "type": "boolean",
                         "title": "Show in CarPlay",
                         "default": true,
-                        "description": "If 'true', enables notifications in CarPlay for this app.\nAvailable in iOS 12 and later.",
+                        "description": "If 'true', enables notifications in CarPlay for this app.",
                         "links": [
                             {
                                 "rel": "More information",
@@ -46,21 +46,21 @@
                     },
                     "SoundsEnabled": {
                         "type": "boolean",
-                        "title": "Sounds Enabled",
+                        "title": "Sounds enabled",
                         "default": true,
                         "description": "If 'true', enables sounds for this app."
                     },
                     "BadgesEnabled": {
                         "type": "boolean",
-                        "title": "Badges Enabled",
+                        "title": "Badges enabled",
                         "default": true,
-                        "description": "If 'true', enables badges for this app.\nAvailable in iOS 9.3 and later and macOS 10.15 and later."
+                        "description": "If 'true', enables badges for this app."
                     },
                     "AlertType": {
                         "type": "integer",
-                        "title": "Alert Type",
+                        "title": "Alert type",
                         "default": 1,
-                        "description": "The type of alert for notifications for this app:\n'0': None\n'1': Temporary Banner\n'2': Persistent Banner\nAvailable in iOS 9.3 and later and macOS 10.15 and later.",
+                        "description": "The type of alert for notifications for this app:\n'0': None\n'1': Temporary Banner\n'2': Persistent Banner",
                         "enum": [
                             0,
                             1,
@@ -76,8 +76,8 @@
                     },
                     "PreviewType": {
                         "type": "integer",
-                        "title": "Preview Type",
-                        "description": "The type previews for notifications. This key overrides the value at Settings>Notifications>Show Previews.\n'0' - Always: Previews will be shown when the device is locked and unlocked\n'1' - When Unlocked: Previews will only be shown when the device is unlocked\n'2' - Never: Previews will never be shown\nAvailable in iOS 14 and later.",
+                        "title": "Preview type",
+                        "description": "The type previews for notifications. This key overrides the value at Settings>Notifications>Show Previews.\n'0' - Always: The device shows previews when locked and unlocked\n'1' - When Unlocked: The device shows previews only when unlocked\n'2' - Never: The device never shows previews",
                         "enum": [
                             0,
                             1,
@@ -93,9 +93,9 @@
                     },
                     "GroupingType": {
                         "type": "integer",
-                        "title": "Grouping Type",
+                        "title": "Grouping type",
                         "default": 0,
-                        "description": "The type of grouping for notifications for this app:\n'0': Automatic: Group notifications into app-specified groups.\n'1': By app: Group notifications into one group.\n'2': Off: Don't group notifications.\nAvailable in iOS 12 and later.",
+                        "description": "The type of grouping for notifications for this app:\n'0': Automatic: Group notifications into app-specified groups.\n'1': By app: Group notifications into one group.\n'2': Off: Don't group notifications.",
                         "links": [
                             {
                                 "rel": "More information",
@@ -117,9 +117,9 @@
                     },
                     "CriticalAlertEnabled": {
                         "type": "boolean",
-                        "title": "Critical Alert Enabled",
+                        "title": "Critical alert enabled",
                         "default": false,
-                        "description": "If 'true', enables critical alerts that can ignore Do Not Disturb and ringer settings for this app.\nAvailable in iOS 12 and later and macOS 10.15 and later.",
+                        "description": "If 'true', enables critical alerts that can ignore Do Not Disturb and ringer settings for this app.",
                         "links": [
                             {
                                 "rel": "More information",
@@ -129,7 +129,7 @@
                     }
                 }
             },
-            "title": "Notification Settings",
+            "title": "Notification settings",
             "description": "An array of notification settings dictionaries.",
             "property_order": 5
         }

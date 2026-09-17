@@ -4,26 +4,26 @@
     "properties": {
         "AccountDescription": {
             "type": "string",
-            "title": "Account Description",
+            "title": "Account description",
             "default": "My macOS Server Account",
             "description": "The description of the account.",
             "property_order": 5
         },
         "HostName": {
             "type": "string",
-            "title": "Account Hostname",
+            "title": "Account hostname",
             "description": "The server's address.",
             "property_order": 10
         },
         "UserName": {
             "type": "string",
-            "title": "Account Username",
+            "title": "Account username",
             "description": "The user's user name.",
             "property_order": 15
         },
         "Password": {
             "type": "string",
-            "title": "Account Password",
+            "title": "Account password",
             "description": "The user's password.",
             "property_order": 20
         },
@@ -31,12 +31,12 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "title": "Configured Account",
+                "title": "Configured account",
                 "description": "Configured account type and relevant settings",
                 "properties": {
                     "Type": {
                         "type": "string",
-                        "title": "Account Type",
+                        "title": "Account type",
                         "default": "com.apple.osxserver.documents",
                         "description": "com.apple.osxserver.documents (the Documents account type).",
                         "enum": [
@@ -45,13 +45,13 @@
                     },
                     "Port": {
                         "type": "integer",
-                        "title": "Port Number",
+                        "title": "Port number",
                         "default": 8071,
                         "description": "Designates the port number to use when contacting the server. If no port number is specified, the default port is used."
                     }
                 }
             },
-            "title": "Configured Accounts",
+            "title": "Configured accounts",
             "description": "An array of dictionaries containing configured account types and relevant settings",
             "property_order": 25
         }

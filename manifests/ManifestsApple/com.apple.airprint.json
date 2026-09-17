@@ -16,19 +16,19 @@
                     },
                     "Port": {
                         "type": "integer",
-                        "title": "Port Number",
+                        "title": "Port number",
                         "description": "The listening port of the AirPrint destination. Available only in iOS 11 and later."
                     },
                     "ResourcePath": {
                         "type": "string",
-                        "title": "Resource Path",
+                        "title": "Resource path",
                         "description": "The resource path associated with the printer. This path corresponds to the 'rp' parameter of the '_ipps.tcp' Bonjour record. For example:\n'printers/Canon_MG5300_series'\n'printers/Xerox_Phaser_7600'\n'ipp/print'\n'Epson_IPP_Printer'"
                     },
                     "ForceTLS": {
                         "type": "boolean",
                         "title": "Force TLS",
                         "default": false,
-                        "description": "If 'true', AirPrint connections are secured by Transport Layer Security (TLS). Available only in iOS 11 and later."
+                        "description": "If 'true', Transport Layer Security (TLS) secures AirPrint connections. Available only in iOS 11 and later."
                     }
                 }
             },
