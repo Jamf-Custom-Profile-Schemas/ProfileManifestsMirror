@@ -114,7 +114,7 @@
             "type": "integer",
             "title": "Patching Week Of Month",
             "default": 2,
-            "description": "Which occurrence of `PatchingWeekday` in the month: 1=first, 2=second, etc.",
+            "description": "Which occurrence of 'PatchingWeekday' in the month: 1=first, 2=second, etc.",
             "links": [
                 {
                     "rel": "More information",
@@ -140,7 +140,7 @@
         "PatchingStartTime": {
             "type": "string",
             "title": "Patching Start Time",
-            "description": "Earliest time to begin applying on patch day (24-hour `HH:MM`). Empty = no lower bound.",
+            "description": "Earliest time to begin applying on patch day (24-hour 'HH:MM'). Empty = no lower bound.",
             "links": [
                 {
                     "rel": "More information",
@@ -152,7 +152,7 @@
         "PatchingEndTime": {
             "type": "string",
             "title": "Patching End Time",
-            "description": "Latest time to begin applying on patch day (24-hour `HH:MM`). Apply will not start a new run after this time.",
+            "description": "Latest time to begin applying on patch day (24-hour 'HH:MM'). Apply will not start a new run after this time.",
             "links": [
                 {
                     "rel": "More information",
@@ -165,7 +165,7 @@
             "type": "boolean",
             "title": "Dialog On Top",
             "default": true,
-            "description": "When `true`, the swiftDialog window floats above all other windows.",
+            "description": "When 'true', the swiftDialog window floats above all other windows.",
             "links": [
                 {
                     "rel": "More information",
@@ -178,7 +178,7 @@
             "type": "boolean",
             "title": "Unattended Exit",
             "default": true,
-            "description": "When `true`, the apply completion dialog closes automatically after `UnattendedExitSeconds` if the user does not interact.",
+            "description": "When 'true', the apply completion dialog closes automatically after 'UnattendedExitSeconds' if the user does not interact.",
             "links": [
                 {
                     "rel": "More information",
@@ -190,7 +190,7 @@
         "UnattendedExitSeconds": {
             "type": "integer",
             "title": "Unattended Exit Seconds",
-            "description": "Seconds before the apply completion dialog auto-closes when `UnattendedExit` is `true`.",
+            "description": "Seconds before the apply completion dialog auto-closes when 'UnattendedExit' is 'true'.",
             "links": [
                 {
                     "rel": "More information",
@@ -203,7 +203,7 @@
             "type": "string",
             "title": "Blocking Process Action",
             "default": "prompt",
-            "description": "Action when a blocking process is running during apply: `\"ignore\"` (skip the check entirely), `\"kill\"` (force-quit silently), `\"notify\"` (brief notification; skip label if still running), `\"prompt\"` (timed dialog; user can quit or skip), `\"defer\"` (skip silently; retry next cycle).",
+            "description": "Action when a blocking process is running during apply: 'ignore' (skip the check entirely), 'kill' (force-quit silently), 'notify' (brief notification; skip label if still running), 'prompt' (timed dialog; user can quit or skip), 'defer' (skip silently; retry next cycle).",
             "links": [
                 {
                     "rel": "More information",
@@ -235,7 +235,7 @@
         "DialogIcon": {
             "type": "string",
             "title": "Dialog Icon",
-            "description": "Path to a custom icon for the apply dialog. Empty = use the system computer icon. Supports absolute paths, `SF=<symbol>` notation, or an SF Symbol name directly.",
+            "description": "Path to a custom icon for the apply dialog. Empty = use the system computer icon. Supports absolute paths, 'SF=<symbol>' notation, or an SF Symbol name directly.",
             "links": [
                 {
                     "rel": "More information",
@@ -248,7 +248,7 @@
             "type": "boolean",
             "title": "Use Overlay Icon",
             "default": true,
-            "description": "When `true`, a small overlay icon is composited onto the dialog icon. Automatically disabled when swiftDialog is not installed.",
+            "description": "When 'true', a small overlay icon is composited onto the dialog icon. Automatically disabled when swiftDialog is not installed.",
             "links": [
                 {
                     "rel": "More information",
@@ -269,11 +269,50 @@
             ],
             "property_order": 90
         },
+        "DialogBlurscreen": {
+            "type": "boolean",
+            "title": "Dialog Blur Screen",
+            "default": false,
+            "description": "When 'true', all screen content behind the apply dialog is blurred.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#swiftdialog--user-prompts"
+                }
+            ],
+            "property_order": 95
+        },
+        "DialogHideotherapps": {
+            "type": "boolean",
+            "title": "Dialog Hide Other Apps",
+            "default": false,
+            "description": "When 'true', all other running apps are hidden when the apply dialog launches.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#swiftdialog--user-prompts"
+                }
+            ],
+            "property_order": 100
+        },
+        "DialogMoveable": {
+            "type": "boolean",
+            "title": "Dialog Moveable",
+            "default": true,
+            "description": "When 'true', the user can drag the swiftDialog windows (apply, progress, and prompt dialogs) around the screen. Set to 'false' to pin them in place.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#swiftdialog--user-prompts"
+                }
+            ],
+            "property_order": 105
+        },
         "DialogScreenPosition": {
             "type": "string",
             "title": "Dialog Screen Position",
             "default": "center",
-            "description": "Position of the main apply dialog: `topleft`, `left`, `bottomleft`, `top`, `center`, `bottom`, `topright`, `right`, or `bottomright`.",
+            "description": "Position of the main apply dialog: 'topleft', 'left', 'bottomleft', 'top', 'center', 'bottom', 'topright', 'right', or 'bottomright'.",
             "links": [
                 {
                     "rel": "More information",
@@ -291,13 +330,13 @@
                 "right",
                 "bottomright"
             ],
-            "property_order": 95
+            "property_order": 110
         },
         "DialogScreenProgressPosition": {
             "type": "string",
             "title": "Dialog Screen Progress Position",
             "default": "bottomright",
-            "description": "Position of the progress/status window during apply. Same position values as `DialogScreenPosition`.",
+            "description": "Position of the progress/status window during apply. Same position values as 'DialogScreenPosition'.",
             "links": [
                 {
                     "rel": "More information",
@@ -315,19 +354,48 @@
                 "right",
                 "bottomright"
             ],
-            "property_order": 100
+            "property_order": 115
+        },
+        "DialogShowWindowButtons": {
+            "type": "string",
+            "title": "Dialog Show Window Buttons",
+            "description": "When 'true', the apply dialog shows the window close/minimize/maximize buttons.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#swiftdialog--user-prompts"
+                }
+            ],
+            "property_order": 120
+        },
+        "ApplyDialogSize": {
+            "type": "string",
+            "title": "Apply Dialog Size",
+            "default": "large",
+            "description": "Size/style of the apply-phase progress dialog: 'large' (the full listitem-based progress window) or 'compact' (a smaller \"mini\" progress window, similar in size to the scan/check/download progress window).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#swiftdialog--user-prompts"
+                }
+            ],
+            "enum": [
+                "large",
+                "compact"
+            ],
+            "property_order": 125
         },
         "DownloadBandwidthLimit": {
             "type": "string",
             "title": "Download Bandwidth Limit",
-            "description": "curl `--limit-rate` format bandwidth cap for staged downloads (e.g. `\"500K\"` for 500 KB/s, `\"2M\"` for 2 MB/s). Empty string = unlimited.",
+            "description": "curl '--limit-rate' format bandwidth cap for staged downloads (e.g. '500K' for 500 KB/s, '2M' for 2 MB/s). Empty string = unlimited.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#download-behavior"
                 }
             ],
-            "property_order": 105
+            "property_order": 130
         },
         "StageDownloadFailThreshold": {
             "type": "integer",
@@ -340,7 +408,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#download-behavior"
                 }
             ],
-            "property_order": 110
+            "property_order": 135
         },
         "ApplyFailThreshold": {
             "type": "integer",
@@ -353,72 +421,72 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#download-behavior"
                 }
             ],
-            "property_order": 115
+            "property_order": 140
         },
         "IgnoreUnknownVersionLabels": {
             "type": "boolean",
             "title": "Ignore Unknown Version Labels",
             "default": false,
-            "description": "When `true`, labels that return no `appNewVersion` value are skipped entirely during staging.",
+            "description": "When 'true', labels that return no 'appNewVersion' value are skipped entirely during staging.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#download-behavior"
                 }
             ],
-            "property_order": 120
+            "property_order": 145
         },
         "UnknownVersionCheckIntervalDays": {
             "type": "integer",
             "title": "Unknown Version Check Interval Days",
             "default": 7,
-            "description": "For labels with unknown versions, re-check this many days after the last attempt (instead of the normal `CheckIntervalHours` cadence).",
+            "description": "For labels with unknown versions, re-check this many days after the last attempt (instead of the normal 'CheckIntervalHours' cadence).",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#download-behavior"
                 }
             ],
-            "property_order": 125
+            "property_order": 150
         },
         "VersionMismatchThrottleDays": {
             "type": "integer",
             "title": "Version Mismatch Throttle Days",
             "default": 7,
-            "description": "When a label reports a version that does not match the file actually downloaded, suppress re-staging for this many days. Cleared automatically when the label reports a different `appNewVersion`.",
+            "description": "When a label reports a version that does not match the file actually downloaded, suppress re-staging for this many days. Cleared automatically when the label reports a different 'appNewVersion'.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#download-behavior"
                 }
             ],
-            "property_order": 130
+            "property_order": 155
         },
         "InitialScanDelayEnabled": {
             "type": "boolean",
             "title": "Initial Scan Delay Enabled",
             "default": true,
-            "description": "When `true`, a one-time random delay is applied before the first scan after initial deployment. Spreads fleet-wide first-scan load across the `InitialScanDelayMaxSeconds` window.",
+            "description": "When 'true', a one-time random delay is applied before the first scan after initial deployment. Spreads fleet-wide first-scan load across the 'InitialScanDelayMaxSeconds' window.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#phase-schedule"
                 }
             ],
-            "property_order": 135
+            "property_order": 160
         },
         "InitialScanDelayMaxSeconds": {
             "type": "integer",
             "title": "Initial Scan Delay Max Seconds",
             "default": 86400,
-            "description": "Maximum jitter for the initial deployment delay in seconds (default: 24 hours). The actual delay is chosen randomly in `[0, max]` on first launch and persisted.",
+            "description": "Maximum jitter for the initial deployment delay in seconds (default: 24 hours). The actual delay is chosen randomly in '[0, max]' on first launch and persisted.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#phase-schedule"
                 }
             ],
-            "property_order": 140
+            "property_order": 165
         },
         "ScanIntervalDays": {
             "type": "integer",
@@ -431,20 +499,20 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#phase-schedule"
                 }
             ],
-            "property_order": 145
+            "property_order": 170
         },
         "ScanOnLabelUpdate": {
             "type": "boolean",
             "title": "Scan On Label Update",
             "default": true,
-            "description": "When `true`, a scan is triggered immediately if the Installomator or Managed Labels have been updated since the last scan, regardless of `ScanIntervalDays`.",
+            "description": "When 'true', a scan is triggered immediately if the Installomator or Managed Labels have been updated since the last scan, regardless of 'ScanIntervalDays'.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#phase-schedule"
                 }
             ],
-            "property_order": 150
+            "property_order": 175
         },
         "LightScanIntervalHours": {
             "type": "integer",
@@ -457,7 +525,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#phase-schedule"
                 }
             ],
-            "property_order": 155
+            "property_order": 180
         },
         "CheckIntervalHours": {
             "type": "integer",
@@ -470,7 +538,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#phase-schedule"
                 }
             ],
-            "property_order": 160
+            "property_order": 185
         },
         "StageIntervalHours": {
             "type": "integer",
@@ -483,7 +551,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#phase-schedule"
                 }
             ],
-            "property_order": 165
+            "property_order": 190
         },
         "ApplyIntervalHours": {
             "type": "integer",
@@ -496,7 +564,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#phase-schedule"
                 }
             ],
-            "property_order": 170
+            "property_order": 195
         },
         "IgnoredLabels": {
             "type": "string",
@@ -508,59 +576,59 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#label-filtering"
                 }
             ],
-            "property_order": 175
+            "property_order": 200
         },
         "IgnoreManagedApps": {
             "type": "boolean",
             "title": "Ignore Managed Apps",
             "default": true,
-            "description": "When `true`, automatically detects apps whose updates are already controlled by MDM policies and excludes their labels from patching. Currently detects Microsoft 365/Office (via MAU), Microsoft Edge, Google Chrome, and Google Drive. ",
+            "description": "When 'true', automatically detects apps whose updates are already controlled by MDM policies and excludes their labels from patching. Currently detects Microsoft 365/Office (via MAU), Microsoft Edge, Google Chrome, and Google Drive. ",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#label-filtering"
                 }
             ],
-            "property_order": 180
+            "property_order": 205
         },
         "IgnoreNonProductionLabels": {
             "type": "boolean",
             "title": "Ignore Non Production Labels",
             "default": true,
-            "description": "When `true`, automatically ignores non-production label variants — labels whose name ends with one of `NonProductionLabelSuffixes` — but only when a production label of the same base name also exists. E.g. with the default suffixes, `microsoftedgebeta` and `microsoftedgedev` are ignored because `microsoftedge` also exists as a label; a label like `figma` is untouched, and a hypothetical `somethingbeta` is left alone if `something` is not also a known label.",
+            "description": "When 'true', automatically ignores non-production label variants — labels whose name ends with one of 'NonProductionLabelSuffixes' — but only when a production label of the same base name also exists. E.g. with the default suffixes, 'microsoftedgebeta' and 'microsoftedgedev' are ignored because 'microsoftedge' also exists as a label; a label like 'figma' is untouched, and a hypothetical 'somethingbeta' is left alone if 'something' is not also a known label.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#label-filtering"
                 }
             ],
-            "property_order": 185
+            "property_order": 210
         },
         "NonProductionLabelSuffixes": {
             "type": "string",
             "title": "Non Production Label Suffixes",
             "default": "beta canary dev",
-            "description": "Space-separated list of suffixes that mark a label as a non-production variant of a base label. Only used when `IgnoreNonProductionLabels` is `true`. Does not support wildcards.",
+            "description": "Space-separated list of suffixes that mark a label as a non-production variant of a base label. Only used when 'IgnoreNonProductionLabels' is 'true'. Does not support wildcards.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#label-filtering"
                 }
             ],
-            "property_order": 190
+            "property_order": 215
         },
         "PreferPkgLabels": {
             "type": "boolean",
             "title": "Prefer Pkg Labels",
             "default": true,
-            "description": "When a label and its `pkg`-suffixed counterpart both exist (e.g. `bbedit` and `bbeditpkg`), only one should ever be active — they deliver the same app via different installer mechanisms. When `true`, the pkg-suffixed label is preferred and the non-pkg label is ignored. When `false`, the non-pkg label is preferred and the pkg-suffixed label is ignored instead.",
+            "description": "When a label and its 'pkg'-suffixed counterpart both exist (e.g. 'bbedit' and 'bbeditpkg'), only one should ever be active — they deliver the same app via different installer mechanisms. When 'true', the pkg-suffixed label is preferred and the non-pkg label is ignored. When 'false', the non-pkg label is preferred and the pkg-suffixed label is ignored instead.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#label-filtering"
                 }
             ],
-            "property_order": 195
+            "property_order": 220
         },
         "RequiredLabels": {
             "type": "string",
@@ -572,32 +640,32 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#label-filtering"
                 }
             ],
-            "property_order": 200
+            "property_order": 225
         },
         "OptionalLabels": {
             "type": "string",
             "title": "Optional Labels",
-            "description": "Space-separated list of label names made available for user-initiated self-service installation via the Available Software catalog. Does not support wildcards. Labels are presented in the order listed here, allowing you to feature priority apps at the top. Example: `\"microsoftword zoom slack\"`.",
+            "description": "Space-separated list of label names made available for user-initiated self-service installation via the Available Software catalog. Does not support wildcards. Labels are presented in the order listed here, allowing you to feature priority apps at the top. Example: 'microsoftword zoom slack'.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#label-filtering"
                 }
             ],
-            "property_order": 205
+            "property_order": 230
         },
         "SwiftDialogEnabled": {
             "type": "boolean",
             "title": "Swift Dialog Enabled",
             "default": true,
-            "description": "Show swiftDialog prompts during the apply phase. If `false` (or swiftDialog is not installed), blocking process handling falls back to the configured `BlockingProcessAction`.",
+            "description": "Show swiftDialog prompts during the apply phase. If 'false' (or swiftDialog is not installed), blocking process handling falls back to the configured 'BlockingProcessAction'.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#swiftdialog--user-prompts"
                 }
             ],
-            "property_order": 210
+            "property_order": 235
         },
         "AppTitle": {
             "type": "string",
@@ -610,59 +678,59 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#swiftdialog--user-prompts"
                 }
             ],
-            "property_order": 215
+            "property_order": 240
         },
         "BrandColorFont": {
             "type": "string",
             "title": "Brand Color Font",
             "default": "white",
-            "description": "Font color used in dialogs and apps. These values set the accent colors used in swiftDialog prompts. Each accepts a standard Apple color name (`black`, `blue`, `gray`, `green`, `orange`, `pink`, `purple`, `red`, `white`, `yellow`) or a hex value (e.g. `#00A4C7`).",
+            "description": "Font color used in dialogs and apps. These values set the accent colors used in swiftDialog prompts. Each accepts a standard Apple color name ('black', 'blue', 'gray', 'green', 'orange', 'pink', 'purple', 'red', 'white', 'yellow') or a hex value (e.g. '#00A4C7').",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#branding-color-palette"
                 }
             ],
-            "property_order": 220
+            "property_order": 245
         },
         "BrandColorBackground": {
             "type": "string",
             "title": "Brand Color Background",
             "default": "blue",
-            "description": "Background color used in dialogs and apps. These values set the accent colors used in swiftDialog prompts. Each accepts a standard Apple color name (`black`, `blue`, `gray`, `green`, `orange`, `pink`, `purple`, `red`, `white`, `yellow`) or a hex value (e.g. `#00A4C7`).",
+            "description": "Background color used in dialogs and apps. These values set the accent colors used in swiftDialog prompts. Each accepts a standard Apple color name ('black', 'blue', 'gray', 'green', 'orange', 'pink', 'purple', 'red', 'white', 'yellow') or a hex value (e.g. '#00A4C7').",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#branding-color-palette"
                 }
             ],
-            "property_order": 225
+            "property_order": 250
         },
         "LogVerbose": {
             "type": "boolean",
             "title": "Log Verbose",
             "default": false,
-            "description": "Enable verbose debug logging. When `true`, per-label key dumps and other low-signal output are included in `/Library/Logs/Patcher/`.",
+            "description": "Enable verbose debug logging. When 'true', per-label key dumps and other low-signal output are included in '/Library/Logs/Patcher/'.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#logging"
                 }
             ],
-            "property_order": 230
+            "property_order": 255
         },
         "LogRetentionDays": {
             "type": "integer",
             "title": "Log Retention Days",
             "default": 90,
-            "description": "Number of days to retain log files in `/Library/Logs/Patcher/`. Files older than this are deleted during the `cleanLogs` run. Set to `0` to disable automatic log cleanup.",
+            "description": "Number of days to retain log files in '/Library/Logs/Patcher/'. Files older than this are deleted during the 'cleanLogs' run. Set to '0' to disable automatic log cleanup.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#logging"
                 }
             ],
-            "property_order": 235
+            "property_order": 260
         },
         "IgnoreAppsInHomeFolder": {
             "type": "boolean",
@@ -675,7 +743,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#application-discovery"
                 }
             ],
-            "property_order": 240
+            "property_order": 265
         },
         "ConvertAppsInHomeFolder": {
             "type": "boolean",
@@ -688,20 +756,20 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#application-discovery"
                 }
             ],
-            "property_order": 245
+            "property_order": 270
         },
         "IgnoreAppsOnExternalVolumes": {
             "type": "boolean",
             "title": "Ignore Apps On External Volumes",
             "default": false,
-            "description": "When `true`, apps found only on external volumes (`/Volumes/*`) are excluded from discovery and never updated. Useful in environments where external drives are transient and should not be managed.",
+            "description": "When 'true', apps found only on external volumes ('/Volumes/*') are excluded from discovery and never updated. Useful in environments where external drives are transient and should not be managed.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#application-discovery"
                 }
             ],
-            "property_order": 250
+            "property_order": 275
         },
         "InstallomatorGitHubAccount": {
             "type": "string",
@@ -714,7 +782,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-label-source"
                 }
             ],
-            "property_order": 255
+            "property_order": 280
         },
         "InstallomatorGitHubRepo": {
             "type": "string",
@@ -727,7 +795,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-label-source"
                 }
             ],
-            "property_order": 260
+            "property_order": 285
         },
         "InstallomatorGitHubBranch": {
             "type": "string",
@@ -740,38 +808,38 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-label-source"
                 }
             ],
-            "property_order": 265
+            "property_order": 290
         },
         "InstallomatorLabelsDisable": {
             "type": "boolean",
             "title": "Installomator Labels Disable",
             "default": false,
-            "description": "When `true`, disables all Installomator label management: no initial download, no update checks, and Installomator labels are never used. Only Managed-Labels are used.",
+            "description": "When 'true', disables all Installomator label management: no initial download, no update checks, and Installomator labels are never used. Only Managed-Labels are used.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-label-source"
                 }
             ],
-            "property_order": 270
+            "property_order": 295
         },
         "InstallomatorUpdateDisable": {
             "type": "boolean",
             "title": "Installomator Update Disable",
             "default": false,
-            "description": "When `true`, skips routine label update checks while still using labels already on disk. Has no effect on the initial download when no labels are present. Ignored when `InstallomatorLabelsDisable` is `true`.",
+            "description": "When 'true', skips routine label update checks while still using labels already on disk. Has no effect on the initial download when no labels are present. Ignored when 'InstallomatorLabelsDisable' is 'true'.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-label-source"
                 }
             ],
-            "property_order": 275
+            "property_order": 300
         },
         "InstallomatorGitHubMetadataAccount": {
             "type": "string",
             "title": "Installomator GitHub Metadata Account",
-            "default": "Installomator",
+            "default": "gilburns",
             "description": "GitHub account hosting the Installomator Metadata repository.",
             "links": [
                 {
@@ -779,12 +847,12 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-metadata-source"
                 }
             ],
-            "property_order": 280
+            "property_order": 305
         },
         "InstallomatorGitHubMetadataRepo": {
             "type": "string",
             "title": "Installomator GitHub Metadata Repo",
-            "default": "Installomator",
+            "default": "Installomator-Metadata",
             "description": "GitHub repository name for Installomator Metadata.",
             "links": [
                 {
@@ -792,7 +860,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-metadata-source"
                 }
             ],
-            "property_order": 285
+            "property_order": 310
         },
         "InstallomatorGitHubMetadataBranch": {
             "type": "string",
@@ -805,20 +873,20 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-metadata-source"
                 }
             ],
-            "property_order": 290
+            "property_order": 315
         },
         "MetadataSyncEnabled": {
             "type": "boolean",
             "title": "Metadata Sync Enabled",
             "default": true,
-            "description": "When `true`, the scheduler periodically checks the metadata repository for updates and syncs icons and metadata to a local cache.",
+            "description": "When 'true', the scheduler periodically checks the metadata repository for updates and syncs icons and metadata to a local cache.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-metadata-source"
                 }
             ],
-            "property_order": 295
+            "property_order": 320
         },
         "MetadataSyncIntervalDays": {
             "type": "integer",
@@ -831,7 +899,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#installomator-metadata-source"
                 }
             ],
-            "property_order": 300
+            "property_order": 325
         },
         "SupportTeamName": {
             "type": "string",
@@ -844,103 +912,103 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#support-team-branding"
                 }
             ],
-            "property_order": 305
+            "property_order": 330
         },
         "SupportTeamEmail": {
             "type": "string",
             "title": "Support Team Email",
             "default": "support@company.com",
-            "description": "Support email address. Shown as a clickable `mailto:` link in the Help Message",
+            "description": "Support email address. Shown as a clickable 'mailto:' link in the Help Message",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#support-team-branding"
                 }
             ],
-            "property_order": 310
+            "property_order": 335
         },
         "SupportTeamPhone": {
             "type": "string",
             "title": "Support Team Phone",
             "default": "None",
-            "description": "Support phone number in the Help Message. Set to `\"None\"` to hide the field.",
+            "description": "Support phone number in the Help Message. Set to 'None' to hide the field.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#support-team-branding"
                 }
             ],
-            "property_order": 315
+            "property_order": 340
         },
         "SupportTeamWebsite": {
             "type": "string",
             "title": "Support Team Website",
             "default": "None",
-            "description": "Support portal URL in the Help Message. Set to `\"None\"` to hide the field.",
+            "description": "Support portal URL in the Help Message. Set to 'None' to hide the field.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#support-team-branding"
                 }
             ],
-            "property_order": 320
+            "property_order": 345
         },
         "ShowMenuBarApp": {
             "type": "boolean",
             "title": "Show Menu Bar App",
             "default": true,
-            "description": "When `true`, the scheduler installs and loads the PatcherMenu LaunchAgent for the current console user. When `false`, the LaunchAgent is unloaded and the plist removed. Managed automatically at each scheduler run.",
+            "description": "When 'true', the scheduler installs and loads the PatcherMenu LaunchAgent for the current console user. When 'false', the LaunchAgent is unloaded and the plist removed. Managed automatically at each scheduler run.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#patchermenu"
                 }
             ],
-            "property_order": 325
+            "property_order": 350
         },
         "MenuBarIcon": {
             "type": "string",
             "title": "Menu Bar Icon",
-            "description": "Icon displayed in the menu bar status item. Accepts an SF Symbol name (e.g. `\"gear\"`) or an absolute path to a template-mode PNG. A template PNG adapts automatically to light/dark menu bar appearance. Empty = built-in default.",
+            "description": "Icon displayed in the menu bar status item. Accepts an SF Symbol name (e.g. 'gear') or an absolute path to a template-mode PNG. A template PNG adapts automatically to light/dark menu bar appearance. Empty = built-in default.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#patchermenu"
                 }
             ],
-            "property_order": 330
+            "property_order": 355
         },
         "ShowHelpButton": {
             "type": "boolean",
             "title": "Show Help Button",
             "default": true,
-            "description": "When `true`, a Help (?) button is shown in the menu bar popover header. Tapping it displays the support contact information.",
+            "description": "When 'true', a Help (?) button is shown in the menu bar popover header. Tapping it displays the support contact information.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#patchermenu"
                 }
             ],
-            "property_order": 335
+            "property_order": 360
         },
         "ShowActivitySection": {
             "type": "boolean",
             "title": "Show Activity Section",
             "default": true,
-            "description": "When `true`, the Last Activity section (scan / check / stage / apply dates) is shown in the menu bar popover.",
+            "description": "When 'true', the Last Activity section (scan / check / stage / apply dates) is shown in the menu bar popover.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#patchermenu"
                 }
             ],
-            "property_order": 340
+            "property_order": 365
         },
         "MenuDeferralCountDisplay": {
             "type": "string",
             "title": "Menu Deferral Count Display",
             "default": "combined",
-            "description": "Controls how the deferral count line is shown in the popover. `combined` — one total covering every deferral, including auto-deferrals (timer time-outs and blocking-process skips). `split` — two figures: deferrals the user actively chose, and auto-deferrals combined. `userOnly` — only the count of deferrals the user actively chose.",
+            "description": "Controls how the deferral count line is shown in the popover. 'combined' — one total covering every deferral, including auto-deferrals (timer time-outs and blocking-process skips). 'split' — two figures: deferrals the user actively chose, and auto-deferrals combined. 'userOnly' — only the count of deferrals the user actively chose.",
             "links": [
                 {
                     "rel": "More information",
@@ -952,72 +1020,72 @@
                 "split",
                 "userOnly"
             ],
-            "property_order": 345
+            "property_order": 370
         },
         "ShowQuitButton": {
             "type": "boolean",
             "title": "Show Quit Button",
             "default": false,
-            "description": "When `true`, a Quit button is shown in the menu bar popover footer.",
+            "description": "When 'true', a Quit button is shown in the menu bar popover footer.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#patchermenu"
                 }
             ],
-            "property_order": 350
+            "property_order": 375
         },
         "ShowMenuDownloadAction": {
             "type": "boolean",
             "title": "Show Menu Download Action",
             "default": true,
-            "description": "When `true`, the \"Download New Updates\" option appears in the Run Now menu.",
+            "description": "When 'true', the \"Download New Updates\" option appears in the Run Now menu.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#patchermenu"
                 }
             ],
-            "property_order": 355
+            "property_order": 380
         },
         "ShowMenuCheckAction": {
             "type": "boolean",
             "title": "Show Menu Check Action",
             "default": true,
-            "description": "When `true`, the \"Check for Updates\" option appears in the Run Now menu.",
+            "description": "When 'true', the \"Check for Updates\" option appears in the Run Now menu.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#patchermenu"
                 }
             ],
-            "property_order": 360
+            "property_order": 385
         },
         "ShowMenuScanAction": {
             "type": "boolean",
             "title": "Show Menu Scan Action",
             "default": true,
-            "description": "When `true`, the \"Full Discovery Scan\" option appears in the Run Now menu.",
+            "description": "When 'true', the \"Full Discovery Scan\" option appears in the Run Now menu.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#patchermenu"
                 }
             ],
-            "property_order": 365
+            "property_order": 390
         },
         "ShowScanCheckProgressDialog": {
             "type": "boolean",
             "title": "Show Scan Check Progress Dialog",
             "default": true,
-            "description": "When `true`, scan and check operations triggered from PatcherMenu display a swiftDialog progress window.",
+            "description": "When 'true', scan and check operations triggered from PatcherMenu display a swiftDialog progress window.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#patchermenu"
                 }
             ],
-            "property_order": 370
+            "property_order": 395
         },
         "CompanyName": {
             "type": "string",
@@ -1030,7 +1098,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#available-software"
                 }
             ],
-            "property_order": 375
+            "property_order": 400
         },
         "CustomAppIconPath": {
             "type": "string",
@@ -1042,26 +1110,26 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#available-software"
                 }
             ],
-            "property_order": 380
+            "property_order": 405
         },
         "AddToDockOnSelfServiceInstall": {
             "type": "boolean",
             "title": "Add To Dock On Self Service Install",
             "default": true,
-            "description": "When `true`, apps successfully installed via self-service are automatically added to the current user's Dock if not already present.",
+            "description": "When 'true', apps successfully installed via self-service are automatically added to the current user's Dock if not already present.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#available-software"
                 }
             ],
-            "property_order": 385
+            "property_order": 410
         },
         "WebhookFeature": {
             "type": "string",
             "title": "Webhook Feature",
             "default": "FAILURES",
-            "description": "Controls when scheduled webhook reports are sent: `\"FALSE\"` (never), `\"FAILURES\"` (failures only), `\"ALL\"` (successes and failures).",
+            "description": "Controls when scheduled webhook reports are sent: 'FALSE' (never), 'FAILURES' (failures only), 'ALL' (successes and failures).",
             "links": [
                 {
                     "rel": "More information",
@@ -1073,7 +1141,7 @@
                 "FAILURES",
                 "ALL"
             ],
-            "property_order": 390
+            "property_order": 415
         },
         "WebhookURLTeams": {
             "type": "string",
@@ -1085,7 +1153,7 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#webhooks"
                 }
             ],
-            "property_order": 395
+            "property_order": 420
         },
         "WebhookURLSlack": {
             "type": "string",
@@ -1097,26 +1165,26 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#webhooks"
                 }
             ],
-            "property_order": 400
+            "property_order": 425
         },
         "WebhookAttributes": {
             "type": "string",
             "title": "Webhook Attributes",
             "default": "deviceName,serial,osVersion,user",
-            "description": "Comma-separated list of device attributes included in webhook payloads, in display order. MDM info is always appended if detected. Supported values: `deviceName`, `hostname`, `serial`, `osVersion`, `osBuild`, `osName`, `model`, `hardwareModel`, `user`, `patcherVersion`, `installomatorVersion`.",
+            "description": "Comma-separated list of device attributes included in webhook payloads, in display order. MDM info is always appended if detected. Supported values: 'deviceName', 'hostname', 'serial', 'osVersion', 'osBuild', 'osName', 'model', 'hardwareModel', 'user', 'patcherVersion', 'installomatorVersion'.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#webhooks"
                 }
             ],
-            "property_order": 405
+            "property_order": 430
         },
         "WebhookSchedule": {
             "type": "string",
             "title": "Webhook Schedule",
             "default": "immediate",
-            "description": "When to send accumulated webhook reports: `\"immediate\"`, `\"daily\"`, `\"weekly\"`, `\"monthly\"`, or `\"patchDay\"`.",
+            "description": "When to send accumulated webhook reports: 'immediate', 'daily', 'weekly', 'monthly', or 'patchDay'.",
             "links": [
                 {
                     "rel": "More information",
@@ -1130,13 +1198,13 @@
                 "monthly",
                 "patchDay"
             ],
-            "property_order": 410
+            "property_order": 435
         },
         "WebhookScheduleWeekday": {
             "type": "integer",
             "title": "Webhook Schedule Weekday",
             "default": 1,
-            "description": "For `weekly` schedule: day of week to send (0=Sunday … 6=Saturday).",
+            "description": "For 'weekly' schedule: day of week to send (0=Sunday … 6=Saturday).",
             "links": [
                 {
                     "rel": "More information",
@@ -1163,33 +1231,33 @@
                     "Saturday"
                 ]
             },
-            "property_order": 415
+            "property_order": 440
         },
         "WebhookScheduleMonthDay": {
             "type": "integer",
             "title": "Webhook Schedule Month Day",
             "default": 1,
-            "description": "For `monthly` schedule: day of month to send (1–31).",
+            "description": "For 'monthly' schedule: day of month to send (1–31).",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#webhooks"
                 }
             ],
-            "property_order": 420
+            "property_order": 445
         },
         "WebhookScheduleHour": {
             "type": "integer",
             "title": "Webhook Schedule Hour",
             "default": 8,
-            "description": "For `daily`, `weekly`, and `monthly` schedules: hour of day (0–23) at which to send.",
+            "description": "For 'daily', 'weekly', and 'monthly' schedules: hour of day (0–23) at which to send.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#webhooks"
                 }
             ],
-            "property_order": 425
+            "property_order": 450
         },
         "WebhookStageFailureThreshold": {
             "type": "integer",
@@ -1202,13 +1270,13 @@
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#webhooks"
                 }
             ],
-            "property_order": 430
+            "property_order": 455
         },
         "WebhookSelfServiceFeature": {
             "type": "string",
             "title": "Webhook Self Service Feature",
             "default": "FALSE",
-            "description": "Controls whether an immediate webhook is sent after a user-initiated self-service install, regardless of `WebhookSchedule`. Options: `\"FALSE\"` (never), `\"FAILURES\"` (failed installs only), `\"ALL\"` (success and failure).",
+            "description": "Controls whether an immediate webhook is sent after a user-initiated self-service install, regardless of 'WebhookSchedule'. Options: 'FALSE' (never), 'FAILURES' (failed installs only), 'ALL' (success and failure).",
             "links": [
                 {
                     "rel": "More information",
@@ -1220,84 +1288,84 @@
                 "FAILURES",
                 "ALL"
             ],
-            "property_order": 435
+            "property_order": 460
         },
         "QuietApplyEnabled": {
             "type": "boolean",
             "title": "Quiet Apply Enabled",
             "default": false,
-            "description": "When `true`, the scheduler runs a silent apply pass before the interactive apply phase. Apps whose blocking process is not running are installed without prompting. Items skipped in the silent pass are shown in the interactive dialog as usual.",
+            "description": "When 'true', the scheduler runs a silent apply pass before the interactive apply phase. Apps whose blocking process is not running are installed without prompting. Items skipped in the silent pass are shown in the interactive dialog as usual.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#swiftdialog--user-prompts"
                 }
             ],
-            "property_order": 440
+            "property_order": 465
         },
         "DeadlineDaysFocus": {
             "type": "integer",
             "title": "Deadline Days Focus",
             "default": 4,
-            "description": "Days a pending update must be present before Focus/DND auto-deferral is disabled and the user must be prompted regardless of Focus state. `0` means Focus is always respected.",
+            "description": "Days a pending update must be present before Focus/DND auto-deferral is disabled and the user must be prompted regardless of Focus state. '0' means Focus is always respected.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#deadlines"
                 }
             ],
-            "property_order": 445
+            "property_order": 470
         },
         "DeadlineDaysHard": {
             "type": "integer",
             "title": "Deadline Days Hard",
             "default": 10,
-            "description": "Days a pending update must be present before no further deferrals are offered and the update is applied at the next opportunity. `0` disables hard deadlines.",
+            "description": "Days a pending update must be present before no further deferrals are offered and the update is applied at the next opportunity. '0' disables hard deadlines.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#deadlines"
                 }
             ],
-            "property_order": 450
+            "property_order": 475
         },
         "FocusCheckEnabled": {
             "type": "boolean",
             "title": "Focus Check Enabled",
             "default": true,
-            "description": "When `false`, Focus/DND and display assertions (e.g. active screen sharing) are never checked. The prompt is shown regardless of the user's Focus state.",
+            "description": "When 'false', Focus/DND and display assertions (e.g. active screen sharing) are never checked. The prompt is shown regardless of the user's Focus state.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#deadlines"
                 }
             ],
-            "property_order": 455
+            "property_order": 480
         },
         "FocusIgnoredProcesses": {
             "type": "string",
             "title": "Focus Ignored Processes",
-            "description": "Space-separated list of process names to ignore when checking for display-sleep assertions (`pmset -g assertions`). If the process holding the assertion resolves to a name that matches an entry here (case-insensitive), the assertion is not treated as a blocker and patching may proceed.",
+            "description": "Space-separated list of process names to ignore when checking for display-sleep assertions ('pmset -g assertions'). If the process holding the assertion resolves to a name that matches an entry here (case-insensitive), the assertion is not treated as a blocker and patching may proceed.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#deadlines"
                 }
             ],
-            "property_order": 460
+            "property_order": 485
         },
         "AggressivePatchDayDeferral": {
             "type": "boolean",
             "title": "Aggressive Patch Day Deferral",
             "default": true,
-            "description": "When `true`, deferral options are progressively capped as the patching window closes. Options shrink from 2 hours early in the day to 5 minutes near window end, then deferral is removed entirely once the window closes. When `false`, the full `DeferralTimerMenu` list is always shown. Applies to both monthly and deadline mode on the final patch day.",
+            "description": "When 'true', deferral options are progressively capped as the patching window closes. Options shrink from 2 hours early in the day to 5 minutes near window end, then deferral is removed entirely once the window closes. When 'false', the full 'DeferralTimerMenu' list is always shown. Applies to both monthly and deadline mode on the final patch day.",
             "links": [
                 {
                     "rel": "More information",
                     "href": "https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#deadlines"
                 }
             ],
-            "property_order": 465
+            "property_order": 490
         }
     }
 }
