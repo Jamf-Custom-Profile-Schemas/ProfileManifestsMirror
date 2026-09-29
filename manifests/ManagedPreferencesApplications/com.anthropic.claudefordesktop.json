@@ -90,6 +90,76 @@
             "description": "Enable Cowork. Claude works on longer tasks like research, analysis, and documents. Defaults to true.",
             "property_order": 60
         },
+        "builtinBrowserEnabled": {
+            "type": "boolean",
+            "title": "Enable Built-in Browser",
+            "default": false,
+            "description": "Claude Desktop on third-party inference deployments. Enable the built-in browser in Cowork and Code sessions. False disables the browser pane; Code retains its localhost-only dev-server preview. Defaults to false. When bootstrapUrl is set, configure this key in the served configuration.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
+                }
+            ],
+            "property_order": 65
+        },
+        "builtinBrowserDefaultDomainPolicy": {
+            "type": "string",
+            "title": "Built-in Browser Default Site Policy",
+            "default": "allow",
+            "description": "Claude Desktop on third-party inference deployments. Default policy for sites Claude may open, read, or act on when the built-in browser is enabled. Allowed domains are exceptions under block; blocked domains are exceptions under allow. Users can still view sites denied to Claude. Defaults to allow.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
+                }
+            ],
+            "enum": [
+                "allow",
+                "block"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow Sites by Default",
+                    "Block Sites by Default"
+                ]
+            },
+            "property_order": 70
+        },
+        "builtinBrowserAllowedDomains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain",
+                "description": "A hostname or supported hostname wildcard. A plain hostname also matches its www form, but no other subdomain."
+            },
+            "title": "Built-in Browser Allowed Domains",
+            "description": "Claude Desktop on third-party inference deployments. Sites Claude may open, read, or act on when builtinBrowserDefaultDomainPolicy is block; ignored under allow. Empty or unset allows no external sites for Claude. Users can still view other sites. Bare * and public-suffix wildcards are ignored.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
+                }
+            ],
+            "property_order": 75
+        },
+        "builtinBrowserBlockedDomains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain",
+                "description": "A hostname or supported hostname wildcard. A plain hostname also matches its www form, but no other subdomain."
+            },
+            "title": "Built-in Browser Blocked Domains",
+            "description": "Claude Desktop on third-party inference deployments. Sites Claude may not open, read, or act on when builtinBrowserDefaultDomainPolicy is allow; ignored under block. Empty or unset adds no blocked sites. Users can still view blocked sites. * blocks every external site for Claude; localhost dev servers are unaffected.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
+                }
+            ],
+            "property_order": 80
+        },
         "microsoftAuthBroker": {
             "type": "string",
             "title": "Microsoft 365 native sign-in broker",
@@ -105,7 +175,7 @@
                     "Disabled"
                 ]
             },
-            "property_order": 65
+            "property_order": 85
         },
         "isDesktopExtensionSignatureRequired": {
             "type": "boolean",
@@ -118,7 +188,7 @@
                     "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
                 }
             ],
-            "property_order": 70
+            "property_order": 90
         },
         "disabledBuiltinTools": {
             "type": "array",
@@ -135,7 +205,7 @@
                     "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
                 }
             ],
-            "property_order": 75
+            "property_order": 95
         },
         "managedMcpServers": {
             "type": "array",
@@ -227,48 +297,48 @@
                     "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
                 }
             ],
-            "property_order": 80
+            "property_order": 100
         },
         "mcpPersistentAlwaysAllowEnabled": {
             "type": "boolean",
             "title": "Allow persistent tool approvals",
             "default": true,
             "description": "Offer the persistent “Always allow” approval options for MCP tools. Disable to keep tool approvals per-call or session-scoped only. Defaults to true.",
-            "property_order": 85
+            "property_order": 105
         },
         "mcpToolTimeoutSec": {
             "type": "integer",
             "title": "MCP tool call timeout",
             "default": 180,
             "description": "Per-call timeout for MCP tool calls, in seconds. Default 180 (3 minutes). Range: 60-3600.",
-            "property_order": 90
+            "property_order": 110
         },
         "deploymentOrganizationUuid": {
             "type": "string",
             "title": "Organization UUID",
             "description": "A UUID you generate. Tags telemetry so Anthropic support can locate your fleet's events, and namespaces each user's local data. Not used for auth.",
-            "property_order": 95
+            "property_order": 115
         },
         "disableEssentialTelemetry": {
             "type": "boolean",
             "title": "Block essential telemetry",
             "default": false,
             "description": "Crash and performance reports to Anthropic. Defaults to false.",
-            "property_order": 100
+            "property_order": 120
         },
         "disableNonessentialTelemetry": {
             "type": "boolean",
             "title": "Block nonessential telemetry",
             "default": false,
             "description": "Product-usage analytics and diagnostic-report uploads. No message content. Defaults to false.",
-            "property_order": 105
+            "property_order": 125
         },
         "disableNonessentialServices": {
             "type": "boolean",
             "title": "Block nonessential services",
             "default": false,
             "description": "Connector favicons and the artifact-preview and MCP Apps widget iframe origins. Artifacts will not render. Defaults to false.",
-            "property_order": 110
+            "property_order": 130
         },
         "effortLevel": {
             "type": "string",
@@ -291,7 +361,7 @@
                     "Max"
                 ]
             },
-            "property_order": 115
+            "property_order": 135
         },
         "allowedWorkspaceFolders": {
             "type": "array",
@@ -334,61 +404,61 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#allowedworkspacefolders-details"
                 }
             ],
-            "property_order": 120
+            "property_order": 140
         },
         "disableBypassPermissionsMode": {
             "type": "boolean",
             "title": "Disable bypass permissions mode",
             "default": false,
             "description": "Remove the bypass permissions mode from Code sessions and Cowork tasks, so Claude always follows the permission policy. Off by default.",
-            "property_order": 125
+            "property_order": 145
         },
         "blockReadsOutsideWorkingDirectories": {
             "type": "boolean",
             "title": "Block reads outside working directories",
             "default": false,
             "description": "Keep Claude from reading files outside a Code session's working directories. File tools refuse such reads; sandboxed shell commands lose the home directory.",
-            "property_order": 130
+            "property_order": 150
         },
         "disableDeploymentModeChooser": {
             "type": "boolean",
             "title": "Disable Claude.ai sign-in",
             "default": false,
             "description": "Users see only this provider at the login screen. The option to sign in to Claude.ai is hidden. Defaults to false.",
-            "property_order": 135
+            "property_order": 155
         },
         "disableDeepLinkRegistration": {
             "type": "boolean",
             "title": "Disable claude:// deep-link handling",
             "default": false,
             "description": "Stop external apps and websites from opening Claude Desktop via claude:// links. Defaults to false.",
-            "property_order": 140
+            "property_order": 160
         },
         "chatTabEnabled": {
             "type": "boolean",
             "title": "Allow Chat",
             "default": true,
             "description": "Enable Chat. Quick questions and drafting.",
-            "property_order": 145
+            "property_order": 165
         },
         "chatAdvancedFileAnalysisEnabled": {
             "type": "boolean",
             "title": "Advanced file analysis",
             "default": false,
             "description": "Allow Claude to run code in a local sandbox to analyze attached files it can't read natively — like Excel and PowerPoint. Off by default.",
-            "property_order": 150
+            "property_order": 170
         },
         "inferenceMaxTokensPerWindow": {
             "type": "integer",
             "title": "Max tokens per window",
             "description": "Per-user soft cap, counted client-side over the token cap window. Not a server-enforced quota. Requires inferenceTokenWindowHours to also be set — without a window length the cap is inert and no limit is enforced.",
-            "property_order": 155
+            "property_order": 175
         },
         "inferenceTokenWindowHours": {
             "type": "integer",
             "title": "Token cap window",
             "description": "Tumbling window length for the token cap. Max 720 hours (30 days). Range: 1-720. Required when inferenceMaxTokensPerWindow is set — the cap only takes effect once both are configured.",
-            "property_order": 160
+            "property_order": 180
         },
         "endUserAttribution": {
             "type": "boolean",
@@ -401,7 +471,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#appearance"
                 }
             ],
-            "property_order": 165
+            "property_order": 185
         },
         "deploymentDisplayName": {
             "type": "string",
@@ -413,7 +483,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#appearance"
                 }
             ],
-            "property_order": 170
+            "property_order": 190
         },
         "deploymentDisplaySubtitle": {
             "type": "string",
@@ -425,7 +495,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#appearance"
                 }
             ],
-            "property_order": 175
+            "property_order": 195
         },
         "disableConfigDeprecationWarnings": {
             "type": "boolean",
@@ -438,7 +508,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#appearance"
                 }
             ],
-            "property_order": 180
+            "property_order": 200
         },
         "banner": {
             "type": "object",
@@ -478,7 +548,7 @@
                     "description": "URL the banner links to when clicked."
                 }
             },
-            "property_order": 185
+            "property_order": 205
         },
         "disableFeatureDiscovery": {
             "type": "boolean",
@@ -491,7 +561,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#feature-discovery"
                 }
             ],
-            "property_order": 190
+            "property_order": 210
         },
         "claudeAiImport": {
             "type": "object",
@@ -535,7 +605,7 @@
                     }
                 }
             },
-            "property_order": 195
+            "property_order": 215
         },
         "otlpEndpoint": {
             "type": "string",
@@ -547,7 +617,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 200
+            "property_order": 220
         },
         "otlpProtocol": {
             "type": "string",
@@ -565,7 +635,7 @@
                 "http/json",
                 "grpc"
             ],
-            "property_order": 205
+            "property_order": 225
         },
         "otlpHeaders": {
             "type": "string",
@@ -577,7 +647,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 210
+            "property_order": 230
         },
         "otlpAuthMode": {
             "type": "string",
@@ -599,7 +669,7 @@
                     "Inference Credential"
                 ]
             },
-            "property_order": 215
+            "property_order": 235
         },
         "otlpHeadersHelper": {
             "type": "string",
@@ -611,7 +681,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 220
+            "property_order": 240
         },
         "otlpResourceAttributes": {
             "type": "string",
@@ -623,7 +693,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 225
+            "property_order": 245
         },
         "otlpDesktopLogLevel": {
             "type": "string",
@@ -652,7 +722,7 @@
                     "Debug"
                 ]
             },
-            "property_order": 230
+            "property_order": 250
         },
         "otlpContentCapture": {
             "type": "array",
@@ -669,7 +739,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 235
+            "property_order": 255
         },
         "otlpTracesEnabled": {
             "type": "boolean",
@@ -682,7 +752,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 240
+            "property_order": 260
         }
     }
 }
