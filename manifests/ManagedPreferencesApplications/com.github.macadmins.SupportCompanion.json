@@ -112,16 +112,64 @@
         "HiddenCards": {
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                    "DeviceInformation",
+                    "Evergreen",
+                    "Battery",
+                    "Actions",
+                    "ApplicationInstallProgress",
+                    "Storage",
+                    "DeviceManagement",
+                    "PendingAppUpdates",
+                    "Jamf",
+                    "Fleet",
+                    "FleetPolicies"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Device Information",
+                        "Evergreen",
+                        "Battery",
+                        "Actions",
+                        "Application Install Progress",
+                        "Storage",
+                        "Device Management",
+                        "Pending App Updates",
+                        "Jamf",
+                        "Fleet",
+                        "Fleet Policies"
+                    ]
+                }
             },
             "title": "Hidden Cards",
-            "description": "Configures which cards to hide, available cards are: DeviceInformation, Evergreen, Battery, Actions, ApplicationInstallProgress, Storage, DeviceManagement, PendingAppUpdates.",
+            "description": "Configures which cards to hide, available cards are: DeviceInformation, Evergreen, Battery, Actions, ApplicationInstallProgress, Storage, DeviceManagement, PendingAppUpdates, Jamf, Fleet, FleetPolicies.",
             "property_order": 80
         },
         "HiddenActions": {
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                    "ChangePassword",
+                    "Reboot",
+                    "OpenManagementApp",
+                    "GetSupport",
+                    "GatherLogs",
+                    "SoftwareUpdates",
+                    "RestartIntuneAgent"
+                ],
+                "options": {
+                    "enum_titles": [
+                        "Change Password",
+                        "Reboot",
+                        "Open Management App",
+                        "Get Support",
+                        "Gather Logs",
+                        "Software Updates",
+                        "Restart Intune Agent"
+                    ]
+                }
             },
             "title": "Hidden Actions",
             "description": "Configures which actions to hide, available actions are: ChangePassword, Reboot, OpenManagementApp, GetSupport, GatherLogs, SoftwareUpdates, RestartIntuneAgent.",
@@ -173,16 +221,39 @@
             "description": "Configures the button text for notifications for App Updates notifications. Defaults to \"Update Now 🚀\" if not configured.",
             "property_order": 120
         },
+        "RebootReminderDays": {
+            "type": "integer",
+            "title": "Reboot Reminder Days",
+            "default": 0,
+            "description": "Configures the number of days after which the user will be reminded to reboot. Defaults to 0 days if not configured (no reminder).",
+            "property_order": 125
+        },
         "Mode": {
             "type": "string",
             "title": "Mode",
-            "description": "Configures the app to show application info for either Munki, Intune or to use System profiler for app info. The app tries to dynamically detect which mode to use.",
+            "description": "Configures which source the app reads application information from. Detection runs only when this is empty: Fleet is chosen on Macs running Fleet's agent (orbit) when no other mode matches.",
             "enum": [
                 "Munki",
                 "Intune",
+                "Jamf",
+                "Fleet",
                 "SystemProfiler"
             ],
-            "property_order": 125
+            "property_order": 130
+        },
+        "RefreshSelfService": {
+            "type": "boolean",
+            "title": "Refresh Self Service",
+            "default": true,
+            "description": "Configures whether to refresh the Self Service+ app data in the background when in Jamf mode. Defaults to true",
+            "property_order": 135
+        },
+        "JamfLogPollHours": {
+            "type": "integer",
+            "title": "Jamf Log Poll Hours",
+            "default": 36,
+            "description": "Configures how often to poll Jamf logs in hours. Only used when in Jamf mode. Defaults to 36 if not configured.",
+            "property_order": 140
         },
         "LogFolders": {
             "type": "array",
@@ -191,7 +262,16 @@
             },
             "title": "Log Folders",
             "description": "Configures the log folders to gather logs from. Only used when gathering logs. Defaults to \"/Library/Logs/Microsoft\" if not configured.",
-            "property_order": 130
+            "property_order": 145
+        },
+        "ExcludedLogFolders": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Excluded Log Folders",
+            "description": "Configures the log folders to exclude when gathering logs. Only used when gathering logs.",
+            "property_order": 150
         },
         "Actions": {
             "type": "array",
@@ -231,15 +311,35 @@
                 }
             },
             "title": "Actions",
-            "description": "Configures custom actions to add to the tray menu. See example below.",
-            "property_order": 135
+            "description": "Configures custom actions to add to the tray menu. Actions defined in the user's own preferences still run, but IsPrivileged is honored only when the action comes from a configuration profile. From 3.0 the app sends only the action's name and the helper looks the command up itself, so a privileged action must be defined in a profile to run at all.",
+            "property_order": 155
+        },
+        "ShowLogoInTrayMenu": {
+            "type": "boolean",
+            "title": "Show Logo In Tray Menu",
+            "default": true,
+            "description": "Configures whether to show the branding logo in the tray menu. Defaults to true.",
+            "property_order": 160
+        },
+        "TrayMenuBrandingIcon": {
+            "type": "string",
+            "title": "Tray Menu Branding Icon",
+            "description": "Configures the icon to show in the tray menu. Specify a Base64 string.",
+            "property_order": 165
+        },
+        "TrayMenuShowIcon": {
+            "type": "boolean",
+            "title": "Show Tray Menu Icon",
+            "default": true,
+            "description": "Configures whether to show the tray menu icon. Useful if you only want to show desktop information for example. Defaults to true.",
+            "property_order": 170
         },
         "ShowDesktopInfo": {
             "type": "boolean",
             "title": "Show Desktop Info",
             "default": false,
             "description": "Configures the desktop info widget.",
-            "property_order": 140
+            "property_order": 175
         },
         "DesktopInfoWindowPosition": {
             "type": "string",
@@ -260,7 +360,7 @@
                     "Lower Right"
                 ]
             },
-            "property_order": 145
+            "property_order": 180
         },
         "DesktopInfoLevel": {
             "type": "integer",
@@ -273,7 +373,7 @@
                 4,
                 5
             ],
-            "property_order": 150
+            "property_order": 185
         },
         "DesktopInfoHideItems": {
             "type": "array",
@@ -328,7 +428,7 @@
             },
             "title": "Desktop Info Hide Items",
             "description": "Use this array to determine which information to hide. Available items are: HostName, Model, SerialNumber, Processor, IPAddress, Memory, OSBuild, OSVersion, LastRestart, FileVault, StorageName, SupportPhone, SupportEmail. It is also possible to hide entire sections: Hardware Specifications, System Information, Network Information, Storage, Support.",
-            "property_order": 155
+            "property_order": 190
         },
         "DesktopInfoBackgroundOpacity": {
             "type": "number",
@@ -361,111 +461,376 @@
                     "100%"
                 ]
             },
-            "property_order": 160
+            "property_order": 195
         },
         "DesktopInfoBackgroundFrosted": {
             "type": "boolean",
             "title": "Desktop Info Background Frosted",
             "description": "Enables a frosted glass look on the desktop info when set to true.",
-            "property_order": 165
+            "property_order": 200
         },
         "DesktopInfoFontSize": {
             "type": "integer",
             "title": "Desktop Info Font Size",
             "default": 14,
             "description": "Configures the font size for the desktop info. Defaults to 14.",
-            "property_order": 170
+            "property_order": 205
         },
         "CustomCardPath": {
             "type": "string",
             "title": "Custom Card Path",
             "description": "Configures a path to a JSON file containing custom widgets to show on the Home view.",
-            "property_order": 175
+            "property_order": 210
+        },
+        "DebugLogging": {
+            "type": "boolean",
+            "title": "Debug Logging",
+            "default": false,
+            "description": "Configures whether debug logging is enabled. Defaults to false.",
+            "property_order": 215
         },
         "EnableElevation": {
             "type": "boolean",
             "title": "Enable Elevation",
             "default": false,
-            "description": "When set to true allows the user to elevate to admin during a set time frame. Defaults to false.",
-            "property_order": 180
+            "description": "When set to true allows the user to elevate to admin during a set time frame. Defaults to false. From 3.0 this is only honored when it comes from a configuration profile.",
+            "property_order": 220
         },
         "RequireResonForElevation": {
             "type": "boolean",
             "title": "Require Reason For Elevation",
             "default": false,
-            "description": "Requires the user to enter a reason for the elevation. Defaults to false.",
-            "property_order": 185
+            "description": "Requires the user to enter a reason for the elevation. Defaults to false. From 3.0 this is only honored when it comes from a configuration profile.",
+            "property_order": 225
         },
         "ReasonMinLength": {
             "type": "integer",
             "title": "Reason Min Length",
             "default": 10,
-            "description": "Set a minimum amount of characters the user must enter as the reason. Defaults to 10.",
-            "property_order": 190
+            "description": "Set a minimum amount of characters the user must enter as the reason. Defaults to 10. From 3.0 this is only honored when it comes from a configuration profile.",
+            "property_order": 230
         },
         "MaxElevationTime": {
             "type": "integer",
             "title": "Max Elevation Time",
             "default": 5,
-            "description": "The amount of time (in minutes) the user is elevated. Defaults to 5.",
-            "property_order": 195
+            "description": "The amount of time (in minutes) the user is elevated. Defaults to 5. From 3.0 this is only honored when it comes from a configuration profile.",
+            "property_order": 235
         },
         "ElevationWebhookUrl": {
             "type": "string",
             "title": "Elevation Webhook Url",
-            "description": "When configured, sends the entered elevation reason to a webhook instead of saving to disk.",
-            "property_order": 200
+            "description": "When configured, sends the entered elevation reason to a webhook instead of saving to disk. From 3.0 this is only honored when it comes from a configuration profile.",
+            "property_order": 240
         },
         "ShowElevateTrayCard": {
             "type": "boolean",
             "title": "Show Elevate Tray Card",
             "default": false,
             "description": "Configure wether to show the elevate button in the tray menu or not. Defaults to false.",
-            "property_order": 205
+            "property_order": 245
         },
         "ElevationSeverity": {
             "type": "integer",
             "title": "Elevation Severity",
             "default": 6,
-            "description": "Configure the elevation severity. Defaults to 6 (Informational).",
-            "property_order": 210
+            "description": "Configure the elevation severity. Defaults to 6 (Informational). From 3.0 this is only honored when it comes from a configuration profile.",
+            "property_order": 250
         },
         "MarkdownFilePath": {
             "type": "string",
             "title": "Markdown File Path",
             "description": "Configure a path to a Markdown file to show in the menu.",
-            "property_order": 215
+            "property_order": 255
         },
         "MarkdownMenuLabel": {
             "type": "string",
             "title": "Markdown Menu Label",
             "description": "Configure the menu label for the custom Markdown view.",
-            "property_order": 220
+            "property_order": 260
         },
         "MarkdownMenuIcon": {
             "type": "string",
             "title": "Markdown Menu Icon",
             "description": "Configure the icon for the custom Markdown menu item.",
-            "property_order": 225
+            "property_order": 265
         },
         "CustomCardsMenuLabel": {
             "type": "string",
             "title": "Custom Cards Menu Label",
             "description": "Configure the menu label for the custom cards view.",
-            "property_order": 230
+            "property_order": 270
         },
         "CustomCardsMenuIcon": {
             "type": "string",
             "title": "Custom Cards Menu Icon",
             "description": "Configure the icon for the custom cards menu item.",
-            "property_order": 235
+            "property_order": 275
         },
         "RequirePrivilegedActionAuthentication": {
             "type": "boolean",
             "title": "Require Privileged Action Authentication",
             "default": true,
-            "description": "Disables the requirement for the user to enter their credentials when running privileged actions via the CLI.",
-            "property_order": 240
+            "description": "Requires the user to authenticate before a privileged action runs. From 3.0 this defaults to true unless an administrator sets it, and is honored only from a configuration profile.",
+            "property_order": 280
+        },
+        "EnforceAdminAllowlist": {
+            "type": "boolean",
+            "title": "Enforce Admin Allowlist",
+            "default": false,
+            "description": "When true, the helper reconciles the admin group at startup and every five minutes: any account holding administrator rights that is neither listed in PermanentAdmins nor inside a live elevation window is demoted. Set PermanentAdmins before enabling this, or those accounts are demoted within five minutes. Defaults to false. Must be delivered in a device-scoped configuration profile; it is ignored anywhere else.",
+            "property_order": 285
+        },
+        "PermanentAdmins": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Permanent Admins",
+            "description": "Accounts that may hold administrator rights permanently when EnforceAdminAllowlist is enabled. List every such account: management accounts, break-glass accounts, permanently administrative staff, and anything granted rights by another system such as Platform SSO's AdministratorGroups. An explicitly empty array is honored and means no account is a permanent administrator; a missing list is refused with an error rather than acted on. root is always permitted. Must be delivered in a device-scoped configuration profile; it is ignored anywhere else.",
+            "property_order": 290
+        },
+        "ElevationAllowedAdmins": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Elevation Allowed Admins",
+            "default": [],
+            "description": "Accounts the elevation watchdog ignores, for management accounts an MDM may legitimately add while somebody is elevated. Defaults to an empty list. Must be delivered in a device-scoped configuration profile; it is ignored anywhere else.",
+            "property_order": 295
+        },
+        "EnableUserInstalls": {
+            "type": "boolean",
+            "title": "Enable User Installs",
+            "default": false,
+            "description": "When true, a standard user can install a .pkg or .dmg listed in AllowedInstallers without holding administrator rights. Both the app and the helper read this: the app decides whether to stage a file at all, the helper decides whether to install it. Defaults to false. Read only from a configuration profile, device-scoped or scoped to the user being served.",
+            "property_order": 300
+        },
+        "ShowInstallerServiceMenuItem": {
+            "type": "boolean",
+            "title": "Show Installer Service Menu Item",
+            "description": "Whether Finder's context menu offers \"Install with Support Companion\". Follows EnableUserInstalls unless set explicitly; set it to false to keep user installs but route everyone through the in-app catalog. Applied on every launch.",
+            "property_order": 305
+        },
+        "RequireAuthenticationForInstalls": {
+            "type": "boolean",
+            "title": "Require Authentication For Installs",
+            "default": true,
+            "description": "Whether the user authenticates before a user install proceeds. They authenticate as themselves, not as an administrator. Turning this off means an unlocked unattended Mac is enough to install an allowlisted item. Defaults to true.",
+            "property_order": 310
+        },
+        "UserInstallFallback": {
+            "type": "string",
+            "title": "User Install Fallback",
+            "default": "installer",
+            "description": "What to offer when an installer is not on the allowlist. \"installer\" opens it in Apple's Installer, \"elevate\" offers the normal time-limited elevation instead, \"none\" offers nothing. Defaults to \"installer\".",
+            "enum": [
+                "installer",
+                "elevate",
+                "none"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Open in Installer",
+                    "Offer Elevation",
+                    "None"
+                ]
+            },
+            "property_order": 315
+        },
+        "SkipHelperInstall": {
+            "type": "boolean",
+            "title": "Skip Helper Install",
+            "default": false,
+            "description": "When true, the package does not install or load its own copy of the privileged helper, and removes any it finds. Set this only where the helper is deployed declaratively with com.apple.configuration.services.background-tasks, otherwise two daemons claim the same Mach service. Defaults to false. Must be delivered in a device-scoped configuration profile; it is ignored anywhere else.",
+            "property_order": 320
+        },
+        "FleetUrl": {
+            "type": "string",
+            "title": "Fleet URL",
+            "description": "Overrides the Fleet server URL otherwise discovered from fleetd or orbit. Read only from a configuration profile, because the device's token is sent to whatever server this names.",
+            "property_order": 325
+        },
+        "FleetRecommendedApps": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Fleet Recommended Apps",
+            "description": "Fleet software keys pinned to the top of the self-service catalog, whether or not they are already installed.",
+            "property_order": 330
+        },
+        "FleetRecommendedTitle": {
+            "type": "string",
+            "title": "Fleet Recommended Title",
+            "description": "Renames the recommended section of the Fleet catalog.",
+            "property_order": 335
+        },
+        "FleetIconsFromGitHub": {
+            "type": "boolean",
+            "title": "Fleet Icons From GitHub",
+            "default": true,
+            "description": "Whether to fetch application icons from Fleet's public catalog on GitHub. Defaults to true.",
+            "property_order": 340
+        },
+        "FleetAppOpenMessages": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Fleet App Open Messages",
+            "description": "Replaces the built-in wording shown when an install is waiting for the user to quit the application first.",
+            "property_order": 345
+        },
+        "FleetButtonLabels": {
+            "type": "object",
+            "title": "Fleet Button Labels",
+            "description": "Custom button text in the Fleet catalog, keyed by software title and optionally nested by action.",
+            "properties": {
+                "Title": {
+                    "type": "string",
+                    "description": "Software title, or an action name nested under one."
+                }
+            },
+            "property_order": 350
+        },
+        "FleetNotifyUpdates": {
+            "type": "boolean",
+            "title": "Fleet Notify Updates",
+            "default": true,
+            "description": "Notify when Fleet reports available application updates. Defaults to true.",
+            "property_order": 355
+        },
+        "FleetNotifyInstallResults": {
+            "type": "boolean",
+            "title": "Fleet Notify Install Results",
+            "default": true,
+            "description": "Notify when a Fleet install, update or uninstall finishes. Defaults to true.",
+            "property_order": 360
+        },
+        "FleetNotifyPolicies": {
+            "type": "boolean",
+            "title": "Fleet Notify Policies",
+            "default": true,
+            "description": "Notify when Fleet policies are failing on the Mac. Defaults to true.",
+            "property_order": 365
+        },
+        "FleetNotifySignIn": {
+            "type": "boolean",
+            "title": "Fleet Notify Sign In",
+            "default": false,
+            "description": "Remind the user to sign in to Fleet Desktop SSO while signed out, at most once a day. Defaults to false, unlike the other Fleet notifications.",
+            "property_order": 370
+        },
+        "CompanyPortalUrl": {
+            "type": "string",
+            "title": "Company Portal URL",
+            "description": "Overrides the Company Portal URL, for sovereign cloud endpoints such as GCC High.",
+            "property_order": 375
+        },
+        "SoftwareUpdateNotificationCommand": {
+            "type": "string",
+            "title": "Software Update Notification Command",
+            "description": "Command run when the software update notification's button is clicked. Defaults to opening the Software Update pane.",
+            "property_order": 380
+        },
+        "AppUpdateNotificationCommand": {
+            "type": "string",
+            "title": "App Update Notification Command",
+            "description": "Command run when the application update notification's button is clicked. Set at every launch to open the management application for the detected mode; a value forced by profile still wins.",
+            "property_order": 385
+        },
+        "FileDebugLogging": {
+            "type": "boolean",
+            "title": "File Debug Logging",
+            "default": false,
+            "description": "Write debug logging to disk as well as to the unified log. Defaults to false.",
+            "property_order": 390
+        },
+        "AllowedInstallers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "title": "Name",
+                        "description": "Display name for this entry. Required."
+                    },
+                    "SHA256": {
+                        "type": "string",
+                        "title": "SHA256",
+                        "description": "64 hex characters. When present the entry is strict: it pins one exact build and stops matching as soon as the vendor ships an update."
+                    },
+                    "TeamID": {
+                        "type": "string",
+                        "title": "Team ID",
+                        "description": "The signing team. Required whenever SHA256 is absent."
+                    },
+                    "LeafCertificateSHA256": {
+                        "type": "string",
+                        "title": "Leaf Certificate SHA256",
+                        "description": "Pins the signing certificate itself. Stricter than TeamID, and needs updating when the vendor renews."
+                    },
+                    "PackageIdentifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Package Identifier",
+                        "description": "Package identifiers this entry allows, for a .pkg. A distribution package needs every component listed. A single string is also accepted."
+                    },
+                    "BundleIdentifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Bundle Identifier",
+                        "description": "Bundle identifiers this entry allows, for the application inside a .dmg. A single string is also accepted."
+                    },
+                    "AllowAnyIdentifier": {
+                        "type": "boolean",
+                        "title": "Allow Any Identifier",
+                        "default": false,
+                        "description": "Accept anything the named team signs. This is a vendor allowlist rather than an application allowlist. Defaults to false."
+                    },
+                    "MinimumVersion": {
+                        "type": "string",
+                        "title": "Minimum Version",
+                        "description": "Refuse builds older than this, so a signed but vulnerable version cannot be installed instead."
+                    },
+                    "RequireNotarized": {
+                        "type": "boolean",
+                        "title": "Require Notarized",
+                        "default": true,
+                        "description": "Require the installer to be notarized. Defaults to true."
+                    },
+                    "AllowScripts": {
+                        "type": "boolean",
+                        "title": "Allow Scripts",
+                        "default": false,
+                        "description": "Whether the package may carry install scripts. A scriptless package landing in /Applications is a file copy; one with a postinstall is arbitrary root code on every future build the vendor signs. Defaults to false."
+                    },
+                    "AllowedPayloadPrefixes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "Allowed Payload Prefixes",
+                        "description": "Absolute path prefixes this installer may write to. Unrestricted when unset, though some destinations always need naming explicitly."
+                    },
+                    "AllowUnrestrictedPayload": {
+                        "type": "boolean",
+                        "title": "Allow Unrestricted Payload",
+                        "default": false,
+                        "description": "Lets this installer write anywhere, including the destinations that otherwise always need naming. Its own key, so the most dangerous setting has to be meant. Defaults to false."
+                    }
+                }
+            },
+            "title": "Allowed Installers",
+            "description": "Installers a standard user may install without administrator rights when EnableUserInstalls is true. The helper re-reads this and re-derives the installer's facts before it acts, so the confirmation sheet the user sees is presentation only. Entries that cannot decide anything are dropped and logged. Read only from a configuration profile, device-scoped or scoped to the user being served.",
+            "property_order": 395
         }
     }
 }
