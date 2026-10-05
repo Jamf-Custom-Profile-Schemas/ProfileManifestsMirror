@@ -9,7 +9,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#daysuntilreset"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Deferral-Behavior#days-until-reset"
                 }
             ],
             "property_order": 5
@@ -21,7 +21,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#patchweekstartday"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Deferral-Behavior#patch-week-start-day-optional"
                 }
             ],
             "enum": [
@@ -53,7 +53,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#deadlinecountfocus"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Count-Deadlines#focus-count-deadline"
                 }
             ],
             "property_order": 15
@@ -65,7 +65,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#deadlinecounthard"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Count-Deadlines#hard-count-deadline"
                 }
             ],
             "property_order": 20
@@ -77,7 +77,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Days-Deadlines"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Days-Deadlines#focus-days-deadline"
                 }
             ],
             "property_order": 25
@@ -89,7 +89,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Days-Deadlines"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Days-Deadlines#hard-days-deadline"
                 }
             ],
             "property_order": 30
@@ -101,7 +101,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#deferraltimerdefault"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Deferral-Behavior#deferral-time-default"
                 }
             ],
             "property_order": 35
@@ -113,7 +113,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#deferraltimererror"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Deferral-Behavior#deferral-timer-error"
                 }
             ],
             "property_order": 40
@@ -125,7 +125,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#deferraltimerfocus"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Deferral-Behavior#deferral-timer-focus"
                 }
             ],
             "property_order": 45
@@ -137,7 +137,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#deferraltimermenu"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Deferral-Behavior#deferral-timer-menu"
                 }
             ],
             "property_order": 50
@@ -149,7 +149,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#deferraltimerworkflowrelaunch"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Deferral-Behavior#deferral-timer-workflow-relaunch"
                 }
             ],
             "property_order": 55
@@ -247,7 +247,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#discovery-frequency"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#discovery-frequency-version-36"
                 }
             ],
             "property_order": 80
@@ -291,6 +291,12 @@
             "title": "Show Dock Icon",
             "default": true,
             "description": "When true, workflow swiftDialog windows show the App Auto-Patch logo in the macOS Dock (requires swiftDialog 3.0+). Deferral dialogs badge the pending update count; the installation dialog counts the badge down as updates finish. Default true.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/End-User-Experience#dock-icon-and-quit-behavior-version-37"
+                }
+            ],
             "property_order": 95
         },
         "DialogQuitHandlingDiscoveryStaging": {
@@ -298,6 +304,12 @@
             "title": "Discovery/Staging Dialog Quit Handling",
             "default": "PROMPT",
             "description": "What happens if the user quits the discovery or staging window (Dock Quit / menu Quit / ⌘Q). PROMPT (default) asks whether to Keep Running in the background or Stop App Auto-Patch until the next scheduled run. CONTINUE keeps the workflow running with no prompt (previous implicit behavior). STOP ends the current run cleanly and preserves NextAutoLaunch. Stop is ignored when a hard deadline is already due or Install Now is running — the workflow continues instead.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Process-Recovery#discovery-and-staging-dock-quit"
+                }
+            ],
             "enum": [
                 "PROMPT",
                 "CONTINUE",
@@ -317,6 +329,12 @@
             "title": "Show Notifications (All)",
             "default": true,
             "description": "Master switch for banner-style swiftDialog notifications. When true (default), every notification type is shown and individual ShowNotifications* keys are ignored. When false, enable specific types with ShowNotificationsSilentUpdated, ShowNotificationsAppsQueued, and/or ShowNotificationsSilentAndQueued. Does not itself enable discovery during Business Hours.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Notifications-and-Pending-Apps#banner-notifications"
+                }
+            ],
             "property_order": 105
         },
         "ShowNotificationsSilentUpdated": {
@@ -324,6 +342,12 @@
             "title": "Show Notification: Silent Updated",
             "default": false,
             "description": "When ShowNotificationsAll is false, enable the banner that reports successful silent closed-app updates (e.g. “updated {count} application(s) in the background”). Ignored when ShowNotificationsAll is true.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Notifications-and-Pending-Apps#notification-preferences"
+                }
+            ],
             "property_order": 110
         },
         "ShowNotificationsAppsQueued": {
@@ -331,6 +355,12 @@
             "title": "Show Notification: Apps Queued",
             "default": false,
             "description": "When ShowNotificationsAll is false, enable the banner that reports pending updates with Install Now / Dismiss (including after BusinessHoursAllowDiscovery). Ignored when ShowNotificationsAll is true.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Notifications-and-Pending-Apps#notification-preferences"
+                }
+            ],
             "property_order": 115
         },
         "ShowNotificationsSilentAndQueued": {
@@ -338,6 +368,12 @@
             "title": "Show Notification: Silent And Queued",
             "default": false,
             "description": "When ShowNotificationsAll is false, enable the combined banner after Business Hours Silent During (“{count} updated… {remaining} remain queued”). Ignored when ShowNotificationsAll is true.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Notifications-and-Pending-Apps#notification-preferences"
+                }
+            ],
             "property_order": 120
         },
         "DialogTimeoutDeferral": {
@@ -428,7 +464,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#useoverlayicon"
                 }
             ],
             "enum": [
@@ -450,7 +486,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/End-User-Experience#dialog-icon"
                 }
             ],
             "property_order": 155
@@ -462,7 +498,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#bannerimage"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/End-User-Experience#banner-image"
                 }
             ],
             "property_order": 160
@@ -474,7 +510,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#bannertitle"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/End-User-Experience#banner-image"
                 }
             ],
             "property_order": 165
@@ -486,7 +522,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#bannerheight"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/End-User-Experience#banner-image"
                 }
             ],
             "property_order": 170
@@ -547,7 +583,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#apptitle"
                 }
             ],
             "property_order": 195
@@ -603,6 +639,12 @@
             "title": "Skip Pre-Update Verification",
             "default": false,
             "description": "When true, discovery skips the local Gatekeeper (spctl) / Team ID pre-update check for already-installed apps. Use this when spctl assessment intermittently fails for a valid app and would otherwise exclude it from discovery/updates. Installomator still validates the downloaded package after download. Default false.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Installomator-Integration#skip-pre-update-verification-version-37"
+                }
+            ],
             "property_order": 210
         },
         "InstallomatorOptions": {
@@ -612,7 +654,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Installomator-Integration#blocking-process-action"
                 }
             ],
             "property_order": 215
@@ -645,6 +687,12 @@
             "title": "GitHub API Auth Enabled",
             "default": "FALSE",
             "description": "When TRUE, App Auto-Patch authenticates GitHub REST API requests (api.github.com) with the personal access token in GitHubAPIToken, raising the rate limit from 60 to 5,000 requests per hour. Managed preferences only - the token is never written to the local preference file and is never logged. If this key is TRUE, GitHubAPIToken is required or startup validation fails.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#githubapiauthenabled"
+                }
+            ],
             "enum": [
                 "TRUE",
                 "FALSE"
@@ -664,7 +712,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#githubapitoken"
                 }
             ],
             "property_order": 230
@@ -673,12 +721,24 @@
             "type": "string",
             "title": "Pre Patch Script",
             "description": "Absolute path to a root-owned executable script run once before Installomator installations in a patch run. Must live under /Library/Management/AppAutoPatch/Hooks/, must not be a symlink, and must not be group/world-writable. Managed preferences only - never accepted from CLI or the local preference file. Never evaluated as a shell string.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#prepost-patch-scripts-version-37"
+                }
+            ],
             "property_order": 235
         },
         "PostPatchScript": {
             "type": "string",
             "title": "Post Patch Script",
             "description": "Absolute path to a root-owned executable script run once after Installomator installations complete in a patch run (for example jamf recon). Same security requirements as PrePatchScript. Managed preferences only.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#prepost-patch-scripts-version-37"
+                }
+            ],
             "property_order": 240
         },
         "PrePatchScriptFailAction": {
@@ -686,6 +746,12 @@
             "title": "Pre Patch Script Fail Action",
             "default": "ABORT",
             "description": "What to do if PrePatchScript is missing/invalid or exits non-zero. ABORT stops the install run; CONTINUE logs the failure and proceeds with patching.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#prepost-patch-scripts-version-37"
+                }
+            ],
             "enum": [
                 "ABORT",
                 "CONTINUE"
@@ -697,6 +763,12 @@
             "title": "Post Patch Script Fail Action",
             "default": "CONTINUE",
             "description": "What to do if PostPatchScript is missing/invalid or exits non-zero. ABORT exits AAP with an error after installs; CONTINUE (default) logs the failure and proceeds with webhook/relaunch.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#prepost-patch-scripts-version-37"
+                }
+            ],
             "enum": [
                 "ABORT",
                 "CONTINUE"
@@ -708,6 +780,12 @@
             "title": "Patch Script Timeout Seconds",
             "default": 300,
             "description": "Maximum seconds allowed for a PrePatchScript or PostPatchScript run before AAP terminates it (treated as failure).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#prepost-patch-scripts-version-37"
+                }
+            ],
             "property_order": 255
         },
         "StaleProcessTimeoutSeconds": {
@@ -715,6 +793,12 @@
             "title": "Stale Process Timeout Seconds",
             "default": 3600,
             "description": "Seconds of missing heartbeat after which a leftover App Auto-Patch process is treated as hung and recovered (graceful TERM, then KILL if needed). The PID file is also validated so a recycled PID is not mistaken for a live AAP run. Default 3600 (1 hour). 0 disables timeout-based stale-process killing (dead/reused PID cleanup still runs). Any other value below 300 is raised to 300.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Process-Recovery#stale-process-timeout"
+                }
+            ],
             "property_order": 260
         },
         "InstallomatorVersion": {
@@ -792,7 +876,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#removeinstallomatorpath"
                 }
             ],
             "enum": [
@@ -814,7 +898,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#supportteamname"
                 }
             ],
             "property_order": 290
@@ -826,7 +910,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#supportteamemail"
                 }
             ],
             "property_order": 295
@@ -838,7 +922,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#supportteamphone"
                 }
             ],
             "property_order": 300
@@ -850,7 +934,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#supportteamwebsite"
                 }
             ],
             "property_order": 305
@@ -863,7 +947,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Webhooks#when-a-message-is-sent"
                 }
             ],
             "enum": [
@@ -880,7 +964,7 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Webhooks#slack"
                 }
             ],
             "property_order": 315
@@ -892,10 +976,34 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Webhooks#microsoft-teams"
                 }
             ],
             "property_order": 320
+        },
+        "WebhookURLGoogleChat": {
+            "type": "string",
+            "title": "Google Chat Webhook URL",
+            "description": "The Google Chat incoming webhook URL to use if WebhookFeature is set to ALL or FAILURES. The card includes the same status, serial, user, labels, errors, and MDM device link as the Slack and Teams webhooks.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Webhooks#google-chat"
+                }
+            ],
+            "property_order": 325
+        },
+        "MosyleConsoleURL": {
+            "type": "string",
+            "title": "Mosyle Console URL",
+            "description": "Override the Mosyle admin console host used in Slack/Teams \"View in Mosyle\" device links. The enrollment ServerURL (for example https://biz-1234.mosyle.com) is the MDM check-in endpoint, not the console. Leave unset to map Business enrollments (biz-* / *business.mosyle*) to https://mybusiness.mosyle.com and other Mosyle enrollments to https://my.mosyle.com (Manager/Education).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Webhooks#mosyle"
+                }
+            ],
+            "property_order": 330
         },
         "WorkflowDisableAppDiscovery": {
             "type": "string",
@@ -918,7 +1026,7 @@
                     "Enable App Discovery"
                 ]
             },
-            "property_order": 325
+            "property_order": 335
         },
         "WorkflowBackgroundPatchClosedApps": {
             "type": "boolean",
@@ -928,10 +1036,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#background-patch-closed-apps"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#background-patch-closed-apps-version-36"
                 }
             ],
-            "property_order": 330
+            "property_order": 340
         },
         "WorkflowStageUpdates": {
             "type": "boolean",
@@ -941,10 +1049,10 @@
             "links": [
                 {
                     "rel": "More information",
-                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#update-staging"
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Workflows#update-staging-version-36"
                 }
             ],
-            "property_order": 335
+            "property_order": 345
         },
         "IgnoreDNDApps": {
             "type": "string",
@@ -956,14 +1064,20 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Configure-Settings#ignorednapps"
                 }
             ],
-            "property_order": 340
+            "property_order": 350
         },
         "WorkflowScheduledDiscovery": {
             "type": "boolean",
             "title": "Scheduled Discovery Only",
             "default": false,
             "description": "When WorkflowDisableRelaunch is also enabled, keep periodic headless discovery runs active using DiscoveryFrequency. These runs refresh the pending-app report, optionally stage updates, and can notify users, but never silently patch, show deferral or deadline dialogs, or install apps. Users initiate installation from the pending-apps dialog, Support App, notification action, or another explicit Install Now trigger",
-            "property_order": 345
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Scheduled-Discovery-and-User-Driven-Patching"
+                }
+            ],
+            "property_order": 355
         },
         "WorkflowDisableRelaunch": {
             "type": "string",
@@ -986,34 +1100,58 @@
                     "Enable Automatic Relaunch"
                 ]
             },
-            "property_order": 350
+            "property_order": 360
         },
         "BusinessHours": {
             "type": "string",
             "title": "Business Hours",
             "description": "Weekday time windows when interactive App Auto-Patch must NOT run (blocked / do-not-disturb hours). Format: DAY:hh:mm-hh:mm, comma-separated, no spaces (MON-SUN, 24-hour). Multiple windows per day are allowed — for example MON:09:00-11:59,MON:13:00-17:00 blocks morning and afternoon but leaves lunch clear. Same-day ranges only — split overnight spans into two windows. Empty/unset = always allowed. During a window, AAP reschedules NextAutoLaunch to the next clear time and exits without interactive patching unless BusinessHoursSilentDuring or BusinessHoursAllowDiscovery is true. Local Mac timezone. Intentionally bypassed by --workflow-install-now / --workflow-install-now-silent / --preview-deferral-dialog. Overdue hard deadlines bypass BusinessHours by default unless BusinessHoursRespectHardDeadline is true.",
-            "property_order": 355
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Business-Hours"
+                }
+            ],
+            "property_order": 365
         },
         "BusinessHoursRespectHardDeadline": {
             "type": "boolean",
             "title": "Business Hours Respect Hard Deadline",
             "default": false,
             "description": "When true, even an overdue hard deadline (days or count) waits until BusinessHours clear. When false (default), an overdue hard deadline bypasses BusinessHours so mandatory installs are not delayed by days.",
-            "property_order": 360
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Business-Hours#hard-deadlines"
+                }
+            ],
+            "property_order": 370
         },
         "BusinessHoursSilentDuring": {
             "type": "boolean",
             "title": "Business Hours Silent During",
             "default": false,
             "description": "When true and during BusinessHours, AAP still runs discovery and silently patches closed apps only — no dialogs even if InteractiveMode is 1 or 2. Open or blocked apps remain queued and are deferred until BusinessHours clear. When false (default), during BusinessHours AAP only reschedules NextAutoLaunch and exits — unless BusinessHoursAllowDiscovery is true.",
-            "property_order": 365
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Business-Hours#silently-patch-closed-apps"
+                }
+            ],
+            "property_order": 375
         },
         "BusinessHoursAllowDiscovery": {
             "type": "boolean",
             "title": "Business Hours Allow Discovery",
             "default": false,
             "description": "When true and during BusinessHours without BusinessHoursSilentDuring, AAP runs discovery then defers until the window clears (no interactive dialogs or silent patching). Notification prefs independently control whether pending apps get a banner with Install Now. When false (default), AAP exits immediately during BusinessHours without discovery — matching historical behavior.",
-            "property_order": 370
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Business-Hours#allow-discovery-without-patching"
+                }
+            ],
+            "property_order": 380
         },
         "WorkflowInstallNowPatchingStatusAction": {
             "type": "string",
@@ -1031,7 +1169,7 @@
                 "ALWAYS",
                 "SUCCESS"
             ],
-            "property_order": 375
+            "property_order": 385
         },
         "SelfUpdateEnabled": {
             "type": "boolean",
@@ -1043,7 +1181,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Self-Update-Function"
                 }
             ],
-            "property_order": 380
+            "property_order": 390
         },
         "SelfUpdateFrequency": {
             "type": "string",
@@ -1067,7 +1205,7 @@
                     "Monthly"
                 ]
             },
-            "property_order": 385
+            "property_order": 395
         },
         "VersionComparisonMethod": {
             "type": "string",
@@ -1089,7 +1227,7 @@
                     "Equal To"
                 ]
             },
-            "property_order": 390
+            "property_order": 400
         },
         "VersionComparisonInstallomatorFallback": {
             "type": "boolean",
@@ -1101,7 +1239,7 @@
                     "href": "https://github.com/App-Auto-Patch/App-Auto-Patch/wiki/Version-Comparison-Methods#version-comparison-installomator-fallback"
                 }
             ],
-            "property_order": 395
+            "property_order": 405
         },
         "userInterface": {
             "type": "object",
@@ -1885,7 +2023,7 @@
                     ]
                 }
             },
-            "property_order": 400
+            "property_order": 410
         }
     }
 }
