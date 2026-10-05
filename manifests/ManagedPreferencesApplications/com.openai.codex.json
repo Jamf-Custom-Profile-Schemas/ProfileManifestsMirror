@@ -1,0 +1,20 @@
+{
+    "title": "ChatGPT / Codex (com.openai.codex)",
+    "description": "ChatGPT desktop app and Codex managed configuration settings",
+    "properties": {
+        "config_toml_base64": {
+            "type": "string",
+            "title": "Managed Configuration (Base64 TOML)",
+            "description": "Base64-encoded TOML that supplies managed default configuration. It is applied as the highest-precedence configuration layer, above /etc/codex/managed_config.toml and the user's config.toml, so values set here override user settings. Encode the TOML with 'base64' without line wrapping. Users must restart ChatGPT or Codex for changes to take effect.",
+            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
+            "property_order": 5
+        },
+        "requirements_toml_base64": {
+            "type": "string",
+            "title": "Requirements (Base64 TOML)",
+            "description": "Base64-encoded TOML that supplies enforced requirements, such as allowed approval policies, sandbox modes, and MCP servers. Requirements constrain what users can configure. This layer is applied below the system /etc/codex/requirements.toml and any cloud-managed requirements. Encode the TOML with 'base64' without line wrapping. Users must restart ChatGPT or Codex for changes to take effect.",
+            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
+            "property_order": 10
+        }
+    }
+}
