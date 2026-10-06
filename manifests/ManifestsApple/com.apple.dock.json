@@ -627,19 +627,45 @@
             "description": "If 'true', locks \"Automatically hide.\"",
             "property_order": 100
         },
+        "autohide-delay": {
+            "type": "number",
+            "title": "Show delay",
+            "default": 0.2,
+            "description": "Delay in seconds before a hidden Dock is shown.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macos-defaults.com/dock/autohide-delay.html"
+                }
+            ],
+            "property_order": 105
+        },
+        "autohide-time-modifier": {
+            "type": "number",
+            "title": "Show and hide animation duration",
+            "default": 0.5,
+            "description": "Duration in seconds of Dock show and hide sliding animations.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://macos-defaults.com/dock/autohide-time-modifier.html"
+                }
+            ],
+            "property_order": 110
+        },
         "show-process-indicators": {
             "type": "boolean",
             "title": "Show indicators for open applications",
             "default": false,
             "description": "If true, shows the process indicator.",
-            "property_order": 105
+            "property_order": 115
         },
         "show-recents": {
             "type": "boolean",
             "title": "Show recent applications in Dock",
             "default": false,
             "description": "If 'true', enables \"Show recent items.\"",
-            "property_order": 110
+            "property_order": 120
         },
         "show-recent-count": {
             "type": "integer",
@@ -652,28 +678,28 @@
                     "href": "https://apple.stackexchange.com/questions/411278/show-more-than-three-recent-applications-in-dock"
                 }
             ],
-            "property_order": 115
+            "property_order": 125
         },
         "static-only": {
             "type": "boolean",
             "title": "Remove non-static apps and documents from Dock",
             "default": false,
             "description": "If 'true', uses the 'static-apps' and 'static-others' dictionaries for the Dock and ignores any items in the 'persistent-apps' and 'persistent-others' dictionaries. If 'false', the contents are merged with the static items listed first.",
-            "property_order": 120
+            "property_order": 130
         },
         "contents-immutable": {
             "type": "boolean",
             "title": "Prevent modifying items in Dock",
             "default": false,
             "description": "If 'true', disables changes to the Dock.",
-            "property_order": 125
+            "property_order": 135
         },
         "AllowDockFixupOverride": {
             "type": "boolean",
             "title": "Allow DockFixup override",
             "default": false,
             "description": "If 'true', use the file in '/Library/Preferences/com.apple.dockfixup.plist' when a new user or migrated user logs in. This option has no effect for existing users. Only available on the device channel.",
-            "property_order": 130
+            "property_order": 140
         },
         "MCXDockSpecialFolders": {
             "type": "array",
@@ -698,7 +724,7 @@
             },
             "title": "Managed Client Special Folders",
             "description": "One or more special folders that the device may create at user login time and place in the Dock.\nThe \"My Applications\" item is only used for Simple Finder environments. The \"Original Network Home\" item is only used for mobile account users.",
-            "property_order": 135
+            "property_order": 145
         },
         "wvous-tl-corner": {
             "type": "integer",
@@ -735,7 +761,7 @@
                     "No Action"
                 ]
             },
-            "property_order": 140
+            "property_order": 150
         },
         "wvous-tl-modifier": {
             "type": "integer",
@@ -780,7 +806,7 @@
                     "Shift"
                 ]
             },
-            "property_order": 145
+            "property_order": 155
         },
         "wvous-tr-corner": {
             "type": "integer",
@@ -817,7 +843,7 @@
                     "No Action"
                 ]
             },
-            "property_order": 150
+            "property_order": 160
         },
         "wvous-tr-modifier": {
             "type": "integer",
@@ -862,7 +888,7 @@
                     "Shift"
                 ]
             },
-            "property_order": 155
+            "property_order": 165
         },
         "wvous-bl-corner": {
             "type": "integer",
@@ -899,7 +925,7 @@
                     "No Action"
                 ]
             },
-            "property_order": 160
+            "property_order": 170
         },
         "wvous-bl-modifier": {
             "type": "integer",
@@ -944,7 +970,7 @@
                     "Shift"
                 ]
             },
-            "property_order": 165
+            "property_order": 175
         },
         "wvous-br-corner": {
             "type": "integer",
@@ -981,7 +1007,7 @@
                     "No Action"
                 ]
             },
-            "property_order": 170
+            "property_order": 180
         },
         "wvous-br-modifier": {
             "type": "integer",
@@ -1026,7 +1052,7 @@
                     "Shift"
                 ]
             },
-            "property_order": 175
+            "property_order": 185
         },
         "windowtabbing": {
             "type": "string",
@@ -1044,14 +1070,14 @@
                     "Fullscreen"
                 ]
             },
-            "property_order": 180
+            "property_order": 190
         },
         "windowtabbing-immutable": {
             "type": "boolean",
             "title": "Prevent changing tabs preference",
             "default": false,
             "description": "If 'true', disables \"Prefer tabs when opening documents\" checkbox.",
-            "property_order": 185
+            "property_order": 195
         },
         "dblclickbehavior": {
             "type": "string",
@@ -1069,28 +1095,28 @@
                     "None"
                 ]
             },
-            "property_order": 190
+            "property_order": 200
         },
         "dblclickbehavior-immutable": {
             "type": "boolean",
             "title": "Prevent changing doubleclick behavior",
             "default": false,
             "description": "If 'true', locks \"Double-click a window's title bar.\"",
-            "property_order": 195
+            "property_order": 205
         },
         "showindicators-immutable": {
             "type": "boolean",
             "title": "Prevent changing indicators display",
             "default": false,
             "description": "If 'true', locks \"Show indicators.\"",
-            "property_order": 200
+            "property_order": 210
         },
         "showrecents-immutable": {
             "type": "boolean",
             "title": "Prevent shanging recents display",
             "default": false,
             "description": "If 'true', disables \"Show recent applications\" checkbox.",
-            "property_order": 205
+            "property_order": 215
         }
     }
 }
