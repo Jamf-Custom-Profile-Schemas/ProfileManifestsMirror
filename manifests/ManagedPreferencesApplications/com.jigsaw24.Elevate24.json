@@ -230,6 +230,36 @@
             ],
             "property_order": 85
         },
+        "advancedReasons": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "reason": {
+                        "type": "string",
+                        "title": "Reason"
+                    },
+                    "requireFreeText": {
+                        "type": "boolean",
+                        "title": "Require Free Text",
+                        "default": false
+                    },
+                    "freeTextPlaceholder": {
+                        "type": "string",
+                        "title": "Free Text Placeholder"
+                    }
+                }
+            },
+            "title": "Advanced Reasons",
+            "description": "New reason type that can require a free-text note. Combined with the existing Reasons list. The selected reason is logged to Reason, the note to ReasonText.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/4%20Elevate24%20-%20Customisation.html#session-customisation"
+                }
+            ],
+            "property_order": 90
+        },
         "sessionExpiryReminder": {
             "type": "integer",
             "title": "Set Session Expiry Notification (Premium)",
@@ -241,38 +271,76 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/4%20Elevate24%20-%20Customisation.html#session-customisation"
                 }
             ],
-            "property_order": 90
+            "property_order": 95
         },
         "AllowUserDefinedScripts": {
             "type": "boolean",
             "title": "Allow User Defined Scripts",
             "default": false,
             "description": "Elevate24 2.4+ Only. When enabled, allows users to specify their own elevation and demotion script paths in addition to any admin-defined scripts. If scripts are configured at both the admin and user level, all scripts will execute. When disabled, only admin-defined scripts (ElevateScriptPath and DemoteScriptPath) will be used.",
-            "property_order": 95
+            "property_order": 100
         },
         "ElevateScriptPath": {
             "type": "string",
             "title": "Elevate Script Path",
             "description": "Elevate24 2.4+ Only. Specify the full file path to a script that will be executed automatically when a user's session is elevated to admin. This can be used to perform actions such as logging, launching tools, or configuring the environment at the point of elevation.",
-            "property_order": 100
+            "property_order": 105
         },
         "ElevateScriptHash": {
             "type": "string",
             "title": "Elevate Script Hash",
             "description": "Elevate24 2.4+ Only. Optionally provide the SHA256 hash of the elevation script specified in ElevateScriptPath. When configured, Elevate24 will verify the script's integrity before execution and refuse to run it if the hash does not match, protecting against unauthorised modification of the script.",
-            "property_order": 105
+            "property_order": 110
         },
         "DemoteScriptPath": {
             "type": "string",
             "title": "Demote Script Path",
             "description": "Elevate24 2.4+ Only. Specify the full file path to a script that will be executed automatically when a user's elevated session ends and they are demoted back to a standard user. This can be used to perform clean-up tasks, revoke temporary access, or audit the end of an elevated session.",
-            "property_order": 110
+            "property_order": 115
         },
         "DemoteScriptHash": {
             "type": "string",
             "title": "Demote Script Hash",
             "description": "Elevate24 2.4+ Only. Optionally provide the SHA256 hash of the demotion script specified in DemoteScriptPath. When configured, Elevate24 will verify the script's integrity before execution and refuse to run it if the hash does not match, protecting against unauthorised modification of the script.",
-            "property_order": 115
+            "property_order": 120
+        },
+        "CooldownMinutes": {
+            "type": "integer",
+            "title": "Elevation Cooldown (Minutes)",
+            "default": 0,
+            "description": "Enforces a wait between elevations: once a session ends the machine cannot re-elevate for a configurable period. Enforced per-computer inside the system extension (covers UI, CLI, and automatic session expiry), and resistant to clock tampering. The elevate window shows a live countdown while a cooldown is active. Set to 0 to disable.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
+                }
+            ],
+            "property_order": 125
+        },
+        "CooldownOverrideEnabled": {
+            "type": "boolean",
+            "title": "Offline Cooldown Override",
+            "default": false,
+            "description": "Lets a helpdesk grant a one-time, short code that clears an active cooldown while the device is offline. Uses a Secure Enclave key so no reusable secret is stored on the device; codes are single-use and rate-limited. Presented discreetly behind an ⓘ icon on the countdown (only when enrolled), with customisable contact text. Requires a Secure Enclave (Apple silicon / T2), a roughly-correct device clock, and the backend enrollment/generation service. Enables enrollment + override.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
+                }
+            ],
+            "property_order": 130
+        },
+        "CooldownOverrideMessage": {
+            "type": "string",
+            "title": "Offline Cooldown Override Message",
+            "description": "Custom helpdesk contact text shown in the offline cooldown override popover. If unset, a built-in message is used.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
+                }
+            ],
+            "property_order": 135
         },
         "DisableDefaultLog": {
             "type": "boolean",
@@ -285,7 +353,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#disable-sending-data-to-jigsaw24"
                 }
             ],
-            "property_order": 120
+            "property_order": 140
         },
         "siemURL": {
             "type": "string",
@@ -296,7 +364,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#elevate24-application-level-reporting-configuration-keys"
                 }
             ],
-            "property_order": 125
+            "property_order": 145
         },
         "siemAuthHeader": {
             "type": "string",
@@ -307,7 +375,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#elevate24-application-level-reporting-configuration-keys"
                 }
             ],
-            "property_order": 130
+            "property_order": 150
         },
         "siemAuthToken": {
             "type": "string",
@@ -318,7 +386,20 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#elevate24-application-level-reporting-configuration-keys"
                 }
             ],
-            "property_order": 135
+            "property_order": 155
+        },
+        "formatLogMessageSplunk": {
+            "type": "boolean",
+            "title": "Format Log Message for Splunk (Premium)",
+            "default": false,
+            "description": "Enable to ensure correct formatting of logs when using Splunk as the endpoint. Available in Elevate24 2.6.0 and later.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#elevate24-application-level-reporting-configuration-keys"
+                }
+            ],
+            "property_order": 160
         },
         "microsoftsentinel": {
             "type": "array",
@@ -350,7 +431,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/2%20Elevate24%20-%20App%20Reporting%20Configuration%20Keys.html#elevate24-application-level-reporting-configuration-keys"
                 }
             ],
-            "property_order": 140
+            "property_order": 165
         },
         "EnableSessionMonitoring": {
             "type": "boolean",
@@ -363,7 +444,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html"
                 }
             ],
-            "property_order": 145
+            "property_order": 170
         },
         "enableAppleAuth": {
             "type": "boolean",
@@ -376,7 +457,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html"
                 }
             ],
-            "property_order": 150
+            "property_order": 175
         },
         "GoogleAuth": {
             "type": "boolean",
@@ -389,7 +470,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html"
                 }
             ],
-            "property_order": 155
+            "property_order": 180
         },
         "standardAtLoad": {
             "type": "boolean",
@@ -402,7 +483,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 160
+            "property_order": 185
         },
         "demoteAllAdmin": {
             "type": "boolean",
@@ -415,7 +496,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 165
+            "property_order": 190
         },
         "demoteAllAdminQuit": {
             "type": "boolean",
@@ -428,7 +509,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 170
+            "property_order": 195
         },
         "demoteExclusions": {
             "type": "array",
@@ -443,7 +524,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 175
+            "property_order": 200
         },
         "killterminalsessions": {
             "type": "boolean",
@@ -456,7 +537,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 180
+            "property_order": 205
         },
         "UseSystemExtension": {
             "type": "boolean",
@@ -469,7 +550,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/6%20Elevate24%20-%20Security%20Settings.html#security-settings"
                 }
             ],
-            "property_order": 185
+            "property_order": 210
         },
         "userElevateAdmin": {
             "type": "boolean",
@@ -482,7 +563,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html"
                 }
             ],
-            "property_order": 190
+            "property_order": 215
         },
         "useCurrentUserAsAdmin": {
             "type": "boolean",
@@ -495,7 +576,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 195
+            "property_order": 220
         },
         "adminUserName": {
             "type": "string",
@@ -507,7 +588,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 200
+            "property_order": 225
         },
         "ComplexPassword": {
             "type": "boolean",
@@ -520,7 +601,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 205
+            "property_order": 230
         },
         "PasswordUppercase": {
             "type": "string",
@@ -532,7 +613,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 210
+            "property_order": 235
         },
         "PasswordLowercase": {
             "type": "string",
@@ -544,7 +625,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 215
+            "property_order": 240
         },
         "PasswordNumbers": {
             "type": "string",
@@ -556,7 +637,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 220
+            "property_order": 245
         },
         "PasswordSymbols": {
             "type": "string",
@@ -568,7 +649,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 225
+            "property_order": 250
         },
         "showAdminPasswordGrace": {
             "type": "integer",
@@ -581,7 +662,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Configuration/5%20Elevate24%20-%20Secondary%20Account.html#secondary-account-configuration"
                 }
             ],
-            "property_order": 230
+            "property_order": 255
         }
     }
 }

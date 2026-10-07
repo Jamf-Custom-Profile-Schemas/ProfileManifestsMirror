@@ -48,6 +48,19 @@
             ],
             "property_order": 15
         },
+        "formatLogMessageSplunk": {
+            "type": "boolean",
+            "title": "Format Log Message for Splunk",
+            "default": false,
+            "description": "Enable to ensure correct formatting of logs when using Splunk as the endpoint. Available in Elevate24 2.6.0 and later.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
+                }
+            ],
+            "property_order": 20
+        },
         "SentinelTennantId": {
             "type": "string",
             "title": "Sentinel Tennant ID",
@@ -58,7 +71,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
-            "property_order": 20
+            "property_order": 25
         },
         "SentinelClientId": {
             "type": "string",
@@ -70,7 +83,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
-            "property_order": 25
+            "property_order": 30
         },
         "SentinelClientSecret": {
             "type": "string",
@@ -82,7 +95,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
-            "property_order": 30
+            "property_order": 35
         },
         "SentinelUploadURL": {
             "type": "string",
@@ -94,7 +107,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
-            "property_order": 35
+            "property_order": 40
         },
         "MaxDataUploadSize": {
             "type": "integer",
@@ -107,7 +120,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Reporting/3%20Elevate24%20-%20Security%20Monitoring%20Reporting.html#elevate24-security-monitoring-reporting-configuration-keys"
                 }
             ],
-            "property_order": 40
+            "property_order": 45
         },
         "DefaultFilterRules": {
             "type": "boolean",
@@ -120,7 +133,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
                 }
             ],
-            "property_order": 45
+            "property_order": 50
         },
         "SelfProtectionRules": {
             "type": "boolean",
@@ -133,7 +146,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
                 }
             ],
-            "property_order": 50
+            "property_order": 55
         },
         "DisableAll": {
             "type": "boolean",
@@ -146,7 +159,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
                 }
             ],
-            "property_order": 55
+            "property_order": 60
         },
         "UploadEventsToJigsaw": {
             "type": "boolean",
@@ -159,7 +172,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#upload-events-to-jigsaw24-portal"
                 }
             ],
-            "property_order": 60
+            "property_order": 65
         },
         "UploadOnHotspot": {
             "type": "boolean",
@@ -172,7 +185,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/2%20Elevate24%20Session%20Monitoring%20-%20General.html#monitoring-general-settings"
                 }
             ],
-            "property_order": 65
+            "property_order": 70
         },
         "HideBlockedEventHistory": {
             "type": "boolean",
@@ -185,7 +198,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/5%20Elevate24%20Session%20Monitoring%20-%20Authorisation%20Rules.html#monitoring-authorisation-rules"
                 }
             ],
-            "property_order": 70
+            "property_order": 75
         },
         "FileOperationRules": {
             "type": "array",
@@ -250,7 +263,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/5%20Elevate24%20Session%20Monitoring%20-%20Authorisation%20Rules.html#monitoring-authorisation-rules"
                 }
             ],
-            "property_order": 75
+            "property_order": 80
         },
         "ExecuteProcessRules": {
             "type": "array",
@@ -310,7 +323,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/5%20Elevate24%20Session%20Monitoring%20-%20Authorisation%20Rules.html#monitoring-authorisation-rules"
                 }
             ],
-            "property_order": 80
+            "property_order": 85
         },
         "logAllEventTypes": {
             "type": "boolean",
@@ -323,7 +336,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
                 }
             ],
-            "property_order": 85
+            "property_order": 90
         },
         "EventsToLog": {
             "type": "array",
@@ -383,7 +396,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
                 }
             ],
-            "property_order": 90
+            "property_order": 95
         },
         "filterRules": {
             "type": "array",
@@ -452,7 +465,7 @@
                     "href": "https://docs.jigsaw24.com/Elevate24/Documentation/Elevate24%20Monitoring/4%20Elevate24%20Session%20Monitoring%20-%20Filter%20Rules.html#monitoring-filter-rules"
                 }
             ],
-            "property_order": 95
+            "property_order": 100
         }
     }
 }
