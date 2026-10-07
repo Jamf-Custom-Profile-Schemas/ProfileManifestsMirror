@@ -150,7 +150,7 @@
         "OrganizationOverlayIconURL": {
             "type": "string",
             "title": "Organization Overlay Icon URL",
-            "default": "https://use2.ics.services.jamfcloud.com/icon/hash_2d64ce7f0042ad68234a2515211adb067ad6714703dd8ebd6f33c1ab30354b1d",
+            "default": "https://usw2.ics.services.jamfcloud.com/icon/hash_2d64ce7f0042ad68234a2515211adb067ad6714703dd8ebd6f33c1ab30354b1d",
             "description": "URL to the organization overlay icon image.",
             "property_order": 105
         },
