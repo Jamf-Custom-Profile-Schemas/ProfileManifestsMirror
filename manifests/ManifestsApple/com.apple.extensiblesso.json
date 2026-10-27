@@ -728,6 +728,24 @@
                     "type": "boolean",
                     "default": false,
                     "description": "If 'true', the system detects the password during web login and synchronizes it to the local account password for the user."
+                },
+                "AlwaysUseLoginUI": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If 'true', the system uses the Platform SSO login UI at the Login Window, screensaver unlock, and FileVault unlock for every configuration that supports it. If 'false', the system uses the Platform SSO login UI only when 'AuthenticationMethod' is set to 'OpenID', or when 'LoginPolicy', 'UnlockPolicy' or 'FileVaultPolicy' are set to 'RequireTouchID' or 'RequireTouchIDOrWatch'."
+                },
+                "AdditionalHTTPHeaders": {
+                    "type": "object",
+                    "description": "A dictionary with keys and values that are strings. The keys are HTTP header names, and the values are HTTP header values. The device adds these headers to nonce, pre-authentication, login, key and key exchange requests for Platform SSO. The device limits the number of headers to 20, the length of the header name to 128 characters, and the length of the header value to 2048 characters.",
+                    "properties": {
+                        "{{key}}": {
+                            "type": "string"
+                        },
+                        "{{value}}": {
+                            "type": "string",
+                            "description": "Keys and values to pass as HTTP headers to the identity provider."
+                        }
+                    }
                 }
             },
             "property_order": 55
