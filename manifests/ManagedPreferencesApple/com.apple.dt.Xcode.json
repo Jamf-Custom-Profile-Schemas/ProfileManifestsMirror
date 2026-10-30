@@ -28,6 +28,13 @@
                 }
             ],
             "property_order": 15
+        },
+        "DVTTextShowCompletionsOnEsc": {
+            "type": "boolean",
+            "title": "Show Completions on Escape",
+            "default": true,
+            "description": "If 'false', disables the showing of completions when Escape is pressed.",
+            "property_order": 20
         }
     }
 }
