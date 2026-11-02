@@ -1,0 +1,451 @@
+{
+    "title": "SUMB (Software Update Menu Bar) (fr.jeremyb.sumb)",
+    "description": "Use this section to define settings for SUMB (Software Update Menu Bar)",
+    "properties": {
+        "hideIconWhenUpToDate": {
+            "type": "boolean",
+            "title": "Hide Menubar Icon",
+            "default": false,
+            "description": "Hide SUMB Icon when MacOS is up to date",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 5
+        },
+        "hideSettings": {
+            "type": "boolean",
+            "title": "Hide Settings Menu",
+            "default": false,
+            "description": "Hide the Settings menu. Holding Option while right-clicking the menu bar icon still reveals it, as does relaunching SUMB.app.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 10
+        },
+        "ignoreAppleUpdateChannel": {
+            "type": "boolean",
+            "title": "Ignore Apple Update Channel",
+            "default": false,
+            "description": "Ignore Apple Update Channel",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 15
+        },
+        "showDockIcon": {
+            "type": "boolean",
+            "title": "Show Dock Icon",
+            "default": false,
+            "description": "Show the SUMB icon in the Dock when an update is available, with the countdown in a red badge.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 20
+        },
+        "notificationSound": {
+            "type": "string",
+            "title": "Alert Sound",
+            "description": "Sound played with the notification and popup. Only files located in /System/Library/Sounds are supported.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "enum": [
+                "Basso.aiff",
+                "Blow.aiff",
+                "Bottle.aiff",
+                "Frog.aiff",
+                "Funk.aiff",
+                "Glass.aiff",
+                "Hero.aiff",
+                "Morse.aiff",
+                "Ping.aiff",
+                "Pop.aiff",
+                "Purr.aiff",
+                "Sosumi.aiff",
+                "Submarine.aiff",
+                "Tink.aiff"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Basso.aiff",
+                    "Blow.aiff",
+                    "Bottle.aiff",
+                    "Frog.aiff",
+                    "Funk.aiff",
+                    "Glass.aiff",
+                    "Hero.aiff",
+                    "Morse.aiff",
+                    "Ping.aiff",
+                    "Pop.aiff",
+                    "Purr.aiff",
+                    "Sosumi.aiff",
+                    "Submarine.aiff",
+                    "Tink.aiff"
+                ]
+            },
+            "property_order": 25
+        },
+        "popoverTitle": {
+            "type": "string",
+            "title": "Popover Title",
+            "default": "macOS Update",
+            "description": "Title shown at the top of the popover.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 30
+        },
+        "popoverUpdateButton": {
+            "type": "string",
+            "title": "Popover Update Button",
+            "default": "Open Software Update",
+            "description": "Label of the button that takes the user to Software Update.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 35
+        },
+        "popoverFooter": {
+            "type": "string",
+            "title": "Popover Footer",
+            "description": "Warning at the bottom of the popover. Supports Markdown links: [text](https://example.com)",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 40
+        },
+        "popoverUpToDateMessage": {
+            "type": "string",
+            "title": "Popover Up To Date Message",
+            "default": "Your Mac is up to date.",
+            "description": "Message displayed in the popover when the Mac is up to date.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 45
+        },
+        "menubarDotBlinkingThresholdDays": {
+            "type": "integer",
+            "title": "Menubar Dot Blinking Threshold",
+            "default": 2,
+            "description": "Number of days before the update deadline at which the red dot on the menu bar icon starts blinking.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 50
+        },
+        "menubarPreparingMessage": {
+            "type": "string",
+            "title": "Menubar Preparing Message",
+            "default": "Preparing update...",
+            "description": "Text shown in the menu bar while the update is being prepared.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 55
+        },
+        "menubarPrefix": {
+            "type": "string",
+            "title": "Menubar Prefix",
+            "description": "Text placed before the number of days remaining in the menu bar countdown. (e.g. D-).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 60
+        },
+        "menubarSuffix": {
+            "type": "string",
+            "title": "Menubar Suffix",
+            "default": "d",
+            "description": "Text placed after the number of days remaining (e.g. j in French, t in German).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 65
+        },
+        "notificationsEnabled": {
+            "type": "boolean",
+            "title": "Notifications Enabled",
+            "default": false,
+            "description": "Allow SUMB to post reminder notifications about the scheduled macOS update.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 70
+        },
+        "notificationThresholdDays": {
+            "type": "integer",
+            "title": "Notification Threshold",
+            "default": 4,
+            "description": "Days remaining before the update deadline at which SUMB starts sending reminder notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 75
+        },
+        "notificationIntervalMinutes": {
+            "type": "integer",
+            "title": "Notification Interval",
+            "default": 120,
+            "description": "Time in minutes between two reminder notifications.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 80
+        },
+        "notificationTitle": {
+            "type": "string",
+            "title": "Notification Title",
+            "default": "macOS Update",
+            "description": "Title displayed in the reminder notification. Supports $VERSION, $DATE and $COUNTDOWN variables.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 85
+        },
+        "notificationBody": {
+            "type": "string",
+            "title": "Notification Body",
+            "default": "An update to macOS $VERSION has been scheduled for $DATE.",
+            "description": "Body text of the reminder notification. Supports $VERSION, $DATE and $COUNTDOWN variables.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 90
+        },
+        "popupEnabled": {
+            "type": "boolean",
+            "title": "Popup Enabled",
+            "default": false,
+            "description": "Show the popup reminder at the start of each allowed hour.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 95
+        },
+        "popupThresholdDays": {
+            "type": "integer",
+            "title": "Popup Threshold",
+            "default": 2,
+            "description": "Days remaining before the update deadline at which the Scheduler popup starts showing.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 100
+        },
+        "popupTitle": {
+            "type": "string",
+            "title": "Popup Title",
+            "default": "macOS Update",
+            "description": "Title of the popup reminder.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 105
+        },
+        "popupBody": {
+            "type": "string",
+            "title": "Popup Body",
+            "default": "An update to macOS $VERSION has been scheduled for $DATE.",
+            "description": "Message of the Scheduler popup. Supports $VERSION, $DATE and $COUNTDOWN variables.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 110
+        },
+        "popupRescheduleButton": {
+            "type": "string",
+            "title": "Popup Reschedule Button",
+            "default": "Remind Me",
+            "description": "Label of button that opens the Scheduler window.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 115
+        },
+        "popupUpdateButton": {
+            "type": "string",
+            "title": "Popup Update Button",
+            "default": "Update Now",
+            "description": "Label of the popup update button, opens Software Update.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 120
+        },
+        "popupSchedulerHelp": {
+            "type": "string",
+            "title": "Popup Scheduler Help",
+            "default": "Please select the times you are available to update your Mac.\nYou will get one popup reminder per selected hour.",
+            "description": "Instructions shown above the grid in the Scheduler window.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 125
+        },
+        "popupCal1MondayHours": {
+            "type": "string",
+            "title": "Popup Calendar Monday",
+            "default": "12,17",
+            "description": "Hours suggested on Monday, comma-separated from 0 to 23. 12,17 suggests 12h00 and 17h00.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 130
+        },
+        "popupCal2TuesdayHours": {
+            "type": "string",
+            "title": "Popup Calendar Tuesday",
+            "default": "12,17",
+            "description": "Hours suggested on Tuesday, comma-separated from 0 to 23. 12,17 suggests 12h00 and 17h00.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 135
+        },
+        "popupCal3WednesdayHours": {
+            "type": "string",
+            "title": "Popup Calendar Wednesday",
+            "default": "12,17",
+            "description": "Hours suggested on Wednesday, comma-separated from 0 to 23. 12,17 suggests 12h00 and 17h00.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 140
+        },
+        "popupCal4ThursdayHours": {
+            "type": "string",
+            "title": "Popup Calendar Thursday",
+            "default": "12,17",
+            "description": "Hours suggested on Thursday, comma-separated from 0 to 23. 12,17 suggests 12h00 and 17h00.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 145
+        },
+        "popupCal5FridayHours": {
+            "type": "string",
+            "title": "Popup Calendar Friday",
+            "default": "12,17",
+            "description": "Hours suggested on Friday, comma-separated from 0 to 23. 12,17 suggests 12h00 and 17h00.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 150
+        },
+        "popupCal6SaturdayHours": {
+            "type": "string",
+            "title": "Popup Calendar Saturday",
+            "description": "Hours suggested on Saturday, comma-separated from 0 to 23. 12,17 suggests 12h00 and 17h00.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 155
+        },
+        "popupCal7SundayHours": {
+            "type": "string",
+            "title": "Popup Calendar Sunday",
+            "description": "Hours suggested on Sunday, comma-separated from 0 to 23. 12,17 suggests 12h00 and 17h00.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://github.com/jeremy4971/sumb_public/wiki#preference-keys"
+                }
+            ],
+            "property_order": 160
+        }
+    }
+}
