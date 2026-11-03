@@ -2,6 +2,88 @@
     "title": "Claude Desktop (com.anthropic.claudefordesktop)",
     "description": "Claude Desktop enterprise configuration settings",
     "properties": {
+        "disableAutoUpdates": {
+            "type": "boolean",
+            "title": "Block auto-updates",
+            "default": false,
+            "description": "Disable automatic updates for Claude Desktop.",
+            "property_order": 5
+        },
+        "autoUpdaterEnforcementHours": {
+            "type": "integer",
+            "title": "Auto-update enforcement window",
+            "default": 72,
+            "description": "Hours before forcefully restarting Claude to apply a prepared update. Must be between 1 and 72 hours.",
+            "property_order": 10
+        },
+        "installedUpdateEnforcementEnabled": {
+            "type": "boolean",
+            "title": "Restart to apply installed updates",
+            "description": "With auto-updates blocked, Claude restarts by itself for a newer version installed while it was open.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#installedupdateenforcementenabled"
+                }
+            ],
+            "property_order": 15
+        },
+        "installedUpdateEnforcementHours": {
+            "type": "integer",
+            "title": "Installed-update enforcement window",
+            "description": "Hours before Claude restarts for a newer version installed while it was open. Unset: 72 hours, then when idle. A number skips the idle wait.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#installedupdateenforcementhours"
+                }
+            ],
+            "property_order": 20
+        },
+        "updateViaUpdatesHost": {
+            "type": "boolean",
+            "title": "Check for updates on releases.claude.com",
+            "default": false,
+            "description": "Read the update feed from releases.claude.com so api.anthropic.com can stay blocked. Defaults to false.",
+            "property_order": 25
+        },
+        "releaseChannel": {
+            "type": "string",
+            "title": "Release channel",
+            "default": "stable",
+            "description": "Stable: devices take each release as it rolls out. Staggered: devices update less often, usually a week or more behind.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#releasechannel"
+                }
+            ],
+            "enum": [
+                "stable",
+                "staggered"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Stable",
+                    "Staggered"
+                ]
+            },
+            "property_order": 30
+        },
+        "relaunchEnforcementHours": {
+            "type": "integer",
+            "title": "Configuration relaunch window",
+            "default": 24,
+            "description": "Hours a user may keep working on the old configuration after a managed-configuration change is detected. 0 = restart required at once. Blank = 24 hours. Defaults to 24. Range: 0-336.",
+            "property_order": 35
+        },
+        "configRecheckIntervalMinutes": {
+            "type": "integer",
+            "title": "Configuration re-check interval",
+            "default": 10,
+            "description": "Minutes between the running app's checks for a changed managed configuration. Blank = 10 minutes. Defaults to 10. Range: 2-30.",
+            "property_order": 40
+        },
         "forceLoginOrgUUID": {
             "type": "array",
             "items": {
@@ -9,456 +91,29 @@
                 "title": "Organization UUID",
                 "pattern": "^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$"
             },
-            "title": "Force Login Organization UUID(s)",
-            "description": "Require login to belong to a specific organization. Accepts a single UUID string, which also pre-selects that organization during login, or an array of UUIDs where any listed organization is accepted without pre-selection. Login fails if the authenticated account does not belong to a listed organization.",
-            "property_order": 5
-        },
-        "disableAutoUpdates": {
-            "type": "boolean",
-            "title": "Disable Auto Updates",
-            "default": false,
-            "description": "Disable automatic updates for Claude Desktop.",
-            "property_order": 10
-        },
-        "autoUpdaterEnforcementHours": {
-            "type": "integer",
-            "title": "Auto Update Enforcement Hours",
-            "default": 72,
-            "description": "Hours before forcefully restarting Claude to apply a prepared update. Must be between 1 and 72 hours.",
-            "property_order": 15
-        },
-        "updateViaUpdatesHost": {
-            "type": "boolean",
-            "title": "Check for updates on releases.claude.com",
-            "default": false,
-            "description": "Read the update feed from releases.claude.com so api.anthropic.com can stay blocked. Defaults to false.",
-            "property_order": 20
-        },
-        "relaunchEnforcementHours": {
-            "type": "integer",
-            "title": "Configuration relaunch window",
-            "default": 24,
-            "description": "Hours a user may keep working on the old configuration after a managed-configuration change is detected. 0 = restart required at once. Blank = 24 hours. Defaults to 24. Range: 0-336.",
-            "property_order": 25
-        },
-        "configRecheckIntervalMinutes": {
-            "type": "integer",
-            "title": "Configuration re-check interval",
-            "default": 10,
-            "description": "Minutes between the running app's checks for a changed managed configuration. Blank = 10 minutes. Defaults to 10. Range: 2-30.",
-            "property_order": 30
-        },
-        "isDesktopExtensionEnabled": {
-            "type": "boolean",
-            "title": "Enable Desktop Extensions",
-            "default": true,
-            "description": "Enable or disable Claude Desktop extensions.",
-            "property_order": 35
-        },
-        "isDesktopExtensionDirectoryEnabled": {
-            "type": "boolean",
-            "title": "Enable Extension Directory",
-            "default": true,
-            "description": "Enable or disable access to the extension directory.",
-            "property_order": 40
-        },
-        "isLocalDevMcpEnabled": {
-            "type": "boolean",
-            "title": "Enable Local MCP Servers",
-            "default": true,
-            "description": "Enable or disable local Model Context Protocol (MCP) servers.",
+            "title": "Force login organization UUIDs",
+            "description": "Require login to belong to a specific organization. Accepts a single UUID string, which also pre-selects that organization during login, or an array of UUIDs where any listed organization is accepted without pre-selection. Login fails if the authenticated account does not belong to a listed organization. Also honored by Claude Desktop in third-party (3P) mode, where it limits which Enterprise Admin Console organization a user can move the device to.",
             "property_order": 45
-        },
-        "isClaudeCodeForDesktopEnabled": {
-            "type": "boolean",
-            "title": "Enable Claude Code for Desktop",
-            "default": true,
-            "description": "Enable Claude code access in desktop.",
-            "property_order": 50
-        },
-        "secureVmFeaturesEnabled": {
-            "type": "boolean",
-            "title": "Enable Secure VM Features",
-            "default": true,
-            "description": "Enable Cowork access in desktop",
-            "property_order": 55
-        },
-        "coworkTabEnabled": {
-            "type": "boolean",
-            "title": "Allow Cowork",
-            "default": true,
-            "description": "Enable Cowork. Claude works on longer tasks like research, analysis, and documents. Defaults to true.",
-            "property_order": 60
-        },
-        "builtinBrowserEnabled": {
-            "type": "boolean",
-            "title": "Enable Built-in Browser",
-            "default": false,
-            "description": "Claude Desktop on third-party inference deployments. Enable the built-in browser in Cowork and Code sessions. False disables the browser pane; Code retains its localhost-only dev-server preview. Defaults to false. When bootstrapUrl is set, configure this key in the served configuration.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
-                }
-            ],
-            "property_order": 65
-        },
-        "builtinBrowserDefaultDomainPolicy": {
-            "type": "string",
-            "title": "Built-in Browser Default Site Policy",
-            "default": "allow",
-            "description": "Claude Desktop on third-party inference deployments. Default policy for sites Claude may open, read, or act on when the built-in browser is enabled. Allowed domains are exceptions under block; blocked domains are exceptions under allow. Users can still view sites denied to Claude. Defaults to allow.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
-                }
-            ],
-            "enum": [
-                "allow",
-                "block"
-            ],
-            "options": {
-                "enum_titles": [
-                    "Allow Sites by Default",
-                    "Block Sites by Default"
-                ]
-            },
-            "property_order": 70
-        },
-        "builtinBrowserAllowedDomains": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "title": "Domain",
-                "description": "A hostname or supported hostname wildcard. A plain hostname also matches its www form, but no other subdomain."
-            },
-            "title": "Built-in Browser Allowed Domains",
-            "description": "Claude Desktop on third-party inference deployments. Sites Claude may open, read, or act on when builtinBrowserDefaultDomainPolicy is block; ignored under allow. Empty or unset allows no external sites for Claude. Users can still view other sites. Bare * and public-suffix wildcards are ignored.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
-                }
-            ],
-            "property_order": 75
-        },
-        "builtinBrowserBlockedDomains": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "title": "Domain",
-                "description": "A hostname or supported hostname wildcard. A plain hostname also matches its www form, but no other subdomain."
-            },
-            "title": "Built-in Browser Blocked Domains",
-            "description": "Claude Desktop on third-party inference deployments. Sites Claude may not open, read, or act on when builtinBrowserDefaultDomainPolicy is allow; ignored under block. Empty or unset adds no blocked sites. Users can still view blocked sites. * blocks every external site for Claude; localhost dev servers are unaffected.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
-                }
-            ],
-            "property_order": 80
-        },
-        "microsoftAuthBroker": {
-            "type": "string",
-            "title": "Microsoft 365 native sign-in broker",
-            "default": "auto",
-            "description": "Set to “disabled” to force browser-based Microsoft 365 sign-in instead of the native Company Portal / Windows account broker. One of: auto, disabled. Defaults to auto.",
-            "enum": [
-                "auto",
-                "disabled"
-            ],
-            "options": {
-                "enum_titles": [
-                    "Auto",
-                    "Disabled"
-                ]
-            },
-            "property_order": 85
-        },
-        "isDesktopExtensionSignatureRequired": {
-            "type": "boolean",
-            "title": "Require Signed Desktop Extensions",
-            "default": false,
-            "description": "When true, Claude Desktop rejects extensions that aren't signed by a trusted publisher.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
-                }
-            ],
-            "property_order": 90
-        },
-        "disabledBuiltinTools": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "title": "Tool",
-                "description": "Name of a built-in tool to disable."
-            },
-            "title": "Disabled Built-in Tools",
-            "description": "Removes the listed built-in tools from the available set in Claude Desktop. Known tools: Task, Bash, Glob, Grep, Read, Edit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, Skill, REPL, JavaScript, AskUserQuestion. ToolSearch and SendUserMessage are also available under specific conditions.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
-                }
-            ],
-            "property_order": 95
-        },
-        "managedMcpServers": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "title": "Managed MCP Server",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "title": "Name",
-                        "description": "Unique name identifying this MCP server."
-                    },
-                    "url": {
-                        "type": "string",
-                        "title": "URL",
-                        "description": "HTTPS URL of the remote MCP server."
-                    },
-                    "transport": {
-                        "type": "string",
-                        "title": "Transport",
-                        "default": "http",
-                        "description": "Transport protocol used to reach the MCP server.",
-                        "enum": [
-                            "http",
-                            "sse"
-                        ],
-                        "options": {
-                            "enum_titles": [
-                                "HTTP",
-                                "SSE"
-                            ]
-                        }
-                    },
-                    "headers": {
-                        "type": "object",
-                        "title": "Headers",
-                        "description": "Static request headers used to authenticate to the MCP server (for example, Authorization). Mutually exclusive with the OAuth field.",
-                        "properties": {
-                            "{{key}}": {
-                                "type": "string",
-                                "title": "Header Name"
-                            },
-                            "{{value}}": {
-                                "type": "string",
-                                "title": "Header Value"
-                            }
-                        }
-                    },
-                    "oauth": {
-                        "type": "boolean",
-                        "title": "OAuth",
-                        "default": false,
-                        "description": "When true, Claude Desktop runs a PKCE OAuth flow at first use to acquire user credentials. Mutually exclusive with the Headers field."
-                    },
-                    "toolPolicy": {
-                        "type": "object",
-                        "title": "Tool Policy",
-                        "description": "Maps tool names exposed by the MCP server to a policy. Allowed values per tool: allow, ask, blocked. The \"ask\" policy prompts the user to confirm before the tool runs.",
-                        "properties": {
-                            "{{key}}": {
-                                "type": "string",
-                                "title": "Tool Name"
-                            },
-                            "{{value}}": {
-                                "type": "string",
-                                "title": "Policy",
-                                "enum": [
-                                    "allow",
-                                    "ask",
-                                    "blocked"
-                                ],
-                                "options": {
-                                    "enum_titles": [
-                                        "Allow",
-                                        "Ask",
-                                        "Block"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "title": "Managed MCP Servers",
-            "description": "Distributes remote MCP (Model Context Protocol) servers to users. Each entry requires a unique name and an HTTPS URL. Optional fields include transport, headers, OAuth, and tool-level policies. Used in Claude Cowork deployments on third-party platforms (Bedrock, Vertex AI, Azure AI Foundry, LLM gateways).",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
-                }
-            ],
-            "property_order": 100
-        },
-        "mcpPersistentAlwaysAllowEnabled": {
-            "type": "boolean",
-            "title": "Allow persistent tool approvals",
-            "default": true,
-            "description": "Offer the persistent “Always allow” approval options for MCP tools. Disable to keep tool approvals per-call or session-scoped only. Defaults to true.",
-            "property_order": 105
-        },
-        "mcpToolTimeoutSec": {
-            "type": "integer",
-            "title": "MCP tool call timeout",
-            "default": 180,
-            "description": "Per-call timeout for MCP tool calls, in seconds. Default 180 (3 minutes). Range: 60-3600.",
-            "property_order": 110
         },
         "deploymentOrganizationUuid": {
             "type": "string",
             "title": "Organization UUID",
             "description": "A UUID you generate. Tags telemetry so Anthropic support can locate your fleet's events, and namespaces each user's local data. Not used for auth.",
-            "property_order": 115
-        },
-        "disableEssentialTelemetry": {
-            "type": "boolean",
-            "title": "Block essential telemetry",
-            "default": false,
-            "description": "Crash and performance reports to Anthropic. Defaults to false.",
-            "property_order": 120
-        },
-        "disableNonessentialTelemetry": {
-            "type": "boolean",
-            "title": "Block nonessential telemetry",
-            "default": false,
-            "description": "Product-usage analytics and diagnostic-report uploads. No message content. Defaults to false.",
-            "property_order": 125
-        },
-        "disableNonessentialServices": {
-            "type": "boolean",
-            "title": "Block nonessential services",
-            "default": false,
-            "description": "Connector favicons and the artifact-preview and MCP Apps widget iframe origins. Artifacts will not render. Defaults to false.",
-            "property_order": 130
-        },
-        "effortLevel": {
-            "type": "string",
-            "title": "Effort Level",
-            "default": "high",
-            "description": "Sets the default effort level for Claude Code sessions in Claude Desktop.",
-            "enum": [
-                "low",
-                "medium",
-                "high",
-                "xhigh",
-                "max"
-            ],
-            "options": {
-                "enum_titles": [
-                    "Low",
-                    "Medium",
-                    "High",
-                    "Extra High",
-                    "Max"
-                ]
-            },
-            "property_order": 135
-        },
-        "allowedWorkspaceFolders": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "path": {
-                        "type": "string",
-                        "title": "Path",
-                        "description": "Absolute folder path. May start with ~ or one of the listed %VAR% tokens, expanded per user. Subfolders are included."
-                    },
-                    "isDefaultSelected": {
-                        "type": "boolean",
-                        "title": "Select Default",
-                        "default": false,
-                        "description": "Shows as a folder chip on the new-task page and skips the trust prompt. Users can remove it."
-                    },
-                    "mode": {
-                        "type": "string",
-                        "title": "Mode",
-                        "description": "Read-only folders can be viewed and searched but not modified in Cowork. In Code, applies to file tools only; Bash and SSH do not yet enforce read-only. One of: rw, ro.",
-                        "enum": [
-                            "rw",
-                            "ro"
-                        ],
-                        "options": {
-                            "enum_titles": [
-                                "Read/write",
-                                "Read only"
-                            ]
-                        }
-                    }
-                }
-            },
-            "title": "Allowed Workspace Folders",
-            "description": "Folders where Claude may work. Applies to both Cowork and Code sessions. Leave unset for unrestricted access. Paths can reference ~ and these environment variables, expanded per user: %OneDrive%, %OneDriveCommercial%, %OneDriveConsumer%, %APPDATA%, %LOCALAPPDATA%, %USERNAME%, %XDG_DOCUMENTS_DIR%. The set is fixed; an entry that references any other %VAR%, or one that is unset on the device, is ignored.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#allowedworkspacefolders-details"
-                }
-            ],
-            "property_order": 140
-        },
-        "disableBypassPermissionsMode": {
-            "type": "boolean",
-            "title": "Disable bypass permissions mode",
-            "default": false,
-            "description": "Remove the bypass permissions mode from Code sessions and Cowork tasks, so Claude always follows the permission policy. Off by default.",
-            "property_order": 145
-        },
-        "blockReadsOutsideWorkingDirectories": {
-            "type": "boolean",
-            "title": "Block reads outside working directories",
-            "default": false,
-            "description": "Keep Claude from reading files outside a Code session's working directories. File tools refuse such reads; sandboxed shell commands lose the home directory.",
-            "property_order": 150
+            "property_order": 50
         },
         "disableDeploymentModeChooser": {
             "type": "boolean",
             "title": "Disable Claude.ai sign-in",
             "default": false,
             "description": "Users see only this provider at the login screen. The option to sign in to Claude.ai is hidden. Defaults to false.",
-            "property_order": 155
+            "property_order": 55
         },
         "disableDeepLinkRegistration": {
             "type": "boolean",
             "title": "Disable claude:// deep-link handling",
             "default": false,
             "description": "Stop external apps and websites from opening Claude Desktop via claude:// links. Defaults to false.",
-            "property_order": 160
-        },
-        "chatTabEnabled": {
-            "type": "boolean",
-            "title": "Allow Chat",
-            "default": true,
-            "description": "Enable Chat. Quick questions and drafting.",
-            "property_order": 165
-        },
-        "chatAdvancedFileAnalysisEnabled": {
-            "type": "boolean",
-            "title": "Advanced file analysis",
-            "default": false,
-            "description": "Allow Claude to run code in a local sandbox to analyze attached files it can't read natively — like Excel and PowerPoint. Off by default.",
-            "property_order": 170
-        },
-        "inferenceMaxTokensPerWindow": {
-            "type": "integer",
-            "title": "Max tokens per window",
-            "description": "Per-user soft cap, counted client-side over the token cap window. Not a server-enforced quota. Requires inferenceTokenWindowHours to also be set — without a window length the cap is inert and no limit is enforced.",
-            "property_order": 175
-        },
-        "inferenceTokenWindowHours": {
-            "type": "integer",
-            "title": "Token cap window",
-            "description": "Tumbling window length for the token cap. Max 720 hours (30 days). Range: 1-720. Required when inferenceMaxTokensPerWindow is set — the cap only takes effect once both are configured.",
-            "property_order": 180
+            "property_order": 60
         },
         "endUserAttribution": {
             "type": "boolean",
@@ -471,7 +126,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#appearance"
                 }
             ],
-            "property_order": 185
+            "property_order": 65
         },
         "deploymentDisplayName": {
             "type": "string",
@@ -483,7 +138,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#appearance"
                 }
             ],
-            "property_order": 190
+            "property_order": 70
         },
         "deploymentDisplaySubtitle": {
             "type": "string",
@@ -495,7 +150,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#appearance"
                 }
             ],
-            "property_order": 195
+            "property_order": 75
         },
         "disableConfigDeprecationWarnings": {
             "type": "boolean",
@@ -508,7 +163,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#appearance"
                 }
             ],
-            "property_order": 200
+            "property_order": 80
         },
         "banner": {
             "type": "object",
@@ -548,7 +203,7 @@
                     "description": "URL the banner links to when clicked."
                 }
             },
-            "property_order": 205
+            "property_order": 85
         },
         "disableFeatureDiscovery": {
             "type": "boolean",
@@ -561,7 +216,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#feature-discovery"
                 }
             ],
-            "property_order": 210
+            "property_order": 90
         },
         "claudeAiImport": {
             "type": "object",
@@ -605,11 +260,2354 @@
                     }
                 }
             },
+            "property_order": 95
+        },
+        "inferenceProvider": {
+            "type": "string",
+            "title": "Inference provider",
+            "description": "Selects the inference backend. Setting this key switches Claude Desktop into third-party (3P) mode.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferenceprovider"
+                }
+            ],
+            "enum": [
+                "gateway",
+                "anthropic",
+                "bedrock",
+                "mantle",
+                "vertex",
+                "foundry"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Gateway",
+                    "Claude API (Anthropic)",
+                    "Amazon Bedrock",
+                    "Mantle",
+                    "Google Vertex AI",
+                    "Azure AI Foundry"
+                ]
+            },
+            "property_order": 100
+        },
+        "inferenceCredentialKind": {
+            "type": "string",
+            "title": "Credential kind",
+            "description": "Selects the credential source. When set, only that source is used, with no fallback.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencecredentialkind"
+                }
+            ],
+            "enum": [
+                "static",
+                "helper-script",
+                "interactive",
+                "vendor-profile",
+                "workforce",
+                "external-idp"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Static",
+                    "Helper script",
+                    "Interactive sign-in",
+                    "Vendor profile",
+                    "Workforce Identity",
+                    "External identity provider"
+                ]
+            },
+            "property_order": 105
+        },
+        "inferenceSessionLifetimeSec": {
+            "type": "integer",
+            "title": "Sign-in session lifetime",
+            "description": "How long a sign-in stays valid under your identity provider's session policy. A re-authenticate banner appears before it expires.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencesessionlifetimesec"
+                }
+            ],
+            "property_order": 110
+        },
+        "userContentRendererUrl": {
+            "type": "string",
+            "title": "Artifact preview iframe origin",
+            "description": "HTTPS origin of the user-content-renderer deployment used for artifact and file previews. Uses the commercial host when unset.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#usercontentrendererurl"
+                }
+            ],
+            "property_order": 115
+        },
+        "inferenceCustomHeaders": {
+            "type": "object",
+            "title": "Custom inference headers",
+            "description": "Extra headers sent on every inference and model-discovery request. Routing and tenant headers only; do not put credentials here (use the credential helper instead).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencecustomheaders"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Header name"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Header value"
+                }
+            },
+            "property_order": 120
+        },
+        "inferenceCredentialHelper": {
+            "type": "string",
+            "title": "Helper script",
+            "description": "Absolute path to an executable that prints the credential (a bare token, or JSON with token and headers). When set, static credential keys are ignored. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencecredentialhelper"
+                }
+            ],
+            "property_order": 125
+        },
+        "inferenceCredentialHelperWindows": {
+            "type": "string",
+            "title": "Helper script (Windows)",
+            "description": "Absolute path of the credential helper executable on Windows devices, used there instead of the credential helper script. macOS and Linux devices ignore it; set it when one configuration serves both Windows and Mac devices. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencecredentialhelperwindows"
+                }
+            ],
+            "property_order": 130
+        },
+        "inferenceCredentialHelperArgs": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Argument"
+            },
+            "title": "Helper script arguments",
+            "description": "Arguments passed to the credential helper script, one per entry, in order. Entries may not be empty or contain double quotes, percent signs or control characters. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencecredentialhelperargs"
+                }
+            ],
+            "property_order": 135
+        },
+        "inferenceCredentialHelperTtlSec": {
+            "type": "integer",
+            "title": "Helper script TTL",
+            "default": 3600,
+            "description": "How long the helper output is cached before the helper runs again, without a relaunch. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencecredentialhelperttlsec"
+                }
+            ],
+            "property_order": 140
+        },
+        "inferenceCredentialHelperTimeoutSec": {
+            "type": "integer",
+            "title": "Credential helper timeout",
+            "default": 60,
+            "description": "Maximum wait for the helper executable to finish. Raise this if the helper opens a browser for interactive sign-in. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencecredentialhelpertimeoutsec"
+                }
+            ],
+            "property_order": 145
+        },
+        "inferenceCredentialHelperSilentRefreshEnabled": {
+            "type": "boolean",
+            "title": "Re-run helper for silent refresh",
+            "default": true,
+            "description": "When the credential expires mid-session, re-run the helper to recover silently. Turn off if the helper cannot run non-interactively. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencecredentialhelpersilentrefreshenabled"
+                }
+            ],
+            "property_order": 150
+        },
+        "inferenceAnthropicApiKey": {
+            "type": "string",
+            "title": "Claude API key",
+            "description": "Claude API key. Leave blank to sign in with the browser or to supply the key through a credential helper.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferenceanthropicapikey"
+                }
+            ],
+            "property_order": 155
+        },
+        "inferenceStreamIdleTimeoutSec": {
+            "type": "integer",
+            "title": "Stream idle timeout",
+            "default": 300,
+            "description": "Extra time to wait for model output on a streaming response that is sending only keep-alive pings. Gateway provider only.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencestreamidletimeoutsec"
+                }
+            ],
+            "property_order": 160
+        },
+        "inferenceGatewayBaseUrl": {
+            "type": "string",
+            "title": "Gateway base URL",
+            "description": "Full URL of the inference gateway endpoint. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencegatewaybaseurl"
+                }
+            ],
+            "property_order": 165
+        },
+        "inferenceGatewayApiKey": {
+            "type": "string",
+            "title": "Gateway API key",
+            "description": "API key for the configured inference gateway.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencegatewayapikey"
+                }
+            ],
+            "property_order": 170
+        },
+        "inferenceGatewayAuthScheme": {
+            "type": "string",
+            "title": "Gateway auth scheme",
+            "default": "bearer",
+            "description": "How the gateway credential is sent on the wire: Authorization: Bearer or an x-api-key header.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencegatewayauthscheme"
+                }
+            ],
+            "enum": [
+                "bearer",
+                "x-api-key"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Authorization: Bearer",
+                    "x-api-key header"
+                ]
+            },
+            "property_order": 175
+        },
+        "inferenceIdpAuthFlow": {
+            "type": "string",
+            "title": "Identity provider sign-in flow",
+            "description": "How the identity-provider sign-in runs: system browser (default) or the OS Microsoft Entra broker (Company Portal on macOS).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferenceidpauthflow"
+                }
+            ],
+            "enum": [
+                "browser",
+                "broker"
+            ],
+            "options": {
+                "enum_titles": [
+                    "System browser",
+                    "OS identity broker (Microsoft Entra)"
+                ]
+            },
+            "property_order": 180
+        },
+        "inferenceIdpOidc": {
+            "type": "object",
+            "title": "Identity provider (OIDC)",
+            "description": "Your organization's OpenID Connect identity provider, used with credential kind external-idp. The user's token is sent as the bearer credential to the gateway or the Bedrock proxy. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferenceidpoidc"
+                }
+            ],
+            "properties": {
+                "clientId": {
+                    "type": "string",
+                    "title": "Client ID",
+                    "description": "OAuth client ID of the desktop app registration at your identity provider (public client, PKCE)."
+                },
+                "issuer": {
+                    "type": "string",
+                    "title": "Issuer URL",
+                    "description": "HTTPS issuer that supports OIDC discovery. Set this, or set the authorization and token URLs instead."
+                },
+                "authorizationUrl": {
+                    "type": "string",
+                    "title": "Authorization URL",
+                    "description": "HTTPS authorization endpoint. Used together with the token URL when no issuer is set."
+                },
+                "tokenUrl": {
+                    "type": "string",
+                    "title": "Token URL",
+                    "description": "HTTPS token endpoint. Used together with the authorization URL when no issuer is set."
+                },
+                "bearerTokenType": {
+                    "type": "string",
+                    "title": "Bearer token",
+                    "default": "id_token",
+                    "description": "Which token is sent as the bearer credential. Use access_token for a gateway or proxy that validates tokens as an OAuth resource server.",
+                    "enum": [
+                        "id_token",
+                        "access_token"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "ID token",
+                            "Access token"
+                        ]
+                    }
+                },
+                "scopes": {
+                    "type": "string",
+                    "title": "Scopes",
+                    "description": "Space-separated scopes. Required in access-token mode, where it must name the gateway or proxy API scope."
+                },
+                "appendOfflineAccess": {
+                    "type": "boolean",
+                    "title": "Append offline_access",
+                    "default": true,
+                    "description": "Append offline_access to the scopes so the identity provider returns a refresh token for silent refresh."
+                },
+                "resource": {
+                    "type": "string",
+                    "title": "Resource indicator (RFC 8707)",
+                    "description": "Access-token audience of the gateway or proxy (an HTTPS URL or an AD FS relying-party identifier). Leave unset for Microsoft Entra ID."
+                },
+                "redirectPort": {
+                    "type": "integer",
+                    "title": "Redirect port",
+                    "description": "Fixed loopback port for the sign-in redirect. Leave unset to use a free port each time."
+                },
+                "redirectHost": {
+                    "type": "string",
+                    "title": "Redirect host",
+                    "default": "127.0.0.1",
+                    "description": "Host named in the sign-in redirect URI. Use localhost only if your identity provider's registered redirect URI requires it.",
+                    "enum": [
+                        "127.0.0.1",
+                        "localhost"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "127.0.0.1",
+                            "localhost"
+                        ]
+                    }
+                },
+                "additionalRedirectReferrerHosts": {
+                    "type": "string",
+                    "title": "Additional redirect referrer hosts",
+                    "description": "Space-separated hostnames also accepted as the referrer of the sign-in callback. Only needed when the identity provider completes sign-in from a different host."
+                }
+            },
+            "property_order": 185
+        },
+        "inferenceGatewayOidcAuthFlow": {
+            "type": "string",
+            "title": "Gateway sign-in flow",
+            "description": "Deprecated by Anthropic; the original spelling keeps working with no end date set. Use Identity Provider Sign-in Flow (inferenceIdpAuthFlow) instead. How the gateway IdP sign-in runs: system browser (default) or the OS Microsoft Entra broker.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencegatewayoidcauthflow"
+                }
+            ],
+            "enum": [
+                "browser",
+                "broker"
+            ],
+            "options": {
+                "enum_titles": [
+                    "System browser",
+                    "OS identity broker (Microsoft Entra)"
+                ]
+            },
+            "property_order": 190
+        },
+        "inferenceGatewayOidc": {
+            "type": "object",
+            "title": "Gateway SSO IdP (OIDC)",
+            "description": "Deprecated by Anthropic; the original spelling keeps working with no end date set. Use Identity Provider (inferenceIdpOidc) with credential kind external-idp instead. External OIDC identity provider for gateway sign-in; the token is sent to the gateway as the bearer credential. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencegatewayoidc"
+                }
+            ],
+            "properties": {
+                "clientId": {
+                    "type": "string",
+                    "title": "Client ID",
+                    "description": "OAuth client ID of the desktop app registration at your identity provider (public client, PKCE)."
+                },
+                "issuer": {
+                    "type": "string",
+                    "title": "Issuer URL",
+                    "description": "HTTPS issuer that supports OIDC discovery. Set this, or set the authorization and token URLs instead."
+                },
+                "authorizationUrl": {
+                    "type": "string",
+                    "title": "Authorization URL",
+                    "description": "HTTPS authorization endpoint. Used together with the token URL when no issuer is set."
+                },
+                "tokenUrl": {
+                    "type": "string",
+                    "title": "Token URL",
+                    "description": "HTTPS token endpoint. Used together with the authorization URL when no issuer is set."
+                },
+                "bearerTokenType": {
+                    "type": "string",
+                    "title": "Bearer token",
+                    "default": "id_token",
+                    "description": "Which token is sent as the bearer credential. Use access_token for a gateway or proxy that validates tokens as an OAuth resource server.",
+                    "enum": [
+                        "id_token",
+                        "access_token"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "ID token",
+                            "Access token"
+                        ]
+                    }
+                },
+                "scopes": {
+                    "type": "string",
+                    "title": "Scopes",
+                    "description": "Space-separated scopes. Required in access-token mode, where it must name the gateway or proxy API scope."
+                },
+                "appendOfflineAccess": {
+                    "type": "boolean",
+                    "title": "Append offline_access",
+                    "default": true,
+                    "description": "Append offline_access to the scopes so the identity provider returns a refresh token for silent refresh."
+                },
+                "resource": {
+                    "type": "string",
+                    "title": "Resource indicator (RFC 8707)",
+                    "description": "Access-token audience of the gateway or proxy (an HTTPS URL or an AD FS relying-party identifier). Leave unset for Microsoft Entra ID."
+                },
+                "redirectPort": {
+                    "type": "integer",
+                    "title": "Redirect port",
+                    "description": "Fixed loopback port for the sign-in redirect. Leave unset to use a free port each time."
+                },
+                "redirectHost": {
+                    "type": "string",
+                    "title": "Redirect host",
+                    "default": "127.0.0.1",
+                    "description": "Host named in the sign-in redirect URI. Use localhost only if your identity provider's registered redirect URI requires it.",
+                    "enum": [
+                        "127.0.0.1",
+                        "localhost"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "127.0.0.1",
+                            "localhost"
+                        ]
+                    }
+                },
+                "additionalRedirectReferrerHosts": {
+                    "type": "string",
+                    "title": "Additional redirect referrer hosts",
+                    "description": "Space-separated hostnames also accepted as the referrer of the sign-in callback. Only needed when the identity provider completes sign-in from a different host."
+                }
+            },
+            "property_order": 195
+        },
+        "inferenceBedrockRegion": {
+            "type": "string",
+            "title": "AWS region",
+            "description": "AWS region for the Bedrock runtime endpoint.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockregion"
+                }
+            ],
+            "property_order": 200
+        },
+        "inferenceBedrockBaseUrl": {
+            "type": "string",
+            "title": "Bedrock base URL",
+            "description": "For VPC endpoints or gateway proxies. HTTPS scheme and host only, no path. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockbaseurl"
+                }
+            ],
+            "property_order": 205
+        },
+        "inferenceBedrockServiceTier": {
+            "type": "string",
+            "title": "Bedrock service tier",
+            "description": "Sent as the X-Amzn-Bedrock-Service-Tier header. Leave unset for on-demand.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockservicetier"
+                }
+            ],
+            "enum": [
+                "flex",
+                "priority"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Flex",
+                    "Priority"
+                ]
+            },
+            "property_order": 210
+        },
+        "inferenceBedrockBearerToken": {
+            "type": "string",
+            "title": "AWS bearer token",
+            "description": "Static bearer token for Bedrock inference. Prefer profile or helper-script credentials where possible.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockbearertoken"
+                }
+            ],
             "property_order": 215
+        },
+        "inferenceBedrockSsoStartUrl": {
+            "type": "string",
+            "title": "AWS SSO start URL",
+            "description": "Enables in-app AWS IAM Identity Center sign-in (no AWS CLI needed). Set together with the SSO region, account ID and role name. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockssostarturl"
+                }
+            ],
+            "property_order": 220
+        },
+        "inferenceBedrockSsoRegion": {
+            "type": "string",
+            "title": "AWS SSO region",
+            "description": "IAM Identity Center home region. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockssoregion"
+                }
+            ],
+            "property_order": 225
+        },
+        "inferenceBedrockSsoAccountId": {
+            "type": "string",
+            "title": "AWS SSO account ID",
+            "description": "12-digit AWS account ID assigned to users in IAM Identity Center. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "pattern": "^[0-9]{12}$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockssoaccountid"
+                }
+            ],
+            "property_order": 230
+        },
+        "inferenceBedrockSsoRoleName": {
+            "type": "string",
+            "title": "AWS SSO role name",
+            "description": "IAM Identity Center permission-set name granting bedrock:InvokeModel* on the account above. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockssorolename"
+                }
+            ],
+            "property_order": 235
+        },
+        "inferenceBedrockProfile": {
+            "type": "string",
+            "title": "AWS profile name",
+            "description": "AWS named profile to use for Bedrock inference credentials. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockprofile"
+                }
+            ],
+            "property_order": 240
+        },
+        "inferenceBedrockAwsDir": {
+            "type": "string",
+            "title": "AWS config directory",
+            "description": "Folder with AWS config and credentials files. Defaults to ~/.aws when no bearer token is set. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockawsdir"
+                }
+            ],
+            "property_order": 245
+        },
+        "inferenceBedrockAwsCliPath": {
+            "type": "string",
+            "title": "AWS CLI path",
+            "description": "Absolute path to the aws executable. Leave unset to find it on PATH. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencebedrockawsclipath"
+                }
+            ],
+            "property_order": 250
+        },
+        "inferenceVertexProjectId": {
+            "type": "string",
+            "title": "GCP project ID",
+            "description": "Google Cloud project ID for Vertex AI inference. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "pattern": "^[a-z0-9][a-z0-9.:-]*$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexprojectid"
+                }
+            ],
+            "property_order": 255
+        },
+        "inferenceVertexRegion": {
+            "type": "string",
+            "title": "GCP region",
+            "description": "GCP region where your Vertex AI Claude models are deployed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexregion"
+                }
+            ],
+            "property_order": 260
+        },
+        "inferenceVertexBaseUrl": {
+            "type": "string",
+            "title": "Vertex AI base URL",
+            "description": "Private Service Connect endpoint, if you use one. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexbaseurl"
+                }
+            ],
+            "property_order": 265
+        },
+        "inferenceVertexOAuthClientId": {
+            "type": "string",
+            "title": "Vertex OAuth client ID",
+            "description": "Desktop-app OAuth client ID. Enables Sign in with Google instead of a credentials file. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexoauthclientid"
+                }
+            ],
+            "property_order": 270
+        },
+        "inferenceVertexOAuthClientSecret": {
+            "type": "string",
+            "title": "Vertex OAuth client secret",
+            "description": "Secret for the desktop-app OAuth client above. Google treats installed-app client secrets as non-confidential.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexoauthclientsecret"
+                }
+            ],
+            "property_order": 275
+        },
+        "inferenceVertexOAuthScopes": {
+            "type": "string",
+            "title": "Vertex OAuth scopes",
+            "description": "Override the Google OAuth scopes (space-separated). Leave blank for the default.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexoauthscopes"
+                }
+            ],
+            "property_order": 280
+        },
+        "inferenceVertexOAuthLoginHint": {
+            "type": "string",
+            "title": "Vertex OAuth login hint",
+            "description": "Pre-fills Google's account chooser and is forwarded to your federated IdP. {username} expands to the OS login name.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexoauthloginhint"
+                }
+            ],
+            "property_order": 285
+        },
+        "inferenceVertexWorkforceAudience": {
+            "type": "string",
+            "title": "Workforce Identity audience",
+            "description": "Workforce-pool provider audience. When set, sign-in uses your own IdP plus a GCP STS token exchange instead of a Google identity. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexworkforceaudience"
+                }
+            ],
+            "property_order": 290
+        },
+        "inferenceVertexWorkforceUserProject": {
+            "type": "string",
+            "title": "Workforce Identity billing project",
+            "description": "GCP project used for STS billing and quota. Defaults to the Vertex project ID. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "pattern": "^[a-z0-9][a-z0-9.:-]*$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexworkforceuserproject"
+                }
+            ],
+            "property_order": 295
+        },
+        "inferenceVertexWorkforceAuthFlow": {
+            "type": "string",
+            "title": "Workforce Identity sign-in flow",
+            "description": "How the Workforce Identity IdP sign-in runs: system browser (default) or the OS Microsoft Entra broker.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexworkforceauthflow"
+                }
+            ],
+            "enum": [
+                "browser",
+                "broker"
+            ],
+            "options": {
+                "enum_titles": [
+                    "System browser",
+                    "OS identity broker (Microsoft Entra)"
+                ]
+            },
+            "property_order": 300
+        },
+        "inferenceVertexWorkforceOidc": {
+            "type": "object",
+            "title": "Workforce Identity IdP (OIDC)",
+            "description": "Your organization's OIDC identity provider. The app runs an authorization-code-with-PKCE sign-in against it and exchanges the ID token at GCP STS. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexworkforceoidc"
+                }
+            ],
+            "properties": {
+                "clientId": {
+                    "type": "string",
+                    "title": "Client ID",
+                    "description": "OAuth client ID of the desktop app registration at your identity provider (public client, PKCE)."
+                },
+                "issuer": {
+                    "type": "string",
+                    "title": "Issuer URL",
+                    "description": "HTTPS issuer that supports OIDC discovery. Set this, or set the authorization and token URLs instead."
+                },
+                "authorizationUrl": {
+                    "type": "string",
+                    "title": "Authorization URL",
+                    "description": "HTTPS authorization endpoint. Used together with the token URL when no issuer is set."
+                },
+                "tokenUrl": {
+                    "type": "string",
+                    "title": "Token URL",
+                    "description": "HTTPS token endpoint. Used together with the authorization URL when no issuer is set."
+                },
+                "scopes": {
+                    "type": "string",
+                    "title": "Scopes",
+                    "description": "Space-separated scopes. Defaults to openid profile email offline_access."
+                },
+                "redirectPort": {
+                    "type": "integer",
+                    "title": "Redirect port",
+                    "description": "Fixed loopback port for the sign-in redirect. Leave unset to use a free port each time."
+                },
+                "redirectHost": {
+                    "type": "string",
+                    "title": "Redirect host",
+                    "default": "127.0.0.1",
+                    "description": "Host named in the sign-in redirect URI. Use localhost only if your identity provider's registered redirect URI requires it.",
+                    "enum": [
+                        "127.0.0.1",
+                        "localhost"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "127.0.0.1",
+                            "localhost"
+                        ]
+                    }
+                },
+                "omitOfflineAccess": {
+                    "type": "boolean",
+                    "title": "Omit offline_access",
+                    "default": false,
+                    "description": "Enable only if your identity provider rejects offline_access on this client. Users then sign in again each time the token expires."
+                },
+                "additionalRedirectReferrerHosts": {
+                    "type": "string",
+                    "title": "Additional redirect referrer hosts",
+                    "description": "Space-separated hostnames also accepted as the referrer of the sign-in callback. Only needed when the identity provider completes sign-in from a different host."
+                }
+            },
+            "property_order": 305
+        },
+        "inferenceVertexCredentialsFile": {
+            "type": "string",
+            "title": "GCP credentials file path",
+            "description": "Absolute path to a service-account JSON file. Leave blank to fall back to Application Default Credentials. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencevertexcredentialsfile"
+                }
+            ],
+            "property_order": 310
+        },
+        "inferenceFoundryResource": {
+            "type": "string",
+            "title": "Azure AI Foundry resource name",
+            "description": "Azure AI Foundry resource name used to construct the endpoint URL. Still required when a Foundry base URL is set. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,62}[a-z0-9]$",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencefoundryresource"
+                }
+            ],
+            "property_order": 315
+        },
+        "inferenceFoundryBaseUrl": {
+            "type": "string",
+            "title": "Azure AI Foundry base URL",
+            "description": "Full base URL, path included, for a gateway or proxy in front of Foundry (replaces https://RESOURCE.services.ai.azure.com/anthropic). When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencefoundrybaseurl"
+                }
+            ],
+            "property_order": 320
+        },
+        "inferenceFoundryApiKey": {
+            "type": "string",
+            "title": "Azure AI Foundry API key",
+            "description": "API key for Azure AI Foundry inference.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencefoundryapikey"
+                }
+            ],
+            "property_order": 325
+        },
+        "inferenceFoundryTenantId": {
+            "type": "string",
+            "title": "Entra ID tenant ID",
+            "description": "Directory (tenant) ID of the Entra ID app registration that has the Cognitive Services scope. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencefoundrytenantid"
+                }
+            ],
+            "property_order": 330
+        },
+        "inferenceFoundryClientId": {
+            "type": "string",
+            "title": "Entra ID client ID",
+            "description": "Application (client) ID of the Entra ID app registration. Device-code sign-in requires the registration to allow public client flows. When delivered by a bootstrap server, applies only after user consent unless trustBootstrapDelivery or machine-scoped MDM covers the bootstrap URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencefoundryclientid"
+                }
+            ],
+            "property_order": 335
+        },
+        "inferenceFoundryAuthFlow": {
+            "type": "string",
+            "title": "Entra ID sign-in flow",
+            "default": "device-code",
+            "description": "How Entra sign-in runs: device code (default), system browser, or the OS identity broker (Company Portal on macOS).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencefoundryauthflow"
+                }
+            ],
+            "enum": [
+                "device-code",
+                "browser",
+                "broker"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Device code",
+                    "System browser",
+                    "OS identity broker"
+                ]
+            },
+            "property_order": 340
+        },
+        "bootstrapEnabled": {
+            "type": "boolean",
+            "title": "Use bootstrap config",
+            "default": true,
+            "description": "Fetch and apply the bootstrap config URL at launch. Turn off to keep the URL saved but skip the fetch. MDM only: ignored in a bootstrap server response.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#bootstrapenabled"
+                }
+            ],
+            "property_order": 345
+        },
+        "bootstrapUrl": {
+            "type": "string",
+            "title": "Bootstrap config URL",
+            "description": "HTTPS endpoint that returns a per-user JSON configuration. Values from the response override local settings and become read-only. Embedded credentials are refused. MDM only: ignored in a bootstrap server response.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#bootstrapurl"
+                }
+            ],
+            "property_order": 350
+        },
+        "bootstrapOidc": {
+            "type": "object",
+            "title": "Bootstrap OIDC parameters",
+            "description": "When set, the bootstrap request sends a bearer token from a browser sign-in (authorization code with PKCE) at this identity provider. Omit to use device-code mode against the bootstrap server. MDM only: ignored in a bootstrap server response.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#bootstrapoidc"
+                }
+            ],
+            "properties": {
+                "clientId": {
+                    "type": "string",
+                    "title": "Client ID",
+                    "description": "OAuth client ID of the desktop app registration at your identity provider (public client, PKCE)."
+                },
+                "issuer": {
+                    "type": "string",
+                    "title": "Issuer URL",
+                    "description": "HTTPS issuer that supports OIDC discovery. Set this, or set the authorization and token URLs instead."
+                },
+                "authorizationUrl": {
+                    "type": "string",
+                    "title": "Authorization URL",
+                    "description": "HTTPS authorization endpoint. Used together with the token URL when no issuer is set."
+                },
+                "tokenUrl": {
+                    "type": "string",
+                    "title": "Token URL",
+                    "description": "HTTPS token endpoint. Used together with the authorization URL when no issuer is set."
+                },
+                "scopes": {
+                    "type": "string",
+                    "title": "Scopes",
+                    "description": "Space-separated scopes. The token's audience must match what your bootstrap server validates."
+                },
+                "redirectPort": {
+                    "type": "integer",
+                    "title": "Redirect port",
+                    "description": "Fixed loopback port for the sign-in redirect. Leave unset to use a free port each time."
+                },
+                "redirectHost": {
+                    "type": "string",
+                    "title": "Redirect host",
+                    "default": "127.0.0.1",
+                    "description": "Host named in the sign-in redirect URI. Use localhost only if your identity provider's registered redirect URI requires it.",
+                    "enum": [
+                        "127.0.0.1",
+                        "localhost"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "127.0.0.1",
+                            "localhost"
+                        ]
+                    }
+                },
+                "additionalRedirectReferrerHosts": {
+                    "type": "string",
+                    "title": "Additional redirect referrer hosts",
+                    "description": "Space-separated hostnames also accepted as the referrer of the sign-in callback. Only needed when the identity provider completes sign-in from a different host."
+                }
+            },
+            "property_order": 355
+        },
+        "bootstrapHeaders": {
+            "type": "object",
+            "title": "Bootstrap request headers",
+            "description": "HTTP headers sent on every bootstrap config fetch, for example a service-account credential or a tenant header. Use instead of embedding user:password in the URL. MDM only: ignored in a bootstrap server response.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#bootstrapheaders"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Header name"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Header value"
+                }
+            },
+            "property_order": 360
+        },
+        "bootstrapHeadersHelper": {
+            "type": "string",
+            "title": "Bootstrap headers helper script",
+            "description": "Absolute path to an executable that prints a JSON object of bootstrap request headers. Merged over the static headers; the helper wins on conflict. MDM only: ignored in a bootstrap server response.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#bootstrapheadershelper"
+                }
+            ],
+            "property_order": 365
+        },
+        "trustBootstrapDelivery": {
+            "type": "boolean",
+            "title": "Trust bootstrap-delivered settings",
+            "default": false,
+            "description": "Skip the per-user consent prompt for sign-in targets, inference endpoints, helper scripts and connectors that the bootstrap server delivers. MDM only: ignored in a bootstrap server response.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#trustbootstrapdelivery"
+                }
+            ],
+            "property_order": 370
+        },
+        "inferenceModels": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Model",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Model ID",
+                        "description": "Model ID exactly as the provider expects it."
+                    },
+                    "labelOverride": {
+                        "type": "string",
+                        "title": "Display name",
+                        "description": "Shown in the model picker. Leave blank to format the name from the ID."
+                    },
+                    "supports1m": {
+                        "type": "boolean",
+                        "title": "Offer 1M-context variant",
+                        "description": "Adds a 1M-context variant of this model to the picker. Set only if your deployment accepts 1M-token context for it."
+                    },
+                    "prefer1m": {
+                        "type": "boolean",
+                        "title": "Only show the 1M option",
+                        "description": "Shows one option for this model and requests 1M from the provider. No effect unless the entry offers 1M."
+                    },
+                    "anthropicFamilyTier": {
+                        "type": "string",
+                        "title": "Tier alias",
+                        "description": "The Claude tier this model stands in for, so a bare tier alias such as 'opus' resolves to it.",
+                        "enum": [
+                            "sonnet",
+                            "opus",
+                            "haiku",
+                            "fable",
+                            "mythos"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Sonnet",
+                                "Opus",
+                                "Haiku",
+                                "Fable",
+                                "Mythos"
+                            ]
+                        }
+                    },
+                    "isFamilyDefault": {
+                        "type": "boolean",
+                        "title": "Default for tier",
+                        "description": "When several models share a tier alias, marks this one as the model the alias resolves to. Otherwise the first listed wins."
+                    },
+                    "behavesAs": {
+                        "type": "string",
+                        "title": "Claude model behind this ID",
+                        "description": "For IDs the app cannot identify (such as a gateway alias): the Claude model this ID routes to, so it gets that model's effort levels and limits."
+                    },
+                    "maxEffort": {
+                        "type": "string",
+                        "title": "Max effort",
+                        "description": "Highest effort level offered for this model; higher levels are hidden and never requested. An unrecognized value caps the model at low.",
+                        "enum": [
+                            "low",
+                            "medium",
+                            "high",
+                            "xhigh",
+                            "max"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Low",
+                                "Medium",
+                                "High",
+                                "Extra high",
+                                "Max"
+                            ]
+                        }
+                    }
+                }
+            },
+            "title": "Model list",
+            "description": "Overrides the auto-discovered model list. Use the provider's exact model IDs. The first entry is the default model.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencemodels"
+                }
+            ],
+            "property_order": 375
+        },
+        "modelDiscoveryEnabled": {
+            "type": "boolean",
+            "title": "Model discovery",
+            "description": "Populate the model picker from the provider's model-list endpoint at launch. When off, the model list is required and must use full model IDs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#modeldiscoveryenabled"
+                }
+            ],
+            "property_order": 380
+        },
+        "modelPrefer1mContext": {
+            "type": "boolean",
+            "title": "Use 1M wherever it’s available",
+            "description": "Every model that offers a 1M-token context window shows a single option in the picker and requests 1M from the provider.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#modelprefer1mcontext"
+                }
+            ],
+            "property_order": 385
+        },
+        "defaultModelEffort": {
+            "type": "string",
+            "title": "Default model effort",
+            "description": "Effort level the default model (the first listed model) starts at, instead of Anthropic's recommended level.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#defaultmodeleffort"
+                }
+            ],
+            "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Low",
+                    "Medium",
+                    "High",
+                    "Extra high",
+                    "Max"
+                ]
+            },
+            "property_order": 390
+        },
+        "alwaysStartWithDefaultModel": {
+            "type": "boolean",
+            "title": "Always start with the default model",
+            "description": "New conversations and tasks start on the default model and effort level, not each person's last choice. Users can still change both for the current one.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#alwaysstartwithdefaultmodel"
+                }
+            ],
+            "property_order": 395
+        },
+        "effortLevel": {
+            "type": "string",
+            "title": "Effort level",
+            "description": "Sets the default effort level for Claude Code sessions in Claude Desktop, applied fresh at the start of each session. Does not apply to Cowork sessions. Unset by default. Applies to standard deployments (users sign in with Claude.ai); Claude Desktop in third-party (3P) mode ignores this key. In 3P mode, use Default Model Effort (defaultModelEffort) instead.",
+            "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Low",
+                    "Medium",
+                    "High",
+                    "Extra high",
+                    "Max"
+                ]
+            },
+            "property_order": 400
+        },
+        "modelCatalogEnabled": {
+            "type": "boolean",
+            "title": "Model catalog metadata",
+            "default": true,
+            "description": "Fetch Anthropic's signed model catalog for model picker names, descriptions and effort options. When off, the app uses only its bundled copy.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#modelcatalogenabled"
+                }
+            ],
+            "property_order": 405
+        },
+        "modelCatalogUrl": {
+            "type": "string",
+            "title": "Model catalog URL",
+            "description": "Fetch the model catalog and its signature file from this mirror inside your network instead of downloads.claude.ai. HTTPS required; redirects are not followed.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#modelcatalogurl"
+                }
+            ],
+            "property_order": 410
+        },
+        "inferenceModelPricingEnabled": {
+            "type": "boolean",
+            "title": "Show estimated cost",
+            "default": false,
+            "description": "Show an estimated cost on the Usage page, at Anthropic list price unless a multiplier or per-model rates are set. Required for the two pricing keys below to apply.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencemodelpricingenabled"
+                }
+            ],
+            "property_order": 415
+        },
+        "inferenceModelPricingMultiplier": {
+            "type": "number",
+            "title": "Price multiplier",
+            "description": "Scales every estimated cost (0.85 = 85% of the price). Applies only while Show Estimated Cost is on.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencemodelpricingmultiplier"
+                }
+            ],
+            "property_order": 420
+        },
+        "inferenceModelPricing": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Model rate",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Model ID",
+                        "description": "A model ID or provider alias. A built-in Claude ID also covers its dated and provider forms."
+                    },
+                    "inputPerMtok": {
+                        "type": "number",
+                        "title": "Input",
+                        "description": "USD per million input tokens."
+                    },
+                    "outputPerMtok": {
+                        "type": "number",
+                        "title": "Output",
+                        "description": "USD per million output tokens."
+                    },
+                    "cacheReadPerMtok": {
+                        "type": "number",
+                        "title": "Cache read",
+                        "description": "USD per million prompt-cache read tokens."
+                    },
+                    "cacheWritePerMtok": {
+                        "type": "number",
+                        "title": "Cache write",
+                        "description": "USD per million prompt-cache write tokens (5-minute and 1-hour writes alike)."
+                    }
+                }
+            },
+            "title": "Model pricing",
+            "description": "Per-model rates (USD per million tokens) replacing Anthropic list price in the Usage page's estimate. Applies only while Show Estimated Cost is on.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencemodelpricing"
+                }
+            ],
+            "property_order": 425
+        },
+        "inferenceMaxTokensPerWindow": {
+            "type": "integer",
+            "title": "Max tokens per window",
+            "description": "Per-user soft cap, counted client-side over the token cap window. Not a server-enforced quota. Requires inferenceTokenWindowHours to also be set — without a window length the cap is inert and no limit is enforced.",
+            "property_order": 430
+        },
+        "inferenceTokenWindowHours": {
+            "type": "integer",
+            "title": "Token cap window",
+            "description": "Tumbling window length for the token cap. Max 720 hours (30 days). Range: 1-720. Required when inferenceMaxTokensPerWindow is set — the cap only takes effect once both are configured.",
+            "property_order": 435
+        },
+        "inferenceTokenWarningPercent": {
+            "type": "integer",
+            "title": "Token limit warning",
+            "default": 75,
+            "description": "Warn users once they have used this percentage of their token limit. At 100, the only warning comes at the limit. Has no effect unless Max Tokens per Window and Token Cap Window are both set. Unset: 75.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#inferencetokenwarningpercent"
+                }
+            ],
+            "property_order": 440
+        },
+        "desktopHome": {
+            "type": "string",
+            "title": "Desktop home",
+            "description": "standard turns on Unified Claude (Chat and Cowork in one view); off turns Chat and Cowork off. Replaces Allow Chat, Advanced File Analysis and Allow Cowork. Values are case-sensitive; an unrecognized value is read as off.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#desktophome"
+                }
+            ],
+            "enum": [
+                "standard",
+                "off"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Standard (Unified Claude)",
+                    "Off"
+                ]
+            },
+            "property_order": 445
+        },
+        "chatTabEnabled": {
+            "type": "boolean",
+            "title": "Allow Chat",
+            "default": true,
+            "description": "Enable Chat. Quick questions and drafting.",
+            "property_order": 450
+        },
+        "chatAdvancedFileAnalysisEnabled": {
+            "type": "boolean",
+            "title": "Advanced file analysis",
+            "default": false,
+            "description": "Allow Claude to run code in a local sandbox to analyze attached files it can't read natively — like Excel and PowerPoint. Off by default.",
+            "property_order": 455
+        },
+        "coworkTabEnabled": {
+            "type": "boolean",
+            "title": "Allow Cowork",
+            "default": true,
+            "description": "Enable Cowork. Claude works on longer tasks like research, analysis, and documents. Defaults to true.",
+            "property_order": 460
+        },
+        "secureVmFeaturesEnabled": {
+            "type": "boolean",
+            "title": "Enable secure VM features",
+            "default": true,
+            "description": "Enable Cowork access in Claude Desktop. Applies to standard deployments (users sign in with Claude.ai); Claude Desktop in third-party (3P) mode ignores this key. In 3P mode, use Allow Cowork (coworkTabEnabled) or Desktop Home (desktopHome) instead.",
+            "property_order": 465
+        },
+        "isClaudeCodeForDesktopEnabled": {
+            "type": "boolean",
+            "title": "Allow Code",
+            "default": true,
+            "description": "Enable Claude code access in desktop.",
+            "property_order": 470
+        },
+        "autoModeEnabled": {
+            "type": "boolean",
+            "title": "Allow Auto mode",
+            "description": "Controls Auto mode. Unset: offered in the Code tab. true: also offered in Cowork. false: removed from both tabs.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#automodeenabled"
+                }
+            ],
+            "property_order": 475
+        },
+        "disableBypassPermissionsMode": {
+            "type": "boolean",
+            "title": "Disable bypass permissions mode",
+            "default": false,
+            "description": "Remove the bypass permissions mode from Code sessions and Cowork tasks, so Claude always follows the permission policy. Off by default.",
+            "property_order": 480
+        },
+        "sshHostAllowlist": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Host"
+            },
+            "title": "SSH host allowlist",
+            "description": "SSH hosts allowed for Code sessions: exact hostnames, *. wildcards, or * for any host. Unset: off unless Claude Code managed settings on the device list hosts. An empty list: off.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#sshhostallowlist"
+                }
+            ],
+            "property_order": 485
+        },
+        "sshClientPath": {
+            "type": "string",
+            "title": "SSH client program",
+            "description": "Absolute path to the OpenSSH ssh program (7.6 or newer) the app runs for SSH sessions. Unset: the first ssh on the user's PATH.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#sshclientpath"
+                }
+            ],
+            "property_order": 490
+        },
+        "sshTransport": {
+            "type": "string",
+            "title": "SSH connection engine",
+            "description": "Which SSH engine carries Code sessions: the OpenSSH ssh program on the device or the app's built-in SSH library. Unset or auto: the build's default.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#sshtransport"
+                }
+            ],
+            "enum": [
+                "auto",
+                "system-openssh",
+                "builtin"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Auto",
+                    "System OpenSSH",
+                    "Built-in library"
+                ]
+            },
+            "property_order": 495
+        },
+        "disableBundledSkills": {
+            "type": "boolean",
+            "title": "Disable bundled skills and workflows",
+            "default": false,
+            "description": "Turns off the skills and workflows that ship with Claude Desktop.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#disablebundledskills"
+                }
+            ],
+            "property_order": 500
+        },
+        "skillCreationEnabled": {
+            "type": "boolean",
+            "title": "Allow user-created skills",
+            "description": "When off, the options to create and upload skills are hidden and Claude does not offer to create or update skills.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#skillcreationenabled"
+                }
+            ],
+            "property_order": 505
+        },
+        "skillScanningEnabled": {
+            "type": "boolean",
+            "title": "Scan user-created skills",
+            "description": "Scan skills that users create.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#skillscanningenabled"
+                }
+            ],
+            "property_order": 510
+        },
+        "scheduledTasksEnabled": {
+            "type": "boolean",
+            "title": "Allow scheduled tasks",
+            "description": "Allow users to create and run scheduled tasks.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#scheduledtasksenabled"
+                }
+            ],
+            "property_order": 515
+        },
+        "keepAwakeEnabled": {
+            "type": "boolean",
+            "title": "Allow keep awake",
+            "description": "Allow Claude Desktop to keep the computer awake while it works.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#keepawakeenabled"
+                }
+            ],
+            "property_order": 520
+        },
+        "developerModeEnabled": {
+            "type": "boolean",
+            "title": "Allow Developer Mode",
+            "description": "When false, the Enable Developer Mode menu item and the Developer menu do not appear.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#developermodeenabled"
+                }
+            ],
+            "property_order": 525
+        },
+        "quickEntryDefaultShortcut": {
+            "type": "string",
+            "title": "Default Quick Entry shortcut",
+            "description": "Default keyboard shortcut for Quick Entry.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#quickentrydefaultshortcut"
+                }
+            ],
+            "property_order": 530
+        },
+        "quickEntryScreenshotsEnabled": {
+            "type": "boolean",
+            "title": "Allow screenshots of the screen and other apps",
+            "description": "Allow Quick Entry to capture screenshots of the screen and other apps.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#quickentryscreenshotsenabled"
+                }
+            ],
+            "property_order": 535
+        },
+        "quickEntryFileSharingEnabled": {
+            "type": "boolean",
+            "title": "Allow sharing files open in other apps",
+            "description": "Allow Quick Entry to share files that are open in other apps.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#quickentryfilesharingenabled"
+                }
+            ],
+            "property_order": 540
+        },
+        "projectsEnabled": {
+            "type": "boolean",
+            "title": "Allow projects",
+            "description": "Set to false to hide projects in Chat and Cowork. Projects are not deleted and reappear when the setting is turned back on.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#projectsenabled"
+                }
+            ],
+            "property_order": 545
+        },
+        "sessionStatusLine": {
+            "type": "string",
+            "title": "Status line",
+            "description": "Absolute path to a program whose output Claude Desktop shows as one line of text above the message box in Cowork, Chat and Code. On macOS, the program and every folder above it must be writable only by root.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#sessionstatusline"
+                }
+            ],
+            "property_order": 550
+        },
+        "builtinToolPolicy": {
+            "type": "object",
+            "title": "Built-in tool policy",
+            "description": "Maps built-in tool names (or argument-scoped permission rules such as Bash(curl *)) to allow or ask. Applies to Cowork, Chat and Code. To block a tool, use Disabled Built-in Tools.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#builtintoolpolicy"
+                }
+            ],
+            "properties": {
+                "{{key}}": {
+                    "type": "string",
+                    "title": "Tool or rule"
+                },
+                "{{value}}": {
+                    "type": "string",
+                    "title": "Policy",
+                    "enum": [
+                        "allow",
+                        "ask"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Allow",
+                            "Ask"
+                        ]
+                    }
+                }
+            },
+            "property_order": 555
+        },
+        "disabledBuiltinTools": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Tool",
+                "description": "Name of a built-in tool to disable."
+            },
+            "title": "Disabled built-in tools",
+            "description": "Removes the listed built-in tools from the available set in Claude Desktop. Known tools: Task, Bash, Glob, Grep, Read, Edit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, Skill, REPL, JavaScript, AskUserQuestion. ToolSearch and SendUserMessage are also available under specific conditions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
+                }
+            ],
+            "property_order": 560
+        },
+        "toolSearchEnabled": {
+            "type": "boolean",
+            "title": "Enable tool search",
+            "description": "Load tool definitions on demand through tool search instead of all at once.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#toolsearchenabled"
+                }
+            ],
+            "property_order": 565
+        },
+        "organizationInstructions": {
+            "type": "string",
+            "title": "Organization instructions",
+            "description": "Instructions from your organization that are added to Claude's context.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#organizationinstructions"
+                }
+            ],
+            "property_order": 570
+        },
+        "builtinBrowserEnabled": {
+            "type": "boolean",
+            "title": "Allow the built-in browser",
+            "default": false,
+            "description": "Claude Desktop on third-party inference deployments. Enable the built-in browser in Cowork and Code sessions. False disables the browser pane; Code retains its localhost-only dev-server preview. Defaults to false. When bootstrapUrl is set, configure this key in the served configuration.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
+                }
+            ],
+            "property_order": 575
+        },
+        "builtinBrowserDefaultDomainPolicy": {
+            "type": "string",
+            "title": "Default site policy in the built-in browser",
+            "default": "allow",
+            "description": "Claude Desktop on third-party inference deployments. Default policy for sites Claude may open, read, or act on when the built-in browser is enabled. Allowed domains are exceptions under block; blocked domains are exceptions under allow. Users can still view sites denied to Claude. Defaults to allow.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
+                }
+            ],
+            "enum": [
+                "allow",
+                "block"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Allow sites by default",
+                    "Block sites by default"
+                ]
+            },
+            "property_order": 580
+        },
+        "builtinBrowserAllowedDomains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain",
+                "description": "A hostname or supported hostname wildcard. A plain hostname also matches its www form, but no other subdomain."
+            },
+            "title": "Allowed sites in the built-in browser",
+            "description": "Claude Desktop on third-party inference deployments. Sites Claude may open, read, or act on when builtinBrowserDefaultDomainPolicy is block; ignored under allow. Empty or unset allows no external sites for Claude. Users can still view other sites. Bare * and public-suffix wildcards are ignored.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
+                }
+            ],
+            "property_order": 585
+        },
+        "builtinBrowserBlockedDomains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Domain",
+                "description": "A hostname or supported hostname wildcard. A plain hostname also matches its www form, but no other subdomain."
+            },
+            "title": "Blocked sites in the built-in browser",
+            "description": "Claude Desktop on third-party inference deployments. Sites Claude may not open, read, or act on when builtinBrowserDefaultDomainPolicy is allow; ignored under block. Empty or unset adds no blocked sites. Users can still view blocked sites. * blocks every external site for Claude; localhost dev servers are unaffected.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#built-in-browser"
+                }
+            ],
+            "property_order": 590
+        },
+        "requireCoworkFullVmSandbox": {
+            "type": "boolean",
+            "title": "Require full VM sandbox",
+            "description": "Required the full VM sandbox for Cowork. Deprecated by Anthropic.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#requirecoworkfullvmsandbox"
+                }
+            ],
+            "property_order": 595
+        },
+        "allowedWorkspaceFolders": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "title": "Path",
+                        "description": "Absolute folder path. May start with ~ or one of the listed %VAR% tokens, expanded per user. Subfolders are included."
+                    },
+                    "isDefaultSelected": {
+                        "type": "boolean",
+                        "title": "Select default",
+                        "default": false,
+                        "description": "Shows as a folder chip on the new-task page and skips the trust prompt. Users can remove it."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "title": "Mode",
+                        "description": "Read-only folders can be viewed and searched but not modified in Cowork. In local Code sessions, read-only applies to file tools only; over SSH it also applies to Bash in its sandbox. One of: rw, ro.",
+                        "enum": [
+                            "rw",
+                            "ro"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Read/write",
+                                "Read only"
+                            ]
+                        }
+                    }
+                }
+            },
+            "title": "Allowed workspace folders",
+            "description": "Folders where Claude may work. Applies to both Cowork and Code sessions. Leave unset for unrestricted access. Paths can reference ~ and these environment variables, expanded per user: %OneDrive%, %OneDriveCommercial%, %OneDriveConsumer%, %APPDATA%, %LOCALAPPDATA%, %USERNAME%, %XDG_DOCUMENTS_DIR%. The set is fixed; an entry that references any other %VAR%, or one that is unset on the device, is ignored.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#allowedworkspacefolders-details"
+                }
+            ],
+            "property_order": 600
+        },
+        "blockReadsOutsideWorkingDirectories": {
+            "type": "boolean",
+            "title": "Block reads outside working directories",
+            "default": false,
+            "description": "Keep Claude from reading files outside a Code session's working directories. File tools refuse such reads; sandboxed shell commands lose the home directory.",
+            "property_order": 605
+        },
+        "coworkEgressAllowedHosts": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "Host"
+            },
+            "title": "Allowed egress hosts",
+            "description": "Hosts agent tools may reach in Cowork and Chat (and, in part, Code): exact hostnames, *. wildcards, optional :port, or * for all. Does not cover web search, inference or MCP traffic. Unset: web fetch is refused.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#coworkegressallowedhosts"
+                }
+            ],
+            "property_order": 610
+        },
+        "skipWebFetchPreflight": {
+            "type": "boolean",
+            "title": "Skip WebFetch domain check",
+            "description": "Skip the domain safety check that runs before WebFetch requests.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#skipwebfetchpreflight"
+                }
+            ],
+            "property_order": 615
+        },
+        "egressProxyUrl": {
+            "type": "string",
+            "title": "Proxy server URL",
+            "description": "Sends the app's and the agent's traffic through this HTTP(S) proxy instead of the operating system's proxy settings. SOCKS proxies and embedded credentials are rejected. Read at launch. MDM only: ignored in a bootstrap server response.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#egressproxyurl"
+                }
+            ],
+            "property_order": 620
+        },
+        "egressProxyPacUrl": {
+            "type": "string",
+            "title": "Proxy auto-config (PAC) URL",
+            "description": "URL of a PAC file that decides the proxy per request. Wins over the proxy server URL when both are set. MDM only: ignored in a bootstrap server response.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#egressproxypacurl"
+                }
+            ],
+            "property_order": 625
+        },
+        "coworkVmIpv6Enabled": {
+            "type": "boolean",
+            "title": "Enable IPv6 in the workspace VM",
+            "default": false,
+            "description": "Gives the Cowork workspace VM an IPv6 address and route so the agent's tools can reach IPv6-only hosts through the device. Reachability only; the egress allowlist still applies.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#coworkvmipv6enabled"
+                }
+            ],
+            "property_order": 630
+        },
+        "managedMcpServers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Managed MCP server",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Name",
+                        "description": "Unique name identifying this MCP server."
+                    },
+                    "url": {
+                        "type": "string",
+                        "title": "URL",
+                        "description": "HTTPS URL of the remote MCP server."
+                    },
+                    "transport": {
+                        "type": "string",
+                        "title": "Transport",
+                        "default": "http",
+                        "description": "Transport protocol used to reach the MCP server.",
+                        "enum": [
+                            "http",
+                            "sse"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "HTTP",
+                                "SSE"
+                            ]
+                        }
+                    },
+                    "headers": {
+                        "type": "object",
+                        "title": "Headers",
+                        "description": "Static request headers used to authenticate to the MCP server (for example, Authorization). Mutually exclusive with the OAuth field.",
+                        "properties": {
+                            "{{key}}": {
+                                "type": "string",
+                                "title": "Header name"
+                            },
+                            "{{value}}": {
+                                "type": "string",
+                                "title": "Header value"
+                            }
+                        }
+                    },
+                    "oauth": {
+                        "type": "boolean",
+                        "title": "OAuth",
+                        "default": false,
+                        "description": "When true, Claude Desktop runs a PKCE OAuth flow at first use to acquire user credentials. Mutually exclusive with the Headers field."
+                    },
+                    "toolPolicy": {
+                        "type": "object",
+                        "title": "Tool policy",
+                        "description": "Maps tool names exposed by the MCP server to a policy. Allowed values per tool: allow, ask, blocked. The \"ask\" policy prompts the user to confirm before the tool runs.",
+                        "properties": {
+                            "{{key}}": {
+                                "type": "string",
+                                "title": "Tool name"
+                            },
+                            "{{value}}": {
+                                "type": "string",
+                                "title": "Policy",
+                                "enum": [
+                                    "allow",
+                                    "ask",
+                                    "blocked"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Allow",
+                                        "Ask",
+                                        "Block"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "toolTimeoutSec": {
+                        "type": "integer",
+                        "title": "Tool call timeout",
+                        "description": "How long a tool call to this server may run, in place of the MCP Tool Call Timeout (mcpToolTimeoutSec) for this server."
+                    }
+                }
+            },
+            "title": "Managed MCP servers",
+            "description": "Distributes remote MCP (Model Context Protocol) servers to users. Each entry requires a unique name and an HTTPS URL. Optional fields include transport, headers, OAuth, and tool-level policies. Used in Claude Cowork deployments on third-party platforms (Bedrock, Vertex AI, Azure AI Foundry, LLM gateways).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
+                }
+            ],
+            "property_order": 635
+        },
+        "isLocalDevMcpEnabled": {
+            "type": "boolean",
+            "title": "Allow local MCP servers",
+            "default": true,
+            "description": "Enable or disable local Model Context Protocol (MCP) servers.",
+            "property_order": 640
+        },
+        "mcpPersistentAlwaysAllowEnabled": {
+            "type": "boolean",
+            "title": "Allow persistent tool approvals",
+            "default": true,
+            "description": "Offer the persistent “Always allow” approval options for MCP tools. Disable to keep tool approvals per-call or session-scoped only. Defaults to true.",
+            "property_order": 645
+        },
+        "mcpScheduledTaskApprovalLifetimeDays": {
+            "type": "integer",
+            "title": "Scheduled-task tool approval lifetime",
+            "description": "How long tool approvals granted for scheduled tasks stay valid.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#mcpscheduledtaskapprovallifetimedays"
+                }
+            ],
+            "property_order": 650
+        },
+        "mcpToolTimeoutSec": {
+            "type": "integer",
+            "title": "MCP tool call timeout",
+            "default": 180,
+            "description": "Per-call timeout for MCP tool calls, in seconds. Default 180 (3 minutes). Range: 60-3600.",
+            "property_order": 655
+        },
+        "allowedPluginMcpServers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Server",
+                "properties": {
+                    "serverUrl": {
+                        "type": "string",
+                        "title": "Server URL",
+                        "description": "URL of the plugin-provided MCP server."
+                    }
+                }
+            },
+            "title": "Allowed plugin MCP servers",
+            "description": "MCP servers that plugins may provide, matched by server URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#allowedpluginmcpservers"
+                }
+            ],
+            "property_order": 660
+        },
+        "deniedPluginMcpServers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Server",
+                "properties": {
+                    "serverUrl": {
+                        "type": "string",
+                        "title": "Server URL",
+                        "description": "URL of the plugin-provided MCP server."
+                    }
+                }
+            },
+            "title": "Blocked plugin MCP servers",
+            "description": "MCP servers that plugins may not provide, matched by server URL.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#deniedpluginmcpservers"
+                }
+            ],
+            "property_order": 665
+        },
+        "microsoftAuthBroker": {
+            "type": "string",
+            "title": "Microsoft 365 native sign-in broker",
+            "default": "auto",
+            "description": "How Microsoft 365 sign-in runs. auto: use the native OS broker (Company Portal SSO extension on macOS) when available, otherwise the browser. disabled: always use browser sign-in. required (1.49585.0 or later): sign-in fails when the broker is unavailable instead of falling back to the browser; earlier releases treat required as disabled. Defaults to auto.",
+            "enum": [
+                "auto",
+                "disabled",
+                "required"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Auto",
+                    "Disabled",
+                    "Required"
+                ]
+            },
+            "property_order": 670
+        },
+        "microsoftAuthDefaultAccount": {
+            "type": "string",
+            "title": "Microsoft 365 sign-in with the Windows account",
+            "default": "disabled",
+            "description": "Whether Microsoft 365 sign-in uses the Windows account by default. One of: enabled, disabled. Defaults to disabled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#microsoftauthdefaultaccount"
+                }
+            ],
+            "enum": [
+                "enabled",
+                "disabled"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Enabled",
+                    "Disabled"
+                ]
+            },
+            "property_order": 675
+        },
+        "isDesktopExtensionEnabled": {
+            "type": "boolean",
+            "title": "Allow desktop extensions",
+            "description": "Allow Claude Desktop to load desktop extensions (.dxt and .mcpb files). When unset, the default depends on the deployment: on for standard deployments where users sign in with Claude.ai, off in third-party (3P) mode (since 1.19367.0).",
+            "property_order": 680
+        },
+        "isDesktopExtensionDirectoryEnabled": {
+            "type": "boolean",
+            "title": "Allow extension directory",
+            "default": true,
+            "description": "Enable or disable access to the extension directory. Applies to standard deployments (users sign in with Claude.ai); Claude Desktop in third-party (3P) mode ignores this key.",
+            "property_order": 685
+        },
+        "isDesktopExtensionSignatureRequired": {
+            "type": "boolean",
+            "title": "Require signed extensions",
+            "default": false,
+            "description": "When true, Claude Desktop rejects extensions that aren't signed by a trusted publisher.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://support.claude.com/en/articles/14680753-extend-claude-cowork-with-third-party-platforms"
+                }
+            ],
+            "property_order": 690
+        },
+        "allowedPluginMarketplaces": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Marketplace",
+                "properties": {
+                    "source": {
+                        "type": "string",
+                        "title": "Source",
+                        "description": "github: a GitHub repository (set Repository). git: a Git remote (set URL). url: a hosted marketplace.json file (set URL).",
+                        "enum": [
+                            "github",
+                            "git",
+                            "url"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "GitHub repository",
+                                "Git remote",
+                                "Hosted marketplace.json"
+                            ]
+                        }
+                    },
+                    "repo": {
+                        "type": "string",
+                        "title": "Repository",
+                        "description": "GitHub repository in owner/repo form (github source)."
+                    },
+                    "url": {
+                        "type": "string",
+                        "title": "URL",
+                        "description": "HTTPS Git remote (git source) or direct HTTPS URL of a hosted marketplace.json (url source)."
+                    },
+                    "ref": {
+                        "type": "string",
+                        "title": "Ref",
+                        "description": "Commit SHA, branch or tag (github and git sources). Leave empty to track the default branch; auto_install and required need a full 40-character commit SHA."
+                    },
+                    "path": {
+                        "type": "string",
+                        "title": "Subpath",
+                        "description": "Folder within the repository that contains the marketplace, when it isn't at the root (github and git sources)."
+                    },
+                    "manifestSha256": {
+                        "type": "string",
+                        "title": "Manifest SHA-256",
+                        "description": "SHA-256 of the exact marketplace.json to accept (url source). Without it, auto_install and required act as available.",
+                        "pattern": "^[0-9a-fA-F]{64}$"
+                    },
+                    "expectedName": {
+                        "type": "string",
+                        "title": "Expected name",
+                        "description": "Rejects the marketplace if its manifest name differs."
+                    },
+                    "installationPreference": {
+                        "type": "string",
+                        "title": "Installation",
+                        "description": "Whether users install plugins themselves or get them automatically.",
+                        "enum": [
+                            "available",
+                            "auto_install",
+                            "required"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Available",
+                                "Auto-install",
+                                "Required"
+                            ]
+                        }
+                    },
+                    "credentialKind": {
+                        "type": "string",
+                        "title": "Auth",
+                        "description": "Credential sent with a fetch: nothing, the user's Git credential, a helper script's output, or the gateway or bootstrap credential (url source only).",
+                        "enum": [
+                            "anonymous",
+                            "userGit",
+                            "credentialHelper",
+                            "inferenceCredential"
+                        ],
+                        "options": {
+                            "enum_titles": [
+                                "Anonymous",
+                                "User Git credential",
+                                "Credential helper",
+                                "Inference credential"
+                            ]
+                        }
+                    },
+                    "credentialHelper": {
+                        "type": "string",
+                        "title": "Credential helper",
+                        "description": "Executable that prints the access token to send."
+                    }
+                }
+            },
+            "title": "Plugin marketplaces",
+            "description": "Git repositories or hosted marketplace.json files shown as plugin marketplaces in the Directory's Organization tab.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#allowedpluginmarketplaces"
+                }
+            ],
+            "property_order": 695
+        },
+        "orgPluginSettings": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Server",
+                "properties": {
+                    "serverName": {
+                        "type": "string",
+                        "title": "Server name",
+                        "description": "Name of the plugin-delivered MCP server this policy applies to."
+                    },
+                    "tools": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "title": "Tool",
+                            "properties": {
+                                "toolName": {
+                                    "type": "string",
+                                    "title": "Tool",
+                                    "description": "MCP tool name as the server reports it."
+                                },
+                                "permission": {
+                                    "type": "string",
+                                    "title": "Permission",
+                                    "description": "Approval state locked for this tool.",
+                                    "enum": [
+                                        "allow",
+                                        "ask",
+                                        "blocked"
+                                    ],
+                                    "options": {
+                                        "enum_titles": [
+                                            "Allow",
+                                            "Ask",
+                                            "Block"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "title": "Tool policy",
+                        "description": "Per-tool approval locks for this server."
+                    }
+                }
+            },
+            "title": "Organization plugin settings",
+            "description": "Locks tool permissions on the MCP servers that plugins provide. Unlisted tools stay user-controlled.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#orgpluginsettings"
+                }
+            ],
+            "property_order": 700
+        },
+        "userPluginMarketplacesEnabled": {
+            "type": "boolean",
+            "title": "Allow user-added plugin marketplaces",
+            "description": "Let users add plugin marketplaces. When off, marketplaces your organization did not provision are hidden and their plugins are not loaded.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#userpluginmarketplacesenabled"
+                }
+            ],
+            "property_order": 705
+        },
+        "userPluginUploadsEnabled": {
+            "type": "boolean",
+            "title": "Allow user-added plugins",
+            "description": "Allow users to add their own plugins. When off, every option for adding one is hidden and uploads are refused.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#userpluginuploadsenabled"
+                }
+            ],
+            "property_order": 710
+        },
+        "disableEssentialTelemetry": {
+            "type": "boolean",
+            "title": "Block essential telemetry",
+            "default": false,
+            "description": "Crash and performance reports to Anthropic. Defaults to false.",
+            "property_order": 715
+        },
+        "disableNonessentialTelemetry": {
+            "type": "boolean",
+            "title": "Block nonessential telemetry",
+            "default": false,
+            "description": "Product-usage analytics and diagnostic-report uploads. No message content. Defaults to false.",
+            "property_order": 720
+        },
+        "disableNonessentialServices": {
+            "type": "boolean",
+            "title": "Block nonessential services",
+            "default": false,
+            "description": "Connector favicons and the artifact-preview and MCP Apps widget iframe origins. Artifacts will not render. Defaults to false.",
+            "property_order": 725
         },
         "otlpEndpoint": {
             "type": "string",
-            "title": "OpenTelemetry collector endpoint",
+            "title": "OTLP endpoint",
             "description": "Where OpenTelemetry logs and metrics are sent. Leave blank to disable.",
             "links": [
                 {
@@ -617,11 +2615,11 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 220
+            "property_order": 730
         },
         "otlpProtocol": {
             "type": "string",
-            "title": "OpenTelemetry exporter protocol",
+            "title": "OTLP protocol",
             "default": "http/protobuf",
             "description": "grpc or http/protobuf. One of: http/protobuf, http/json, grpc. Defaults to http/protobuf.",
             "links": [
@@ -635,11 +2633,11 @@
                 "http/json",
                 "grpc"
             ],
-            "property_order": 225
+            "property_order": 735
         },
         "otlpHeaders": {
             "type": "string",
-            "title": "OpenTelemetry exporter headers",
+            "title": "OTLP headers",
             "description": "Static collector headers — routing and tenant headers only. No credentials here; use Collector authentication or the headers helper script for tokens.",
             "links": [
                 {
@@ -647,7 +2645,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 230
+            "property_order": 740
         },
         "otlpAuthMode": {
             "type": "string",
@@ -666,14 +2664,14 @@
             "options": {
                 "enum_titles": [
                     "None",
-                    "Inference Credential"
+                    "Inference credential"
                 ]
             },
-            "property_order": 235
+            "property_order": 745
         },
         "otlpHeadersHelper": {
             "type": "string",
-            "title": "OpenTelemetry headers helper script",
+            "title": "OTLP headers helper script",
             "description": "Absolute path to an executable that prints a JSON object of collector headers. Merged over the static headers and Collector authentication; the helper wins.",
             "links": [
                 {
@@ -681,11 +2679,11 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 240
+            "property_order": 750
         },
         "otlpResourceAttributes": {
             "type": "string",
-            "title": "OpenTelemetry resource attributes",
+            "title": "Resource attributes",
             "description": "Extra resource attributes to attach to every span/metric. A static enduser.id set here always wins over the runtime identity.",
             "links": [
                 {
@@ -693,7 +2691,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 245
+            "property_order": 755
         },
         "otlpDesktopLogLevel": {
             "type": "string",
@@ -722,7 +2720,7 @@
                     "Debug"
                 ]
             },
-            "property_order": 250
+            "property_order": 760
         },
         "otlpContentCapture": {
             "type": "array",
@@ -731,7 +2729,7 @@
                 "title": "Content capture category",
                 "description": "Name of a content capture category to enable a class of raw content in OpenTelemetry events sent to your collector (this data never reaches Anthropic)"
             },
-            "title": "Content capture categories",
+            "title": "Content capture",
             "description": "Content categories the desktop exporter sends unredacted to your collector. Leave empty to redact all content (default). One of: userPrompts, assistantResponses, toolDetails, toolContent, rawApiBodies.",
             "links": [
                 {
@@ -739,7 +2737,7 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 255
+            "property_order": 765
         },
         "otlpTracesEnabled": {
             "type": "boolean",
@@ -752,7 +2750,67 @@
                     "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlp"
                 }
             ],
-            "property_order": 260
+            "property_order": 770
+        },
+        "otlpAttrMaxChars": {
+            "type": "integer",
+            "title": "Telemetry attribute length limit",
+            "description": "Maximum length, in characters, of captured content such as a raw API body. Unset: 61,440 in Cowork tasks and Code sessions.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#otlpattrmaxchars"
+                }
+            ],
+            "property_order": 775
+        },
+        "chatSessionRetentionDays": {
+            "type": "integer",
+            "title": "Chat retention period",
+            "description": "Delete chats, with their files, after this many days without activity. Unset: no deletion. Projects and memory are kept.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#chatsessionretentiondays"
+                }
+            ],
+            "property_order": 780
+        },
+        "coworkSessionRetentionDays": {
+            "type": "integer",
+            "title": "Cowork retention period",
+            "description": "Delete Cowork tasks, with their uploads and outputs, after this many days without activity. Unset: no deletion.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#coworksessionretentiondays"
+                }
+            ],
+            "property_order": 785
+        },
+        "codeSessionRetentionDays": {
+            "type": "integer",
+            "title": "Code retention period",
+            "description": "Delete Code sessions, conversation included, after this many days without activity. Unset: no deletion. Uncommitted work stays on disk.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#codesessionretentiondays"
+                }
+            ],
+            "property_order": 790
+        },
+        "sessionRetentionHold": {
+            "type": "boolean",
+            "title": "Suspend session deletion",
+            "description": "Suspends the Chat, Cowork and Code retention periods (legal hold).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://claude.com/docs/third-party/claude-desktop/configuration#sessionretentionhold"
+                }
+            ],
+            "property_order": 795
         }
     }
 }
