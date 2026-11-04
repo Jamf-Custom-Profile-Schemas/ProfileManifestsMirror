@@ -1,0 +1,110 @@
+{
+    "title": "DFU Blaster Pro (com.twocanoes.dfu-blaster-pro)",
+    "description": "DFU Blaster Pro 5.1 (3621) settings",
+    "properties": {
+        "showDebug": {
+            "type": "boolean",
+            "title": "Show Debug",
+            "default": false,
+            "description": "Turn on vebose logging.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/dfu-blaster-pro-admin-guide/"
+                }
+            ],
+            "property_order": 5
+        },
+        "LogFileName": {
+            "type": "string",
+            "title": "Log File Name",
+            "default": "dfublaster.log",
+            "description": "Set log file name.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/dfu-blaster-pro-admin-guide/"
+                }
+            ],
+            "property_order": 10
+        },
+        "checkForUpdates": {
+            "type": "boolean",
+            "title": "Check For Updates",
+            "default": true,
+            "description": "Check and prompt if an update is available.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/dfu-blaster-pro-admin-guide/"
+                }
+            ],
+            "property_order": 15
+        },
+        "shouldUseEventScript": {
+            "type": "boolean",
+            "title": "Use Event Script",
+            "default": false,
+            "description": "Use event script to export computer information on attached devices.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/dfu-blaster-pro-admin-guide/"
+                }
+            ],
+            "property_order": 20
+        },
+        "shouldPlaySoundWhenComplete": {
+            "type": "boolean",
+            "title": "Play Sound When Complete",
+            "default": true,
+            "description": "Play sound when restore completes.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/dfu-blaster-pro-admin-guide/"
+                }
+            ],
+            "property_order": 25
+        },
+        "stayInFrontAfterDFUSecs": {
+            "type": "string",
+            "title": "Stay in Front After DFU Seconds",
+            "default": "15",
+            "description": "Keep DFU Blaster in front after putting into DFU mode (seconds).",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/dfu-blaster-pro-admin-guide/"
+                }
+            ],
+            "property_order": 30
+        },
+        "removeACCache": {
+            "type": "boolean",
+            "title": "Remove AC Cache",
+            "default": true,
+            "description": "Remove Apple Configurator temporary cache before each restore.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/dfu-blaster-pro-admin-guide/"
+                }
+            ],
+            "property_order": 35
+        },
+        "shouldDisableLocalAutoDFU": {
+            "type": "boolean",
+            "title": "Disable Local Auto DFU",
+            "default": false,
+            "description": "When AutoDFU is enabled, only put devices plugged into an Acroname Hub into DFU mode. This setting turns off sending the DFU command to the local DFU USB port.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://twocanoes.com/knowledge-base/dfu-blaster-pro-admin-guide/"
+                }
+            ],
+            "property_order": 40
+        }
+    }
+}
