@@ -5,6 +5,7 @@
         "DEBUG": {
             "type": "boolean",
             "title": "Debug Mode",
+            "default": false,
             "description": "Enables debug mode. See documentation for behavior changes.",
             "links": [
                 {
@@ -164,6 +165,13 @@
             },
             "property_order": 55
         },
+        "optionalFinalActions": {
+            "type": "boolean",
+            "title": "Optional Final Actions",
+            "default": false,
+            "description": "When this key is set to true, holding the Option key when clicking the finalAction button will show alternative final actions.",
+            "property_order": 60
+        },
         "totalDownloadBytes": {
             "type": "integer",
             "title": "Total Download Bytes",
@@ -174,7 +182,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#totaldownloadbytes"
                 }
             ],
-            "property_order": 60
+            "property_order": 65
         },
         "jssID": {
             "type": "string",
@@ -189,7 +197,7 @@
             "enum": [
                 "$JSSID"
             ],
-            "property_order": 65
+            "property_order": 70
         },
         "computerID": {
             "type": "string",
@@ -211,7 +219,7 @@
                     "%udid% (For Jamf School)"
                 ]
             },
-            "property_order": 70
+            "property_order": 75
         },
         "userID": {
             "type": "string",
@@ -227,7 +235,7 @@
                 "$EMAIL",
                 "$USERNAME"
             ],
-            "property_order": 75
+            "property_order": 80
         },
         "enrollmentUserID": {
             "type": "string",
@@ -243,7 +251,7 @@
                 "$EMAIL",
                 "$USERNAME"
             ],
-            "property_order": 80
+            "property_order": 85
         },
         "computerNameTemplate": {
             "type": "string",
@@ -255,7 +263,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#computernametemplate"
                 }
             ],
-            "property_order": 85
+            "property_order": 90
         },
         "overrideSerialNumber": {
             "type": "string",
@@ -267,11 +275,12 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#overrideserialnumber"
                 }
             ],
-            "property_order": 90
+            "property_order": 95
         },
         "hideActionLabels": {
             "type": "boolean",
             "title": "Hide Action Labels",
+            "default": false,
             "description": "Hides the individual labels under each action's icon.",
             "links": [
                 {
@@ -279,7 +288,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#hideactionlabels"
                 }
             ],
-            "property_order": 95
+            "property_order": 100
         },
         "actionOutputLogging": {
             "type": "string",
@@ -304,7 +313,7 @@
                     "Never"
                 ]
             },
-            "property_order": 100
+            "property_order": 105
         },
         "finishedMessage": {
             "type": "string",
@@ -316,7 +325,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finishedMessage"
                 }
             ],
-            "property_order": 105
+            "property_order": 110
         },
         "startingMessage": {
             "type": "string",
@@ -329,7 +338,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#startingMessage"
                 }
             ],
-            "property_order": 110
+            "property_order": 115
         },
         "networkQualityCheck": {
             "type": "boolean",
@@ -342,11 +351,12 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#networkqualitycheck"
                 }
             ],
-            "property_order": 115
+            "property_order": 120
         },
         "hideDebugLabel": {
             "type": "boolean",
             "title": "Hide Debug Label",
+            "default": false,
             "description": "Suppresses display of the red 'DEBUG' label in debug mode.",
             "links": [
                 {
@@ -354,7 +364,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#hidedebuglabel"
                 }
             ],
-            "property_order": 120
+            "property_order": 125
         },
         "simulateMDM": {
             "type": "string",
@@ -370,7 +380,7 @@
                 "Jamf Pro",
                 "Jamf School"
             ],
-            "property_order": 125
+            "property_order": 130
         },
         "help": {
             "type": "object",
@@ -411,7 +421,7 @@
                     ]
                 }
             },
-            "property_order": 130
+            "property_order": 135
         },
         "userEntry": {
             "type": "object",
@@ -1288,7 +1298,7 @@
                     ]
                 }
             },
-            "property_order": 135
+            "property_order": 140
         },
         "enrollmentActions": {
             "type": "array",
@@ -1318,6 +1328,7 @@
                     "requiresRoot": {
                         "type": "boolean",
                         "title": "Shell: run as root",
+                        "default": false,
                         "enum": [
                             true
                         ],
@@ -1397,7 +1408,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#actions"
                 }
             ],
-            "property_order": 140
+            "property_order": 145
         },
         "finishedScript": {
             "type": "string",
@@ -1409,7 +1420,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finishedscript"
                 }
             ],
-            "property_order": 145
+            "property_order": 150
         },
         "finishedTrigger": {
             "type": "string",
@@ -1421,7 +1432,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/ConfigurationProfile.md#finishedtrigger"
                 }
             ],
-            "property_order": 150
+            "property_order": 155
         },
         "webhooks": {
             "type": "object",
@@ -1510,6 +1521,7 @@
                 "DEBUG": {
                     "type": "boolean",
                     "title": "Webhook Debug Mode",
+                    "default": false,
                     "description": "Enables webhook debug mode.",
                     "links": [
                         {
@@ -1519,7 +1531,7 @@
                     ]
                 }
             },
-            "property_order": 155
+            "property_order": 160
         },
         "networkCheck": {
             "type": "array",
@@ -1568,11 +1580,12 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/Docs/Network.md"
                 }
             ],
-            "property_order": 160
+            "property_order": 165
         },
         "PLEASE_DO_NOT_TRACK": {
             "type": "boolean",
             "title": "Do Not Track",
+            "default": false,
             "description": "Suppress launch tracking by enabling this setting.",
             "links": [
                 {
@@ -1580,7 +1593,7 @@
                     "href": "https://github.com/jamf/Setup-Manager/blob/main/Docs/LaunchTracking.md"
                 }
             ],
-            "property_order": 165
+            "property_order": 170
         }
     }
 }
