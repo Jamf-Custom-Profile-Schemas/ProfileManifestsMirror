@@ -1,0 +1,165 @@
+{
+    "title": "iMazing Profile Editor (com.DigiDNA.iMazingProfileEditorMac)",
+    "description": "Managed settings for users creating and editing Apple configuration profiles with iMazing Profile Editor.",
+    "properties": {
+        "preferencesDefaultsOrganizationName": {
+            "type": "string",
+            "title": "Default organization name",
+            "description": "The name of the organization that will be pre-filled by default in the Payload Organization property of the General settings section on newly created profiles.",
+            "property_order": 5
+        },
+        "identifierPrefix": {
+            "type": "string",
+            "title": "Default identifier prefix",
+            "default": "iMazing-Profile-Editor",
+            "description": "The prefix of the UUID-style identifier that will be pre-filled by default in the Payload Identifier property of the General settings section on newly created profiles.",
+            "property_order": 10
+        },
+        "preferencesDefaultsConsentText": {
+            "type": "string",
+            "title": "Default consent message",
+            "description": "The consent text that will be pre-filled by default in the Consent Message property of the General settings section on newly created profiles.",
+            "property_order": 15
+        },
+        "preferencesDefaultsSigningIdentity": {
+            "type": "string",
+            "title": "Default signing identity",
+            "description": "The signing identity that will be used by default to sign the profile on save. Identity must be installed in the device Keychain. Leave empty to disable profile signing by default.",
+            "property_order": 20
+        },
+        "defaultSigningIdentity": {
+            "type": "dict",
+            "title": "Default signing identity",
+            "description": "The signing identity that will be used by default to sign the profile on save. Identity must be installed in the device Keychain. Leave empty to disable profile signing by default.",
+            "properties": {},
+            "property_order": 25
+        },
+        "preferencesDefaultsAutomaticallyUpdate": {
+            "type": "boolean",
+            "title": "Set last used values as defaults on profile save",
+            "default": true,
+            "description": "If 'false', the editor disables updating the default organization name, identifier prefix, consent message, and signing identity for newly created profiles from saved profiles. By default, when saving a profile, its values are used to update the defaults for all profiles.",
+            "property_order": 30
+        },
+        "preferencesDefaultsUnsetDefaultBooleans": {
+            "type": "boolean",
+            "title": "Unset boolean properties when toggled to their known default value",
+            "default": true,
+            "description": "If 'false', the editor will keep values of boolean properties regardless of if they are toggled to the property's known default. By default, the editor unsets such values on toggle to reduce clutter in saved profiles.",
+            "property_order": 35
+        },
+        "manifestRepositoryType": {
+            "type": "string",
+            "title": "Manifest repository type",
+            "default": "online",
+            "description": "The type of the manifest repository that will be used to display the configuration options in the editor. Set to Online to retrieve the latest online manifests, or to local to use the manifests bundled with the app.",
+            "enum": [
+                "online",
+                "local"
+            ],
+            "options": {
+                "enum_titles": [
+                    "Online",
+                    "Local"
+                ]
+            },
+            "property_order": 40
+        },
+        "onlineManifestRepositoryAddress": {
+            "type": "string",
+            "title": "Online GitHub repository address",
+            "default": "https://github.com/DigiDNA/ProfileManifests",
+            "description": "The URL of the GitHub repository from which the editor will retrieve and periodically update preference manifests. The repository must be structured similarly to ProfileManifests but does not have to have been forked from it.",
+            "property_order": 45
+        },
+        "onlineManifestRepositoryBranchName": {
+            "type": "string",
+            "title": "Online GitHub repository branch name",
+            "default": "imazing_standard",
+            "description": "The name of the branch in the repository defined in Online GitHub repository address that will be used for retrieving manifests.",
+            "property_order": 50
+        },
+        "maximizeNonStandardManifestCompatibility": {
+            "type": "boolean",
+            "title": "Process custom manifests for optimal display in iMazing Profile Editor",
+            "default": true,
+            "description": "If 'false', the editor will not make any changes to online or custom local manifests to optimize their display.",
+            "property_order": 55
+        },
+        "DevKitAutoUpdate": {
+            "type": "boolean",
+            "title": "Automatically check for application updates",
+            "default": false,
+            "description": "If 'true' the editor will periodically check for its own updates.",
+            "property_order": 60
+        },
+        "DevKitAllowTracking": {
+            "type": "boolean",
+            "title": "Participate in the Customer Experience Program",
+            "default": false,
+            "description": "If 'true', the editor may collect anonymous analytics data.",
+            "property_order": 65
+        },
+        "noticeSuppressOnlineManifestsUpdated": {
+            "type": "boolean",
+            "title": "Suppress online manifest update notices",
+            "default": false,
+            "description": "If 'true', the editor will not show users notices when preference manifest are updated.",
+            "property_order": 70
+        },
+        "noticeSuppressIOS15SilentInstallationIncompatibility": {
+            "type": "boolean",
+            "title": "Suppress iOS 15 silent installation incompatibility notices",
+            "default": false,
+            "description": "If 'true', the editor will not show users notices when profiles that have an iOS 15 silent-installation incompatibility are loaded. ",
+            "property_order": 75
+        },
+        "noticeSuppressProfileInvalid": {
+            "type": "boolean",
+            "title": "Suppress profile-invalid notices",
+            "default": false,
+            "description": "If 'true', the editor will not show users notices on profile save when the profile has validation issues.",
+            "property_order": 80
+        },
+        "noticeSuppressSavedToIMazingLibrary": {
+            "type": "boolean",
+            "title": "Suppress the saved to iMazing library notice",
+            "default": false,
+            "description": "If 'true' the editor will not show users notices when saving a profile to the iMazing profile library.",
+            "property_order": 85
+        },
+        "hideSidebarTASShortcut": {
+            "type": "boolean",
+            "title": "Hide Total App Setup shortcut in the sidebar",
+            "default": false,
+            "description": "If 'true' the sidebar shortcut to Total App Setup is not displayed.",
+            "property_order": 90
+        },
+        "attemptDismissingProfileInstallationNotice": {
+            "type": "boolean",
+            "title": "Attempt to Dismiss the Profile Downloaded Notice",
+            "default": false,
+            "description": "If 'true' the editor will attempt to quickly dismiss the \"Profile Downloaded\" notice shown by the system when installing a profile.",
+            "property_order": 95
+        },
+        "defaultPayloadContainer": {
+            "type": "string",
+            "title": "Default Payload Container",
+            "default": "MCXForced",
+            "description": "Sets the default payload container type for newly added non-official and third-party domains. For official system domains the default container is always a general payload.",
+            "enum": [
+                "General",
+                "MCXForced",
+                "MCXSetOnce"
+            ],
+            "options": {
+                "enum_titles": [
+                    "General",
+                    "Managed Client: Forced",
+                    "Managed Client: Set-Once"
+                ]
+            },
+            "property_order": 100
+        }
+    }
+}
