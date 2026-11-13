@@ -28,7 +28,7 @@
             "property_order": 20
         },
         "defaultSigningIdentity": {
-            "type": "dict",
+            "type": "object",
             "title": "Default signing identity",
             "description": "The signing identity that will be used by default to sign the profile on save. Identity must be installed in the device Keychain. Leave empty to disable profile signing by default.",
             "properties": {},
